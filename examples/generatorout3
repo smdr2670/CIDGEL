@@ -1,0 +1,124 @@
+
+Using following Matrix: 
+{ 3 6:
+ 1, 0, 0, 0, 0, 1
+ 0, 1, 0, 1, 1, 1
+ 0, 0, 1, 0, 0, 1
+}
+
+% starting GB:
+R: 6
+G: {a-f, b^2-1, b*d-e*f, b*e-d*f, b*f-d*e, c-f, d^2-1, d*e*f-b, e^2-1, f^2-1}
+
+ Enumerating Groebner bases
+   using reverse search
+   taking input from tests/generator3
+   with partial caching
+   using only linear programing to test facets
+Vtx: 1 (6 facets/10 binomials/degree 3)
+{# a-f, ! b^2-1, # b*d-e*f, # b*e-d*f, # b*f-d*e, # c-f, ! d^2-1, # d*e*f-b, ! e^2-1, ! f^2-1}
+
+Vtx: 2 (5 facets/9 binomials/degree 2)
+{# a-f, ! b^2-1, # b*e-d*f, # b*f-d*e, # c-f, ! d^2-1, ! e^2-1, # e*f-b*d, ! f^2-1}
+  Reducing Edge: [2,1]
+
+Vtx: 3 (6 facets/10 binomials/degree 3)
+{# a-f, ! b^2-1, # b*d*e-f, # b*f-d*e, # c-f, ! d^2-1, # d*f-b*e, ! e^2-1, # e*f-b*d, ! f^2-1}
+  Reducing Edge: [3,2]
+
+Vtx: 4 (5 facets/9 binomials/degree 2)
+{# a-f, ! b^2-1, # c-f, ! d^2-1, # d*e-b*f, # d*f-b*e, ! e^2-1, # e*f-b*d, ! f^2-1}
+  Reducing Edge: [4,3]
+
+Vtx: 5 (6 facets/10 binomials/degree 3)
+{# a-f, ! b^2-1, # b*d*f-e, # b*e-d*f, # c-f, ! d^2-1, # d*e-b*f, ! e^2-1, # e*f-b*d, ! f^2-1}
+  Reducing Edge: [5,2]
+
+Vtx: 6 (5 facets/9 binomials/degree 2)
+{# a-f, ! b^2-1, # b*d-e*f, # b*f-d*e, # c-f, ! d^2-1, # d*f-b*e, ! e^2-1, ! f^2-1}
+  Reducing Edge: [6,1]
+
+Vtx: 7 (6 facets/10 binomials/degree 3)
+{# a-f, ! b^2-1, # b*d-e*f, # b*e*f-d, # c-f, ! d^2-1, # d*e-b*f, # d*f-b*e, ! e^2-1, ! f^2-1}
+  Reducing Edge: [7,6]
+
+Vtx: 8 (5 facets/9 binomials/degree 2)
+{# a-f, ! b^2-1, # b*d-e*f, # b*e-d*f, # c-f, ! d^2-1, # d*e-b*f, ! e^2-1, ! f^2-1}
+  Reducing Edge: [8,1]
+
+Vtx: 9 (6 facets/10 binomials/degree 3)
+{# a-c, ! b^2-1, # b*c-d*e, # b*d-c*e, # b*e-c*d, ! c^2-1, # c*d*e-b, ! d^2-1, ! e^2-1, # f-c}
+  Reducing Edge: [9,1]
+
+Vtx: 10 (5 facets/9 binomials/degree 2)
+{# a-c, ! b^2-1, # b*d-c*e, # b*e-c*d, ! c^2-1, ! d^2-1, # d*e-b*c, ! e^2-1, # f-c}
+  Reducing Edge: [10,9]
+
+Vtx: 11 (6 facets/10 binomials/degree 3)
+{# a-c, ! b^2-1, # b*c*d-e, # b*e-c*d, ! c^2-1, # c*e-b*d, ! d^2-1, # d*e-b*c, ! e^2-1, # f-c}
+  Reducing Edge: [11,10]
+
+Vtx: 12 (5 facets/9 binomials/degree 2)
+{# a-c, ! b^2-1, ! c^2-1, # c*d-b*e, # c*e-b*d, ! d^2-1, # d*e-b*c, ! e^2-1, # f-c}
+  Reducing Edge: [12,11]
+
+Vtx: 13 (5 facets/9 binomials/degree 2)
+{! a^2-1, # a*d-b*e, # a*e-b*d, ! b^2-1, # c-a, ! d^2-1, # d*e-a*b, ! e^2-1, # f-a}
+  Reducing Edge: [13,12]
+
+Vtx: 14 (6 facets/10 binomials/degree 3)
+{! a^2-1, # a*b*d-e, # a*e-b*d, ! b^2-1, # b*e-a*d, # c-a, ! d^2-1, # d*e-a*b, ! e^2-1, # f-a}
+  Reducing Edge: [14,13]
+
+Vtx: 15 (5 facets/9 binomials/degree 2)
+{! a^2-1, ! b^2-1, # b*d-a*e, # b*e-a*d, # c-a, ! d^2-1, # d*e-a*b, ! e^2-1, # f-a}
+  Reducing Edge: [15,14]
+
+Vtx: 16 (6 facets/10 binomials/degree 3)
+{! a^2-1, # a*b*e-d, # a*d-b*e, ! b^2-1, # b*d-a*e, # c-a, ! d^2-1, # d*e-a*b, ! e^2-1, # f-a}
+  Reducing Edge: [16,13]
+
+Vtx: 17 (6 facets/10 binomials/degree 3)
+{# a-c, ! b^2-1, # b*c*e-d, # b*d-c*e, ! c^2-1, # c*d-b*e, ! d^2-1, # d*e-b*c, ! e^2-1, # f-c}
+  Reducing Edge: [17,10]
+
+Vtx: 18 (5 facets/9 binomials/degree 2)
+{# a-c, ! b^2-1, # b*c-d*e, # b*e-c*d, ! c^2-1, # c*e-b*d, ! d^2-1, ! e^2-1, # f-c}
+  Reducing Edge: [18,9]
+
+Vtx: 19 (6 facets/10 binomials/degree 3)
+{# a-c, ! b^2-1, # b*c-d*e, # b*d*e-c, ! c^2-1, # c*d-b*e, # c*e-b*d, ! d^2-1, ! e^2-1, # f-c}
+  Reducing Edge: [19,18]
+
+Vtx: 20 (6 facets/10 binomials/degree 3)
+{! a^2-1, # a*b-d*e, # a*d-b*e, # a*e-b*d, ! b^2-1, # b*d*e-a, # c-a, ! d^2-1, ! e^2-1, # f-a}
+  Reducing Edge: [20,19]
+
+Vtx: 21 (5 facets/9 binomials/degree 2)
+{! a^2-1, # a*b-d*e, # a*e-b*d, ! b^2-1, # b*e-a*d, # c-a, ! d^2-1, ! e^2-1, # f-a}
+  Reducing Edge: [21,20]
+
+Vtx: 22 (6 facets/10 binomials/degree 3)
+{! a^2-1, # a*b-d*e, # a*d*e-b, ! b^2-1, # b*d-a*e, # b*e-a*d, # c-a, ! d^2-1, ! e^2-1, # f-a}
+  Reducing Edge: [22,21]
+
+Vtx: 23 (5 facets/9 binomials/degree 2)
+{! a^2-1, # a*b-d*e, # a*d-b*e, ! b^2-1, # b*d-a*e, # c-a, ! d^2-1, ! e^2-1, # f-a}
+  Reducing Edge: [23,20]
+
+Vtx: 24 (5 facets/9 binomials/degree 2)
+{# a-c, ! b^2-1, # b*c-d*e, # b*d-c*e, ! c^2-1, # c*d-b*e, ! d^2-1, ! e^2-1, # f-c}
+  Reducing Edge: [24,9]
+
+
+Number of Groebner bases found 24
+Number of edges of state polytope 60
+max caching depth      7
+max facet binomials    6
+min facet binomials    5
+max elts               10
+min elts               9
+max degree             3
+min degree             2
+tests/generator3: Reverse Search,   Caching,  LP only.
+time used (in seconds) 0.01
