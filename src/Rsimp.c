@@ -10,14 +10,17 @@
 */
 #include <stdio.h>
 #include <math.h>
-#define RSIMP_H 1
 #include "matrices.h"
 #include "Rsimp.h"
+
+#define RSIMP_H 1
 #define verbose 0
 #define zero_tol RS_zt
 
-int LP_MAX_N=0,LP_MAX_M=0;
-int LP_N=0, LP_M=0;
+int LP_MAX_N=0;
+int LP_MAX_M=0;
+int LP_N=0;
+int LP_M=0;
 double **LP_A=0;
 double *LP_B=0;
 double *LP_C=0;
@@ -63,7 +66,7 @@ void LP_free_space(){
     free_ivector(LP_NonBasis);
     free_vector(LP_t1);
     free_vector(LP_t2);
-    LP_M=LP_N=LP_MAX_M=LP_N=0;
+    LP_M=LP_MAX_M=LP_N=0;
     LP_A=LP_Q=LP_R=0;
     LP_B =LP_C=LP_X=LP_t1=LP_t2=0;
     LP_Basis=LP_NonBasis = 0;
@@ -169,7 +172,6 @@ int Rsimp(int m, int n, double **A, double *b, double *c,
     int i,j,k,l,q,qv;
     int max_steps=20;
     double r,a,at;
-    int ll;
     void GQR(int,int,double**,double**);
     max_steps=4*n;
 
