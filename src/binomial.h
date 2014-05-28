@@ -66,6 +66,7 @@ void binomial_flip(binomial b);
 int binomial_spair(binomial b1, binomial b2);
 int binomial_first_term_degree(binomial b);
 int binomial_degree_compatible(binomial b);
+void binomial_copy(binomial src,binomial dest);
 
 
 /*

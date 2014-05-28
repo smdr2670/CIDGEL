@@ -8,14 +8,20 @@
 ** copyright (c) 1999  Birk Huber
 **
 */
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 int eatwhite(FILE *is){
     int c;
     while ((c=fgetc(is))!=EOF){
-        if (c=='%')  while ((c=fgetc(is))!=EOF && c!='\n');
-        if (isspace(c)==0) break;
+        if (c=='%'){
+        	while ((c=fgetc(is))!=EOF && c!='\n');
+        }
+        if (isspace(c)==0){
+        	break;
+        }
     }
     ungetc(c,is);
+    return 0;
 }

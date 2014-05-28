@@ -9,8 +9,8 @@
 ** copyright (c) 1999  Birk Huber
 **
 */
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "utils.h"
 #include "gset.h"
 #include "matrices.h"
@@ -70,10 +70,7 @@ gset gset_code_ideal(int **M,int m, int n){
     int i;
     int j;
     int jk;
-    int crk;
     binomial b;
-    int **V;
-    int **S;
     int **new_imatrix();
     gset g;
 
@@ -85,32 +82,8 @@ gset gset_code_ideal(int **M,int m, int n){
     }
 
 
-    /* set weighting of A */
 
-    /*
-    for(i=0;i<n;i++){
-        ring_weight[i]=0;
-
-        for(j=0;j<m;j++){
-            ring_weight[i]+=M[j][i];
-        }
-    }
-    /*
-
-    /* reserve space for S and V */
-    S=new_imatrix(n,m);
-    V=new_imatrix(n,n);
-
-    /* copy transpose of M to S*/
-    for(i=0;i<n;i++){
-        for(j=0;j<m;j++) {
-            IMref(S,i,j)=IMref(M,j,i);
-        }
-    }
-    char debug_str[] = "c";
-
-    /* compute hermite normal form of M,S,V and corank of M*/
-    crk=ihermite(S,V,m,n);
+    
 
     /*
     fprintf(outfile,"Debug Matrixes, Corank: %d \n", crk);
@@ -190,10 +163,7 @@ gset gset_code_ideal(int **M,int m, int n){
 
     /* free space used by matrices */
     free_imatrix(M);
-    free_imatrix(S);
-    free_imatrix(V);
-
-
+ 
     /*
     fprintf(outfile,"\n\ndebug toric ideal before last buchberger: \n");
     gset_print(outfile, g);
