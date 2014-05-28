@@ -2,10 +2,11 @@
 ** exsearch.c                                 Birk Huber, 4/99 
 **   -- exhaustive search main loop.
 */
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "utils.h"
 #include "gset.h"
+#include "exsearch.h"
 
 
 
@@ -68,7 +69,12 @@ extern int stats_ecounter;
  * @return number of groebner bases found
  */
 int exsearch(gset g1){
-    gset G1,G2,todo=0,seen=0,tmp;
+    gset G1;
+    gset G2;
+    gset todo=0;
+    gset seen=0;
+    //gset tmp;
+
     binomial b=0,btmp;
     int counter=0;
     stats_ecounter=0;

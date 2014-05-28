@@ -7,15 +7,19 @@
 ** copyright (c) 1999  Birk Huber
 **
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<time.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 #include "utils.h"
 #include "gset.h"
 #include "matrices.h"
 #include "tigers.h"
+#include "exsearch.h"
+#include "Rsimp.h"
 
+#define _POSIX_C_SOURCE 1
 
 
 
@@ -37,15 +41,17 @@ static char *helpmsg[] = {
     "  or \n",
     "  B) An integer matrix A (defining I_A).\n",
     "     example:\n",
-    "     M: { 3 5 : 2 1 1 1 1 1 \n",
-    "                3 0 1 2 1 0 \n",
-    "                4 0 0 1 2 1}\n",
+    "     rows,columns and dimension\n ",
+    "     M: { 3 5 5 : 2 1 1 1 1 1 \n",
+    "                  3 0 1 2 1 0 \n",
+    "                  4 0 0 1 2 1}\n",
     " Note: Lines beginning with a % are comments and are ignored.\n",
     "       Comment lines should only occur at the beginning of the file.\n",
     "     : When binomials are printed out (and read in) they can be \n",
     "       preceeded by the characters !, or # \n",
     "       ! means the binomial is known not to be a facet.\n",
-    "       # means the binomial is known to be a facet.\n",
+    "       # means the binomial is known to be a facet but not degree compatible.\n",
+    "       $ means the binomial is known to be a facet and is degree compatible.\n",
     " \n",
     "Options:\n",
     "    -h            print this message\n"
@@ -56,7 +62,8 @@ static char *helpmsg[] = {
     "    -C            turn partial caching on   [done by default]\n",
     "    -c            turn partial caching off \n",
     "    -T            print edges of search tree \n",
-    "    -t            do not print edges of search tree [assumed by default]\n",  "    -L            print vertices by giving initial ideals\n",
+    "    -t            do not print edges of search tree [assumed by default]\n",  
+    "    -L            print vertices by giving initial ideals\n",
     "                     and printing facet biomials.\n",
     "    -l            print vertices as grobner bases   [done by default]\n",
     "    -F            Use only linear algebra when testing facets [default]\n",
@@ -74,7 +81,9 @@ exit(-1);
 }
 
 FILE *infile;
+FILE *matchfile;
 FILE *outfile;
+
 extern int rsearch_cache;
 extern int print_tree;
 extern int print_init;
@@ -87,6 +96,8 @@ extern int stats_maxdeg;
 extern int stats_ecounter;
 extern int stats_tdepth;
 extern int lptest;
+int match_fan;
+
 int root_only=FALSE;
 int compGB=FALSE;
 int use_exsearch=FALSE;
@@ -96,15 +107,27 @@ int Mf;
 
 #define MATFOUND 1
 #define GSETFOUND 2
-main(int argc, char **argv ){
+
+int main(int argc, char **argv ){
 
     infile=stdin;
     outfile=stdout;
 
-    char *c,cc, *prog=argv[0], *ifname=0, *ofname=0;
-    int tmp,acnt,stat=0,counter;
+    char *c;
+    char cc;
+    char *prog=argv[0];
+    char *ifname=0;
+    char *matchname=0;
+    char *ofname=0;
+    //int tmp,
+    int acnt;
+    int stat=0;
+    int counter;
     gset G1=0,gset_code_ideal();
+
     int **M=0,Mn,Mm,Mf;
+    int **M2=0,Mn2,Mm2,Mf2;
+    
     double tt;
 
     /* initialize parameters */
@@ -113,6 +136,7 @@ main(int argc, char **argv ){
     print_tree=FALSE;
     print_init=FALSE;
     degree_comp=FALSE;
+    match_fan = FALSE;
 
     /* parse command line */
     while (--argc > 0 && (*++argv)[0] == '-'){
@@ -135,6 +159,12 @@ main(int argc, char **argv ){
             case 'E': use_exsearch=FALSE;break; /*use reverse search to enumerate */
             case 'e': use_exsearch=TRUE; break; /*use exhaustive search */
             case 'd': degree_comp=TRUE;break;   /* calculate only degree compatible groebner bases */
+            case 'm': case 'M':
+                argc--;
+                match_fan = TRUE;
+                matchname=strdup(argv[++acnt]);/* scan matchfile name*/
+                fprintf(stderr,"using filename %s for match input",matchname);
+                break;
             case 'i': case 'I':
                 argc--;
                 ifname=strdup(argv[++acnt]); /* scan infile name */
@@ -163,6 +193,16 @@ main(int argc, char **argv ){
         fprintf(stderr," %s: couldn't open %s for input\n",prog,ifname);
         exit(1);
     }
+
+    /* open matchfile */
+    if(match_fan == TRUE){
+        if(matchname!=0 && (matchfile=fopen(matchname,"r"))==0){
+            fprintf(stderr,"%s: couldn't open %s for match input",prog,ifname);
+        }
+        exit(1);
+    }
+
+    /* open outfile */
     if (ofname!=0 && (outfile=fopen(ofname,"w"))==0){
         fprintf(stderr," %s: couldn't open %s for output\n",prog,ofname);
         exit(1);
@@ -221,6 +261,8 @@ main(int argc, char **argv ){
         fprintf(stderr,"     nor a matrix description of a toric ideal\n");
         exit(1);
     }
+
+
 
     /* ------------------------------------------------------------------------------------- */
 
@@ -365,7 +407,11 @@ main(int argc, char **argv ){
     }
     /* clean up */
     LP_free_space();
-    if (G1!=0) gset_free(G1);
+    if (G1!=0){
+        gset_free(G1);
+    }
+
+    return 0;
 }
 
 

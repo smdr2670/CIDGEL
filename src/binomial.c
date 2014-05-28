@@ -10,10 +10,10 @@
 **
 */
 #define BINOMIAL_H 1
-#include<stdio.h>
-#include<stdlib.h>
-#include"utils.h"
-#include"binomial.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "utils.h"
+#include "binomial.h"
 
 FILE *infile;
 FILE *outfile;
@@ -231,7 +231,7 @@ int monomial_equal(monomial m1, monomial m2){
  * @param m3 lcm monomial
  * @return
  */
-int monomial_lcm(monomial m1, monomial m2, monomial m3){
+void monomial_lcm(monomial m1, monomial m2, monomial m3){
     int i;
     for(i=0;i<ring_N;i++){
         if (m1[i]>=m2[i]){
@@ -353,7 +353,8 @@ int monomial_grlexcomp(monomial m1, monomial m2){
  */
 binomial binomial_new(){
     binomial m;
-    int i,*E=0,*E2=0;
+    int i;
+    //int *E=0,*E2=0;
 
     if ((m=(binomial)malloc(sizeof(struct bin_tag)))==0){
         fprintf(stderr,"binomial_new(): first malloc failed\n");
@@ -578,12 +579,7 @@ void reducetrail(binomial b1, binomial b2){
     }
 }
 
-/*
-** int binomial_compair(binomial b1,binomial b2):
-**     return TRUE if the lead term of b1 is lexicographically greater than 
-**     that of b2 or if they tie return true if the trail term b1 is greater
-**     or equal to that of b2 otherwise return false
-*/
+
 
 /**
  * @brief binomial_compair determines if the lead term of b1 is lexicographically greater than
@@ -643,6 +639,8 @@ int binomial_variable_position(binomial b){
             return i;
         }
     }
+
+    return -1;
 }
 
 /**

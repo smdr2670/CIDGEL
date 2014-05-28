@@ -212,8 +212,7 @@ binomial bmleadreduce(binomial m1, binomial B, binomial mlist){
                 return res;
             }
         }
-    }
-    else { /* case 2 -- our monomial is a multiple of some monomial*/
+    }else{ /* case 2 -- our monomial is a multiple of some monomial*/
         for(ptr=mlist;ptr!=0;ptr=ptr->next){
             if (monomial_divides(binomial_lead(ptr),binomial_lead(m1))==TRUE){
                 res=binomial_new();
@@ -225,6 +224,7 @@ binomial bmleadreduce(binomial m1, binomial B, binomial mlist){
         }
     }
     fprintf(stderr, "Warning BMreduce does not get to zero\n");
+    return(binomial_new());
 }
 
 
@@ -272,9 +272,15 @@ void remove_multiples(binomial S, binomial *L){
 ** 
 */
 void bmrgb(binomial B, binomial *ms){
-    int i,jk;
-    binomial DL,SL,tlist,S,tmp,ptr;
-    int szero;
+    //int i,jk;
+    binomial DL;
+    binomial SL;
+    binomial S;
+    binomial tmp;
+
+    //binomial tlist;
+    //binomial ptr;
+    //int szero;
 
     DL=*ms;
     SL=0;
@@ -312,7 +318,8 @@ void bmrgb(binomial B, binomial *ms){
 */
 gset gset_flip(gset g1, binomial b){
     binomial old=0,new=0,tmp,ptr,B,Bold;
-    gset gres=0, gtest=0;
+    gset gres=0;
+    //gset gtest=0;
 
     /* sainity check -- remove eventually*/
 #ifdef GTEST
@@ -511,7 +518,7 @@ void gset_rgb(gset g, int (*comp)(monomial,monomial)){
 void process_pair(binomial b1,binomial b2,binomial DL,binomial SL,binomial *NL,
                   int (*comp)(monomial,monomial)){
     binomial S,ptr,find_divisor(binomial,binomial);
-    int i,tmp;
+    //int i,tmp;
 
     /* test is lead terms are rel prime [buchberger's first criterion]*/
     if (monomial_rel_prime(binomial_lead(b1),binomial_lead(b2))==TRUE)return;
@@ -656,7 +663,7 @@ int lp_isfacet(gset g,binomial b){
     binomial ptr;
     int D=ring_N,M=0;
     int idx=0,i;
-    double dtmp0,dtmp;
+    //double dtmp0,dtmp;
 
     /* need cheeper way to determine the size of g */
     for(ptr=gset_first(g);ptr!=0;ptr=binomial_next(ptr)){
@@ -779,6 +786,7 @@ int countDC(gset g1){
 
     return d;
 }
+
 
 
 

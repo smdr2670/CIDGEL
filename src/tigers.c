@@ -7,8 +7,8 @@
 ** copyright (c) 1999  Birk Huber
 **
 */
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "utils.h"
 #include "gset.h"
 #include "tigers.h"
@@ -33,6 +33,7 @@ int stats_ecounter=0;
 
 #define max(a,b) (((a)>(b))?(a):(b))
 #define min(a,b) (((a)<(b))?(a):(b))
+
 
 
 /**

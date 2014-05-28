@@ -31,6 +31,8 @@ int monomial_equal(monomial m1, monomial m2);
 int monomial_lexcomp(monomial m1, monomial m2);
 int monomial_rlexcomp(monomial m1, monomial m2);
 int monomial_grlexcomp(monomial m1, monomial m2);
+int monomial_rel_prime(monomial m1, monomial m2);
+void print_monomial(FILE *of, int *exps);
 
 typedef struct bin_tag *binomial;
 struct bin_tag{
@@ -67,6 +69,11 @@ int binomial_spair(binomial b1, binomial b2);
 int binomial_first_term_degree(binomial b);
 int binomial_degree_compatible(binomial b);
 void binomial_copy(binomial src,binomial dest);
+int binomial_variable_position(binomial b);
+void reducetrail(binomial b1, binomial b2);
+void binomial_bumpto(binomial b1, binomial b2);
+int binomial_compair(binomial b1,binomial b2);
+int ring_read(FILE *infile);
 
 
 /*
