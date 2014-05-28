@@ -284,7 +284,7 @@ int main(int argc, char **argv ){
         print_imatrix(outfile, "",M, Mm, Mn);
         G1=gset_code_ideal(M,Mm,Mn);
         
-        // TODO: Finish match-function
+        // TODO: Finish match 
         if(match_fan == TRUE){
             fprintf(outfile, "\n Using following Matrix to match :%d \n" , Mf);
             print_imatrix(outfile, "",M2,Mm2,Mn2);
