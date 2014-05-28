@@ -163,7 +163,7 @@ int main(int argc, char **argv ){
                 argc--;
                 match_fan = TRUE;
                 matchname=strdup(argv[++acnt]);/* scan matchfile name*/
-                fprintf(stderr,"using filename %s for match input",matchname);
+                fprintf(stderr,"using filename %s for match input\n",matchname);
                 break;
             case 'i': case 'I':
                 argc--;
@@ -197,9 +197,10 @@ int main(int argc, char **argv ){
     /* open matchfile */
     if(match_fan == TRUE){
         if(matchname!=0 && (matchfile=fopen(matchname,"r"))==0){
-            fprintf(stderr,"%s: couldn't open %s for match input",prog,ifname);
+            fprintf(stderr,"%s: couldn't open %s for match input\n",prog,matchname);
+            exit(1);
         }
-        exit(1);
+        
     }
 
     /* open outfile */
@@ -236,9 +237,7 @@ int main(int argc, char **argv ){
             exit(1);
         }
         stat=GSETFOUND;
-    }
-    /* scan the matrix */
-    else if (cc=='M'){
+    }else if (cc=='M'){ /* scan the matrix */
 
         while((cc=getc(infile))!=':');
         if ((M=imatrix_read(infile,&Mm,&Mn,&Mf))==0){
@@ -255,8 +254,21 @@ int main(int argc, char **argv ){
             exit(1);
         }
         stat=MATFOUND;
-    }
-    else {
+
+        if(match_fan == TRUE){
+            while((cc=getc(matchfile))!=':');
+            if( (M2=imatrix_read(matchfile,&Mm2,&Mn2,&Mf2)) == 0){
+                fprintf(stderr,"%s: imatrix_read() failed\n",prog);
+                exit(1);
+            }
+
+            if(code_dim != Mf || ring_N != Mn){
+                fprintf(stderr,"%s: Code Dimension and ring dimension must agree in order to match 2 codes!\n",prog);
+                exit(1);
+            }
+
+        }
+    } else {
         fprintf(stderr,"%s,: Input files contains neither a generating set\n",prog);
         fprintf(stderr,"     nor a matrix description of a toric ideal\n");
         exit(1);
@@ -271,11 +283,17 @@ int main(int argc, char **argv ){
         fprintf(outfile, "\nUsing following Matrix with dimension :%d \n" , Mf);
         print_imatrix(outfile, "",M, Mm, Mn);
         G1=gset_code_ideal(M,Mm,Mn);
+        
+        // TODO: Finish match-function
+        if(match_fan == TRUE){
+            fprintf(outfile, "\n Using following Matrix to match :%d \n" , Mf);
+            print_imatrix(outfile, "",M2,Mm2,Mn2);
+        }
+
     }else {
         if (compGB==TRUE){
             gset_rgb(G1,monomial_grlexcomp);
-        }
-        else {
+        } else {
             /* could put checks to make sure input is toric rgb */
             /* then use grobner walk to get to first rgb */
         }
