@@ -376,7 +376,13 @@ int main(int argc, char **argv ){
                 break;
             }
             fprintf(outfile,"time used (in seconds) %4.2lf\n",tt);
+
+            if(match_fan == TRUE){
+                counter = rsearch(G2,2);
+            }
             return 0;
+
+
         }else {
             fprintf(outfile,"\nEnumerating Groebner bases\n");
             fprintf(outfile,"using exhaustive searching");
