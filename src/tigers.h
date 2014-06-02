@@ -9,5 +9,5 @@
  */
 
 void vertex_print(gset g1);
-int rsearch(gset g1);
+int rsearch(gset g1,int number);
 #endif // TIGERS_H

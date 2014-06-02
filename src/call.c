@@ -96,7 +96,8 @@ extern int stats_maxdeg;
 extern int stats_ecounter;
 extern int stats_tdepth;
 extern int lptest;
-int match_fan;
+
+extern int match_fan;
 
 int root_only=FALSE;
 int compGB=FALSE;
@@ -124,6 +125,7 @@ int main(int argc, char **argv ){
     int stat=0;
     int counter;
     gset G1=0,gset_code_ideal();
+    gset G2=0;
 
     int **M=0,Mn,Mm,Mf;
     int **M2=0,Mn2,Mm2,Mf2;
@@ -288,6 +290,7 @@ int main(int argc, char **argv ){
         if(match_fan == TRUE){
             fprintf(outfile, "\n Using following Matrix to match :%d \n" , Mf);
             print_imatrix(outfile, "",M2,Mm2,Mn2);
+            G2=gset_code_ideal(M2,Mm2,Mn2);
         }
 
     }else {
@@ -338,7 +341,7 @@ int main(int argc, char **argv ){
             }
 
             tt=clock();
-            counter=rsearch(G1);
+            counter=rsearch(G1,1);
 
             tt=(clock()-tt)/CLOCKS_PER_SEC;
             fprintf(outfile,"\n");
@@ -374,8 +377,7 @@ int main(int argc, char **argv ){
             }
             fprintf(outfile,"time used (in seconds) %4.2lf\n",tt);
             return 0;
-        }
-        else {
+        }else {
             fprintf(outfile,"\nEnumerating Groebner bases\n");
             fprintf(outfile,"using exhaustive searching");
             if (ifname!=0) fprintf(outfile,"taking input from %s\n",ifname);

@@ -12,6 +12,8 @@
 #include "utils.h"
 #include "gset.h"
 #include "tigers.h"
+#include "match.h"
+
 int rsearch_cache=TRUE;
 int degree_comp=FALSE;
 
@@ -31,8 +33,13 @@ int stats_maxdeg=0;
 int stats_tdepth=0;
 int stats_ecounter=0;
 
+int match_fan = 0;
+
 #define max(a,b) (((a)>(b))?(a):(b))
 #define min(a,b) (((a)<(b))?(a):(b))
+
+struct node* list = NULL;
+struct node* list2 = NULL;
 
 
 
@@ -95,14 +102,18 @@ int flip_condition(binomial b){
 }
 
 
-int rsearch(gset g1){
+int rsearch(gset g1, int number){
 
-    gset G1,G2=0;
-    binomial b=0,btmp;
+    gset G1=0;
+    gset G2=0;
+    binomial b=0;
+    binomial btmp;
     int counter=0,done=FALSE, depth=0;
 
     stats_tdepth=0;
     stats_ecounter=0;
+
+    struct node *new_node;
 
     /* make copy of first grobner basis */
     G1=gset_new();
@@ -129,14 +140,31 @@ int rsearch(gset g1){
 
     gset_id(G1)=++counter;
 
-    vertex_print(G1);
 
+    vertex_print(G1);
+    if(match_fan == TRUE){
+        new_node=newNode(gset_id(G1),gset_nfacets(G1),gset_nelts(G1),gset_deg(G1));
+        if(number == 1){
+            sortedInsert(&list, new_node);   
+        }else{
+            sortedInsert(&list2, new_node);
+        }
+    }
 
 
     /* exits directly if Groebner Basis is the only degree compatible */
     if(gset_only_degreecompatible(G1)){
         fprintf(outfile, "The only degree compatible Groebner Basis found!");
         vertex_print(G1);
+
+        if(match_fan == TRUE){
+            new_node=newNode(gset_id(G1),gset_nfacets(G1),gset_nelts(G1),gset_deg(G1));
+            if(number == 1){
+                sortedInsert(&list, new_node);   
+            }else{
+                sortedInsert(&list2, new_node);
+            }
+        }
         gset_free(G1);
         return counter;
     }
@@ -172,6 +200,15 @@ int rsearch(gset g1){
                     gset_setfacets(G1);
                     gset_id(G1)=++counter;
                     vertex_print(G1);
+
+                    if(match_fan == TRUE){
+                        new_node=newNode(gset_id(G1),gset_nfacets(G1),gset_nelts(G1),gset_deg(G1));
+                        if(number == 1){
+                            sortedInsert(&list, new_node);   
+                        }else{
+                            sortedInsert(&list2, new_node);
+                        }
+                    }
                 }
                 else {
                     gset_free(G2);
@@ -205,6 +242,15 @@ int rsearch(gset g1){
         }
     }
     gset_free(G1);
+
+    if(match_fan == TRUE && number == 2){
+
+        if(0==match(&list,&list2)){
+           fprintf(outfile,"lists are equal\n");
+         }else{
+           fprintf(outfile,"lists are NOT equal\n");
+         }
+    }  
     return counter;
 }
 
