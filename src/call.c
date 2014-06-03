@@ -73,7 +73,7 @@ static char *helpmsg[] = {
     "    -E            use reverse search                   [default]\n",
     "    -d            degree compatible Groebner bases only         \n",
     "    -n            do not print vertices or edges                \n",
-    "    -p            calculate Groebner fans of punctured codes    \n";
+    "    -p            calculate Groebner fans of punctured codes    \n",
     NULL
 };
 char **p=helpmsg;
@@ -102,7 +102,7 @@ extern int lptest;
 
 extern int match_fan;
 extern int no_print;
-extern int punctured_code;
+ int punctured_code;
 
 int root_only=FALSE;
 int compGB=FALSE;
@@ -145,6 +145,7 @@ int main(int argc, char **argv ){
     degree_comp=FALSE;
     match_fan = FALSE;
     no_print = FALSE;
+    punctured_code = FALSE;
 
     /* parse command line */
     while (--argc > 0 && (*++argv)[0] == '-'){
@@ -168,7 +169,7 @@ int main(int argc, char **argv ){
             case 'e': use_exsearch=TRUE; break; /*use exhaustive search */
             case 'd': degree_comp=TRUE;break;   /* calculate only degree compatible groebner bases */
             case 'n': no_print=TRUE;break;      /* do not print vertices or edges */
-            case 'p': punctured_code;break;     /* calculate Groebner fan of punctured codes */
+            case 'p': punctured_code=TRUE;break;     /* calculate Groebner fan of punctured codes */
             case 'm': case 'M':
                 argc--;
                 match_fan = TRUE;
@@ -349,21 +350,37 @@ int main(int argc, char **argv ){
             }
 
             tt=clock();
-            counter=rsearch(G1,1);
 
-            
-            fprintf(outfile,"\n");
-            fprintf(outfile,"Number of Groebner bases found %d\n",counter);
-            fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
+            if(punctured_code == TRUE){
+                gset Gtmp = gset_new();
+                gset_copy(G1,Gtmp);
+                gset_print(outfile,Gtmp);
+                fprintf(outfile , "\ndebug\n");
+                gset_puncture(Gtmp,1);
+                gset_print(outfile,Gtmp);
+                fprintf(outfile , "\ndebug\n");
+                //gset_autoreduce(Gtmp);
+                gset_print(outfile,Gtmp);
+                 gset_rgb(Gtmp,monomial_grlexcomp);
+                counter = rsearch(Gtmp,1);
 
-            if(no_print == FALSE){
-                fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
-                fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
-                fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
-                fprintf(outfile,"max binomials in GB    %d\n",stats_maxelts);
-                fprintf(outfile,"min binomials in GB    %d\n",stats_minelts);
-                fprintf(outfile,"max degree             %d\n",stats_maxdeg);
-                fprintf(outfile,"min degree             %d\n",stats_mindeg);
+
+            }else{
+                counter=rsearch(G1,1);
+                
+                fprintf(outfile,"\n");
+                fprintf(outfile,"Number of Groebner bases found %d\n",counter);
+                fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
+
+                if(no_print == FALSE){
+                    fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
+                    fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
+                    fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
+                    fprintf(outfile,"max binomials in GB    %d\n",stats_maxelts);
+                    fprintf(outfile,"min binomials in GB    %d\n",stats_minelts);
+                    fprintf(outfile,"max degree             %d\n",stats_maxdeg);
+                    fprintf(outfile,"min degree             %d\n",stats_mindeg);
+                }
             }
 
             if (ifname!=0){

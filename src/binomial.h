@@ -73,6 +73,7 @@ int binomial_variable_position(binomial b);
 void reducetrail(binomial b1, binomial b2);
 void binomial_bumpto(binomial b1, binomial b2);
 int binomial_compair(binomial b1,binomial b2);
+void binomial_puncture(binomial b,int position);
 int ring_read(FILE *infile);
 
 

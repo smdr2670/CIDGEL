@@ -55,7 +55,9 @@ void gset_add_nonprime(gset g);
 int gset_only_degreecompatible(gset g);
 int countDC(gset g1);
 int lp_isfacet(gset g,binomial b);
-void vertex_print(gset g1);
+
+void gset_copy(gset G1, gset G2);
+void gset_puncture(gset G1, int pos);
 
 
 

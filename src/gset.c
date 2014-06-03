@@ -787,10 +787,27 @@ int countDC(gset g1){
     return d;
 }
 
-gset punctureGB(gset G1, int pos){
-    binomial_ptr;
-    for(ptr = gset_first(g1); ptr!=0 ; ptr=binomial_next(ptr) ){
+/**
+*
+*
+*
+*/
+void gset_copy(gset src, gset dest){
+    binomial ptr;
+    for(ptr = gset_first(src); ptr!=0; ptr = binomial_next(ptr)){
+        binomial ptr2 = binomial_new();
+        binomial_copy(ptr,ptr2);
+        gset_insert(dest,ptr2);
+        
+    }
+    //gset_print(stderr,dest);
 
+}
+
+void gset_puncture(gset G1, int pos){
+    binomial ptr;
+    for(ptr = gset_first(G1); ptr!=0 ; ptr=binomial_next(ptr) ){
+        binomial_puncture(ptr,pos);
     }
 }
 

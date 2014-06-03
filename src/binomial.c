@@ -666,6 +666,17 @@ int binomial_degree_compatible(binomial b){
     }
 }
 
+/**
+*
+*
+*
+*/
+void binomial_puncture(binomial b,int position){
+    *(binomial_lead(b)+position) = 0;
+    *(binomial_trail(b)+position) = 0;
+
+}
+
 
 
 
