@@ -356,13 +356,20 @@ int main(int argc, char **argv ){
                 gset_copy(G1,Gtmp);
                 gset_print(outfile,Gtmp);
                 fprintf(outfile , "\ndebug\n");
-                gset_puncture(Gtmp,1);
+                gset_puncture(Gtmp,3);
+                fprintf(outfile , "\ndebug after puncture\n");
                 gset_print(outfile,Gtmp);
+                fprintf(outfile , "\ndebug after print\n");
+                gset_eliminatezero(Gtmp);
                 fprintf(outfile , "\ndebug\n");
                 //gset_autoreduce(Gtmp);
                 gset_print(outfile,Gtmp);
-                 gset_rgb(Gtmp,monomial_grlexcomp);
+
+                fprintf(outfile, "\n");
+                
+                gset_rgb(Gtmp,monomial_grlexcomp);
                 counter = rsearch(Gtmp,1);
+                
 
 
             }else{

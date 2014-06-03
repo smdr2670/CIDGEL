@@ -51,6 +51,30 @@ void gset_free(gset g){
     free((void *)g);
 }
 
+void gset_eliminatezero(gset g){
+    binomial ptr;
+    for(ptr = gset_first(g); ptr != 0 ; ptr = binomial_next(ptr) ){
+        if( monomial_stddegree(binomial_lead(ptr)) == 0 && monomial_stddegree(binomial_trail(ptr)) == 0){
+            gset_delete_binomial(g,ptr);
+        }
+    }
+}
+
+void gset_delete_binomial(gset g, binomial b){
+    binomial tmp;
+    binomial prev;
+
+    tmp = gset_first(g);
+    for(prev = gset_first(g); prev!=0 ; prev= binomial_next(prev)){
+        tmp = binomial_next(prev);
+        if( 0 == binomial_equal(b,tmp) ){
+            binomial_next(prev)=binomial_next(tmp);
+            binomial_free(tmp);
+            return;
+        }
+    }
+}
+
 
 
 /**
@@ -166,6 +190,9 @@ void gset_insert(gset g, binomial b){
         }
     }
 }
+
+
+
 
 
 /**

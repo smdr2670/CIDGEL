@@ -677,6 +677,16 @@ void binomial_puncture(binomial b,int position){
 
 }
 
+int binomial_equal(binomial b1, binomial b2){
+    int i;
+    for(int i = 0; i<ring_N;i++){
+        if( *(binomial_lead(b1)+i) != *(binomial_lead(b2)+i) || *(binomial_trail(b1)+i) != *(binomial_trail(b2)+i)){
+            return (-1);
+        }
+    }
+    return 0;
+}
+
 
 
 

@@ -58,6 +58,8 @@ int lp_isfacet(gset g,binomial b);
 
 void gset_copy(gset G1, gset G2);
 void gset_puncture(gset G1, int pos);
+void gset_delete_binomial(gset g, binomial b);
+void gset_eliminatezero(gset g);
 
 
 
