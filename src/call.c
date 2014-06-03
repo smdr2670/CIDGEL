@@ -353,22 +353,51 @@ int main(int argc, char **argv ){
 
             if(punctured_code == TRUE){
                 gset Gtmp = gset_new();
-                gset_copy(G1,Gtmp);
-                gset_print(outfile,Gtmp);
-                fprintf(outfile , "\ndebug\n");
-                gset_puncture(Gtmp,3);
-                fprintf(outfile , "\ndebug after puncture\n");
-                gset_print(outfile,Gtmp);
-                fprintf(outfile , "\ndebug after print\n");
-                gset_eliminatezero(Gtmp);
-                fprintf(outfile , "\ndebug\n");
-                //gset_autoreduce(Gtmp);
-                gset_print(outfile,Gtmp);
+                int k;
 
-                fprintf(outfile, "\n");
-                
-                gset_rgb(Gtmp,monomial_grlexcomp);
-                counter = rsearch(Gtmp,1);
+                for(k=0;k<ring_N;k++){
+                    Gtmp = gset_new();
+                    gset_copy(G1,Gtmp);
+
+                    //gset_print(outfile,Gtmp);
+                    //fprintf(outfile , "\ndebug\n");
+
+                    gset_puncture(Gtmp,k);
+
+                    /*
+                    fprintf(outfile , "\ndebug after puncture\n");
+                    gset_print(outfile,Gtmp);
+                    fprintf(outfile , "\ndebug after print\n");
+                    */
+                    gset_eliminatezero(Gtmp);
+                    /*
+                    fprintf(outfile , "\ndebug\n");
+
+                    gset_print(outfile,Gtmp);
+
+                    fprintf(outfile, "\n");
+                    */
+                    
+                    gset_rgb(Gtmp,monomial_grlexcomp);
+                    counter = rsearch(Gtmp,1);
+                    fprintf(outfile,"\n");
+                    fprintf(outfile,"Number of Groebner bases found %d\n",counter);
+                    fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
+
+                    if(no_print == FALSE){
+                        fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
+                        fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
+                        fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
+                        fprintf(outfile,"max binomials in GB    %d\n",stats_maxelts);
+                        fprintf(outfile,"min binomials in GB    %d\n",stats_minelts);
+                        fprintf(outfile,"max degree             %d\n",stats_maxdeg);
+                        fprintf(outfile,"min degree             %d\n",stats_mindeg);
+                    }
+                    fprintf(outfile,"\n-----------------------------------------------------\n");
+                    gset_free(Gtmp);
+
+
+                }
                 
 
 

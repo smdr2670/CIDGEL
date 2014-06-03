@@ -158,8 +158,8 @@ int rsearch(gset g1, int number){
 
 
     /* exits directly if Groebner Basis is the only degree compatible */
-    if(gset_only_degreecompatible(G1)){
-        fprintf(outfile, "The only degree compatible Groebner Basis found!");
+    if(gset_only_degreecompatible(G1) && degree_comp == TRUE){
+        fprintf(outfile, "\nThe only degree compatible Groebner Basis found!\n");
         vertex_print(G1);
 
         if(match_fan == TRUE){
