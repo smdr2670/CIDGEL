@@ -30,7 +30,7 @@ usage(prog)
 char *prog;
 {
 static char *helpmsg[] = {
-    "Function: Enumerate all Groebner bases of a toric ideal I_A.",
+    "Function: Enumerate all or d.c Groebner bases of a code ideal I_A.",
     "          \n",
     "Input: \n ",
     "  A) A ring description (for now just a number of variables)\n",
@@ -57,6 +57,7 @@ static char *helpmsg[] = {
     "    -h            print this message\n"
     "    -i (filename) set file name for input  [default: stdin]\n",
     "    -o (filename) set file name for output [default: stdout]\n",
+    "    -m (filename) set file name for code-matching \n",
     "    -R            only compute root of tree \n",
     "    -r            compute all grobner bases [done by default]\n",
     "    -C            turn partial caching on   [done by default]\n",
@@ -71,6 +72,8 @@ static char *helpmsg[] = {
     "    -e            use exhaustive search instead of reverse search\n",
     "    -E            use reverse search                   [default]\n",
     "    -d            degree compatible Groebner bases only         \n",
+    "    -n            do not print vertices or edges                \n",
+    "    -p            calculate Groebner fans of punctured codes    \n";
     NULL
 };
 char **p=helpmsg;
@@ -98,6 +101,8 @@ extern int stats_tdepth;
 extern int lptest;
 
 extern int match_fan;
+extern int no_print;
+extern int punctured_code;
 
 int root_only=FALSE;
 int compGB=FALSE;
@@ -139,6 +144,7 @@ int main(int argc, char **argv ){
     print_init=FALSE;
     degree_comp=FALSE;
     match_fan = FALSE;
+    no_print = FALSE;
 
     /* parse command line */
     while (--argc > 0 && (*++argv)[0] == '-'){
@@ -161,6 +167,8 @@ int main(int argc, char **argv ){
             case 'E': use_exsearch=FALSE;break; /*use reverse search to enumerate */
             case 'e': use_exsearch=TRUE; break; /*use exhaustive search */
             case 'd': degree_comp=TRUE;break;   /* calculate only degree compatible groebner bases */
+            case 'n': no_print=TRUE;break;      /* do not print vertices or edges */
+            case 'p': punctured_code;break;     /* calculate Groebner fan of punctured codes */
             case 'm': case 'M':
                 argc--;
                 match_fan = TRUE;
@@ -264,7 +272,7 @@ int main(int argc, char **argv ){
                 exit(1);
             }
 
-            if(code_dim != Mf || ring_N != Mn){
+            if(code_dim != Mf2 || ring_N != Mn2){
                 fprintf(stderr,"%s: Code Dimension and ring dimension must agree in order to match 2 codes!\n",prog);
                 exit(1);
             }
@@ -286,7 +294,7 @@ int main(int argc, char **argv ){
         print_imatrix(outfile, "",M, Mm, Mn);
         G1=gset_code_ideal(M,Mm,Mn);
         
-        // TODO: Finish match 
+        // Read the second matrix
         if(match_fan == TRUE){
             fprintf(outfile, "\n Using following Matrix to match :%d \n" , Mf);
             print_imatrix(outfile, "",M2,Mm2,Mn2);
@@ -343,17 +351,20 @@ int main(int argc, char **argv ){
             tt=clock();
             counter=rsearch(G1,1);
 
-            tt=(clock()-tt)/CLOCKS_PER_SEC;
+            
             fprintf(outfile,"\n");
             fprintf(outfile,"Number of Groebner bases found %d\n",counter);
             fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
-            fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
-            fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
-            fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
-            fprintf(outfile,"max elts               %d\n",stats_maxelts);
-            fprintf(outfile,"min elts               %d\n",stats_minelts);
-            fprintf(outfile,"max degree             %d\n",stats_maxdeg);
-            fprintf(outfile,"min degree             %d\n",stats_mindeg);
+
+            if(no_print == FALSE){
+                fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
+                fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
+                fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
+                fprintf(outfile,"max binomials in GB    %d\n",stats_maxelts);
+                fprintf(outfile,"min binomials in GB    %d\n",stats_minelts);
+                fprintf(outfile,"max degree             %d\n",stats_maxdeg);
+                fprintf(outfile,"min degree             %d\n",stats_mindeg);
+            }
 
             if (ifname!=0){
                 fprintf(outfile,"%s: ",ifname);
@@ -375,11 +386,14 @@ int main(int argc, char **argv ){
                 fprintf(outfile,"  A-pretest,\n");
                 break;
             }
-            fprintf(outfile,"time used (in seconds) %4.2lf\n",tt);
+            
 
             if(match_fan == TRUE){
                 counter = rsearch(G2,2);
             }
+
+            tt=(clock()-tt)/CLOCKS_PER_SEC;
+            fprintf(outfile,"time used (in seconds) %4.2lf\n",tt);
             return 0;
 
 

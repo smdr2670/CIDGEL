@@ -753,13 +753,9 @@ void gset_add_nonprime(gset g){
 }
 
 /**
- * Determines whether a Groebner Basis is the only degree compatible Groebner Basis
- * or not.
- *
- * Example: In the 3 dimensional vector space, the facet of the Groebner Fan is the only
- *          one which contains the all-one vector.
- *
- * @brief gset_only_degreecompatible
+ * @brief gset_only_degreecompatible Determines whether a Groebner Basis is the only degree compatible Groebner Basis or not.
+ * @detail Example: In the 3 dimensional vector space, the facet of the Groebner Fan is the only
+ *                  one which contains the all-one vector.     
  * @param g
  * @return
  */
@@ -775,6 +771,10 @@ int gset_only_degreecompatible(gset g){
 
 }
 
+/**
+* @brief countDC
+*
+*/
 int countDC(gset g1){
     int d=0;
     binomial ptr;
@@ -785,6 +785,13 @@ int countDC(gset g1){
     }
 
     return d;
+}
+
+gset punctureGB(gset G1, int pos){
+    binomial_ptr;
+    for(ptr = gset_first(g1); ptr!=0 ; ptr=binomial_next(ptr) ){
+
+    }
 }
 
 

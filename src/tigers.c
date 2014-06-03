@@ -34,6 +34,7 @@ int stats_tdepth=0;
 int stats_ecounter=0;
 
 int match_fan = 0;
+int no_print = 0;
 
 #define max(a,b) (((a)>(b))?(a):(b))
 #define min(a,b) (((a)<(b))?(a):(b))
@@ -48,6 +49,10 @@ struct node* list2 = NULL;
  * @param g1 given groebner base
  */
 void vertex_print(gset g1){
+
+    if(no_print == TRUE){
+        return;
+    }
 
     stats_maxfacets=max(gset_nfacets(g1),stats_maxfacets);
     stats_maxelts=max(gset_nelts(g1),stats_maxelts);
@@ -246,9 +251,9 @@ int rsearch(gset g1, int number){
     if(match_fan == TRUE && number == 2){
 
         if(0==match(&list,&list2)){
-           fprintf(outfile,"lists are equal\n");
+           fprintf(outfile,"Groebnerfan of the Codes are compatible\n");
          }else{
-           fprintf(outfile,"lists are NOT equal\n");
+           fprintf(outfile,"Groebnerfan of the Codes are NOT compatible\n");
          }
     }  
     return counter;

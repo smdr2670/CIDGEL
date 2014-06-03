@@ -133,8 +133,8 @@ gset gset_code_ideal(int **M,int m, int n){
     gset_add_nonprime(g);
 
 
-    fprintf(outfile,"debug of Gset \n ");
-    gset_print(outfile, g);
+    //fprintf(outfile,"debug of Gset \n ");
+    //gset_print(outfile, g);
 
 
     /* compute grobner basis wrt to this grade lex term order */
