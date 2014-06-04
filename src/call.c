@@ -358,26 +358,9 @@ int main(int argc, char **argv ){
                 for(k=0;k<ring_N;k++){
                     Gtmp = gset_new();
                     gset_copy(G1,Gtmp);
-
-                    //gset_print(outfile,Gtmp);
-                    //fprintf(outfile , "\ndebug\n");
-
                     gset_puncture(Gtmp,k);
-
-                    /*
-                    fprintf(outfile , "\ndebug after puncture\n");
-                    gset_print(outfile,Gtmp);
-                    fprintf(outfile , "\ndebug after print\n");
-                    */
                     gset_eliminatezero(Gtmp);
-                    /*
-                    fprintf(outfile , "\ndebug\n");
 
-                    gset_print(outfile,Gtmp);
-
-                    fprintf(outfile, "\n");
-                    */
-                    
                     gset_rgb(Gtmp,monomial_grlexcomp);
                     counter = rsearch(Gtmp,1);
                     fprintf(outfile,"\n");
@@ -398,9 +381,6 @@ int main(int argc, char **argv ){
 
 
                 }
-                
-
-
             }else{
                 counter=rsearch(G1,1);
                 
@@ -451,10 +431,14 @@ int main(int argc, char **argv ){
 
 
         }else {
+            // Using exhaustive search
             fprintf(outfile,"\nEnumerating Groebner bases\n");
             fprintf(outfile,"using exhaustive searching");
-            if (ifname!=0) fprintf(outfile,"taking input from %s\n",ifname);
-            else fprintf(outfile,"\n");
+            if (ifname!=0){
+                fprintf(outfile,"taking input from %s\n",ifname);
+            }else{
+                fprintf(outfile,"\n");
+            }
             switch(lptest){
             case 1:
                 fprintf(outfile,"   using only linear programing to test facets\n");
@@ -468,17 +452,51 @@ int main(int argc, char **argv ){
                 break;
             }
             tt=clock();
-            counter=exsearch(G1);
-            tt=(clock()-tt)/CLOCKS_PER_SEC;
-            fprintf(outfile,"\n");
-            fprintf(outfile,"Number of Groebner bases found %d\n",counter);
-            fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
-            fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
-            fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
-            fprintf(outfile,"max elts               %d\n",stats_maxelts);
-            fprintf(outfile,"min elts               %d\n",stats_minelts);
-            fprintf(outfile,"max degree             %d\n",stats_maxdeg);
-            fprintf(outfile,"min degree             %d\n",stats_mindeg);
+
+             if(punctured_code == TRUE){
+                gset Gtmp = gset_new();
+                int k;
+
+                for(k=0;k<ring_N;k++){
+                    Gtmp = gset_new();
+                    gset_copy(G1,Gtmp);
+                    gset_puncture(Gtmp,k);
+                    gset_eliminatezero(Gtmp);
+
+                    gset_rgb(Gtmp,monomial_grlexcomp);
+                    counter = rsearch(Gtmp,1);
+                    fprintf(outfile,"\n");
+                    fprintf(outfile,"Number of Groebner bases found %d\n",counter);
+                    fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
+
+                    if(no_print == FALSE){
+                        fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
+                        fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
+                        fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
+                        fprintf(outfile,"max binomials in GB    %d\n",stats_maxelts);
+                        fprintf(outfile,"min binomials in GB    %d\n",stats_minelts);
+                        fprintf(outfile,"max degree             %d\n",stats_maxdeg);
+                        fprintf(outfile,"min degree             %d\n",stats_mindeg);
+                    }
+                    fprintf(outfile,"\n-----------------------------------------------------\n");
+                    gset_free(Gtmp);
+
+                }
+
+
+            }else{
+                counter=exsearch(G1);
+                tt=(clock()-tt)/CLOCKS_PER_SEC;
+                fprintf(outfile,"\n");
+                fprintf(outfile,"Number of Groebner bases found %d\n",counter);
+                fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
+                fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
+                fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
+                fprintf(outfile,"max elts               %d\n",stats_maxelts);
+                fprintf(outfile,"min elts               %d\n",stats_minelts);
+                fprintf(outfile,"max degree             %d\n",stats_maxdeg);
+                fprintf(outfile,"min degree             %d\n",stats_mindeg);
+            }
             if (ifname!=0) fprintf(outfile,"%s: ",ifname);
             fprintf(outfile,"Exhaustive search, ");
             switch(lptest){
@@ -494,6 +512,8 @@ int main(int argc, char **argv ){
             default:
                 fprintf(outfile,"\n");
             }
+
+            tt=(clock()-tt)/CLOCKS_PER_SEC;
             fprintf(outfile,"time used (in seconds) %4.2lf\n",tt);
             return 0;
         }

@@ -251,9 +251,9 @@ int rsearch(gset g1, int number){
     if(match_fan == TRUE && number == 2){
 
         if(0==match(&list,&list2)){
-           fprintf(outfile,"Groebnerfan of the Codes are compatible\n");
+           fprintf(outfile,"\nGroebnerfan of the Codes are compatible\n");
          }else{
-           fprintf(outfile,"Groebnerfan of the Codes are NOT compatible\n");
+           fprintf(outfile,"\nGroebnerfan of the Codes are NOT compatible\n");
          }
     }  
     return counter;
