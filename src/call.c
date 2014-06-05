@@ -37,7 +37,7 @@ static char *helpmsg[] = {
     "     followed by a reduced Groebner basis for I_A.\n",
     "     example:\n",
     "     R: 5\n",
-    "     G: {a^2*c-b^2*e, a^2*d-b*e^2, b*d-c*e}\n",
+    "     G: {a^2*c-b^2*e, a^2*d-b*e^2, b*matchnamed-c*e}\n",
     "  or \n",
     "  B) An integer matrix A (defining I_A).\n",
     "     example:\n",
@@ -101,7 +101,7 @@ extern int stats_tdepth;
 extern int lptest;
 
 extern int match_fan;
-extern int no_print;
+//extern int no_print;
  int punctured_code;
 
 int root_only=FALSE;
@@ -113,6 +113,8 @@ int Mf;
 
 #define MATFOUND 1
 #define GSETFOUND 2
+
+// -------------------------------------------------------------------------------------------------------- //
 
 int main(int argc, char **argv ){
 
@@ -126,7 +128,7 @@ int main(int argc, char **argv ){
     char *matchname=0;
     char *ofname=0;
     //int tmp,
-    int acnt;
+    
     int stat=0;
     int counter;
     gset G1=0,gset_code_ideal();
@@ -144,11 +146,15 @@ int main(int argc, char **argv ){
     print_init=FALSE;
     degree_comp=FALSE;
     match_fan = FALSE;
-    no_print = FALSE;
+    int no_print = FALSE;
     punctured_code = FALSE;
 
     
 
+   // parseCommandline(argc, argv,cc,prog,ifname,ofname,matchname);
+    int acnt;
+   
+     /* parse command line */
     while (--argc > 0 && (*++argv)[0] == '-'){
         acnt=0;
         for (c = argv[0]+1; *c != '\0'; c++){
@@ -365,7 +371,7 @@ int main(int argc, char **argv ){
                     gset_eliminatezero(Gtmp);
 
                     gset_rgb(Gtmp,monomial_grlexcomp);
-                    counter = rsearch(Gtmp,1);
+                    counter = rsearch(Gtmp,1,no_print);
                     fprintf(outfile,"\n");
                     fprintf(outfile,"Number of Groebner bases found %d\n",counter);
                     fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
@@ -376,11 +382,9 @@ int main(int argc, char **argv ){
                     }
                     fprintf(outfile,"\n-----------------------------------------------------\n");
                     gset_free(Gtmp);
-
-
                 }
             }else{
-                counter=rsearch(G1,1);
+                counter=rsearch(G1,1,no_print);
                 
                 fprintf(outfile,"\n");
                 fprintf(outfile,"Number of Groebner bases found %d\n",counter);
@@ -414,7 +418,7 @@ int main(int argc, char **argv ){
             
 
             if(match_fan == TRUE){
-                counter = rsearch(G2,2);
+                counter = rsearch(G2,2,no_print);
             }
 
             tt=(clock()-tt)/CLOCKS_PER_SEC;
@@ -456,7 +460,7 @@ int main(int argc, char **argv ){
                     gset_eliminatezero(Gtmp);
 
                     gset_rgb(Gtmp,monomial_grlexcomp);
-                    counter = rsearch(Gtmp,1);
+                    counter = rsearch(Gtmp,1,no_print);
                     fprintf(outfile,"\n");
                     fprintf(outfile,"Number of Groebner bases found %d\n",counter);
                     fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
@@ -471,7 +475,7 @@ int main(int argc, char **argv ){
 
 
             }else{
-                counter=exsearch(G1,degree_comp);
+                counter=exsearch(G1,degree_comp,no_print);
                 tt=(clock()-tt)/CLOCKS_PER_SEC;
                 fprintf(outfile,"\n");
                 fprintf(outfile,"Number of Groebner bases found %d\n",counter);
@@ -527,9 +531,6 @@ void printstats(){
     fprintf(outfile,"min degree             %d\n",stats_mindeg);
 }
 
-void parseCommandline(int argc, char **argv){
 
-     /* parse command line */
-}
 
 

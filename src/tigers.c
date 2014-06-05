@@ -34,7 +34,7 @@ int stats_tdepth=0;
 int stats_ecounter=0;
 
 int match_fan = 0;
-int no_print = 0;
+//int no_print = 0;
 
 #define max(a,b) (((a)>(b))?(a):(b))
 #define min(a,b) (((a)<(b))?(a):(b))
@@ -48,7 +48,7 @@ struct node* list2 = NULL;
  * @brief vertex_print Prints vertex with all its information
  * @param g1 given groebner base
  */
-void vertex_print(gset g1){
+void vertex_print(gset g1,int no_print ){
 
     if(no_print == TRUE){
         return;
@@ -115,7 +115,7 @@ int flip_condition(binomial b){
  *
  *
  */
-int rsearch(gset g1, int number){
+int rsearch(gset g1, int number, int no_print){
 
     gset G1=0;
     gset G2=0;
@@ -154,7 +154,7 @@ int rsearch(gset g1, int number){
     gset_id(G1)=++counter;
 
 
-    vertex_print(G1);
+    vertex_print(G1,no_print);
     if(match_fan == TRUE){
         new_node=newNode(gset_id(G1),gset_nfacets(G1),gset_nelts(G1),gset_deg(G1));
         if(number == 1){
@@ -168,7 +168,7 @@ int rsearch(gset g1, int number){
     /* exits directly if Groebner Basis is the only degree compatible */
     if(gset_only_degreecompatible(G1) && degree_comp == TRUE){
         fprintf(outfile, "\nThe only degree compatible Groebner Basis found!\n");
-        vertex_print(G1);
+        vertex_print(G1,no_print);
 
         if(match_fan == TRUE){
             new_node=newNode(gset_id(G1),gset_nfacets(G1),gset_nelts(G1),gset_deg(G1));
@@ -212,7 +212,7 @@ int rsearch(gset g1, int number){
                     b=gset_first(G1);
                     gset_setfacets(G1);
                     gset_id(G1)=++counter;
-                    vertex_print(G1);
+                    vertex_print(G1,no_print);
 
                     if(match_fan == TRUE){
                         new_node=newNode(gset_id(G1),gset_nfacets(G1),gset_nelts(G1),gset_deg(G1));

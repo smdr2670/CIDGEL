@@ -9,8 +9,8 @@
 ** Slightly edited and commented by Daniel Rembold
 **
 */
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "utils.h"
 #include "gset.h"
 #include "matrices.h"
@@ -228,6 +228,11 @@ binomial gset_downedge(gset g){
 **binomial bmleadreduce(binomial m1, binomial B, binomial mlist):
 **  "lift" monomial m1 to a binomial using bmlist B,mlist.
 */
+/*
+ * @brief bmleadreduce "lift" monomial m1 to a binomial using bmlist B,mlist.
+ *
+ *
+ */
 binomial bmleadreduce(binomial m1, binomial B, binomial mlist){
     binomial res,ptr;
     /* case 1: the binomial is used in the decomp:*/
@@ -271,6 +276,7 @@ binomial bmleadreduce(binomial m1, binomial B, binomial mlist){
 ++ return this binomial or zero if no such binomial exists on list.
 ++
 */
+
 binomial find_divisor(binomial S,binomial L){
     binomial ptr;
     for(ptr=L;ptr!=0;ptr=ptr->next){

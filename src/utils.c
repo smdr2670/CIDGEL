@@ -12,6 +12,11 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+/**
+ * @brief 
+ *
+ *
+ */
 int eatwhite(FILE *is){
     int c;
     while ((c=fgetc(is))!=EOF){

@@ -8,6 +8,6 @@
  *
  */
 
-void vertex_print(gset g1);
-int rsearch(gset g1,int number);
+void vertex_print(gset g1,int no_print);
+int rsearch(gset g1,int number,int no_print);
 #endif // TIGERS_H

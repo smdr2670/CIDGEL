@@ -61,11 +61,15 @@ void gset_compute_colon(gset g,int lv){
     ring_lv=lold;
 }
 
-/*
-** gset gset_toric_ideal(int **M,int m, int n):
-**  Given an mxn integer matrix M -- compute an rgb for the toric ideal I_M.
-**  Uses repeated colon computations.
-*/
+
+/**
+ * @brief gset_code_ideal Given an mxn integer matrix M -- compute an rgb for the code ideal I_C.
+ *        Expects generator matrix in standard form, reads off equations for a generating system, then
+ *        uses Buchberger algorithm.
+ * @param M input Matrix
+ * @param m number of rows
+ * @param n number of columns
+ */
 gset gset_code_ideal(int **M,int m, int n){
     int i;
     int j;

@@ -33,8 +33,12 @@ int gset_equiv(gset g1, gset g2){
     p2=gset_first(g2);
 
     while(p1!=0 && p2!=0){
-        if(monomial_equal(binomial_lead(p1),binomial_lead(p2))!=TRUE) return FALSE;
-        if(monomial_equal(binomial_trail(p1),binomial_trail(p2))!=TRUE) return FALSE;
+        if(monomial_equal(binomial_lead(p1),binomial_lead(p2))!=TRUE){
+            return FALSE;    
+        } 
+        if(monomial_equal(binomial_trail(p1),binomial_trail(p2))!=TRUE) {
+            return FALSE;
+        }
         p1=binomial_next(p1);
         p2=binomial_next(p2);
     }
@@ -44,11 +48,15 @@ int gset_equiv(gset g1, gset g2){
     return TRUE;
 }
 
-/*
-** check a gset against those on list untill an equivalent one is found.
-** (eventually must fix this to use ordered lists or some other more efficient
-**  structure)
-*/
+
+
+/**
+ * @brief find check a gset against those on list untill an equivalent one is found.
+ * @param g1 gset which shall be found in list l
+ * @param L list that will be searched after g1
+ *
+ *
+ */
 gset find(gset g1, gset L){
     gset g2=0;
     for(g2=L;g2!=0;g2=g2->next){
@@ -81,7 +89,7 @@ extern int stats_ecounter;
  * @param g1 starting groebner base
  * @return number of groebner bases found
  */
-int exsearch(gset g1, int degree_comp){
+int exsearch(gset g1, int degree_comp,int no_print){
     gset G1;
     gset G2;
     gset todo=0;
@@ -103,7 +111,7 @@ int exsearch(gset g1, int degree_comp){
     insert(G1,&todo);
     gset_setfacets(G1);
     gset_id(G1)=++counter;
-    vertex_print(G1);
+    vertex_print(G1,no_print);
 
     while(todo!=0){
         G1=todo; todo=todo->next;
@@ -116,7 +124,7 @@ int exsearch(gset g1, int degree_comp){
                     insert(G2,&todo);
                     gset_setfacets(G2);
                     gset_id(G2)=++counter;
-                    vertex_print(G2);
+                    vertex_print(G2,no_print);
                 }
                 else gset_free(G2);
             }
