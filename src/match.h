@@ -4,7 +4,6 @@
 **  
 **
 **
-** Commented and slightly edited by Daniel Rembold
 **
 */
 

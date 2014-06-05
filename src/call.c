@@ -147,7 +147,8 @@ int main(int argc, char **argv ){
     no_print = FALSE;
     punctured_code = FALSE;
 
-    /* parse command line */
+    
+
     while (--argc > 0 && (*++argv)[0] == '-'){
         acnt=0;
         for (c = argv[0]+1; *c != '\0'; c++){
@@ -184,7 +185,7 @@ int main(int argc, char **argv ){
             case 'o': case 'O':argc--;
                 ofname=strdup(argv[++acnt]); /* scan infile name */
                 fprintf(stderr,"using filename %s for output\n",ofname);
-                break;	/* scan outfile name */
+                break;  /* scan outfile name */
                 break;
             default:
                 fprintf(stderr,"%s: illegal option %c\n",prog,*c);
@@ -192,6 +193,8 @@ int main(int argc, char **argv ){
         }
         argv+=acnt;
     }
+   
+
 
     if (argc != 0){
         usage(prog);
@@ -513,7 +516,7 @@ int main(int argc, char **argv ){
 
 
 void printstats(){
-    if(rsearch_cache==TRUE && use_exsearch=FALSE ){
+    if(rsearch_cache == TRUE && use_exsearch==FALSE ){
         fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
     }
     fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
@@ -522,6 +525,11 @@ void printstats(){
     fprintf(outfile,"min binomials in GB    %d\n",stats_minelts);
     fprintf(outfile,"max degree             %d\n",stats_maxdeg);
     fprintf(outfile,"min degree             %d\n",stats_mindeg);
+}
+
+void parseCommandline(int argc, char **argv){
+
+     /* parse command line */
 }
 
 

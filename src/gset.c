@@ -51,6 +51,10 @@ void gset_free(gset g){
     free((void *)g);
 }
 
+/**
+ * @brief gset_eliminatezero eliminates '1-1' terms in a gset
+ * @param g gset to be researched
+ */
 void gset_eliminatezero(gset g){
     binomial ptr;
     for(ptr = gset_first(g); ptr != 0 ; ptr = binomial_next(ptr) ){
@@ -60,6 +64,11 @@ void gset_eliminatezero(gset g){
     }
 }
 
+/**
+ * @brief gset_delete_binomial deletes a binimoal from a gset
+ * @param g gset to be researched
+ * @param b binomial which shall be resarched
+ */
 void gset_delete_binomial(gset g, binomial b){
     binomial tmp;
     binomial prev;
@@ -751,7 +760,7 @@ int lp_isfacet(gset g,binomial b){
  *                           check all first terms of all binomials.
  *                           If the exponent vector has the degree of 1, then it does not appear in
  *                           the non-prime set.
- * @param g
+ * @param g gset which gets the nonprime binomials
  */
 void gset_add_nonprime(gset g){
     binomial ptr;
@@ -827,8 +836,6 @@ void gset_copy(gset src, gset dest){
         gset_insert(dest,ptr2);
         
     }
-    //gset_print(stderr,dest);
-
 }
 
 void gset_puncture(gset G1, int pos){
