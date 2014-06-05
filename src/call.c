@@ -384,13 +384,7 @@ int main(int argc, char **argv ){
                 fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
 
                 if(no_print == FALSE){
-                    fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
-                    fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
-                    fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
-                    fprintf(outfile,"max binomials in GB    %d\n",stats_maxelts);
-                    fprintf(outfile,"min binomials in GB    %d\n",stats_minelts);
-                    fprintf(outfile,"max degree             %d\n",stats_maxdeg);
-                    fprintf(outfile,"min degree             %d\n",stats_mindeg);
+                    printstats();
                 }
             }
 
@@ -465,13 +459,7 @@ int main(int argc, char **argv ){
                     fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
 
                     if(no_print == FALSE){
-                        fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
-                        fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
-                        fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
-                        fprintf(outfile,"max binomials in GB    %d\n",stats_maxelts);
-                        fprintf(outfile,"min binomials in GB    %d\n",stats_minelts);
-                        fprintf(outfile,"max degree             %d\n",stats_maxdeg);
-                        fprintf(outfile,"min degree             %d\n",stats_mindeg);
+                        printstats();
                     }
                     fprintf(outfile,"\n-----------------------------------------------------\n");
                     gset_free(Gtmp);
@@ -485,14 +473,12 @@ int main(int argc, char **argv ){
                 fprintf(outfile,"\n");
                 fprintf(outfile,"Number of Groebner bases found %d\n",counter);
                 fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
-                fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
-                fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
-                fprintf(outfile,"max elts               %d\n",stats_maxelts);
-                fprintf(outfile,"min elts               %d\n",stats_minelts);
-                fprintf(outfile,"max degree             %d\n",stats_maxdeg);
-                fprintf(outfile,"min degree             %d\n",stats_mindeg);
+                printstats();
+
             }
-            if (ifname!=0) fprintf(outfile,"%s: ",ifname);
+            if (ifname!=0){
+                fprintf(outfile,"%s: ",ifname);
+            }
             fprintf(outfile,"Exhaustive search, ");
             switch(lptest){
             case 1:
@@ -527,7 +513,9 @@ int main(int argc, char **argv ){
 
 
 void printstats(){
-    fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
+    if(rsearch_cache==TRUE && use_exsearch=FALSE ){
+        fprintf(outfile,"max caching depth      %d\n",stats_tdepth);
+    }
     fprintf(outfile,"max facet binomials    %d\n",stats_maxfacets);
     fprintf(outfile,"min facet binomials    %d\n",stats_minfacets);
     fprintf(outfile,"max binomials in GB    %d\n",stats_maxelts);
