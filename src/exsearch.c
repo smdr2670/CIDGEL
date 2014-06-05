@@ -9,7 +9,6 @@
 #include "exsearch.h"
 
 
-
 /**
  * @brief insert use next pointer in Gsets to implement a simple linked list.
  *               for now stored in no particular order.
@@ -39,7 +38,9 @@ int gset_equiv(gset g1, gset g2){
         p1=binomial_next(p1);
         p2=binomial_next(p2);
     }
-    if (p1!=p2) return FALSE;
+    if (p1!=p2) {
+        return FALSE;
+    }
     return TRUE;
 }
 
@@ -59,6 +60,18 @@ gset find(gset g1, gset L){
 }
 
 
+/**
+ * @brief flip_condition extra condition for degree compatible groebner base for facet binomial to be flipped
+ * @param b given binomial
+ * @return 1 for fullfilled condition, 0 for not fullfilled
+ */
+int flip_ex_condition(binomial b,int degree_comp){
+    if(degree_comp == TRUE){
+        return (binomial_degree_compatible(b) == 0 );
+    }else{
+        return 1;
+    }
+}
 
 extern int stats_ecounter;
 
@@ -68,7 +81,7 @@ extern int stats_ecounter;
  * @param g1 starting groebner base
  * @return number of groebner bases found
  */
-int exsearch(gset g1){
+int exsearch(gset g1, int degree_comp){
     gset G1;
     gset G2;
     gset todo=0;
@@ -96,7 +109,7 @@ int exsearch(gset g1){
         G1=todo; todo=todo->next;
         insert(G1,&seen);
         for(b=gset_first(G1);b!=0;b=binomial_next(b)){
-            if (gset_isfacet(G1,b)==TRUE && binomial_grlexordered(b)==TRUE  && (binomial_degree_compatible(b) == 0 ) ){
+            if (gset_isfacet(G1,b)==TRUE && binomial_grlexordered(b)==TRUE  && flip_condition(b,degree_comp)  ){
                 G2=gset_flip(G1,b);
                 stats_ecounter++;
                 if (find(G2,todo)==0 && find(G2,seen)==0){

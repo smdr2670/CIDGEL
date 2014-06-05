@@ -25,3 +25,4 @@ int eatwhite(FILE *is){
     ungetc(c,is);
     return 0;
 }
+

@@ -107,6 +107,7 @@ int flip_condition(binomial b){
 }
 
 
+
 int rsearch(gset g1, int number){
 
     gset G1=0;

@@ -485,7 +485,7 @@ int main(int argc, char **argv ){
 
 
             }else{
-                counter=exsearch(G1);
+                counter=exsearch(G1,degree_comp);
                 tt=(clock()-tt)/CLOCKS_PER_SEC;
                 fprintf(outfile,"\n");
                 fprintf(outfile,"Number of Groebner bases found %d\n",counter);

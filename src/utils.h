@@ -8,6 +8,13 @@
 ** copyright (c) 1999  Birk Huber
 **
 */
-int eatwhite(FILE *is);
+
 #define TRUE 0
 #define FALSE 1
+
+
+
+
+
+
+int eatwhite(FILE *is);
