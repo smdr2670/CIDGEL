@@ -107,7 +107,14 @@ int flip_condition(binomial b){
 }
 
 
-
+/**
+ *
+ * @brief rsearch main algorithm using the reverse search tree
+ * @param g1 given groebner base to start of
+ * @param number important in order to match 2 groebner fans
+ *
+ *
+ */
 int rsearch(gset g1, int number){
 
     gset G1=0;
