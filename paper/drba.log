@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  15 JUN 2014 21:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  16 JUN 2014 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -102,50 +102,112 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \tab@position=\count88
 \tab@size=\count89
 \listing@line=\count90
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
 ) (./drba.aux)
 \openout1 = `drba.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 11.
 
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) (./drba_tp.tex) (./drba.toc)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+)
+\big@size=\dimen104
+ (./drba_tp.tex)
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 14.
+
+(./drba.toc
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 4.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+))
 \tf@toc=\write3
 \openout3 = `drba.toc'.
 
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./drba_in.tex) (./drba_gb
-.tex)
-(./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [2] (./drba.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./drba_in.tex [2]) (./drb
+a_gb.tex
+Overfull \hbox (11.68217pt too wide) in paragraph at lines 4--8
+\T1/ppl/m/n/10.95 the reader an un-der-stand-ing to Groeb-ner Bases and ob-tain
+-ing by the Flipping-
+ []
+
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 9.
+\c@env_definition=\count91
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 16.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+)
+LaTeX Font Info:    Font shape `T1/ppl/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/it' tried instead on input line 18.
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+[3]) (./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [4] (./drba.aux) ) 
 Here is how much of TeX's memory you used:
- 992 strings out of 495031
- 11853 string characters out of 6181531
- 60644 words of memory out of 5000000
- 4220 multiletter control sequences out of 15000+600000
- 16691 words of font info for 20 fonts, out of 8000000 for 9000
+ 1196 strings out of 495031
+ 14430 string characters out of 6181531
+ 63628 words of memory out of 5000000
+ 4371 multiletter control sequences out of 15000+600000
+ 28495 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 23i,4n,23p,171b,120s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx1
-0.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr10.pfb>
-Output written on drba.pdf (2 pages, 67638 bytes).
+ 23i,5n,23p,383b,168s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/sh
+are/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpa
+zo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on drba.pdf (4 pages, 87091 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

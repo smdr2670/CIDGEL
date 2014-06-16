@@ -1,3 +1,49 @@
 %this file is drba_gb.tex
-\section{Groebner Bases}
+\section{Polynomial and commutative Algebra}
 
+In this chapter a mathematical basis is systematically approached to give the reader an understanding to Groebner Bases and obtaining by the Flipping-Algorithm which is needed later.\\
+In the first section monomials are revisited.
+The second section explains how monomials can be mathematically ordered.
+After that Ideals are defined over polynomial rings and a summary on Groebner bases and Groebner fans for ideals is presented.
+
+\subsection{Monomials}
+\newtheorem{env_definition}{Definition}[section]
+
+First of all, the basic components of a polynomial ring...
+
+\begin{env_definition}[Monomial] 
+
+A monomial m is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $ of the form $X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0} $
+
+The total \textbf{degree} of a monomial is $deg(m) = \sum_{i=1}^n u_i $ 
+\end{env_definition}
+
+\begin{env_definition}[Polynomial]
+
+A polynomial f is a finite linear combination with coefficients $c_{u} \in \mathbb{K}$ multiplied with monomials.
+
+$ f = \sum_{u} c_{u}X^{u}$\\
+
+If $c_{u}\neq0$ then $c_{u}x_{u}$ is a term of $f$
+
+
+\end{env_definition}
+
+
+\subsection{Monomial Order}
+
+It is necessary to arrange the terms of a polynomial in order to compare every pair of polynomials. That is important for instance dividing polynomials in the finite field
+$ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $
+
+\begin{env_definition}[Term Ordering] 
+
+
+
+\end{env_definition}
+
+
+\subsection{Ideals}
+
+
+
+\newpage
