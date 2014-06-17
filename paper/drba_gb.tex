@@ -9,11 +9,11 @@ After that Ideals are defined over polynomial rings and a summary on Groebner ba
 \subsection{Monomials}
 \newtheorem{env_definition}{Definition}[section]
 
-First of all, the basic components of a polynomial ring...
+First of all, the basic components of a polynomial ring has to be explained. This forms the basis of
 
 \begin{env_definition}[Monomial] 
 
-A monomial m is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $ of the form $X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0} $
+A \emph{monomial m} is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $ of the form $X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0} $
 
 The total \textbf{degree} of a monomial is $deg(m) = \sum_{i=1}^n u_i $ 
 \end{env_definition}
@@ -32,14 +32,56 @@ If $c_{u}\neq0$ then $c_{u}x_{u}$ is a term of $f$
 
 \subsection{Monomial Order}
 
-It is necessary to arrange the terms of a polynomial in order to compare every pair of polynomials. That is important for instance dividing polynomials in the finite field
+It is necessary to arrange the terms of a polynomial in order to compare every pair of polynomials. That is important for dividing polynomials in the finite field
 $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $
 
 \begin{env_definition}[Term Ordering] 
 
+A monomial order is a relation $>$ on the set of all monomials in $\mathbb{K}\left[x\right] $ such that $\left[ 2\right] $ holds.
+Let $m_{1}$,$m_{2}$ and $m_{3}$ be monomials
+\begin{center}
 
+for any pair of monomials $m_{1}$,$m_{2}$ either $m_{1} > m_{2}$ or $m_{2} > m_{1}$ or $m_{1} = m_{2}$ \\
+
+if $m_{1} > m_{2} $ and $m_{2} > m_{3}$ then $m_{1} > m_{3}$\\
+
+$m_{1} > 1$ for any monomial $m_{1} \neq 1$\\
+
+if $m_{1} > m_{2}$ then $mm_{1} > mm_{2}$ for any monomial m
+
+ 
+\end{center}
 
 \end{env_definition}
+
+\newpage
+
+Two commonly used term orders are the following.
+Let $u$ and $v$ be elements of $\mathbb{N}^{n}_{0}$, such that $\left[ 2\right] $
+
+\subsubsection{Lexicographic Order}
+$u >_{lex} v $ if in $u-v$ the left most non-zero entry is positive.
+This can be written as $X^{u} >_{lex} X^{v}$ if $u >_{lex} v $.\\
+
+
+\subsubsection{Graded Lex Order}
+$u >_{grlex} v $ if $ deg(u)>deg(v)$ or if $ deg(u)=deg(v)$ and $u >_{lex} v$
+
+\textbf{Example} Let $m_{1} = 4x^{2}y^{4}z^{3}$ and $m_{2}= x^{1}y^{1}z^{4} \in \mathbb{K}\left[ x,y,z\right]  $.
+The monomials can also be written as $m_{1} = X^{(2 \; 4 \; 3)}$ and $m_{2} = X^{(1 \; 1 \; 4)}$.
+Thus $m_{1}>_{lex} m_{2}$ because the left most non-zero entry of $ (2 \; 4 \; 3) - (1 \; 1 \; 4)$ is positive.\\
+
+The total degree of $m_{1}$ is 9 and $deg(m_{2})=6$. Hence, $m_{1}>_{lex} m_{2}$ and
+$deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$    
+
+\subsubsection{Leading term}
+
+Given a term order $>$, each non-zero polynomial $f \in \mathbb{K}\left[ x\right] $ has a unique leading term, denoted by $lt(f)$, given by the largest involved term with respect to the term order.\\
+If $lt(f) = cX^{u}$, where $c \in \mathbb{K}$, then c is the leading coefficient of $f$ and $X^{u}$ is the leading monomial(lm).$\left[ 2\right]$\\
+
+\textbf{Example} Let $ f = 3x^{2}y^{5}z^{3} + x^{4} -2x^{3}y^{4} + 12^{2}z^{2}$ \\
+With respect to lex order $f = \underline{x^{4}} -2x^{3}y^{4} + 3x^{2}y^{5}z^{3} + 12^{2}z^{2} $ \\
+with respect to grlex order $f = \underline{3x^{2}y^{5}z^{3}} $
 
 
 \subsection{Ideals}
