@@ -131,6 +131,10 @@ Fix a monomial > on $ \mathbb{Z}_{\geq 0}^{n}$ and let $ F = \left( f_{1}, \ldot
 \begin{center}
 $ f = a_{1}f_{1}+ \ldots + a_{s}f_{s} + r$
 \end{center}
+where $a_{i}, r \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $, and either $ r=0$ or r is a linear combination, with the coefficients in $\mathbb{K}$, none of which is divisible by any of
+$\textsc{LT}\left(f_{1} \right), \ldots, \textsc{LT}\left(f_{s} \right)  $.
+The remainder of f on division by F is r. Furthermore, if $a_{i}f_{i} \neq 0 $, then
+$deg(f) \geq deg(a_{i}f_{i})$
 
 \end{theorem}
 
@@ -172,6 +176,33 @@ $ f = a_{1}f_{1}+ \ldots + a_{s}f_{s} + r$
 
 \textbf{Example}
 
+%% TODO : Normale divsionsalgorithmus
+\textbf{Example}
 
+%% TODO : Übernehme Example 5 aus Seite 67 aus Cox, O'Shea
+
+The last example shows that is still possible to obtain a nonzero remainder even if $f \in \langle f_{1},f_{2} \rangle $. That means r = 0 is a sufficient condition for the ideal membership but not a necessary condition
+\subsection{Groebner basis}
+
+To solve the idea membership problem a "good" generating set for an Ideal I is needed. It would be helpful when the remainder r on division is uniqueley determined and the condition $ r = $ is equivalent to the membership in the ideal.
+So the definition from $\left[KHZ \right]  $ might be useful.
+
+\subsubsection{Definition of a Groebner basis}
+
+\begin{env_definition}[Groebner base]
+Let $\leq$ be a monomial order on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ and let I be an Ideal on $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]  $. A Groebner basis for I (with respect to $\leq$) is a finite set of polynomials $ F = \left\lbrace f_{1}, \ldots , f_{m} \right\rbrace $ in I with the property that for every nonzero $ f \in I , \textsc{LT}_{\geq}\left( f\right\rbrace $ is divisible by $\textsc{LT}\left( f_{i}\right) $ for some $ 1 \leq i \leq m $
+
+\end{env_definition}
+
+A Groebner basis has the beneficial property that the remainder r of f by the elements of a Groebner basis are uniquely determined and independent of the order of the elements in G.
+Also every Ideal in $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ has a Groebner basis with respect to any monomial order $\left[ KHZ\right] $
+
+\subsubsection{Computation of a Groebner basis}
+
+In order to obtain a Groebner basis of an arbitrary basis $f_{1}, \ldots , f_{n}$of an Ideal $I$, an algorithm is needed. This algorithm is called Buchberger-Algorithm. The main idea behind is to build every possible S-Pair of $\left( f_{i},f_{j}\right) $ for every $ 1 \leq i \neq j \leq n $ and every nonzero result is added to the basis until every S-Pair of $\left( f_{i},f_{j}\right) $ vanishes.  
+
+
+
+\subsection{Groebner fans}
 
 \newpage

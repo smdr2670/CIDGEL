@@ -8,6 +8,10 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Leading term}{4}
 \contentsline {subsection}{\numberline {2.3}Ideals}{4}
 \contentsline {subsection}{\numberline {2.4}Division Algorithm}{5}
-\contentsline {section}{\numberline {3}Linear Codes}{7}
-\contentsline {section}{\numberline {4}Software}{7}
-\contentsline {section}{\numberline {A}Appendix}{7}
+\contentsline {subsection}{\numberline {2.5}Groebner basis}{6}
+\contentsline {subsubsection}{\numberline {2.5.1}Definition of a Groebner basis}{6}
+\contentsline {subsubsection}{\numberline {2.5.2}Computation of a Groebner basis}{7}
+\contentsline {subsection}{\numberline {2.6}Groebner fans}{7}
+\contentsline {section}{\numberline {3}Linear Codes}{8}
+\contentsline {section}{\numberline {4}Software}{8}
+\contentsline {section}{\numberline {A}Appendix}{8}
