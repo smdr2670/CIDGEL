@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  17 JUN 2014 16:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  18 JUN 2014 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -117,36 +117,104 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (./drba.aux)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count91
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (cfiorio@um2.fr)
+********************************************************
+\skiptotal=\skip46
+\skiplinenumber=\skip47
+\skiprule=\skip48
+\skiphlne=\skip49
+\skiptext=\skip50
+\skiplength=\skip51
+\algomargin=\skip52
+\skipalgocfslide=\skip53
+\algowidth=\dimen104
+\inoutsize=\dimen105
+\inoutindent=\dimen106
+\interspacetitleruled=\dimen107
+\interspacealgoruled=\dimen108
+\interspacetitleboxruled=\dimen109
+\algocf@inoutbox=\box26
+\algocf@inputbox=\box27
+\AlCapSkip=\skip54
+\AlCapHSkip=\skip55
+\algoskipindent=\skip56
+\algocf@nlbox=\box28
+\algocf@hangingbox=\box29
+\algocf@untilbox=\box30
+\algocf@skipuntil=\skip57
+\algocf@capbox=\box31
+\algoheightruledefault=\skip58
+\algoheightrule=\skip59
+\algotitleheightruledefault=\skip60
+\algotitleheightrule=\skip61
+\c@algocfline=\count92
+\c@algocfproc=\count93
+\c@algocf=\count94
+\algocf@algoframe=\box32
+\algocf@algobox=\box33
+)
+\c@theorem=\count95
+ (./drba.aux)
 \openout1 = `drba.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 12.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 16.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
-\big@size=\dimen104
- (./drba_tp.tex)
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 15.
+\big@size=\dimen110
 
-(./drba.toc
+(./drba_tp.tex)
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 19.
+ (./drba.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 2.
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Try loading font information for OML+zplm on input line 4.
@@ -196,7 +264,7 @@ Overfull \hbox (11.68217pt too wide) in paragraph at lines 4--8
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 9.
-\c@env_definition=\count91
+\c@env_definition=\count96
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
@@ -225,47 +293,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--81
  []
 
 
-Overfull \hbox (39.01407pt too wide) in paragraph at lines 90--93
-[]\T1/ppl/m/it/10.95 An ideal I is col-lec-tion of poly-no-mi-als $\OML/zplm/m/
-it/10.95 f[]\OT1/ppl/m/n/10.95 , [] , \OML/zplm/m/it/10.95 f[] \OMS/zplm/m/n/10
-.95 2 \U/fplmbb/m/n/10.95 K []$
+Overfull \hbox (37.70331pt too wide) in paragraph at lines 91--94
+\T1/ppl/b/n/10.95 Definition 2.4 \T1/ppl/m/n/10.95 (Ideal)\T1/ppl/b/n/10.95 . \
+T1/ppl/m/it/10.95 An ideal I is col-lec-tion of poly-no-mi-als $\OML/zplm/m/it/
+10.95 f[]\OT1/ppl/m/n/10.95 , [] , \OML/zplm/m/it/10.95 f[] \OMS/zplm/m/n/10.95
+ 2 \U/fplmbb/m/n/10.95 K []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--93
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
  []
 
-[4]
-Overfull \hbox (0.52086pt too wide) in paragraph at lines 111--112
-[]\T1/ppl/m/it/10.95 A bi-no-mial ideal $\OML/zplm/m/it/10.95 I \OMS/zplm/m/n/1
-0.95 2 \U/fplmbb/m/n/10.95 K []$ \T1/ppl/m/it/10.95 is a poly-
- []
-
-[5]) (./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [6] (./drba.aux) ) 
+[4] [5] [6]) (./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [7] (./drba.aux) )
+ 
 Here is how much of TeX's memory you used:
- 1468 strings out of 495031
- 17271 string characters out of 6181531
- 66628 words of memory out of 5000000
- 4634 multiletter control sequences out of 15000+600000
- 29719 words of font info for 73 fonts, out of 8000000 for 9000
+ 2971 strings out of 495031
+ 38080 string characters out of 6181531
+ 111712 words of memory out of 5000000
+ 6119 multiletter control sequences out of 15000+600000
+ 30907 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 25i,5n,26p,390b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/sh
-are/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpa
-zo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (6 pages, 104322 bytes).
+ 25i,18n,26p,390b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/upl
+b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on drba.pdf (7 pages, 110515 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

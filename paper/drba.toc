@@ -7,7 +7,7 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Graded Lex Order}{4}
 \contentsline {subsubsection}{\numberline {2.2.3}Leading term}{4}
 \contentsline {subsection}{\numberline {2.3}Ideals}{4}
-\contentsline {section}{\numberline {3}Division Algorithm}{5}
-\contentsline {section}{\numberline {4}Linear Codes}{6}
-\contentsline {section}{\numberline {5}Software}{6}
-\contentsline {section}{\numberline {A}Appendix}{6}
+\contentsline {subsection}{\numberline {2.4}Division Algorithm}{5}
+\contentsline {section}{\numberline {3}Linear Codes}{7}
+\contentsline {section}{\numberline {4}Software}{7}
+\contentsline {section}{\numberline {A}Appendix}{7}

@@ -81,7 +81,8 @@ If $lt(f) = cX^{u}$, where $c \in \mathbb{K}$, then c is the leading coefficient
 
 \textbf{Example} Let $ f = 3x^{2}y^{5}z^{3} + x^{4} -2x^{3}y^{4} + 12^{2}z^{2}$ \\
 With respect to lex order $f = \underline{x^{4}} -2x^{3}y^{4} + 3x^{2}y^{5}z^{3} + 12^{2}z^{2} $ \\
-with respect to grlex order $f = \underline{3x^{2}y^{5}z^{3}} -2x^{3}y^{4} + x^{4}+ 12^{2}z^{2}$  
+with respect to grlex order $f = \underline{3x^{2}y^{5}z^{3}} -2x^{3}y^{4} + x^{4}+ 12^{2}z^{2}$  \\
+The underlined terms are the leading binomials with the respect to the monomial order.
 
 
 \subsection{Ideals}
@@ -112,6 +113,65 @@ A binomial ideal $ I \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ is a polyn
 
 \end{env_definition}
 
-\section{Division Algorithm}
+\subsection{Division Algorithm}
+
+The reader already may determine if a polynomial $p$ lies in an Ideal $I$ in polynomial ring with one variable. This can be achieved with the help of the polynomial division.
+If result has no remainder, $p$ lies in $I$
+But in a ring with several variables like $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right] $ the usual division algorithm can not work. A generalized algorithm is needed.\
+The main goal now is to divide $g \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ by 
+$f_{1}, \ldots, f_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$, so g can be expressed in the form \begin{center}
+$g = a_{1}f_{1}+ \ldots + a_{s}f_{s} +r$
+\end{center} 
+where the $a_{1}f_{1}+ \ldots + a_{s}f_{s} $ and $r \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ \
+This is possible with the Theorem mentioned at  $\left[ 3\right] $
+
+
+\begin{theorem}[Division Algorithm in   ]
+Fix a monomial > on $ \mathbb{Z}_{\geq 0}^{n}$ and let $ F = \left( f_{1}, \ldots, f_{s}\right) $ be an ordered s-tuple of polynomials in $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$. Then every  $ f \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ can be written as
+\begin{center}
+$ f = a_{1}f_{1}+ \ldots + a_{s}f_{s} + r$
+\end{center}
+
+\end{theorem}
+
+
+
+
+
+
+
+
+\begin{algorithm}[H]
+ \KwData{this text}
+ \KwResult{how to write algorithm with \LaTeX2e }
+ 
+ $h_{1}\leftarrow 0, \ldots, h_{m}\leftarrow 0 $ \;
+ $r \leftarrow 0$\;
+ $s \leftarrow f$\;
+ \While{$s \neq 0$}{
+  $i \leftarrow i$\;
+  $division_occured \leftarrow  false$\;
+  \While{$i\leq m  and division_occured = false$}{
+ 	 \eIf{$LT\left( f\left[ i\right] \right) divides LT\left( s\right)  $}{
+ 	   $ s \leftarrow s - LT \left( s\right) / LT \left( f \left[ i\right] \right) \ast f_{i}     $\;
+ 	  $ h_{i} \leftarrow h_{i} + LT\left( s\right) / LT\left( f_{i}\right) $\;
+ 	  $division_occured = true$\;
+  	  }{
+  	 $i \leftarrow i+1  $\;
+  	}
+  }
+  \If{$division_occured = false$}{
+  	$r \leftarrow r + LT\left( s\right)$  \;
+  	$s \leftarrow s - LT\left( s\right)$  \;
+  }
+  
+  
+ }
+ \caption{Division Algorithm by $\left[2 \right] $}
+\end{algorithm}
+
+\textbf{Example}
+
+
 
 \newpage
