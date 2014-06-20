@@ -302,7 +302,9 @@ int main(int argc, char **argv ){
     if (stat==MATFOUND){ //Matrix found
         fprintf(outfile, "\nUsing following Matrix with dimension :%d \n" , Mf);
         print_imatrix(outfile, "",M, Mm, Mn);
+        fprintf(outfile,"calculating first code ideal...\n");
         G1=gset_code_ideal(M,Mm,Mn);
+        fprintf(outfile,"done\n");
         
         // Read the second matrix
         if(match_fan == TRUE){
@@ -360,16 +362,21 @@ int main(int argc, char **argv ){
 
             tt=clock();
 
+          
             if(punctured_code == TRUE){
+                fprintf(outfile,"entering punctured_code\n");
                 gset Gtmp = gset_new();
                 int k;
 
                 for(k=0;k<ring_N;k++){
+
                     Gtmp = gset_new();
                     gset_copy(G1,Gtmp);
-                    gset_puncture(Gtmp,k);
-                    gset_eliminatezero(Gtmp);
 
+                    gset_puncture(Gtmp,k); 
+                                    
+                    gset_eliminatezero(Gtmp);
+                    
                     gset_rgb(Gtmp,monomial_grlexcomp);
                     counter = rsearch(Gtmp,1,no_print);
                     fprintf(outfile,"\n");

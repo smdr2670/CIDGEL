@@ -17,7 +17,7 @@ TARGET   = cidgel
 
 CC       = gcc
 # compiling flags here
-CFLAGS   = -std=c99 -Wall -I.
+CFLAGS   = -std=c89 -Wall -I.
 MATH	 = -lm
 
 LINKER   = gcc -o
@@ -51,7 +51,7 @@ clean:
 
 .PHONEY: remove
 remove: clean
-	@$(rm) $(BINDIR)/$(TARGET)
+	@$(rm) $(TARGET)
 	@echo "Executable removed!"
 
 

@@ -57,6 +57,7 @@ void gset_free(gset g){
  */
 void gset_eliminatezero(gset g){
     binomial ptr;
+    ptr = gset_first(g);
     for(ptr = gset_first(g); ptr != 0 ; ptr = binomial_next(ptr) ){
         if( monomial_stddegree(binomial_lead(ptr)) == 0 && monomial_stddegree(binomial_trail(ptr)) == 0){
             gset_delete_binomial(g,ptr);
@@ -74,6 +75,15 @@ void gset_delete_binomial(gset g, binomial b){
     binomial prev;
 
     tmp = gset_first(g);
+
+    if(0 == binomial_equal(b,tmp) ){
+        binomial tmp2 = binomial_next(tmp);
+        gset_first(g) = tmp2;
+        binomial_free(tmp);
+        return;
+    }
+
+    
     for(prev = gset_first(g); prev!=0 ; prev= binomial_next(prev)){
         tmp = binomial_next(prev);
         if( 0 == binomial_equal(b,tmp) ){
@@ -844,9 +854,13 @@ void gset_copy(gset src, gset dest){
     }
 }
 
+/**
+* Simply sets the all exponent-vectors from the gset to 0 at the certain position
+*
+*/
 void gset_puncture(gset G1, int pos){
     binomial ptr;
-    for(ptr = gset_first(G1); ptr!=0 ; ptr=binomial_next(ptr) ){
+    for(ptr = gset_first(G1); ptr!= NULL ; ptr=binomial_next(ptr) ){
         binomial_puncture(ptr,pos);
     }
 }
