@@ -10,6 +10,7 @@
 **
 */
 #include "binomial.h"
+#define DEBUG 0
 
 typedef struct gset_tag *gset;
 

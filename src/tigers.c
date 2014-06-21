@@ -17,6 +17,8 @@
 int rsearch_cache=TRUE;
 int degree_comp=FALSE;
 
+
+
 /*
 ** Output initial ideals and numbers of facets at each stage.
 */
@@ -100,9 +102,9 @@ void vertex_print(gset g1,int no_print ){
  */
 int flip_condition(binomial b){
     if(degree_comp == TRUE){
-        return (binomial_degree_compatible(b) == 0 );
+        return (binomial_degree_compatible(b) == 0 && binomial_grlexordered(b)==TRUE);
     }else{
-        return 1;
+        return (binomial_grlexordered(b)==TRUE);
     }
 }
 
@@ -128,6 +130,9 @@ int rsearch(gset g1, int number, int no_print){
 
     struct node *new_node;
 
+    if(DEBUG){
+    fprintf(stderr,"CHECKPOINT 1\n");
+    }
     /* make copy of first grobner basis */
     G1=gset_new();
     for(b=gset_first(g1);b!=0;b=binomial_next(b)){
@@ -135,6 +140,11 @@ int rsearch(gset g1, int number, int no_print){
         binomial_copy(b,btmp);
         gset_insert(G1,btmp);
     }
+
+    if(DEBUG){
+    fprintf(stderr,"CHECKPOINT 2\n");
+    }
+
 
 
     /* Do groebner walk to grobner basis wrt default term order*/
@@ -145,16 +155,26 @@ int rsearch(gset g1, int number, int no_print){
         gset_free(G1);
         G1=G2;
     }
+    fprintf(stderr,"doing walk finished\n");
+
+    if(DEBUG){
+    fprintf(stderr,"CHECKPOINT 3\n");
+    }
 
     btmp=(b=gset_first(G1));
 
     /* output first groebner basis*/
+    //FIXME testing warum lange laufzeit
     gset_setfacets(G1);
 
+    if(DEBUG){
+    fprintf(stderr,"CHECKPOINT 4\n");
+    }
     gset_id(G1)=++counter;
 
-
+    
     vertex_print(G1,no_print);
+
     if(match_fan == TRUE){
         new_node=newNode(gset_id(G1),gset_nfacets(G1),gset_nelts(G1),gset_deg(G1));
         if(number == 1){
@@ -164,7 +184,9 @@ int rsearch(gset g1, int number, int no_print){
         }
     }
 
-
+     if(DEBUG){
+    fprintf(stderr,"CHECKPOINT 5\n");
+    }
     /* exits directly if Groebner Basis is the only degree compatible */
     if(gset_only_degreecompatible(G1) && degree_comp == TRUE){
         fprintf(outfile, "\nThe only degree compatible Groebner Basis found!\n");
@@ -182,14 +204,24 @@ int rsearch(gset g1, int number, int no_print){
         return counter;
     }
 
+     if(DEBUG){
+    fprintf(stderr, "entering while loop" );
+    }
+    
     while(done==FALSE){
 
         /* go through all binomials of G1 */
         while(b!=0){
 
-            if (gset_isfacet(G1,b)==TRUE && binomial_grlexordered(b)==TRUE && flip_condition(b)   ){
+            //FIXME : lange laufzeit in den Griff bekommen
+            //if (binomial_grlexordered(b)==TRUE && flip_condition(b)   ){
+            if (gset_isfacet(G1,b)==TRUE && flip_condition(b) ){
                 stats_ecounter++;
+                //fprintf(stderr, "flipping" );
                 G2=gset_flip(G1,b);
+                 if(DEBUG){
+                    fprintf(stderr,"CHECKPOINT 6\n");
+                 }   
                 btmp=gset_downedge(G2);
 
                 /* check if G1 and G2 are adjacent in the reverse search tree*/
@@ -210,7 +242,15 @@ int rsearch(gset g1, int number, int no_print){
                         stats_tdepth=depth;
                     }
                     b=gset_first(G1);
+                    if(DEBUG){
+                        fprintf(stderr,"CHECKPOINT 7\n");
+                    }
+                    
                     gset_setfacets(G1);
+                    if(DEBUG){
+                         fprintf(stderr,"CHECKPOINT 8\n");
+                    }               
+                    
                     gset_id(G1)=++counter;
                     vertex_print(G1,no_print);
 

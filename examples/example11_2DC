@@ -1,0 +1,26 @@
+
+Using following Matrix with dimension :2 
+{ 4 10:
+ 1, 0, 0, 0, 1, 1, 1, 1, 1, 1
+ 0, 1, 0, 0, 0, 0, 1, 1, 1, 1
+ 0, 0, 1, 0, 0, 1, 0, 1, 1, 1
+ 0, 0, 0, 1, 0, 1, 1, 0, 1, 1
+}
+calculating first code ideal...
+done
+
+% starting GB:
+F: 2
+R: 10
+G: {a^2-1, a*b-e*f, a*c-e*g, a*d-e*h, a*e-d*h, a*f-b*e, a*g-c*e, a*h-d*e, b^2-1, b*c-f*g, b*d-f*h, b*f-d*h, b*g-c*f, b*h-d*f, b*i*j-g*h, c^2-1, c*d-g*h, c*f*i-h*j, c*f*j-h*i, c*g-d*h, c*h-d*g, c*i*j-f*h, d^2-1, d*e*h-a, d*f*g-i*j, d*f*h-b, d*f*i-g*j, d*f*j-g*i, d*g*h-c, d*g*i-f*j, d*g*j-f*i, d*i*j-f*g, e^2-1, e*f*g*h-a*i*j, f^2-1, f*g*i-d*j, f*g*j-d*i, f*h*i-c*j, f*h*j-c*i, f*i*j-d*g, g^2-1, g*h*i-b*j, g*h*j-b*i, g*i*j-d*f, h^2-1, h*i*j-c*f, i^2-1, j^2-1}
+
+ Enumerating Groebner bases
+   using reverse search
+   taking input from examples/example11_2
+   with partial caching
+   using wall ideal pretest for facet checking
+
+Number of Groebner bases found 768
+Number of edges of state polytope 2688
+examples/example11_2: Reverse Search,   Caching,  A-pretest,
+time used (in seconds) 230.23

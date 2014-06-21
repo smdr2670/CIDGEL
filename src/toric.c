@@ -142,7 +142,11 @@ gset gset_code_ideal(int **M,int m, int n){
 
 
     /* compute grobner basis wrt to this grade lex term order */
-    gset_rgb(g,monomial_grlexcomp);
+    // FIXME: lex basis can read off of the matrix with standard-form
+    //        With exhaustive search, lex basis is not good enough
+    //if(degree_comp == TRUE){
+    //gset_rgb(g,monomial_grlexcomp);
+    //}
 
     /* result is a grobner basis, make sure to reduce it to make it an rgb */
     gset_autoreduce(g);
@@ -168,19 +172,11 @@ gset gset_code_ideal(int **M,int m, int n){
     /* free space used by matrices */
     free_imatrix(M);
  
-    /*
-    fprintf(outfile,"\n\ndebug toric ideal before last buchberger: \n");
-    gset_print(outfile, g);
-    */
+
 
     /* make sure result is a reduced gradedlex gbasis */
-    gset_rgb(g,monomial_grlexcomp);
-
-    /*
-    fprintf(outfile,"\n\ndebug toric ideal after last buchberger: \n");
-    gset_print(outfile, g);
-    fprintf(outfile,"\n");
-    */
+    // FIXME : lex basis  standard form
+    //gset_rgb(g,monomial_grlexcomp);
 
     return g;
 }

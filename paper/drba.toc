@@ -12,6 +12,8 @@
 \contentsline {subsubsection}{\numberline {2.5.1}Definition of a Groebner basis}{7}
 \contentsline {subsubsection}{\numberline {2.5.2}Computation of a Groebner basis}{7}
 \contentsline {subsection}{\numberline {2.6}Groebner fans}{9}
-\contentsline {section}{\numberline {3}Linear Codes}{10}
-\contentsline {section}{\numberline {4}Software}{10}
-\contentsline {section}{\numberline {A}Appendix}{10}
+\contentsline {subsection}{\numberline {2.7}Degree Compatible Groebner fans}{10}
+\contentsline {subsection}{\numberline {2.8}Enumerating Groebner fans}{10}
+\contentsline {section}{\numberline {3}Linear Codes}{11}
+\contentsline {section}{\numberline {4}Software}{11}
+\contentsline {section}{\numberline {A}Appendix}{11}

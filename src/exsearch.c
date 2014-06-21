@@ -69,15 +69,15 @@ gset find(gset g1, gset L){
 
 
 /**
- * @brief flip_condition extra condition for degree compatible groebner base for facet binomial to be flipped
- * @param b given binomial
- * @return 1 for fullfilled condition, 0 for not fullfilled
- */
+* @brief flip_condition extra condition for degree compatible groebner base for facet binomial to be flipped
+* @param b given binomial
+* @return 1 for fullfilled condition, 0 for not fullfilled
+*/
 int flip_ex_condition(binomial b,int degree_comp){
     if(degree_comp == TRUE){
-        return (binomial_degree_compatible(b) == 0 );
+        return (binomial_degree_compatible(b) == 0 && binomial_grlexordered(b)==TRUE );
     }else{
-        return 1;
+        return binomial_lexordered(b)==TRUE; // or simply return 1 ?
     }
 }
 
@@ -96,6 +96,8 @@ int exsearch(gset g1, int degree_comp,int no_print){
     gset seen=0;
     //gset tmp;
 
+
+
     binomial b=0,btmp;
     int counter=0;
     stats_ecounter=0;
@@ -108,6 +110,10 @@ int exsearch(gset g1, int degree_comp,int no_print){
         gset_insert(G1,btmp);
     }
 
+    if(degree_comp == TRUE ){
+        gset_rgb(G1,monomial_grlexcomp);    
+    }
+
     insert(G1,&todo);
     gset_setfacets(G1);
     gset_id(G1)=++counter;
@@ -117,7 +123,8 @@ int exsearch(gset g1, int degree_comp,int no_print){
         G1=todo; todo=todo->next;
         insert(G1,&seen);
         for(b=gset_first(G1);b!=0;b=binomial_next(b)){
-            if (gset_isfacet(G1,b)==TRUE && binomial_grlexordered(b)==TRUE  && flip_condition(b,degree_comp)  ){
+            // TODO: how to make condition right???
+            if (gset_isfacet(G1,b)==TRUE && flip_ex_condition(b,degree_comp) ){
                 G2=gset_flip(G1,b);
                 stats_ecounter++;
                 if (find(G2,todo)==0 && find(G2,seen)==0){

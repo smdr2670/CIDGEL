@@ -197,7 +197,7 @@ $deg(f) \geq deg(a_{i}f_{i})$
 
 %% TODO : Übernehme Example 5 aus Seite 67 aus Cox, O'Shea
 
-The last example shows that is still possible to obtain a nonzero remainder even if $f \in \langle f_{1},f_{2} \rangle $. That means r = 0 is a sufficient condition for the ideal membership but not a necessary condition
+The last example shows that is still possible to obtain a nonzero remainder even if $f \in \langle f_{1},f_{2} \rangle $. That means r = 0 is a  necessary condition for the ideal membership but not a sufficient condition
 \subsection{Groebner basis}
 
 To solve the idea membership problem a "good" generating set for an Ideal I is needed. It would be helpful when the remainder r on division is uniqueley determined and the condition $ r = $ is equivalent to the membership in the ideal.
@@ -217,12 +217,12 @@ Also every Ideal in $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ has a Groebner
 
 In order to obtain a Groebner basis of an arbitrary basis $f_{1}, \ldots , f_{n}$ with an arbitrary monomial order $\geq$ of an Ideal $I$, an algorithm is needed. This algorithm is called Buchberger-Algorithm. The main idea is to build every possible S-Polynomial of $\left( f_{i},f_{j}\right) $ for every $ 1 \leq i \neq j \leq n $ and every nonzero result is added to the basis until every S-Pair of $\left( f_{i},f_{j}\right) $ vanishes.
 
-Let the polynomials $f,g \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and $\textsc{LT}_{\leq}\left(f \right) = cX^{\alpha} $, $\textsc{LT}_{\leq}\left(g \right) = dX^{\beta} $ and $\textsc{LCM}\left( X^{\alpha},X^{\beta}\right) $ be the least common multiple between $X^{\alpha}$ and $X^{\beta}$. 
+Let the polynomials $f,g \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and $\textsc{LT}_{\leq}\left(f \right) = cX^{\upalpha} $, $\textsc{LT}_{\leq}\left(g \right) = dX^{\upbeta} $ and $\textsc{LCM}\left( X^{\upalpha},X^{\upbeta}\right) $ be the least common multiple between $X^{\upalpha}$ and $X^{\upbeta}$. 
 
 \begin{env_definition}[S-Polynomial]
 $\left[ KHZ\right] $ The S-polynomial of f and g is the polynomial
 \begin{center}
-\[ S\left( f,g\right) = \frac{ \textrm{LCM}\left( X^{\alpha}, X^{\beta}\right) }{\textsc{LT}_{\leq}\left( f\right) } \cdot f - \frac{ \textrm{LCM}\left( X^{\alpha}, X^{\beta}\right) }{\textsc{LT}_{\leq}\left( g\right) } 
+\[ S\left( f,g\right) = \frac{\textsc{LCM}\left( X^{\upalpha}, X^{\upbeta}\right) }{\textsc{LT}_{\leq}\left( f\right) } \cdot f - \frac{ \textsc{LCM}\left( X^{\upalpha}, X^{\upbeta}\right) }{\textsc{LT}_{\leq}\left( g\right) } 
 \cdot g \]
 \end{center}
 
@@ -284,12 +284,85 @@ Fortunalety a each nonzero Ideal in $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]
 %% monic polynomial := Leading coefficient = 1
 \begin{env_definition}[Reduced Groebner basis]
 A Groebner basis  $G= \left\lbrace  f_{1}, \cdots , f_{m} \right\rbrace  $ in 
-$ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ is reduced if the polynomials $f_{1},\cdots , f_{m} $ are monic and no term $f_{i}$ is divisible by $ \textsc{LT}_{\leq }\left( f_{j}\right)$ for any pair $i\neq j$, where $\leq$ is a monomial order.
+$ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ is reduced if the polynomials $f_{1},\cdots , f_{m} $ are monic and no term $f_{i}$ is divisible by $ \textsc{LT}_{\leq }\left( f_{j}\right)$ for any pair $i\neq j$, where $\leq$ is monomial order.
 \end{env_definition}
 
 
 \subsection{Groebner fans}
+ Groebner bases for a fixed Ideal $I$ with different monomial orders can look very different and have different properties. The difference can be in the number of elements in the Groebner basis, the length or the degree of the elements. So it will be helpful if all 
+possible Groebner basis of a fixed ideal can be collected together.\\
+$\left[ Cox,O'Shea\right]  $ shows that the collection is finite.
+ 
+\begin{env_definition}[Groebner fan]
+$\left[ Cox,O'Shea\right]  $ A Groebner fan of an Ideal $I$ constist of finitley many closed convex polyedral cones with vertices at the origin, such that
+
+\begin{itemize}
+\item
+A face of a cone $\sigma$ is $\sigma \cap \lbrace l=0\rbrace$, where $l=0$ is a nontrivial linear equation such that $l \geq 0$ on $\sigma$.
+Any face of a cone in the fan is also in the fan.
+\item
+The intersection of two cones in the fan is a face of each.
+\end{itemize}
+
+\end{env_definition}
+
+In order to construct a Groebner fan to a given Ideal, consider the marked Groebner basis $G = \lbrace g_{1},\cdots,g_{t}\rbrace $ of the Ideal $I$.
+A marked Groebner basis is a Groebner basis where each $g \in G$ has an identified leading term, such that G is a monic Groebner basis with respect to some monomial $>$ order selecting those terms.
+More informally, where all leading terms in G are marked.\\
+The elements of G $g_{i}$ can be written as
+\begin{center}
+\[ g_{i} = x^{\upalpha\left( i\right) } +  \sum_{\upbeta} c_{i,\upbeta}x^{\upbeta}, \] 
+\end{center}
+where $ x^{\upalpha\left( i\right) }$ is the leading term and $ x^{\upalpha\left( i\right) } > x^{\upbeta} $,with respect to a monomial order, whenever $c_{i,\upbeta} \neq 0 $.
+
+Now if a weight vector $\textbf{w}$ fullfills the inequation
+$\upalpha\left( i\right) \ast \textbf{w} \geq \upbeta~\ast\textbf{w}$, the vector selects the correct leading term in $g_{i}$ as the term with the highest weight.\\
+
+So the cone of a Groebner basis can be written as $ \left[Cox Oshea \right] $\\
+\begin{center}
+$C_{G} = \left\lbrace \textbf{w} \in \left(\mathbb{R}^{n}\right)^{+} : \upalpha\left( i\right) \cdot \textbf{w} \geq \beta \cdot \textbf{w}~~~ \textrm{whenever}~ c_{i,\upbeta} \neq 0 \right\rbrace   $
+\end{center}
+
+%% TODO: Eigenes Beispiel konstruieren??
+
+\textbf{example}
+Consider the Ideal from $\left[ Cox O'Shea\right] $ with $ I = \langle x^{2}-y,xz-y^{2}+yz \rangle \in \mathbb{Q}\left[ x,y,z\right] .$
+Note that the ring is 3-dimensional so that Groebner fan can be plotted in the positive orthant $ \mathbb{R}^{3}_{+}$. \\
+The marked Groebner basis with respect to the \textit{grevlex} order with $y>z>x$ is
+\begin{center}
+$G^{\left( 1\right) } = \left\lbrace \underline{x^{2}}-y,\underline{y^{2}} -yz -xz\right\rbrace $
+\end{center}
+The leading terms are underlined. Let $\textbf{w} = \left( a,b,c\right) \in \mathbb{R}^{3}_{+} $. Then W is in the cone $C_{G^{1}}$ if and only the inequalities defined above are satisfied.
+
+\begin{itemize}
+
+\item
+$\left( 2,0,0\right) \cdot \left( a,b,c\right) \geq \left( 0,1,0\right) \cdot \left( a,b,c\right) $ or $2a\geq b$ 
+\item
+$\left( 0,2,0\right) \cdot \left( a,b,c\right) \geq \left( 1,0,1\right) \cdot \left( a,b,c\right) $ or $2b\geq a+c$ 
+\item
+$\left( 0,2,0\right) \cdot \left( a,b,c\right) \geq \left( 0,1,1\right) \cdot \left( a,b,c\right) $ or $2b\geq b+c$
+\end{itemize} 
+
+This is the first cone of the Groebner fan and can be drawn in the positive orthant sliced of the plane of $a+b+c=1$ for visuality.
+
+%%TODO: Bild hochladen
+
+\begin{flushright}
+$\blacklozenge$
+\end{flushright} 
+
+This figure shows that the Groebner fan is not complete, since the cone does not cover the whole positive orthant. In this example, the other reduced Groebner basis can be obtained by applying the Buchberger Algorithm with common term orders to the Ideal $I$.
+If the computed cones still are not the the whole positive orthant, then a further computation with weight vectors are necessary.
+
+This is strategy is reasonable for a small example like above.
+In genearal, the whole Groebner fan can be computed with the Groebner walk.
+See $\left[ Cox OShea \right]$ for further details.\\
+This thesis is focused on obtaining the (degree compatible) Groebner fan of Code Ideals which will be explained later.
+
+\subsection{Degree Compatible Groebner fans}
 
 
+\subsection{Enumerating Groebner fans}
 
 \newpage

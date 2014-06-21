@@ -217,10 +217,13 @@ void gset_insert(gset g, binomial b){
 /**
  * @brief gset_downedge return first facet binomial which is mis-marked
  *                      A mis-marked binomial is a binomial that does not suit
- *                      with the term order, but it is a facet binomial
+ *                      with the term order, but it is a facet binomial.
  * @param g examined gset
  * @return first facet binomial which is mis-marked
  */
+
+ //TODO FIX:GROEBNER WALK
+
 binomial gset_downedge(gset g){       
     binomial ptr=0;
     for(ptr=gset_first(g);ptr!=0;ptr=binomial_next(ptr)){
@@ -612,13 +615,18 @@ void process_pair(binomial b1,binomial b2,binomial DL,binomial SL,binomial *NL,
 #define max(a,b) (((a)>(b))?(a):(b))
 
 void gset_setfacets(gset g){
+    int debug = 0;
     binomial b;
     monomial ml,mt;
     int i,d=0,dl,dt;
     gset_nfacets(g)=0;
     gset_nelts(g)=0;
     for(b=gset_first(g);b!=0;b=binomial_next(b)){
-        if (gset_isfacet(g,b)==FACET) gset_nfacets(g)++;
+        //fprintf(stderr, "%d ", debug );
+        debug++;
+        if (gset_isfacet(g,b)==FACET){
+         gset_nfacets(g)++;
+        }
         gset_nelts(g)++;
         ml=binomial_lead(b); dl=0;
         mt=binomial_trail(b); dt=0;
@@ -638,16 +646,23 @@ void gset_setfacets(gset g){
 */
 int lptest=1;   /* 1 test only LP, 2 test only flipability, 3 test both */
 int gset_isflippable(gset g,binomial b); 
+
 int gset_isfacet(gset g,binomial b){
+    //fprintf(stderr, "Testing if binomial is facet");
     int rval=UNKNOWN;
     rval=b->ff;
+
+
     if (rval!=FACET && rval!=NONFACET){
         switch(lptest){
+        // use linear programming
         case 1: rval=(b->ff=lp_isfacet(g,b));
             break;
+        // use flippability test
         case 2: if (gset_isflippable(g,b)==FALSE) rval=(b->ff=NONFACET);
             else rval=(b->ff=FACET);
             break;
+        // use both
         case 3: if (gset_isflippable(g,b)==FALSE) rval=(b->ff=NONFACET);
             else rval=(b->ff=lp_isfacet(g,b));
             break;
@@ -655,6 +670,7 @@ int gset_isfacet(gset g,binomial b){
             exit(4);
         }
     }
+
     return rval;
 }
 
@@ -664,7 +680,7 @@ int gset_isfacet(gset g,binomial b){
 int gset_isflippable(gset g,binomial b){
     int ctg=0,ctn=1,val=TRUE;
     binomial new=0,tmp,ptrg,ptrn,btmp;
-    /* copy all binomials of g's list ecept b to old and new lists*/
+    /* copy all binomials of g's list except b to old and new lists*/
     for(ptrg=gset_first(g);ptrg!=0;ptrg=ptrg->next){
         ctg++;
         if (ptrg!=b){

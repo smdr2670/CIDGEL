@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  19 JUN 2014 16:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  21 JUN 2014 18:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -130,6 +130,13 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip45
 \dth@everypar=\toks24
 )
+(/usr/share/texlive/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
@@ -172,19 +179,19 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
  (./drba.aux)
 \openout1 = `drba.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
@@ -192,7 +199,7 @@ File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 
 (./drba_tp.tex)
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 24.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 25.
  (./drba.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 2.
@@ -314,34 +321,44 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 236.
 
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8] [9]) (./drba_lc.tex)
-(./drba_sw.tex) (./drba_ap.tex) [10] (./drba.aux) ) 
+) [8]
+Underfull \hbox (badness 10000) in paragraph at lines 318--320
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+[9] [10]) (./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [11] (./drba.aux) ) 
 Here is how much of TeX's memory you used:
- 2262 strings out of 495031
- 28486 string characters out of 6181531
- 82666 words of memory out of 5000000
- 5393 multiletter control sequences out of 15000+600000
- 37357 words of font info for 82 fonts, out of 8000000 for 9000
+ 2327 strings out of 495031
+ 29177 string characters out of 6181531
+ 82725 words of memory out of 5000000
+ 5452 multiletter control sequences out of 15000+600000
+ 38206 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  27i,5n,26p,539b,307s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/mathpazo/fplmri.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (10 pages, 147126 bytes).
+{/
+usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fon
+ts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on drba.pdf (11 pages, 155799 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

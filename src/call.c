@@ -372,12 +372,18 @@ int main(int argc, char **argv ){
 
                     Gtmp = gset_new();
                     gset_copy(G1,Gtmp);
-
                     gset_puncture(Gtmp,k); 
-                                    
                     gset_eliminatezero(Gtmp);
-                    
-                    gset_rgb(Gtmp,monomial_grlexcomp);
+
+                    // Debug print
+                    gset_print(stderr,Gtmp);
+
+                                        
+                    // Gr-lex basis are not necessary!
+                    //FIXME: warum punktierten codes anders
+                    //gset_rgb(Gtmp,monomial_grlexcomp);
+
+                    fprintf(outfile,"done\n");
                     counter = rsearch(Gtmp,1,no_print);
                     fprintf(outfile,"\n");
                     fprintf(outfile,"Number of Groebner bases found %d\n",counter);
@@ -466,8 +472,12 @@ int main(int argc, char **argv ){
                     gset_puncture(Gtmp,k);
                     gset_eliminatezero(Gtmp);
 
-                    gset_rgb(Gtmp,monomial_grlexcomp);
-                    counter = rsearch(Gtmp,1,no_print);
+                    gset_print(stderr,Gtmp);
+
+
+                    //FIXME: Warum sind die Punktierten Codes anders ??
+                    //gset_rgb(Gtmp,monomial_grlexcomp);
+                    counter = exsearch(Gtmp,degree_comp,no_print);
                     fprintf(outfile,"\n");
                     fprintf(outfile,"Number of Groebner bases found %d\n",counter);
                     fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
@@ -475,12 +485,11 @@ int main(int argc, char **argv ){
                     if(no_print == FALSE){
                         printstats();
                     }
+
                     fprintf(outfile,"\n-----------------------------------------------------\n");
                     gset_free(Gtmp);
 
                 }
-
-
             }else{
                 counter=exsearch(G1,degree_comp,no_print);
                 tt=(clock()-tt)/CLOCKS_PER_SEC;
