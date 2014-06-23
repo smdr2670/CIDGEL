@@ -334,7 +334,11 @@ int main(int argc, char **argv ){
     if (root_only==FALSE){
         if (use_exsearch==FALSE){
             /* should double check we are at root */
-            fprintf(outfile,"\n Enumerating Groebner bases\n");
+            if(degree_comp == TRUE){
+                fprintf(outfile,"\n Enumerating degree compatible Groebner bases\n");
+            }else{
+                fprintf(outfile,"\n Enumerating Groebner bases\n");
+            }
             fprintf(outfile,"   using reverse search\n");
             if (ifname!=0){
                 fprintf(outfile,"   taking input from %s\n",ifname);
@@ -390,9 +394,9 @@ int main(int argc, char **argv ){
                     fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
 
 
-                    if(no_print == FALSE){
+                    
                         printstats();
-                    }
+                    
                     fprintf(outfile,"\n-----------------------------------------------------\n");
                     gset_free(Gtmp);
                 }
@@ -403,9 +407,9 @@ int main(int argc, char **argv ){
                 fprintf(outfile,"Number of Groebner bases found %d\n",counter);
                 fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
 
-                if(no_print == FALSE){
-                    printstats();
-                }
+                
+                printstats();
+                
             }
 
             if (ifname!=0){
@@ -441,7 +445,11 @@ int main(int argc, char **argv ){
 
         }else {
             // Using exhaustive search
-            fprintf(outfile,"\nEnumerating Groebner bases\n");
+            if(degree_comp == TRUE){
+                fprintf(outfile,"\n Enumerating degree compatible Groebner bases\n");
+            }else{
+                fprintf(outfile,"\n Enumerating Groebner bases\n");
+            }
             fprintf(outfile,"using exhaustive searching");
             if (ifname!=0){
                 fprintf(outfile,"taking input from %s\n",ifname);
@@ -482,9 +490,8 @@ int main(int argc, char **argv ){
                     fprintf(outfile,"Number of Groebner bases found %d\n",counter);
                     fprintf(outfile,"Number of edges of state polytope %d\n",stats_ecounter);
 
-                    if(no_print == FALSE){
-                        printstats();
-                    }
+                    printstats();
+                    
 
                     fprintf(outfile,"\n-----------------------------------------------------\n");
                     gset_free(Gtmp);

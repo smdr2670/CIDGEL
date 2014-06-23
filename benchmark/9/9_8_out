@@ -1,0 +1,52 @@
+
+Using following Matrix with dimension :2 
+{ 8 9:
+ 1, 0, 0, 0, 0, 0, 0, 0, 0
+ 0, 1, 0, 0, 0, 0, 0, 0, 1
+ 0, 0, 1, 0, 0, 0, 0, 0, 1
+ 0, 0, 0, 1, 0, 0, 0, 0, 0
+ 0, 0, 0, 0, 1, 0, 0, 0, 0
+ 0, 0, 0, 0, 0, 1, 0, 0, 1
+ 0, 0, 0, 0, 0, 0, 1, 0, 0
+ 0, 0, 0, 0, 0, 0, 0, 1, 1
+}
+calculating first code ideal...
+done
+
+% starting GB:
+F: 2
+R: 9
+G: {a-1, b-i, c-i, d-1, e-1, f-i, g-1, h-i, i^2-1}
+
+ Enumerating Groebner bases
+   using reverse search
+   taking input from benchmark/9/9_8
+   with partial caching
+   using wall ideal pretest for facet checking
+Vtx: 1 (4 facets/4 among them degree compatible /9 binomials/degree 2)
+{! a-1, $ b-i, $ c-i, ! d-1, ! e-1, $ f-i, ! g-1, $ h-i, i^2-1}
+
+Vtx: 2 (4 facets/4 among them degree compatible /9 binomials/degree 2)
+{! a-1, $ b-h, $ c-h, ! d-1, ! e-1, $ f-h, ! g-1, h^2-1, $ i-h}
+
+Vtx: 3 (4 facets/4 among them degree compatible /9 binomials/degree 2)
+{! a-1, $ b-f, $ c-f, ! d-1, ! e-1, f^2-1, ! g-1, $ h-f, $ i-f}
+
+Vtx: 4 (4 facets/4 among them degree compatible /9 binomials/degree 2)
+{! a-1, $ b-c, c^2-1, ! d-1, ! e-1, $ f-c, ! g-1, $ h-c, $ i-c}
+
+Vtx: 5 (4 facets/4 among them degree compatible /9 binomials/degree 2)
+{! a-1, b^2-1, $ c-b, ! d-1, ! e-1, $ f-b, ! g-1, $ h-b, $ i-b}
+
+
+Number of Groebner bases found 5
+Number of edges of state polytope 10
+max caching depth      4
+max facet binomials    4
+min facet binomials    4
+max binomials in GB    9
+min binomials in GB    9
+max degree             2
+min degree             2
+benchmark/9/9_8: Reverse Search,   Caching,  A-pretest,
+time used (in seconds) 0.00

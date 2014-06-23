@@ -222,14 +222,15 @@ void gset_insert(gset g, binomial b){
  * @return first facet binomial which is mis-marked
  */
 
- //TODO FIX:GROEBNER WALK
-
+ 
 binomial gset_downedge(gset g){       
     binomial ptr=0;
     for(ptr=gset_first(g);ptr!=0;ptr=binomial_next(ptr)){
         if (binomial_grlexordered(ptr)==FALSE && gset_isfacet(g,ptr)==TRUE ){
             break;
         }
+        //fprintf(stderr,"halp");
+
     }
     return ptr;
 }
@@ -379,7 +380,7 @@ gset gset_flip(gset g1, binomial b){
     /* sainity check -- remove eventually*/
 #ifdef GTEST
     if (lp_isfacet(g1,b)!=FACET){
-        fprintf(stdout,"WARNING flip asked to flip non-binomial\n");
+        fprintf(stdout,"WARNING flip asked to flip non-facetbinomial\n");
     }
 #endif
 
@@ -401,17 +402,21 @@ gset gset_flip(gset g1, binomial b){
     Bold=binomial_new();
     binomial_copy(b,Bold);
 
-    /* make fliped copy of b*/
+    /* make flipped copy of b*/
     B=binomial_new();
     binomial_copy(b,B);
     binomial_flip(B);
 
     /* calculate the reduced GB of the binomial b and the monomials in M */
+   
     bmrgb(B,&new);
+    
 
     /* create new gset and insert flipped copy of b */
     gres=gset_new();
     gset_insert(gres,B);
+
+   
 
     /* do lifting of elements in mlist and add them to new gset*/
     while((tmp=new)!=0){
@@ -420,6 +425,7 @@ gset gset_flip(gset g1, binomial b){
         gset_insert(gres,ptr);
         binomial_free(tmp);
     }
+   
 
     /* sainity check -- remove eventually*/
 #ifdef GTEST
@@ -439,6 +445,7 @@ gset gset_flip(gset g1, binomial b){
     }
 
     gset_autoreduce(gres);
+
 
     /* sainity check -- remove eventually */
 #ifdef GTEST
@@ -648,9 +655,14 @@ int lptest=1;   /* 1 test only LP, 2 test only flipability, 3 test both */
 int gset_isflippable(gset g,binomial b); 
 
 int gset_isfacet(gset g,binomial b){
-    //fprintf(stderr, "Testing if binomial is facet");
+    
     int rval=UNKNOWN;
     rval=b->ff;
+
+    /* This cost */
+    if(monomial_stddegree(binomial_lead(b))== 2 && monomial_stddegree(binomial_trail(b))==0 ){
+        rval = NONFACET;
+    }
 
 
     if (rval!=FACET && rval!=NONFACET){
@@ -735,7 +747,9 @@ int lp_isfacet(gset g,binomial b){
 
     /* need cheeper way to determine the size of g */
     for(ptr=gset_first(g);ptr!=0;ptr=binomial_next(ptr)){
-        if (ptr->ff!=NONFACET)M++;
+        if (ptr->ff!=NONFACET){
+            M++;
+        }
     }
 
     /* make sure the lp structures have enough space for the program*/

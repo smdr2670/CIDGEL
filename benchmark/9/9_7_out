@@ -1,0 +1,129 @@
+
+Using following Matrix with dimension :2 
+{ 7 9:
+ 1, 0, 0, 0, 0, 0, 0, 0, 0
+ 0, 1, 0, 0, 0, 0, 0, 1, 1
+ 0, 0, 1, 0, 0, 0, 0, 0, 1
+ 0, 0, 0, 1, 0, 0, 0, 1, 0
+ 0, 0, 0, 0, 1, 0, 0, 1, 0
+ 0, 0, 0, 0, 0, 1, 0, 0, 1
+ 0, 0, 0, 0, 0, 0, 1, 1, 0
+}
+calculating first code ideal...
+done
+
+% starting GB:
+F: 2
+R: 9
+G: {a-1, b-h*i, c-i, d-h, e-h, f-i, g-h, h^2-1, i^2-1}
+
+ Enumerating Groebner bases
+   using reverse search
+   taking input from benchmark/9/9_7
+   with partial caching
+   using wall ideal pretest for facet checking
+Vtx: 1 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*h-i, # b*i-h, $ c-i, $ d-h, $ e-h, $ f-i, $ g-h, h^2-1, # h*i-b, i^2-1}
+
+Vtx: 2 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*f-h, # b*h-f, $ c-f, $ d-h, $ e-h, f^2-1, # f*h-b, $ g-h, h^2-1, $ i-f}
+
+Vtx: 3 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*c-h, # b*h-c, c^2-1, # c*h-b, $ d-h, $ e-h, $ f-c, $ g-h, h^2-1, $ i-c}
+
+Vtx: 4 (6 facets/3 among them degree compatible /9 binomials/degree 2)
+{! a-1, b^2-1, # c-b*h, $ d-h, $ e-h, # f-b*h, $ g-h, h^2-1, # i-b*h}
+
+Vtx: 5 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-c*h, c^2-1, $ d-h, $ e-h, $ f-c, $ g-h, h^2-1, $ i-c}
+
+Vtx: 6 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-f*h, $ c-f, $ d-h, $ e-h, f^2-1, $ g-h, h^2-1, $ i-f}
+
+Vtx: 7 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*f-g, # b*g-f, $ c-f, $ d-g, $ e-g, f^2-1, # f*g-b, g^2-1, $ h-g, $ i-f}
+
+Vtx: 8 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*c-g, # b*g-c, c^2-1, # c*g-b, $ d-g, $ e-g, $ f-c, g^2-1, $ h-g, $ i-c}
+
+Vtx: 9 (6 facets/3 among them degree compatible /9 binomials/degree 2)
+{! a-1, b^2-1, # c-b*g, $ d-g, $ e-g, # f-b*g, g^2-1, $ h-g, # i-b*g}
+
+Vtx: 10 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-c*g, c^2-1, $ d-g, $ e-g, $ f-c, g^2-1, $ h-g, $ i-c}
+
+Vtx: 11 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*e-f, # b*f-e, $ c-f, $ d-e, e^2-1, # e*f-b, f^2-1, $ g-e, $ h-e, $ i-f}
+
+Vtx: 12 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*c-e, # b*e-c, c^2-1, # c*e-b, $ d-e, e^2-1, $ f-c, $ g-e, $ h-e, $ i-c}
+
+Vtx: 13 (6 facets/3 among them degree compatible /9 binomials/degree 2)
+{! a-1, b^2-1, # c-b*e, $ d-e, e^2-1, # f-b*e, $ g-e, $ h-e, # i-b*e}
+
+Vtx: 14 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-c*e, c^2-1, $ d-e, e^2-1, $ f-c, $ g-e, $ h-e, $ i-c}
+
+Vtx: 15 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*c-d, # b*d-c, c^2-1, # c*d-b, d^2-1, $ e-d, $ f-c, $ g-d, $ h-d, $ i-c}
+
+Vtx: 16 (6 facets/2 among them degree compatible /9 binomials/degree 2)
+{! a-1, b^2-1, c^2-1, # d-b*c, # e-b*c, $ f-c, # g-b*c, # h-b*c, $ i-c}
+
+Vtx: 17 (6 facets/3 among them degree compatible /9 binomials/degree 2)
+{! a-1, b^2-1, # c-b*d, d^2-1, $ e-d, # f-b*d, $ g-d, $ h-d, # i-b*d}
+
+Vtx: 18 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-c*d, c^2-1, d^2-1, $ e-d, $ f-c, $ g-d, $ h-d, $ i-c}
+
+Vtx: 19 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*d-f, # b*f-d, $ c-f, d^2-1, # d*f-b, $ e-d, f^2-1, $ g-d, $ h-d, $ i-f}
+
+Vtx: 20 (6 facets/2 among them degree compatible /9 binomials/degree 2)
+{! a-1, b^2-1, $ c-f, # d-b*f, # e-b*f, f^2-1, # g-b*f, # h-b*f, $ i-f}
+
+Vtx: 21 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-d*f, $ c-f, d^2-1, $ e-d, f^2-1, $ g-d, $ h-d, $ i-f}
+
+Vtx: 22 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-e*f, $ c-f, $ d-e, e^2-1, f^2-1, $ g-e, $ h-e, $ i-f}
+
+Vtx: 23 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-f*g, $ c-f, $ d-g, $ e-g, f^2-1, g^2-1, $ h-g, $ i-f}
+
+Vtx: 24 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*g-i, # b*i-g, $ c-i, $ d-g, $ e-g, $ f-i, g^2-1, # g*i-b, $ h-g, i^2-1}
+
+Vtx: 25 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*e-i, # b*i-e, $ c-i, $ d-e, e^2-1, # e*i-b, $ f-i, $ g-e, $ h-e, i^2-1}
+
+Vtx: 26 (8 facets/5 among them degree compatible /12 binomials/degree 2)
+{! a-1, b^2-1, # b*d-i, # b*i-d, $ c-i, d^2-1, # d*i-b, $ e-d, $ f-i, $ g-d, $ h-d, i^2-1}
+
+Vtx: 27 (6 facets/2 among them degree compatible /9 binomials/degree 2)
+{! a-1, b^2-1, $ c-i, # d-b*i, # e-b*i, $ f-i, # g-b*i, # h-b*i, i^2-1}
+
+Vtx: 28 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-d*i, $ c-i, d^2-1, $ e-d, $ f-i, $ g-d, $ h-d, i^2-1}
+
+Vtx: 29 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-e*i, $ c-i, $ d-e, e^2-1, $ f-i, $ g-e, $ h-e, i^2-1}
+
+Vtx: 30 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-g*i, $ c-i, $ d-g, $ e-g, $ f-i, g^2-1, $ h-g, i^2-1}
+
+Vtx: 31 (6 facets/5 among them degree compatible /9 binomials/degree 2)
+{! a-1, # b-h*i, $ c-i, $ d-h, $ e-h, $ f-i, $ g-h, h^2-1, i^2-1}
+
+
+Number of Groebner bases found 31
+Number of edges of state polytope 105
+max caching depth      6
+max facet binomials    8
+min facet binomials    6
+max binomials in GB    12
+min binomials in GB    9
+max degree             2
+min degree             2
+benchmark/9/9_7: Reverse Search,   Caching,  A-pretest,
+time used (in seconds) 0.04

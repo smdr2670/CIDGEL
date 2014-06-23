@@ -52,9 +52,7 @@ struct node* list2 = NULL;
  */
 void vertex_print(gset g1,int no_print ){
 
-    if(no_print == TRUE){
-        return;
-    }
+
 
     stats_maxfacets=max(gset_nfacets(g1),stats_maxfacets);
     stats_maxelts=max(gset_nelts(g1),stats_maxelts);
@@ -78,6 +76,9 @@ void vertex_print(gset g1,int no_print ){
         stats_mindeg=min(stats_mindeg,gset_deg(g1));
     }
 
+    if(no_print == TRUE){
+        return;
+    }
 
     fprintf(outfile,"Vtx: %d (%d facets/%d among them degree compatible /%d binomials/degree %d)\n",
             gset_id(g1),gset_nfacets(g1),countDC(g1), gset_nelts(g1),gset_deg(g1));
@@ -217,7 +218,8 @@ int rsearch(gset g1, int number, int no_print){
             //if (binomial_grlexordered(b)==TRUE && flip_condition(b)   ){
             if (gset_isfacet(G1,b)==TRUE && flip_condition(b) ){
                 stats_ecounter++;
-                //fprintf(stderr, "flipping" );
+
+
                 G2=gset_flip(G1,b);
                  if(DEBUG){
                     fprintf(stderr,"CHECKPOINT 6\n");
@@ -252,8 +254,12 @@ int rsearch(gset g1, int number, int no_print){
                     }               
                     
                     gset_id(G1)=++counter;
+                    if(counter%1000 == 0){
+                        fprintf(stderr,"%d Groebner bases counted yet...\n" , counter);
+                    }
                     vertex_print(G1,no_print);
 
+                    /*Sets the linked list for matching 2 Groebner fans */
                     if(match_fan == TRUE){
                         new_node=newNode(gset_id(G1),gset_nfacets(G1),gset_nelts(G1),gset_deg(G1));
                         if(number == 1){

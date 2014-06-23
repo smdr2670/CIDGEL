@@ -1,0 +1,32 @@
+
+Using following Matrix with dimension :2 
+{ 3 7:
+ 1, 0, 0, 0, 0, 1, 1
+ 0, 1, 0, 0, 1, 1, 0
+ 0, 0, 1, 1, 0, 0, 1
+}
+calculating first code ideal...
+done
+
+% starting GB:
+F: 2
+R: 7
+G: {a-f*g, b-e*f, c-d*g, d^2-1, e^2-1, f^2-1, g^2-1}
+
+ Enumerating degree compatible Groebner bases
+   using reverse search
+   taking input from benchmark/7/7_3
+   with partial caching
+   using wall ideal pretest for facet checking
+
+Number of Groebner bases found 16
+Number of edges of state polytope 32
+max caching depth      4
+max facet binomials    12
+min facet binomials    7
+max binomials in GB    24
+min binomials in GB    20
+max degree             3
+min degree             2
+benchmark/7/7_3: Reverse Search,   Caching,  A-pretest,
+time used (in seconds) 0.18

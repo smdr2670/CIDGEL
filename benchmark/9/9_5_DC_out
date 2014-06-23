@@ -1,0 +1,34 @@
+
+Using following Matrix with dimension :2 
+{ 5 9:
+ 1, 0, 0, 0, 0, 0, 1, 0, 0
+ 0, 1, 0, 0, 0, 0, 0, 1, 1
+ 0, 0, 1, 0, 0, 1, 1, 0, 1
+ 0, 0, 0, 1, 0, 1, 0, 1, 0
+ 0, 0, 0, 0, 1, 0, 0, 1, 0
+}
+calculating first code ideal...
+done
+
+% starting GB:
+F: 2
+R: 9
+G: {a-g, b-h*i, c-f*g*i, d-f*h, e-h, f^2-1, g^2-1, h^2-1, i^2-1}
+
+ Enumerating degree compatible Groebner bases
+   using reverse search
+   taking input from benchmark/9/9_5
+   with partial caching
+   using wall ideal pretest for facet checking
+
+Number of Groebner bases found 216
+Number of edges of state polytope 768
+max caching depth      12
+max facet binomials    15
+min facet binomials    9
+max binomials in GB    27
+min binomials in GB    22
+max degree             3
+min degree             2
+benchmark/9/9_5: Reverse Search,   Caching,  A-pretest,
+time used (in seconds) 4.72

@@ -1,12 +1,12 @@
 # ------------------------------------------------
 # Makefile for the software which enumrates all 
 # or degree compatible groebner bases of a code 
-# ideal. (software-name not available yet)
+# ideal. 
 #
 # Author: daniel.rembold@tu-harburg.de
 # Date  : 2014-05-27
 #
-# TODO: make the include path work
+# 
 #
 # Changelog :
 #   2014-05-27 - first version

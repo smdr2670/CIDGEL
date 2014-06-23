@@ -1,0 +1,47 @@
+./cidgel -i benchmark/11_5 -f -n -d
+
+using filename benchmark/11_5 for input
+
+Using following Matrix with dimension :2 
+{ 5 11:
+ 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0
+ 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1
+ 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1
+ 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1
+ 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0
+}
+calculating first code ideal...
+done
+
+% starting GB:
+F: 2
+R: 11
+G: {a-g*i*j, b-h*k, c-h*j*k, d-h*i*k, e-g*h*i*j, f^2-1, g^2-1, h^2-1, i^2-1, j^2-1, k^2-1}
+
+ Enumerating Groebner bases
+   using reverse search
+   taking input from benchmark/11_5
+   with partial caching
+   using wall ideal pretest for facet checking
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+Warning: rsearch doing walk to get to root
+doing walk finished
+
+Number of Groebner bases found 2232
+Number of edges of state polytope 9788
+benchmark/11_5: Reverse Search,   Caching,  A-pretest,
+time used (in seconds) 815.97
+

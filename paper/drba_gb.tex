@@ -76,7 +76,9 @@ The monomials can also be written as $m_{1} = X^{(2 \; 4 \; 3)}$ and $m_{2} = X^
 Thus $m_{1}>_{lex} m_{2}$ because the left most non-zero entry of $ (2 \; 4 \; 3) - (1 \; 1 \; 4)$ is positive.\\
 
 The total degree of $m_{1}$ is 9 and $deg(m_{2})=6$. Hence, $m_{1}>_{lex} m_{2}$ and
-$deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$    
+$deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$   
+
+\subsubsection{Weight vectors} 
 
 \subsubsection{Leading term}
 
@@ -346,6 +348,7 @@ $\left( 0,2,0\right) \cdot \left( a,b,c\right) \geq \left( 0,1,1\right) \cdot \l
 
 This is the first cone of the Groebner fan and can be drawn in the positive orthant sliced of the plane of $a+b+c=1$ for visuality.
 
+
 %%TODO: Bild hochladen
 
 \begin{flushright}
@@ -358,11 +361,39 @@ If the computed cones still are not the the whole positive orthant, then a furth
 This is strategy is reasonable for a small example like above.
 In genearal, the whole Groebner fan can be computed with the Groebner walk.
 See $\left[ Cox OShea \right]$ for further details.\\
-This thesis is focused on obtaining the (degree compatible) Groebner fan of Code Ideals which will be explained later.
+An inexpensive way to obtain all reduced Groebner bases of a special ideal, the Code Ideal, which will be explained later.
 
 \subsection{Degree Compatible Groebner fans}
 
+\subsection{Toric Ideals}
+This work and is focused on Code Ideals, so it is useful to define the Toric Ideals first. Given a matrix $A =\left[a_{1},\dots, a_{n}  \right] \in \mathbb{Z}^{d \times n } $ and $u \in \mathbb{Z}^{n}$. $u$ which can be decomposed in $u^{+} $ and $u^{-}$, where $u^{+} $ and $u^{-}$ have nonnegative coefficients and disjoint support.
+
+\begin{env_definition}[Toric Ideal]
+$\left[ \textrm{Dueck Journal} \right] $ A toric ideal $I_{A}$ is defined as
+\begin{center}
+$ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ker \left(  A \right) \rangle  $
+\end{center}
+
+
+\end{env_definition}
+
+The toric ideal can also be expressed as
+\begin{center}
+$ \textbf{I}_{A} =  \langle \textbf{x}^{u} - \textbf{x}^{u} \mid Au = Av, u,v \in \mathbb{N}^{n}_{0} \rangle .$
+\end{center}
+
+%% TODO : Example 
+
 
 \subsection{Enumerating Groebner fans}
+For the purpose to compute all Groebner bases from a toric ideal $I_A$ , it is necessary to search the \textit{edge graph} of a Groebner fan.\\
+Two reduced Groebner bases with respect to a term order covered by the generic weight vectors $c_{1}$,$c_{2}$ are said to be adjacent if the two Groebner cones share a common \textit{facet}.
+
+
+
+\subsubsection{Breadth first search}
+
+\subsubsection{Reverse Search tree}
+
 
 \newpage
