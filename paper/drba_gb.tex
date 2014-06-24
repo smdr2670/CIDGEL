@@ -389,11 +389,89 @@ $ \textbf{I}_{A} =  \langle \textbf{x}^{u} - \textbf{x}^{u} \mid Au = Av, u,v \i
 For the purpose to compute all Groebner bases from a toric ideal $I_A$ , it is necessary to search the \textit{edge graph} of a Groebner fan.\\
 Two reduced Groebner bases with respect to a term order covered by the generic weight vectors $c_{1}$,$c_{2}$ are said to be adjacent if the two Groebner cones share a common \textit{facet}.
 
+\begin{env_definition}[Facet Binomial]
+$\left[TiGERS \right]  $ 
+The binomial $x^{\upalpha_{k}}-x^{\upbeta_k} \in \mathcal{G}_c is a facet binomial of \mathcal{G}_c~$ if and only if there exists a $u \in \mathbb{R}^{n}$ which satisfies :
+\begin{center}
+\begin{enumerate}
+
+\end{enumerate}
+\item
+\[ \lbrace \upalpha_{i} \cdot u > \upbeta_{i} \cdot u : i = 1, \cdots , t, i \neq k \rbrace  
+\]
+\item
+\[ \lbrace \upbeta_{k} \cdot u > \upalpha_{k} \cdot u \rbrace \]
+
+\end{center} 
+
+\end{env_definition}
+
+In the example (with the Gröebner fan) the facet binomials of a Gröbner cone determine the border to an other Gröber cone.
+In order to traverse from a Gröber base $\mathcal{G}_c$ to a neighboured Gröbner base $\mathcal{G}_{c'}$ with the certain facet $x^{\upalpha}-x^{\upbeta} $, a procedure making a local change from $\mathcal{G}_c$ to $\mathcal{G}_{c'}$ is required.
+This procedure is called flip.
+
+
+%% TODO: Mit Input und Output ersetzten!!
+
+\begin{algorithm}
+\caption{Local change of reduced Gröbner bases in $I_A$ $\left[ TiGERS\right]  $}
+\label{flip-alg}
+\begin{algorithmic}[1]
+
+\Require
+\begin{center}
+\begin{itemize}
+\item
+Reduced Gröbner basis $ \mathcal{G} = \lbrace \underline{x}^{a}_{k}  \rbrace $ of $I_A$
+\item
+A prescribed facet binomial $ \underline{x}^{a}_{i} - x^{b}_{i} \in \mathcal{G} $
+\end{itemize} 
+\end{center} 
+\Comment {The weight vector inducing $\mathcal{G}$ is generic and the leading terms are underlined}
+\Ensure The reduced Gröbner basis is adjacent to $\mathcal{G}$ in which $ \underline{x}^{b}_{i} - x^{a}_{i} $ is a facet binomial.
+\State Old 
+$:= \lbrace \underline{x}^{a}_{i} - x^{b}_{i} \rbrace \cup
+ \lbrace \underline{x}^{a}_{j} : \underline{x}^{a}_{j} - x^{b}_{j} \in \mathcal{G},
+ j \neq i \rbrace $
+
+
+
+
+%\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
 
 
 \subsubsection{Breadth first search}
 
+
+
 \subsubsection{Reverse Search tree}
+
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+	\draw (0,0) node[above] {$\mathcal{G}_1$}
+				(-2,-2) node[below] {$\mathcal{G}_2$}
+				(0,-2) node[below] {$\mathcal{G}_4$}
+				(2,-2) node[below] {$\mathcal{G}_8$}
+				(-2,-4.5) node[below] {$\mathcal{G}_3$}
+				(0,-4.5) node[below] {$\mathcal{G}_5$}
+				(2,-4.5) node[below] {$\mathcal{G}_7$}
+				(0,-7) node[below] {$\mathcal{G}_6$};
+    \draw [<-] (0.2,0) -- (2,-2);
+	\draw [<-] (0,0) -- (0,-2);
+	\draw [<-] (-0.2,0) -- (-2,-2);
+	\draw [<-] (-2,-2.5) -- (-2,-4.5);
+	\draw [<-] (0,-2.5) -- (0,-4.5);
+	\draw [<-] (0.2,-2.5) -- (2,-4.5);
+	\draw [<-] (0,-5) -- (0,-7);
+\end{tikzpicture}
+\caption{The reverse search tree for $Co_1$}%
+\label{fig:C1rst}%
+\end{figure}
 
 
 \newpage
