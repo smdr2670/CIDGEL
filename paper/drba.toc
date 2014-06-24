@@ -16,8 +16,10 @@
 \contentsline {subsection}{\numberline {2.7}Degree Compatible Groebner fans}{10}
 \contentsline {subsection}{\numberline {2.8}Toric Ideals}{10}
 \contentsline {subsection}{\numberline {2.9}Enumerating Groebner fans}{11}
-\contentsline {subsubsection}{\numberline {2.9.1}Breadth first search}{11}
-\contentsline {subsubsection}{\numberline {2.9.2}Reverse Search tree}{11}
-\contentsline {section}{\numberline {3}Linear Codes}{12}
-\contentsline {section}{\numberline {4}Software}{12}
-\contentsline {section}{\numberline {A}Appendix}{12}
+\contentsline {subsection}{\numberline {2.10}TRa}{11}
+\contentsline {subsubsection}{\numberline {2.10.1}Breadth first search}{11}
+\contentsline {subsubsection}{\numberline {2.10.2}Reverse Search tree}{13}
+\contentsline {subsection}{\numberline {2.11}Degree compatible Groebner }{13}
+\contentsline {section}{\numberline {3}Linear Codes}{14}
+\contentsline {section}{\numberline {4}Software}{14}
+\contentsline {section}{\numberline {A}Appendix}{14}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  24 JUN 2014 14:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  24 JUN 2014 16:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -876,41 +876,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--324
  []
 
 [9] [10]
-Overfull \hbox (79.18205pt too wide) in paragraph at lines 393--395
+Overfull \hbox (79.18205pt too wide) in paragraph at lines 395--397
 []\T1/ppl/b/n/10.95 Definition 2.12 \T1/ppl/m/n/10.95 (Facet Bi-no-mial)\T1/ppl
 /b/n/10.95 . []$[]$ \T1/ppl/m/it/10.95 The bi-no-mial $\OML/zplm/m/it/10.95 x[]
  \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 x[] \OMS/zplm/m/n/10.95 2 G[]\OML
 /zplm/m/it/10.95 isafacetbinomialof\OMS/zplm/m/n/10.95 G[] $
  []
 
-[11]) (./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [12] (./drba.aux) ) 
+[11] [12] [13]) (./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [14]
+(./drba.aux) ) 
 Here is how much of TeX's memory you used:
- 11987 strings out of 495031
- 212874 string characters out of 6181531
- 258902 words of memory out of 5000000
- 14845 multiletter control sequences out of 15000+600000
+ 11989 strings out of 495031
+ 212900 string characters out of 6181531
+ 258911 words of memory out of 5000000
+ 14847 multiletter control sequences out of 15000+600000
  38506 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,5n,55p,539b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/
-share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/e
-nc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (12 pages, 164315 bytes).
+ 56i,10n,55p,539b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/eule
+r/eurm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
+uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on drba.pdf (14 pages, 166693 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

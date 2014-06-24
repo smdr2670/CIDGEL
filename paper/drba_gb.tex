@@ -386,6 +386,8 @@ $ \textbf{I}_{A} =  \langle \textbf{x}^{u} - \textbf{x}^{u} \mid Au = Av, u,v \i
 
 
 \subsection{Enumerating Groebner fans}
+
+In this section, 2 algorithms will be explained in order to enumerate the Groebner fan.
 For the purpose to compute all Groebner bases from a toric ideal $I_A$ , it is necessary to search the \textit{edge graph} of a Groebner fan.\\
 Two reduced Groebner bases with respect to a term order covered by the generic weight vectors $c_{1}$,$c_{2}$ are said to be adjacent if the two Groebner cones share a common \textit{facet}.
 
@@ -456,10 +458,48 @@ Weight vectors are carried implicitly and that is possible due to the binomial s
 
 \subsubsection{Breadth first search}
 
-B
+In this section an algorithm to enumerate the edge graph of a Groebner fan via breath-first search and its drawbacks are presented.
+
+\begin{algorithm}
+\caption{Enumerating the edge graph of the Gröbner fan via breath-first search $\left[ TiGERS\right]  $}
+\label{breadth-alg}
+\begin{algorithmic}[1]
+
+\Require
+Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
+\Ensure All reduced Gröbner bases of $I_A$, (all vertices of the edge graph)
+\State Todo := $\left[ \mathcal{G}_0 \right]  $
+\State Verts := $\left[ \right] $
+\While{Todo $\neq \emptyset$ }
+\State $\mathcal{G}$ := first element in (Todo)
+\State Remove $\mathcal{G} $ from Todo
+\State add $\mathcal{G}$ to Verts 
+\State determine list L of facet binomials of $\mathcal{G} $
+\Comment{With linear programming}
+ \For{\textbf{each} $x^{\upalpha}-x^{\upbeta} \in ~$ L  }
+ \State $\mathcal{G}' =~$ flip($\mathcal{G},x^{\upalpha} - x^{\upbeta} $)
+ \If{$\mathcal{G}' \notin \mathrm{Todo} \cup \mathrm{Verts}  $}
+ \State add $\mathcal{G}'$ to Todo
+ \EndIf
+ \EndFor
+\EndWhile \\
+\Return Verts
+
+%\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+This algorithm is intuitive but has the drawback that every vertex of the edge graph must be stored and every vertex must be checked against all other vertices if it is a new vertex or not. 
+The more vertices the edge graph has, the more expensive the calculation will be. Also the need of memory will arise if a Gröbner fan has a lot of cones.
+ 
 
 \subsubsection{Reverse Search tree}
+In this section, a memoryless algorithm is presented which has the benefit that it runs linear depending on the size of output.
+%% TODO erstmal den reverse search tree definieren
 
-NOCH MEHR BLALABLABLBA
+\subsection{Degree compatible Groebner }
+
+%% TODO Beispiele mit den Graphen geben!!
+\textbf{example}Consider this ideal : blabla 
 
 \newpage
