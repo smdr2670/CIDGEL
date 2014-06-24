@@ -25,7 +25,7 @@ int main(int argc, char* argv[]){
         fprintf(stderr, "l2print");
     }
     */
-    
+
     int i;
     int j;
     int k;
@@ -48,6 +48,7 @@ int main(int argc, char* argv[]){
     }
     */
 
+    /* Beschreibe Matrix */
     //m(i,j)
     for(i=0;i<rows;i++){
     	for(j=0;j<cols;j++){
@@ -65,23 +66,65 @@ int main(int argc, char* argv[]){
             }
     	}
     }
+
+        /* Print matrix */
+    for(i=0;i<rows;i++){
+        for(j=0;j<cols;j++){
+            offset = i * cols + j;
+            printf("%d", mat[offset]);
+        }
+        printf("\n");
+    }
+    printf("\n");
     
     /* checks if the column has a nonzero column vector */
-    for(j=rows+1;j<cols;j++ ){
-        counter = 0;
+    for(j=rows;j<cols;j++ ){
+        zerocounter = 0;
         for(i=0;i<rows;i++){
             offset = i * cols + j;
             if(mat[offset]==0){
                 zerocounter++;
             }
         }
-        if(counter == rows){
+        if(zerocounter == rows){
             border = ((rand()%rows)+1)%rows;
             for(k=0;k<border;k++){
-                offset = i * cols +k;
+                offset = k * cols + j;
                 mat[offset] = dim-1;
             }
         }
+    }
+
+        /* Print matrix */
+    for(i=0;i<rows;i++){
+        for(j=0;j<cols;j++){
+            offset = i * cols + j;
+            printf("%d", mat[offset]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+
+    /* Check if A has a nonzero row vector*/
+    for(i = 0; i<rows ; i++){
+        zerocounter = 0;
+       for(j=rows;j<cols;j++){
+            offset = i * cols + j;
+            if(mat[offset]== 0){
+                zerocounter++;
+            }
+       }
+       // TODO zufalls zahl neu generieren
+       if(zerocounter == cols-rows){
+            border = (rand()%(zerocounter)+1) + rows;
+            printf("row : %d  border %d \n",i, border );
+            for(k=(rows);k<border;k++){
+                offset = i * cols +k;
+                mat[offset] = dim-1;
+            }
+
+       }
     }
 
 
@@ -94,6 +137,7 @@ int main(int argc, char* argv[]){
         }
         printf("\n");
     }
+    printf("\n");
 
 
     free(mat);
