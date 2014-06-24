@@ -1,0 +1,32 @@
+
+Using following Matrix with dimension :2 
+{ 3 4:
+ 1, 0, 0, 1
+ 0, 1, 0, 1
+ 0, 0, 1, 1
+}
+calculating first code ideal...
+done
+
+% starting GB:
+F: 2
+R: 4
+G: {a-d, b-d, c-d, d^2-1}
+
+ Enumerating Groebner bases
+   using reverse search
+   taking input from randomgenerator/4/4_3
+   with partial caching
+   using wall ideal pretest for facet checking
+
+Number of Groebner bases found 4
+Number of edges of state polytope 6
+max caching depth      3
+max facet binomials    3
+min facet binomials    3
+max binomials in GB    4
+min binomials in GB    4
+max degree             2
+min degree             2
+randomgenerator/4/4_3: Reverse Search,   Caching,  A-pretest,
+time used (in seconds) 0.00

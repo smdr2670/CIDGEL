@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-
+void checkCols(int *mat,int rows, int cols, int dim);
+void checkRows(int *mat,int rows, int cols, int dim);
+void printMatrix(char *ofname,int *mat,int rows, int cols, int dim );
 
 
 int main(int argc, char* argv[]){
@@ -20,12 +22,6 @@ int main(int argc, char* argv[]){
     ofname = argv[4];
  
 
-    /*
-    if(argc != 4){
-        fprintf(stderr, "l2print");
-    }
-    */
-
     int i;
     int j;
     int k;
@@ -37,16 +33,11 @@ int main(int argc, char* argv[]){
     // Matrix as 1 dimensional array
     int *mat = (int *)malloc(rows * cols * sizeof(int));
 
-    int offset;
     // now mat[offset] corresponds to m(i, j)
+    int offset;
+    
 
-	/* open outfile */
-    /*
-    if (name!=0 && (outfile=fopen(name,"w"))==0){
-        fprintf(stderr,"  couldn't open %s for output\n",ofname);
-        exit(1);
-    }
-    */
+
 
     /* Beschreibe Matrix */
     //m(i,j)
@@ -67,7 +58,13 @@ int main(int argc, char* argv[]){
     	}
     }
 
-        /* Print matrix */
+    checkCols(mat,rows,cols,dim);
+    checkRows(mat,rows,cols,dim);
+
+
+
+    
+    /* Print matrix */
     for(i=0;i<rows;i++){
         for(j=0;j<cols;j++){
             offset = i * cols + j;
@@ -76,7 +73,45 @@ int main(int argc, char* argv[]){
         printf("\n");
     }
     printf("\n");
+
+    printMatrix(ofname,mat,rows,cols, dim);
+
+
+    free(mat);
+}
+
+
+void printMatrix(char *ofname,int *mat,int rows, int cols, int dim ){
+    FILE *outfile;
+    int offset,i,j;
+    /* open outfile */
+    if (ofname!=0 && (outfile=fopen(ofname,"w"))==0){
+        fprintf(stderr,"  couldn't open %s for output\n",ofname);
+        exit(1);
+    }
+
+    fprintf(outfile, "M: { %d %d %d :\n", rows, cols,dim );
+
+        /* Print matrix */
+    for(i=0;i<rows;i++){
+        for(j=0;j<cols;j++){
+            offset = i * cols + j;
+            fprintf(outfile, "%d ", mat[offset]);
+        }
+        fprintf(outfile,"\n");
+    }
+
+    fprintf(outfile, "}" );
+}
+
     
+
+
+
+
+void checkCols(int *mat,int rows, int cols, int dim){
+    srand(time(NULL));
+    int k,border,zerocounter,offset,i,j;
     /* checks if the column has a nonzero column vector */
     for(j=rows;j<cols;j++ ){
         zerocounter = 0;
@@ -95,18 +130,12 @@ int main(int argc, char* argv[]){
         }
     }
 
-        /* Print matrix */
-    for(i=0;i<rows;i++){
-        for(j=0;j<cols;j++){
-            offset = i * cols + j;
-            printf("%d", mat[offset]);
-        }
-        printf("\n");
-    }
-    printf("\n");
+}
 
-
-    /* Check if A has a nonzero row vector*/
+void checkRows(int *mat,int rows, int cols, int dim){
+    srand(time(NULL));
+    int k,border,zerocounter,offset,i,j;
+        /* Check if A has a nonzero row vector*/
     for(i = 0; i<rows ; i++){
         zerocounter = 0;
        for(j=rows;j<cols;j++){
@@ -126,25 +155,6 @@ int main(int argc, char* argv[]){
 
        }
     }
-
-
-    
-    /* Print matrix */
-    for(i=0;i<rows;i++){
-        for(j=0;j<cols;j++){
-            offset = i * cols + j;
-            printf("%d", mat[offset]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-
-
-    free(mat);
-}
-
-
-void printMatrix(){
 
 
 }
