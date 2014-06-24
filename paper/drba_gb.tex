@@ -419,59 +419,47 @@ This procedure is called flip.
 \begin{algorithmic}[1]
 
 \Require
-\begin{center}
-\begin{itemize}
-\item
 Reduced Gröbner basis $ \mathcal{G} = \lbrace \underline{x}^{a}_{k}  \rbrace $ of $I_A$
-\item
+
 A prescribed facet binomial $ \underline{x}^{a}_{i} - x^{b}_{i} \in \mathcal{G} $
-\end{itemize} 
-\end{center} 
 \Comment {The weight vector inducing $\mathcal{G}$ is generic and the leading terms are underlined}
 \Ensure The reduced Gröbner basis is adjacent to $\mathcal{G}$ in which $ \underline{x}^{b}_{i} - x^{a}_{i} $ is a facet binomial.
 \State Old 
 $:= \lbrace \underline{x}^{a}_{i} - x^{b}_{i} \rbrace \cup
  \lbrace \underline{x}^{a}_{j} : \underline{x}^{a}_{j} - x^{b}_{j} \in \mathcal{G},
- j \neq i \rbrace $
-
-
-
+ j \neq i \rbrace $ \Comment{Prescribed Facet and leading terms only in Old }
+ \State Temp $:= \lbrace \underline{x}^{b}_{i} - x^{a}_{i} \rbrace \cup 
+ \lbrace \underline{x}^{a}_{j} : x^{a}_{j} \in Old  \rbrace $
+ \Comment{"Flipping" the facet Binomial}
+ \State New := Computed reduced Gröbner basis with respect to the new marking 
+ \Comment{This can be done with Buchberger Algorithm.}
+ \State $\mathcal{G}' = \left\lbrace \underline{x}^{b}_{i} - x^{a}_{i} \right\rbrace  $
+ 
+ \For{\textbf{each} monmial h in New}
+ \State Reduce $h$ with $\mathcal{G}$ to obtain the monomial $h'$.
+ \State Add $h-h'$ to $\mathcal{G}'$ with $h$ marked as the leading term.
+ \EndFor
+ \State Auto-reduce $\mathcal{G}'$ to get $\mathcal{G}_{new}$
+ \Comment{no term shall be divisible by a leading term}
 
 %\EndProcedure
 \end{algorithmic}
 \end{algorithm}
 
+This algorithm is correct and can terminate. $ \left[ Tigers \right] $
+The main advantage of the algorithm is that no weight vectors must be stored or computed.
+Weight vectors are carried implicitly and that is possible due to the binomial structure that this subroutine generates for every Gröbner basis.
 
+%% TODO Beispiel GEBEN!!!
+\textbf{example}
 
 
 \subsubsection{Breadth first search}
 
-
+B
 
 \subsubsection{Reverse Search tree}
 
-\begin{figure}[htb]
-\centering
-\begin{tikzpicture}
-	\draw (0,0) node[above] {$\mathcal{G}_1$}
-				(-2,-2) node[below] {$\mathcal{G}_2$}
-				(0,-2) node[below] {$\mathcal{G}_4$}
-				(2,-2) node[below] {$\mathcal{G}_8$}
-				(-2,-4.5) node[below] {$\mathcal{G}_3$}
-				(0,-4.5) node[below] {$\mathcal{G}_5$}
-				(2,-4.5) node[below] {$\mathcal{G}_7$}
-				(0,-7) node[below] {$\mathcal{G}_6$};
-    \draw [<-] (0.2,0) -- (2,-2);
-	\draw [<-] (0,0) -- (0,-2);
-	\draw [<-] (-0.2,0) -- (-2,-2);
-	\draw [<-] (-2,-2.5) -- (-2,-4.5);
-	\draw [<-] (0,-2.5) -- (0,-4.5);
-	\draw [<-] (0.2,-2.5) -- (2,-4.5);
-	\draw [<-] (0,-5) -- (0,-7);
-\end{tikzpicture}
-\caption{The reverse search tree for $Co_1$}%
-\label{fig:C1rst}%
-\end{figure}
-
+NOCH MEHR BLALABLABLBA
 
 \newpage
