@@ -496,13 +496,19 @@ The more vertices the edge graph has, the more expensive the calculation will be
 \subsubsection{Reverse Search tree}
 In this section, a memoryless algorithm is presented which has the benefit that it runs linear depending on the size of output. The main idea is to enumrate the edge graph with depth first reverse search. The result will be a directed subgraph of the edge graph, called reverse search tree $T_{\succ}(I_{A}) $.\\
 But before that, the meaning of a mismarked polynomial must be clear.
-\begin{env_definition}
+\begin{env_definition}[Mismarked Polynomial]
 $\left[Tigers \right]  $
 A polynomial $f$ that has been marked with respect to the monomial order $\suqq$ is mismarked with respect to the monomial order $\suqq$ 
 \end{env_definition}
 
 \textbf{Example}
-Consider the reduced Gröbner base with a certain monomial order
+Consider the reduced Gröbner base $\mathcal{G} = \left\lbrace xy-z,y^{2}-xz, zy-xyz \right\rbrace $ 
+with a certain monomial order $\succ$, which is not the lexicograpic order.
+Then, the second and last term are clearly mismarked with respect to $\succ_{lex}$.
+
+With the help of the.
+Applying the flip-procedure with $(\mathcal{G},y^{2}-xz)$ leads
+ 
 \begin{flushright}
 $\blacklozenge$
 \end{flushright} 
