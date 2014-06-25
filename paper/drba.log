@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  24 JUN 2014 16:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  25 JUN 2014 11:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,19 +6,20 @@ entering extended mode
 (./drba.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 2 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -290,7 +291,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/05/16 v3.9f Babel common definitions
-\babel@savecnt=\count87
+\babel@savecnt=\count88
 \U@D=\dimen103
 )
 \l@british = a dialect from \language\l@english 
@@ -308,9 +309,9 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks17
 \verbatim@in@stream=\read1
 )
-\tab@position=\count88
-\tab@size=\count89
-\listing@line=\count90
+\tab@position=\count89
+\tab@size=\count90
+\listing@line=\count91
 )
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathpazo.sty
 Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
@@ -352,7 +353,7 @@ nment
 
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count91
+\c@float@type=\count92
 \float@exts=\toks25
 \float@box=\box26
 \@float@everytoks=\toks26
@@ -362,7 +363,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks27
-\c@algorithm=\count92
+\c@algorithm=\count93
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -371,15 +372,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count93
-\c@ALG@rem=\count94
-\c@ALG@nested=\count95
+\c@ALG@line=\count94
+\c@ALG@rem=\count95
+\c@ALG@nested=\count96
 \ALG@tlm=\skip46
 \ALG@thistlm=\skip47
-\c@ALG@Lnr=\count96
-\c@ALG@blocknr=\count97
-\c@ALG@storecount=\count98
-\c@ALG@tmpcounter=\count99
+\c@ALG@Lnr=\count97
+\c@ALG@blocknr=\count98
+\c@ALG@storecount=\count99
+\c@ALG@tmpcounter=\count100
 \ALG@tmplength=\skip48
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -428,7 +429,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count100
+\Gread@gobject=\count101
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
@@ -454,10 +455,10 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 \pgf@yc=\dimen113
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count101
-\c@pgf@countb=\count102
-\c@pgf@countc=\count103
-\c@pgf@countd=\count104
+\c@pgf@counta=\count102
+\c@pgf@countb=\count103
+\c@pgf@countc=\count104
+\c@pgf@countd=\count105
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -472,8 +473,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count105
-\pgfsyssoftpath@bigbuffer@items=\count106
+\pgfsyssoftpath@smallbuffer@items=\count106
+\pgfsyssoftpath@bigbuffer@items=\count107
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -503,7 +504,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen114
-\pgfmath@count=\count107
+\pgfmath@count=\count108
 \pgfmath@box=\box29
 \pgfmath@toks=\toks33
 \pgfmath@stack@operand=\toks34
@@ -518,7 +519,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count108
+\c@pgfmathroundto@lastzeros=\count109
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
@@ -552,7 +553,7 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box30
 \pgf@hbox=\box31
 \pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count109
+\pgf@picture@serial@count=\count110
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
@@ -579,7 +580,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen137
-\pgf@sys@shading@range@num=\count110
+\pgf@sys@shading@range@num=\count111
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
@@ -627,7 +628,7 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count111
+\pgf@plot@mark@count=\count112
 \pgfplotmarksize=\dimen142
 )
 \tikz@lastx=\dimen143
@@ -638,24 +639,24 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikzsiblingdistance=\dimen148
 \tikz@figbox=\box35
 \tikz@tempbox=\box36
-\tikztreelevel=\count112
-\tikznumberofchildren=\count113
-\tikznumberofcurrentchild=\count114
-\tikz@fig@count=\count115
+\tikztreelevel=\count113
+\tikznumberofchildren=\count114
+\tikznumberofcurrentchild=\count115
+\tikz@fig@count=\count116
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count116
-\pgfmatrixcurrentcolumn=\count117
-\pgf@matrix@numberofcolumns=\count118
+\pgfmatrixcurrentrow=\count117
+\pgfmatrixcurrentcolumn=\count118
+\pgf@matrix@numberofcolumns=\count119
 )
-\tikz@expandcount=\count119
+\tikz@expandcount=\count120
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 )))
-\c@theorem=\count120
+\c@theorem=\count121
  (./drba.aux)
 \openout1 = `drba.aux'.
 
@@ -681,16 +682,16 @@ File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count121
+\scratchcounter=\count122
 \scratchdimen=\dimen150
 \scratchbox=\box37
-\nofMPsegments=\count122
-\nofMParguments=\count123
+\nofMPsegments=\count123
+\nofMParguments=\count124
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count124
+\MPscratchCnt=\count125
 \MPscratchDim=\dimen151
-\MPnumerator=\count125
-\makeMPintoPDFobject=\count126
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
 \everyMPtoPDFconversion=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -741,56 +742,57 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 (./drba_tp.tex)
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 27.
  (./drba.toc
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 2.
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 4.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 4.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 4.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 4.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 4.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 4.
+(Font)              scaled to size 11.40997pt on input line 2.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 4.
+(Font)              scaled to size 8.33606pt on input line 2.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 4.
+(Font)              scaled to size 6.25204pt on input line 2.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 4.
+(Font)              scaled to size 11.40997pt on input line 2.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 4.
+(Font)              scaled to size 8.33606pt on input line 2.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 4.
+(Font)              scaled to size 6.25204pt on input line 2.
 )
 \tf@toc=\write4
 \openout4 = `drba.toc'.
 
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./drba_in.tex [2]) (./drb
-a_gb.tex
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./drba_in.tex
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 1.
+ [2]) (./drba_gb.tex
 Overfull \hbox (11.68217pt too wide) in paragraph at lines 4--8
 \T1/ppl/m/n/10.95 the reader an un-der-stand-ing to Groeb-ner Bases and ob-tain
 -ing by the Flipping-
@@ -798,7 +800,9 @@ Overfull \hbox (11.68217pt too wide) in paragraph at lines 4--8
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 9.
-\c@env_definition=\count127
+\c@env_definition=\count128
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 14.
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
@@ -833,14 +837,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--87
  []
 
 
-Overfull \hbox (37.70331pt too wide) in paragraph at lines 97--99
-[]\T1/ppl/b/n/10.95 Definition 2.4 \T1/ppl/m/n/10.95 (Ideal)\T1/ppl/b/n/10.95 .
- []\T1/ppl/m/it/10.95 An ideal I is col-lec-tion of poly-no-mi-als $\OML/zplm/m
-/it/10.95 f[]\OT1/ppl/m/n/10.95 , [] , \OML/zplm/m/it/10.95 f[] \OMS/zplm/m/n/1
-0.95 2 \U/fplmbb/m/n/10.95 K []$
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 97--99
 
  []
@@ -865,7 +861,14 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 238.
 
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8]
+)
+Overfull \hbox (6.6613pt too wide) in paragraph at lines 288--290
+[]\T1/ppl/b/n/10.95 Definition 0.2.9 \T1/ppl/m/n/10.95 (Re-duced Groeb-ner ba-s
+is)\T1/ppl/b/n/10.95 . []\T1/ppl/m/it/10.95 A Groeb-ner ba-sis $\OML/zplm/m/it/
+10.95 G \OT1/zplm/m/n/10.95 = []$
+ []
+
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 320--322
 
  []
@@ -876,21 +879,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--324
  []
 
 [9] [10]
-Overfull \hbox (79.18205pt too wide) in paragraph at lines 395--397
-[]\T1/ppl/b/n/10.95 Definition 2.12 \T1/ppl/m/n/10.95 (Facet Bi-no-mial)\T1/ppl
-/b/n/10.95 . []$[]$ \T1/ppl/m/it/10.95 The bi-no-mial $\OML/zplm/m/it/10.95 x[]
- \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 x[] \OMS/zplm/m/n/10.95 2 G[]\OML
-/zplm/m/it/10.95 isafacetbinomialof\OMS/zplm/m/n/10.95 G[] $
+Overfull \hbox (87.39453pt too wide) in paragraph at lines 395--397
+[]\T1/ppl/b/n/10.95 Definition 0.2.12 \T1/ppl/m/n/10.95 (Facet Bi-no-mial)\T1/p
+pl/b/n/10.95 . []$[]$ \T1/ppl/m/it/10.95 The bi-no-mial $\OML/zplm/m/it/10.95 x
+[] \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 x[] \OMS/zplm/m/n/10.95 2 G[]\O
+ML/zplm/m/it/10.95 isafacetbinomialof\OMS/zplm/m/n/10.95 G[] $
  []
 
 [11] [12] [13]) (./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [14]
 (./drba.aux) ) 
 Here is how much of TeX's memory you used:
- 11989 strings out of 495031
- 212900 string characters out of 6181531
- 258911 words of memory out of 5000000
- 14847 multiletter control sequences out of 15000+600000
- 38506 words of font info for 86 fonts, out of 8000000 for 9000
+ 12010 strings out of 495031
+ 213133 string characters out of 6181531
+ 260285 words of memory out of 5000000
+ 14866 multiletter control sequences out of 15000+600000
+ 40886 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,10n,55p,539b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texliv
@@ -907,7 +910,7 @@ public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (14 pages, 166693 bytes).
+Output written on drba.pdf (14 pages, 166630 bytes).
 PDF statistics:
  111 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream

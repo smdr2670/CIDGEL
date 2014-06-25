@@ -187,7 +187,7 @@ void gset_facet_print(FILE *of,gset g){
 
 /**
  * @brief gset_insert place binomial in gset in decreasing lexicographic order.
- *                    (using binomial_compair(,) to determine reletive order or binomials)
+ *                    (using binomial_compair(,) to determine relative order or binomials)
  * @param g gset which gets the new binomial
  * @param b binomial to be inserted
  */

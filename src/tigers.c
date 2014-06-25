@@ -219,7 +219,6 @@ int rsearch(gset g1, int number, int no_print){
             if (gset_isfacet(G1,b)==TRUE && flip_condition(b) ){
                 stats_ecounter++;
 
-
                 G2=gset_flip(G1,b);
                  if(DEBUG){
                     fprintf(stderr,"CHECKPOINT 6\n");

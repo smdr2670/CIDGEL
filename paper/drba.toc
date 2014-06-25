@@ -1,25 +1,24 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {section}{\numberline {2}Polynomial and commutative Algebra}{3}
-\contentsline {subsection}{\numberline {2.1}Monomials}{3}
-\contentsline {subsection}{\numberline {2.2}Monomial Order}{3}
-\contentsline {subsubsection}{\numberline {2.2.1}Lexicographic Order}{4}
-\contentsline {subsubsection}{\numberline {2.2.2}Graded Lex Order}{4}
-\contentsline {subsubsection}{\numberline {2.2.3}Weight vectors}{4}
-\contentsline {subsubsection}{\numberline {2.2.4}Leading term}{4}
-\contentsline {subsection}{\numberline {2.3}Ideals}{4}
-\contentsline {subsection}{\numberline {2.4}Division Algorithm}{5}
-\contentsline {subsection}{\numberline {2.5}Groebner basis}{7}
-\contentsline {subsubsection}{\numberline {2.5.1}Definition of a Groebner basis}{7}
-\contentsline {subsubsection}{\numberline {2.5.2}Computation of a Groebner basis}{7}
-\contentsline {subsection}{\numberline {2.6}Groebner fans}{9}
-\contentsline {subsection}{\numberline {2.7}Degree Compatible Groebner fans}{10}
-\contentsline {subsection}{\numberline {2.8}Toric Ideals}{10}
-\contentsline {subsection}{\numberline {2.9}Enumerating Groebner fans}{11}
-\contentsline {subsection}{\numberline {2.10}TRa}{11}
-\contentsline {subsubsection}{\numberline {2.10.1}Breadth first search}{11}
-\contentsline {subsubsection}{\numberline {2.10.2}Reverse Search tree}{13}
-\contentsline {subsection}{\numberline {2.11}Degree compatible Groebner }{13}
-\contentsline {section}{\numberline {3}Linear Codes}{14}
-\contentsline {section}{\numberline {4}Software}{14}
-\contentsline {section}{\numberline {A}Appendix}{14}
+\contentsline {section}{\numberline {0.1}Introduction}{2}
+\contentsline {section}{\numberline {0.2}Polynomial and commutative Algebra}{3}
+\contentsline {subsection}{\numberline {0.2.1}Monomials}{3}
+\contentsline {subsection}{\numberline {0.2.2}Monomial Order}{3}
+\contentsline {subsubsection}{Lexicographic Order}{4}
+\contentsline {subsubsection}{Graded Lex Order}{4}
+\contentsline {subsubsection}{Weight vectors}{4}
+\contentsline {subsubsection}{Leading term}{4}
+\contentsline {subsection}{\numberline {0.2.3}Ideals}{4}
+\contentsline {subsection}{\numberline {0.2.4}Division Algorithm}{5}
+\contentsline {subsection}{\numberline {0.2.5}Groebner basis}{7}
+\contentsline {subsubsection}{Definition of a Groebner basis}{7}
+\contentsline {subsubsection}{Computation of a Groebner basis}{7}
+\contentsline {subsection}{\numberline {0.2.6}Groebner fans}{9}
+\contentsline {subsection}{\numberline {0.2.7}Degree Compatible Groebner fans}{10}
+\contentsline {subsection}{\numberline {0.2.8}Toric Ideals}{10}
+\contentsline {subsection}{\numberline {0.2.9}Enumerating Groebner fans}{11}
+\contentsline {subsubsection}{Breadth first search}{11}
+\contentsline {subsubsection}{Reverse Search tree}{13}
+\contentsline {subsection}{\numberline {0.2.10}Degree compatible Groebner }{13}
+\contentsline {section}{\numberline {0.3}Linear Codes}{14}
+\contentsline {section}{\numberline {0.4}Software}{14}
+\contentsline {section}{\numberline {.1}Appendix}{14}

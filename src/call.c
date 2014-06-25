@@ -385,7 +385,7 @@ int main(int argc, char **argv ){
                                         
                     // Gr-lex basis are not necessary!
                     //FIXME: warum punktierten codes anders
-                    //gset_rgb(Gtmp,monomial_grlexcomp);
+                    gset_rgb(Gtmp,monomial_grlexcomp);
 
                     fprintf(outfile,"done\n");
                     counter = rsearch(Gtmp,1,no_print);
@@ -395,7 +395,7 @@ int main(int argc, char **argv ){
 
 
                     
-                        printstats();
+                    printstats();
                     
                     fprintf(outfile,"\n-----------------------------------------------------\n");
                     gset_free(Gtmp);
@@ -484,7 +484,7 @@ int main(int argc, char **argv ){
 
 
                     //FIXME: Warum sind die Punktierten Codes anders ??
-                    //gset_rgb(Gtmp,monomial_grlexcomp);
+                    gset_rgb(Gtmp,monomial_grlexcomp);
                     counter = exsearch(Gtmp,degree_comp,no_print);
                     fprintf(outfile,"\n");
                     fprintf(outfile,"Number of Groebner bases found %d\n",counter);
