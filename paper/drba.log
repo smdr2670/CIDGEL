@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  25 JUN 2014 12:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.25)  25 JUN 2014 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,43 +884,20 @@ Overfull \hbox (79.18205pt too wide) in paragraph at lines 395--397
  []
 
 [11] [12]
-! Undefined control sequence.
-<recently read> \suqq 
-                      
-l.501 ...with respect to the monomial order $\suqq
-                                                  $ is mismarked with respec...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \suqq 
-                      
-l.501 ...with respect to the monomial order $\suqq
-                                                  $
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (8.35974pt too wide) in paragraph at lines 504--508
+Overfull \hbox (17.35974pt too wide) in paragraph at lines 505--509
 []\T1/ppl/b/n/10.95 Example \T1/ppl/m/n/10.95 Con-sider the re-duced Gröb-ner b
 ase $\OMS/zplm/m/n/10.95 G \OT1/zplm/m/n/10.95 = []$
  []
 
 [13]) (./drba_lc.tex) (./drba_sw.tex) (./drba_ap.tex) [14] (./drba.aux) ) 
 Here is how much of TeX's memory you used:
- 11991 strings out of 495031
- 212911 string characters out of 6181531
+ 11990 strings out of 495031
+ 212907 string characters out of 6181531
  259945 words of memory out of 5000000
- 14848 multiletter control sequences out of 15000+600000
+ 14847 multiletter control sequences out of 15000+600000
  38506 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,10n,55p,539b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,10n,55p,546b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/
 share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/e
 nc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
@@ -936,7 +913,7 @@ ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (14 pages, 167731 bytes).
+Output written on drba.pdf (14 pages, 168765 bytes).
 PDF statistics:
  111 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream
