@@ -105,7 +105,7 @@ int flip_condition(binomial b){
     if(degree_comp == TRUE){
         return (binomial_degree_compatible(b) == 0 && binomial_grlexordered(b)==TRUE);
     }else{
-        return (binomial_grlexordered(b)==TRUE);
+        return (binomial_lexordered(b)==TRUE);
     }
 }
 
@@ -150,12 +150,23 @@ int rsearch(gset g1, int number, int no_print){
 
     /* Do groebner walk to grobner basis wrt default term order*/
 
-    while((b=gset_downedge(G1))!=0){
+    if(degree_comp == TRUE){
+        while((b=gset_downedge_grlex(G1))!=0){
+            fprintf(stderr,"Warning: rsearch doing walk to get to root\n");
+            G2=gset_flip(G1,b);
+            gset_free(G1);
+            G1=G2;
+        }
+
+    }else{
+        while((b=gset_downedge_lex(G1))!=0){
         fprintf(stderr,"Warning: rsearch doing walk to get to root\n");
         G2=gset_flip(G1,b);
         gset_free(G1);
         G1=G2;
+        }
     }
+
     fprintf(stderr,"doing walk finished\n");
 
     if(DEBUG){
@@ -223,7 +234,12 @@ int rsearch(gset g1, int number, int no_print){
                  if(DEBUG){
                     fprintf(stderr,"CHECKPOINT 6\n");
                  }   
-                btmp=gset_downedge(G2);
+                if(degree_comp == TRUE){
+                    btmp=gset_downedge_grlex(G2);
+                }else{
+                    btmp=gset_downedge_lex(G2);
+                }
+                
 
                 /* check if G1 and G2 are adjacent in the reverse search tree*/
                 if (monomial_equal(binomial_lead(b),binomial_trail(btmp))==TRUE &&
@@ -286,16 +302,36 @@ int rsearch(gset g1, int number, int no_print){
                 G1=G2;
             }
         }else{
-            if ((btmp=gset_downedge(G1))==0) done=TRUE;
-            else{
-                G2=gset_flip(G1,btmp);
-                b=gset_first(G2);
-                while(monomial_equal(binomial_lead(b),binomial_trail(btmp))==FALSE){
+            if(degree_comp == TRUE){
+
+                
+                if ((btmp=gset_downedge_grlex(G1))==0){
+                     done=TRUE;
+                }else{
+                    G2=gset_flip(G1,btmp);
+                    b=gset_first(G2);
+                    while(monomial_equal(binomial_lead(b),binomial_trail(btmp))==FALSE){
+                        b=binomial_next(b);
+                    }
                     b=binomial_next(b);
+                    gset_free(G1);
+                    G1=G2;
                 }
-                b=binomial_next(b);
-                gset_free(G1);
-                G1=G2;
+            }else{
+
+                if ((btmp=gset_downedge_lex(G1))==0){
+                     done=TRUE;
+                }else{
+                    G2=gset_flip(G1,btmp);
+                    b=gset_first(G2);
+                    while(monomial_equal(binomial_lead(b),binomial_trail(btmp))==FALSE){
+                        b=binomial_next(b);
+                    }
+                    b=binomial_next(b);
+                    gset_free(G1);
+                    G1=G2;
+                }
+
             }
         }
     }

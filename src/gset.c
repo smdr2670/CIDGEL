@@ -223,7 +223,19 @@ void gset_insert(gset g, binomial b){
  */
 
  
-binomial gset_downedge(gset g){       
+binomial gset_downedge_lex(gset g){       
+    binomial ptr=0;
+    for(ptr=gset_first(g);ptr!=0;ptr=binomial_next(ptr)){
+        if (binomial_lexordered(ptr)==FALSE && gset_isfacet(g,ptr)==TRUE ){
+            break;
+        }
+        //fprintf(stderr,"halp");
+
+    }
+    return ptr;
+}
+
+binomial gset_downedge_grlex(gset g){       
     binomial ptr=0;
     for(ptr=gset_first(g);ptr!=0;ptr=binomial_next(ptr)){
         if (binomial_grlexordered(ptr)==FALSE && gset_isfacet(g,ptr)==TRUE ){
@@ -234,7 +246,6 @@ binomial gset_downedge(gset g){
     }
     return ptr;
 }
-
 
 
 
@@ -663,6 +674,13 @@ int gset_isfacet(gset g,binomial b){
     if(monomial_stddegree(binomial_lead(b))== 2 && monomial_stddegree(binomial_trail(b))==0 ){
         rval = NONFACET;
     }
+
+    /* No considerable speedup reached */
+    //if(binomial_degree_compatible(b) != 0 ){
+    //    rval = NONFACET;
+    //}else{
+    //    rval = FACET;
+    //}
 
 
     if (rval!=FACET && rval!=NONFACET){
