@@ -498,7 +498,7 @@ In this section, a memoryless algorithm is presented which has the benefit that 
 But before that, the meaning of a mismarked polynomial must be clear.
 \begin{env_definition}[Mismarked Polynomial]
 $\left[Tigers \right]  $
-A polynomial $f$ that has been marked with respect to the monomial order $ \succ $ is mismarked with respect to the monomial order $ \succ $ 
+A polynomial $f$ that has been marked with respect to the monomial order $\succ$  is mismarked with respect to the monomial order $\succ$  
 \end{env_definition}
 
 
@@ -515,10 +515,59 @@ $\blacklozenge$
 
 The \textit{reverse search tree} $T_{\succ}(I_{A}) $ with a given monomal order $ \succ $ can be defined as follows.
 \begin{env_definition}[Reverse Search Tree]
-$[TiGERS ] $ For two reduced Groebner bases $ \mathcal{G}_{i}~$ and $ \mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$ to $\mathcal{G}_{j}~$ is an edge 
-
+$[TiGERS ] $ For two reduced Groebner bases $ \mathcal{G}_{i}~$ and $ \mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$ to $\mathcal{G}_{j}~$ is an edge of $T_{\succ}(I_{A}) $ if $\mathcal{G_{i}}$ is obtained from $\mathcal{G_{j}}$ by the procedure flip($\mathcal{G}_{i}$,$x^{\upalpha} - x^{\upbeta}$}).
+$x^{\upalpha}$ is lexicographically maximal among all facet binomials of $\mathcal{G}_{i}$, that are mismarked with respect to $\succ$.
 \end{env_definition}
-%% TODO erstmal den reverse search tree definieren
+
+$[TiGERS] $ ensures that the reverse search tree is an acyclic graph with a unique sink and from any reduced Groebner basis of $\mathcal{G}_{c} $ of a toric Ideal $I_{A}$, there is a unique path to the sink $\mathcal{G}_{\suqq} $.
+Unlike the Groebner walk procedure, there are still no weight vectors involved, but in return every facet of the Groebner cone must be computed, which can be computionally expensive for reduced Groebner basis with many polynomials.
+
+\begin{algorithm}
+\caption{Enumerating the edge graph of the Gröbner fan via reverse search $\left[ TiGERS\right]  $}
+\label{reverse-alg}
+\begin{algorithmic}[1]
+
+\Require
+Any reduced Gröbner basis $ \mathcal{R}_{\succ} $ of $I_A$ and its term order $\succ$
+\Ensure All reduced Gröbner bases of $I_A$, (all vertices of the edge graph)
+\State $\mathcal{G} := \mathcal{R}_{\succ} $
+\State $j := 0§$
+\State $L := $ list of facet binomials of $\mathcal{G}$ marked by $\succ$
+\State add $\mathcal{G}$ to output
+\Repeat
+\While{ $ j < \left|L\right $ }
+\State j := j + 1
+\State $\mathcal{G}':= $ flip($\mathcal{G}$,$L[j]$);
+\If{ $[\mathcal{G}',\mathcal{G}] \in T_{\succ}(I_{A}) $ } \Comment{ Check for adjacency }
+\State $\mathcal{G} := \mathcal{G}' $  
+\State $ j := 0$
+\State $ L := $ list of facet of $\mathcal{G}$ marked by $\succ$
+\State add $ \mathcal{G}$ to output
+
+\EndIf 
+
+\EndWhile
+
+\If{$ \mathcal{G} \neq \mathcal{R}_{\succ}$}
+\State $\mathcal{G}' :=~$ unique element such that $[\mathcal{G}',\mathcal{G}] \in T_{\succ}(I_{A}) $
+\State $j := 0$
+\State $L := $ list of facets of $\mathcal{G}'$ marked by $\succ$
+
+\Repeat
+\State $j := j + 1$
+\Until{the common facet of $\mathcal{G}$ and $\mathcal{G}'$ is the $j$-th facet of $L$ }
+
+\EndIf
+
+\Until{$\mathcal{G} = \mathcal{R}_{\succ}$ and $ j = \left|L\right| $ }
+
+
+%\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+
 
 \subsection{Degree compatible Groebner }
 
