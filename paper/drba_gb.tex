@@ -531,7 +531,7 @@ Unlike the Groebner walk procedure, there are still no weight vectors involved, 
 Any reduced Gröbner basis $ \mathcal{R}_{\succ} $ of $I_A$ and its term order $\succ$
 \Ensure All reduced Gröbner bases of $I_A$, (all vertices of the edge graph)
 \State $\mathcal{G} := \mathcal{R}_{\succ} $
-\State $j := 0§$
+\State $j := 0$
 \State $L := $ list of facet binomials of $\mathcal{G}$ marked by $\succ$
 \State add $\mathcal{G}$ to output
 \Repeat
@@ -569,12 +569,28 @@ Any reduced Gröbner basis $ \mathcal{R}_{\succ} $ of $I_A$ and its term order $
 \end{algorithmic}
 \end{algorithm}
 
+\textbf{Example}
+Consider the Ideal with the reduced Groebner basis with respect to the lexicographic order ...
+Applying the breath-first search algorithm for this reduced Groebner basis results to the following edge graph.\\
+
+%TODO: BREITENSUCHENGRAPH HOCHLADEN
+
+Using the reverse search method, this search tree results.
+
+%TODO: REVERSE SEARCH GRAPGH
+
+Even for this small example a lot of edges were saved.
 
 
+\subsection{Degree compatible Groebner}
+Computing the whole Groebner fan can be very expensive and not every cone is interesting.
+In this section, the degree compatible Groebner fan is introduced and how the algorithm can
+be changed so that only the degree compatible Groebner fan will be computed.
 
-\subsection{Degree compatible Groebner }
+%TODO: weiter mit natalias paper hier schrieben
 
-%% TODO Beispiele mit den Graphen geben!!
-\textbf{example}Consider this ideal : blabla 
+\subsection{Linear Codes}
+
+\subsection{Code Ideals}
 
 \newpage
