@@ -19,6 +19,6 @@
 \contentsline {subsubsection}{\numberline {2.9.1}Breadth first search}{11}
 \contentsline {subsubsection}{\numberline {2.9.2}Reverse Search tree}{13}
 \contentsline {subsection}{\numberline {2.10}Degree compatible Groebner }{13}
-\contentsline {section}{\numberline {3}Linear Codes}{14}
-\contentsline {section}{\numberline {4}Software}{14}
-\contentsline {section}{\numberline {A}Appendix}{14}
+\contentsline {section}{\numberline {3}Linear Codes}{15}
+\contentsline {section}{\numberline {4}Software}{15}
+\contentsline {section}{\numberline {A}Appendix}{15}
