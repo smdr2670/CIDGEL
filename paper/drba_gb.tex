@@ -494,25 +494,30 @@ The more vertices the edge graph has, the more expensive the calculation will be
  
 
 \subsubsection{Reverse Search tree}
-In this section, a memoryless algorithm is presented which has the benefit that it runs linear depending on the size of output. The main idea is to enumrate the edge graph with depth first reverse search. The result will be a directed subgraph of the edge graph, called reverse search tree $T_{\succ}(I_{A}) $.\\
+In this section, a memoryless algorithm is presented which has the benefit that it runs linear depending on the size of output. The main idea is to enumerate the edge graph with depth first reverse search. The result will be a directed subgraph of the edge graph, called reverse search tree $T_{\succ}(I_{A}) $.\\
 But before that, the meaning of a mismarked polynomial must be clear.
 \begin{env_definition}[Mismarked Polynomial]
 $\left[Tigers \right]  $
-A polynomial $f$ that has been marked with respect to the monomial order $\suqq$ is mismarked with respect to the monomial order $\suqq$ 
+A polynomial $f$ that has been marked with respect to the monomial order $ \succ $ is mismarked with respect to the monomial order $ \succ $ 
 \end{env_definition}
 
+
 \textbf{Example}
-Consider the reduced Gröbner base $\mathcal{G} = \left\lbrace x^{2}y-z,y^{2}-xz, zy-xyz \right\rbrace $ 
+Consider the reduced Gröbner base $\mathcal{G} = \left\lbrace x^{2}y-z,y^{2}-xz, zy-xy^{2}z \right\rbrace $ 
 with a certain monomial order $\succ$, which is not the lexicograpic order.
 Then, the second and last term are clearly mismarked with respect to $\succ_{lex}$.
 
-With the help of the.
-Applying the flip-procedure with $(\mathcal{G},y^{2}-xz)$ leads to
-the 
+Applying the flip-procedure $(\mathcal{G},y^{2}-xz)$ leads to the Groebner base $\mathcal{G} = \{x^{2}y-z,xz^{2}-y^{2}, zy-xy^{2}z \} $. Now only the last binomial is mismarked and using flip($\mathcal{G}$, $zy-xy^{2}z$ ) the result is the reduced Groebner basis with respect to the lexicographic order $\mathcal{G} = \{xy^{2}z -xy, xz^{2}-y^{2},xy-z \} $. Note that every monomial can not be divided by the leading terms, so all Groebner bases are reduced and no auto-reduce is necessary.
  
 \begin{flushright}
 $\blacklozenge$
 \end{flushright} 
+
+The \textit{reverse search tree} $T_{\succ}(I_{A}) $ with a given monomal order $ \succ $ can be defined as follows.
+\begin{env_definition}[Reverse Search Tree]
+$[TiGERS ] $ For two reduced Groebner bases $ \mathcal{G}_{i}~$ and $ \mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$ to $\mathcal{G}_{j}~$ is an edge 
+
+\end{env_definition}
 %% TODO erstmal den reverse search tree definieren
 
 \subsection{Degree compatible Groebner }
