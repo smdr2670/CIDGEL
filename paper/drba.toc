@@ -18,8 +18,7 @@
 \contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{11}
 \contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{13}
 \contentsline {subsection}{\numberline {2.9}Degree compatible Groebner}{15}
-\contentsline {subsection}{\numberline {2.10}Linear Codes}{15}
-\contentsline {subsection}{\numberline {2.11}Code Ideals}{15}
-\contentsline {section}{\numberline {3}Linear Codes}{16}
-\contentsline {section}{\numberline {4}Software}{16}
-\contentsline {section}{\numberline {A}Appendix}{16}
+\contentsline {subsection}{\numberline {2.10}Linear Codes over Prime Fields}{17}
+\contentsline {subsection}{\numberline {2.11}Code Ideals}{17}
+\contentsline {section}{\numberline {3}Software}{18}
+\contentsline {section}{\numberline {A}Appendix}{18}

@@ -637,6 +637,8 @@ Using the reverse search method, this search tree results.
 \label{fig:breadth}%
 \end{figure}
 
+%TODO: Kanten mit den flipp binomials beschreiben und alle Groebnerbase aufschreiben
+
 
 
 Even for this small example a lot of edges were saved.
@@ -647,10 +649,48 @@ Even for this small example a lot of edges were saved.
 Computing the whole Groebner fan can be very expensive and not every cone is interesting.
 In this section, the degree compatible Groebner fan is introduced and how the algorithm can
 be changed so that only the degree compatible Groebner fan will be computed.\\
-A Groebner fan with its binomials $x^{a}-x^{b}$ is degree compatible if  and only if $deg(x^{a}) \geq deg(x^{b})$
+\begin{env_definition}[Degree compatible Groebner basis]
+$[dueck paper] $
+A reduced Groebner basis for an ideal I with respect to a certain monomial order is
+degree compatible if and only if the corresponding Groebner cone contains the all-one vector 1.
+\end{env_definition}
+Equivalent to this, the leading term must have the highest degree.
+
+Since a Groebner fan is homogenous at $\mathbb{R}^{n}_{+}$, there will be at least one degree compatible Groebner basis.
+That is a special case can be easily determined as follows.
+
+\begin{env_definition}[Only degree compatible Groebner basis]
+$[dueck paper] $
+A Groebner basis $\mathcal{G}$ with respect to a degree compatible monomial ordering $\succ$  is the only degree compatible Groebner basis for an Ideal if and only if
+\[ deg(x^{a}) > deg(x^{b})~~ \forall~~ x^{a}-x^{b}\in \mathcal{G} \] 
+\end{env_definition}
+
+This can be also described by the all-one vector that lies completely in a Groebner cone of a Groebner basis $\mathcal{G}$.
+It follows that the all-one vector does not cut any facets if there is only one degree compatible Groebner basis. \\
+
+The algorithms 4 and 5 can be adapted in order to compute only the degree compatible Groebner fan.\\ \\
+The breadth-first search now needs a degree compatible Groebner basis as an input. This can be achieved by applying the Buchberger Algorithm with a degree compatible monomial, for example the grlex order. After that it is required that the Groebner basis is checked if its is the only degree compatible basis. %see only degree compatible Groebner basis
+Also the only facet binomials x$^{a}$ - x$^{b}$ which are allow to be "flipped" are the binomials that fulfills the condition
+deg(x$^{a}$ ) = deg(x$^{b} $ ). \\ \\
+The reverse search tree can be deployed as in Definition 2.14 but with the restriction that deg(x$^{a}$ ) = deg(x$^{b}$) must be fulfilled to traverse the degree compatible Groebner fan.
+$[dueckpaper, Lemma 2.2]$ guarantees that at least one such facet binomial will be found. 
+The sink of the reverse search tree contains binomials that are not mismarked with respect to the grlex order. 
+
+   
 
 
-\subsection{Linear Codes}
+
+\subsection{Linear Codes over Prime Fields}
+This work is concentrated on computing the Groebner fan of a linear code. Now the mathematic background of the Groebner fans is given, the linear Codes and Code Ideals have to be defined to give a connection between these two topics.\\ \\
+Let $\mathbb{F}$ be a finite field and let $n~$ and $k~\in \mathbb{N}~$ with $n\geq k$.
+\begin{env_definition}[Linear Code]
+$ [Dueck Journal ] $ A linear code of length n and dimension k over $\mathbb{F}~$ is the image $\mathcal{C}~$
+
+\end{env_definition} 
+
+
+
+
 
 \subsection{Code Ideals}
 

@@ -123,7 +123,7 @@ int exsearch(gset g1, int degree_comp,int no_print){
         G1=todo; todo=todo->next;
         insert(G1,&seen);
         for(b=gset_first(G1);b!=0;b=binomial_next(b)){
-            // TODO: how to make condition right???
+            
             if (gset_isfacet(G1,b)==TRUE && flip_ex_condition(b,degree_comp) ){
                 G2=gset_flip(G1,b);
                 stats_ecounter++;

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  26 JUN 2014 11:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  26 JUN 2014 14:36
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -927,13 +927,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
-[13] [14] [15]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_lc.tex)
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex)
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_ap.tex) [16]
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 649--652
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 668--670
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--678
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--678
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--686
+
+ []
+
+[16] [17]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex)
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_ap.tex) [18]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux) ) 
 Here is how much of TeX's memory you used:
- 13143 strings out of 493921
- 253097 string characters out of 3150487
+ 13140 strings out of 493921
+ 252976 string characters out of 3150487
  283425 words of memory out of 3000000
  16106 multiletter control sequences out of 15000+200000
  38506 words of font info for 86 fonts, out of 3000000 for 9000
@@ -953,9 +977,9 @@ mme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><E:/Programme/MikTex/
 fonts/type1/urw/palatino/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palati
 no/uplbi8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplr8a.pfb><E:/Pro
 gramme/MikTex/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (16 pages, 188564 bytes).
+Output written on drba.pdf (18 pages, 193462 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
