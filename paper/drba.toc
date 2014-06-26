@@ -1,6 +1,6 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {section}{\numberline {2}Polynomial and commutative Algebra}{3}
+\contentsline {section}{\numberline {2}Mathematical Background}{3}
 \contentsline {subsection}{\numberline {2.1}Monomials}{3}
 \contentsline {subsection}{\numberline {2.2}Monomial Order}{3}
 \contentsline {subsubsection}{\numberline {2.2.1}Lexicographic Order}{4}
@@ -13,14 +13,13 @@
 \contentsline {subsubsection}{\numberline {2.5.1}Definition of a Groebner basis}{7}
 \contentsline {subsubsection}{\numberline {2.5.2}Computation of a Groebner basis}{7}
 \contentsline {subsection}{\numberline {2.6}Groebner fans}{9}
-\contentsline {subsection}{\numberline {2.7}Degree Compatible Groebner fans}{10}
-\contentsline {subsection}{\numberline {2.8}Toric Ideals}{10}
-\contentsline {subsection}{\numberline {2.9}Enumerating Groebner fans}{11}
-\contentsline {subsubsection}{\numberline {2.9.1}Breadth first search}{11}
-\contentsline {subsubsection}{\numberline {2.9.2}Reverse Search tree}{13}
-\contentsline {subsection}{\numberline {2.10}Degree compatible Groebner}{15}
-\contentsline {subsection}{\numberline {2.11}Linear Codes}{15}
-\contentsline {subsection}{\numberline {2.12}Code Ideals}{15}
+\contentsline {subsection}{\numberline {2.7}Toric Ideals}{10}
+\contentsline {subsection}{\numberline {2.8}Enumerating Groebner fans}{11}
+\contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{11}
+\contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{13}
+\contentsline {subsection}{\numberline {2.9}Degree compatible Groebner}{15}
+\contentsline {subsection}{\numberline {2.10}Linear Codes}{15}
+\contentsline {subsection}{\numberline {2.11}Code Ideals}{15}
 \contentsline {section}{\numberline {3}Linear Codes}{16}
 \contentsline {section}{\numberline {4}Software}{16}
 \contentsline {section}{\numberline {A}Appendix}{16}

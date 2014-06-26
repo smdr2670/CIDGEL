@@ -1,5 +1,5 @@
 %this file is drba_gb.tex
-\section{Polynomial and commutative Algebra}
+\section{Mathematical Background}
 
 In this chapter a mathematical basis is systematically approached to give the reader an understanding to Groebner Bases and obtaining by the Flipping-Algorithm which is needed later.\\
 In the first section monomials are revisited.
@@ -280,6 +280,8 @@ Now that the meaning of the S-Polynomial is clear the Buchberger algorithm can b
 
 This algorithm is correct and terminates.$\left[ KHZ\right]  $
 
+\newpage
+
 However, a Groebner basis is not unique. A arbitrary polynomial can be added to a Groebner basis and it is still a Groebner basis.
 Fortunalety a each nonzero Ideal in $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ has a unique \textit{reduced} Groebner basis.
 
@@ -362,8 +364,6 @@ This is strategy is reasonable for a small example like above.
 In genearal, the whole Groebner fan can be computed with the Groebner walk.
 See $\left[ Cox OShea \right]$ for further details.\\
 An inexpensive way to obtain all reduced Groebner bases of a special ideal, the Code Ideal, which will be explained later.
-
-\subsection{Degree Compatible Groebner fans}
 
 \subsection{Toric Ideals}
 This work and is focused on Code Ideals, so it is useful to define the Toric Ideals first. Given a matrix $A =\left[a_{1},\dots, a_{n}  \right] \in \mathbb{Z}^{d \times n } $ and $u \in \mathbb{Z}^{n}$. $u$ which can be decomposed in $u^{+} $ and $u^{-}$, where $u^{+} $ and $u^{-}$ have nonnegative coefficients and disjoint support.
@@ -570,7 +570,9 @@ Any reduced Gröbner basis $ \mathcal{R}_{\succ} $ of $I_A$ and its term order $
 \end{algorithm}
 
 \textbf{Example}
-Consider the Ideal with the reduced Groebner basis with respect to the lexicographic order ...
+Consider the Ideal with the reduced Groebner basis with respect to the lexicographic order $x_{1} \succ \ldots \succ x_{6} $
+\[ \mathcal{G} = \{x_{1} - x_{2}, x_{3} - x_{4}, x_{5}-x_{6} , x_{2}^{2} -1 , x_{4}^{2} - 1, x_{6}^{2} - 1 \} \]
+
 Applying the breath-first search algorithm for this reduced Groebner basis results to the following edge graph.\\
 
 %TODO: BREITENSUCHENGRAPH HOCHLADEN
@@ -579,15 +581,74 @@ Using the reverse search method, this search tree results.
 
 %TODO: REVERSE SEARCH GRAPGH
 
+
+
+
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+	\draw (0,0) node[above] {$\mathcal{G}_1$}
+				(-2,-2) node[below] {$\mathcal{G}_2$}
+				(0,-2) node[below] {$\mathcal{G}_4$}
+				(2,-2) node[below] {$\mathcal{G}_8$}
+				(-2,-4.5) node[below] {$\mathcal{G}_3$}
+				(0,-4.5) node[below] {$\mathcal{G}_5$}
+				(2,-4.5) node[below] {$\mathcal{G}_7$}
+				(0,-7) node[below] {$\mathcal{G}_6$};
+    \draw [<-] (0.2,0) -- (2,-2);
+	\draw [<-] (0,0) -- (0,-2);
+	\draw [<-] (-0.2,0) -- (-2,-2);
+	\draw [<-] (-2,-2.5) -- (-2,-4.5);
+	\draw [<-] (0,-2.5) -- (0,-4.5);
+	\draw [<-] (0.2,-2.5) -- (2,-4.5);
+	\draw [<-] (0,-5) -- (0,-7);
+\end{tikzpicture}
+\caption{The reverse search tree for $\mathcal{G}_{1}$}%
+\label{fig:rev}%
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+	\draw (0,0) node[above] {$\mathcal{G}_1$}
+				(-2,-2) node[below] {$\mathcal{G}_2$}
+				(0,-2) node[below] {$\mathcal{G}_4$}
+				(2,-2) node[below] {$\mathcal{G}_8$}
+				(-2,-4.5) node[below] {$\mathcal{G}_3$}
+				(0,-4.5) node[below] {$\mathcal{G}_5$}
+				(2,-4.5) node[below] {$\mathcal{G}_7$}
+				(0,-7) node[below] {$\mathcal{G}_6$};
+    \draw [-] (0.2,0) -- (2,-2); % G1 - G2
+	\draw [-] (0,0) -- (0,-2);   % G1 - G4
+	\draw [-] (-0.2,0) -- (-2,-2); % G1 - G8
+	\draw [-] (-2,-2.5) -- (-2,-4.5); % G2 - G3
+	\draw [-] (0,-2.5) -- (0,-4.5); % G4 - G5
+	\draw [-] (0.2,-2.5) -- (2,-4.5); % G4 - G7
+	\draw [-] (0,-5) -- (0,-7); % G5 - G6
+	\draw [-] (-1.8,-4.7) -- (-0.2,-4.7); % G3 - G5
+	\draw [-] (-2,-5) -- (-0.2,-7); %G3 - G6
+	\draw [-] (-1.8,-2.5) -- (-0.2,-4.5); % G2 - G5
+	\draw [-] (-1.8,-4.5) -- (1.8,-2.5); % G3 - G8
+	\draw [-] (2,-2.5) -- (2,-4.5); % G8 - G7
+	\draw [-] (0.2,-7) -- (2,-5); %G6 - G7
+
+\end{tikzpicture}
+\caption{The complete edge graph via breadth first search}%
+\label{fig:breadth}%
+\end{figure}
+
+
+
 Even for this small example a lot of edges were saved.
+\ref{fig:breadth}.
 
 
 \subsection{Degree compatible Groebner}
 Computing the whole Groebner fan can be very expensive and not every cone is interesting.
 In this section, the degree compatible Groebner fan is introduced and how the algorithm can
-be changed so that only the degree compatible Groebner fan will be computed.
+be changed so that only the degree compatible Groebner fan will be computed.\\
+A Groebner fan with its binomials $x^{a}-x^{b}$ is degree compatible if  and only if $deg(x^{a}) \geq deg(x^{b})$
 
-%TODO: weiter mit natalias paper hier schrieben
 
 \subsection{Linear Codes}
 
