@@ -691,11 +691,45 @@ Let $\mathbb{F}$ be a finite field and let $n~$ and $k~\in \mathbb{N}~$ with $n\
 $ [Dueck Journal ] $ A linear code of length n and dimension k over $\mathbb{F}~$ is the image $\mathcal{C}~$ of a injective linear mapping $\phi~:~\mathbb{F}^{k} \rightarrow \mathbb{F}^{n}  $
 \end{env_definition} 
 
-Such a code will be denoted als an [$n$,$k$] code and its elements are called codewords.
+Such a code will be denoted als an [$n$,$k$] code and its elements are called codewords. The codewords are written 
+as row vectors. The Code $\mathcal{C}~$ can alternatively be described as row space matrix of $G \in \mathbb{F}^{k \times n}$. The rows of $G$ form a basis of $\mathcal{C}~$.
+$G$ is also calles \textit{generator matrix} for $\mathcal{C}$.
+
+\begin{env_definition}[Standard form]
+$[dueckjournal]$
+A $[n,k]~$ code $\mathcal{C}~$ is in standard form if it has a generator matrix like $G = (I_{k}| M)$, where $I_{k}$ is the $k \times k$ matrix.
+\end{env_definition}
 
 
+\textbf{Example}
+Consider the binary $[7,4]$ Hamming Code with its generator matrix
 
+\[
+G =
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 1 & 1 & 0 \\ 
+0 & 1 & 0 & 0 & 1 & 0 & 1 \\  
+0 & 0 & 1 & 0 & 1 & 1 & 1 \\ 
+0 & 0 & 0 & 1 & 0 & 1 & 1
+\end{pmatrix} 
+\]
 
+The code $c~$ of the word $x~$ is obtained with the vector-multiplication
+\[
+     xG = c \\
+ \]
+ Let x be $\left(1,0,1,0\right)$, then the codeword c results to:
+ \[
+      \left(1,0,1,0\right) \cdot \begin{pmatrix}
+      1 & 0 & 0 & 0 & 1 & 1 & 0 \\ 
+      0 & 1 & 0 & 0 & 1 & 0 & 1 \\  
+      0 & 0 & 1 & 0 & 1 & 1 & 1 \\ 
+      0 & 0 & 0 & 1 & 0 & 1 & 1
+      \end{pmatrix}   = \left(1,0,1,0,0,0,1\right) \\
+  \]
+\begin{flushright}
+$\blacklozenge$
+\end{flushright} 
 
 \subsection{Code Ideals}
 
