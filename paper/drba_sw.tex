@@ -1,2 +1,45 @@
 % this file is drba_sw.tex
 \section{Software}
+\label{sec:software}
+This section is all about the practical part of this work. At first, a brief reason why the software is implemented in C is given. Secondly, an accurate description is presented of how the software can be compiled and used for own demand.
+After that, the software is tested on some randomly generated linear Codes. The number of degree compatible and all Groebner bases are presented and comparision of the operational time agains Gfan$[Gfan]$ is presented.  \\ \newline
+This software is a re-implementation of TiGERS $[Tigers]$. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Groebner bases with reverse search and breath-first search were implemented.   
+Additional features are explained later in Section \ref{subsec:manual}.
+
+
+
+
+
+
+
+\subsection{Data Structures}
+\label{subsec:datastructure}
+With the special attribute that code ideals only contains binomials and monomials can be represented as an exponent vector, it is useful to store this vector in to dynamic array.
+
+\lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
+basicstyle = \ttfamily \color{black} \footnotesize , 
+caption = {Data structure of binomials}, } 
+\begin{lstlisting} 
+typedef struct bin_tag *binomial;
+struct bin_tag{
+    int *exps1;
+    int *exps2;
+    int *E;
+    int ff;
+    int bf;
+    binomial next;
+};
+
+\end{lstlisting}
+
+
+\subsection{Manual}
+\label{subsec:manual}
+
+
+
+\subsection{Computational experience}
+
+
+\subsection{Documentation}
+
