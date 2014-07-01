@@ -741,6 +741,7 @@ A linear Code $\mathcal{C}$ can be \textit{punctured} by deleting the same coord
 
 
 \subsection{Code Ideals}
+\label{subsec:codeideals}
 In this section, the linear codes and the Groebner bases come together.\\
 Each linear code $\mathcal{C}~$ can be associated to a binomial ideal.$[dueckpaper]$ Let $\mathcal{C}~$ be a $[n,k]$ code and let 
 $\mathbb{K}[\textbf{x}]~=~\mathbb{K}[x_{1},\cdots,x_{n}]$.
@@ -748,22 +749,38 @@ Then the \textit{code ideal} can be defined as follows:
 
 \begin{env_definition}[Code Ideal]
 $[dueckpaper]$ A code ideal $I(\mathcal{C})$ is the union between the toric ideal and a nonprime ideal $I_{p}$, such that
-\[ I_{\mathcal{C}} = \langle \textbf{x}^{c} - \textbf{x}^{c'} | c - c' \in \mathcal{C}  \rangle  \]
- 
+\begin{center}
+$ I_{\mathcal{C}} = \langle \textbf{x}^{c} - \textbf{x}^{c'} | c - c' \in \mathcal{C}  \rangle + I_{p},$\\
+\textrm{where}
+ $I_{p} = \langle x_{i}^{p} - 1 | 1 \leq i \leq n \rangle $
+\end{center}
 \end{env_definition}
 
 
+\textbf{Example} Let $\mathcal{C}_{1}~$ be a binary $[6,3]$ code with generator matrix
+\[
+G_{1} =
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 1 & 0 \\ 
+0 & 1 & 0 & 1 & 1 & 1 \\  
+0 & 0 & 1 & 0 & 1 & 0  
+\end{pmatrix} 
+\]
 
+The associated code Ideal $I(\mathcal{C})$ leads to: \newline
+\begin{center}
+$I(\mathcal{C}) = \{x_{1}-x_{5},x_{2}-x_{4}x_{5}x_{6},x_{3}-x_{5}  \} \cup \{x_{1}^{2}-1,x_{2}^{2}-1,x_{3}^{2}-1,x_{4}^{2}-1,x_{5}^{2}-1,x_{6}^{2}-1\}  $
+\end{center}
+Note that the terms $x_{1}^{2}-1,~x_{2}^{2}-1,~x_{3}^{2}-1 $ are divisible by the leading terms of the toric ideal.
+The reduced Groebner basis $\mathcal{G}_{\succ}$ with respect to the lexicographic ordering $\succ$ with $x_{1} \succ \cdots \succ x_{6}$ is:
+\begin{center}
+$ \mathcal{G}_{\succ} = \{x_{1}-x_{5},x_{2}-x_{4}x_{5}x_{6},x_{3}-x_{5}  \} \cup \{x_{4}^{2}-1,x_{5}^{2}-1,x_{6}^{2}-1  \}  $
+\end{center}
 
+\begin{flushright}
+$\blacklozenge$
+\end{flushright} 
 
-
-
-
-
-
-
-
-
-
+ 
 
 \newpage

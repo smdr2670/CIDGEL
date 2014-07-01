@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  1 JUL 2014 12:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  1 JUL 2014 13:21
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -840,19 +840,19 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 \c@theorem=\count135
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 49.
 
 (E:\Programme\MikTex\tex\latex\psnfss\t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -880,14 +880,14 @@ ABD: EveryShipout initializing macros
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot twoside 
-* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* h-part:(L,W,R)=(99.58464pt, 398.3386pt, 99.58464pt)
 * v-part:(T,H,B)=(85.35826pt, 702.78308pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=455.24411pt
+* \textwidth=398.3386pt
 * \textheight=635.78308pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=-15.36449pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=27.31465pt
 * \topmargin=13.08827pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -908,7 +908,7 @@ ABD: EveryShipout initializing macros
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_tp.tex)
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 42.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 52.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
@@ -980,19 +980,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-
-Overfull \hbox (21.79585pt too wide) in paragraph at lines 37--39
-\T1/ppl/m/n/12 poly-no-mi-als. That is im-por-tant for di-vid-ing poly-no-mi-al
-s in the fi-nite field $\U/fplmbb/m/n/12 K []$ 
- []
-
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 49.
 (E:\Programme\MikTex\tex\latex\psnfss\omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
- [3]
+ [3] [4]
 Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
  []
@@ -1008,45 +1002,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--89
  []
 
 
+Overfull \hbox (3.6328pt too wide) in paragraph at lines 90--94
+\T1/ppl/m/n/12 The un-der-lined terms are the lead-ing bi-no-mi-als with the re
+-spect to the mono-
+ []
+
+
+Overfull \hbox (41.39049pt too wide) in paragraph at lines 99--101
+[]\T1/ppl/b/n/12 Definition 2.4 \T1/ppl/m/n/12 (Ideal)\T1/ppl/b/n/12 . []\T1/pp
+l/m/it/12 An ideal I is col-lec-tion of poly-no-mi-als $\OML/zplm/m/it/12 f[]\O
+T1/ppl/m/n/12 , []  , \OML/zplm/m/it/12 f[] \OMS/zplm/m/n/12 2 \U/fplmbb/m/n/12
+ K []$
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
 
-
-Underfull \vbox (badness 4279) has occurred while \output is active []
-
- [4]
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 108.
-[5] [6]
-Overfull \hbox (0.77153pt too wide) in paragraph at lines 222--223
-\T1/ppl/m/n/12 Buchberger-Algorithm. The main idea is to build ev-ery pos-si-bl
-e S-Polynomial of $[]$
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+[]$\OML/zplm/m/it/12 r \OT1/zplm/m/n/12 = \OT1/ppl/m/n/12 0$ \T1/ppl/m/n/12 or 
+none of the terms in $\OML/zplm/m/it/12 r$ \T1/ppl/m/n/12 are di-vis-i-ble by
  []
 
-[7]
-Overfull \hbox (7.30855pt too wide) in paragraph at lines 235--238
-[]\T1/ppl/b/n/12 example \T1/ppl/m/n/12 Con-sider the poly-no-mi-als the poly-n
-o-mial ring $\U/fplmbb/m/n/12 K []$ \T1/ppl/m/n/12 with the ba-sis $[] \OT1/zpl
-m/m/n/12 =$
- []
-
+[7] [8]
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 240.
 
-(E:\Programme\MikTex\tex\latex\lm\t1lmss.fd
+ (E:\Programme\MikTex\tex\latex\lm\t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8]
-Overfull \hbox (32.00168pt too wide) in paragraph at lines 292--294
-[]\T1/ppl/b/n/12 Definition 2.9 \T1/ppl/m/n/12 (Re-duced Groeb-ner ba-sis)\T1/p
-pl/b/n/12 . []\T1/ppl/m/it/12 A Groeb-ner ba-sis $\OML/zplm/m/it/12 G \OT1/zplm
-/m/n/12 = []$ \T1/ppl/m/it/12 in $\U/fplmbb/m/n/12 K []$
- []
-
-[9]
+) [9] [10] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
@@ -1056,31 +1048,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
-
-Overfull \hbox (12.4618pt too wide) in paragraph at lines 334--338
-[]\T1/ppl/b/n/12 example \T1/ppl/m/n/12 Con-sider the Ideal from $[]$ with $\OM
-L/zplm/m/it/12 I \OT1/zplm/m/n/12 = \OMS/zplm/m/n/12 h\OML/zplm/m/it/12 x[] \OM
-S/zplm/m/n/12   \OML/zplm/m/it/12 y\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 xz \OMS/
-zplm/m/n/12   \OML/zplm/m/it/12 y[] \OT1/zplm/m/n/12 + \OML/zplm/m/it/12 yz\OMS
-/zplm/m/n/12 i 2 \U/fplmbb/m/n/12 Q [] \OT1/ppl/m/n/12 .$
- []
-
-[10]
-Overfull \hbox (26.29218pt too wide) in paragraph at lines 397--399
+[12]
+Overfull \hbox (83.1977pt too wide) in paragraph at lines 397--399
 []\T1/ppl/b/n/12 Definition 2.12 \T1/ppl/m/n/12 (Facet Bi-no-mial)\T1/ppl/b/n/1
 2 . []$[]$ \T1/ppl/m/it/12 The bi-no-mial $\OML/zplm/m/it/12 x[] \OMS/zplm/m/n/
 12   \OML/zplm/m/it/12 x[] \OMS/zplm/m/n/12 2 G[]\OML/zplm/m/it/12 isafacetbino
 mialof\OMS/zplm/m/n/12 G[] $
  []
 
-[11] [12] [13] [14]
-Overfull \hbox (0.71907pt too wide) in paragraph at lines 516--517
-[]\T1/ppl/m/n/12 Applying the flip-procedure $\OT1/zplm/m/n/12 (\OMS/zplm/m/n/1
-2 G\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 y[] \OMS/zplm/m/n/12   \OML/zplm/m/it/12
- xz\OT1/zplm/m/n/12 )$ \T1/ppl/m/n/12 leads to the Groeb-ner base $\OMS/zplm/m/
-n/12 G \OT1/zplm/m/n/12 = \OMS/zplm/m/n/12 f\OML/zplm/m/it/12 x[]y \OMS/zplm/m/
-n/12   \OML/zplm/m/it/12 z\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 xz[] \OMS/zplm/m/
-n/12  $
+[13] [14] [15] [16]
+Overfull \hbox (15.41238pt too wide) in paragraph at lines 511--515
+[]\T1/ppl/b/n/12 Example \T1/ppl/m/n/12 Con-sider the re-duced Gröb-ner base $\
+OMS/zplm/m/n/12 G \OT1/zplm/m/n/12 = []$
  []
 
 
@@ -1093,46 +1072,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 655--658
 
  []
 
-
-Underfull \vbox (badness 2359) has occurred while \output is active []
-
- [15]
-[16]
+[17] [18] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 674--676
 
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 677--684
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 677--684
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--692
+Underfull \hbox (badness 10000) in paragraph at lines 677--684
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
+ [20]
+Underfull \hbox (badness 10000) in paragraph at lines 690--692
+
+ []
+
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 736--738
 
  []
 
-[19] [20]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex)
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_ap.tex) [21]
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
+
+ []
+
+[22] [23]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex)
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_ap.tex) [24]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux) ) 
 Here is how much of TeX's memory you used:
- 14372 strings out of 493921
- 268649 string characters out of 3150487
- 310447 words of memory out of 3000000
- 17296 multiletter control sequences out of 15000+200000
+ 14373 strings out of 493921
+ 268668 string characters out of 3150487
+ 311406 words of memory out of 3000000
+ 17297 multiletter control sequences out of 15000+200000
  54393 words of font info for 98 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,12n,54p,546b,618s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1150,9 +1130,9 @@ mme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><E:/Programme/MikTex/
 fonts/type1/urw/palatino/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palati
 no/uplbi8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplr8a.pfb><E:/Pro
 gramme/MikTex/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (21 pages, 201072 bytes).
+Output written on drba.pdf (24 pages, 205553 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

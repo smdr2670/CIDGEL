@@ -13,7 +13,7 @@
 \usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
 \usepackage{tikz}
 
-\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm,includeheadfoot]{geometry}
+\usepackage[left=35mm,right=35mm,top=3cm,bottom=2cm,includeheadfoot]{geometry}
 
 %Kopf- und Fußzeile
 \usepackage{fancyhdr}
@@ -26,13 +26,23 @@
 %Linie oben
 \renewcommand{\headrulewidth}{0.5pt}
 
+%1,5 facher Zeilenabstand
 \usepackage{setspace}
 \onehalfspacing
+
+%Linie oben
+\renewcommand{\headrulewidth}{0.5pt}
+
+%Fußzeile mittig
+\fancyfoot[CO,CE]{\thepage}
+%Linie unten
+\renewcommand{\footrulewidth}{0.5pt}
 
 
 \setlength{\parindent}{0mm}
 \setlength{\parskip}{1mm}
 
+%Commando für Theoreme
 \newtheorem{theorem}{Theorem}[section]
 
 
