@@ -1,5 +1,5 @@
 % this file is drba.tex
-\documentclass[a4paper,11pt,twoside]{article}
+\documentclass[a4paper,12pt,twoside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -13,7 +13,21 @@
 \usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
 \usepackage{tikz}
 
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm,includeheadfoot]{geometry}
 
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+%Kopfzeile rechts bzw. außen
+\fancyhead[R]{\nouppercase{\leftmark}}
+%Linie oben
+\renewcommand{\headrulewidth}{0.5pt}
+
+\usepackage{setspace}
+\onehalfspacing
 
 
 \setlength{\parindent}{0mm}

@@ -743,7 +743,15 @@ A linear Code $\mathcal{C}$ can be \textit{punctured} by deleting the same coord
 \subsection{Code Ideals}
 In this section, the linear codes and the Groebner bases come together.\\
 Each linear code $\mathcal{C}~$ can be associated to a binomial ideal.$[dueckpaper]$ Let $\mathcal{C}~$ be a $[n,k]$ code and let 
-$\mathcal{K}[\textbf{x}]~=~\mathcal{K}[x_{1},\cdots,x_{n}]$
+$\mathbb{K}[\textbf{x}]~=~\mathbb{K}[x_{1},\cdots,x_{n}]$.
+Then the \textit{code ideal} can be defined as follows:
+
+\begin{env_definition}[Code Ideal]
+$[dueckpaper]$ A code ideal $I(\mathcal{C})$ is the union between the toric ideal and a nonprime ideal $I_{p}$, such that
+\[ I_{\mathcal{C}} = \langle \textbf{x}^{c} - \textbf{x}^{c'} | c - c' \in \mathcal{C}  \rangle  \]
+ 
+\end{env_definition}
+
 
 
 
