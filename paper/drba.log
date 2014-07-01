@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  30 JUN 2014 16:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  1 JUL 2014 11:35
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -880,49 +880,49 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 {C:/Users/Daniel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_in.tex [2])
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_gb.tex
-Overfull \hbox (11.68217pt too wide) in paragraph at lines 4--8
+Overfull \hbox (11.68217pt too wide) in paragraph at lines 5--9
 \T1/ppl/m/n/10.95 the reader an un-der-stand-ing to Groeb-ner Bases and ob-tain
 -ing by the Flipping-
  []
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 9.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 10.
 \c@env_definition=\count139
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 16.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 18.
 
 (E:\Programme\MikTex\tex\latex\psnfss\ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
 LaTeX Font Info:    Font shape `T1/ppl/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/it' tried instead on input line 18.
+(Font)              Font shape `T1/ppl/b/it' tried instead on input line 20.
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 47.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 49.
 (E:\Programme\MikTex\tex\latex\psnfss\omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--77
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--87
+Underfull \hbox (badness 10000) in paragraph at lines 87--89
 
  []
 
 
-Overfull \hbox (41.35324pt too wide) in paragraph at lines 97--99
+Overfull \hbox (41.35324pt too wide) in paragraph at lines 99--101
 []\T1/ppl/b/n/10.95 Definition 2.4 \T1/ppl/m/n/10.95 (Ideal)\T1/ppl/b/n/10.95 .
  []\T1/ppl/m/it/10.95 An ideal I is col-lec-tion of poly-no-mi-als $\OML/zplm/m
 /it/10.95 f[]\OT1/ppl/m/n/10.95 , []  , \OML/zplm/m/it/10.95 f[] \OMS/zplm/m/n/
@@ -930,49 +930,49 @@ Overfull \hbox (41.35324pt too wide) in paragraph at lines 97--99
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--99
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
 [4]
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 108.
 
-Underfull \hbox (badness 7576) in paragraph at lines 162--163
+Underfull \hbox (badness 7576) in paragraph at lines 164--165
 []$\OML/zplm/m/it/10.95 r \OT1/zplm/m/n/10.95 = \OT1/ppl/m/n/10.95 0$ \T1/ppl/m
 /n/10.95 or none of the terms in $\OML/zplm/m/it/10.95 r$ \T1/ppl/m/n/10.95 are
  di-vis-i-ble by
  []
 
 [5] [6] [7]
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 238.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 240.
 
  (E:\Programme\MikTex\tex\latex\lm\t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [8]
-Overfull \hbox (0.27379pt too wide) in paragraph at lines 290--292
+Overfull \hbox (0.27379pt too wide) in paragraph at lines 292--294
 []\T1/ppl/b/n/10.95 Definition 2.9 \T1/ppl/m/n/10.95 (Re-duced Groeb-ner ba-sis
 )\T1/ppl/b/n/10.95 . []\T1/ppl/m/it/10.95 A Groeb-ner ba-sis $\OML/zplm/m/it/10
 .95 G \OT1/zplm/m/n/10.95 = []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--324
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
 [9] [10]
-Overfull \hbox (79.18205pt too wide) in paragraph at lines 395--397
+Overfull \hbox (79.18205pt too wide) in paragraph at lines 397--399
 []\T1/ppl/b/n/10.95 Definition 2.12 \T1/ppl/m/n/10.95 (Facet Bi-no-mial)\T1/ppl
 /b/n/10.95 . []$[]$ \T1/ppl/m/it/10.95 The bi-no-mial $\OML/zplm/m/it/10.95 x[]
  \OMS/zplm/m/n/10.95   \OML/zplm/m/it/10.95 x[] \OMS/zplm/m/n/10.95 2 G[]\OML/z
@@ -980,49 +980,54 @@ plm/m/it/10.95 isafacetbinomialof\OMS/zplm/m/n/10.95 G[] $
  []
 
 [11] [12]
-Overfull \hbox (17.35974pt too wide) in paragraph at lines 509--513
+Overfull \hbox (17.35974pt too wide) in paragraph at lines 511--515
 []\T1/ppl/b/n/10.95 Example \T1/ppl/m/n/10.95 Con-sider the re-duced Gröb-ner b
 ase $\OMS/zplm/m/n/10.95 G \OT1/zplm/m/n/10.95 = []$
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 580--581
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--656
+Underfull \hbox (badness 10000) in paragraph at lines 655--658
 
  []
 
 [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 672--674
+Underfull \hbox (badness 10000) in paragraph at lines 674--676
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--682
+Underfull \hbox (badness 10000) in paragraph at lines 677--684
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--682
+Underfull \hbox (badness 10000) in paragraph at lines 677--684
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 688--690
+Underfull \hbox (badness 10000) in paragraph at lines 690--692
 
  []
 
-[17] [18]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex)
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 736--738
+
+ []
+
+[18]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex)
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_ap.tex) [19]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux) ) 
 Here is how much of TeX's memory you used:
- 13715 strings out of 493921
- 259384 string characters out of 3150487
- 293610 words of memory out of 3000000
- 16664 multiletter control sequences out of 15000+200000
+ 13717 strings out of 493921
+ 259418 string characters out of 3150487
+ 293628 words of memory out of 3000000
+ 16666 multiletter control sequences out of 15000+200000
  54380 words of font info for 98 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,10n,54p,558b,618s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1040,7 +1045,7 @@ mme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><E:/Programme/MikTex/
 fonts/type1/urw/palatino/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palati
 no/uplbi8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplr8a.pfb><E:/Pro
 gramme/MikTex/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (19 pages, 198093 bytes).
+Output written on drba.pdf (19 pages, 198957 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
