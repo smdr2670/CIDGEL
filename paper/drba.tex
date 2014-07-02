@@ -1,4 +1,4 @@
-% this file is drba.tex
+  % this file is drba.tex
 \documentclass[a4paper,12pt,twoside]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -12,8 +12,12 @@
 \usepackage{algorithm}% http://ctan.org/pkg/algorithms
 \usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
 \usepackage{tikz}
+\usepackage{courier}
 
-\usepackage[left=35mm,right=35mm,top=3cm,bottom=2cm,includeheadfoot]{geometry}
+
+
+
+\usepackage[left=35mm,right=35mm,top=3cm,bottom=45mm,includeheadfoot]{geometry}
 
 %Kopf- und Fußzeile
 \usepackage{fancyhdr}
@@ -28,7 +32,7 @@
 
 %1,5 facher Zeilenabstand
 \usepackage{setspace}
-\onehalfspacing
+
 
 %Linie oben
 \renewcommand{\headrulewidth}{0.5pt}
@@ -55,13 +59,13 @@
 \newpage
 \tableofcontents
 \newpage
+\onehalfspacing
 \input{drba_in} %introduction
 \input{drba_gb} %mathematical background
-%\input{drba_lc} %linear codes
 \input{drba_sw} %software
+\input{drba_fw}%future work
+\input{drba_cc}%conclusions 
 
-\appendix
-\input{drba_ap} %appendix
 
 
 

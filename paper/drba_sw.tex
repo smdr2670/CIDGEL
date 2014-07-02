@@ -5,6 +5,7 @@ This section is all about the practical part of this work. At first, a brief rea
 After that, the software is tested on some randomly generated linear Codes. The number of degree compatible and all Groebner bases are presented and comparision of the operational time agains Gfan$[Gfan]$ is presented.  \\ \newline
 This software is a re-implementation of TiGERS $[Tigers]$. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Groebner bases with reverse search and breath-first search were implemented.   
 Additional features are explained later in Section \ref{subsec:manual}.
+The programming language of choice is C because it is fast and the capability to make own data structures are simple and sufficient enough.
 
 
 
@@ -18,7 +19,7 @@ With the special attribute that code ideals only contains binomials and monomial
 
 \lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
 basicstyle = \ttfamily \color{black} \footnotesize , 
-caption = {Data structure of binomials}, } 
+caption = {Data structure of binomials[Tigers]}, } 
 \begin{lstlisting} 
 typedef struct bin_tag *binomial;
 struct bin_tag{
@@ -32,14 +33,147 @@ struct bin_tag{
 
 \end{lstlisting}
 
+The pointer \emph{exps1} stores the exponent vector of the first monomial and \emph{exps2} does it with the second monomial.
+The integer ff is a flag which shows if binomial is a facet binomial or not and bf tells if there is a monomial or binomial.
+The pointer binomial next indicates that binomials are linked together like a linear list, which is necessary to describe ideals and Groebner bases.\\
+
+The next code snippet shows the other important data structure. Again, it is a linked list like the binomials with the purpose to connect all reduced Groebner together, which is needed for the breath-first search.\\
+
+The first four integers show off the identification number of the vertex of the edge graph, the number of facet binomials, number of binomials and the highest degree. Next is a pointer to the next generating set of the linked list.
+ 
+
+\lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
+basicstyle = \ttfamily \color{black} \footnotesize , 
+caption = {Data structure of generating sets [Tigers]}, } 
+\begin{lstlisting} 
+typedef struct gset_tag *gset;
+
+/* Linked List of gset_tag which contiains the binomial and the
+   caching informations*/
+struct gset_tag{
+    int id;
+    int nfacets;
+    int nelts;
+    int deg;
+    binomial bottom;
+    binomial cache_edge;
+    struct gset_tag *cache_vtx;
+    struct gset_tag *next;
+};
+
+\end{lstlisting}
+
+ 
+
+
+ 
+
 
 \subsection{Manual}
 \label{subsec:manual}
+This software was programmed and evaluated with Linux, so at first, it is needed to compile the software. The makefile is given and it only takes the console, moving to the direction where folder is and typing 'make'. \\
+All inputs, outputs, options and flags are passed with the commandline arguments. At first it is useful to run the program with the purpose to print the help-message only with the command
+\texttt{./cidgel -h}.
+
+\lstset{basicstyle=\footnotesize, columns=fullflexible,showspaces=false,breakatwhitespace=true,caption = {Code Snippet of the help-message}} 
+\begin{lstlisting} 
+
+static char *helpmsg[] = {
+    "Function: Enumerate all or d.c Groebner bases of a code ideal I(C).",
+    "          \n",
+    "Options:\n",
+    "    -h            print this message\n"
+    "    -i (filename) set file name for input  [default: stdin]\n",
+    "    -o (filename) set file name for output [default: stdout]\n",
+    "    -m (filename) set file name for code-matching \n",
+    "    -R            only compute root of tree \n",
+    "    -r            compute all grobner bases [done by default]\n",
+    "    -C            turn partial caching on   [done by default]\n",
+    "    -c            turn partial caching off \n",
+    "    -T            print edges of search tree \n",
+    "    -t            do not print edges of search tree [assumed by default]\n",  
+    "    -L            print vertices by giving initial ideals\n",
+    "                     and printing facet biomials.\n",
+    "    -l            print vertices as grobner bases   [done by default]\n",
+    "    -F            Use only linear algebra when testing facets [default]\n",
+    "    -f            use FLIPPABILITY test first when determining facets\n",
+    "    -e            use exhaustive search instead of reverse search\n",
+    "    -E            use reverse search                   [default]\n",
+    "    -d            degree compatible Groebner bases only         \n",
+    "    -n            do not print vertices or edges                \n",
+    "    -p            calculate Groebner fans of punctured codes    \n",
+    NULL
+};
+
+\end{lstlisting}
+
+The listing above shows all options that are available. These flags can be passed in arbitrary order to the program. An example will be shown next.
+But before it is necessary to write a matrix and storing it into a file.
+
+For example, the data has the name '\texttt{matrix}', has the following content and is in the same folder as the compiled software.
+\lstset{caption = {Example-input}}
+\begin{lstlisting}
+M: { 6 10 2 :
+1 0 0 0 0 0 0 0 1 1 
+0 1 0 0 0 0 1 1 0 0 
+0 0 1 0 0 0 1 1 1 1 
+0 0 0 1 0 0 0 1 1 1 
+0 0 0 0 1 0 1 0 0 0 
+0 0 0 0 0 1 0 1 0 1 
+}
+\end{lstlisting}
+
+This Matrix is a generator matrix for a binary $[10,6]$ code in essential standard form. 
+The first number in the first row gives the code dimension, the second tells the length of the codeword and the last number indicates in which primary field the generator matrix shall be evaluated.\\
+
+Now if the degree compatible Groebner bases of this generator  matrix without printing the Groebner basis shall be written in a outputfile called \texttt{Example-output}. Additionally the linear programming shall be leaved out, then the program call is: \texttt{./cidgel -i Example-input -o Example-output -d -n -f}.
+The user do not has to specify an output file, the result will be printed in the console then.
+
+
+\lstset{caption = {Snipped of the example outsput}}
+\begin{lstlisting}
+% starting GB:
+F: 2
+R: 10
+G: {a-i*j, b-g*h, c-g*h*i*j, d-h*i*j, e-g, f-h*j, g^2-1, h^2-1, i^2-1, j^2-1}
+
+ Enumerating degree compatible Groebner bases
+   using reverse search
+   taking input from randomgenerator/10_6
+   with partial caching
+   using wall ideal pretest for facet checking
+
+Number of Groebner bases found 216
+Number of edges of state polytope 792
+max caching depth      10
+max facet binomials    18
+min facet binomials    12
+max binomials in GB    41
+min binomials in GB    40
+max degree             3
+min degree             2
+randomgenerator/10_6: Reverse Search,   Caching,  A-pretest,
+time used (in seconds) 42.16
+\end{lstlisting}
+  
+
+
+
 
 
 
 \subsection{Computational experience}
+\label{subsec:compexp} 
+In this section the difference between degree compatible Groebner bases and all Groebner bases from a linear Code are researched. Furthermore, the time for all Grooebner bases is compared against Gfan.
+
+%TODO: HIER EIN PAAR BILDER HOCHLADEN
+%TODO: EXTREMBEISPIEL ZEIGEN UND VLLT SAGEN WARUM NICHT FÜR GRÖSSERE BASEN 
 
 
-\subsection{Documentation}
+
+\subsection{Documentation and electronic availability}
+\label{subsec:docu}
+A HTML-based documentation of the software is created with the help of doxygen.$[doxygen]$
+
+\newpage
 

@@ -30,16 +30,10 @@ usage(prog)
 char *prog;
 {
 static char *helpmsg[] = {
-    "Function: Enumerate all or d.c Groebner bases of a code ideal I_A.",
+    "Function: Enumerate all or d.c Groebner bases of a code ideal I(C).",
     "          \n",
     "Input: \n ",
-    "  A) A ring description (for now just a number of variables)\n",
-    "     followed by a reduced Groebner basis for I_A.\n",
-    "     example:\n",
-    "     R: 5\n",
-    "     G: {a^2*c-b^2*e, a^2*d-b*e^2, b*matchnamed-c*e}\n",
-    "  or \n",
-    "  B) An integer matrix A (defining I_A).\n",
+    "     An integer matrix M defining (C).\n",
     "     example:\n",
     "     rows,columns and dimension\n ",
     "     M: { 3 5 5 : 2 1 1 1 1 1 \n",
