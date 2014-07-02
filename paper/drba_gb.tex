@@ -24,7 +24,7 @@ The total \textbf{degree} of a monomial is $deg(m) = \sum_{i=1}^n u_i $
 
 A polynomial f is a finite linear combination with coefficients $c_{u} \in \mathbb{K}$ multiplied with monomials.
 
-$ f = \sum_{u} c_{u}X^{u}$\\
+\[  f = \sum_{u} c_{u}X^{u}\]\\
 
 If $c_{u}\neq0$ then $c_{u}x_{u}$ is a term of $f$
 
@@ -65,12 +65,12 @@ if $m_{1} > m_{2}$ then $mm_{1} > mm_{2}$ for any monomial m
 Two commonly used term orders are the following.
 Let $u$ and $v$ be elements of $\mathbb{N}^{n}_{0}$, such that $\left[ 2\right] $
 
-\subsubsection{Lexicographic Order}
+\textbf{Lexicographic Order}
 $u >_{lex} v $ if in $u-v$ the left most non-zero entry is positive.
 This can be written as $X^{u} >_{lex} X^{v}$ if $u >_{lex} v $.\\
 
 
-\subsubsection{Graded Lex Order}
+\textbf{Graded Lex Order}
 $u >_{grlex} v $ if $ deg(u)>deg(v)$ or if $ deg(u)=deg(v)$ and $u >_{lex} v$
 
 \textbf{Example} Let $m_{1} = 4x^{2}y^{4}z^{3}$ and $m_{2}= x^{1}y^{1}z^{4} \in \mathbb{K}\left[ x,y,z\right]  $.
@@ -80,9 +80,9 @@ Thus $m_{1}>_{lex} m_{2}$ because the left most non-zero entry of $ (2 \; 4 \; 3
 The total degree of $m_{1}$ is 9 and $deg(m_{2})=6$. Hence, $m_{1}>_{lex} m_{2}$ and
 $deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$   
 
-\subsubsection{Weight vectors} 
+\textbf{Weight vectors} 
 
-\subsubsection{Leading term}
+\textbf{Leading term}
 
 Given a term order $>$, each non-zero polynomial $f \in \mathbb{K}\left[ x\right] $ has a unique leading term, denoted by $lt(f)$, given by the largest involved term with respect to the term order.\\
 If $lt(f) = cX^{u}$, where $c \in \mathbb{K}$, then c is the leading coefficient of $f$ and $X^{u}$ is the leading monomial(lm).$\left[ 2\right]$\\

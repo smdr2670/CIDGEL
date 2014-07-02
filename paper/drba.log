@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  2 JUL 2014 14:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  2 JUL 2014 15:45
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -1016,7 +1016,7 @@ File: omsppl.fd
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
+Underfull \hbox (badness 10000) in paragraph at lines 68--71
 
  []
 
@@ -1036,7 +1036,7 @@ Overfull \hbox (3.6328pt too wide) in paragraph at lines 90--94
 -spect to the mono-
  []
 
-[5]
+
 Overfull \hbox (41.39049pt too wide) in paragraph at lines 99--101
 []\T1/ppl/b/n/12 Definition 2.4 \T1/ppl/m/n/12 (Ideal)\T1/ppl/b/n/12 . []\T1/pp
 l/m/it/12 An ideal I is col-lec-tion of poly-no-mi-als $\OML/zplm/m/it/12 f[]\O
@@ -1050,6 +1050,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--101
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
@@ -1062,12 +1065,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--165
 none of the terms in $\OML/zplm/m/it/12 r$ \T1/ppl/m/n/12 are di-vis-i-ble by
  []
 
-[7] [8] [9]
+[7] [8]
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 240.
 
  (E:\Programme\MikTex\tex\latex\lm\t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [10] [11]
+) [9] [10] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
@@ -1241,7 +1244,7 @@ fonts/type1/urw/courier/ucrr8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatin
 o/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplbi8a.pfb><E:/Prog
 ramme/MikTex/fonts/type1/urw/palatino/uplr8a.pfb><E:/Programme/MikTex/fonts/typ
 e1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (31 pages, 240032 bytes).
+Output written on drba.pdf (31 pages, 240045 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
