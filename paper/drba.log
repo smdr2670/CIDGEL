@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  2 JUL 2014 15:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  3 JUL 2014 11:38
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -1009,35 +1009,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 49.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 51.
  (E:\Programme\MikTex\tex\latex\psnfss\omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
- [4]
-Underfull \hbox (badness 10000) in paragraph at lines 68--71
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--79
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--89
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
 
  []
 
-
-Overfull \hbox (3.6328pt too wide) in paragraph at lines 90--94
+[4]
+Overfull \hbox (3.6328pt too wide) in paragraph at lines 92--96
 \T1/ppl/m/n/12 The un-der-lined terms are the lead-ing bi-no-mi-als with the re
 -spect to the mono-
  []
 
 
-Overfull \hbox (41.39049pt too wide) in paragraph at lines 99--101
+Overfull \hbox (41.39049pt too wide) in paragraph at lines 101--103
 []\T1/ppl/b/n/12 Definition 2.4 \T1/ppl/m/n/12 (Ideal)\T1/ppl/b/n/12 . []\T1/pp
 l/m/it/12 An ideal I is col-lec-tion of poly-no-mi-als $\OML/zplm/m/it/12 f[]\O
 T1/ppl/m/n/12 , []  , \OML/zplm/m/it/12 f[] \OMS/zplm/m/n/12 2 \U/fplmbb/m/n/12
@@ -1045,43 +1045,40 @@ T1/ppl/m/n/12 , []  , \OML/zplm/m/it/12 f[] \OMS/zplm/m/n/12 2 \U/fplmbb/m/n/12
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 108.
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 110.
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 []$\OML/zplm/m/it/12 r \OT1/zplm/m/n/12 = \OT1/ppl/m/n/12 0$ \T1/ppl/m/n/12 or 
 none of the terms in $\OML/zplm/m/it/12 r$ \T1/ppl/m/n/12 are di-vis-i-ble by
  []
 
-[7] [8]
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 240.
+[6] [7] [8]
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 242.
 
  (E:\Programme\MikTex\tex\latex\lm\t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 324--326
+Underfull \hbox (badness 10000) in paragraph at lines 326--328
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
 [12] [13]
-Overfull \hbox (83.1977pt too wide) in paragraph at lines 397--399
+Overfull \hbox (83.1977pt too wide) in paragraph at lines 399--401
 []\T1/ppl/b/n/12 Definition 2.12 \T1/ppl/m/n/12 (Facet Bi-no-mial)\T1/ppl/b/n/1
 2 . []$[]$ \T1/ppl/m/it/12 The bi-no-mial $\OML/zplm/m/it/12 x[] \OMS/zplm/m/n/
 12   \OML/zplm/m/it/12 x[] \OMS/zplm/m/n/12 2 G[]\OML/zplm/m/it/12 isafacetbino
@@ -1089,48 +1086,48 @@ mialof\OMS/zplm/m/n/12 G[] $
  []
 
 [14] [15] [16]
-Overfull \hbox (15.41238pt too wide) in paragraph at lines 511--515
+Overfull \hbox (15.41238pt too wide) in paragraph at lines 513--517
 []\T1/ppl/b/n/12 Example \T1/ppl/m/n/12 Con-sider the re-duced Gröb-ner base $\
 OMS/zplm/m/n/12 G \OT1/zplm/m/n/12 = []$
  []
 
 [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 582--583
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 655--658
+Underfull \hbox (badness 10000) in paragraph at lines 657--660
 
  []
 
 [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 674--676
+Underfull \hbox (badness 10000) in paragraph at lines 676--678
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--684
+Underfull \hbox (badness 10000) in paragraph at lines 679--686
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--684
+Underfull \hbox (badness 10000) in paragraph at lines 679--686
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--692
+Underfull \hbox (badness 10000) in paragraph at lines 692--694
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 736--738
+Underfull \hbox (badness 10000) in paragraph at lines 738--740
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 770--771
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
 
  []
 
@@ -1222,10 +1219,10 @@ put -d -n -f\T1/ppl/m/n/12 .
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex) [31]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux) ) 
 Here is how much of TeX's memory you used:
- 16313 strings out of 493921
- 294018 string characters out of 3150487
- 364513 words of memory out of 3000000
- 19205 multiletter control sequences out of 15000+200000
+ 16314 strings out of 493921
+ 294040 string characters out of 3150487
+ 364523 words of memory out of 3000000
+ 19206 multiletter control sequences out of 15000+200000
  64227 words of font info for 131 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,12n,54p,546b,1708s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1244,7 +1241,7 @@ fonts/type1/urw/courier/ucrr8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatin
 o/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplbi8a.pfb><E:/Prog
 ramme/MikTex/fonts/type1/urw/palatino/uplr8a.pfb><E:/Programme/MikTex/fonts/typ
 e1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (31 pages, 240045 bytes).
+Output written on drba.pdf (31 pages, 240430 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

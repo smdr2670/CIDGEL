@@ -3,14 +3,14 @@
 \contentsline {section}{\numberline {2}Mathematical Background}{3}
 \contentsline {subsection}{\numberline {2.1}Monomials}{3}
 \contentsline {subsection}{\numberline {2.2}Monomial Order}{3}
-\contentsline {subsection}{\numberline {2.3}Ideals}{6}
+\contentsline {subsection}{\numberline {2.3}Ideals}{5}
 \contentsline {subsection}{\numberline {2.4}Division Algorithm}{6}
-\contentsline {subsection}{\numberline {2.5}Groebner basis}{7}
-\contentsline {subsubsection}{\numberline {2.5.1}Definition of a Groebner basis}{9}
-\contentsline {subsubsection}{\numberline {2.5.2}Computation of a Groebner basis}{9}
+\contentsline {subsection}{\numberline {2.5}Groebner basis}{8}
+\contentsline {subsubsection}{\numberline {2.5.1}Definition of a Groebner basis}{8}
+\contentsline {subsubsection}{\numberline {2.5.2}Computation of a Groebner basis}{8}
 \contentsline {subsection}{\numberline {2.6}Groebner fans}{11}
 \contentsline {subsection}{\numberline {2.7}Toric Ideals}{13}
-\contentsline {subsection}{\numberline {2.8}Enumerating Groebner fans}{14}
+\contentsline {subsection}{\numberline {2.8}Enumerating Groebner fans}{13}
 \contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{16}
 \contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{16}
 \contentsline {subsection}{\numberline {2.9}Degree compatible Groebner}{19}
