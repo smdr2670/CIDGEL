@@ -10,7 +10,7 @@
 \contentsline {subsubsection}{\numberline {2.5.2}Computation of a Groebner basis}{8}
 \contentsline {subsection}{\numberline {2.6}Groebner fans}{11}
 \contentsline {subsection}{\numberline {2.7}Toric Ideals}{13}
-\contentsline {subsection}{\numberline {2.8}Enumerating Groebner fans}{13}
+\contentsline {subsection}{\numberline {2.8}Enumerating Groebner fans}{14}
 \contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{16}
 \contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{16}
 \contentsline {subsection}{\numberline {2.9}Degree compatible Groebner}{19}
