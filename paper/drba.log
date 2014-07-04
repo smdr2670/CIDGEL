@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  4 JUL 2014 19:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  4 JUL 2014 20:44
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -1078,20 +1078,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
 
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 399.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 399.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 399.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 399.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 399.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 399.
 [12] [13]
-Overfull \hbox (83.1977pt too wide) in paragraph at lines 448--450
+Overfull \hbox (83.1977pt too wide) in paragraph at lines 437--439
 []\T1/ppl/b/n/12 Definition 2.13 \T1/ppl/m/n/12 (Facet Bi-no-mial)\T1/ppl/b/n/1
 2 . []$[]$ \T1/ppl/m/it/12 The bi-no-mial $\OML/zplm/m/it/12 x[] \OMS/zplm/m/n/
 12   \OML/zplm/m/it/12 x[] \OMS/zplm/m/n/12 2 G[]\OML/zplm/m/it/12 isafacetbino
@@ -1099,48 +1087,48 @@ mialof\OMS/zplm/m/n/12 G[] $
  []
 
 [14] [15] [16]
-Overfull \hbox (15.41238pt too wide) in paragraph at lines 562--566
+Overfull \hbox (15.41238pt too wide) in paragraph at lines 551--555
 []\T1/ppl/b/n/12 Example \T1/ppl/m/n/12 Con-sider the re-duced Gröb-ner base $\
 OMS/zplm/m/n/12 G \OT1/zplm/m/n/12 = []$
  []
 
 [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 633--634
+Underfull \hbox (badness 10000) in paragraph at lines 622--623
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 706--709
+Underfull \hbox (badness 10000) in paragraph at lines 695--698
 
  []
 
 [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 725--727
+Underfull \hbox (badness 10000) in paragraph at lines 714--716
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 728--735
+Underfull \hbox (badness 10000) in paragraph at lines 717--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 728--735
+Underfull \hbox (badness 10000) in paragraph at lines 717--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--743
+Underfull \hbox (badness 10000) in paragraph at lines 730--732
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 787--789
+Underfull \hbox (badness 10000) in paragraph at lines 776--778
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 821--822
+Underfull \hbox (badness 10000) in paragraph at lines 810--811
 
  []
 
@@ -1181,6 +1169,18 @@ Underfull \vbox (badness 1389) has occurred while \output is active []
  [26]
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 81.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 85.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 85.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 85.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 85.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 85.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 85.
 
 Overfull \hbox (18.49825pt too wide) in paragraph at lines 94--95
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -1220,13 +1220,13 @@ put -d -n -f\T1/ppl/m/n/12 .
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex) [31]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux) ) 
 Here is how much of TeX's memory you used:
- 16383 strings out of 493921
- 295340 string characters out of 3150487
- 364558 words of memory out of 3000000
- 19271 multiletter control sequences out of 15000+200000
- 66187 words of font info for 135 fonts, out of 3000000 for 9000
+ 16328 strings out of 493921
+ 294357 string characters out of 3150487
+ 364562 words of memory out of 3000000
+ 19220 multiletter control sequences out of 15000+200000
+ 64227 words of font info for 131 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,12n,60p,546b,1708s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,54p,546b,1708s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/Programme/MikTex/
 fonts/enc/dvips/fontname/8r.enc}{E:/Programme/MikTex/fonts/enc/dvips/lm/lm-ec.e
 nc}<E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/Programme
@@ -1242,7 +1242,7 @@ fonts/type1/urw/courier/ucrr8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatin
 o/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplbi8a.pfb><E:/Prog
 ramme/MikTex/fonts/type1/urw/palatino/uplr8a.pfb><E:/Programme/MikTex/fonts/typ
 e1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (31 pages, 241728 bytes).
+Output written on drba.pdf (31 pages, 240973 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
