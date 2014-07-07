@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  7 JUL 2014 14:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  7 JUL 2014 17:27
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -795,8 +795,56 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )))
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
+libraries\tikzlibrarydecorations.markings.code.tex
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
+libraries\tikzlibrarydecorations.code.tex
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulede
+corations.code.tex
+\pgfdecoratedcompleteddistance=\dimen161
+\pgfdecoratedremainingdistance=\dimen162
+\pgfdecoratedinputsegmentcompleteddistance=\dimen163
+\pgfdecoratedinputsegmentremainingdistance=\dimen164
+\pgf@decorate@distancetomove=\dimen165
+\pgf@decorate@repeatstate=\count132
+\pgfdecorationsegmentamplitude=\dimen166
+\pgfdecorationsegmentlength=\dimen167
+)
+\tikz@lib@dec@box=\box41
+)
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decoratio
+ns\pgflibrarydecorations.markings.code.tex))
 (E:\Programme\MikTex\tex\latex\psnfss\courier.sty
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen168
+\captionmargin@=\dimen169
+\captionwidth=\dimen170
+\caption@tempdima=\dimen171
+\caption@indent=\dimen172
+\caption@parindent=\dimen173
+\caption@hangindent=\dimen174
+)
+\c@ContinuedFloat=\count133
+Package caption Info: float package is loaded.
+)
+\c@subfigure=\count134
+\c@subtable=\count135
+)
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
+libraries\tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.0 (rcs-revision 1.3)
+\pgf@layerbox@background=\box42
+\pgf@layerboxsaved@background=\box43
 )
 (E:\Programme\MikTex\tex\latex\geometry\geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -812,17 +860,17 @@ Package ifvtex Info: VTeX not detected.
 (E:\Programme\MikTex\tex\generic\ifxetex\ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count132
-\Gm@cntv=\count133
-\c@Gm@tempcnt=\count134
-\Gm@bindingoffset=\dimen161
-\Gm@wd@mp=\dimen162
-\Gm@odd@mp=\dimen163
-\Gm@even@mp=\dimen164
-\Gm@layoutwidth=\dimen165
-\Gm@layoutheight=\dimen166
-\Gm@layouthoffset=\dimen167
-\Gm@layoutvoffset=\dimen168
+\Gm@cnth=\count136
+\Gm@cntv=\count137
+\c@Gm@tempcnt=\count138
+\Gm@bindingoffset=\dimen175
+\Gm@wd@mp=\dimen176
+\Gm@odd@mp=\dimen177
+\Gm@even@mp=\dimen178
+\Gm@layoutwidth=\dimen179
+\Gm@layoutheight=\dimen180
+\Gm@layouthoffset=\dimen181
+\Gm@layoutvoffset=\dimen182
 \Gm@dimlist=\toks46
 
 (E:\Programme\MikTex\tex\latex\geometry\geometry.cfg))
@@ -841,45 +889,45 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
-\lst@mode=\count135
-\lst@gtempboxa=\box41
+\lst@mode=\count139
+\lst@gtempboxa=\box44
 \lst@token=\toks47
-\lst@length=\count136
-\lst@currlwidth=\dimen169
-\lst@column=\count137
-\lst@pos=\count138
-\lst@lostspace=\dimen170
-\lst@width=\dimen171
-\lst@newlines=\count139
-\lst@lineno=\count140
-\lst@maxwidth=\dimen172
+\lst@length=\count140
+\lst@currlwidth=\dimen183
+\lst@column=\count141
+\lst@pos=\count142
+\lst@lostspace=\dimen184
+\lst@width=\dimen185
+\lst@newlines=\count143
+\lst@lineno=\count144
+\lst@maxwidth=\dimen186
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
-\c@lstnumber=\count141
-\lst@skipnumbers=\count142
-\lst@framebox=\box42
+\c@lstnumber=\count145
+\lst@skipnumbers=\count146
+\lst@framebox=\box45
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
 File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
 Package: listings 2014/03/04 1.5c (Carsten Heinz)
-\c@theorem=\count143
+\c@theorem=\count147
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 63.
 
 (E:\Programme\MikTex\tex\latex\psnfss\t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -887,18 +935,22 @@ File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ABD: EveryShipout initializing macros
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count144
-\scratchdimen=\dimen173
-\scratchbox=\box43
-\nofMPsegments=\count145
-\nofMParguments=\count146
+\scratchcounter=\count148
+\scratchdimen=\dimen187
+\scratchbox=\box46
+\nofMPsegments=\count149
+\nofMParguments=\count150
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count147
-\MPscratchDim=\dimen174
-\MPnumerator=\count148
-\makeMPintoPDFobject=\count149
+\MPscratchCnt=\count151
+\MPscratchDim=\dimen188
+\MPnumerator=\count152
+\makeMPintoPDFobject=\count153
 \everyMPtoPDFconversion=\toks49
 )
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -933,10 +985,10 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count150
+\c@lstlisting=\count154
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_tp.tex)
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 60.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 66.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
@@ -994,7 +1046,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_gb.tex
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 10.
-\c@env_definition=\count151
+\c@env_definition=\count155
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 18.
 
 
@@ -1087,42 +1139,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 681--682
 
  []
 
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\breite.tex)
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\reverse.tex) [21]
 
-Underfull \hbox (badness 10000) in paragraph at lines 754--757
-
- []
-
-[21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 773--775
-
- []
+LaTeX Warning: Reference `fig:breadth' on page 22 undefined on input line 736.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 776--783
+Underfull \hbox (badness 10000) in paragraph at lines 740--743
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 776--783
+Underfull \hbox (badness 10000) in paragraph at lines 759--761
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 762--769
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 789--791
+Underfull \hbox (badness 10000) in paragraph at lines 762--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 775--777
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 835--837
+Underfull \hbox (badness 10000) in paragraph at lines 821--823
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 869--870
+Underfull \hbox (badness 10000) in paragraph at lines 855--856
 
  []
 
-[25] [26]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex
+[25]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
  []
@@ -1143,7 +1200,7 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 23.
 
 (E:\Programme\MikTex\tex\latex\psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [27]
+) [26]
 Underfull \hbox (badness 10000) in paragraph at lines 36--39
 
  []
@@ -1154,9 +1211,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--41
  []
 
 
-Underfull \vbox (badness 1389) has occurred while \output is active []
+Underfull \vbox (badness 1509) has occurred while \output is active []
 
- [28]
+ [27]
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1189,7 +1246,7 @@ Overfull \hbox (3.56825pt too wide) in paragraph at lines 99--100
 
  []
 
-[29]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
@@ -1206,35 +1263,38 @@ Overfull \hbox (14.59282pt too wide) in paragraph at lines 129--131
 put -d -n -f\T1/ppl/m/n/12 .
  []
 
-[30] [31]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_fw.tex [32])
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex) [33]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux) ) 
+[29] [30]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_fw.tex [31])
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex) [32]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 16330 strings out of 493921
- 294373 string characters out of 3150487
- 364580 words of memory out of 3000000
- 19222 multiletter control sequences out of 15000+200000
- 64227 words of font info for 131 fonts, out of 3000000 for 9000
+ 17994 strings out of 493921
+ 332177 string characters out of 3150487
+ 386953 words of memory out of 3000000
+ 20854 multiletter control sequences out of 15000+200000
+ 65833 words of font info for 133 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,12n,54p,546b,1708s stack positions out of 5000i,500n,10000p,200000b,50000s
-{E:/Programme/MikTex/
-fonts/enc/dvips/fontname/8r.enc}{E:/Programme/MikTex/fonts/enc/dvips/lm/lm-ec.e
-nc}<E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/Programme
-/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Programme/MikTex/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/euler/eurm10.
-pfb><C:/Users/Daniel/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/mathpazo/fpl
-mbb.pfb><C:/Users/Daniel/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/mathpazo
-/fplmr.pfb><C:/Users/Daniel/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/mathp
-azo/fplmri.pfb><E:/Programme/MikTex/fonts/type1/public/lm/lmss12.pfb><E:/Progra
-mme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><E:/Programme/MikTex/
-fonts/type1/urw/courier/ucrr8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatin
-o/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplbi8a.pfb><E:/Prog
-ramme/MikTex/fonts/type1/urw/palatino/uplr8a.pfb><E:/Programme/MikTex/fonts/typ
-e1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (33 pages, 245250 bytes).
+ 55i,12n,65p,546b,1704s stack positions out of 5000i,500n,10000p,200000b,50000s
+{E:/Programme/MikTex/fonts/enc/dvips/fontname/8r.enc}{E:/Programme/MikTex/fon
+ts/enc/dvips/lm/lm-ec.enc}<E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/c
+mex10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Pr
+ogramme/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Programme/MikTex/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><E:/Programme/MikTex/fonts/type1/public
+/amsfonts/euler/eurm10.pfb><C:/Users/Daniel/AppData/Roaming/MiKTeX/2.9/fonts/ty
+pe1/public/mathpazo/fplmbb.pfb><C:/Users/Daniel/AppData/Roaming/MiKTeX/2.9/font
+s/type1/public/mathpazo/fplmr.pfb><C:/Users/Daniel/AppData/Roaming/MiKTeX/2.9/f
+onts/type1/public/mathpazo/fplmri.pfb><E:/Programme/MikTex/fonts/type1/public/l
+m/lmss12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pf
+b><E:/Programme/MikTex/fonts/type1/urw/courier/ucrr8a.pfb><E:/Programme/MikTex/
+fonts/type1/urw/palatino/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palati
+no/uplbi8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplr8a.pfb><E:/Pro
+gramme/MikTex/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on drba.pdf (32 pages, 245806 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
+ 170 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

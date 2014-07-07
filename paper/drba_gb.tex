@@ -684,65 +684,51 @@ Applying the breath-first search algorithm for this reduced Groebner basis resul
 
 Using the reverse search method, this search tree results.
 
-%TODO: REVERSE SEARCH GRAPGH
 
-
-
-
-\begin{figure}[htb]
-\centering
-\begin{tikzpicture}
-	\draw (0,0) node[above] {$\mathcal{G}_1$}
-				(-2,-2) node[below] {$\mathcal{G}_2$}
-				(0,-2) node[below] {$\mathcal{G}_4$}
-				(2,-2) node[below] {$\mathcal{G}_8$}
-				(-2,-4.5) node[below] {$\mathcal{G}_3$}
-				(0,-4.5) node[below] {$\mathcal{G}_5$}
-				(2,-4.5) node[below] {$\mathcal{G}_7$}
-				(0,-7) node[below] {$\mathcal{G}_6$};
-    \draw [<-] (0.2,0) -- (2,-2);
-	\draw [<-] (0,0) -- (0,-2);
-	\draw [<-] (-0.2,0) -- (-2,-2);
-	\draw [<-] (-2,-2.5) -- (-2,-4.5);
-	\draw [<-] (0,-2.5) -- (0,-4.5);
-	\draw [<-] (0.2,-2.5) -- (2,-4.5);
-	\draw [<-] (0,-5) -- (0,-7);
-\end{tikzpicture}
-\caption{The reverse search tree for $\mathcal{G}_{1}$}%
-\label{fig:rev}%
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
+        \centering
+        \input{breite}
+        \caption{Caption A}
+        \label{fig:A}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
+        \centering
+        \input{reverse}
+        \caption{Caption B}
+        \label{fig:B}
+    \end{subfigure}
+    \caption{BLABLA;}
+    \label{fig:roc_curve}
 \end{figure}
 
-\begin{figure}[htb]
-\centering
-\begin{tikzpicture}
-	\draw (0,0) node[above] {$\mathcal{G}_1$}
-				(-2,-2) node[below] {$\mathcal{G}_2$}
-				(0,-2) node[below] {$\mathcal{G}_4$}
-				(2,-2) node[below] {$\mathcal{G}_8$}
-				(-2,-4.5) node[below] {$\mathcal{G}_3$}
-				(0,-4.5) node[below] {$\mathcal{G}_5$}
-				(2,-4.5) node[below] {$\mathcal{G}_7$}
-				(0,-7) node[below] {$\mathcal{G}_6$};
-    \draw [-] (0.2,0) -- (2,-2); % G1 - G2
-	\draw [-] (0,0) -- (0,-2);   % G1 - G4
-	\draw [-] (-0.2,0) -- (-2,-2); % G1 - G8
-	\draw [-] (-2,-2.5) -- (-2,-4.5); % G2 - G3
-	\draw [-] (0,-2.5) -- (0,-4.5); % G4 - G5
-	\draw [-] (0.2,-2.5) -- (2,-4.5); % G4 - G7
-	\draw [-] (0,-5) -- (0,-7); % G5 - G6
-	\draw [-] (-1.8,-4.7) -- (-0.2,-4.7); % G3 - G5
-	\draw [-] (-2,-5) -- (-0.2,-7); %G3 - G6
-	\draw [-] (-1.8,-2.5) -- (-0.2,-4.5); % G2 - G5
-	\draw [-] (-1.8,-4.5) -- (1.8,-2.5); % G3 - G8
-	\draw [-] (2,-2.5) -- (2,-4.5); % G8 - G7
-	\draw [-] (0.2,-7) -- (2,-5); %G6 - G7
 
-\end{tikzpicture}
-\caption{The complete edge graph via breadth first search}%
-\label{fig:breadth}%
-\end{figure}
 
-%TODO: Kanten mit den flipp binomials beschreiben und alle Groebnerbase aufschreiben
+
+
+
+%thx to http://www.math.tugraz.at/~huss/new/teaching/computermathematik09/dateien/tikz_demonstration.pdf
+
+
+
+
+
+
+
+The flipping binomials are written on the edges.
+The Groebner bases are:
+\begin{center}
+$\mathcal{G}_{1} = \{x_{1}-x_{2},x_{3}-x_{4},x_{5}-x_{6},x_{2}^{2}-1,x_{4}^{2}-1,x_{6}^{2}-1 \} $ \\
+$\mathcal{G}_{2} = \{x_{1}-x_{2},x_{4}-x_{3},x_{5}-x_{6},x_{2}^{2}-1,x_{3}^{2}-1,x_{6}^{2}-1 \} $ \\
+$\mathcal{G}_{3} = \{x_{2}-x_{1},x_{4}-x_{3},x_{5}-x_{6},x_{1}^{2}-1,x_{3}^{2}-1,x_{6}^{2}-1 \} $ \\
+$\mathcal{G}_{4} = \{x_{1}-x_{2},x_{3}-x_{4},x_{6}-x_{5},x_{2}^{2}-1,x_{4}^{2}-1,x_{5}^{2}-1 \} $ \\
+$\mathcal{G}_{5} = \{x_{1}-x_{2},x_{4}-x_{3},x_{6}-x_{5},x_{2}^{2}-1,x_{3}^{2}-1,x_{5}^{2}-1 \} $ \\
+$\mathcal{G}_{6} = \{x_{2}-x_{1},x_{4}-x_{3},x_{6}-x_{5},x_{1}^{2}-1,x_{3}^{2}-1,x_{5}^{2}-1 \} $ \\
+$\mathcal{G}_{7} = \{x_{2}-x_{1},x_{3}-x_{4},x_{6}-x_{5},x_{1}^{2}-1,x_{4}^{2}-1,x_{5}^{2}-1 \} $ \\
+$\mathcal{G}_{8} = \{x_{2}-x_{1},x_{3}-x_{4},x_{5}-x_{6},x_{1}^{2}-1,x_{4}^{2}-1,x_{6}^{2}-1 \} $ \\
+\end{center}
+
 
 
 

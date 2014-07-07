@@ -13,13 +13,13 @@
 \contentsline {subsection}{\numberline {2.8}Enumerating Groebner fans}{14}
 \contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{18}
 \contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{18}
-\contentsline {subsection}{\numberline {2.9}Degree compatible Groebner}{21}
+\contentsline {subsection}{\numberline {2.9}Degree compatible Groebner}{22}
 \contentsline {subsection}{\numberline {2.10}Linear Codes over Prime Fields}{23}
 \contentsline {subsection}{\numberline {2.11}Code Ideals}{25}
-\contentsline {section}{\numberline {3}Software}{27}
-\contentsline {subsection}{\numberline {3.1}Data Structures}{27}
-\contentsline {subsection}{\numberline {3.2}Manual}{29}
-\contentsline {subsection}{\numberline {3.3}Computational experience}{31}
-\contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{31}
-\contentsline {section}{\numberline {4}Future Work}{32}
-\contentsline {section}{\numberline {5}Conclusion}{33}
+\contentsline {section}{\numberline {3}Software}{26}
+\contentsline {subsection}{\numberline {3.1}Data Structures}{26}
+\contentsline {subsection}{\numberline {3.2}Manual}{28}
+\contentsline {subsection}{\numberline {3.3}Computational experience}{30}
+\contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{30}
+\contentsline {section}{\numberline {4}Future Work}{31}
+\contentsline {section}{\numberline {5}Conclusion}{32}
