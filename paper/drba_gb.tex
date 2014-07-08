@@ -10,6 +10,8 @@ After that Ideals are defined over polynomial rings and a summary on Groebner ba
 \subsection{Monomials}
 \label{subseb:Monomials}
 \newtheorem{env_definition}{Definition}[section]
+\newtheorem{env_example}{Example}
+
 
 First of all, the basic components of a polynomial ring has to be explained. This forms the basis of
 
@@ -74,9 +76,15 @@ This can be written as $X^{u} >_{lex} X^{v}$ if $u >_{lex} v $.\\
 \textbf{Graded Lex Order}
 $u >_{grlex} v $ if $ deg(u)>deg(v)$ or if $ deg(u)=deg(v)$ and $u >_{lex} v$
 
-\textbf{Example} Let $m_{1} = 4x^{2}y^{4}z^{3}$ and $m_{2}= x^{1}y^{1}z^{4} \in \mathbb{K}\left[ x,y,z\right]  $.
+\begin{env_example} \normalfont
+Let $m_{1} = 4x^{2}y^{4}z^{3}$ and $m_{2}= x^{1}y^{1}z^{4} \in \mathbb{K}\left[ x,y,z\right]  $.
 The monomials can also be written as $m_{1} = X^{(2 \; 4 \; 3)}$ and $m_{2} = X^{(1 \; 1 \; 4)}$.
-Thus $m_{1}>_{lex} m_{2}$ because the left most non-zero entry of $ (2 \; 4 \; 3) - (1 \; 1 \; 4)$ is positive.\\
+Thus $m_{1}>_{lex} m_{2}$ because the left most non-zero entry of $ (2 \; 4 \; 3) - (1 \; 1 \; 4)$ is positive.
+\begin{flushright}
+$\lozenge$
+\end{flushright}
+\end{env_example}
+
 
 The total degree of $m_{1}$ is 9 and $deg(m_{2})=6$. Hence, $m_{1}>_{lex} m_{2}$ and
 $deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$   
@@ -89,14 +97,18 @@ In order to compare monomials with a generic vector $\left({a}_{1},\dots ,{a}_{n
 Given a term order $>$, each non-zero polynomial $f \in \mathbb{K}\left[ x\right] $ has a unique leading term, denoted by $lt(f)$, given by the largest involved term with respect to the term order.\\
 If $lt(f) = cX^{u}$, where $c \in \mathbb{K}$, then c is the leading coefficient of $f$ and $X^{u}$ is the leading monomial(lm) or the initial monomial .$\left[ 2\right]$\\
 
-\textbf{Example} Let $ f = 3x^{2}y^{5}z^{3} + x^{4} -2x^{3}y^{4} + 12^{2}z^{2}$ \\
+\begin{env_example}
+\normalfont Let $ f = 3x^{2}y^{5}z^{3} + x^{4} -2x^{3}y^{4} + 12^{2}z^{2}$ \\
 With respect to lex order $f = \underline{x^{4}} -2x^{3}y^{4} + 3x^{2}y^{5}z^{3} + 12^{2}z^{2} $ \\
 with respect to grlex order $f = \underline{3x^{2}y^{5}z^{3}} -2x^{3}y^{4} + x^{4}+ 12^{2}z^{2}$  \\
 with respect to the weight vector 
 The underlined terms are the leading binomials with the respect to the monomial order.
 
+\end{env_example}
+
 
 \subsection{Ideals}
+\label{subsec:Ideals}
 
 \begin{env_definition}[Ideal]
 An ideal I is collection of polynomials $f_{1}, \cdots , f_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and polynomials which can be built from these with multiplication with arbitrary polynomials and linear combination, such as $\left[1 \right] $
@@ -120,10 +132,13 @@ If $f \in \langle f_{1}, \cdots , f_{s} \rangle$ and $h \in  \langle f_{1}, \cdo
 
 \end{center}
 
-
-\textbf{Example} Let $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ and $f=yx^{2}+y^{2}+x^{2}+xy+x$. Since $f= y \cdot f_{1} + x \cdot f_{2}, f\in I$ \begin{flushright}
-$\blacklozenge$
+\begin{env_example}\normalfont
+Let $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ and $f=yx^{2}+y^{2}+x^{2}+xy+x$. Since $f= y \cdot f_{1} + x \cdot f_{2}, f\in I$
+\begin{flushright}
+$\lozenge$
 \end{flushright} 
+\end{env_example}
+
 
 \begin{env_definition}[Initial Ideal]
 $[Tigers]$The initial Ideal of I with respect to a term order $\succ$ on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ is the monomial ideal \\
@@ -135,6 +150,7 @@ $in_{\succ}(f)$ means the leading term of $f$ with respect to $\succ$. In other 
 
 
 \subsection{Division Algorithm}
+\label{subsec:division}
 
 The reader already may determine if a polynomial $p$ lies in an Ideal $I$ in polynomial ring with one variable. This can be achieved with the help of the polynomial division.
 If result has no remainder, $p$ lies in $I$
@@ -161,7 +177,8 @@ $deg(f) \geq deg(a_{i}f_{i})$
 
 
 \begin{algorithm}
-\caption{Division Algorithm}\label{divisionalg}
+\caption{Division Algorithm}
+\label{alg:division}
 \begin{algorithmic}[1]
 
 \Require Basis $\langle f_{1}, \cdots, f_{m}\rangle$ of nonzero polynomials  
@@ -198,23 +215,27 @@ $deg(f) \geq deg(a_{i}f_{i})$
 \end{algorithm}
 
 
-\textbf{Example}
+\begin{env_example}\normalfont
 Consider the ideal $I = \langle f_{1},f_{2} \rangle = \langle xy^{2}+z,y^{2}-1 \rangle~$
 and the polynomial $f = x^{3}y^{2}+x^{2}z~$.
 First, with respect to the lex-order the division from f with I yields the expression : $f = x^{2}(xy^{2}+z) + 0(y^{2}-1) + 0$ \\
 But the division with $f$ and $I = \langle f_{2},f_{1} \rangle$ gives the expression $f = x^{3}(y^{2}-1) + x^{2}(xy^{2}+z) -x^{3}y^{2}+x^{3}~$.
 \begin{flushright}
-$\blacklozenge$
+$lozenge$
 \end{flushright}
+\end{env_example}
+
 
 
 This example shows that is still possible to obtain a non-zero remainder even if $f \in \langle f_{1},f_{2} \rangle $. That means r = 0 is a  necessary condition for the ideal membership but not a sufficient condition.
 \subsection{Groebner basis}
+\label{subsec:Groebner}
 
 To solve the idea membership problem a "good" generating set for an Ideal I is needed. It would be helpful when the remainder r on division is uniquely determined and the condition $ r = $ is equivalent to the membership in the ideal.
 So the definition from $\left[KHZ \right]  $ might be useful.
 
 \subsubsection{Definition of a Groebner basis}
+
 
 \begin{env_definition}[Groebner base]
 Let $\leq$ be a monomial order on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ and let I be an Ideal on $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]  $. A Groebner basis for I (with respect to $\leq$) is a finite set of polynomials $ F = \left\lbrace f_{1}, \ldots , f_{m} \right\rbrace $ in I with the property that for every nonzero $ f \in I , \textsc{LT}_{\geq}\left( f\right\rbrace $ is divisible by $\textsc{LT}\left( f_{i}\right) $ for some $ 1 \leq i \leq m $
@@ -239,7 +260,8 @@ $\left[ KHZ\right] $ The S-polynomial of f and g is the polynomial
 
 \end{env_definition}
 
-\textbf{example} Consider the polynomials the polynomial ring $\mathbb{K}\left[ x,y,z\right] $ with
+\begin{env_example}\normalfont
+Consider the polynomials the polynomial ring $\mathbb{K}\left[ x,y,z\right] $ with
 the basis $\left\lbrace f,g\right\rbrace = \left\lbrace xy^{2}-xz+y,xy-z^{2} \right\rbrace $ with respect to the lexicographic order.\\
 Forming the S-Polynomial leads to:
 \begin{center}
@@ -253,8 +275,9 @@ Forming the S-Polynomial leads to:
 \end{center}
 
 \begin{flushright}
-$\blacklozenge$
+$\lozenge$
 \end{flushright} 
+\end{env_example}
 
 The S-Polynomial is not zero and is not disvisible by the leading terms of $f$ or $g$. That means the Basis given in the example is not a Groebner basis. This can be deduced by the Buchbergers criterium.
 
@@ -267,7 +290,8 @@ $I = \langle f_{1}, \cdots , f_{m} \rangle $ if and only $S\left( f_{i},f_{j}\ri
 Now that the meaning of the S-Polynomial is clear the Buchberger algorithm can be defined.
 
 \begin{algorithm}
-\caption{Buchbergers Algorithm}\label{buchberger}
+\caption{Buchbergers Algorithm}
+\label{alg:buchberger}
 \begin{algorithmic}[1]
 %\Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
 \Require Basis $F = \left( f_{1}, \cdots, f_{m} \right)  $
@@ -302,6 +326,7 @@ $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ is reduced if the polynomials $f
 
 
 \subsection{Groebner fans}
+\label{subsec:Groebnerfan}
  Groebner bases for a fixed Ideal $I$ with different monomial orders can look very different and have different properties. The difference can be in the number of elements in the Groebner basis, the length or the degree of the elements. So it will be helpful if all 
 possible Groebner basis of a fixed ideal can be collected together.\\
 $\left[ Cox,O'Shea\right]  $ shows that the collection is finite.
@@ -336,70 +361,60 @@ So the cone of a Groebner basis can be written as $ \left[Cox Oshea \right] $\\
 $C_{G} = \left\lbrace \textbf{w} \in \left(\mathbb{R}^{n}\right)^{+} : \upalpha\left( i\right) \cdot \textbf{w} \geq \beta \cdot \textbf{w}~~~ \textrm{whenever}~ c_{i,\upbeta} \neq 0 \right\rbrace   $
 \end{center}
 
-%% TODO: Eigenes Beispiel konstruieren??
 
-\textbf{example}
-Consider the Ideal from $\left[ Cox O'Shea\right] $ with $ I = \langle x^{2}-y,xz-y^{2}+yz \rangle \in \mathbb{Q}\left[ x,y,z\right] .$
+\begin{env_example}\normalfont
+Consider the Ideal with $ I = \langle x^{2}-z,y-x \rangle \in \mathbb{Q}\left[ x,y,z\right] .$
 Note that the ring is 3-dimensional so that Groebner fan can be plotted in the positive orthant $ \mathbb{R}^{3}_{+}$. \\
-The marked Groebner basis with respect to the \textit{grevlex} order with $y>z>x$ is
+The marked Groebner basis with respect to the \textit{lex} order with $x>y>z$ is
 \begin{center}
-$G^{\left( 1\right) } = \left\lbrace \underline{x^{2}}-y,\underline{y^{2}} -yz -xz\right\rbrace $
+$G^{\left( 1\right) } = \left\lbrace \underline{y^{2}}-z,\underline{x} -y\right\rbrace $
 \end{center}
 The leading terms are underlined. Let $\textbf{w} = \left( a,b,c\right) \in \mathbb{R}^{3}_{+} $. Then W is in the cone $C_{G^{1}}$ if and only the inequalities defined above are satisfied.
 
 \begin{itemize}
 
 \item
-$\left( 2,0,0\right) \cdot \left( a,b,c\right) \geq \left( 0,1,0\right) \cdot \left( a,b,c\right) $ or $2a\geq b$ 
+$\left( 2,0,0\right) \cdot \left( a,b,c\right) \geq \left( 0,0,1\right) \cdot \left( a,b,c\right) $ or $2a\geq c$ 
 \item
-$\left( 0,2,0\right) \cdot \left( a,b,c\right) \geq \left( 1,0,1\right) \cdot \left( a,b,c\right) $ or $2b\geq a+c$ 
-\item
-$\left( 0,2,0\right) \cdot \left( a,b,c\right) \geq \left( 0,1,1\right) \cdot \left( a,b,c\right) $ or $2b\geq b+c$
+$\left( 0,1,0\right) \cdot \left( a,b,c\right) \geq \left( 0,0,1\right) \cdot \left( a,b,c\right) $ or $b\geq a$ 
+
 \end{itemize} 
 
-This is the first cone of the Groebner fan and can be drawn in the positive orthant sliced of the plane of $a+b+c=1$ for visuality.
+This is the first cone of the Groebner fan and can be drawn in the positive orthant sliced of the plane of $a+b+c=d~,d\in \mathbb{R}$ for visuality.
 
 
-%%TODO: Groebnercone hochladen
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
+        \centering
+        \input{groebnerfan}
+        \caption{Groebner fan for the lexicographic basis}
+        \label{fig:singlegroebner}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
+        \centering
+        \input{groebnerfancomplete}
+        \caption{Complete Groebner fan}
+        \label{fig:completegroebner}
+    \end{subfigure}
+    \caption{Groebner fans for the given example}
+    \label{fig:groebnerfans}
+\end{figure}
 
 
-\begin{tikzpicture}[join=round]
-    \tikzstyle{conefill} = [fill=blue!20,fill opacity=0.8]
-    \tikzstyle{ann} = [fill=white,font=\footnotesize,inner sep=1pt]
-    \tikzstyle{ghostfill} = [fill=white]
-    \tikzstyle{ghostdraw} = [draw=black!50]
-    
-    \draw[arrows=->,line width=.4pt](0,0,0)--(0,0,5); %Z_achse
-    \draw[arrows=->,line width=.4pt](0,0,0)--(0,5,0); %Y-ACHSE
-    \draw[arrows=->,line width=.4pt](0,0,0)--(5,0,0); %X-ACHSE
-    %\draw[arrows=<-,line width=.4pt](.42,-.767)--(4,-2);
-    
-    \path (5,0,0) node[below] {$b$} (0,0,5) node[above] {$a$} (0,5,0) node[left] {$c$};
-    
-% letzte Koordinate ist A!!!
-% zweite Koordinate ist C!!!
-% dritte Koordinate ist B!!!
-  
- % \filldraw[conefill](0,0,0)--(4,0,0)--(2,2,0) --(1,1,2)--cycle;
- % \filldraw[conefill](0,0,0)--(0,4,0)--(2,2,0) --(1,1,2)--cycle;
-%  \filldraw[conefill](0,0,0)--(1,1,2)--(4,0,0) --(0,0,4)--cycle;
-%  \filldraw[conefill](0,0,0)--(1,1,2)--(0,4,0) --(0,0,4)--cycle;
-\filldraw[conefill](0,0,0)--(0,4,0)--(0,0,4)--cycle;
-\filldraw[conefill](0,0,0)--(0,0,4)--(1,2,1)--cycle;
-\filldraw[conefill](1,2,1)--(0,4,0)--(0,0,4)--cycle;
-\filldraw[conefill](1,2,1)--(0,0,4)--(2,0,2)--cycle;
- 
 
-   
-\end{tikzpicture}
-
-% % % % % % % %
-\begin{flushright}
-$\blacklozenge$
-\end{flushright} 
 
 This figure shows that the Groebner fan is not complete, since the cone does not cover the whole positive orthant. In this example, the other reduced Groebner basis can be obtained by applying the Buchberger Algorithm with common term orders to the Ideal $I$.
 If the computed cones still are not the the whole positive orthant, then a further computation with weight vectors are necessary.
+
+% % % % % % % %
+\begin{flushright}
+$\lozenge$
+\end{flushright} 
+\end{env_example}
+
+
+
 
 This is strategy is reasonable for a small example like above.
 In genearal, the whole Groebner fan can be computed with the Groebner walk.
@@ -407,6 +422,7 @@ See $\left[ Cox OShea \right]$ for further details.\\
 An inexpensive way to obtain all reduced Groebner bases of a special ideal, the Code Ideal, which will be explained later.
 
 \subsection{Toric Ideals}
+\label{subsec:toric}
 This work and is focused on Code Ideals, so it is useful to define the Toric Ideals first. Given a matrix $A =\left[a_{1},\dots, a_{n}  \right] \in \mathbb{Z}^{d \times n } $ and $u \in \mathbb{Z}^{n}$. $u$ which can be decomposed in $u^{+} $ and $u^{-}$, where $u^{+} $ and $u^{-}$ have nonnegative coefficients and disjoint support.
 
 \begin{env_definition}[Toric Ideal]
@@ -427,6 +443,7 @@ $ \textbf{I}_{A} =  \langle \textbf{x}^{u} - \textbf{x}^{u} \mid Au = Av, u,v \i
 
 
 \subsection{Enumerating Groebner fans}
+\label{subsec:enumerate}
 
 In this section, 2 algorithms will be explained in order to enumerate the Groebner fan.
 For the purpose to compute all Groebner bases from a toric ideal $I_A$ , it is necessary to search the \textit{edge graph} of a Groebner fan.\\
@@ -452,7 +469,7 @@ Computing the facet binomials of a reduced Groebner basis $\mathcal{G}$ can be c
 
 \begin{algorithm}
 \caption{Finding the facets of a reduced Gröbner bases of $I_A$ $\left[ TiGERS\right]  $}
-\label{lp-alg}
+\label{alg:facetsLP}
 \begin{algorithmic}[1]
 
 \Require
@@ -482,7 +499,7 @@ With the help of this property it is possible to define an algorithm to find a s
 \begin{algorithm}
 \caption{Finding a superset of the facet binomials
 of a reduced Groebner basis of $I_A$ $\left[ TiGERS\right]  $}
-\label{ss-alg}
+\label{alg:facetSS}
 \begin{algorithmic}[1]
 
 \Require
@@ -523,7 +540,7 @@ This procedure is called flip.
 
 \begin{algorithm}
 \caption{Local change of reduced Gröbner bases in $I_A$ $\left[ TiGERS\right]  $}
-\label{flip-alg}
+\label{alg:flip}
 \begin{algorithmic}[1]
 
 \Require
@@ -558,7 +575,7 @@ This algorithm is correct and can terminate. $ \left[ Tigers \right] $
 The main advantage of the algorithm is that no weight vectors must be stored or computed.
 Weight vectors are carried implicitly and that is possible due to the binomial structure that this subroutine generates for every Gröbner basis.
 
-\textbf{example}
+\begin{env_example}\normalfont
 Consider the reduced Groebner basis with respect to a term order $\succ~$: $\mathcal{G}= \{x_{6}^{2}-1,x_{5}^{2}-1, x_{4}x_{5}x_{6} -x_{2},x_{4}^{2}-1,x_{3}-x_{5},x_{2}x_{6}-x_{4}x_{5},x_{2}x_{5}-x_{4}x_{6},x_{2}x_{4}-x_{5}x_{6},x_{2}^{2}-1,x_{1}-x_{5}  \} $.
 
 Applying the procedure flip$(x_{3}-x_{5}, \mathcal{G}$) leads to:
@@ -593,8 +610,10 @@ Note that this Groebner base is not reduced yet. After cancelling all binomials 
 $\mathcal{G}_{new} = \{x_{5}-x_{3},x_{6}^{2}-1,x_{4}^{2}-1,x_{2}x_{6}-x_{3}x_{4},x_{2}x_{4}-x_{3}x_{6},x_{2}^{2}-1,x_{1}-x_{3}, x_{3}x_{4}x_{6}-x_{2},x_{2}x_{3}-x_{4}x_{6},x_{3}^{2}-1 \} $
 
 \begin{flushright}
-$\blacklozenge$
+$\lozenge$
 \end{flushright}
+\end{env_example}
+
 
 \subsubsection{Breadth first search}
 
@@ -602,7 +621,7 @@ In this section an algorithm to enumerate the edge graph of a Groebner fan via b
 
 \begin{algorithm}
 \caption{Enumerating the edge graph of the Gröbner fan via breath-first search $\left[ TiGERS\right]  $}
-\label{breadth-alg}
+\label{alg:breath}
 \begin{algorithmic}[1]
 
 \Require
@@ -650,7 +669,7 @@ Then, the second and last term are clearly mismarked with respect to $\succ_{lex
 Applying the flip-procedure $(\mathcal{G},y^{2}-xz)$ leads to the Groebner base $\mathcal{G} = \{x^{2}y-z,xz^{2}-y^{2}, zy-xy^{2}z \} $. Now only the last binomial is mismarked and using flip($\mathcal{G}$, $zy-xy^{2}z$ ) the result is the reduced Groebner basis with respect to the lexicographic order $\mathcal{G} = \{xy^{2}z -xy, xz^{2}-y^{2},xy-z \} $. Note that every monomial can not be divided by the leading terms, so all Groebner bases are reduced and no auto-reduce is necessary.
  
 \begin{flushright}
-$\blacklozenge$
+$\lozenge$
 \end{flushright} 
 
 The \textit{reverse search tree} $T_{\succ}(I_{A}) $ with a given monomal order $ \succ $ can be defined as follows.
@@ -664,7 +683,7 @@ Unlike the Groebner walk procedure, there are still no weight vectors involved, 
 
 \begin{algorithm}
 \caption{Enumerating the edge graph of the Gröbner fan via reverse search $\left[ TiGERS\right]  $}
-\label{reverse-alg}
+\label{alg:reverse}
 \begin{algorithmic}[1]
 
 \Require
@@ -709,7 +728,7 @@ Any reduced Gröbner basis $ \mathcal{R}_{\succ} $ of $I_A$ and its term order $
 \end{algorithmic}
 \end{algorithm}
 
-\textbf{Example}
+\begin{env_example}\normalfont
 Consider the Ideal with the reduced Groebner basis with respect to the lexicographic order $x_{1} \succ \ldots \succ x_{6} $
 \[ \mathcal{G} = \{x_{1} - x_{2}, x_{3} - x_{4}, x_{5}-x_{6} , x_{2}^{2} -1 , x_{4}^{2} - 1, x_{6}^{2} - 1 \} \]
 
@@ -724,31 +743,20 @@ Using the reverse search method, this search tree results.
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \input{breite}
-        \caption{Caption A}
+        \caption{Complete edge graph}
         \label{fig:A}
     \end{subfigure}
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \input{reverse}
-        \caption{Caption B}
+        \caption{Reverse search tree}
         \label{fig:B}
     \end{subfigure}
-    \caption{BLABLA;}
-    \label{fig:roc_curve}
+    \caption{Comparison between the breath-first search and the reverse search}
+    \label{fig:graph}
 \end{figure}
 
-
-
-
-
-
 %thx to http://www.math.tugraz.at/~huss/new/teaching/computermathematik09/dateien/tikz_demonstration.pdf
-
-
-
-
-
-
 
 The flipping binomials are written on the edges.
 The Groebner bases are:
@@ -763,14 +771,17 @@ $\mathcal{G}_{7} = \{x_{2}-x_{1},x_{3}-x_{4},x_{6}-x_{5},x_{1}^{2}-1,x_{4}^{2}-1
 $\mathcal{G}_{8} = \{x_{2}-x_{1},x_{3}-x_{4},x_{5}-x_{6},x_{1}^{2}-1,x_{4}^{2}-1,x_{6}^{2}-1 \} $ \\
 \end{center}
 
-
-
-
 Even for this small example a lot of edges were saved.
-\ref{fig:breadth}.
+\begin{flushright}
+$\lozenge$
+\end{flushright}
+\end{env_example}
+
+
 
 
 \subsection{Degree compatible Groebner}
+\label{subsec:degreecomp}
 Computing the whole Groebner fan can be very expensive and not every cone is interesting.
 In this section, the degree compatible Groebner fan is introduced and how the algorithm can
 be changed so that only the degree compatible Groebner fan will be computed.\\
@@ -806,6 +817,7 @@ The sink of the reverse search tree contains binomials that are not mismarked wi
 
 
 \subsection{Linear Codes over Prime Fields}
+\label{subsec:linearcodes}
 This work is concentrated on computing the Groebner fan of a linear code. Now the mathematic background of the Groebner fans is given, the linear Codes and Code Ideals have to be defined to give a connection between these two topics.\\ \\
 Let $\mathbb{F}$ be a finite field and let $n~$ and $k~\in \mathbb{N}~$ with $n\geq k$.
 \begin{env_definition}[Linear Code]
@@ -849,7 +861,7 @@ The code $c~$ of the word $x~$ is obtained with the vector-multiplication
       \end{pmatrix}   = \left(1,0,1,0,0,0,1\right) \\
   \]
 \begin{flushright}
-$\blacklozenge$
+$\lozenge$
 \end{flushright} 
 
 Two codes are equivalent if one generator matrix can be obtained from the other by permutating columns and rows.
@@ -897,7 +909,7 @@ $ \mathcal{G}_{\succ} = \{x_{1}-x_{5},x_{2}-x_{4}x_{5}x_{6},x_{3}-x_{5}  \} \cup
 \end{center}
 
 \begin{flushright}
-$\blacklozenge$
+$\lozenge$
 \end{flushright} 
 
  
