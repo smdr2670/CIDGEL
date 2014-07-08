@@ -164,7 +164,7 @@ $deg(f) \geq deg(a_{i}f_{i})$
 \caption{Division Algorithm}\label{divisionalg}
 \begin{algorithmic}[1]
 
-\Require Basis $f_{1}, \cdots, f_{m}$ nonzero polynomials  
+\Require Basis $\langle f_{1}, \cdots, f_{m}\rangle$ of nonzero polynomials  
 \Ensure $r=0$ or none of the terms in $r$ are divisible by $ LT_{\leq}\left( f_{1}\right) , \cdots , LT_{\leq} \left( f_{m}\right) $
 
 \State $ h_{1} \gets 0 , \cdots , h_{m} \gets 0  $
@@ -179,7 +179,7 @@ $deg(f) \geq deg(a_{i}f_{i})$
 
 \State \[ s \gets s -  \frac{LT \left( s\right)}{LT \left( f \left[ i\right] \right)}  \ast f_{i} \]
 \State $h_{i} \gets h_{i} + LT\left( s\right) / LT\left( f_{i}\right) $
-\State division\textunderscore occured = false
+\State division\textunderscore occured = true
 \Else
 \State $i \gets i+1$
 \EndIf
@@ -199,16 +199,19 @@ $deg(f) \geq deg(a_{i}f_{i})$
 
 
 \textbf{Example}
+Consider the ideal $I = \langle f_{1},f_{2} \rangle = \langle xy^{2}+z,y^{2}-1 \rangle~$
+and the polynomial $f = x^{3}y^{2}+x^{2}z~$.
+First, with respect to the lex-order the division from f with I yields the expression : $f = x^{2}(xy^{2}+z) + 0(y^{2}-1) + 0$ \\
+But the division with $f$ and $I = \langle f_{2},f_{1} \rangle$ gives the expression $f = x^{3}(y^{2}-1) + x^{2}(xy^{2}+z) -x^{3}y^{2}+x^{3}~$.
+\begin{flushright}
+$\blacklozenge$
+\end{flushright}
 
-%% TODO : Normale divsionsalgorithmus
-\textbf{Example}
 
-%% TODO : Übernehme Example 5 aus Seite 67 aus Cox, O'Shea
-
-The last example shows that is still possible to obtain a nonzero remainder even if $f \in \langle f_{1},f_{2} \rangle $. That means r = 0 is a  necessary condition for the ideal membership but not a sufficient condition
+This example shows that is still possible to obtain a non-zero remainder even if $f \in \langle f_{1},f_{2} \rangle $. That means r = 0 is a  necessary condition for the ideal membership but not a sufficient condition.
 \subsection{Groebner basis}
 
-To solve the idea membership problem a "good" generating set for an Ideal I is needed. It would be helpful when the remainder r on division is uniqueley determined and the condition $ r = $ is equivalent to the membership in the ideal.
+To solve the idea membership problem a "good" generating set for an Ideal I is needed. It would be helpful when the remainder r on division is uniquely determined and the condition $ r = $ is equivalent to the membership in the ideal.
 So the definition from $\left[KHZ \right]  $ might be useful.
 
 \subsubsection{Definition of a Groebner basis}
@@ -555,11 +558,43 @@ This algorithm is correct and can terminate. $ \left[ Tigers \right] $
 The main advantage of the algorithm is that no weight vectors must be stored or computed.
 Weight vectors are carried implicitly and that is possible due to the binomial structure that this subroutine generates for every Gröbner basis.
 
-%% TODO Beispiel GEBEN!!!
 \textbf{example}
+Consider the reduced Groebner basis with respect to a term order $\succ~$: $\mathcal{G}= \{x_{6}^{2}-1,x_{5}^{2}-1, x_{4}x_{5}x_{6} -x_{2},x_{4}^{2}-1,x_{3}-x_{5},x_{2}x_{6}-x_{4}x_{5},x_{2}x_{5}-x_{4}x_{6},x_{2}x_{4}-x_{5}x_{6},x_{2}^{2}-1,x_{1}-x_{5}  \} $.
+
+Applying the procedure flip$(x_{3}-x_{5}, \mathcal{G}$) leads to:
+
+Old := $\{x_{3}-x_{5},x_{6}^{2},x_{5}^{2}, x_{4}x_{5}x_{6} ,x_{4}^{2},x_{2}x_{6},x_{2}x_{5},x_{2}x_{4},x_{2}^{2},x_{1} \} $ \\
+Temp := $\{x_{5}-x_{3},x_{6}^{2},x_{5}^{2}, x_{4}x_{5}x_{6} ,x_{4}^{2},x_{2}x_{6},x_{2}x_{5},x_{2}x_{4},x_{2}^{2},x_{1} \} $
+
+Now the new Groebner basis has to be calculated, but first it useful to know that all pairs of binomials which has the least common multiple of 1, they will be auto-reduced to zero. In other words, it is only necessary to form the S-Pairs of binomials that are not relatively prime.\\
+$S(x_{5}-x_{3},x_{5}^{2}) = x_{3}x_{5}$ \\
+$S(x_{5}-x_{3},x_{4}x_{5}x_{6}) = x_{3}x_{4}x_{5}$ \\
+$S(x_{5}-x_{3},x_{2}x_{5}) = x_{2}x_{3}$\\
+$S(x_{5}-x_{3},x_{3}x_{5}) = x_{3}^{2}$
+
+Now the new Groebner basis $\mathcal{G}'$ shall be filled with all monomials from $\mathcal{G}$.
+
+$x_{3}x_{5} = x_{5}(x_{3}-x_{5}) + 1(x_{5}^{2}-1) + 1$\\
+$x_{3}x_{4}x_{6} = x_{4}x_{6}(x_{3}-x_{5}) + 1(x_{4}x_{5}x_{6}-x_{2}) + x_{2}$\\
+$x_{2}x_{3} = x_{2}(x_{3}-x_{5}) + 1(x_{2}x_{5}- x_{4}x_{6}) + x_{4}x_{6}$\\
+$x_{3}^{2} = x_{3}(x_{3}-x_{5}) + x_{5}(x_{3}x_{5}) + 1(x_{5}^{2}-1)+1$\\
+
+$x_{1} = (x_{1}-x_{5}) + (x_{5}-x_{3}) + x_{3} $ \\
+$x_{2}x_{6} = (x_{2}x_{6}-x_{4}x_{5}) + x_{4}(x_{5}-x_{3}) + x_{3}x_{4} $\\
+$x_{2}x_{4} = (x_{2}x_{4}-x_{5}x_{6})+ x_{6}(x_{5}-x_{3}) +x_{3}x_{6} $
 
 
-\newpage
+
+This results to the Groebner base : \\
+$\mathcal{G}' = \{x_{5}-x_{3}, x_{6}^{2}-1, x_{5}^{2}-1, x_{4}x_{5}x_{6}-x_{2}, x_{4}^{2}-1, x_{2}x_{6}-x_{3}x_{4},
+x_{2}x_{5}-x_{4}x_{6}, x_{2}x_{4}-x_{3}x_{6} ,x_{2}^{2}-1,x_{1}-x_{3},x_{3}x_{5}-1,x_{3}x_{4}x_{6}-x_{2},x_{2}x_{3}-x_{4}x_{6},x_{3}^{2}-1   \}$ \\
+
+Note that this Groebner base is not reduced yet. After cancelling all binomials whose terms are divisible by some other leading terms the new reduced Groebner basis is 
+$\mathcal{G}_{new} = \{x_{5}-x_{3},x_{6}^{2}-1,x_{4}^{2}-1,x_{2}x_{6}-x_{3}x_{4},x_{2}x_{4}-x_{3}x_{6},x_{2}^{2}-1,x_{1}-x_{3}, x_{3}x_{4}x_{6}-x_{2},x_{2}x_{3}-x_{4}x_{6},x_{3}^{2}-1 \} $
+
+\begin{flushright}
+$\blacklozenge$
+\end{flushright}
 
 \subsubsection{Breadth first search}
 
@@ -680,7 +715,6 @@ Consider the Ideal with the reduced Groebner basis with respect to the lexicogra
 
 Applying the breath-first search algorithm for this reduced Groebner basis results to the following edge graph.\\
 
-%TODO: BREITENSUCHENGRAPH HOCHLADEN
 
 Using the reverse search method, this search tree results.
 
