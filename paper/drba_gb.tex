@@ -2,61 +2,55 @@
 \section{Mathematical Background}
 \label{sec:background}
 
-In this chapter a mathematical basis is systematically approached to give the reader an understanding to Groebner Bases and obtaining by the Flipping-Algorithm which is needed later.\\
-In the first section monomials are revisited.
-The second section explains how monomials can be mathematically ordered.
-After that Ideals are defined over polynomial rings and a summary on Groebner bases and Groebner fans for ideals is presented.
+In this chapter a mathematical basis is systematically approached to give the reader an understanding to Groebner Bases and Groebner fans.\\
+In the first section monomials are revisited. The second section explains how monomials can be totally ordered.
+After that Ideals are defined over polynomial rings and a summary on Groebner bases and Groebner fans for ideals is presented. Furthermore, the next sections deal with enumerating Groebner bases on special ideals and finally, linear codes are presented and the connection between Groebner bases and the linear codes.  
 
 \subsection{Monomials}
 \label{subseb:Monomials}
-\newtheorem{env_definition}{Definition}[section]
-\newtheorem{env_example}{Example}
 
-
-First of all, the basic components of a polynomial ring has to be explained. This forms the basis of
+In this section a brief explanation of polynomials are given.
 
 \begin{env_definition}[Monomial] 
 
-A \emph{monomial m} is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $ of the form $X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0} $
-
-The total \textbf{degree} of a monomial is $deg(m) = \sum_{i=1}^n u_i $ 
+A monomial m is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $ of the form $X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0} $
 \end{env_definition}
+The total \textbf{degree} of a monomial is $deg(m) = \sum_{i=1}^n u_i $ 
+
 
 \begin{env_definition}[Polynomial]
 
 A polynomial f is a finite linear combination with coefficients $c_{u} \in \mathbb{K}$ multiplied with monomials.
 
-\[  f = \sum_{u} c_{u}X^{u}\]\\
-
-If $c_{u}\neq0$ then $c_{u}x_{u}$ is a term of $f$
-
-
+\[  f = \sum_{u} c_{u}X^{u}\]
 \end{env_definition}
+If $c_{u}\neq0$ then $c_{u}x_{u}$ is a term of $f$.
+
+
+
 
 
 \subsection{Monomial Order}
 \label{subsec:Monomialorder}
-
-
-It is necessary to arrange the terms of a polynomial in order to compare every pair of polynomials. That is important for dividing polynomials in the finite field
-$ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $
+It is necessary to rearrange a polynomial with respect to a monomial order. That forms the foundation for dividing polynomials in the finite field
+$ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]~$ and solving the Ideal membership problem.
 
 \begin{env_definition}[Term Ordering] 
-
-A monomial order is a relation $>$ on the set of all monomials in $\mathbb{K}\left[x\right] $ such that $\left[ 2\right] $ holds.
+$\left[ Saleemi\right] $
+A monomial order is a relation $>$ on the set of all monomials in $\mathbb{K}\left[x\right]$.
 Let $m_{1}$,$m_{2}$ and $m_{3}$ be monomials
 \begin{center}
 
 \begin{itemize}
 
 \item
-for any pair of monomials $m_{1}$,$m_{2}$ either $m_{1} > m_{2}$ or $m_{2} > m_{1}$ or $m_{1} = m_{2}$ 
+for any pair of monomials $m_{1}$,$m_{2}$, either $m_{1} > m_{2}$ or $m_{2} > m_{1}$ or $m_{1} = m_{2}$ 
 \item
 if $m_{1} > m_{2} $ and $m_{2} > m_{3}$ then $m_{1} > m_{3}$
 \item
 $m_{1} > 1$ for any monomial $m_{1} \neq 1$
 \item
-if $m_{1} > m_{2}$ then $mm_{1} > mm_{2}$ for any monomial m
+if $m_{1} > m_{2}$ then $m \cdot m_{1} > m \cdot m_{2}~$ for any monomial m
 
 \end{itemize}
  
@@ -66,43 +60,43 @@ if $m_{1} > m_{2}$ then $mm_{1} > mm_{2}$ for any monomial m
 
 
 Two commonly used term orders are the following.
-Let $u$ and $v$ be elements of $\mathbb{N}^{n}_{0}$, such that $\left[ 2\right] $
+Let $u$ and $v$ be elements of $\mathbb{N}^{n}_{0}$ 
 
-\textbf{Lexicographic Order}
+\textbf{Lexicographic Order}$\left[ Saleemi\right] $
 $u >_{lex} v $ if in $u-v$ the left most non-zero entry is positive.
 This can be written as $X^{u} >_{lex} X^{v}$ if $u >_{lex} v $.\\
 
 
-\textbf{Graded Lex Order}
+\textbf{Graded Lex Order}$\left[ Saleemi\right] $
 $u >_{grlex} v $ if $ deg(u)>deg(v)$ or if $ deg(u)=deg(v)$ and $u >_{lex} v$
 
 \begin{env_example} \normalfont
 Let $m_{1} = 4x^{2}y^{4}z^{3}$ and $m_{2}= x^{1}y^{1}z^{4} \in \mathbb{K}\left[ x,y,z\right]  $.
 The monomials can also be written as $m_{1} = X^{(2 \; 4 \; 3)}$ and $m_{2} = X^{(1 \; 1 \; 4)}$.
 Thus $m_{1}>_{lex} m_{2}$ because the left most non-zero entry of $ (2 \; 4 \; 3) - (1 \; 1 \; 4)$ is positive.
+
+The total degree of $m_{1}$ is 9 and $deg(m_{2})=6$. Hence, $m_{1}>_{lex} m_{2}$ and
+$deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$ 
 \begin{flushright}
 $\lozenge$
 \end{flushright}
 \end{env_example}
-
-
-The total degree of $m_{1}$ is 9 and $deg(m_{2})=6$. Hence, $m_{1}>_{lex} m_{2}$ and
-$deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$   
+  
 
 \textbf{Weight vectors} \\
-In order to compare monomials with a generic vector $\left({a}_{1},\dots ,{a}_{n}\right)~\in \mathbb{R}^{n}_{\geq 0}$, the dot product has to be build. The highest result has the highest order. If a tie occurs, some other fixed monomial order has to be used. Note that the standard monomial orders can be expressed as weight vector. The lexicographic order needs for instance all canonical unit vectors.
+In order to compare monomials with a generic vector $\left({a}_{1},\dots ,{a}_{n}\right)~\in \mathbb{R}^{n}_{\geq 0}~$, the dot product with the exponent vector has to be build. The highest result is the leading term. If a tie occurs, some other fixed monomial order has to be used. Note that the standard monomial orders can be expressed as weight vector. The lexicographic order needs for instance all canonical unit vectors.
 
 \textbf{Leading term}
 
-Given a term order $>$, each non-zero polynomial $f \in \mathbb{K}\left[ x\right] $ has a unique leading term, denoted by $lt(f)$, given by the largest involved term with respect to the term order.\\
-If $lt(f) = cX^{u}$, where $c \in \mathbb{K}$, then c is the leading coefficient of $f$ and $X^{u}$ is the leading monomial(lm) or the initial monomial .$\left[ 2\right]$\\
+Given a term order $>$, each non-zero polynomial $f \in \mathbb{K}\left[ x\right] $ has a unique leading term, denoted by $\textsc{LT}(f)$, given by the largest involved term with respect to the term order.\\
+If $\textsc{LT}(f) = cX^{u}$, where $c \in \mathbb{K}$, then c is the leading coefficient of $f$ and $X^{u}$ is the leading monomial(lm) or the initial monomial .$\left[ 2\right]$\\
 
 \begin{env_example}
-\normalfont Let $ f = 3x^{2}y^{5}z^{3} + x^{4} -2x^{3}y^{4} + 12^{2}z^{2}$ \\
-With respect to lex order $f = \underline{x^{4}} -2x^{3}y^{4} + 3x^{2}y^{5}z^{3} + 12^{2}z^{2} $ \\
-with respect to grlex order $f = \underline{3x^{2}y^{5}z^{3}} -2x^{3}y^{4} + x^{4}+ 12^{2}z^{2}$  \\
-with respect to the weight vector 
-The underlined terms are the leading binomials with the respect to the monomial order.
+\normalfont Let $ f = 3x^{2}y^{5}z^{3} + x^{4} -2x^{3}y^{4} + 12x^{2}z^{2}$ \\
+With respect to lex order : $f = \underline{x^{4}} -2x^{3}y^{4} + 3x^{2}y^{5}z^{3} + 12x^{2}z^{2} $ \\
+with respect to grlex order : $f = \underline{3x^{2}y^{5}z^{3}} -2x^{3}y^{4} + x^{4}+ 12x^{2}z^{2}$  \\
+with respect to the weight vector $\left(3,2,1\right)~$: $f = \underline{3x^{2}y^{5}z^{3}} -2x^{3}y^{4} + x^{4}+ 12x^{2}z^{2}$  \\ 
+The underlined terms are the leading terms with the respect to the monomial order.
 
 \end{env_example}
 
@@ -111,17 +105,16 @@ The underlined terms are the leading binomials with the respect to the monomial 
 \label{subsec:Ideals}
 
 \begin{env_definition}[Ideal]
-An ideal I is collection of polynomials $f_{1}, \cdots , f_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and polynomials which can be built from these with multiplication with arbitrary polynomials and linear combination, such as $\left[1 \right] $
+$\left[KHZ \right] $
+An ideal I is collection of polynomials $f_{1}, \cdots , f_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and polynomials which can be built from these with multiplication with arbitrary polynomials and linear combination.
 
 \end{env_definition}
 This is called an Ideal generated by $f_{1}, \cdots , f_{s}$ \\
-
-It satisfies: \\
+\[ \langle f_{1}, \cdots , f_{s} \rangle = \left\lbrace  \sum_{i=1}^s h_{i}f_{i} \mid h_{1}, \cdots , h_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] \right\rbrace \]
+It satisfies $[saleemi] $:
 \begin{center}
 
 \begin{itemize}
-\item
-\[ \langle f_{1}, \cdots , f_{s} \rangle = \left\lbrace  \sum_{i=1}^s h_{i}f_{i} \mid h_{1}, \cdots , h_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] \right\rbrace \]
 \item
 $0 \in I$ 
 \item
@@ -132,6 +125,8 @@ If $f \in \langle f_{1}, \cdots , f_{s} \rangle$ and $h \in  \langle f_{1}, \cdo
 
 \end{center}
 
+\newpage
+
 \begin{env_example}\normalfont
 Let $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ and $f=yx^{2}+y^{2}+x^{2}+xy+x$. Since $f= y \cdot f_{1} + x \cdot f_{2}, f\in I$
 \begin{flushright}
@@ -141,11 +136,11 @@ $\lozenge$
 
 
 \begin{env_definition}[Initial Ideal]
-$[Tigers]$The initial Ideal of I with respect to a term order $\succ$ on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ is the monomial ideal \\
-\[in_{\succ}(I) = \langle in_{\succ}(f) : f \in I  \rangle \] 
+$[Tigers]$The initial Ideal of I with respect to a term order $>$ on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ is the monomial ideal \\
+\[in_{>}(I) = \langle in_{>}(f) : f \in I  \rangle \] 
 
 \end{env_definition}
-$in_{\succ}(f)$ means the leading term of $f$ with respect to $\succ$. In other words, the initial ideal of $I$ is the ideal generated by its leading terms.
+$in_{>}(f)$ means the leading term of $f$ with respect to $>$. In other words, the initial ideal of $I$ is the ideal generated by its leading terms.
 
 
 
@@ -160,10 +155,9 @@ $f_{1}, \ldots, f_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$, so g can
 $g = a_{1}f_{1}+ \ldots + a_{s}f_{s} +r$
 \end{center} 
 where the $a_{1}f_{1}+ \ldots + a_{s}f_{s} $ and $r \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ \
-This is possible with the Theorem mentioned at  $\left[ 3\right] $
+This is possible with the Theorem mentioned at  $\left[ Cox O'Shea\right] $
 
 
-\begin{theorem}[Division Algorithm in   ]
 Fix a monomial > on $ \mathbb{Z}_{\geq 0}^{n}$ and let $ F = \left( f_{1}, \ldots, f_{s}\right) $ be an ordered s-tuple of polynomials in $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$. Then every  $ f \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ can be written as
 \begin{center}
 $ f = a_{1}f_{1}+ \ldots + a_{s}f_{s} + r$
@@ -173,7 +167,7 @@ $\textsc{LT}\left(f_{1} \right), \ldots, \textsc{LT}\left(f_{s} \right)  $.
 The remainder of f on division by F is r. Furthermore, if $a_{i}f_{i} \neq 0 $, then
 $deg(f) \geq deg(a_{i}f_{i})$
 
-\end{theorem}
+
 
 
 \begin{algorithm}
@@ -221,7 +215,7 @@ and the polynomial $f = x^{3}y^{2}+x^{2}z~$.
 First, with respect to the lex-order the division from f with I yields the expression : $f = x^{2}(xy^{2}+z) + 0(y^{2}-1) + 0$ \\
 But the division with $f$ and $I = \langle f_{2},f_{1} \rangle$ gives the expression $f = x^{3}(y^{2}-1) + x^{2}(xy^{2}+z) -x^{3}y^{2}+x^{3}~$.
 \begin{flushright}
-$lozenge$
+$\lozenge$
 \end{flushright}
 \end{env_example}
 
