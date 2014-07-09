@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  9 JUL 2014 16:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  9 JUL 2014 16:51
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -917,19 +917,19 @@ Package: listings 2014/03/04 1.5c (Carsten Heinz)
 \c@theorem=\count149
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 64.
 
 (E:\Programme\MikTex\tex\latex\psnfss\t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -990,7 +990,7 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count156
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_tp.tex)
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 65.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 67.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
@@ -1283,16 +1283,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [30]
 [31]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_fw.tex [32])
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex) [33]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.bbl) [34]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18035 strings out of 493921
- 333066 string characters out of 3150487
- 389121 words of memory out of 3000000
- 20885 multiletter control sequences out of 15000+200000
+ 18039 strings out of 493921
+ 333183 string characters out of 3150487
+ 389125 words of memory out of 3000000
+ 20886 multiletter control sequences out of 15000+200000
  65833 words of font info for 133 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,12n,65p,546b,1224s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1311,9 +1312,9 @@ e1/public/lm/lmss9.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symbols
 me/MikTex/fonts/type1/urw/palatino/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/
 urw/palatino/uplbi8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplr8a.p
 fb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (33 pages, 255797 bytes).
+Output written on drba.pdf (34 pages, 257428 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
+ 234 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
