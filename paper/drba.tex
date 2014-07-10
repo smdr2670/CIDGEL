@@ -1,9 +1,27 @@
   % this file is drba.tex
 \documentclass[a4paper,12pt,twoside]{article}
+% Dokumentinformationen
+\usepackage[
+	pdftitle={Gr\"obner Fans for Linear Codes},
+	pdfsubject={},
+	pdfauthor={Daniel Rembold},
+	pdfkeywords={}
+	pdftex=true, 
+	colorlinks=true,
+ 	breaklinks=true,
+	citecolor=black,
+	linkcolor=black,	
+	menucolor=black,	
+	urlcolor=black
+]{hyperref}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[english]{babel}
+
+
+
 \usepackage{moreverb}
 \usepackage{mathpazo}
 \usepackage{amssymb,amsthm}
@@ -19,7 +37,11 @@
 \usepackage{caption}
 \usetikzlibrary{backgrounds}
 
+% Ränder
 \usepackage[left=35mm,right=35mm,top=3cm,bottom=45mm,includeheadfoot]{geometry}
+
+
+
 
 %Kopf- und Fußzeile
 \usepackage{fancyhdr}
@@ -60,13 +82,44 @@
 
 \bibliographystyle{unsrt}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % Dokumentenbeginn % % % % % % % % % % % % % % % % % % % %
 
 \begin{document}
+\pagestyle{empty}
+
+\pagenumbering{Roman}
 \input{drba_tp} % title page
-\newpage
+
+\thispagestyle{empty}
+\cleardoublepage
+
+\input{drba_ab} % abstract
+
+\thispagestyle{empty}
+\cleardoublepage
+
+\input{drba_thx} % danksagung
+
+\thispagestyle{empty}
+\cleardoublepage
+
+\input{drba_sat} % Eidesstaatliche Erklärung
+
+\thispagestyle{empty}
+\cleardoublepage
+
+
 \tableofcontents
+
+\pagestyle{fancy}
+
 \newpage
+
 \onehalfspacing
+
+\pagenumbering{arabic}
+
 \input{drba_in} %introduction
 \input{drba_gb} %mathematical background
 \input{drba_sw} %software

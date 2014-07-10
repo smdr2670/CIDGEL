@@ -1,8 +1,40 @@
 \begin{thebibliography}{1}
 
+\bibitem{saleemi}
+Mehwish Saleemi.
+\newblock {\em Coding Theory via Groebner Bases}.
+\newblock PhD thesis, Technischen Universitat Hamburg-Harburg, 2012.
+
 \bibitem{KHZ}
 Karl-Heinz Zimmermann.
 \newblock {\em Algebraic Statistics}.
 \newblock July 2009.
+
+\bibitem{tigers}
+Rekha R.~Thomas Birkett~Huber.
+\newblock Computing gr\"obner fans of toric ideals.
+\newblock Technical report, Institute for Defense Analysis, United States,
+  Department of Mathematic, University of Washington, 1999.
+
+\bibitem{coxOshea}
+David~A. Cox, John Little, and Donal O'Shea.
+\newblock {\em Ideals, Varieties, and Algorithms: An Introduction to
+  Computational Algebraic Geometry and Commutative Algebra, 3/e (Undergraduate
+  Texts in Mathematics)}.
+\newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA, 2007.
+
+\bibitem{dueckjournal}
+Karl-Heinz~Zimmermann Natalia~Dück.
+\newblock Universal gr\"obner bases for binary linear codes.
+\newblock {\em International Journal of Pure and Applied Mathematics}, 2013.
+
+\bibitem{dueckpaper}
+Natalia Dück.
+\newblock Computation of the d.c. Gr\"obner fan.
+\newblock April 2014.
+
+\bibitem{gfan}
+Anders~Nedergaard Jensen.
+\newblock The gfan homepage, April 2005.
 
 \end{thebibliography}

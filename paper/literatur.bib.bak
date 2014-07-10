@@ -2,6 +2,17 @@
 % Encoding: UTF8
 
 
+@TechReport{tigers,
+  Title                    = {Computing Gr\"obner Fans of Toric Ideals},
+  Author                   = {Birkett Huber, Rekha R. Thomas},
+  Institution              = {Institute for Defense Analysis, United States,
+Department of Mathematic, University of Washington},
+  Year                     = {1999},
+
+  Owner                    = {Daniel},
+  Timestamp                = {2014.07.10}
+}
+
 @Book{coxOshea,
   Title                    = {Ideals, Varieties, and Algorithms: An Introduction to Computational Algebraic Geometry and Commutative Algebra, 3/e (Undergraduate Texts in Mathematics)},
   Author                   = {Cox, David A. and Little, John and O'Shea, Donal},
@@ -12,6 +23,49 @@
 
   Owner                    = {Daniel},
   Timestamp                = {2014.07.09}
+}
+
+@Unpublished{dueckpaper,
+  Title                    = {Computation of the d.c. Gr\"obner fan},
+  Author                   = {Natalia Dck},
+
+  Month                    = {April},
+  Year                     = {2014},
+
+  Owner                    = {Daniel},
+  Timestamp                = {2014.07.10}
+}
+
+@Electronic{gfan,
+  Title                    = {The Gfan Homepage},
+  Author                   = {Anders Nedergaard Jensen},
+  Language                 = {English},
+  Month                    = {April},
+  Url                      = {http://home.imf.au.dk/jensen/software/gfan/gfan.html},
+  Year                     = {2005},
+
+  Owner                    = {Daniel},
+  Timestamp                = {2014.07.10}
+}
+
+@Article{dueckjournal,
+  Title                    = {Universal Gr"obner bases for binary linear codes},
+  Author                   = {Natalia D\"uck, Karl-Heinz Zimmermann},
+  Journal                  = {International Journal of Pure and Applied Mathematics},
+  Year                     = {2013},
+
+  Owner                    = {Daniel},
+  Timestamp                = {2014.07.10}
+}
+
+@PhdThesis{saleemi,
+  Title                    = {Coding Theory via Groebner Bases},
+  Author                   = {Mehwish Saleemi},
+  School                   = {Technischen Universitat Hamburg-Harburg},
+  Year                     = {2012},
+
+  Owner                    = {Daniel},
+  Timestamp                = {2014.07.10}
 }
 
 @Book{KHZ,

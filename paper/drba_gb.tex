@@ -36,7 +36,7 @@ It is necessary to rearrange a polynomial with respect to a monomial order. That
 $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]~$ and solving the Ideal membership problem.
 
 \begin{env_definition}[Term Ordering] 
-$\left[ Saleemi\right] $
+\cite{saleemi}
 A monomial order is a relation $>$ on the set of all monomials in $\mathbb{K}\left[x\right]$.
 Let $m_{1}$,$m_{2}$ and $m_{3}$ be monomials
 \begin{center}
@@ -62,12 +62,12 @@ if $m_{1} > m_{2}$ then $m \cdot m_{1} > m \cdot m_{2}~$ for any monomial m
 Two commonly used term orders are the following.
 Let $u$ and $v$ be elements of $\mathbb{N}^{n}_{0}$ 
 
-\textbf{Lexicographic Order}$\left[ Saleemi\right] $
+\textbf{Lexicographic Order}\cite{saleemi}
 $u >_{lex} v $ if in $u-v$ the left most non-zero entry is positive.
 This can be written as $X^{u} >_{lex} X^{v}$ if $u >_{lex} v $.\\
 
 
-\textbf{Graded Lex Order}$\left[ Saleemi\right] $
+\textbf{Graded Lex Order}\cite{saleemi}
 $u >_{grlex} v $ if $ deg(u)>deg(v)$ or if $ deg(u)=deg(v)$ and $u >_{lex} v$
 
 \begin{env_example} \normalfont
@@ -136,7 +136,7 @@ $\lozenge$
 
 
 \begin{env_definition}[Initial Ideal]
-$[Tigers]$The initial Ideal of I with respect to a term order $>$ on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ is the monomial ideal \\
+\cite{tigers}The initial Ideal of I with respect to a term order $>$ on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ is the monomial ideal \\
 \[in_{>}(I) = \langle in_{>}(f) : f \in I  \rangle \] 
 
 \end{env_definition}
@@ -165,7 +165,7 @@ $deg(g) \geq deg(a_{i}f_{i})$
 
 
 \begin{algorithm}
-\caption{Division Algorithm $[KHZ]$}
+\caption{Division Algorithm \cite{KHZ}}
 \label{alg:division}
 \begin{algorithmic}[1]
 
@@ -222,13 +222,13 @@ The solution of the ideal membership problem needs a certain generating set for 
 
 
 \begin{env_definition}[Groebner base]
-$[KHZ]$
+\cite{KHZ}
 Let $\leq$ be a monomial order on \\ $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ and let I be an Ideal on $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]  $. A Groebner basis for I (with respect to $\leq$) is a finite set of polynomials $ F = \left\lbrace f_{1}, \ldots , f_{m} \right\rbrace $ in I with the property that for every nonzero $ f \in I , \textsc{LT}_{\geq}\left( f\right\rbrace $ is divisible by $\textsc{LT}\left( f_{i}\right) $ for some $ 1 \leq i \leq m $
 
 \end{env_definition}
 
 A Groebner basis has the beneficial property that the remainder $r~$ of $f~$ by the elements of a Groebner basis are uniquely determined and independent of the order of the elements in G.
-Also every Ideal in $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ has a Groebner basis with respect to any monomial order $\left[ KHZ\right] $.\\ 
+Also every Ideal in $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ has a Groebner basis with respect to any monomial order\cite{KHZ}.\\ 
 
 
 In order to obtain a Groebner basis of an arbitrary basis $f_{1}, \ldots , f_{n}$ with an arbitrary monomial order $>$ of an Ideal $I$, an algorithm is needed. This algorithm is called Buchberger-Algorithm. The idea is to build every possible S-Polynomial of $\left( f_{i},f_{j}\right) $ for every $ 1 \leq i \neq j \leq n $ and every nonzero result is added to the basis until every S-Pair of $\left( f_{i},f_{j}\right) $ vanishes.
@@ -236,7 +236,7 @@ In order to obtain a Groebner basis of an arbitrary basis $f_{1}, \ldots , f_{n}
 Let the polynomials $f,g \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and $\textsc{LT}_{\leq}\left(f \right) = cX^{\upalpha} $, $\textsc{LT}_{\leq}\left(g \right) = dX^{\upbeta} $ and $\textsc{LCM}\left( X^{\upalpha},X^{\upbeta}\right) $ be the least common multiple between $X^{\upalpha}$ and $X^{\upbeta}$. 
 
 \begin{env_definition}[S-Polynomial]
-$\left[ KHZ\right] $ The S-polynomial of f and g is the polynomial
+\cite{KHZ} The S-polynomial of f and g is the polynomial
 
 \[ S\left( f,g\right) = \frac{\textsc{LCM}\left( X^{\upalpha}, X^{\upbeta}\right) }{\textsc{LT}_{\leq}\left( f\right) } \cdot f - \frac{ \textsc{LCM}\left( X^{\upalpha}, X^{\upbeta}\right) }{\textsc{LT}_{\leq}\left( g\right) } 
 \cdot g \]
@@ -269,7 +269,7 @@ $\lozenge$
 The S-Polynomial is not zero and is not disvisible by the leading terms of $f$ or $g$. That means the basis given in the example is not a Groebner basis. This can be deduced by the Buchberger criterium.
 
 \begin{env_definition}[Buchberger Criterion]
-$\left[ KHZ\right] $ A finite set $G = \left\lbrace f_{1}, \cdots , f_{m} \right\rbrace$ of polynomials in $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ is a Groebner basis of an Ideal 
+\cite{KHZ} A finite set $G = \left\lbrace f_{1}, \cdots , f_{m} \right\rbrace$ of polynomials in $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ is a Groebner basis of an Ideal 
 $I = \langle f_{1}, \cdots , f_{m} \rangle $ if and only $S\left( f_{i},f_{j}\right) = 0$, $ \forall$  $1 \leq i,j \leq n, i\neq j $
 
 \end{env_definition}
@@ -296,7 +296,7 @@ $I = \langle f_{1}, \cdots , f_{m} \rangle $ if and only $S\left( f_{i},f_{j}\ri
 \end{algorithmic}
 \end{algorithm}
 
-This algorithm is correct and terminates.$\left[ KHZ\right]  $
+This algorithm is correct and terminates.\cite{KHZ}
 
 \newpage
 
@@ -305,8 +305,8 @@ Fortunately, each nonzero Ideal in $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$
 
 %% monic polynomial := Leading coefficient = 1
 \begin{env_definition}[Reduced Groebner basis]
-$[KHZ]$
-A Groebner basis  $G= \left\lbrace  f_{1}, \cdots , f_{m} \right\rbrace  $ in 
+\cite{KHZ}
+A Groebner basis \\ $G= \left\lbrace  f_{1}, \cdots , f_{m} \right\rbrace  $ in 
 $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ is reduced if the polynomials $f_{1},\cdots , f_{m} $ are monic and no term $f_{i}$ is divisible by $ \textsc{LT}_{\leq }\left( f_{j}\right)$ for any pair $i\neq j$, where $\leq$ is monomial order.
 \end{env_definition}
 
@@ -315,10 +315,10 @@ $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ is reduced if the polynomials $f
 \label{subsec:Groebnerfan}
  Groebner bases for a fixed Ideal $I$ with different monomial orders can look very different and have different properties. The difference can be in the number of elements in the Groebner basis, the length or the degree of the elements. So it will be helpful if all 
 possible Groebner basis of a fixed ideal can be collected together.\\
-Even if there are infinite monomial orders for an ideal, the amount of reduces Groeber bases are finite. $\left[ Cox,O'Shea\right]$.
+Even if there are infinite monomial orders for an ideal, the amount of reduces Groeber bases are finite. \cite{coxOshea}
  
 \begin{env_definition}[Groebner fan]
-$\left[ Cox,O'Shea\right]  $ A Groebner fan of an Ideal $I$ consist of finitley many closed convex polyedral cones with vertices at the origin, such that
+\cite{coxOshea} A Groebner fan of an Ideal $I$ consist of finitley many closed convex polyedral cones with vertices at the origin, such that
 
 \begin{itemize}
 \item
@@ -343,7 +343,7 @@ where $ x^{\upalpha\left( i\right) }$ is the leading term and $ x^{\upalpha\left
 Now if a weight vector $\textbf{w}$ fullfills the inequation
 $\upalpha\left( i\right) \ast \textbf{w} \geq \upbeta~\ast\textbf{w}$, the vector selects the correct leading term in $g_{i}$ as the term with the highest weight.\\
 
-So the cone of a Groebner basis can be written as $ \left[Cox Oshea \right] $\\
+So the cone of a Groebner basis can be written as \cite{coxOshea}\\
 \begin{center}
 $C_{G} = \left\lbrace \textbf{w} \in \left(\mathbb{R}^{n}\right)^{+} : \upalpha\left( i\right) \cdot \textbf{w} \geq \beta \cdot \textbf{w}~~~ \textrm{whenever}~ c_{i,\upbeta} \neq 0 \right\rbrace   $
 \end{center}
@@ -405,7 +405,7 @@ The example illustrates clearly that a arbitrary non-negative weight vector can 
 
 This is strategy is reasonable for a small example like above.
 In genearal, the whole Groebner fan can be computed with the Groebner walk.
-See $\left[ Cox OShea \right]$ for further details.\\
+See \cite{coxOshea} for further details.\\
 An inexpensive way to obtain all reduced Groebner bases of a special ideal, the Code Ideal, which will be explained in section \ref{subsec:enumerate}.
 
 \subsection{Toric Ideals}
@@ -413,7 +413,7 @@ An inexpensive way to obtain all reduced Groebner bases of a special ideal, the 
 This work and is focused on Code Ideals, so it is useful to define the toric Ideals first. Given a matrix $A =\left[a_{1},\dots, a_{n}  \right] \in \mathbb{Z}^{d \times n } $ and $u \in \mathbb{Z}^{n}$, which can be decomposed in $u^{+} $ and $u^{-}$, where $u^{+} $ and $u^{-}$ have nonnegative coefficients and disjoint support.
 
 \begin{env_definition}[Toric Ideal]
-$\left[ \textrm{Dueck Journal} \right] $ A toric ideal $I_{A}$ is defined as
+\cite{dueckjournal} A toric ideal $I_{A}$ is defined as
 \begin{center}
 $ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ker \left(  A \right) \rangle  $
 \end{center}
@@ -437,7 +437,7 @@ To compute all Groebner bases from a toric ideal $I_A$ , it is necessary to sear
 Two reduced Groebner bases with respect to a term order covered by the generic weight vectors $c_{1}$,$c_{2}~$ are said to be adjacent if the two Groebner cones share a common \textit{facet}.
 
 \begin{env_definition}[Facet Binomial]
-$\left[TiGERS \right]  $ 
+\cite{tigers}
 The binomial $x^{\upalpha_{k}}-x^{\upbeta_k} \in \mathcal{G}_c~$ is a facet binomial of $\mathcal{G}_c$ if and only if there exists a vector $u \in \mathbb{R}^{n}$ which satisfies :
 
 \begin{itemize}
@@ -455,7 +455,7 @@ Computing the facet binomials of a reduced Groebner basis $\mathcal{G}$ can be c
 
 
 \begin{algorithm}
-\caption{Finding the facets of a reduced Gröbner bases of $I_A$ $\left[ TiGERS\right]  $}
+\caption{Finding the facets of a reduced Gröbner bases of $I_A$ \cite{tigers}}
 \label{alg:facetsLP}
 \begin{algorithmic}[1]
 
@@ -487,12 +487,12 @@ $\lozenge$
 An other way to find the facets without linear programming is possible with the property of the following initial ideals.
 
 Let $\mathcal{G}_{c} $ be a reduced Groebner basis with respect to a generic weight vector $c$. Then $x^{a} - x^{b}$ is a facet binomial of $\mathcal{G}_{c}$ only if $in_{c}(I_{a}) $ is the initial Ideal of $W_{a - b} = \langle x^{a}-x^{b}\rangle$
-$~+~ \langle x^{c}  : x^{c}~\textrm{is a minimal generator of~} in_{c}(I_{a}), x^{c} \neq x^{a} \rangle$.$[Tigers]$
+$~+~ \langle x^{c}  : x^{c}~\textrm{is a minimal generator of~} in_{c}(I_{a}), x^{c} \neq x^{a} \rangle$.\cite{tigers}
 With the help of this property it is possible to define an algorithm to find a superset of facet binomials of a reduced Groebner basis.
 
 \begin{algorithm}
 \caption{Finding a superset of the facet binomials
-of a reduced Groebner basis of $I_A$ $\left[ TiGERS\right]  $}
+of a reduced Groebner basis of $I_A$ \cite{tigers}}
 \label{alg:facetSS}
 \begin{algorithmic}[1]
 
@@ -528,7 +528,7 @@ This procedure is called flip.
 %TODO: Mit Input und Output ersetzten!!
 
 \begin{algorithm}
-\caption{Local change of reduced Gröbner bases in $I_A$ $\left[ TiGERS\right]  $}
+\caption{Local change of reduced Gröbner bases in $I_A$ \cite{tigers}}
 \label{alg:flip}
 \begin{algorithmic}[1]
 
@@ -560,7 +560,7 @@ $:= \lbrace \underline{x}^{a}_{i} - x^{b}_{i} \rbrace \cup
 \end{algorithmic}
 \end{algorithm}
 
-This algorithm is correct and can terminate. $ \left[ Tigers \right] $
+This algorithm is correct and can terminate.\cite{tigers}
 The main advantage of the algorithm is that no weight vectors must be stored or computed.
 Weight vectors are carried implicitly and that is possible due to the binomial structure that this subroutine generates for every Gröbner basis.
 
@@ -609,7 +609,7 @@ $\lozenge$
 In this section an algorithm to enumerate the edge graph of a Groebner fan via breath-first search and its drawbacks are presented.
 
 \begin{algorithm}
-\caption{Enumerating the edge graph of the Gröbner fan via breath-first search $\left[ TiGERS\right]  $}
+\caption{Enumerating the edge graph of the Gröbner fan via breath-first search \cite{tigers}}
 \label{alg:breath}
 \begin{algorithmic}[1]
 
@@ -646,7 +646,7 @@ The more vertices the edge graph has, the more expensive the calculation will be
 The disadvantages can be canceled out with a memoryless algorithm, which runs linear depending on the size of output. The idea is to enumerate the edge graph with depth-first reverse search. The result will be a directed subgraph of the edge graph, called reverse search tree $T_{\succ}(I_{A}) $.\\
 
 \begin{env_definition}[Mismarked Polynomial]
-$\left[Tigers \right]  $
+\cite{tigers}
 A polynomial $f$ that has been marked with respect to the monomial order $>$  is mismarked with respect to the monomial order $>'$  .
 \end{env_definition}
 
@@ -666,18 +666,18 @@ $\lozenge$
 The \textit{reverse search tree} $T_{\succ}(I_{A}) $ with a given monomal order $ \succ $ can be defined as follows.
 \begin{env_definition}[Reverse Search Tree]
 \label{def:reverse}
-$TiGERS  $ For two reduced Groebner bases $ \mathcal{G}_{i}~$ and $ \mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$ to $\mathcal{G}_{j}~$ is an edge of $T_{\succ}(I_{A}) $ if $\mathcal{G_{i}}$ is obtained from $\mathcal{G_{j}}$ by the procedure flip($\mathcal{G}_{i}$,$x^{\upalpha} - x^{\upbeta}$).
+\cite{tigers} For two reduced Groebner bases $ \mathcal{G}_{i}~$ and $ \mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$ to $\mathcal{G}_{j}~$ is an edge of $T_{\succ}(I_{A}) $ if $\mathcal{G_{i}}$ is obtained from $\mathcal{G_{j}}$ by the procedure flip($\mathcal{G}_{i}$,$x^{\upalpha} - x^{\upbeta}$).
 $x^{\upalpha}$ is lexicographically maximal among all facet binomials of $\mathcal{G}_{i}$, that are mismarked with respect to $\succ$.
 \end{env_definition}
 
 
 \newpage
 
-$[TiGERS] $ ensures that the reverse search tree is an acyclic graph with a unique sink and from any reduced Groebner basis of $\mathcal{G}_{c} $ of a toric Ideal $I_{A}$, there is a unique path to the sink $\mathcal{G}_{\succ} $.
+\cite{tigers}ensures that the reverse search tree is an acyclic graph with a unique sink and from any reduced Groebner basis of $\mathcal{G}_{c} $ of a toric Ideal $I_{A}$, there is a unique path to the sink $\mathcal{G}_{\succ} $.
 Unlike the Groebner walk procedure, there are still no weight vectors involved, but in return every facet of the Groebner cone must be computed, which can be computionally expensive for reduced Groebner basis with many polynomials.
 
 \begin{algorithm}
-\caption{Enumerating the edge graph of the Gröbner fan via reverse search $\left[ TiGERS\right]  $}
+\caption{Enumerating the edge graph of the Gröbner fan via reverse search \cite{tigers}}
 \label{alg:reverse}
 \begin{algorithmic}[1]
 
@@ -723,7 +723,7 @@ Any reduced Gröbner basis $ \mathcal{R}_{\succ} $ of $I_A$ and its term order $
 \newpage
 
 \begin{env_example}\normalfont
-Consider the Ideal with the reduced Groebner basis with respect to the lexicographic order $x_{1} \succ \ldots \succ x_{6} $
+Consider the Ideal with the reduced Groebner basis with respect to the lexicographic order $x_{1} > \ldots > x_{6} $
 \[ \mathcal{G} = \{x_{1} - x_{2}, x_{3} - x_{4}, x_{5}-x_{6} , x_{2}^{2} -1 , x_{4}^{2} - 1, x_{6}^{2} - 1 \} \]
 
 Applying the breath-first search algorithm for this reduced Groebner basis results to the following edge graph.\\
@@ -778,7 +778,7 @@ Computing the whole Groebner fan can be very expensive and not every Groebner ba
 In this section, the degree compatible Groebner fan is introduced and how the algorithm can
 be changed so that only the degree compatible Groebner fan will be computed.\\
 \begin{env_definition}[Degree compatible Groebner basis]
-$[dueck paper] $
+\cite{dueckpaper}
 A reduced Groebner basis for an ideal I with respect to a certain monomial order is
 degree compatible if and only if the corresponding Groebner cone contains the all-one vector 1.
 \end{env_definition}
@@ -787,7 +787,7 @@ Since a Groebner fan is homogeneous at $\mathbb{R}^{n}_{+}$, there will be at le
 That is a special case can be easily determined as follows.
 
 \begin{env_definition}[Only degree compatible Groebner basis]
-$[dueck paper] $
+\cite{dueckpaper}
 A Groebner basis $\mathcal{G}$ with respect to a degree compatible monomial ordering $>$  is the only degree compatible Groebner basis for an Ideal if and only if
 \[ deg(x^{a}) > deg(x^{b})~~ \forall~~ x^{a}-x^{b}\in \mathcal{G} \] 
 \end{env_definition}
@@ -800,7 +800,7 @@ The breadth-first search now needs a degree compatible Groebner basis as an inpu
 Also the only facet binomials x$^{a}$ - x$^{b}$ which are allow to be "flipped" are the binomials that fulfills the condition
 deg(x$^{a}$ ) = deg(x$^{b} $ ). \\ \\
 The reverse search tree can be deployed as in definition \ref{def:reverse} but with the restriction that deg(x$^{a}$ ) = deg(x$^{b}$) must be fulfilled to traverse the degree compatible Groebner fan.
-$[dueckpaper, Lemma 2.2]$ guarantees that at least one such facet binomial will be found. 
+Lemma 2.2 from \cite{dueckpaper} guarantees that at least one such facet binomial will be found. 
 The sink of the reverse search tree contains binomials that are not mismarked with respect to some degree compatible monomial order. 
 
    
@@ -812,14 +812,14 @@ The sink of the reverse search tree contains binomials that are not mismarked wi
 This focus of this work is computing the Groebner fan of linear codes. Now the mathematic background of the Groebner fans is given, the linear Codes and Code Ideals have to be defined to give a connection between these two topics.\\ 
 Let $\mathbb{F}$ be a finite field and let $n~$ and $k~\in \mathbb{N}~$ with $n\geq k$.
 \begin{env_definition}[Linear Code]
-$ [Dueck Journal ] $ A linear code of length n and dimension k over $\mathbb{F}~$ is the image $\mathcal{C}~$ of a injective linear mapping $\phi~:~\mathbb{F}^{k} \rightarrow \mathbb{F}^{n}  $
+\cite{dueckjournal} A linear code of length n and dimension k over $\mathbb{F}~$ is the image $\mathcal{C}~$ of a injective linear mapping $\phi~:~\mathbb{F}^{k} \rightarrow \mathbb{F}^{n}  $
 \end{env_definition} 
 Such a code will be denoted als an [$n$,$k$] code and its elements are called codewords. The codewords are written 
 as row vectors. The Code $\mathcal{C}~$ can alternatively be described as row space matrix of $G \in \mathbb{F}^{k \times n}$. The rows of $G$ form a basis of $\mathcal{C}~$.
 $G$ is also calles \textit{generator matrix} for $\mathcal{C}$.
 
 \begin{env_definition}[Standard form]
-$[dueckjournal]$
+\cite{dueckjournal}
 A $[n,k]~$ code $\mathcal{C}~$ is in standard form if it has a generator matrix like $G = (I_{k}| M)$, where $I_{k}$ is the $k \times k$ matrix.
 \end{env_definition}
 
@@ -857,7 +857,7 @@ $\lozenge$
 \end{env_example}
 
 Two codes are equivalent if one generator matrix can be obtained from the other by permutating columns and rows.
-It follows that every linear code is equivalent to a linear code in standard form.$[dueckjournal]$ \\
+It follows that every linear code is equivalent to a linear code in standard form.\cite{dueckjournal} \\
 
 A linear Code $\mathcal{C}$ can be \textit{punctured} by deleting the same coordinate $i$ in each codeword.
 %TODO: mehr zu punktierten Codes schreiben
@@ -871,7 +871,7 @@ $\mathbb{K}[\textbf{x}]~=~\mathbb{K}[x_{1},\cdots,x_{n}]$.
 Then the \textit{code ideal} can be defined as follows:
 
 \begin{env_definition}[Code Ideal]
-$[dueckpaper]$ A code ideal $I(\mathcal{C})$ is the union between the toric ideal and a nonprime ideal $I_{p}$, such that
+\cite{dueckpaper} A code ideal $I(\mathcal{C})$ is the union between the toric ideal and a nonprime ideal $I_{p}$, such that
 \begin{center}
 $ I_{\mathcal{C}} = \langle \textbf{x}^{c} - \textbf{x}^{c'} | c - c' \in \mathcal{C}  \rangle + I_{p},$\\
 \textrm{where}
