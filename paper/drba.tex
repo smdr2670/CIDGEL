@@ -1,5 +1,10 @@
   % this file is drba.tex
 \documentclass[a4paper,12pt,twoside]{article}
+% Ränder
+\usepackage[left=35mm,right=35mm,top=3cm,bottom=45mm,includeheadfoot]{geometry}
+
+% ============= Packages =============
+
 % Dokumentinformationen
 \usepackage[
 	pdftitle={Gr\"obner Fans for Linear Codes},
@@ -16,9 +21,9 @@
 ]{hyperref}
 
 \usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[english]{babel}
 
 
 
@@ -26,7 +31,8 @@
 \usepackage{mathpazo}
 \usepackage{amssymb,amsthm}
 \usepackage{amsmath}
-\usepackage{ upgreek }
+\usepackage{upgreek}
+
 \usepackage{algorithm}% http://ctan.org/pkg/algorithms
 \usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
 \usepackage{tikz}
@@ -36,11 +42,6 @@
 \usepackage{subcaption}
 \usepackage{caption}
 \usetikzlibrary{backgrounds}
-
-% Ränder
-\usepackage[left=35mm,right=35mm,top=3cm,bottom=45mm,includeheadfoot]{geometry}
-
-
 
 
 %Kopf- und Fußzeile
@@ -81,6 +82,7 @@
 \newtheorem{theorem}{Theorem}[section]
 
 \bibliographystyle{unsrt}
+
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % % % % % % % Dokumentenbeginn % % % % % % % % % % % % % % % % % % % %
