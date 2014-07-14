@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  14 JUL 2014 13:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  14 JUL 2014 19:37
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -126,6 +126,8 @@ File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 (E:\Programme\MikTex\tex\latex\00miktex\hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `final' set `true' on input line 4319.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\unhbox' on input line 4319.
@@ -453,102 +455,32 @@ Package: babel 2008/07/08 v3.8m The Babel package
 (E:\Programme\MikTex\tex\latex\00miktex\bblopts.cfg
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-(E:\Programme\MikTex\tex\generic\babel\ngermanb.ldf
-Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
+(E:\Programme\MikTex\tex\generic\babel\english.ldf
+Language: english 2005/03/30 v3.3o English support from the babel system
 
 (E:\Programme\MikTex\tex\generic\babel\babel.def
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count100
 \U@D=\dimen115
 )
-\l@naustrian = a dialect from \language\l@ngerman 
-Package babel Info: Making " an active character on input line 92.
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
 ))
-(E:\Programme\MikTex\tex\latex\base\fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
-(E:\Programme\MikTex\tex\latex\base\t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
-))
-(E:\Programme\MikTex\tex\latex\lm\lmodern.sty
-Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-)
-(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\moreverb\moreverb.sty
-Package: moreverb 2008/06/03 v2.3a `more' verbatim facilities
-
-(E:\Programme\MikTex\tex\latex\tools\verbatim.sty
-Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks18
-\verbatim@line=\toks19
-\verbatim@in@stream=\read1
-)
-\tab@position=\count101
-\tab@size=\count102
-\listing@line=\count103
-)
-(E:\Programme\MikTex\tex\latex\psnfss\mathpazo.sty
-Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
-\symupright=\mathgroup4
-)
 (E:\Programme\MikTex\tex\latex\amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (E:\Programme\MikTex\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks20
-\symAMSa=\mathgroup5
-\symAMSb=\mathgroup6
+\@emptytoks=\toks18
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(E:\Programme\MikTex\tex\latex\amscls\amsthm.sty
-Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks21
-\thm@bodyfont=\toks22
-\thm@headfont=\toks23
-\thm@notefont=\toks24
-\thm@headpunct=\toks25
-\thm@preskip=\skip44
-\thm@postskip=\skip45
-\thm@headsep=\skip46
-\dth@everypar=\toks26
-)
 (E:\Programme\MikTex\tex\latex\amsmath\amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip47
+\@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
 (E:\Programme\MikTex\tex\latex\amsmath\amstext.sty
@@ -556,7 +488,7 @@ Package: amstext 2000/06/29 v2.01
 
 (E:\Programme\MikTex\tex\latex\amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks27
+\@emptytoks=\toks19
 \ex@=\dimen116
 ))
 (E:\Programme\MikTex\tex\latex\amsmath\amsbsy.sty
@@ -566,13 +498,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (E:\Programme\MikTex\tex\latex\amsmath\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count104
+\inf@bad=\count101
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count105
-\leftroot@=\count106
+\uproot@=\count102
+\leftroot@=\count103
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count107
-\DOTSCASE@=\count108
+\classnum@=\count104
+\DOTSCASE@=\count105
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -581,33 +513,33 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen118
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count109
-\c@MaxMatrixCols=\count110
+\macc@depth=\count106
+\c@MaxMatrixCols=\count107
 \dotsspace@=\muskip11
-\c@parentequation=\count111
-\dspbrk@lvl=\count112
-\tag@help=\toks28
-\row@=\count113
-\column@=\count114
-\maxfields@=\count115
-\andhelp@=\toks29
+\c@parentequation=\count108
+\dspbrk@lvl=\count109
+\tag@help=\toks20
+\row@=\count110
+\column@=\count111
+\maxfields@=\count112
+\andhelp@=\toks21
 \eqnshift@=\dimen119
 \alignsep@=\dimen120
 \tagshift@=\dimen121
 \tagwidth@=\dimen122
 \totwidth@=\dimen123
 \lineht@=\dimen124
-\@envbody=\toks30
-\multlinegap=\skip48
-\multlinetaggap=\skip49
-\mathdisplay@stack=\toks31
+\@envbody=\toks22
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\was\upgreek.sty
 Package: upgreek 2003/02/12 v2.0 (WaS)
 Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
-\symugrf@m=\mathgroup7
+\symugrf@m=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
 )
@@ -617,17 +549,17 @@ nment
 
 (E:\Programme\MikTex\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count116
-\float@exts=\toks32
+\c@float@type=\count113
+\float@exts=\toks24
 \float@box=\box28
-\@float@everytoks=\toks33
+\@float@everytoks=\toks25
 \@floatcapt=\box29
 )
 (E:\Programme\MikTex\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks34
-\c@algorithm=\count117
+\@float@every@algorithm=\toks26
+\c@algorithm=\count114
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithmicx\algpseudocod
 e.sty
@@ -638,16 +570,16 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count118
-\c@ALG@rem=\count119
-\c@ALG@nested=\count120
-\ALG@tlm=\skip50
-\ALG@thistlm=\skip51
-\c@ALG@Lnr=\count121
-\c@ALG@blocknr=\count122
-\c@ALG@storecount=\count123
-\c@ALG@tmpcounter=\count124
-\ALG@tmplength=\skip52
+\c@ALG@line=\count115
+\c@ALG@rem=\count116
+\c@ALG@nested=\count117
+\ALG@tlm=\skip47
+\ALG@thistlm=\skip48
+\c@ALG@Lnr=\count118
+\c@ALG@blocknr=\count119
+\c@ALG@storecount=\count120
+\c@ALG@tmpcounter=\count121
+\ALG@tmplength=\skip49
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
@@ -656,7 +588,7 @@ y (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-c
 ommon.tex
-\pgfutil@everybye=\toks35
+\pgfutil@everybye=\toks27
 \pgfutil@tempdima=\dimen125
 \pgfutil@tempdimb=\dimen126
 
@@ -691,7 +623,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (E:\Programme\MikTex\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count125
+\Gread@gobject=\count122
 ))
 \Gin@req@height=\dimen127
 \Gin@req@width=\dimen128
@@ -704,12 +636,12 @@ Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.c
 ode.tex
-\pgfkeys@pathtoks=\toks36
-\pgfkeys@temptoks=\toks37
+\pgfkeys@pathtoks=\toks28
+\pgfkeys@temptoks=\toks29
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysfi
 ltered.code.tex
-\pgfkeys@tmptoks=\toks38
+\pgfkeys@tmptoks=\toks30
 ))
 \pgf@x=\dimen129
 \pgf@y=\dimen130
@@ -720,14 +652,14 @@ ltered.code.tex
 \pgf@xc=\dimen135
 \pgf@yc=\dimen136
 \w@pgf@writea=\write3
-\r@pgf@reada=\read2
-\c@pgf@counta=\count126
-\c@pgf@countb=\count127
-\c@pgf@countc=\count128
-\c@pgf@countd=\count129
-\t@pgf@toka=\toks39
-\t@pgf@tokb=\toks40
-\t@pgf@tokc=\toks41
+\r@pgf@reada=\read1
+\c@pgf@counta=\count123
+\c@pgf@countb=\count124
+\c@pgf@countc=\count125
+\c@pgf@countd=\count126
+\t@pgf@toka=\toks31
+\t@pgf@tokb=\toks32
+\t@pgf@tokc=\toks33
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -745,8 +677,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyss
 oftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count130
-\pgfsyssoftpath@bigbuffer@items=\count131
+\pgfsyssoftpath@smallbuffer@items=\count127
+\pgfsyssoftpath@bigbuffer@items=\count128
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsysp
 rotocol.code.tex
@@ -782,11 +714,11 @@ de.tex)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.
 code.tex
 \pgfmath@dimen=\dimen137
-\pgfmath@count=\count132
+\pgfmath@count=\count129
 \pgfmath@box=\box31
-\pgfmath@toks=\toks42
-\pgfmath@stack@operand=\toks43
-\pgfmath@stack@operation=\toks44
+\pgfmath@toks=\toks34
+\pgfmath@stack@operand=\toks35
+\pgfmath@stack@operation=\toks36
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctio
 ns.code.tex
@@ -808,7 +740,7 @@ ns.misc.code.tex)
 ns.integerarithmetics.code.tex)))
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.c
 ode.tex
-\c@pgfmathroundto@lastzeros=\count133
+\c@pgfmathroundto@lastzeros=\count130
 ))
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorep
 oints.code.tex
@@ -846,7 +778,7 @@ File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box32
 \pgf@hbox=\box33
 \pgf@layerbox@main=\box34
-\pgf@picture@serial@count=\count134
+\pgf@picture@serial@count=\count131
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreg
 raphicstate.code.tex
@@ -881,7 +813,7 @@ File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
 hade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen161
-\pgf@sys@shading@range@num=\count135
+\pgf@sys@shading@range@num=\count132
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorei
 mage.code.tex
@@ -939,8 +871,8 @@ Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 ex)
 \pgffor@iter=\dimen164
 \pgffor@skip=\dimen165
-\pgffor@stack=\toks45
-\pgffor@toks=\toks46
+\pgffor@stack=\toks37
+\pgffor@toks=\toks38
 ))
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 tikz.code.tex
@@ -949,7 +881,7 @@ Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrar
 yplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
-\pgf@plot@mark@count=\count136
+\pgf@plot@mark@count=\count133
 \pgfplotmarksize=\dimen166
 )
 \tikz@lastx=\dimen167
@@ -962,19 +894,19 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \tikz@figbox@bg=\box38
 \tikz@tempbox=\box39
 \tikz@tempbox@bg=\box40
-\tikztreelevel=\count137
-\tikznumberofchildren=\count138
-\tikznumberofcurrentchild=\count139
-\tikz@fig@count=\count140
+\tikztreelevel=\count134
+\tikznumberofchildren=\count135
+\tikznumberofcurrentchild=\count136
+\tikz@fig@count=\count137
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulema
 trix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count141
-\pgfmatrixcurrentcolumn=\count142
-\pgf@matrix@numberofcolumns=\count143
+\pgfmatrixcurrentrow=\count138
+\pgfmatrixcurrentcolumn=\count139
+\pgf@matrix@numberofcolumns=\count140
 )
-\tikz@expandcount=\count144
+\tikz@expandcount=\count141
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 libraries\tikzlibrarytopaths.code.tex
@@ -991,7 +923,7 @@ corations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen175
 \pgfdecoratedinputsegmentremainingdistance=\dimen176
 \pgf@decorate@distancetomove=\dimen177
-\pgf@decorate@repeatstate=\count145
+\pgf@decorate@repeatstate=\count142
 \pgfdecorationsegmentamplitude=\dimen178
 \pgfdecorationsegmentlength=\dimen179
 )
@@ -999,9 +931,6 @@ corations.code.tex
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decoratio
 ns\pgflibrarydecorations.markings.code.tex))
-(E:\Programme\MikTex\tex\latex\psnfss\courier.sty
-Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
-)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\subcaption.sty
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 
@@ -1019,12 +948,12 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen185
 \caption@hangindent=\dimen186
 )
-\c@ContinuedFloat=\count146
+\c@ContinuedFloat=\count143
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
-\c@subfigure=\count147
-\c@subtable=\count148
+\c@subfigure=\count144
+\c@subtable=\count145
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 libraries\tikzlibrarybackgrounds.code.tex
@@ -1033,67 +962,63 @@ File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.0 (rcs-revision 1.3)
 \pgf@layerboxsaved@background=\box43
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
-\fancy@headwidth=\skip53
-\f@ncyO@elh=\skip54
-\f@ncyO@erh=\skip55
-\f@ncyO@olh=\skip56
-\f@ncyO@orh=\skip57
-\f@ncyO@elf=\skip58
-\f@ncyO@erf=\skip59
-\f@ncyO@olf=\skip60
-\f@ncyO@orf=\skip61
+\fancy@headwidth=\skip50
+\f@ncyO@elh=\skip51
+\f@ncyO@erh=\skip52
+\f@ncyO@olh=\skip53
+\f@ncyO@orh=\skip54
+\f@ncyO@elf=\skip55
+\f@ncyO@erf=\skip56
+\f@ncyO@olf=\skip57
+\f@ncyO@orf=\skip58
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
-\lst@mode=\count149
+\lst@mode=\count146
 \lst@gtempboxa=\box44
-\lst@token=\toks47
-\lst@length=\count150
+\lst@token=\toks39
+\lst@length=\count147
 \lst@currlwidth=\dimen187
-\lst@column=\count151
-\lst@pos=\count152
+\lst@column=\count148
+\lst@pos=\count149
 \lst@lostspace=\dimen188
 \lst@width=\dimen189
-\lst@newlines=\count153
-\lst@lineno=\count154
+\lst@newlines=\count150
+\lst@lineno=\count151
 \lst@maxwidth=\dimen190
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
-\c@lstnumber=\count155
-\lst@skipnumbers=\count156
+\c@lstnumber=\count152
+\lst@skipnumbers=\count153
 \lst@framebox=\box45
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
 File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
 Package: listings 2014/03/04 1.5c (Carsten Heinz)
-\c@env_definition=\count157
-\c@env_example=\count158
-\c@theorem=\count159
+\c@env_definition=\count154
+\c@env_example=\count155
+\c@theorem=\count156
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
 
-(E:\Programme\MikTex\tex\latex\psnfss\t1ppl.fd
-File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
-)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1129,18 +1054,18 @@ File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box46
-Package hyperref Info: Link coloring ON on input line 90.
+Package hyperref Info: Link coloring ON on input line 104.
 (E:\Programme\MikTex\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (E:\Programme\MikTex\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count160
+\c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 90.
-LaTeX Info: Redefining \pageref on input line 90.
-LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Info: Redefining \ref on input line 104.
+LaTeX Info: Redefining \pageref on input line 104.
+LaTeX Info: Redefining \nameref on input line 104.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.out)
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.out)
@@ -1149,61 +1074,33 @@ LaTeX Info: Redefining \nameref on input line 90.
 ABD: EveryShipout initializing macros
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count161
+\scratchcounter=\count158
 \scratchdimen=\dimen191
 \scratchbox=\box47
-\nofMPsegments=\count162
-\nofMParguments=\count163
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count164
+\nofMPsegments=\count159
+\nofMParguments=\count160
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count161
 \MPscratchDim=\dimen192
-\MPnumerator=\count165
-\makeMPintoPDFobject=\count166
-\everyMPtoPDFconversion=\toks49
+\MPnumerator=\count162
+\makeMPintoPDFobject=\count163
+\everyMPtoPDFconversion=\toks41
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count167
+\c@lstlisting=\count164
  (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_tp.tex
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
 
-(E:\Programme\MikTex\tex\latex\psnfss\ot1ppl.fd
-File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+(E:\Programme\MikTex\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 5.
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
-(E:\Programme\MikTex\tex\latex\psnfss\omlzplm.fd
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+(E:\Programme\MikTex\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 5.
-
-(E:\Programme\MikTex\tex\latex\psnfss\omszplm.fd
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 5.
-
-(E:\Programme\MikTex\tex\latex\psnfss\omxzplm.fd
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
-)
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 5.
-
-(E:\Programme\MikTex\tex\latex\psnfss\ot1zplm.fd
-File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 5.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 5.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 5.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 5.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 5.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 5.
-
 <figures/tuhh.png, id=106, 1505.625pt x 411.5375pt>
 File: figures/tuhh.png Graphic file (type png)
  <use figures/tuhh.png>
@@ -1216,12 +1113,6 @@ File: figures/ictlogo.png Graphic file (type png)
 <use figures/ictlogo.png>
 Package pdftex.def Info: figures/ictlogo.png used on input line 30.
 (pdftex.def)             Requested size: 60.7171pt x 50.01904pt.
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 36.
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 36.
-LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 51.
 
 Overfull \hbox (12.0pt too wide) in paragraph at lines 5--71
  [] 
@@ -1241,10 +1132,12 @@ s/GitHub/CIDGEL/paper/figures/ictlogo.png>] [2
 
 ]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sat.tex
-LaTeX Font Info:    Font shape `T1/ppl/bx/sc' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/sc' tried instead on input line 5.
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 5.
+
 )
-Underfull \hbox (badness 10000) in paragraph at lines 18--110
+Underfull \hbox (badness 10000) in paragraph at lines 18--124
 
  []
 
@@ -1260,146 +1153,139 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [9] (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_in.tex [1])
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_gb.tex
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 16.
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_gb.tex [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 51.
 
-
-(E:\Programme\MikTex\tex\latex\psnfss\ufplmbb.fd
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [2]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 47.
-
-(E:\Programme\MikTex\tex\latex\psnfss\omsppl.fd
-File: omsppl.fd 
+(E:\Programme\MikTex\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--68
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--93
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
-
- []
-
-LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 119.
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--154
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
-[5]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 168.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-[]$\OML/zplm/m/it/12 r \OT1/zplm/m/n/12 = \OT1/ppl/m/n/12 0$ \T1/ppl/m/n/12 or 
-no-ne of the terms in $\OML/zplm/m/it/12 r$ \T1/ppl/m/n/12 are di-vi-si-ble by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--158
+
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 230--232
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 172.
 
+Underfull \hbox (badness 6675) in paragraph at lines 177--178
+[]$\OML/cmm/m/it/12 r \OT1/cmr/m/n/12 = 0$ or none of the terms in $\OML/cmm/m/
+it/12 r$ \OT1/cmr/m/n/12 are di-vis-i-ble by
  []
 
 [7]
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 256.
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
- (E:\Programme\MikTex\tex\latex\lm\t1lmss.fd
-File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8]
-Underfull \hbox (badness 10000) in paragraph at lines 333--338
+ []
 
+[8]
+Overfull \hbox (6.10966pt too wide) in paragraph at lines 273--275
+\OT1/cmr/m/it/12 of poly-no-mi-als in $\U/msb/m/n/12 K []$ \OT1/cmr/m/it/12 is 
+a Groeb-ner ba-sis of an Ideal $\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = \OMS/cmsy/
+m/n/12 h\OML/cmm/m/it/12 f[]; []  ; f[]\OMS/cmsy/m/n/12 i$
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 343--345
+Underfull \hbox (badness 10000) in paragraph at lines 334--339
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 344--346
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\groebnerfan.tex)
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\groebnerfancomplete.tex)
-[10]
-Underfull \vbox (badness 1888) has occurred while \output is active []
-
- [11]
-LaTeX Font Info:    Font shape `T1/ppl/bx/it' in size <12> not available
-(Font)              Font shape `T1/ppl/b/it' tried instead on input line 418.
-
-[12] [13] [14]
-Overfull \hbox (13.75967pt too wide) in paragraph at lines 594--597
-$\OMS/zplm/m/n/12 G[] \OT1/zplm/m/n/12 = \OMS/zplm/m/n/12 f\OML/zplm/m/it/12 x[
-] \OMS/zplm/m/n/12   \OML/zplm/m/it/12 x[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 x
-[] \OMS/zplm/m/n/12   \OT1/ppl/m/n/12 1, \OML/zplm/m/it/12 x[] \OMS/zplm/m/n/12
-   \OT1/ppl/m/n/12 1, \OML/zplm/m/it/12 x[]x[]x[] \OMS/zplm/m/n/12   \OML/zplm/
-m/it/12 x[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 x[] \OMS/zplm/m/n/12   \OT1/ppl/
-m/n/12 1, \OML/zplm/m/it/12 x[]x[] \OMS/zplm/m/n/12   \OML/zplm/m/it/12 x[]x[]\
-OT1/ppl/m/n/12 , \OML/zplm/m/it/12 x[]x[] \OMS/zplm/m/n/12   \OML/zplm/m/it/12 
-x[]x[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 x[]x[] \OMS/zplm/m/n/12  $
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 594--597
+[11] [12] [13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 599--602
 
  []
 
 
-Underfull \vbox (badness 2409) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 646--647
-
- []
-
-[17] [18] (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\breite.tex)
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\reverse.tex) [19]
-Underfull \hbox (badness 10000) in paragraph at lines 777--780
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 795--797
+ [16]
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 798--805
+Overfull \hbox (5.78995pt too wide) in paragraph at lines 654--656
+[]\OT1/cmr/m/it/12 [[]] A poly-no-mial $\OML/cmm/m/it/12 f$ \OT1/cmr/m/it/12 th
+at has been
+ []
 
+
+Overfull \hbox (2.6824pt too wide) in paragraph at lines 674--676
+[]\OT1/cmr/m/it/12 [[]] For two re-duced Groeb-ner bases
+ []
+
+[18] [19] (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\breite.tex)
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\reverse.tex) [20]
+Overfull \hbox (14.95416pt too wide) in paragraph at lines 786--789
+[]\OT1/cmr/m/it/12 [[]] A re-duced Groeb-
+ []
+
+
+Overfull \hbox (5.07043pt too wide) in paragraph at lines 795--797
+[]\OT1/cmr/m/it/12 [[]] A Groeb-
  []
 
 [21]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22]
-Underfull \hbox (badness 10000) in paragraph at lines 859--861
+Underfull \hbox (badness 10000) in paragraph at lines 800--802
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 893--894
+Underfull \hbox (badness 10000) in paragraph at lines 803--810
 
  []
 
-[23] [24]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex
+[22]
+Underfull \vbox (badness 3343) has occurred while \output is active []
+
+ [23]
+Underfull \hbox (badness 10000) in paragraph at lines 864--866
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 898--899
+
+ []
+
+[24] [25]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sw.tex
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
@@ -1408,47 +1294,35 @@ File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 18.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 18.
 
-(E:\Programme\MikTex\tex\latex\psnfss\t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
 Underfull \hbox (badness 10000) in paragraph at lines 31--34
 
  []
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
-LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 79.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 79.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 79.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 79.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 79.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 79.
-
 [27]
-LaTeX Font Info:    Try loading font information for T1+courier on input line 1
-08.
-LaTeX Font Info:    No file T1courier.fd. on input line 108.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
+ [28]
+LaTeX Font Info:    Try loading font information for OT1+courier on input line 
+108.
+LaTeX Font Info:    No file OT1courier.fd. on input line 108.
 
 
-LaTeX Font Warning: Font shape `T1/courier/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 108.
+LaTeX Font Warning: Font shape `OT1/courier/m/n' undefined
+(Font)              using `OT1/cmr/m/n' instead on input line 108.
+
+LaTeX Font Info:    Try loading font information for OMS+courier on input line 
+109.
+LaTeX Font Info:    No file OMScourier.fd. on input line 109.
+
+LaTeX Font Warning: Font shape `OMS/courier/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 109.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 119--121
@@ -1456,23 +1330,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 119--121
  []
 
 
-Overfull \hbox (62.10254pt too wide) in paragraph at lines 122--124
-\T1/ppl/m/n/12 out, then the pro-gram call is: \T1/pcr/m/n/12 ./cidgel -i Examp
-le-input -o Example-output
+Overfull \hbox (17.71082pt too wide) in paragraph at lines 122--124
+\OT1/cmr/m/n/12 print-ing the Groeb-ner ba-sis shall be writ-ten in a out-put-f
+ile called \OT1/cmtt/m/n/12 Example-output\OT1/cmr/m/n/12 .
  []
 
-[28]
-LaTeX Font Info:    Try loading font information for OMS+courier on input line 
-132.
-LaTeX Font Info:    No file OMScourier.fd. on input line 132.
+[29]
+
+Package Listings Warning: Text dropped after begin of listing on input line 130
+.
 
 
-LaTeX Font Warning: Font shape `OMS/courier/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textasteriskcentered' on input line 132.
-
-
-Overfull \hbox (38.3978pt too wide) in paragraph at lines 132--134
+Overfull \hbox (26.62845pt too wide) in paragraph at lines 132--134
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1480,50 +1349,52 @@ Overfull \hbox (38.3978pt too wide) in paragraph at lines 132--134
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-[30]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_fw.tex [31])
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex) [32]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.bbl) [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
+ [30]
+[31]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_fw.tex [32])
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex) [33]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.bbl) [34]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
 Package rerunfilecheck Info: File `drba.out' has not changed.
 (rerunfilecheck)             Checksum: 2D0F87F137B79D497C28F6AEF1FE42A5;1609.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  ) 
 Here is how much of TeX's memory you used:
- 21969 strings out of 493921
- 393487 string characters out of 3150487
- 475694 words of memory out of 3000000
- 24559 multiletter control sequences out of 15000+200000
- 73967 words of font info for 141 fonts, out of 3000000 for 9000
+ 21306 strings out of 493921
+ 385279 string characters out of 3150487
+ 471803 words of memory out of 3000000
+ 23978 multiletter control sequences out of 15000+200000
+ 18387 words of font info for 68 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,14n,65p,546b,1244s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Daniel\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
-\ecrm1200.pk>{E:/Programme/MikTex/fonts/enc/dvips/fontname/8r.enc}{E:/Programme
-/MikTex/fonts/enc/dvips/lm/lm-ec.enc}<E:/Programme/MikTex/fonts/type1/public/am
-sfonts/cm/cmex10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Programm
-e/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/Programme/MikTex/fonts/t
-ype1/public/amsfonts/euler/eurm10.pfb><C:/Users/Daniel/AppData/Roaming/MiKTeX/2
-.9/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Users/Daniel/AppData/Roaming/MiKT
-eX/2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/Daniel/AppData/Roaming/M
-iKTeX/2.9/fonts/type1/public/mathpazo/fplmri.pfb><E:/Programme/MikTex/fonts/typ
-e1/public/lm/lmss9.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symbols
-/msam10.pfb><E:/Programme/MikTex/fonts/type1/urw/courier/ucrr8a.pfb><E:/Program
-me/MikTex/fonts/type1/urw/palatino/uplb8a.pfb><E:/Programme/MikTex/fonts/type1/
-urw/palatino/uplbi8a.pfb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplr8a.p
-fb><E:/Programme/MikTex/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drba.pdf (42 pages, 475118 bytes).
+ 55i,14n,65p,547b,1241s stack positions out of 5000i,500n,10000p,200000b,50000s
+<E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Programme/
+MikTex/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><E:/Programme/MikTex/fonts/t
+ype1/public/amsfonts/cm/cmcsc10.pfb><E:/Programme/MikTex/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><E:/Programme
+/MikTex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/Programme/MikTex/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmr6.pfb><E:
+/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmr8.pfb><E:/Programme/MikTex/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/Programme/MikTex/fonts/type1/publ
+ic/amsfonts/cm/cmsy6.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmti12.pfb><E:/Prog
+ramme/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programme/MikTex/fon
+ts/type1/public/amsfonts/cm/cmtt12.pfb><E:/Programme/MikTex/fonts/type1/public/
+amsfonts/euler/eurm10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symb
+ols/msam10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb>
+Output written on drba.pdf (43 pages, 531152 bytes).
 PDF statistics:
- 661 PDF objects out of 1000 (max. 8388607)
- 201 named destinations out of 1000 (max. 500000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

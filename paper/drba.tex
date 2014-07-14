@@ -1,5 +1,5 @@
   % this file is drba.tex
-\documentclass[a4paper,12pt,twoside]{article}
+\documentclass[a4paper,12pt,twoside,final]{article}
 % Ränder
 \usepackage[left=35mm,right=35mm,top=3cm,bottom=45mm,includeheadfoot]{geometry}
 
@@ -21,23 +21,37 @@
 ]{hyperref}
 
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage[english]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage{lmodern}
 
 
 
-\usepackage{moreverb}
-\usepackage{mathpazo}
-\usepackage{amssymb,amsthm}
+% \usepackage{moreverb}
+% \usepackage{mathpazo}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+% \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{upgreek}
 
+
+ % \usepackage{sectsty}
+ % \sectionfont{\Huge}
+
 \usepackage{algorithm}% http://ctan.org/pkg/algorithms
 \usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+
+\newcommand{\Input}{\item[\algorithmicinput]}
+\newcommand{\algorithmicinput}{\textbf{Input:}}
+
+\newcommand{\Output}{\item[\algorithmicoutput]}
+\newcommand{\algorithmicoutput}{\textbf{Output:}}
+
 \usepackage{tikz}
 \usetikzlibrary{decorations.markings}
-\usepackage{courier}
+% \usepackage{courier}
+% \usepackage[default,osfigures,scale=0.95]{opensans}
 
 \usepackage{subcaption}
 \usepackage{caption}
