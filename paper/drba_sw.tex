@@ -13,7 +13,7 @@ With the special attribute that code ideals only contains binomials and monomial
 
 \lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
 basicstyle = \ttfamily \color{black} \footnotesize , 
-caption = { Data structure of binomials \cite{tigers} } } 
+caption = { Data structure of binomials \cite{tigers} },frame = single, } 
 
 \begin{lstlisting} 
 typedef struct bin_tag *binomial;
@@ -38,7 +38,7 @@ The first four integers show off the identification number of the vertex of the 
  
 
 \lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
-basicstyle = \ttfamily \color{black} \footnotesize , caption = {Data structure of generating sets }, } 
+basicstyle = \ttfamily \color{black} \footnotesize , caption = {Data structure of generating sets },frame = single, } 
 \begin{lstlisting} 
 typedef struct gset_tag *gset;
 
@@ -70,7 +70,7 @@ All inputs, outputs, options and flags are passed with the commandline arguments
 \texttt{./cidgel -h}.
 
 \lstset{basicstyle=\footnotesize, columns=fullflexible,showspaces=false,breakatwhitespace=true,caption = {Code Snippet of the help-message}} 
-\begin{lstlisting} [showstringspaces=false,language=C,]
+\begin{lstlisting} [showstringspaces=false,language=C,frame = single,]
 
 static char *helpmsg[] = {
     "Function: Enumerate all or d.c Groebner bases of a code ideal I(C).",
@@ -129,7 +129,8 @@ The user do not has to specify an output file, the result will be printed in the
 % starting GB:
 F: 2
 R: 10
-G: {a-i*j, b-g*h, c-g*h*i*j, d-h*i*j, e-g, f-h*j, g^2-1, h^2-1, i^2-1, j^2-1}
+G: {a-i*j, b-g*h, c-g*h*i*j, d-h*i*j, e-g, f-h*j,
+	 g^2-1, h^2-1, i^2-1, j^2-1}
 
  Enumerating degree compatible Groebner bases
    using reverse search
@@ -153,12 +154,86 @@ time used (in seconds) 42.16
 
 
 
-
-
-
 \subsection{Computational experience}
 \label{subsec:compexp} 
-In this section the difference between degree compatible Groebner bases and all Groebner bases from a linear Code are researched. Furthermore, the time for all Grooebner bases is compared against Gfan.
+In this section the difference between degree compatible Gröbner bases and all Gröbner bases from a linear Code are researched. Furthermore, the time for all Gröbner bases is compared against Gfan.
+The linear codes were randomly generated.
+\newpage
+\begin{figure}[h]
+\begin{tikzpicture}
+  \centering
+  \begin{axis}[
+        ybar, axis on top,
+       % title={Example Text},
+        height=8cm, width=13.5cm,
+        bar width=0.4cm,
+        ymajorgrids, tick align=inside,
+        major grid style={draw=white},
+        enlarge y limits={value=.1,upper},
+        ymin=0, ymax=2300,
+        axis x line*=bottom,
+        axis y line*=right,
+        y axis line style={opacity=0},
+        tickwidth=0pt,
+        enlarge x limits=true,
+        legend style={
+            at={(0.5,-0.2)},
+            anchor=north,
+            legend columns=-1,
+            /tikz/every even column/.append style={column sep=0.5cm}
+        },
+        xlabel={Dimension $k$ of the linear code},
+        ylabel={Number of reduced Gröbner bases},
+        symbolic x coords={ 1,2,3,4,5,6,7},
+       xtick=data,
+       nodes near coords={
+        \pgfmathprintnumber[precision=0]{\pgfplotspointmeta}
+       }
+    ]
+    \addplot [draw=none, fill=blue!30] coordinates {
+      (1,8)
+      (2,8) 
+      (3,16)
+      (4,162) 
+      (5,12) 
+      (6,18)
+      (7,8)};
+      
+   \addplot [draw=none,fill=red!30] coordinates {
+      (1,12)
+      (2,1708) 
+      (3,328)
+      (4,2257) 
+      (5,224) 
+      (6,39)
+      (7,8)};
+      
+
+    \legend{Degree compatible,All Gröbner bases}
+  \end{axis}
+  \end{tikzpicture}
+  \caption{Comparison between the numbers of degree compatible and all Gröbner bases }
+  \label{fig:numbergb}
+  \end{figure}
+  
+Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Gröbner bases of a code ideal and the degree compatible. The length $n$ of the codeword is 8. The next table shows the computational time of the randomly generated codes.
+
+ \begin{table}[h]
+ \caption{Computataional time in seconds}
+ \begin{tabular}{clll} % zentriert rest linksbündig
+  Dimension $k$ & CIDGEL d.c. & CIDGEL & Gfan \\
+  1  & 0.01  & 0.011  & 0.239  \\
+  2  & 0.206 & 10.198 & 38.127 \\
+  3  & 0.08  & 0.688  & 6.32 \\
+  4  & 7.743 & 25.86  & 47.748 \\
+  5  & 0.19  & 0.608  & 3.588  \\
+  6  & 0.029 & 0.039  & 0.553\\
+  7  & 0.009 & 0.009  & 0.116 \\
+ \end{tabular}
+ \label{tab:meinetabelle}
+ \end{table}
+ 
+ The table shows that the software CIDGEL can be way faster than Gfan for computing all the reduced Gröbner bases of a code ideal. 
 
 %TODO: HIER EIN PAAR BILDER HOCHLADEN
 %TODO: EXTREMBEISPIEL ZEIGEN UND VLLT SAGEN WARUM NICHT FÜR GRÖSSERE BASEN 
