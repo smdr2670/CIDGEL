@@ -21,6 +21,6 @@
 \contentsline {subsection}{\numberline {3.1}Data Structures}{26}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Manual}{27}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Computational experience}{30}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{31}{subsection.3.4}
-\contentsline {section}{\numberline {4}Future Work}{32}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{33}{section.5}
+\contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{32}{subsection.3.4}
+\contentsline {section}{\numberline {4}Future Work}{33}{section.4}
+\contentsline {section}{\numberline {5}Conclusion}{34}{section.5}
