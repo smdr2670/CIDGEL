@@ -235,9 +235,13 @@ Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Grö
  
  The table shows that the software CIDGEL can be way faster than Gfan for computing all the reduced Gröbner bases of a code ideal. The reason is the special binomial structure of the code ideals and the fast algorithms that can be linked with. Gfan is a software for Gröbner bases with more general structure.
  Even though the amount of all Gröbner bases are much more than the degree compatible Gröbner bases, the computational time does hold proportionally to the amount.
- The computational time depends most on the computation of facets, see page \pageref{facets}. The degree compatible Gröbner bases mostly have more binomials than all other Gröbner bases, that is why the computational time for a code ideal with a few Gröbner bases will last longer than for a code ideal with many Gröbner bases with low cardinality.  
+ The computational time depends most on the computation of facets, see page \pageref{facets}. The degree compatible Gröbner bases mostly have more binomials than all other Gröbner bases, that is why the computational time for a code ideal with a few Gröbner bases will last longer than for a code ideal with many Gröbner bases with low cardinality. \\
  
- For linear codes with the length more than 9...
+ For linear codes with the length more than 9 the computation took more than 10 hours for the complete Gröbner fan. The reason is that the amount of reduced Gröbner bases and the cardinality of each basis will be greater if the codewords will be longer. Nevertheless, the computation of the degree compatible Gröbner fan is useful for a certain length.\\
+ 
+ In some cases the amount of the degree compatible and all Gröbner bases can enormously. A randomly generated $[9,2]$ code had 8 degree compatible Gröbner bases and overall 295.863 Gröbner bases. 
+ 
+    
 
 %TODO: EXTREMBEISPIEL ZEIGEN UND VLLT SAGEN WARUM NICHT FÜR GRÖSSERE BASEN 
 

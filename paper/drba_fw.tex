@@ -1,6 +1,13 @@
 % this file is drba_tp.tex
 % title page
 \section{Future Work}
-
+Even if the algorithms are well suited for the given problems, this software can be improved.
+The algorithms themselves already have mathematically the best performance. 
+Section \ref{subsec:compexp} shows that the computation of facets is the most expensive step, so the performance can be heavily improved by enhancing the linear programming.
+The software uses a built-in LP solver mentioned in \cite{tigers}, but extern LP-solver like the GLPK (GNU Linear Programming Kit) could be more efficient. \\
+The software package CaTS \cite{cats} enumerates all reduced Gröbner bases for a lattice Ideal. CaTS uses an external LP-Solver too to improve the performance.
+\\\\
+Another approach will be parallelization of the computation of facets. To compute the facets, a certain amount of linear programs have to be set up, which can be solved independently. Every processor core of the computing unit can solve the linear programs.\\
+If a LP solver is thread-safe, both ideas can be put together and lead to a large speedup. 
 
 \newpage

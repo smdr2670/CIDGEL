@@ -48,9 +48,20 @@ Department of Mathematic, University of Washington},
   Timestamp                = {2014.07.10}
 }
 
+@Electronic{cats,
+  Title                    = {CaTS version 2.2: A User's Manual},
+  Author                   = {Anders Nedergaard Jensen},
+  Month                    = {November},
+  Url                      = {http://www.soopadoopa.dk/anders/cats/cats.html},
+  Year                     = {2003},
+
+  Owner                    = {Daniel},
+  Timestamp                = {2014.07.15}
+}
+
 @Article{dueckjournal,
-  Title                    = {Universal Gr"obner bases for binary linear codes},
-  Author                   = {Natalia D\"uck, Karl-Heinz Zimmermann},
+  Title                    = {Universal Gröbner bases for binary linear codes},
+  Author                   = {Natalia Dück, Karl-Heinz Zimmermann},
   Journal                  = {International Journal of Pure and Applied Mathematics},
   Year                     = {2013},
 

@@ -3,6 +3,8 @@ The style file: unsrt.bst
 Database file #1: literatur.bib
 Warning--entry type for "gfan" isn't style-file defined
 --line 39 of file literatur.bib
+Warning--entry type for "cats" isn't style-file defined
+--line 51 of file literatur.bib
 Warning--empty publisher in KHZ
 Warning--empty note in dueckpaper
-(There were 3 warnings)
+(There were 4 warnings)
