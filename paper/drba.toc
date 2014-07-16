@@ -12,15 +12,15 @@
 \contentsline {subsection}{\numberline {2.6}Gr\IeC {\"o}bner fans}{10}{subsection.2.6}
 \contentsline {subsection}{\numberline {2.7}Toric Ideals}{13}{subsection.2.7}
 \contentsline {subsection}{\numberline {2.8}Enumerating Gr\IeC {\"o}bner fans}{13}{subsection.2.8}
-\contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{17}{subsubsection.2.8.1}
-\contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{18}{subsubsection.2.8.2}
-\contentsline {subsection}{\numberline {2.9}Degree compatible Gr\IeC {\"o}bner}{21}{subsection.2.9}
-\contentsline {subsection}{\numberline {2.10}Linear Codes over Prime Fields}{23}{subsection.2.10}
-\contentsline {subsection}{\numberline {2.11}Code Ideals}{24}{subsection.2.11}
-\contentsline {section}{\numberline {3}Software}{26}{section.3}
-\contentsline {subsection}{\numberline {3.1}Data Structures}{26}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Manual}{27}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Computational experience}{30}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{32}{subsection.3.4}
-\contentsline {section}{\numberline {4}Future Work}{33}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{34}{section.5}
+\contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{18}{subsubsection.2.8.1}
+\contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{19}{subsubsection.2.8.2}
+\contentsline {subsection}{\numberline {2.9}Degree compatible Gr\IeC {\"o}bner}{22}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}Linear Codes over Prime Fields}{24}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}Code Ideals}{25}{subsection.2.11}
+\contentsline {section}{\numberline {3}Software}{27}{section.3}
+\contentsline {subsection}{\numberline {3.1}Data Structures}{27}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Manual}{28}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Computational experience}{31}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{33}{subsection.3.4}
+\contentsline {section}{\numberline {4}Future Work}{34}{section.4}
+\contentsline {section}{\numberline {5}Conclusion}{35}{section.5}

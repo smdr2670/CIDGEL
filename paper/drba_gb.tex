@@ -466,7 +466,7 @@ Reduced Gröbner basis $ \mathcal{G} = \lbrace \underline{x}^{a_{i}} - {x}^{b_{i
 \State Facets := $\emptyset$
 
 \For{\textbf{each} binomial $\underline{x}^{a_{i}} - {x}^{b_{i}}$ in $\mathcal{G}$}
-\If{${a}_{i} - {b}_{i} \notin \{{a}_{j} - {b}_{j} : \underline{x}^{a_{j}} - {x}^{b_{j}} \in \mathcal{G} \}  $}
+\If{${a}_{i} - {b}_{i} \notin \{{a}_{j} - {b}_{j} : \underline{x}^{a_{j}} - {x}^{b_{j}} \in \mathcal{G}, i \neq k \} $}
 \State Facets := Facets $~\cup~\{{x}^{a_{i}} - {x}^{b_{i}} \} $
 \EndIf
 
@@ -478,13 +478,38 @@ Reduced Gröbner basis $ \mathcal{G} = \lbrace \underline{x}^{a_{i}} - {x}^{b_{i
 
 %TODO Kleines Beispiel mit dem Simplexalgorithmus
 \begin{env_example}\normalfont
-Given the reduced Gröbner base $\mathcal{G}$
+
+% {a-e, b^2-1, b*d-e*f, b*e-d*f, b*f-d*e, c-e, d^2-1, d*e*f-b, e^2-1, f^2-1}
+Given the reduced Gröbner base \\
+ $\mathcal{G} = \{x_1 - x_5,~x_{2}^{2}-1,~x_{2}x_{4}-x_{5}x_{6},~x_{2}x_{6}-x_{4}x_{5},~x_{3}-x_{5},~x_{4}^{2}-1,~x_{4}x_{5}x_{6}-x_{2},~x_{5}^{2}-1,~x_{6}^{2}-1  \}~$ and it shall be determined if the term $x_1-x_5~$ is a facet or not.
+ With linear programming, it must be checked if the vector $b = {\left(1,0,0,0,-1,0\right)}^{T}$ can be expressed by the matrix multiplication $A \cdot x = b~$, where \\
+ \[
+ A =
+ \begin{pmatrix}
+ 1  & 0 & 0  & 0  & 0 & 0 & 0  & 0 & 0\\ 
+ 0  & 2 & 1  & 1  & 0 & 0 & -1 & 0 & 0\\  
+ 0  & 0 & 0  & 0  & 1 & 0 & 0  & 0 & 0\\ 
+ 0  & 0 & 1  & -1 & 0 & 2 & 1  & 0 & 0\\
+ -1 & 0 & -1 & -1 & 1 & 0 & 1  & 2 & 0\\
+ 0  & 0 & -1 & 1  & 0 & 0 & 1  & 0 & 2
+ \end{pmatrix} 
+ \] 
+  
+ Now the linear program can be set up to 
+ \[
+ 	\begin{array}{lrcl}
+ 	\textrm{Min}   & c^T x &      &   \\
+ 	\textrm{subject to} & Ax    & =    & b \\
+ 			    & x     & \geq & 0
+ 	\end{array}
+ \]
+ 
 
 \begin{flushright}
 $\lozenge$
 \end{flushright}
 \end{env_example}
-
+\newpage 
 An other way to find the facets without linear programming is possible with the property of the following initial ideals.
 
 Let $\mathcal{G}_{c} $ be a reduced Gröbner basis with respect to a generic weight vector $c$. Then $x^{a} - x^{b}$ is a facet binomial of $\mathcal{G}_{c}$ only if $in_{c}(I_{a}) $ is the initial Ideal of $W_{a - b} = \langle x^{a}-x^{b}\rangle$
@@ -516,14 +541,10 @@ $~+~ \langle x^{c} \rangle$ \Comment{$x^{c}$ is defined as before}
 \end{algorithm}
  
 
-
-
-
-
-
 In the example (with the Gröebner fan) the facet binomials of a Gröbner cone determine the border to an other Gröber cone.
 In order to traverse from a Gröber base $\mathcal{G}_c$ to a neighboured Gröbner base $\mathcal{G}_{c'}$ with the certain facet $x^{\upalpha}-x^{\upbeta} $, a procedure making a local change from $\mathcal{G}_c$ to $\mathcal{G}_{c'}$ is required.
-This procedure is called flip.
+This procedure is called flip. 
+\newpage
 
 
 \begin{algorithm}
@@ -564,12 +585,12 @@ The main advantage of the algorithm is that no weight vectors must be stored or 
 Weight vectors are carried implicitly and that is possible due to the binomial structure that this subroutine generates for every Gröbner basis.
 
 \begin{env_example}\normalfont
-Consider the reduced Gröbner basis with respect to a term order $\succ~$: $\mathcal{G}= \{x_{6}^{2}-1,x_{5}^{2}-1, x_{4}x_{5}x_{6} -x_{2},x_{4}^{2}-1,x_{3}-x_{5},x_{2}x_{6}-x_{4}x_{5},x_{2}x_{5}-x_{4}x_{6},x_{2}x_{4}-x_{5}x_{6},x_{2}^{2}-1,x_{1}-x_{5}  \} $.
+Consider the reduced Gröbner basis with respect to a term order $\succ~$: $\mathcal{G}= \{x_{6}^{2}-1,~x_{5}^{2}-1,~x_{4}x_{5}x_{6} -x_{2},~x_{4}^{2}-1,~x_{3}-x_{5},~x_{2}x_{6}-x_{4}x_{5},~x_{2}x_{5}-x_{4}x_{6},~x_{2}x_{4}-x_{5}x_{6},~x_{2}^{2}-1,~x_{1}-x_{5}  \} $.
 
 Applying the procedure flip$(x_{3}-x_{5}, \mathcal{G}$) leads to:
 
-Old := $\{x_{3}-x_{5},x_{6}^{2},x_{5}^{2}, x_{4}x_{5}x_{6} ,x_{4}^{2},x_{2}x_{6},x_{2}x_{5},x_{2}x_{4},x_{2}^{2},x_{1} \} $ \\
-Temp := $\{x_{5}-x_{3},x_{6}^{2},x_{5}^{2}, x_{4}x_{5}x_{6} ,x_{4}^{2},x_{2}x_{6},x_{2}x_{5},x_{2}x_{4},x_{2}^{2},x_{1} \} $
+Old := $\{x_{3}-x_{5},~x_{6}^{2},~x_{5}^{2},~x_{4}x_{5}x_{6} ,~x_{4}^{2},~x_{2}x_{6},~x_{2}x_{5},~x_{2}x_{4},~x_{2}^{2},~x_{1} \} $ \\
+Temp := $\{x_{5}-x_{3},~x_{6}^{2},~x_{5}^{2},~x_{4}x_{5}x_{6} ,~x_{4}^{2},~x_{2}x_{6},~x_{2}x_{5},~x_{2}x_{4},~x_{2}^{2},~x_{1} \} $
 
 Now the new Gröbner basis has to be calculated, but first it useful to know that all pairs of binomials which has the least common multiple of 1 will be auto-reduced to zero. In other words, it is only necessary to form the S-Pairs of binomials that are not relatively prime.
 
@@ -582,7 +603,6 @@ Now the new Gröbner basis has to be calculated, but first it useful to know tha
 
 Now the new Gröbner basis $\mathcal{G}'$ shall be filled with all monomials from $\mathcal{G}$.
 The underlined terms are the terms reduced with $\mathcal{G}~$ and will be the new non-leading terms.
-
 \begin{align*}
 	x_{3}x_{5} &= x_{5}(x_{3}-x_{5}) + 1(x_{5}^{2}-1) &+ \underline{1} \\
 	x_{3}x_{4}x_{6} &= x_{4}x_{6}(x_{3}-x_{5}) + 1(x_{4}x_{5}x_{6}-x_{2}) &+ \underline{x_{2}} \\
@@ -593,13 +613,11 @@ The underlined terms are the terms reduced with $\mathcal{G}~$ and will be the n
 	x_{2}x_{4} &= (x_{2}x_{4}-x_{5}x_{6})+ x_{6}(x_{5}-x_{3}) &+\underline{x_{3}x_{6}}
 \end{align*}
 
-
 The other monomials of $\mathcal{G}~$ are not notated here because they did not get a new non-leading term.
 
 This results to the Gröbner base : \\
 $\mathcal{G}' = \{x_{5}-x_{3}, x_{6}^{2}-1, x_{5}^{2}-1, x_{4}x_{5}x_{6}-x_{2}, x_{4}^{2}-1, x_{2}x_{6}-x_{3}x_{4},
 x_{2}x_{5}-x_{4}x_{6}, x_{2}x_{4}-x_{3}x_{6} ,x_{2}^{2}-1,x_{1}-x_{3},x_{3}x_{5}-1,x_{3}x_{4}x_{6}-x_{2},x_{2}x_{3}-x_{4}x_{6},x_{3}^{2}-1   \}$ \\
-
 This Gröbner base is not reduced yet. After cancelling all binomials whose terms are divisible by some other leading terms the new reduced Gröbner basis is 
 $\mathcal{G}_{new} = \{x_{5}-x_{3},x_{6}^{2}-1,x_{4}^{2}-1,x_{2}x_{6}-x_{3}x_{4},x_{2}x_{4}-x_{3}x_{6},x_{2}^{2}-1,x_{1}-x_{3}, x_{3}x_{4}x_{6}-x_{2},x_{2}x_{3}-x_{4}x_{6},x_{3}^{2}-1 \} $
 
@@ -649,7 +667,6 @@ The more vertices the edge graph has, the more expensive the calculation will be
 
 \subsubsection{Reverse Search tree}
 The disadvantages can be canceled out with a memoryless algorithm, which runs linear depending on the size of output. The idea is to enumerate the edge graph with depth-first reverse search. The result will be a directed subgraph of the edge graph, called reverse search tree $T_{\succ}(I_{A}) $.\\
-
 \begin{env_definition}[Mismarked Polynomial]
 \cite{tigers}
 A polynomial $f$ that has been marked with respect to the monomial order $>$  is mismarked with respect to the monomial order $>'$  .
@@ -861,11 +878,11 @@ $\lozenge$
 
 \end{env_example}
 
-Two codes are equivalent if one generator matrix can be obtained from the other by permutating columns and rows.
+Two codes are equivalent if one generator matrix can be obtained from the other by permuting columns and rows.
 It follows that every linear code is equivalent to a linear code in standard form.\cite{dueckjournal} \\
 
-A linear Code $\mathcal{C}$ can be \textit{punctured} by deleting the same coordinate $i$ in each codeword.
-%TODO: mehr zu punktierten Codes schreiben
+A linear Code $\mathcal{C}$ can be \textit{punctured} by deleting individual code symbols.
+This reduces the length of the code and rises the data rate.
 
 
 \subsection{Code Ideals}
@@ -884,6 +901,7 @@ $ I_{\mathcal{C}} = \langle \textbf{x}^{c} - \textbf{x}^{c'} | c - c' \in \mathc
 \end{center}
 \end{env_definition}
 
+\newpage
 
 \textbf{Example} Let $\mathcal{C}_{1}~$ be a binary $[6,3]$ code with generator matrix
 \[
@@ -902,8 +920,15 @@ I(\mathcal{C}) = &\{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} ~\cup \\
 Note that the terms $x_{1}^{2}-1,~x_{2}^{2}-1,~x_{3}^{2}-1 $ are divisible by the leading terms of the toric ideal.
 The reduced Gröbner basis $\mathcal{G}_{>}$ with respect to the lexicographic ordering $>$ with $x_{1} > \cdots > x_{6}$ is:
 \begin{center}
-$ \mathcal{G}_{\succ} = \{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} \cup \{x_{4}^{2}-1,~x_{5}^{2}-1,~x_{6}^{2}-1  \}  $
+$ \mathcal{G}_{>} = \{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} \cup \{x_{4}^{2}-1,~x_{5}^{2}-1,~x_{6}^{2}-1  \}  $
 \end{center}
+
+Puncturing the fourth symbol $x_4$ results to new reduced Gröbner base 
+\begin{center}
+$ \mathcal{G}_{>} = \{x_{1}-x_{5},~x_{2}-x_{5}x_{6},~x_{3}-x_{5}  \} \cup \{x_{5}^{2}-1,~x_{6}^{2}-1  \}  $.
+\end{center}
+Note that the term $x_{4}^{2}-1~$ was auto-reduced.
+
 
 \begin{flushright}
 $\lozenge$
