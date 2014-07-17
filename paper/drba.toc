@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {2.11}Code Ideals}{25}{subsection.2.11}
 \contentsline {section}{\numberline {3}Software}{27}{section.3}
 \contentsline {subsection}{\numberline {3.1}Data Structures}{27}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Manual}{28}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Manual}{29}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Computational experience}{31}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{33}{subsection.3.4}
 \contentsline {section}{\numberline {4}Future Work}{34}{section.4}

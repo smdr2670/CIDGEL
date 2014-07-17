@@ -2,8 +2,8 @@
 \section{Software}
 \label{sec:software}
 This section is all about the practical part of this work. At first, a brief reason why the software is implemented in C is given. Secondly, an accurate description is presented of how the software can be compiled and used for own demands.
-After that, the software is tested on some randomly generated linear Codes. The number of degree compatible and all Groebner bases are presented and comparision of the operational time agains Gfan\cite{gfan}is presented.   \newline
-This software is a re-implementation of TiGERS \cite{tigers}. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Groebner bases with reverse search and breath-first search were implemented.   
+After that, the software is tested on some randomly generated linear Codes. The number of degree compatible and all Groebner bases are presented and comparison of the operational time against Gfan \cite{gfan} is presented. \\
+This software, called CIDGEL (Code Ideal degree compatible Groebner bases enumerating from Linear Codes), is a re-implementation of TiGERS \cite{tigers}. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Groebner bases with reverse search and breath-first search were implemented.   
 Additional features are explained in Section \ref{subsec:manual}.
 The programming language of choice is C because it is fast and the capability to make own data structures are simple and sufficient enough.
 
@@ -35,7 +35,8 @@ The pointer binomial next indicates that binomials are linked together like a li
 The next code snippet shows the other important data structure. Again, it is a linked list like the binomials with the purpose to connect all reduced Groebner together, which is needed for the breath-first search.\\
 
 The first four integers show off the identification number of the vertex of the edge graph, the number of facet binomials, number of binomials and the highest degree. Next is a pointer to the next generating set of the linked list.
- 
+
+The binomial \emph{cache\_edge} and the pointer \emph{cache\_vtx} stores the caching information in order not to recompute every facet binomial in the reverse search. 
 
 \lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
 basicstyle = \ttfamily \color{black} \footnotesize , caption = {Data structure of generating sets },frame = single, } 
@@ -103,7 +104,7 @@ static char *helpmsg[] = {
 
 The listing above shows all options that are available. These flags can be passed in arbitrary order to the program. It is necessary to write a matrix and storing it into a file to give the program an input.
 
-For example, the data has the name '\texttt{matrix}', has the following content and is in the same folder as the compiled software.
+For example, the data has the name '\texttt{Example-input}', has the following content and is in the same folder as the compiled software.
 \lstset{caption = {Example-input}}
 \begin{lstlisting}[basicstyle=\fontfamily{courier}\selectfont]
 M: { 6 10 2 :

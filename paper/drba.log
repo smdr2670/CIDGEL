@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  16 JUL 2014 15:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  17 JUL 2014 15:52
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -1228,13 +1228,18 @@ aniel/Documents/GitHub/CIDGEL/paper/figures/tuhh.png> <C:/Users/Daniel/Document
 s/GitHub/CIDGEL/paper/figures/ictlogo.png>] [2
 
 ]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_ab.tex) [3] [4
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_ab.tex)
+Overfull \hbox (0.78786pt too wide) in paragraph at lines 16--122
+\OT1/cmr/m/n/12 Die Grobner-Facher von punk-tierten Codes als auch der Ver-gl
+e-ich von Grobner-
+ []
 
-]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_thx.tex) [5] [6
+[3] [4
 
-]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sat.tex
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_thx.tex) [5]
+[6
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_sat.tex
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
 (Font)              using `OT1/cmr/bx/n' instead on input line 5.
@@ -1385,7 +1390,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 881--883
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 916--917
+Underfull \hbox (badness 10000) in paragraph at lines 917--918
 
  []
 
@@ -1408,43 +1413,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-[28]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
 
-Underfull \vbox (badness 4168) has occurred while \output is active []
-
- [29]
+[29]
 LaTeX Font Info:    Try loading font information for OT1+courier on input line 
-108.
-LaTeX Font Info:    No file OT1courier.fd. on input line 108.
+109.
+LaTeX Font Info:    No file OT1courier.fd. on input line 109.
 
 
 LaTeX Font Warning: Font shape `OT1/courier/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 108.
+(Font)              using `OT1/cmr/m/n' instead on input line 109.
 
 LaTeX Font Info:    Try loading font information for OMS+courier on input line 
-109.
-LaTeX Font Info:    No file OMScourier.fd. on input line 109.
+110.
+LaTeX Font Info:    No file OMScourier.fd. on input line 110.
 
 LaTeX Font Warning: Font shape `OMS/courier/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 109.
+(Font)              for symbol `textbraceleft' on input line 110.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 120--122
 
  []
 
 
-Overfull \hbox (17.71082pt too wide) in paragraph at lines 122--124
+Overfull \hbox (17.71082pt too wide) in paragraph at lines 123--125
 \OT1/cmr/m/n/12 print-ing the Groeb-ner ba-sis shall be writ-ten in a out-put-f
 ile called \OT1/cmtt/m/n/12 Example-output\OT1/cmr/m/n/12 .
  []
 
 [30]
 
-Package Listings Warning: Text dropped after begin of listing on input line 130
+Package Listings Warning: Text dropped after begin of listing on input line 131
 .
 
 [31]
@@ -1452,12 +1458,12 @@ Package Listings Warning: Text dropped after begin of listing on input line 130
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--239
+Underfull \hbox (badness 10000) in paragraph at lines 237--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
@@ -1466,8 +1472,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--12
 
  []
 
-[34]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex) [35]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.bbl) [36]
+[34]) (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_cc.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 5--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--152
+
+ []
+
+[35] (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.bbl) [36]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 159.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 159.
 
@@ -1483,9 +1498,9 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 159.
  ) 
 Here is how much of TeX's memory you used:
- 29964 strings out of 493921
- 672088 string characters out of 3150487
- 829929 words of memory out of 3000000
+ 29965 strings out of 493921
+ 672102 string characters out of 3150487
+ 830018 words of memory out of 3000000
  32510 multiletter control sequences out of 15000+200000
  18387 words of font info for 68 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1507,9 +1522,9 @@ ts/type1/public/amsfonts/cm/cmtt12.pfb><E:/Programme/MikTex/fonts/type1/public/
 amsfonts/euler/eurm10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb>
-Output written on drba.pdf (45 pages, 545364 bytes).
+Output written on drba.pdf (45 pages, 547952 bytes).
 PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 206 named destinations out of 1000 (max. 500000)
+ 647 PDF objects out of 1000 (max. 8388607)
+ 207 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 
