@@ -1,10 +1,5 @@
 \begin{thebibliography}{1}
 
-\bibitem{saleemi}
-Mehwish Saleemi.
-\newblock {\em Coding Theory via Groebner Bases}.
-\newblock PhD thesis, Technischen Universitat Hamburg-Harburg, 2012.
-
 \bibitem{KHZ}
 Karl-Heinz Zimmermann.
 \newblock {\em Algebraic Statistics}.
@@ -15,6 +10,11 @@ Rekha R.~Thomas Birkett~Huber.
 \newblock Computing gr\"obner fans of toric ideals.
 \newblock Technical report, Institute for Defense Analysis, United States,
   Department of Mathematic, University of Washington, 1999.
+
+\bibitem{saleemi}
+Mehwish Saleemi.
+\newblock {\em Coding Theory via Groebner Bases}.
+\newblock PhD thesis, Technischen Universitat Hamburg-Harburg, 2012.
 
 \bibitem{coxOshea}
 David~A. Cox, John Little, and Donal O'Shea.
