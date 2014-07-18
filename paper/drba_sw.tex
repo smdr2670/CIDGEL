@@ -30,7 +30,7 @@ struct bin_tag{
 
 The pointer \emph{exps1} stores the exponent vector of the first monomial and \emph{exps2} does it with the second monomial.
 The integer \emph{ff} is a flag which shows if a binomial is a facet binomial or not and \emph{bf} tells if there is a monomial or binomial.
-The pointer binomial next indicates that binomials are linked together like a linear list, which is necessary to describe ideals and Groebner bases.\\
+The pointer binomial next indicates that binomials are linked together like a linear list, which is necessary to describe ideals and Groebner bases. The pointer \emph{E} points to \emph{exps1} and \emph{exps2} and is used for allocating and deallocating space. \\
 
 The next code snippet shows the other important data structure. Again, it is a linked list like the binomials with the purpose to connect all reduced Groebner together, which is needed for the breath-first search.\\
 
@@ -66,8 +66,8 @@ struct gset_tag{
 
 \subsection{Manual}
 \label{subsec:manual}
-This software was programmed and evaluated with Linux, so at first, it is needed to compile the software. The makefile is given and it only takes the console, moving to the direction where folder is and typing 'make'. \\
-All inputs, outputs, options and flags are passed with the commandline arguments. At first it is useful to run the program with the purpose to print the help-message only with the command
+This software was programmed and evaluated with Linux, so at first, it is needed to compile the software. The makefile is given and it only takes the console, moving to the direction of the folder and typing 'make'. \\
+All inputs, outputs, options and flags are passed with the command-line arguments. At first it is useful to run the program with the purpose to print the help-message only with the command
 \texttt{./cidgel -h}.
 
 \lstset{basicstyle=\footnotesize, columns=fullflexible,showspaces=false,breakatwhitespace=true,caption = {Code Snippet of the help-message}} 
@@ -104,7 +104,8 @@ static char *helpmsg[] = {
 
 The listing above shows all options that are available. These flags can be passed in arbitrary order to the program. It is necessary to write a matrix and storing it into a file to give the program an input.
 
-For example, the data has the name '\texttt{Example-input}', has the following content and is in the same folder as the compiled software.
+For example, the data has the name '\texttt{Example-input}', has the following content and is in the same folder as the compiled software.\\
+Note that 2 inputs for a program call are possible in order to check if the two codes are equivalent. It is possible to compare the whole or the degree compatible Gröbner fan. It will be checked if the Gröbner fans have the same amount of polynomials, facets and degree for each Gröbner basis. This provides a necessary but not a sufficient condition.
 \lstset{caption = {Example-input}}
 \begin{lstlisting}[basicstyle=\fontfamily{courier}\selectfont]
 M: { 6 10 2 :
@@ -120,7 +121,7 @@ M: { 6 10 2 :
 This Matrix is a generator matrix for a binary $[10,6]$ code in essential standard form. 
 The first number in the first row gives the code dimension, the second tells the length of the codeword and the last number indicates in which primary field the generator matrix shall be evaluated.\\
 
-Now if the degree compatible Groebner bases of this generator  matrix without printing the Groebner basis shall be written in a outputfile called \texttt{Example-output}. Additionally the linear programming shall be leaved out, then the program call is: \texttt{./cidgel -i Example-input -o Example-output -d -n -f}.
+Now if the degree compatible Groebner bases of this generator  matrix without printing the Groebner basis shall be written in a outputfile called \\ \texttt{Example-output}. Additionally the linear programming shall be leaved out, then the program call is: \texttt{./cidgel -i Example-input -o Example-output -d -n -f}.
 The user do not has to specify an output file, the result will be printed in the console then.
 
 \newpage
@@ -213,11 +214,11 @@ The linear codes were randomly generated.
     \legend{Degree compatible,All Gröbner bases}
   \end{axis}
   \end{tikzpicture}
-  \caption{Comparison between the numbers of degree compatible and all Gröbner bases }
+  \caption{Comparison between the numbers of degree compatible and all Gröbner bases of binary linear code with the length 8 }
   \label{fig:numbergb}
   \end{figure}
   
-Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Gröbner bases of a code ideal and the degree compatible. The length $n$ of the codeword is 8. The next table shows the computational time of the randomly generated codes.
+Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Gröbner bases of a code ideal and the degree compatible. The next table shows the computational time of the randomly generated codes.
 
  \begin{table}[h]
  \caption{Computataional time in seconds}
@@ -241,16 +242,16 @@ Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Grö
  For linear codes with the length more than 9 the computation took more than 10 hours for the complete Gröbner fan. The reason is that the amount of reduced Gröbner bases and the cardinality of each basis will be greater if the codewords will be longer. Nevertheless, the computation of the degree compatible Gröbner fan is useful for a certain length.\\
  
  In some cases the amount of the degree compatible and all Gröbner bases can enormously. A randomly generated $[9,2]$ code had 8 degree compatible Gröbner bases and overall 295.863 Gröbner bases. 
- 
+ Computing the whole fan took 24.471,32 and the degree compatible fan only took 1,08 seconds! 
     
-
-%TODO: EXTREMBEISPIEL ZEIGEN UND VLLT SAGEN WARUM NICHT FÜR GRÖSSERE BASEN 
 
 
 
 \subsection{Documentation and electronic availability}
 \label{subsec:docu}
-A HTML-based documentation of the software is created with the help of doxygen.$[doxygen]$
+A HTML-based documentation of the software is created with the help of doxygen \cite{doxygen}.
+The software is also available under my repository \\ \url{https://github.com/smdr2670/CIDGEL}
+
 
 \newpage
 

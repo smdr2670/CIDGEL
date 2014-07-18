@@ -2,25 +2,25 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Tasks}{1}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Structure}{1}{subsection.1.3}
-\contentsline {section}{\numberline {2}Mathematical Background}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Monomials}{2}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Monomial Order}{3}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Ideals}{4}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Division Algorithm}{6}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Gr\IeC {\"o}bner basis}{8}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Gr\IeC {\"o}bner fans}{10}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}Toric Ideals}{13}{subsection.2.7}
-\contentsline {subsection}{\numberline {2.8}Enumerating Gr\IeC {\"o}bner fans}{13}{subsection.2.8}
-\contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{18}{subsubsection.2.8.1}
-\contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{19}{subsubsection.2.8.2}
-\contentsline {subsection}{\numberline {2.9}Degree compatible Gr\IeC {\"o}bner}{22}{subsection.2.9}
-\contentsline {subsection}{\numberline {2.10}Linear Codes over Prime Fields}{24}{subsection.2.10}
-\contentsline {subsection}{\numberline {2.11}Code Ideals}{25}{subsection.2.11}
-\contentsline {section}{\numberline {3}Software}{27}{section.3}
-\contentsline {subsection}{\numberline {3.1}Data Structures}{27}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Manual}{29}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Computational experience}{31}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{33}{subsection.3.4}
-\contentsline {section}{\numberline {4}Future Work}{34}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{35}{section.5}
+\contentsline {subsection}{\numberline {1.3}Structure}{2}{subsection.1.3}
+\contentsline {section}{\numberline {2}Mathematical Background}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Monomials}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Monomial Order}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Ideals}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Division Algorithm}{7}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Gr\IeC {\"o}bner basis}{9}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Gr\IeC {\"o}bner fans}{11}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Toric Ideals}{14}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Enumerating Gr\IeC {\"o}bner fans}{14}{subsection.2.8}
+\contentsline {subsubsection}{\numberline {2.8.1}Breadth first search}{19}{subsubsection.2.8.1}
+\contentsline {subsubsection}{\numberline {2.8.2}Reverse Search tree}{20}{subsubsection.2.8.2}
+\contentsline {subsection}{\numberline {2.9}Degree compatible Gr\IeC {\"o}bner}{23}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}Linear Codes over Prime Fields}{25}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}Code Ideals}{26}{subsection.2.11}
+\contentsline {section}{\numberline {3}Software}{28}{section.3}
+\contentsline {subsection}{\numberline {3.1}Data Structures}{28}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Manual}{30}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Computational experience}{32}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Documentation and electronic availability}{34}{subsection.3.4}
+\contentsline {section}{\numberline {4}Future Work}{35}{section.4}
+\contentsline {section}{\numberline {5}Conclusion}{36}{section.5}
