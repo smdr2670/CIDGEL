@@ -2,20 +2,20 @@
 \section{Mathematical Background}
 \label{sec:background}
 
-In this chapter a mathematical basis is systematically approached to give the reader an understanding to Gröbner Bases and Gröbner fans.\\
+In this chapter a mathematical basis is systematically approached to give the reader an understanding of Gröbner Bases and Gröbner fans.\\
 In the first section monomials are revisited. The second section explains how monomials can be totally ordered.
-After that Ideals are defined over polynomial rings and a summary on Gröbner bases and Gröbner fans for ideals is presented. Furthermore, the next sections deal with enumerating Gröbner bases on special ideals and finally, linear codes are presented and the connection between Gröbner bases and the linear codes.  
+After that ideals are defined over polynomial rings and a summary on Gröbner bases and Gröbner fans for ideals is presented. Furthermore, the next sections deal with enumerating Gröbner bases on special ideals. Finally, linear codes are presented and the connection between Gröbner bases and linear codes.  
 
 \subsection{Monomials}
 \label{subseb:Monomials}
 
-In this section a brief explanation of polynomials are given.
+In this section a brief explanation of polynomials is given.
 
 \begin{env_definition}[Monomial] 
 \cite{KHZ}
-A monomial m is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]  $ of the form $X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0} $
+A monomial is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ of the form $m= X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0} $
 \end{env_definition}
-The total \textbf{degree} of a monomial is $deg(m) = \sum_{i=1}^n u_i $ 
+The total \textbf{degree} of a monomial is $deg(m) = \sum_{i=1}^n u_i $. 
 
 
 \begin{env_definition}[Polynomial]
@@ -37,7 +37,8 @@ If $c_{u}\neq0$ then $c_{u}x_{u}$ is a term of $f$.
 \subsection{Monomial Order}
 \label{subsec:Monomialorder}
 It is necessary to rearrange a polynomial with respect to a monomial order. That forms the foundation for dividing polynomials in the finite field
-$ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]~$ and solving the Ideal membership problem.
+$ \mathbb{K} \left[X_{1},~X_{2},~\dots,~X_{n}\right]~$ and solving the Ideal membership problem.\\
+The Ideal membership problem describes if a polynomial lies in an ideal $I$. Ideals will be defined in section \ref{subsec:Ideals}.
 
 \begin{env_definition}[Term Ordering] 
 \cite{saleemi}
@@ -64,7 +65,7 @@ if $m_{1} > m_{2}$ then $m \cdot m_{1} > m \cdot m_{2}~$ for any monomial m
 
 
 Two commonly used term orders are the following.
-Let $u$ and $v$ be elements of $\mathbb{N}^{n}_{0}$ 
+Let $u$ and $v$ be elements of $\mathbb{N}^{n}_{0}$. 
 
 \textbf{Lexicographic Order} \cite{saleemi}
 $u >_{lex} v $ if in $u-v$ the left most non-zero entry is positive.
@@ -74,13 +75,13 @@ This can be written as $X^{u} >_{lex} X^{v}$ if $u >_{lex} v $.\\
 \textbf{Graded Lex Order} \cite{saleemi}
 $u >_{grlex} v $ if $ deg(u)>deg(v)$ or if $ deg(u)=deg(v)$ and $u >_{lex} v$.
 
+\newpage
 \begin{env_example} \normalfont
-Let $m_{1} = 4x^{2}y^{4}z^{3}$ and $m_{2}= x^{1}y^{1}z^{4} \in \mathbb{K}\left[ x,y,z\right]  $.
+Let $m_{1} = x^{2}y^{4}z^{3}$ and $m_{2}= x^{1}y^{1}z^{4} \in \mathbb{K}\left[ x,y,z\right]  $.
 The monomials can also be written as $m_{1} = X^{(2 \; 4 \; 3)}$ and $m_{2} = X^{(1 \; 1 \; 4)}$.
 Thus $m_{1}>_{lex} m_{2}$ because the left most non-zero entry of $ (2 \; 4 \; 3) - (1 \; 1 \; 4)$ is positive.
 
-The total degree of $m_{1}$ is 9 and $deg(m_{2})=6$. Hence, $m_{1}>_{lex} m_{2}$ and
-$deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$ 
+The total degree of $m_{1}$ is 9 and $deg(m_{2})=6$. Hence, $deg(m_{1})>deg(m_{2})$ so that $m_{1}>_{grlex} m_{2}$ 
 \begin{flushright}
 $\lozenge$
 \end{flushright}
@@ -88,15 +89,16 @@ $\lozenge$
   
 
 \textbf{Weight vectors} \\
-In order to compare monomials with a generic vector $\left({a}_{1},\dots ,{a}_{n}\right)~\in \mathbb{R}^{n}_{\geq 0}~$, the dot product with the exponent vector has to be build. The highest result is the leading term. If a tie occurs, some other fixed monomial order has to be used. Note that the standard monomial orders can be expressed as weight vector. The lexicographic order needs for instance all canonical unit vectors.
+In order to compare monomials with a generic vector $\left({a}_{1},\dots ,{a}_{n}\right)~\in \mathbb{R}^{n}_{+}~$, the dot product with the exponent vector has to be taken. The highest result is the leading term. If a tie occurs, some other fixed monomial order has to be used. Note that the standard monomial orders can be expressed as weight vector. The lexicographic order needs for instance the first unit vector, if a tie occurs the second unit vector and so on.
 
 \textbf{Leading term}
 
 Given a term order $>$, each non-zero polynomial $f \in \mathbb{K}\left[ x\right] $ has a unique leading term, denoted by $\textsc{LT}(f)$, given by the largest involved term with respect to the term order.\\
 If $\textsc{LT}(f) = cX^{u}$, where $c \in \mathbb{K}$, then c is the leading coefficient of $f$ and $X^{u}$ is the leading monomial (\textsc{LM}) or the initial monomial \cite{KHZ}.\\
 
-\begin{env_example}
-\normalfont Let $ f = 3x^{2}y^{5}z^{3} + x^{4} -2x^{3}y^{4} + 12x^{2}z^{2}$ \\
+\begin{env_example}\normalfont
+
+Let $ f = 3x^{2}y^{5}z^{3} + x^{4} -2x^{3}y^{4} + 12x^{2}z^{2}$ \\
 With respect to lex order : $f = \underline{x^{4}} -2x^{3}y^{4} + 3x^{2}y^{5}z^{3} + 12x^{2}z^{2} $ \\
 with respect to grlex order : $f = \underline{3x^{2}y^{5}z^{3}} -2x^{3}y^{4} + x^{4}+ 12x^{2}z^{2}$  \\
 with respect to the weight vector $\left(3,2,1\right)~$: $f = \underline{3x^{2}y^{5}z^{3}} -2x^{3}y^{4} + x^{4}+ 12x^{2}z^{2}$  \\ 
@@ -104,24 +106,24 @@ The underlined terms are the leading terms with the respect to the monomial orde
 
 \end{env_example}
 
-
+\newpage
 \subsection{Ideals}
 \label{subsec:Ideals}
 
 \begin{env_definition}[Ideal]
 \cite{KHZ}
-An ideal I is a collection of polynomials \\ $f_{1}, \cdots , f_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and polynomials which can be built from these with multiplication with arbitrary polynomials and linear combination.
+An ideal I is a collection of polynomials \\ $f_{1},\dots ,f_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and polynomials which can be built from these by addition and multiplication with arbitrary polynomials.
 
 \end{env_definition}
-This is called an Ideal generated by $f_{1}, \cdots , f_{s}$ \\
-\[ \langle f_{1}, \cdots , f_{s} \rangle = \left\lbrace  \sum_{i=1}^s h_{i}f_{i} \mid h_{1}, \cdots , h_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] \right\rbrace \]
+This is called an Ideal generated by $f_{1}, \dots , f_{s}$ \\
+\[ \langle f_{1}, \dots , f_{s} \rangle = \left\lbrace  \sum_{i=1}^s h_{i}f_{i} \mid h_{1}, \dots , h_{s} \in \mathbb{K}\left[X_{1}, \dots, X_{n}\right] \right\rbrace \]
 \\
-It satisfies $\cite{saleemi} $:
+An ideal satisfies $\cite{saleemi} $:
 \begin{center}
 
 \begin{itemize}
 \item
-$0 \in I$ 
+$0 \in I = \langle f_{1}, \cdots , f_{s} \rangle$ 
 \item
 If $f,g \in \langle f_{1}, \cdots , f_{s} \rangle$,then  $f+g \in \langle f_{1}, \cdots , f_{s} \rangle$ 
 \item
@@ -132,20 +134,20 @@ If $f \in \langle f_{1}, \cdots , f_{s} \rangle$ and $h \in  \langle f_{1}, \cdo
 
 
 \begin{env_example}\normalfont
-Let $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ and $f=yx^{2}+y^{2}+x^{2}+xy+x$. Since $f= y \cdot f_{1} + x \cdot f_{2}, f\in I$
+Let $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ and $f=yx^{2}+y^{2}+x^{2}+xy+x$. Since $f= y \cdot f_{1} + x \cdot f_{2}, f\in I$.
 \begin{flushright}
 $\lozenge$
 \end{flushright} 
 \end{env_example}
 
 
-\begin{env_definition}[Initial Ideal]
+\begin{env_definition}[Leading Ideal]
 \label{def:initial}
-\cite{tigers} The initial Ideal of I with respect to a term order $>$ on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ is the monomial ideal \\
-\[in_{>}(I) = \langle in_{>}(f) : f \in I  \rangle \] 
+\cite{tigers} The leading Ideal of I with respect to a term order $>$ on $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ is the monomial ideal \\
+\[lt_{>}(I) = \langle lt_{>}(f) : f \in I  \rangle . \]
 
 \end{env_definition}
-$in_{>}(f)$ means the leading term of $f$ with respect to $>$. In other words, the initial ideal of $I$ is the ideal generated by its leading terms.
+The set $lt_{>}(f)$ means the leading term of $f$ with respect to $>$. In other words, the leading ideal of $I$ is the ideal generated by its leading terms.
 
 \newpage
 
@@ -153,19 +155,18 @@ $in_{>}(f)$ means the leading term of $f$ with respect to $>$. In other words, t
 \subsection{Division Algorithm}
 \label{subsec:division}
 
-The Ideal membership problem is easy to solve in a one-dimensional polynomial ring. It is only necessary to apply the polynomial division and check if the remainder is zero. 
-If the result has no remainder, the polynomial $p$ lies in the ideal $I$.
+The Ideal membership problem is easy to solve in a polynomial ring with one variable. It is only necessary to apply the polynomial division, which means dividing the polynomial by the ideal and to check if the remainder is zero. 
+If the result has zero remainder, the polynomial $p$ lies in the ideal $I$.
 But in a ring with several variables like $ \mathbb{K} \left[X_{1},X_{2},\cdots X_{n}\right]$, the usual division algorithm will not work. A generalized algorithm is needed.\\ \\
 The goal is to divide $g \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ by 
 $f_{1}, \ldots, f_{s} \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$, so $g~$ can be expressed in the form \begin{center}
 $g = a_{1}f_{1}+ \ldots + a_{s}f_{s} +r$
 \end{center} 
-where the $a_{1}f_{1}+ \ldots + a_{s}f_{s} $ and $r \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ \
-This is possible with the Theorem 3 mentioned at  $\cite{coxOshea}$.
+where the $a_{1}f_{1}+ \ldots + a_{s}f_{s} $ and $r \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ $\cite{coxOshea}$.
 The remainder $r~$is zero or $r~$is a linear combination with the coefficients in $\mathbb{K}$, none of them are divisible by any of
 $\textsc{LT}\left(f_{1} \right), \ldots, \textsc{LT}\left(f_{s} \right)  $.
 Furthermore, if $a_{i}f_{i} \neq 0 $, then
-$deg(g) \geq deg(a_{i}f_{i})$
+$deg(g) \geq deg(a_{i}f_{i})$.
 
 \newpage
 
@@ -186,7 +187,7 @@ $deg(g) \geq deg(a_{i}f_{i})$
 \While{$i\leq m$  and division\_occured = false}
 \If{$LT\left( f\left[ i\right] \right)$ divides $LT\left( s\right)  $}
 
-\State $ s \gets s - ( LT \left( s\right)/ LT \left( f \left[ i\right] \right))  \ast f_{i} $
+\State $ s \gets s - ( LT \left( s\right)/ LT \left( f \left[ i\right] \right))  \cdot f_{i} $
 \State $h_{i} \gets h_{i} + LT\left( s\right) / LT\left( f_{i}\right) $
 \State division\textunderscore occured = true
 \Else
@@ -209,7 +210,7 @@ $deg(g) \geq deg(a_{i}f_{i})$
 
 \begin{env_example}\normalfont
 Consider the ideal $I = \langle f_{1},f_{2} \rangle = \langle xy^{2}+z,y^{2}-1 \rangle~$and the polynomial $f = x^{3}y^{2}+x^{2}z~$.
-First, with respect to the lex-order, applying the division the expression : $f = x^{2}(xy^{2}+z) + 0(y^{2}-1) + 0$ \\
+First, with respect to the lex-order, applying the division gives the expression : $f = x^{2}(xy^{2}+z) + 0(y^{2}-1) + 0$ \\
 But the division with $f$ and $I = \langle f_{2},f_{1} \rangle$ gives the expression \\ $f = x^{3}(y^{2}-1) + x^{2}(xy^{2}+z) -x^{3}y^{2}+x^{3}~$.
 \begin{flushright}
 $\lozenge$
@@ -228,7 +229,7 @@ The solution of the ideal membership problem needs a certain generating set for 
 
 \begin{env_definition}[Gröbner basis]
 \cite{KHZ}
-Let $\leq$ be a monomial order on \\ $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ and let I be an Ideal on $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]  $. A Gröbner basis G for I (with respect to $\leq$) is a finite set of polynomials $ F = \left\lbrace f_{1}, \ldots , f_{m} \right\rbrace $ in I with the property that for every nonzero $ f \in I , \textsc{LT}_{\geq}(f) $ is divisible by $\textsc{LT}\left( f_{i}\right) $ for some $ 1 \leq i \leq m $
+Let $\leq$ be a monomial order on \\ $\mathbb{K}\left[X_{1}, \cdots, X_{n}\right]$ and let I be an Ideal on $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right]  $. A Gröbner basis G for I (with respect to $\leq$) is a finite set of polynomials $ G = \left\lbrace f_{1}, \ldots , f_{m} \right\rbrace $ in I with the property that for every nonzero $ f \in I , \textsc{LT}_{\geq}(f) $ is divisible by $\textsc{LT}\left( f_{i}\right) $ for some $ 1 \leq i \leq m $.
 
 \end{env_definition}
 
@@ -244,7 +245,7 @@ Let the polynomials $f,g \in \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ and $
 \cite{KHZ} The S-polynomial of f and g is the polynomial
 
 \[ S\left( f,g\right) = \frac{\textsc{LCM}\left( X^{\upalpha}, X^{\upbeta}\right) }{\textsc{LT}_{\leq}\left( f\right) } \cdot f - \frac{ \textsc{LCM}\left( X^{\upalpha}, X^{\upbeta}\right) }{\textsc{LT}_{\leq}\left( g\right) } 
-\cdot g \]
+\cdot g. \]
 
 
 \end{env_definition}
@@ -277,7 +278,7 @@ $I = \langle f_{1}, \cdots , f_{m} \rangle $ if and only $S\left( f_{i},f_{j}\ri
 \end{env_definition}
 
 \begin{algorithm}
-\caption{Buchbergers Algorithm $[KHZ]$}
+\caption{Buchbergers Algorithm \cite{KHZ}}
 \label{alg:buchberger}
 \begin{algorithmic}[1]
 %\Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
@@ -315,12 +316,12 @@ $ \mathbb{K}\left[X_{1}, \cdots, X_{n}\right] $ is reduced if the polynomials $f
 
 \subsection{Gröbner fans}
 \label{subsec:Groebnerfan}
- Gröbner bases for a fixed Ideal $I$ with different monomial orders can look very different and have different properties. The difference can be in the number of elements in the Gröbner basis, the length or the degree of the elements. So it will be helpful if all 
+ Gröbner bases for a fixed Ideal $I$ with different monomial orders can look very different and have different properties. The difference can be in the number of elements in the Gröbner basis, the size or the degree of the elements. So it will be helpful if all 
 possible Gröbner basis of a fixed ideal can be collected together.\\
-Even if there are infinite monomial orders for an ideal, the amount of reduces Gröber bases are finite. \cite{coxOshea}
+Even though there are infinite monomial orders for an ideal, the amount of reduces Gröber bases are finite \cite{coxOshea}. 
  
 \begin{env_definition}[Gröbner fan]
-\cite{coxOshea} A Gröbner fan of an Ideal $I$ consist of finitley many closed convex polyedral cones with vertices at the origin, such that
+\cite{coxOshea} A Gröbner fan of an Ideal $I$ consists of finitely many closed convex polyhedral cones with vertices at the origin, such that
 
 \begin{itemize}
 \item
@@ -342,10 +343,10 @@ The elements of G, $g_{i}~$, can be written as
 \end{align*}
 where $ x^{\upalpha\left( i\right) }$ is the leading term and $ x^{\upalpha\left( i\right) } > x^{\upbeta} $, with respect to a monomial order, whenever $c_{i,\upbeta} \neq 0 $.
 
-Now if a weight vector $\textbf{w}$ fullfills the inequation
+If a weight vector $\textbf{w}$ satisfies the inequality
 $\upalpha\left( i\right) \ast \textbf{w} \geq \upbeta~\ast\textbf{w}$, the vector selects the correct leading term in $g_{i}$ as the term with the highest weight.\\
 
-So the cone of a Gröbner basis can be written as \cite{coxOshea}\\
+So, the cone of a Gröbner basis can be written as \cite{coxOshea}\\
 \begin{center}
 $C_{G} = \left\lbrace \textbf{w} \in \left(\mathbb{R}^{n}\right)^{+} : \upalpha\left( i\right) \cdot \textbf{w} \geq \beta \cdot \textbf{w}~~~ \textrm{whenever}~ c_{i,\upbeta} \neq 0 \right\rbrace   $
 \end{center}
@@ -354,7 +355,7 @@ $C_{G} = \left\lbrace \textbf{w} \in \left(\mathbb{R}^{n}\right)^{+} : \upalpha\
 \begin{env_example}\normalfont
 \label{ex:groebnerfan}
 Consider the Ideal with $ I = \langle x^{2}-z,y-x \rangle \in \mathbb{Q}\left[ x,y,z\right] .$
-Note that the ring is 3-dimensional so that Gröbner fan can be plotted in the positive orthant $ \mathbb{R}^{3}_{+}$. \\
+Note that the ring has 3 variables so that Gröbner fan can be plotted in the positive orthant $ \mathbb{R}^{3}_{+}$. \\
 The marked Gröbner basis with respect to the \textit{lex} order with $x>y>z$ is
 \begin{center}
 $G^{\left( 1\right) } = \left\lbrace \underline{y^{2}}-z,\underline{x} -y\right\rbrace $
@@ -370,7 +371,7 @@ $\left( 0,1,0\right) \cdot \left( a,b,c\right) \geq \left( 0,0,1\right) \cdot \l
 
 \end{itemize} 
 
-This is the first cone of the Gröbner fan and can be drawn in the positive orthant. It is sliced of the plane of $a+b+c=d~,d\in \mathbb{R}$ for a better clarity.
+This is the first cone of the Gröbner fan and can be drawn in the positive orthant. It is sliced of the plane of $a+b+c=d~,d\in \mathbb{R}_+$ for a better clarity.
 
 
 \begin{figure}
@@ -378,7 +379,7 @@ This is the first cone of the Gröbner fan and can be drawn in the positive orth
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
         \centering
         \input{groebnerfan}
-        \caption{Gröbner fan for the first basis}
+        \caption{Gröbner cone for the first basis}
         \label{fig:singlegroebner}
     \end{subfigure}
     \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
@@ -394,21 +395,21 @@ This is the first cone of the Gröbner fan and can be drawn in the positive orth
 
 
 
-This figure shows that the Gröbner fan is not complete, since the cone does not cover the whole positive orthant. In this example, the other reduced Gröbner basis can be obtained by applying the Buchberger-Algorithm with common term orders to the Ideal $I$.
+Figure \ref{fig:singlegroebner} shows that the Gröbner fan is not complete, since the cone does not cover the whole positive orthant. In this example, the other reduced Gröbner basis can be obtained by applying the Buchberger-Algorithm with common term orders to the Ideal $I$.
 If the computed cones still are not the the whole positive orthant, then a further computation with weight vectors are necessary.
 \begin{flushright}
 $\lozenge$
 \end{flushright} 
 \end{env_example}
 
-The example illustrates clearly that a arbitrary non-negative weight vector can be selected and if the vector lies in a certain cone, the corresponding Gröbner base will match with respect to this weight vector.  
+The example illustrates clearly that an arbitrary non-negative weight vector can be selected and if the vector lies in a certain cone, the corresponding Gröbner base will match with respect to this weight vector.  
 
 
-This is strategy is reasonable for a small example like above.
-In genearal, the whole Gröbner fan can be computed with the Gröbner walk.
-See \cite{coxOshea} for further details.\\
+This strategy is reasonable for small examples like above.
+In genearal, the whole Gröbner fan can be computed with the Gröbner walk \cite{coxOshea}.\\
 An inexpensive way to obtain all reduced Gröbner bases of a special ideal, the Code Ideal, will be explained in section \ref{subsec:enumerate}.
 
+\newpage
 \subsection{Toric Ideals}
 \label{subsec:toric}
 This work is focused on Code Ideals, so it is useful to define the toric Ideals first. Given a matrix $A =\left[a_{1},\dots, a_{n}  \right] \in \mathbb{Z}^{d \times n } $ and $u \in \mathbb{Z}^{n}$, which can be decomposed in $u^{+} $ and $u^{-}$, where $u^{+} $ and $u^{-}$ have non-negative coefficients and disjoint support.

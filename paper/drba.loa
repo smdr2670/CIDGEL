@@ -1,5 +1,5 @@
 \contentsline {algorithm}{\numberline {1}{\ignorespaces Division Algorithm \cite {KHZ}\relax }}{8}{algorithm.1}
-\contentsline {algorithm}{\numberline {2}{\ignorespaces Buchbergers Algorithm $[KHZ]$\relax }}{10}{algorithm.2}
+\contentsline {algorithm}{\numberline {2}{\ignorespaces Buchbergers Algorithm \cite {KHZ}\relax }}{10}{algorithm.2}
 \contentsline {algorithm}{\numberline {3}{\ignorespaces Finding the facets of a reduced Gr\IeC {\"o}bner bases of $I_A$ \cite {tigers}\relax }}{15}{algorithm.3}
 \contentsline {algorithm}{\numberline {4}{\ignorespaces Finding a superset of the facet binomials of a reduced Gr\IeC {\"o}bner basis of $I_A$ \cite {tigers}\relax }}{16}{algorithm.4}
 \contentsline {algorithm}{\numberline {5}{\ignorespaces Local change of reduced Gr\IeC {\"o}bner bases in $I_A$ \cite {tigers}\relax }}{17}{algorithm.5}

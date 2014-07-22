@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {2}Mathematical Background}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Monomials}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Monomial Order}{4}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Ideals}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Ideals}{6}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Division Algorithm}{7}{subsection.2.4}
 \contentsline {subsection}{\numberline {2.5}Gr\IeC {\"o}bner basis}{9}{subsection.2.5}
 \contentsline {subsection}{\numberline {2.6}Gr\IeC {\"o}bner fans}{11}{subsection.2.6}
