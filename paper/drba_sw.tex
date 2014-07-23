@@ -1,15 +1,15 @@
 % this file is drba_sw.tex
 \section{Software}
 \label{sec:software}
-This section is all about the practical part of this work. At first, a brief reason why the software is implemented in C is given. Secondly, an accurate description is presented of how the software can be compiled and used for own demands.
-After that, the software is tested on some randomly generated linear Codes. The number of degree compatible and all Groebner bases are presented and comparison of the operational time against Gfan \cite{gfan} is presented. \\
-This software, called CIDGEL (Code Ideal degree compatible Groebner bases enumerating from Linear Codes), is a re-implementation of TiGERS \cite{tigers}. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Groebner bases with reverse search and breath-first search were implemented.   
-Additional features are explained in Section \ref{subsec:manual}.
-The programming language of choice is C because it is fast and the capability to make own data structures are simple and sufficient enough.
+This section is all about the practical part of this work. At first, an accurate description is presented of how the software can be compiled and used for own demands.
+Secondly, the software is tested on some randomly generated linear Codes. The number of degree compatible and all Groebner bases are presented and comparison of the operational time against Gfan \cite{gfan} is presented. \\
+This software, called CIDGEL (Code Ideal degree compatible Groebner bases enumerating from Linear Codes), is a re-implementation of TiGERS \cite{tigers}, that is why the software is written in C. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Groebner bases with reverse search and breath-first search were implemented.   
+Additional features are explained in Section \ref{subsec:manual}.\\
+
 
 \subsection{Data Structures}
 \label{subsec:datastructure}
-With the special attribute that code ideals only contains binomials and monomials and reduced Groebner bases have always the coefficent $1$, only the exponent vectors representing the monomials have to be stored.
+With the special attribute that code ideals only contain binomials and reduced Groebner bases have always the coefficient $1$, only the exponent vectors representing the monomials have to be stored.
 
 \lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
 basicstyle = \ttfamily \color{black} \footnotesize , 
@@ -27,7 +27,7 @@ struct bin_tag{
 };
 
 \end{lstlisting}
-
+\newpage
 The pointer \emph{exps1} stores the exponent vector of the first monomial and \emph{exps2} does it with the second monomial.
 The integer \emph{ff} is a flag which shows if a binomial is a facet binomial or not and \emph{bf} tells if there is a monomial or binomial.
 The pointer binomial next indicates that binomials are linked together like a linear list, which is necessary to describe ideals and Groebner bases. The pointer \emph{E} points to \emph{exps1} and \emph{exps2} and is used for allocating and deallocating space. \\
@@ -158,24 +158,24 @@ time used (in seconds) 42.16
 
 \subsection{Computational experience}
 \label{subsec:compexp} 
-In this section the difference between degree compatible Gröbner bases and all Gröbner bases from a linear Code are researched. Furthermore, the time for all Gröbner bases is compared against Gfan.
+In this section the difference between degree compatible Gröbner bases and all Gröbner bases from a linear Code are studied. Furthermore, the computational time for all Gröbner bases is compared against Gfan.
 The linear codes were randomly generated.
 \newpage
 \begin{figure}[h]
 \begin{tikzpicture}
   \centering
   \begin{axis}[
-        ybar, axis on top,
+  		ybar, axis on top,
        % title={Example Text},
         height=8cm, width=13.5cm,
         bar width=0.4cm,
         ymajorgrids, tick align=inside,
-        major grid style={draw=white},
+        major grid style={dashed,gray},
         enlarge y limits={value=.1,upper},
         ymin=0, ymax=2300,
         axis x line*=bottom,
         axis y line*=right,
-        y axis line style={opacity=0},
+        y axis line style={opacity=1},
         tickwidth=0pt,
         enlarge x limits=true,
         legend style={
@@ -220,11 +220,12 @@ The linear codes were randomly generated.
   
 Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Gröbner bases of a code ideal and the degree compatible. The next table shows the computational time of the randomly generated codes.
 
- \begin{table}[h]
+ \begin{table}[htpb] 
+ \centering 
  \caption{Computataional time in seconds}
- \begin{tabular}{clll} % zentriert rest linksbündig
+ \begin{tabular}{c|l|l|l} % zentriert rest linksbündig
   Dimension $k$ & CIDGEL d.c. & CIDGEL & Gfan \\
-  1  & 0.01  & 0.011  & 0.239  \\
+ \cline{1-4} 1  & 0.01  & 0.011  & 0.239 \\
   2  & 0.206 & 10.198 & 38.127 \\
   3  & 0.08  & 0.688  & 6.32 \\
   4  & 7.743 & 25.86  & 47.748 \\
@@ -241,8 +242,8 @@ Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Grö
  
  For linear codes with the length more than 9 the computation took more than 10 hours for the complete Gröbner fan. The reason is that the amount of reduced Gröbner bases and the cardinality of each basis will be greater if the codewords will be longer. Nevertheless, the computation of the degree compatible Gröbner fan is useful for a certain length.\\
  
- In some cases the amount of the degree compatible and all Gröbner bases can enormously. A randomly generated $[9,2]$ code had 8 degree compatible Gröbner bases and overall 295.863 Gröbner bases. 
- Computing the whole fan took 24.471,32 and the degree compatible fan only took 1,08 seconds! 
+ In some cases the amount of the degree compatible and all Gröbner bases can rise enormously. A randomly generated $[9,2]$ code had 8 degree compatible Gröbner bases and overall 295.863 Gröbner bases. 
+ Computing the whole fan took 24.471,32 and the degree compatible fan only took 1,08 seconds. 
     
 
 
