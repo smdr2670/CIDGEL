@@ -19,11 +19,6 @@
 #include "Rsimp.h"
 
 
-
-/**
- * @brief Creates an empty gset, initializes all its pointers to null.
- * @return The new gset.
- */
 gset gset_new(){
     gset g=0;
     if ((g=(gset)malloc(sizeof(struct gset_tag)))==0){
@@ -36,10 +31,7 @@ gset gset_new(){
     return g;
 }
 
-/**
- * @brief Deletes a gset and all binomials in it.
- * @param g The gset to be deleted.
- */
+
 void gset_free(gset g){
     binomial b;
     while((b=gset_first(g))!=0){
@@ -49,10 +41,7 @@ void gset_free(gset g){
     free((void *)g);
 }
 
-/**
- * @brief Eliminates '1-1' terms in a gset.
- * @param g The gset to be researched.
- */
+
 void gset_eliminatezero(gset g){
     binomial ptr;
     ptr = gset_first(g);
@@ -63,11 +52,7 @@ void gset_eliminatezero(gset g){
     }
 }
 
-/**
- * @brief Deletes a binimoal from a gset.
- * @param g The gset to be researched.
- * @param b The binomial which shall be resarched.
- */
+
 void gset_delete_binomial(gset g, binomial b){
     binomial tmp;
     binomial prev;
@@ -93,14 +78,7 @@ void gset_delete_binomial(gset g, binomial b){
 }
 
 
-
-/**
- * @brief Reads a gset from an input stream.
- * @param is The input stream.
- * @param g  All informaion stored in gset.
- * @return TRUE(=0) if gset is read in successfully.
- */
-int  gset_read(FILE *is,gset g){
+int gset_read(FILE *is,gset g){
     char c;
     binomial b;
 
@@ -123,11 +101,7 @@ int  gset_read(FILE *is,gset g){
     return TRUE;
 }
 
-/**
- * @brief Prints a gset.
- * @param of output stream.
- * @param g gset to be printed.
- */
+
 void gset_print(FILE *of,gset g){
     binomial b;
 
@@ -142,14 +116,7 @@ void gset_print(FILE *of,gset g){
 }
 
 
-/**
- * @brief Displays the initial/leading ideal of Gset.
-            
-            See definition 2.5 of the thesis for defintion
-            of a leading/initial ideal. 
- * @param of The output stream.
- * @param g The initial/leading ideal of the gset g to be printed.
- */
+
 void gset_init_print(FILE *of,gset g){
     binomial b;
     fprintf(of,"{");
@@ -162,11 +129,7 @@ void gset_init_print(FILE *of,gset g){
     fprintf(of,"}");
 }
 
-/**
- * @brief Displays facet binomials.
- * @param of The output stream.
- * @param g The given gset.
- */
+
 void gset_facet_print(FILE *of,gset g){
     binomial b;
     int tog=0;
@@ -186,12 +149,6 @@ void gset_facet_print(FILE *of,gset g){
 
 
 
-/**
- * @brief gset_insert place binomial in gset in decreasing lexicographic order.
- *                    (using binomial_compair(,) to determine relative order or binomials)
- * @param g gset which gets the new binomial
- * @param b binomial to be inserted
- */
 void gset_insert(gset g, binomial b){
     binomial t1,t2;
     if (gset_first(g)==0 || binomial_compair(gset_first(g),b)==FALSE){
@@ -214,24 +171,12 @@ void gset_insert(gset g, binomial b){
 
 
 
-
-/**
- * @brief gset_downedge return first facet binomial which is mis-marked
- *                      A mis-marked binomial is a binomial that does not suit
- *                      with the term order, but it is a facet binomial.
- * @param g examined gset
- * @return first facet binomial which is mis-marked
- */
-
- 
 binomial gset_downedge_lex(gset g){       
     binomial ptr=0;
     for(ptr=gset_first(g);ptr!=0;ptr=binomial_next(ptr)){
         if (binomial_lexordered(ptr)==FALSE && gset_isfacet(g,ptr)==TRUE ){
             break;
         }
-        //fprintf(stderr,"halp");
-
     }
     return ptr;
 }
@@ -242,23 +187,12 @@ binomial gset_downedge_grlex(gset g){
         if (binomial_grlexordered(ptr)==FALSE && gset_isfacet(g,ptr)==TRUE ){
             break;
         }
-        //fprintf(stderr,"halp");
-
     }
     return ptr;
 }
 
 
 
-/*
-**binomial bmleadreduce(binomial m1, binomial B, binomial mlist):
-**  "lift" monomial m1 to a binomial using bmlist B,mlist.
-*/
-/*
- * @brief bmleadreduce "lift" monomial m1 to a binomial using bmlist B,mlist.
- *
- *
- */
 binomial bmleadreduce(binomial m1, binomial B, binomial mlist){
     binomial res,ptr;
     /* case 1: the binomial is used in the decomp:*/
@@ -272,7 +206,7 @@ binomial bmleadreduce(binomial m1, binomial B, binomial mlist){
             reducetrail(res,B);
         }
 
-        /* now find a monomial deviding whats left and reduce by it*/
+        /* now find a monomial dividing whats left and reduce by it*/
         for(ptr=mlist;ptr!=0;ptr=ptr->next){
             if (monomial_divides(binomial_lead(ptr),binomial_trail(res))==TRUE){
                 reducetrail(res,ptr);
@@ -296,12 +230,6 @@ binomial bmleadreduce(binomial m1, binomial B, binomial mlist){
 
 
 
-/*
-++ binomial find_divisor(binomial S,binomial L):
-++ search list starting at L for a monomial dividing S
-++ return this binomial or zero if no such binomial exists on list.
-++
-*/
 
 binomial find_divisor(binomial S,binomial L){
     binomial ptr;
@@ -314,12 +242,7 @@ binomial find_divisor(binomial S,binomial L){
 }
 
 
-/*
-++ void remove_multiples(binomial S, binomial *L):
-++ Pass through list starting at *L, removing all multiples of *S 
-++ encountered (except S if it is on the list). 
-++
-*/
+
 void remove_multiples(binomial S, binomial *L){
     binomial tlist=*L,ptr;
     *L=0;
@@ -333,12 +256,8 @@ void remove_multiples(binomial S, binomial *L){
     }
 }
 
-/*
-** void bmrgb(binomial B, binomial *ms):
-**      transform a marked binomial and a list of monomials into the 
-**      reduced grobner basis for the ideal the generate.
-** 
-*/
+
+
 void bmrgb(binomial B, binomial *ms){
     //int i,jk;
     binomial DL;
@@ -378,12 +297,7 @@ void bmrgb(binomial B, binomial *ms){
 
 }
 
-/* 
-** gset gset_flip(gset g1, binomial b):
-**   Take a gset and one of its facet binomials and produce the new gset
-**   corresponding to the grobner cone which shares the given facet binomial.
-**
-*/
+
 gset gset_flip(gset g1, binomial b){
     binomial old=0,new=0,tmp,ptr,B,Bold;
     gset gres=0;
@@ -439,16 +353,6 @@ gset gset_flip(gset g1, binomial b){
     }
    
 
-    /* sainity check -- remove eventually*/
-#ifdef GTEST
-    if (gset_is_gb(gres)==FALSE){
-        fprintf(stderr,"flipped failed to find grobner basis \n");
-        fprintf(stderr,"g1=");gset_print(stderr,g1);fprintf(stderr,"\n");
-        fprintf(stderr,"b=");binomial_print(stderr,b);fprintf(stderr,"\n");
-        exit(1);
-    }
-#endif
-
     binomial_free(Bold);
     while(old!=0){
         ptr=old;
@@ -458,25 +362,12 @@ gset gset_flip(gset g1, binomial b){
 
     gset_autoreduce(gres);
 
-
-    /* sainity check -- remove eventually */
-#ifdef GTEST
-    if ( gset_is_reduced(gres)==FALSE){
-        fprintf(stderr,"flipped failed to find reduced grobner basis \n");
-        fprintf(stderr,"g1=");gset_print(stderr,g1);fprintf(stderr,"\n");
-        fprintf(stderr,"b=");binomial_print(stderr,b);fprintf(stderr,"\n");
-        exit(1);
-    }
-#endif
-
     return gres;
 }
 
 
-/* 
-** void gset_autoreduce(gset g):
-** autoreduce g according to its marking
-*/
+
+
 void gset_autoreduce(gset g){
     binomial b1,b2;
     int changed;
@@ -525,13 +416,12 @@ void gset_autoreduce(gset g){
 
 }
 
-/*
-** void gset_rgb(gset g, int (*comp)(monomial,monomial))
-**   Use buchberger's algorithm to transform g into groebner basis
-**   wrt the term order implemented by comp
-*/
+
+
+
 #define ordered(b) ((comp(binomial_lead(b),binomial_trail(b))>=0)?TRUE:FALSE)
 int changed;
+
 void gset_rgb(gset g, int (*comp)(monomial,monomial)){
     void process_pair(binomial,binomial,binomial,binomial,binomial *,int (*comp)());
     binomial ptr,b,DL=0,SL=0,NL=0;
@@ -582,13 +472,7 @@ void gset_rgb(gset g, int (*comp)(monomial,monomial)){
 
 }
 
-/*
--- process_pair(b1,b2,DL,SL,NL,comp):
---  process spair defined by binomials b1 and b2.
---   taking spair wrt union of DL SL and *NL lists
---   if non-zero add result to NL list.
---   comp is a monomial compairison function used throuout.
-*/
+
 void process_pair(binomial b1,binomial b2,binomial DL,binomial SL,binomial *NL,
                   int (*comp)(monomial,monomial)){
     binomial S,ptr,find_divisor(binomial,binomial);
@@ -596,9 +480,6 @@ void process_pair(binomial b1,binomial b2,binomial DL,binomial SL,binomial *NL,
 
     /* test is lead terms are rel prime [buchberger's first criterion]*/
     if (monomial_rel_prime(binomial_lead(b1),binomial_lead(b2))==TRUE)return;
-
-    /* buchberger's second criterion ?*/
-
 
     S=binomial_new();
     binomial_copy(b1,S);
@@ -620,18 +501,10 @@ void process_pair(binomial b1,binomial b2,binomial DL,binomial SL,binomial *NL,
     binomial_next(S)=*NL;
     *NL=S;
 }
-/*
-** void gset_setfacets(gset g):
-**    Use repeated calls to gset_isfacet to ensure that all facet flags 
-**    are set. 
-**    Also sets nfacets, nelts and deg counters (these contain garbage except
-**    right after a call to set facets).
-**
-**    NOTE 4/20 the deg counter was just added and the code to load it is
-**              cludged in here -- logically it should be part of the 
-**              binomial.c file -- for now it is here.
-*/
+
+
 #define max(a,b) (((a)>(b))?(a):(b))
+
 
 void gset_setfacets(gset g){
     int debug = 0;
@@ -657,12 +530,7 @@ void gset_setfacets(gset g){
     gset_deg(g)=d;
 }
 
-/* 
-** int gset_isfacet(gset g,binomial b):
-**     check whether b is known to be a facet or not. if not call lp_isfacet()
-**     to use a linear program to set b's facet flag.
-**
-*/
+
 int lptest=1;   /* 1 test only LP, 2 test only flipability, 3 test both */
 int gset_isflippable(gset g,binomial b); 
 
@@ -705,9 +573,7 @@ int gset_isfacet(gset g,binomial b){
     return rval;
 }
 
-/*
-**
-*/
+
 int gset_isflippable(gset g,binomial b){
     int ctg=0,ctn=1,val=TRUE;
     binomial new=0,tmp,ptrg,ptrn,btmp;
@@ -753,11 +619,7 @@ int gset_isflippable(gset g,binomial b){
     return val;
 }
 
-/* 
-** int lp_isfacet(gset g,binomial b):
-**     set up and run linear program to set b's facet flag.
-**
-*/
+
 int lp_isfacet(gset g,binomial b){
     binomial ptr;
     int D=ring_N,M=0;
@@ -816,17 +678,7 @@ int lp_isfacet(gset g,binomial b){
     return b->ff;
 }
 
-/**
- *
- *
- * example: if no leading term divides x1^2, add x1^2-1 to the set
- *
- * @brief gset_add_nonprime  Adds the nonprime Terms to a generating set in order to get a CodeIdeal,
- *                           check all first terms of all binomials.
- *                           If the exponent vector has the degree of 1, then it does not appear in
- *                           the non-prime set.
- * @param g gset which gets the nonprime binomials
- */
+
 void gset_add_nonprime(gset g){
     binomial ptr;
     int *tmp;
@@ -853,13 +705,7 @@ void gset_add_nonprime(gset g){
 
 }
 
-/**
- * @brief gset_only_degreecompatible Determines whether a Groebner Basis is the only degree compatible Groebner Basis or not.
- * @detail Example: In the 3 dimensional vector space, the facet of the Groebner Fan is the only
- *                  one which contains the all-one vector.     
- * @param g
- * @return
- */
+
 int gset_only_degreecompatible(gset g){
     binomial ptr;
     for(ptr=gset_first(g);ptr!=0;ptr = binomial_next(ptr)){
@@ -872,10 +718,7 @@ int gset_only_degreecompatible(gset g){
 
 }
 
-/**
-* @brief countDC
-*
-*/
+
 int countDC(gset g1){
     int d=0;
     binomial ptr;
@@ -888,11 +731,7 @@ int countDC(gset g1){
     return d;
 }
 
-/**
-*
-*
-*
-*/
+
 void gset_copy(gset src, gset dest){
     binomial ptr;
     for(ptr = gset_first(src); ptr!=0; ptr = binomial_next(ptr)){
@@ -903,23 +742,14 @@ void gset_copy(gset src, gset dest){
     }
 }
 
-/**
-* Simply sets the all exponent-vectors from the gset to 0 at the certain position
-*
-*/
+
+
+
 void gset_puncture(gset G1, int pos){
     binomial ptr;
     for(ptr = gset_first(G1); ptr!= NULL ; ptr=binomial_next(ptr) ){
         binomial_puncture(ptr,pos);
     }
 }
-
-
-
-
-
-
-
-
 
 
