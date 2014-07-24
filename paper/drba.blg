@@ -1,12 +1,12 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: drba.aux
-The style file: unsrt.bst
-Database file #1: literatur.bib
-Warning--entry type for "doxygen" isn't style-file defined
---line 39 of file literatur.bib
-Warning--entry type for "gfan" isn't style-file defined
---line 50 of file literatur.bib
-Warning--entry type for "cats" isn't style-file defined
---line 62 of file literatur.bib
-Warning--empty publisher in KHZ
+The style file: IEEEtran.bst
+Database file #1: IEEEabrv.bib
+Database file #2: literatur.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing publisher in KHZ
 Warning--empty note in dueckpaper
-(There were 5 warnings)
+
+Done.
+(There were 2 warnings)

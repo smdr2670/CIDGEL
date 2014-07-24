@@ -1,13 +1,15 @@
-/*
-** gset.c                                 Birk Huber, 4/99 
-** -- definitions and basic operations on gsets
-**  
-**
-** TiGERS,  Toric Groebner Basis Enumeration by Reverse Search 
-** copyright (c) 1999  Birk Huber
-**
-** Slightly edited and commented by Daniel Rembold
-**
+/** 
+*   @file gset.c
+*   @brief definitions and basic operations on gsets
+*
+*   This file is reused from TiGERS,
+*   Toric Groebner Basis Enumeration by Reverse Search 
+*   copyright (c) 1999  Birk Huber
+*
+*   @author Birk Huber, 4/99 
+*   @author Daniel Rembold
+*   @bug No known bugs
+*
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,15 +18,11 @@
 #include "matrices.h"
 #include "Rsimp.h"
 
-/* uncomment the following to cause use sainity checks (not fully tested)*/
-/*
-#define GTEST 0
-#include "gtesting.h"
-*/
+
 
 /**
- * @brief create an empty gset, initialize all its pointers to null.
- * @return new gset
+ * @brief Creates an empty gset, initializes all its pointers to null.
+ * @return The new gset.
  */
 gset gset_new(){
     gset g=0;
@@ -39,8 +37,8 @@ gset gset_new(){
 }
 
 /**
- * @brief gset_free delete a gset and all binomials in it.
- * @param g gset to be deleted
+ * @brief Deletes a gset and all binomials in it.
+ * @param g The gset to be deleted.
  */
 void gset_free(gset g){
     binomial b;
@@ -52,8 +50,8 @@ void gset_free(gset g){
 }
 
 /**
- * @brief gset_eliminatezero eliminates '1-1' terms in a gset
- * @param g gset to be researched
+ * @brief Eliminates '1-1' terms in a gset.
+ * @param g The gset to be researched.
  */
 void gset_eliminatezero(gset g){
     binomial ptr;
@@ -66,9 +64,9 @@ void gset_eliminatezero(gset g){
 }
 
 /**
- * @brief gset_delete_binomial deletes a binimoal from a gset
- * @param g gset to be researched
- * @param b binomial which shall be resarched
+ * @brief Deletes a binimoal from a gset.
+ * @param g The gset to be researched.
+ * @param b The binomial which shall be resarched.
  */
 void gset_delete_binomial(gset g, binomial b){
     binomial tmp;
@@ -97,10 +95,10 @@ void gset_delete_binomial(gset g, binomial b){
 
 
 /**
- * @brief gset_read read a gset from an input stream
- * @param is input stream
- * @param g all informaion stored in gset
- * @return TRUE(=0) if gset read in
+ * @brief Reads a gset from an input stream.
+ * @param is The input stream.
+ * @param g  All informaion stored in gset.
+ * @return TRUE(=0) if gset is read in successfully.
  */
 int  gset_read(FILE *is,gset g){
     char c;
@@ -126,9 +124,9 @@ int  gset_read(FILE *is,gset g){
 }
 
 /**
- * @brief gset_print Display a gset
- * @param of output stream
- * @param g gset to be printed
+ * @brief Prints a gset.
+ * @param of output stream.
+ * @param g gset to be printed.
  */
 void gset_print(FILE *of,gset g){
     binomial b;
@@ -145,9 +143,12 @@ void gset_print(FILE *of,gset g){
 
 
 /**
- * @brief gset_init_print Display a gsets initial ideal
- * @param of output stream
- * @param g gsets initial ideal to be printed
+ * @brief Displays the initial/leading ideal of Gset.
+            
+            See definition 2.5 of the thesis for defintion
+            of a leading/initial ideal. 
+ * @param of The output stream.
+ * @param g The initial/leading ideal of the gset g to be printed.
  */
 void gset_init_print(FILE *of,gset g){
     binomial b;
@@ -162,9 +163,9 @@ void gset_init_print(FILE *of,gset g){
 }
 
 /**
- * @brief gset_facet_print Display facet binomials
- * @param of output stream
- * @param g given gset
+ * @brief Displays facet binomials.
+ * @param of The output stream.
+ * @param g The given gset.
  */
 void gset_facet_print(FILE *of,gset g){
     binomial b;
