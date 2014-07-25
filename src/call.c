@@ -1,11 +1,15 @@
-/*
-** call.c                                 Birk Huber, 2/99 
-**   -- main calling file for tigers code
-**  
-**
-** TiGERS,  Toric Groebner Basis Enumeration by Reverse Search 
-** copyright (c) 1999  Birk Huber
-**
+/** 
+*   @file call.c
+*   @brief main calling file for CIDGEL code
+*
+*   This file is reused from TiGERS,
+*   Toric Groebner Basis Enumeration by Reverse Search 
+*   copyright (c) 1999  Birk Huber
+*
+*   @author Birk Huber, 4/99 
+*   @author Daniel Rembold
+*   @bug No known bugs
+*
 */
 #include <stdio.h>
 #include <string.h>
