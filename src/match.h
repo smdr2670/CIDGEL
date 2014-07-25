@@ -7,12 +7,17 @@
 *
 */
 
+
+/**
+* @brief Struct which contains all imporant informations of a Gröbner basis
+*
+*/
 struct node{
-  int id;
-  int nfacet;
-  int nbinomials;
-  int degree;
-  struct node *next;
+  int id;			 /**< Number of the vertex of the edge graph #id.  */
+  int nfacet;		 /**< The number of facet binomials, #nfacets.   */
+  int nbinomials;    /**< Number of binomials #nelts.   */
+  int degree;		 /**< Highest degree #deg.   */
+  struct node *next; /**< Pointer to next node #next.   */
 };
 
 /**

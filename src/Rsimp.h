@@ -1,5 +1,5 @@
 /** 
-*   @file Rsimp.c
+*   @file Rsimp.h
 *   @brief header file for Rsimp.c with  definitions of linear programming  
 *          data structure and basic implementation of revised simplex method.
 *   

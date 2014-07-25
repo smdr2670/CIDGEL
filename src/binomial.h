@@ -122,13 +122,17 @@ int monomial_stddegree(monomial m);
 
 
 typedef struct bin_tag *binomial;
+
+/**
+* @brief A structure to represent binomials
+*/
 struct bin_tag{
-    int *exps1;
-    int *exps2;
-    int *E;
-    int ff;
-    int bf;
-    binomial next;
+	int *exps1; 	/**< Stores the exponent vector of the first monomial #exps1.	*/
+    int *exps2; 	/**< Stores the exponent vector of the second monomial #exps2.	*/
+    int *E; 		/**< Points to exps1 and exps2 and is used for allocating and deallocating #E. */
+    int ff; 		/**< Flag which shows if a binomial is a facet binomial or not #ff.	*/
+    int bf; 		/**< Tells if there is a monomial or binomial #bf.	*/
+    binomial next;  /**< Pointer to next binomial #next.  */
 };
 
 

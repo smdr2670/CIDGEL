@@ -1,5 +1,5 @@
 /** 
-*   @file utime.c
+*   @file utils.c
 *   @brief A place for general global definitions which must be accessible 
 *          througout the program.
 *   

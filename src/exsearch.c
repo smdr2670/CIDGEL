@@ -1,5 +1,5 @@
 /** 
-*   @file exsearch.h 
+*   @file exsearch.c
 *   @brief Exhaustive search main loop.
 *
 *   This file is reused from TiGERS,

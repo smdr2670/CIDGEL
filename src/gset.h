@@ -16,17 +16,17 @@
 
 typedef struct gset_tag *gset;
 
-/* Linked List of gset_tag which contiains the binomial and the
-   caching informations*/
+/* @brief Linked List of gset_tag which contiains the binomial and the
+          caching informations*/
 struct gset_tag{
-    int id;
-    int nfacets;
-    int nelts;
-    int deg;
-    binomial bottom;
-    binomial cache_edge;
-    struct gset_tag *cache_vtx;
-    struct gset_tag *next;
+    int id;              /**< Number of the vertex of the edge graph #id.  */
+    int nfacets;         /**< The number of facet binomials, #nfacets.   */
+    int nelts;           /**< Number of binomials #nelts.   */
+    int deg;             /**< Highest degree #deg.   */
+    binomial bottom;     /**< Containing the binomial #bottom.   */
+    binomial cache_edge; /**< Stores the binomial for caching #cache_edge.  */
+    struct gset_tag *cache_vtx; /**< Pointer to next gset for caching #cache_vtx.   */
+    struct gset_tag *next;      /**< Pointer to next gset #next.   */
 };
 
 #define gset_first(g) (g->bottom)                            
