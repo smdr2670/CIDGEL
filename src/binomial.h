@@ -26,13 +26,75 @@ int ring_getvar(FILE *ifile);
 
 
 typedef int *monomial;
+
+/**
+ * @brief Determines if m1 divides m2.
+ * @param m1 First monomial.
+ * @param m2 Second monomial.
+ * @return TRUE(=0) or FALSE(=1).
+ */
 int monomial_divides(monomial m1, monomial m2);
+
+/**
+ * @brief Determines if monomials m1 and m2 have same exponents.
+ * @param m1 First monomial.
+ * @param m2 Second monomial.
+ * @return TRUE(=0) or FALSE(=1).
+ */
 int monomial_equal(monomial m1, monomial m2);
+
+
 int monomial_lexcomp(monomial m1, monomial m2);
+
+
 int monomial_rlexcomp(monomial m1, monomial m2);
+
+
 int monomial_grlexcomp(monomial m1, monomial m2);
+
+/**
+ * @brief Determines if m1 is reletively prime to m2.
+ * @param m1 First monomial.
+ * @param m2 Second monomial.
+ * @return TRUE(=0) or FALSE(=1).
+ */
 int monomial_rel_prime(monomial m1, monomial m2);
+
+/**
+ * @brief Prints monomial in a file.
+ * @param of Outputfile where monomial will be printed.
+ * @param exps Vector which contains the exponents.
+ */
 void print_monomial(FILE *of, int *exps);
+
+
+/**
+ * @brief Reads ascii representation of monomial as power product
+ *         onvert to exponent vector stored in *exps.
+ * @param is The input stream.
+ * @param exps Store the exponent vector in exps.s
+ *
+ */
+void get_monomial(FILE *is,int *exps);
+
+/**
+ * @brief monomial_lcm copy least common multiple of m1 and m2 into m3.
+ * @param m1 first monomial
+ * @param m2 second monomial
+ * @param m3 lcm monomial
+ * @return
+ */
+void monomial_lcm(monomial m1, monomial m2, monomial m3);
+
+
+/**
+ * @brief Determines the degree of a monomial.
+ * @param m  The monomial.
+ * @return The degree as an integer.
+ */
+int monomial_stddegree(monomial m);
+
+
 
 typedef struct bin_tag *binomial;
 struct bin_tag{
@@ -60,6 +122,30 @@ struct bin_tag{
 
 
 binomial binomial_new();
+
+/**
+ * @brief Sets the ring_N.
+ * @param n Number of Dimensions.
+ * @return TRUE(=0) if function was successfull.
+ */
+int ring_set(int n);
+
+/**
+ * @brief Reads the number of variables out of a file and sets the ring dimension.
+ * @param infile File/Stream consisting the number of dimensions.
+ * @return TRUE(=0) if function was successfull.
+ */
+int ring_read(FILE *infile);
+
+/**
+* @brief Reads the variable of the inputfile.
+* @param infile File/Stream consisting the variables.
+* @return ASCII code of the variable.
+*/
+int ring_getvar(FILE *infile);
+
+
+
 void binomial_free(binomial m);
 void binomial_read(FILE *is, binomial b);
 void binomial_print(FILE *of, binomial b);

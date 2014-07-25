@@ -1,0 +1,65 @@
+\documentclass[
+%a4paper, 
+%a5paper,
+%10pt,
+%11pt,
+%12pt,
+%twoside, % single sided printout
+%oneside, % duplex printout (default)
+%% binding correction is used to compensate for the paper lost during binding
+%% of the document
+%BCOR=0.7cm, % binding correction
+%nobcorignoretitle, % do not ignore BCOR for title page
+%% the following two options only concern the graphics included by the document
+%% class
+%grayscaletitle, % keep the title in grayscale
+%grayscalebody, % keep the rest of the document in grayscale
+%% expert options: your mileage may vary
+%baseclass=..., % special option to use a different document baseclass
+]{stsreprt}
+
+% Information for the Titlepage
+\author{Arthur D.}
+\title{Super Duper Thesis Work With A Very Long Title Spreading Over Multiple Lines}
+\date{\today}
+\subject{Bachelor Thesis}
+\professor{J.R. Professor}
+\advisor{A.B. First\\B.C. Second}
+
+% Font encoding to use a font with many glyphs - if things look funny, check if
+% you have installed the cm-super package
+\usepackage[T1]{fontenc}
+
+\usepackage[utf8]{inputenc}
+
+% to generate some dummy text
+\usepackage{lipsum}
+
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\listoffigures{}
+\mainmatter
+\chapter{Introduction}
+\lipsum[1-19]
+\chapter{Background}
+\section{asdf}
+\lipsum[10-19]
+\section{sdfg}
+\lipsum[20-39]
+\chapter{Thinking}
+\lipsum[40-69]
+\chapter{Experiments}
+\lipsum[70-89]
+
+\chapter{Conclusion}
+\lipsum[80-99]
+\appendix
+\chapter{Listings}
+\lipsum[90-99]
+\backmatter
+\chapter{Bibliography}
+\lipsum[100-110]
+
+\end{document}

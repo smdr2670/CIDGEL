@@ -9,6 +9,50 @@
 ** Commented and slightly edited by Daniel Rembold
 **
 */
+
+/**
+*	@file binomial.c
+*	@brief define binomal type and main operations on binomials 
+*			
+*	This file is reused from TiGERS,
+*	Toric Groebner Basis Enumeration by Reverse Search 
+*	copyright (c) 1999  Birk Huber
+*
+*
+*
+* -------------ring defs-----------------------------------------------------
+*
+* Monomials in the ambiant polynomial ring will be represented by their
+* exponent vectors. Before any computations can be done using monomials the
+* dimension of this ring (and the exponent vectors) must be set and stored
+* in the global variable "ring_N". The mapping between indeces and variable
+* names for i.o. purposes is currently done by just using the first ring_N
+* letters of the alphabet. 
+*
+* Data:
+*  int  ring_N: global variable holding dimension of ambiant ring 
+*  int ring_lv: global variable used by deg-rev-lex term order, i.e. specify
+*               which variable to make cheepest(others ordered alphabetically)
+* 
+* Functions (or macros):
+*  int ring_set(int n): Set ring_N to n if ring_N has not yet been set.       
+*  int ring_read(File *infile): Read in a description of the ring from
+*                               infile and set ring values accordingly.
+*  ring_getvar(FILE *): convert next variable name on FILE to variable index
+*  ring_putvar(File *of,int v): convert index to variable name.
+*
+* Note: for now a ring description is just given the number of variables.
+*       the names are just the first ring_N letters of the alphabet:
+*       i.e. **            name        <====>   index 
+*                          'a'         <====>      0
+*                          'b'         <====>      1
+*        eventually this scheme may be adjusted to allow names to be set
+*        at run time.
+*
+*   @author Birk Huber, 4/99 
+*   @author Daniel Rembold
+*   @bug No known bugs
+*/
 #define BINOMIAL_H 1
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,36 +63,7 @@ FILE *infile;
 FILE *outfile;
 
 
-/*
-**-------------ring defs-----------------------------------------------------
-**
-** Monomials in the ambiant polynomial ring will be represented by their
-** exponent vectors. Before any computations can be done using monomials the
-** dimension of this ring (and the exponent vectors) must be set and stored
-** in the global variable "ring_N". The mapping between indeces and variable
-** names for i.o. purposes is currently done by just using the first ring_N
-** letters of the alphabet. 
-**
-** Data:
-**  int  ring_N: global variable holding dimension of ambiant ring 
-**  int ring_lv: global variable used by deg-rev-lex term order, i.e. specify
-**               which variable to make cheepest(others ordered alphabetically)
-** 
-** Functions (or macros):
-**  int ring_set(int n): Set ring_N to n if ring_N has not yet been set.       
-**  int ring_read(File *infile): Read in a description of the ring from
-**                               infile and set ring values accordingly.
-** ring_getvar(FILE *): convert next variable name on FILE to variable index
-** ring_putvar(File *of,int v): convert index to variable name.
-**
-** Note: for now a ring description is just given the number of variables.
-**       the names are just the first ring_N letters of the alphabet:
-**       i.e. **            name        <====>   index 
-**                          'a'         <====>      0
-**                          'b'         <====>      1
-**        eventually this scheme may be adjusted to allow names to be set
-**        at run time.
-*/
+
 
 // Global variables
 int ring_N=0; 
@@ -63,11 +78,7 @@ void code_dim_set(int n){
     code_dim = n;
 }
 
-/**
- * @brief ring_set Sets the ring_N
- * @param n Number of Dimensions
- * @return TRUE(=0) if function was successfull
- */
+
 int ring_set(int n){
     int i;
     if (ring_N!=0) {
@@ -84,11 +95,6 @@ int ring_set(int n){
     return ring_N=n;
 } 
 
-/**
- * @brief ring_read Reads
- * @param infile File/Stream consisting the number of dimensions
- * @return TRUE(=0) if function was successfull
- */
 int ring_read(FILE *infile){
     int n;
     eatwhite(infile);
@@ -100,12 +106,12 @@ int ring_read(FILE *infile){
     return TRUE;
 }
 
-int ring_getvar(FILE *ifile){
+int ring_getvar(FILE *infile){
     char c;
     c=fgetc(ifile);
     if ('a' > c || c >'a'+ring_N-1){
         fprintf(stderr,"ring_getvar(): invalid variable read\n");
-        ungetc(c,ifile);
+        ungetc(c,infile);
         return -1;
     }
     return c-'a';
@@ -118,11 +124,7 @@ int ring_getvar(FILE *ifile){
 **
 */
 
-/**
- * @brief Prints monomial in a file
- * @param of outputfile where monomial will be printed
- * @param exps vector which contains the exponents
- */
+
 void print_monomial(FILE *of, int *exps){
     int i;
     int jk=0;
@@ -142,14 +144,6 @@ void print_monomial(FILE *of, int *exps){
         }
     }
 }
-
-/**
- * @brief get_monomial Read ascii representation of monomial as power product
- *                     convert to exponent vector stored in *exps.
- * @param is input stream
- * @param exps store the exponent vector in exps
- *
- */
 
 void get_monomial(FILE *is,int *exps){
     char c='*';
@@ -175,12 +169,7 @@ void get_monomial(FILE *is,int *exps){
 }
 
 
-/**
- * @brief monomial_divides determines if m1 divides m2
- * @param m1 first monomial
- * @param m2 second monomial
- * @return TRUE(=0) or FALSE(=1)
- */
+
 int monomial_divides(monomial m1, monomial m2){
     int i;
     for(i=0;i<ring_N;i++){
@@ -192,12 +181,7 @@ int monomial_divides(monomial m1, monomial m2){
     return TRUE;
 }
 
-/**
- * @brief monomial_rel_prime determines if m1 is reletively prime to m2
- * @param m1 first monomial
- * @param m2 second monomial
- * @return TRUE(=0) or FALSE(=1)
- */
+
 int monomial_rel_prime(monomial m1, monomial m2){
     int i;
     for(i=0;i<ring_N;i++){
@@ -208,12 +192,7 @@ int monomial_rel_prime(monomial m1, monomial m2){
     return TRUE;
 }
 
-/**
- * @brief monomial_equal determines if monomials m1 and m2 have same exponents
- * @param m1 first monomial
- * @param m2 second monomial
- * @return TRUE(=0) or FALSE(=1)
- */
+
 int monomial_equal(monomial m1, monomial m2){
     int i;
     for(i=0;i<ring_N;i++){
@@ -224,13 +203,7 @@ int monomial_equal(monomial m1, monomial m2){
     return TRUE;
 }
 
-/**
- * @brief monomial_lcm copy least common multiple of m1 and m2 into m3.
- * @param m1 first monomial
- * @param m2 second monomial
- * @param m3 lcm monomial
- * @return
- */
+
 void monomial_lcm(monomial m1, monomial m2, monomial m3){
     int i;
     for(i=0;i<ring_N;i++){
@@ -243,9 +216,9 @@ void monomial_lcm(monomial m1, monomial m2, monomial m3){
 }
 
 /**
- * @brief monomial_stddegree determines the degree of a monomial
- * @param m monomial
- * @return degree as an integer
+ * @brief Determines the degree of a monomial.
+ * @param m  The monomial.
+ * @return The degree as an integer.
  */
 int monomial_stddegree(monomial m){
     int i;

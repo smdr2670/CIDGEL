@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  24 JUL 2014 13:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  25 JUL 2014 02:16
 entering extended mode
 **drba.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba.tex
@@ -1193,13 +1193,13 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count170
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_tp.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_tp2.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (E:\Programme\MikTex\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (E:\Programme\MikTex\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1207,25 +1207,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <figures/tuhh.png, id=110, 1505.625pt x 411.5375pt>
 File: figures/tuhh.png Graphic file (type png)
  <use figures/tuhh.png>
-Package pdftex.def Info: figures/tuhh.png used on input line 9.
+Package pdftex.def Info: figures/tuhh.png used on input line 5.
 (pdftex.def)             Requested size: 225.834pt x 61.72795pt.
 
-<figures/ictlogo.png, id=112, 303.59091pt x 250.09973pt>
-File: figures/ictlogo.png Graphic file (type png)
+Overfull \hbox (28.45274pt too wide) in paragraph at lines 9--10
+[][][][]| 
+ []
 
-<use figures/ictlogo.png>
-Package pdftex.def Info: figures/ictlogo.png used on input line 30.
-(pdftex.def)             Requested size: 60.7171pt x 50.01904pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 5--71
- [] 
+Overfull \hbox (28.45274pt too wide) in paragraph at lines 11--12
+[][][][] 
+ []
+
+
+Overfull \hbox (28.45274pt too wide) in paragraph at lines 34--34
+ [][][] 
+ []
+
+
+Overfull \hbox (28.45274pt too wide) in paragraph at lines 35--39
+ [][][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3--51
+[][] 
  []
 
 ) [1
 
 {C:/Users/Daniel/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/D
-aniel/Documents/GitHub/CIDGEL/paper/figures/tuhh.png> <C:/Users/Daniel/Document
-s/GitHub/CIDGEL/paper/figures/ictlogo.png>] [2
+aniel/Documents/GitHub/CIDGEL/paper/figures/tuhh.png>] [2
 
 ]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\paper\drba_ab.tex)
@@ -1494,11 +1506,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
- 30002 strings out of 493921
- 672859 string characters out of 3150487
- 830456 words of memory out of 3000000
- 32525 multiletter control sequences out of 15000+200000
- 18387 words of font info for 68 fonts, out of 3000000 for 9000
+ 29998 strings out of 493921
+ 672762 string characters out of 3150487
+ 830398 words of memory out of 3000000
+ 32521 multiletter control sequences out of 15000+200000
+ 18401 words of font info for 68 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  62i,19n,83p,701b,2321s stack positions out of 5000i,500n,10000p,200000b,50000s
 <E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Programme/
@@ -1510,17 +1522,17 @@ pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><E:/Programme
 e1/public/amsfonts/cm/cmr10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfont
 s/cm/cmr12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmr6.pfb><E:
 /Programme/MikTex/fonts/type1/public/amsfonts/cm/cmr8.pfb><E:/Programme/MikTex/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/Programme/MikTex/fonts/type1/publ
-ic/amsfonts/cm/cmsy6.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmti12.pfb><E:/Prog
-ramme/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programme/MikTex/fon
-ts/type1/public/amsfonts/cm/cmtt12.pfb><E:/Programme/MikTex/fonts/type1/public/
-amsfonts/euler/eurm10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symb
-ols/msam10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on drba.pdf (50 pages, 566601 bytes).
+fonts/type1/public/amsfonts/cm/cmss12.pfb><E:/Programme/MikTex/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/c
+msy6.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Prog
+ramme/MikTex/fonts/type1/public/amsfonts/cm/cmti12.pfb><E:/Programme/MikTex/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb><E:/Programme/MikTex/fonts/type1/public/
+amsfonts/cm/cmtt12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/euler/e
+urm10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msam10.pfb><
+E:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on drba.pdf (50 pages, 466798 bytes).
 PDF statistics:
- 733 PDF objects out of 1000 (max. 8388607)
+ 735 PDF objects out of 1000 (max. 8388607)
  217 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 
