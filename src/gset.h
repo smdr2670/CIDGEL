@@ -106,7 +106,7 @@ binomial gset_downedge_lex(gset g);
 binomial gset_downedge_grlex(gset g);
 
 
-/*
+/**
  * @brief bmleadreduce "lift" monomial m1 to a binomial using bmlist B,mlist.
             This function represents line 6 and 7 from algorithm 5 of this thesis.
  * @param m1 The binomial to be lifted.
@@ -140,7 +140,7 @@ void remove_multiples(binomial S, binomial *L);
 * @param B  The marked binomial
 * @param ms List of binomials.
 */
-void bmrgb(binomial B, binomial *ms)
+void bmrgb(binomial B, binomial *ms);
 
 
 /**

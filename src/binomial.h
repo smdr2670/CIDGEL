@@ -22,6 +22,7 @@ extern int code_dim;
 void code_dim_set(int n);
 int ring_set(int n);
 int ring_getvar(FILE *ifile);
+
 #define ring_putvar(ofile,v) fprintf(ofile,"%c",'a'+v)
 
 
