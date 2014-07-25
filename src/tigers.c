@@ -92,11 +92,8 @@ void vertex_print(gset g1,int no_print ){
     fprintf(outfile,"\n\n");
 }
 
-/**
- * @brief  extra condition for degree compatible groebner base for facet binomial to be flipped
- * @param b given binomial
- * @return 1 for fullfilled condition, 0 for not fullfilled
- */
+
+
 int flip_condition_tig(binomial b){
     if(degree_comp == TRUE){
         return (binomial_degree_compatible(b) == 0 && binomial_grlexordered(b)==TRUE);
