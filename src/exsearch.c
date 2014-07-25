@@ -1,6 +1,15 @@
-/*
-** exsearch.c                                 Birk Huber, 4/99 
-**   -- exhaustive search main loop.
+/** 
+*   @file exsearch.h 
+*   @brief Exhaustive search main loop.
+*
+*   This file is reused from TiGERS,
+*   Toric Groebner Basis Enumeration by Reverse Search 
+*   copyright (c) 1999  Birk Huber
+*
+*   @author Birk Huber, 4/99 
+*   @author Daniel Rembold
+*   @bug No known bugs
+*
 */
 #include <stdio.h>
 #include <stdlib.h>

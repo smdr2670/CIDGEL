@@ -1,12 +1,16 @@
-/*
-** Rsimp.c                                 Birk Huber, 4/99 
-** -- definitions of linear programming data structure and 
-** -- basic implementation of revised simplex method.
-**  
-**
-** TiGERS,  Toric Groebner Basis Enumeration by Reverse Search 
-** copyright (c) 1999  Birk Huber
-**
+/** 
+*   @file Rsimp.c
+*   @brief definitions of linear programming data structure and 
+*          basic implementation of revised simplex method.
+*   
+*   This file is reused from TiGERS,
+*   Toric Groebner Basis Enumeration by Reverse Search 
+*   copyright (c) 1999  Birk Huber
+*
+*   @author Birk Huber, 4/99 
+*   @author Daniel Rembold
+*   @bug No known bugs
+*
 */
 #include <stdio.h>
 #include <math.h>
@@ -49,12 +53,7 @@ double RS_zt=0.0000001;
 #define Q0(i,j)  (Q[i][j])
 
 
-/*
-** void LP_free_space():
-**       deallocate space for LP data structures.
-**       set all LP globals to 0.
-**
-*/
+
 void LP_free_space(){
     free_matrix(LP_A);
     free_matrix(LP_Q);
@@ -72,11 +71,7 @@ void LP_free_space(){
     LP_Basis=LP_NonBasis = 0;
 }
 
-/*
-** void LP_get_space(int M, int N):
-**      allocate space for LP data structures.
-**
-*/
+
 void LP_get_space(int M, int N){
     if (M>LP_MAX_M || N>LP_MAX_N){
         LP_free_space();
@@ -97,10 +92,11 @@ void LP_get_space(int M, int N){
     LP_N=N;
 }
 
-/*
-** void Print_LP():
-**     print LP data structures to stdout.
-**
+
+
+/**
+* @brief print LP data structures to stdout.
+*
 */
 void Print_LP(){
     int i,j;
@@ -120,51 +116,8 @@ void Print_LP(){
     fprintf(stdout,"\n\n");
 }
 
-/*
-**
-**int Rsimp(m,n,A,b,c,x,basis,nonbasis,R,Q,t1,t2):
-**     revised simplex method (Using Bland's rule) 
-**     and a qr factorization to solve the linear equations
-**
-**      Adapted from algorithms presented in 
-**             Linear Approximations and Extensions                  
-**             (theory and algorithms)
-**             Fang & Puthenpura
-**             Prentice Hall, Engelwood Cliffs NJ (1993)
-**      and 
-**            Linear Programming
-**            Chvatal 
-**            Freeman and Company, New York, 1983
-** 
-**      (developed first in Octave, many thanks to the author)
-** 
-**
-**  Solve the problem 
-**       minimize C'x, 
-**       subject to A*x=b,  x>=0
-**       for x,c,b n-vectors, and A an m,n matrix with full row rank 
-** 
-** Assumptions:
-**    A mxn matrix with full row rank.
-**    b an m matrix. 
-**    c an n-vector.
-**    x an n-vector holding a basic feasible solution, 
-**    basis m-vector holding indices of the basic variables in x
-**    nonbasis n-m vector holding the indices not appearing in x.
-** 
-**  Returns: 
-**      LP_FAIL if algorithm doesn't terminate.
-**      LP_UNBD if problem is unbounded
-**      LP_OPT  if optimum found
-**  efects:
-**    A,b,c unchanged.
-**    x basis, nonbasis, hold info describing last basic feasible 
-**                       solution.
-**    Q,R hold qrdecomp of last basis matrix.
-**    t1,t2 undefined.
-**
-**
-*/ 
+
+
 
 int Rsimp(int m, int n, double **A, double *b, double *c,
           double *x, int *basis, int *nonbasis,
@@ -282,14 +235,7 @@ int Rsimp(int m, int n, double **A, double *b, double *c,
 }
 
 
-/*
-**void GQR(int r, int c, double **Q, double **R):
-**  Use givens rotations on R to bring it into triangular form.
-**  Store orthogonal matrix needed to bring R to triangular form in Q.
-**  Assume R is an rxc matrix and Q is rxr.
-**  (Question: is r>=c needed ?) 
-**
-*/
+
 void GQR(int r, int c, double **Q, double **R){
     int i,j,k;
     double s,s1,s2;

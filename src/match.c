@@ -1,19 +1,17 @@
-/*
-** match.c                                 
-**
-**
+/** 
+*   @file match.c 
+*   @brief Function definitions for Gröbner fan matching.
+*
+*   @author Daniel Rembold
+*   @bug No known bugs
+*
 */
-
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "match.h"
 
-/**
- *@brief sortedInsert Inserts a node in the correct position in the linked list
- *@param head Linked list
- *@param newnode new Node to be inserted
- */
+
 void sortedInsert(struct node** head, struct node* newnode){
     struct node* tmp;
     /* Special case for the head end */
@@ -37,15 +35,7 @@ void sortedInsert(struct node** head, struct node* newnode){
 
 
 
-/* A utility function to create a new node */
-/**
-* @brief newNode creats a new Node (Vertex without binomials)
-* @param id id of the Vertex
-* @param facet number of facets of the Vertex
-* @param binomials number of binomials of the Vertex
-* @param degree highest degree of the binomials
-* @return newnode allocated space of a node
-*/
+
 struct node *newNode(int id, int facet, int binomials , int degree){
                             /* allocate node */
     struct node* newnode = (struct node*) malloc(sizeof(struct node));
@@ -70,13 +60,7 @@ void printList(struct node *head){
     }
   }
 
-  /**
-  * @brief ListDelete searches and deletes a certain element of the list listP
-  * @param listP Linked List
-  * @param nfacet number of facet
-  * @param nbinomials number of binomials
-  * @param degree highest degree
-  */
+
   int ListDelete(struct node **listP, int nfacet, int nbinomials , int degree){
       struct node *currP, *prevP;
 
@@ -113,13 +97,7 @@ void printList(struct node *head){
 
 }
 
-/**
- * @brief match checks if two Lists contains the same elements.
- * @param list1 first list
- * @param list2 second list
- * @return 0 if lists are equal, -1 if not
- *
- */
+
 int match( struct node **list1, struct node **list2){
 
   if(*list1 == NULL || *list2== NULL){

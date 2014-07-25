@@ -47,8 +47,9 @@ struct node* list2 = NULL;
 
 
 /**
- * @brief vertex_print Prints vertex with all its information
- * @param g1 given groebner base
+ * @brief Prints vertex with all its information
+ * @param g1 The given groebner base.
+ * @param no_print Flag for printing.
  */
 void vertex_print(gset g1,int no_print ){
 
