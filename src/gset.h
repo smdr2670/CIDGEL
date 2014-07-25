@@ -16,8 +16,9 @@
 
 typedef struct gset_tag *gset;
 
-/* @brief Linked List of gset_tag which contiains the binomial and the
-          caching informations*/
+/** @brief Linked List of gset_tag which contiains the binomial and the
+          caching informations
+*/
 struct gset_tag{
     int id;              /**< Number of the vertex of the edge graph #id.  */
     int nfacets;         /**< The number of facet binomials, #nfacets.   */

@@ -1,10 +1,8 @@
 /** 
 *   @file matrices.h
-*   @brief Definition and Minipulation of integer and double matrices and vectors.
-*   	   vectors are simply C-vectors (with indices starting at zero) and matrices
-*   	   are stored Numerical Recepies style -- as a vector of pointers to the
-*   	   rows of the matrix [which are themselves just regular C vectors].
-*
+*   @brief Header file for Rsimp.c 
+*		   Declaration of integer and double matrices and vectors.
+*   	   
 *   This file is reused from TiGERS,
 *   Toric Groebner Basis Enumeration by Reverse Search 
 *   copyright (c) 1999  Birk Huber
