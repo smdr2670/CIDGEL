@@ -108,7 +108,7 @@ int ring_read(FILE *infile){
 
 int ring_getvar(FILE *infile){
     char c;
-    c=fgetc(ifile);
+    c=fgetc(infile);
     if ('a' > c || c >'a'+ring_N-1){
         fprintf(stderr,"ring_getvar(): invalid variable read\n");
         ungetc(c,infile);
