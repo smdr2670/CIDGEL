@@ -11,6 +11,8 @@
 *   @bug No known bugs
 *
 */
+
+/* -- Includes -- */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -112,8 +114,20 @@ int Mf;
 #define MATFOUND 1
 #define GSETFOUND 2
 
-// -------------------------------------------------------------------------------------------------------- //
 
+void printstats();
+
+// -------------------------------------------------------------------------------------------------------- //
+/**
+* @brief CIDGEL entrypoint
+*    
+*        This is the entrypoint for the complete software.  
+*        It reads off the commandline command and calls the 
+*        chosen funtions.
+* @param argc Arguments counted.
+* @param argv Argument string.
+* @return Should not return. 
+*/
 int main(int argc, char **argv ){
 
     infile=stdin;
