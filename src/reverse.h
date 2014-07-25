@@ -1,5 +1,5 @@
 /** 
-*   @file tigers.h
+*   @file reverse.h
 *   @brief Main algorithm using reverse search mentioned in algorithm 2.8 
 *          of the TiGERS paper.
 *   
