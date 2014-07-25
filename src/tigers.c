@@ -1,12 +1,18 @@
-/*
-** tigers.c                                 Birk Huber, 2/99
-** -- reverse search loop and main calling program for tigers.
-**
-**
-** TiGERS,  Toric Groebner Basis Enumeration by Reverse Search
-** copyright (c) 1999  Birk Huber
-**
+/** 
+*   @file tigers.c
+*   @brief reverse search loop and main calling program for tigers.
+*          
+*   
+*   This file is reused from TiGERS,
+*   Toric Groebner Basis Enumeration by Reverse Search 
+*   copyright (c) 1999  Birk Huber
+*
+*   @author Birk Huber, 4/99 
+*   @author Daniel Rembold
+*   @bug No known bugs
+*
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "utils.h"
@@ -103,14 +109,7 @@ int flip_condition_tig(binomial b){
 }
 
 
-/**
- *
- * @brief rsearch main algorithm using the reverse search tree
- * @param g1 given groebner base to start of
- * @param number important in order to match 2 groebner fans
- *
- *
- */
+
 int rsearch(gset g1, int number, int no_print){
 
     gset G1=0;
