@@ -1,3 +1,11 @@
+/** 
+*   @file code.h
+*   @brief Function prototype for computing code ideals.
+*
+*   @author Daniel Rembold
+*   @bug No known bugs
+*
+*/
 
 
 #ifndef CODE_H
