@@ -31,7 +31,6 @@ FILE *outfile;
 */
 #define min(m,n) (((m)<(n))?(m):(n))
 
-/*
 void gset_compute_colon(gset g,int lv){
     binomial ptr;
     int lold,jk;
@@ -61,7 +60,6 @@ void gset_compute_colon(gset g,int lv){
     /* restore original value of lvar*/
     ring_lv=lold;
 }
-*/
 
 
 /**
