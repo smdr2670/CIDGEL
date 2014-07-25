@@ -31,35 +31,6 @@ FILE *outfile;
 */
 #define min(m,n) (((m)<(n))?(m):(n))
 
-void gset_compute_colon(gset g,int lv){
-    binomial ptr;
-    int lold,jk;
-
-    /* progress report */
-    fprintf(stderr,"taking colon of J with %c:\n",'a'+lv);
-
-    /* set lex last variable to be lv */
-    lold=ring_lv;
-    ring_lv=lv;
-
-    /* compute grobner basis wrt to this rev lex term order */
-    gset_rgb(g,monomial_rlexcomp);
-
-    /* now devide each binomial by highest power of lvar which divides it */
-
-    for(ptr=gset_first(g); ptr!=0; ptr=binomial_next(ptr)){
-        jk=min(binomial_lead(ptr)[lv],binomial_trail(ptr)[lv]);
-        binomial_lead(ptr)[lv]-=jk;
-        binomial_trail(ptr)[lv]-=jk;
-    }
-
-
-    /* result is a grobner basis, reduce it to make it an rgb */
-    gset_autoreduce(g);
-
-    /* restore original value of lvar*/
-    ring_lv=lold;
-}
 
 
 /**
