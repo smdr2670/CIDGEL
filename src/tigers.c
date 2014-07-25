@@ -46,11 +46,6 @@ struct node* list2 = NULL;
 
 
 
-/**
- * @brief Prints vertex with all its information
- * @param g1 The given groebner base.
- * @param no_print Flag for printing.
- */
 void vertex_print(gset g1,int no_print ){
 
 
@@ -98,11 +93,11 @@ void vertex_print(gset g1,int no_print ){
 }
 
 /**
- * @brief flip_condition extra condition for degree compatible groebner base for facet binomial to be flipped
+ * @brief  extra condition for degree compatible groebner base for facet binomial to be flipped
  * @param b given binomial
  * @return 1 for fullfilled condition, 0 for not fullfilled
  */
-int flip_condition(binomial b){
+int flip_condition_tig(binomial b){
     if(degree_comp == TRUE){
         return (binomial_degree_compatible(b) == 0 && binomial_grlexordered(b)==TRUE);
     }else{
@@ -227,8 +222,8 @@ int rsearch(gset g1, int number, int no_print){
         while(b!=0){
 
             //FIXME : lange laufzeit in den Griff bekommen
-            //if (binomial_grlexordered(b)==TRUE && flip_condition(b)   ){
-            if (gset_isfacet(G1,b)==TRUE && flip_condition(b) ){
+            //if (binomial_grlexordered(b)==TRUE && flip_condition_tig(b)   ){
+            if (gset_isfacet(G1,b)==TRUE && flip_condition_tig(b) ){
                 stats_ecounter++;
 
                 G2=gset_flip(G1,b);
