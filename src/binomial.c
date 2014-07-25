@@ -1,15 +1,3 @@
-/*
-** binomial.c                                 Birk Huber, 4/99 
-** -- define binomal type and main operations on binomials                  
-**  
-**
-** TiGERS,  Toric Groebner Basis Enumeration by Reverse Search 
-** copyright (c) 1999  Birk Huber
-**
-** Commented and slightly edited by Daniel Rembold
-**
-*/
-
 /**
 *	@file binomial.c
 *	@brief define binomal type and main operations on binomials 
@@ -169,7 +157,6 @@ void get_monomial(FILE *is,int *exps){
 }
 
 
-
 int monomial_divides(monomial m1, monomial m2){
     int i;
     for(i=0;i<ring_N;i++){
@@ -215,11 +202,7 @@ void monomial_lcm(monomial m1, monomial m2, monomial m3){
     }
 }
 
-/**
- * @brief Determines the degree of a monomial.
- * @param m  The monomial.
- * @return The degree as an integer.
- */
+
 int monomial_stddegree(monomial m){
     int i;
     int d=0;
@@ -230,12 +213,7 @@ int monomial_stddegree(monomial m){
 }
 
 
-/**
- * @brief monomial_lexcomp determines if m1 is lexicographically greater then m2
- * @param m1 first monomial
- * @param m2 second monomial
- * @return >0 if m1 is lexicographically greater then m2
- */
+
 int monomial_lexcomp(monomial m1, monomial m2){
     int i,jk;
     for(i=0;i<ring_N;i++){
@@ -246,13 +224,7 @@ int monomial_lexcomp(monomial m1, monomial m2){
     return jk;
 }
 
-/**
- * @brief monomial_rlexcomp  determines if m1 is degree reverse lexicographically greater than m2
- *        with variables taken in order a>b>..., except that variable ring_lv is taken last (if it is >=0).
- * @param m1 first monomial
- * @param m2 second binomial
- * @return >0 if m1 is degree reverse lexicographically greater than m2
- */
+
 int monomial_rlexcomp(monomial m1, monomial m2){
     int i,jk,d=0;
     /* compute difference of total degrees */
@@ -278,12 +250,7 @@ int monomial_rlexcomp(monomial m1, monomial m2){
     return 0;
 }
 
-/**
- * @brief monomial_grlexcomp determines if m1 is degree lexicographically greater than m2
- * @param m1 first monomial
- * @param m2 second monomial
- * @return >0 if m1 is degree lexicographically greater than m2
- */
+
 int monomial_grlexcomp(monomial m1, monomial m2){
     int d;
     //int i;
@@ -319,11 +286,7 @@ int monomial_grlexcomp(monomial m1, monomial m2){
 **
 */
 
-/**
- * @brief binomial_new allocate storage for a new binomial
- *        initialize flags and set exponents to zero;
- * @return new allocated binomial
- */
+
 binomial binomial_new(){
     binomial m;
     int i;
@@ -348,10 +311,7 @@ binomial binomial_new(){
 }
 
 
-/**
- * @brief binomial_free reclaim space allocated by binomial_new()
- * @param m binomial which shall be deleted
- */
+
 void binomial_free(binomial m){
     if (m->E!=0){
         free((void *)(m->E));
@@ -359,11 +319,7 @@ void binomial_free(binomial m){
     free((void *)m);
 }
 
-/**
- * @brief binomial_read read data into binomial
- * @param is input file stream
- * @param b read binomial will be stored in this parameter
- */
+
 void binomial_read(FILE *is, binomial b){
     char c, d='-';
     eatwhite(is);
@@ -405,11 +361,6 @@ void binomial_read(FILE *is, binomial b){
 }
 
 
-/**
- * @brief binomial_print print the binomial
- * @param of output stream
- * @param b binomial which shall be printed
- */
 void binomial_print(FILE *of, binomial b){
     if (b==0) fprintf(of,"(NULL)");
     else {
@@ -429,11 +380,7 @@ void binomial_print(FILE *of, binomial b){
     }
 }
 
-/**
- * @brief binomial_copy copy source binomials exponents and flags to those of dest binomia
- * @param src source binomial
- * @param dest destination binomial
- */
+
 void binomial_copy(binomial src,binomial dest){
     int i;
 
@@ -445,10 +392,7 @@ void binomial_copy(binomial src,binomial dest){
     dest->bf=src->bf;
 }
 
-/**
- * @brief binomial_flip interchange leading and trailing terms of binomial
- * @param b binomial which will be flipped
- */
+
 void binomial_flip(binomial b){
     int *tmp;
     tmp=binomial_lead(b);
@@ -456,13 +400,7 @@ void binomial_flip(binomial b){
     binomial_trail(b)=tmp;
 }   
 
-/**
- * @brief monomial_spair form S-Pair between marked binomial and marked monomial
-**                       and reduce result by binomial as many times as possible
- * @param b first binomial
- * @param m second binomial
- * @return S-Pair between the parameters
- */
+
 binomial monomial_spair(binomial b,monomial m){
     binomial S = 0;
     int i,tmp;
@@ -490,13 +428,7 @@ binomial monomial_spair(binomial b,monomial m){
     return S;
 }
 
-/**
- * @brief binomial_spair replace b1, by spair of b1 and b2 -- the spair is taken with respect
- *                       to the markings of b1 and b2, but it's marking is not meaningfull.
- * @param b1 first binomial
- * @param b2 second binomial
- * @return TRUE(=0) if result is equivalent to zero monomial
- */
+
 int binomial_spair(binomial b1, binomial b2){
     int i,jk,jk2=TRUE;
     for(i=0;i<ring_N;i++){
@@ -522,13 +454,6 @@ int binomial_spair(binomial b1, binomial b2){
 
 
 
-/**
- * @brief binomial_bumpto assuming that the leading term of b1 divides that of b2
- *                        multiply both sides of b1 so that the leading terms of b1
- *                        and b2 are equal
- * @param b1 first binomial
- * @param b2 second binomial
- */
 void binomial_bumpto(binomial b1, binomial b2){
     int i,tmp;
     for(i=0;i<ring_N;i++){
@@ -538,13 +463,7 @@ void binomial_bumpto(binomial b1, binomial b2){
     }
 }
 
-/**
- * @brief reducetrail assuming that lead(b2) divides trail(b1) change b1 into binomial
- *                    resulting from bumping b2 so that lead(b2)=trail(b1) and adding
- *                    result to b1.
- * @param b1 first binomial
- * @param b2 second binomial
- */
+
 void reducetrail(binomial b1, binomial b2){
     int i;
     for( i=0;i<ring_N;i++){
@@ -554,15 +473,7 @@ void reducetrail(binomial b1, binomial b2){
 
 
 
-/**
- * @brief binomial_compair determines if the lead term of b1 is lexicographically greater than
- *                         that of b2 or if they tie return true if the trail term b1 is greater
- *                         or equal to that of b2 otherwise return false
- *
- * @param b1 first binomial
- * @param b2 second binomial
- * @return TRUE(=0) or FALSE (=1)
- */
+
 int binomial_compair(binomial b1,binomial b2){
     int tmp;
 
@@ -576,11 +487,7 @@ int binomial_compair(binomial b1,binomial b2){
     }
 }
 
-/**
- * @brief binomial_first_term_degree Calculates the degree of the first term
- * @param b given binomial
- * @return degree of first term
- */
+
 int binomial_first_term_degree(binomial b){
     int i;
     int degree=0;
@@ -591,15 +498,7 @@ int binomial_first_term_degree(binomial b){
 
 }
 
-/**
- *
- *
- * @brief binomial_variable_position Returns the position which will NOT belong to the non-prime ideal.
- *                                   Note that the function is only called when the leading term of the binomial
- *                                   has the degree 1.
- * @param b given binomial
- * @return index i of exponent vector with i != 0
- */
+
 int binomial_variable_position(binomial b){
     int i;
     if(monomial_stddegree(binomial_lead(b)) != 1){
@@ -616,13 +515,8 @@ int binomial_variable_position(binomial b){
     return -1;
 }
 
-/**
- *
- *
- * @brief binomial_degree_compatible Returns whether a binomail is degree compatible or not.
- * @param b given binomial
- * @return 1 if first term has a higher degree, 0 if degrees are equal, -1 if second term has a higher degree
- */
+
+
 int binomial_degree_compatible(binomial b){
     //fprintf(outfile, "first term: %d, second term: %d ",monomial_stddegree(binomial_lead(b)),monomial_stddegree(binomial_trail(b)));
     if(monomial_stddegree(binomial_lead(b)) > monomial_stddegree(binomial_trail(b))){
@@ -639,16 +533,13 @@ int binomial_degree_compatible(binomial b){
     }
 }
 
-/**
-*
-*
-*
-*/
+
 void binomial_puncture(binomial b,int position){
     *(binomial_lead(b)+position) = 0;
     *(binomial_trail(b)+position) = 0;
 
 }
+
 
 int binomial_equal(binomial b1, binomial b2){
     int i;

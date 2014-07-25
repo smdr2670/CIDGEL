@@ -9,23 +9,13 @@
 #include "exsearch.h"
 
 
-/**
- * @brief insert use next pointer in Gsets to implement a simple linked list.
- *               for now stored in no particular order.
- * @param g1
- * @param L
- */
+
 void insert(gset g1, gset *L){
     g1->next=*L;
     *L=g1;
 }
 
-/**
- * @brief gset_equiv determine if two gsets contain equivalent marked binomials
- * @param g1 first binomial
- * @param g2 second binomial
- * @return TRUE(=0) of FALSE(=1)
- */
+
 int gset_equiv(gset g1, gset g2){
     binomial p1,p2;
 
@@ -50,13 +40,7 @@ int gset_equiv(gset g1, gset g2){
 
 
 
-/**
- * @brief find check a gset against those on list untill an equivalent one is found.
- * @param g1 gset which shall be found in list l
- * @param L list that will be searched after g1
- *
- *
- */
+
 gset find(gset g1, gset L){
     gset g2=0;
     for(g2=L;g2!=0;g2=g2->next){
@@ -68,11 +52,7 @@ gset find(gset g1, gset L){
 }
 
 
-/**
-* @brief flip_condition extra condition for degree compatible groebner base for facet binomial to be flipped
-* @param b given binomial
-* @return 1 for fullfilled condition, 0 for not fullfilled
-*/
+
 int flip_ex_condition(binomial b,int degree_comp){
     if(degree_comp == TRUE){
         return (binomial_degree_compatible(b) == 0 && binomial_grlexordered(b)==TRUE );
@@ -83,12 +63,7 @@ int flip_ex_condition(binomial b,int degree_comp){
 
 extern int stats_ecounter;
 
-/**
- * @brief exsearch breadth first search to find all degree compatible groebner bases
- *                 of a code ideal
- * @param g1 starting groebner base
- * @return number of groebner bases found
- */
+
 int exsearch(gset g1, int degree_comp,int no_print){
     gset G1;
     gset G2;
