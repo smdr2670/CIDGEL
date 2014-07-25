@@ -1,6 +1,6 @@
 /** 
-*   @file tigers.c
-*   @brief reverse search loop and main calling program for tigers.
+*   @file reverse.c
+*   @brief Reverse search loop and main calling program for CIDGEL.
 *          
 *   
 *   This file is reused from TiGERS,
@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include "utils.h"
 #include "gset.h"
-#include "tigers.h"
+#include "reverse.h"
 #include "match.h"
 
 int rsearch_cache=TRUE;

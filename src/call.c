@@ -21,7 +21,7 @@
 #include "utils.h"
 #include "gset.h"
 #include "matrices.h"
-#include "tigers.h"
+#include "reverse.h"
 #include "exsearch.h"
 #include "Rsimp.h"
 
