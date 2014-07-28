@@ -22,7 +22,8 @@
 \BIBdecl
 
 \bibitem{KHZ}
-{Karl-Heinz Zimmermann}, \emph{Algebraic Statistics}, July 2009.
+{Karl-Heinz Zimmermann}, \emph{Algebraic Statistics}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Books on Demand GmbH, Norderstedt, July 2009.
 
 \bibitem{tigers}
 {Birkett Huber and Rekha R. Thomas}, ``Computing gr\"obner fans of toric
@@ -46,7 +47,8 @@
   Mathematics}, 2013.
 
 \bibitem{dueckpaper}
-{Natalia D\"uck}, ``Computation of the d.c. gr\"obner fan,'' April 2014.
+{Natalia Dück}, ``Computation of the d.c. gröbner fan,'' April 2014,
+  task-setting for the bachelor thesis.
 
 \bibitem{gfan}
 \BIBentryALTinterwordspacing
