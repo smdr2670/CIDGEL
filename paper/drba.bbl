@@ -26,29 +26,29 @@
   minus 0.4em\relax Books on Demand GmbH, Norderstedt, July 2009.
 
 \bibitem{tigers}
-{Birkett Huber and Rekha R. Thomas}, ``Computing gr\"obner fans of toric
-  ideals,'' Institute for Defense Analysis, United States, Department of
+{Birkett Huber and Rekha R. Thomas}, ``{Computing Gröbner Fans of Toric
+  Ideals},'' Institute for Defense Analysis, United States, Department of
   Mathematic, University of Washington, Tech. Rep., 1999.
 
 \bibitem{saleemi}
-{Mehwish Saleemi}, ``Coding theory via groebner bases,'' Ph.D. dissertation,
-  Technische Universitat Hamburg-Harburg, 2012.
+{Mehwish Saleemi}, ``{Coding Theory via Groebner Bases},'' Ph.D. dissertation,
+  Technische Universität Hamburg-Harburg, 2012.
 
 \bibitem{coxOshea}
-{Cox , David A. and Little, John and O'Shea, Donal}, \emph{Ideals, Varieties,
-  and Algorithms: An Introduction to Computational Algebraic Geometry and
+{David R. Cox, John Little and Donal O'Shea}, \emph{Ideals, Varieties, and
+  Algorithms: An Introduction to Computational Algebraic Geometry and
   Commutative Algebra, 3/e (Undergraduate Texts in Mathematics)}.\hskip 1em
   plus 0.5em minus 0.4em\relax Secaucus, NJ, USA: Springer-Verlag New York,
   Inc., 2007.
 
 \bibitem{dueckjournal}
-{Natalia Dück and Karl-Heinz Zimmermann}, ``Universal gröbner bases for
-  binary linear codes,'' \emph{International Journal of Pure and Applied
+{Natalia Dück and Karl-Heinz Zimmermann}, ``{Universal Gröbner bases for
+  binary linear codes},'' \emph{International Journal of Pure and Applied
   Mathematics}, 2013.
 
 \bibitem{dueckpaper}
-{Natalia Dück}, ``Computation of the d.c. gröbner fan,'' April 2014,
-  task-setting for the bachelor thesis.
+{Natalia Dück}, ``{Computation of the d.c. Gröbner fan},'' April 2014,
+  {Task-setting for the bachelor thesis}.
 
 \bibitem{gfan}
 \BIBentryALTinterwordspacing

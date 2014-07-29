@@ -2,8 +2,8 @@
 \section{Software}
 \label{sec:software}
 This section is all about the practical part of this work. At first, an accurate description is presented of how the software can be compiled and used for own demands.
-Secondly, the software is tested on some randomly generated linear Codes. The number of degree compatible and all Groebner bases are presented and comparison of the operational time against Gfan \cite{gfan} is presented. \\
-This software, called CIDGEL (Code Ideal degree compatible Groebner bases enumerating from Linear Codes), is a re-implementation of TiGERS \cite{tigers}, that is why the software is written in C. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Groebner bases with reverse search and breath-first search were implemented.   
+Secondly, the software is tested on some randomly generated linear codes. The number of degree compatible and all Gröbner bases are presented and comparison of the operational time against Gfan \cite{gfan} is presented. \\
+This software, called CIDGEL (Code Ideal degree compatible Gröbner bases enumerating from Linear Codes), is a re-implementation of TiGERS \cite{tigers}, that is why the software is written in C. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Gröbner bases with reverse search and breath-first search were implemented.   
 Additional features are explained in Section \ref{subsec:manual}.
 
 
@@ -32,7 +32,7 @@ The pointer \emph{exps1} stores the exponent vector of the first monomial and \e
 The integer \emph{ff} is a flag which shows if a binomial is a facet binomial or not and \emph{bf} tells if there is a monomial or binomial.
 The pointer binomial next indicates that binomials are linked together like a linear list, which is necessary to describe ideals and Gröbner bases. The pointer \emph{E} points to \emph{exps1} and \emph{exps2} and is used for allocating and deallocating space. \\
 
-The next code snippet shows the other important data structure. Again, it is a linked list like the binomials with the purpose to connect all reduced Groebner together, which is needed for the breath-first search.\\
+The next code snippet shows the other important data structure. Again, it is a linked list like the binomials with the purpose to connect all reduced Gröbner together, which is needed for the breath-first search.\\
 
 The first four integers show off the identification number of the vertex of the edge graph, the number of facet binomials, number of binomials and the highest degree. The pointer \emph{next} is a pointer to the next generating set of the linked list. The binomial \emph{cache\_edge} and the pointer \emph{cache\_vtx} stores the caching information in order not to recompute every facet binomial in the reverse search. 
 
@@ -114,10 +114,10 @@ M: { 6 10 2 :
 }
 \end{lstlisting}
 
-This Matrix is a generator matrix for a binary $[10,6]$ code in essential standard form. 
+This matrix is a generator matrix for a binary $[10,6]$ code in the essential standard form. 
 The first number in the first row gives the code dimension, the second tells the length of the codeword and the last number indicates in which primary field the generator matrix shall be evaluated.\\
 
-Now if the degree compatible Gröbner bases of this generator  matrix without printing the Gröbner basis shall be written in a outputfile called \\ \texttt{Example-output}. Additionally the linear programming shall be left out, then the program call is: \texttt{./cidgel -i Example-input -o Example-output -d -n -f}.
+Now if the degree compatible Gröbner bases of this generator  matrix without printing the Gröbner basis shall be written in a output-file called \\ \texttt{Example-output}. Additionally the linear programming shall be left out, then the program call is: \texttt{./cidgel -i Example-input -o Example-output -d -n -f}.
 The user do not has to specify an output file, the result will be printed in the console then.
 
 \newpage
@@ -154,8 +154,8 @@ time used (in seconds) 42.16
 
 \subsection{Computational experience}
 \label{subsec:compexp} 
-In this section the difference between degree compatible Gröbner bases and all Gröbner bases from a linear code are studied. Furthermore, the computational time for all Gröbner bases is compared against Gfan.
-The linear codes were randomly generated. All codes in this work were binary.
+In this section the difference between degree compatible Gröbner bases and all Gröbner bases from a linear code are studied. Furthermore, the computational time for all Gröbner bases is compared against Gfan \cite{gfan}.
+The linear codes were randomly generated. All codes in this evaluation were binary.
 
 \begin{figure}[h]
 \begin{tikzpicture}
@@ -238,7 +238,7 @@ Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Grö
  
  \newpage
  
- Table \ref{tab:benchmark} shows that the software CIDGEL can be way faster than Gfan for computing all the reduced Gröbner bases of a code ideal. The reason is the special binomial structure of the code ideals and the fast algorithms that can be linked with. Gfan is a software for Gröbner bases with more general structure.
+ Table \ref{tab:benchmark} shows that the software CIDGEL can be way faster than Gfan for computing all reduced Gröbner bases of a code ideal. The reason is the special binomial structure of the code ideals and the fast algorithms that can be linked with. Gfan is a software for Gröbner bases with more general structure.
  Even though the amount of all Gröbner bases are much more than the degree compatible Gröbner bases, the computational time does not hold proportionally to the amount.
  The computational time depends mostly on the computation of facets, see page \pageref{facets}. The degree compatible Gröbner bases mostly have more binomials than all other Gröbner bases, that is why the computational time for a code ideal with a few Gröbner bases will last longer than for a code ideal with many Gröbner bases with low cardinality. \\
  

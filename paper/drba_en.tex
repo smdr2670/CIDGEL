@@ -10,7 +10,8 @@ After that, linear codes will be presented and to connect these two topics toget
 
 In this section, two algorithms will be explained with the  purpose to enumerate the Gröbner fan.
 To compute all Gröbner bases from a toric ideal $I_A$ , it is necessary to search the \textit{edge graph} of a Gröbner fan.\\
-Two reduced Gröbner bases with respect to a term order covered by the generic weight vectors $c_{1}$, $c_{2}~$ are said to be adjacent if the two Gröbner cones share a common \textit{facet}. Given a reduced Gröbner basis with respect to the weight vector $c$, \textit{facet binomials} can be defined as follows.
+The Gröbner bases are the vertices of the \textit{edge graph}.
+Two reduced Gröbner bases with respect to a term order covered by the generic weight vectors \\ $c_{1}$, $c_{2}~$ are said to be adjacent in the \textit{edge graph} if the two Gröbner cones share a common \textit{facet}. Given a reduced Gröbner basis with respect to the weight vector $c$, \textit{facet binomials} can be defined as follows.
 
 \begin{env_definition}[Facet Binomial]
 \cite{tigers}
@@ -128,7 +129,7 @@ This procedure is called flip and is presented in algorithm \ref{alg:flip}.
 \begin{algorithmic}[1]
 
 \Input
-Reduced Gröbner basis $ \mathcal{G} $ of $I_A$
+Reduced Gröbner basis $ \mathcal{G} $ of $I_A$ \textbf{and}
 
     A prescribed facet binomial $ \underline{x}^{a}_{i} - x^{b}_{i} \in \mathcal{G} $
 %\Comment {The weight vector inducing $\mathcal{G}$ is generic and the leading terms are underlined}
@@ -160,7 +161,7 @@ The main advantage of the algorithm is that no weight vectors must be stored or 
 Weight vectors are carried implicitly and that is possible due to the binomial structure that this subroutine generates for every Gröbner basis. For this work \\ flip$({x}^{a}_{i} - x^{b}_{i},~\mathcal{G})$ means that algorithm \ref{alg:flip} is applied with the needed input.
 
 \begin{env_example}\normalfont
-Consider the reduced Gröbner basis with respect to a term order $\succ~$: $\mathcal{G}= \{x_{6}^{2}-1,~x_{5}^{2}-1,~x_{4}x_{5}x_{6} -x_{2},~x_{4}^{2}-1,~x_{3}-x_{5},~x_{2}x_{6}-x_{4}x_{5},~x_{2}x_{5}-x_{4}x_{6},~x_{2}x_{4}-x_{5}x_{6},~x_{2}^{2}-1,~x_{1}-x_{5}  \} $.
+Consider the reduced Gröbner basis with respect to a monomial order $\succ~$: $\mathcal{G}= \{x_{6}^{2}-1,~x_{5}^{2}-1,~x_{4}x_{5}x_{6} -x_{2},~x_{4}^{2}-1,~x_{3}-x_{5},~x_{2}x_{6}-x_{4}x_{5},~x_{2}x_{5}-x_{4}x_{6},~x_{2}x_{4}-x_{5}x_{6},~x_{2}^{2}-1,~x_{1}-x_{5}  \} $.
 
 Applying the procedure flip$(x_{3}-x_{5}, \mathcal{G}$) leads to:
 
@@ -227,7 +228,7 @@ Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
  \State add $\mathcal{G}'$ to Todo
  \EndIf
  \EndFor
-\EndWhile 
+\EndWhile \\
 \Return Verts
 
 %\EndProcedure
@@ -240,7 +241,7 @@ The more vertices the edge graph has, the more expensive the calculation will be
  \newpage
 
 \subsubsection{Reverse search tree}
-The disadvantages can be canceled out with a memoryless algorithm, which runs linear depending on the size of output. The idea is to enumerate the edge graph with depth-first reverse search. The result will be a directed subgraph of the edge graph, called reverse search tree $T_{\succ}(I_{A}) $.\\
+The disadvantages can be canceled out with a memoryless algorithm, which runs linear depending on the size of output. The idea is to enumerate the edge graph with a depth-first reverse search. The result will be a directed subgraph of the edge graph, called reverse search tree $T_{\succ}(I_{A}) $.\\
 \begin{env_definition}[Mismarked Polynomial]
 \cite{tigers}
 A polynomial $f$ that has been marked with respect to the monomial order $>$  is mismarked with respect to the monomial order $>'$  .
@@ -262,14 +263,14 @@ $\lozenge$
 The \textit{reverse search tree} $T_{\succ}(I_{A}) $ with a given monomal order $ > $ can be defined as follows:
 \begin{env_definition}[Reverse Search Tree]
 \label{def:reverse}
-\cite{tigers} For two reduced Gröbner bases $\mathcal{G}_{i}$ and $\mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$to $\mathcal{G}_{j}~$ is an edge of $~T_{\succ}(I_{A}) $ if $\mathcal{G}_{i}$ is obtained from $\mathcal{G}_{j}$ by the algorithm \ref{alg:flip} flip$(x^{\upalpha} - x^{\upbeta},~\mathcal{G}_{i}).$ $x^{\upalpha}$ is lexicographically maximal among all facet binomials of $\mathcal{G}_{i}$, that are mismarked with respect to $>$.
+\cite{tigers} For two reduced Gröbner bases $\mathcal{G}_{i}$ and $\mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$to $\mathcal{G}_{j}~$ is an edge of $~T_{\succ}(I_{A}) $ if $\mathcal{G}_{i}$ is obtained from $\mathcal{G}_{j}$ by  algorithm \ref{alg:flip}. The monomial $x^{\upalpha}$ is lexicographically maximal among all facet binomials of $\mathcal{G}_{i}$, that are mismarked with respect to $>$.
 \end{env_definition}
 
 
 \newpage
 
-It can be shown that the reverse search tree is an acyclic graph with a unique sink and from any reduced Gröbner basis of $\mathcal{G}_{c} $ of a toric ideal $I_{A}$, there is a unique path to the sink $\mathcal{G}_{>}$ \cite{tigers} .
-Unlike the Gröbner walk procedure, there are still no weight vectors involved, but in return every facet of the Gröebner cone must be computed, which can be computionally expensive for reduced Gröbner basis with many polynomials.
+It can be shown that the reverse search tree is an acyclic graph with a unique sink and from any reduced Gröbner basis $\mathcal{G}_{c} $ of a toric ideal $I_{A}$, there is a unique path to the sink $\mathcal{G}_{>}$ \cite{tigers} .
+Unlike the Gröbner walk procedure, there are still no weight vectors involved, but in return every facet of the Gröbner cone must be computed, which can be computationally expensive for reduced Gröbner bases with many polynomials.
 
 \begin{algorithm}
 \caption{Enumerating the edge graph of the Gröbner fan via reverse search \cite{tigers}}
@@ -318,10 +319,10 @@ Any reduced Gröbner basis $ \mathcal{R}_{>} $ of $I_A$ and its term order $>$
 \newpage
 
 \begin{env_example}\normalfont
-Consider the ideal with the reduced Gröbner basis with respect to the lexicographic order $x_{1} > \ldots > x_{6} $
+Consider the reduced Gröbner basis with respect to the lexicographic order $x_{1} > \ldots > x_{6} $
 \[ \mathcal{G} = \{x_{1} - x_{2}, x_{3} - x_{4}, x_{5}-x_{6} , x_{2}^{2} -1 , x_{4}^{2} - 1, x_{6}^{2} - 1 \}. \]
 
-Applying the breath-first search algorithm for this reduced Gröbner basis results to the following edge graph.\\
+Applying the breath-first search algorithm for this reduced Gröbner basis results to the following edge graph on figure \ref{fig:breadth}.\\
 Using the reverse search method, this search tree on figure \ref{fig:reverse} results.
 
 
@@ -355,7 +356,7 @@ $\mathcal{G}_{4} = \{x_{1}-x_{2},x_{3}-x_{4},x_{6}-x_{5},x_{2}^{2}-1,x_{4}^{2}-1
 $\mathcal{G}_{5} = \{x_{1}-x_{2},x_{4}-x_{3},x_{6}-x_{5},x_{2}^{2}-1,x_{3}^{2}-1,x_{5}^{2}-1 \} $ \\
 $\mathcal{G}_{6} = \{x_{2}-x_{1},x_{4}-x_{3},x_{6}-x_{5},x_{1}^{2}-1,x_{3}^{2}-1,x_{5}^{2}-1 \} $ \\
 $\mathcal{G}_{7} = \{x_{2}-x_{1},x_{3}-x_{4},x_{6}-x_{5},x_{1}^{2}-1,x_{4}^{2}-1,x_{5}^{2}-1 \} $ \\
-$\mathcal{G}_{8} = \{x_{2}-x_{1},x_{3}-x_{4},x_{5}-x_{6},x_{1}^{2}-1,x_{4}^{2}-1,x_{6}^{2}-1 \} $ \\
+$\mathcal{G}_{8} = \{x_{2}-x_{1},x_{3}-x_{4},x_{5}-x_{6},x_{1}^{2}-1,x_{4}^{2}-1,x_{6}^{2}-1 \}. $ \\
 \end{center}
 
 A lot of edges were saved which results to less computation.
@@ -404,7 +405,7 @@ The sink of the reverse search tree contains binomials that are not mismarked wi
 
 \subsection{Linear Codes over Prime Fields}
 \label{subsec:linearcodes}
-This work is focused on computing the Gröbner fan of linear codes. Now the mathematic background of the Gröbner fans is given, the linear Codes and code ideals have to be defined to give a connection between these two topics.\\ 
+This work is focused on computing the Gröbner fan for linear codes. Now the mathematic background of the Gröbner fans is given, the linear codes and code ideals have to be defined to give a connection between these two topics.\\ 
 Let $\mathbb{F}$ be a finite field and let $n~$and $k\in \mathbb{N}~$ with $n\geq k$.
 \begin{env_definition}[Linear Code]
 \cite{dueckjournal} A linear code of length n and dimension k over $\mathbb{F}~$is the image $\mathcal{C}~$of a injective linear mapping $\phi~:~\mathbb{F}^{k} \rightarrow \mathbb{F}^{n}.$

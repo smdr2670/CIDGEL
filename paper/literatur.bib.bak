@@ -26,7 +26,7 @@
 }
 
 @TechReport{tigers,
-  Title                    = {Computing Gr\"obner Fans of Toric Ideals},
+  Title                    = {{Computing Gröbner Fans of Toric Ideals}},
   Author                   = {{Birkett Huber and Rekha R. Thomas}},
   Institution              = {Institute for Defense Analysis, United States,
 Department of Mathematic, University of Washington},
@@ -38,7 +38,7 @@ Department of Mathematic, University of Washington},
 
 @Book{coxOshea,
   Title                    = {Ideals, Varieties, and Algorithms: An Introduction to Computational Algebraic Geometry and Commutative Algebra, 3/e (Undergraduate Texts in Mathematics)},
-  Author                   = {{Cox , David A. and Little, John and O'Shea, Donal}},
+  Author                   = {{David R. Cox, John Little and Donal O'Shea}},
   Publisher                = {Springer-Verlag New York, Inc.},
   Year                     = {2007},
 
@@ -71,9 +71,9 @@ Department of Mathematic, University of Washington},
 }
 
 @PhdThesis{saleemi,
-  Title                    = {Coding Theory via Groebner Bases},
+  Title                    = {{Coding Theory via Groebner Bases}},
   Author                   = {{Mehwish Saleemi}},
-  School                   = {Technische Universitat Hamburg-Harburg},
+  School                   = {Technische Universität Hamburg-Harburg},
   Year                     = {2012},
 
   Owner                    = {Daniel},
@@ -81,9 +81,9 @@ Department of Mathematic, University of Washington},
 }
 
 @Unpublished{dueckpaper,
-  Title                    = {Computation of the d.c. Gröbner fan},
+  Title                    = {{Computation of the d.c. Gröbner fan}},
   Author                   = {{Natalia Dück}},
-  Note                     = {Task-setting for the bachelor thesis},
+  Note                     = {{Task-setting for the bachelor thesis}},
 
   Month                    = {April},
   Year                     = {2014},
@@ -93,7 +93,7 @@ Department of Mathematic, University of Washington},
 }
 
 @Article{dueckjournal,
-  Title                    = {Universal Gröbner bases for binary linear codes},
+  Title                    = {{Universal Gröbner bases for binary linear codes}},
   Author                   = {{Natalia Dück and Karl-Heinz Zimmermann}},
   Journal                  = {International Journal of Pure and Applied Mathematics},
   Year                     = {2013},
