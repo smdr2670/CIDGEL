@@ -30,11 +30,11 @@ struct bin_tag{
 \newpage
 The pointer \emph{exps1} stores the exponent vector of the first monomial and \emph{exps2} does it with the second monomial.
 The integer \emph{ff} is a flag which shows if a binomial is a facet binomial or not and \emph{bf} tells if there is a monomial or binomial.
-The pointer binomial next indicates that binomials are linked together like a linear list, which is necessary to describe ideals and Gröbner bases. The pointer \emph{E} points to \emph{exps1} and \emph{exps2} and is used for allocating and deallocating space. \\
+The pointer \emph{binomial next} indicates that binomials are linked together like a linear list, which is necessary to describe ideals and Gröbner bases. The pointer \emph{E} points to \emph{exps1} and \emph{exps2} and is used for allocating and deallocating space. \\
 
 The next code snippet shows the other important data structure. Again, it is a linked list like the binomials with the purpose to connect all reduced Gröbner together, which is needed for the breath-first search.\\
 
-The first four integers show off the identification number of the vertex of the edge graph, the number of facet binomials, number of binomials and the highest degree. The pointer \emph{next} is a pointer to the next generating set of the linked list. The binomial \emph{cache\_edge} and the pointer \emph{cache\_vtx} stores the caching information in order not to recompute every facet binomial in the reverse search. 
+The first four integers show off the identification number of the vertex of the edge graph, the number of facet binomials, number of binomials and the highest degree. The pointer \emph{next} is a pointer to the next generating set of the linked list. The binomial \emph{cache\_edge} and the pointer \emph{cache\_vtx} store the caching information in order not to recompute every facet binomial in the reverse search. 
 
 \lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
 basicstyle = \ttfamily \color{black} \footnotesize , caption = {Data structure of generating sets },frame = single, } 
@@ -117,7 +117,7 @@ M: { 6 10 2 :
 This matrix is a generator matrix for a binary $[10,6]$ code in the essential standard form. 
 The first number in the first row gives the code dimension, the second tells the length of the codeword and the last number indicates in which primary field the generator matrix shall be evaluated.\\
 
-Now if the degree compatible Gröbner bases of this generator  matrix without printing the Gröbner basis shall be written in a output-file called \\ \texttt{Example-output}. Additionally the linear programming shall be left out, then the program call is: \texttt{./cidgel -i Example-input -o Example-output -d -n -f}.
+For example, the degree compatible Gröbner bases of this generator  matrix without printing the Gröbner bases shall be written in a output-file called \\ \texttt{Example-output}. Additionally the linear programming shall be left out, then the program call is: \texttt{./cidgel -i Example-input -o Example-output -d -n -f}.
 The user do not has to specify an output file, the result will be printed in the console then.
 
 \newpage
@@ -132,7 +132,7 @@ G: {a-i*j, b-g*h, c-g*h*i*j, d-h*i*j, e-g, f-h*j,
 
  Enumerating degree compatible Groebner bases
    using reverse search
-   taking input from randomgenerator/10_6
+   taking input from Example-input
    with partial caching
    using wall ideal pretest for facet checking
 
@@ -145,7 +145,7 @@ max binomials in GB    41
 min binomials in GB    40
 max degree             3
 min degree             2
-randomgenerator/10_6: Reverse Search,   Caching,  A-pretest,
+Example-input: Reverse Search,   Caching,  A-pretest,
 time used (in seconds) 42.16
 \end{lstlisting}
   
@@ -210,11 +210,11 @@ The linear codes were randomly generated. All codes in this evaluation were bina
     \legend{Degree compatible,All Gröbner bases}
   \end{axis}
   \end{tikzpicture}
-  \caption{Comparison between the numbers of degree compatible and all Gröbner bases of binary linear code with the length 8 }
+  \caption{Comparison between the numbers of degree compatible and all Gröbner bases of binary linear codes with the length 8 }
   \label{fig:numbergb}
   \end{figure}
   
-Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Gröbner bases of a code ideal and the degree compatible. The next table shows the computational time of the randomly generated codes.
+Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Gröbner bases of a code ideal and the degree compatible Gröbner bases. The next table shows the computational time of the randomly generated codes.
 
  \begin{table}[htpb] 
  \centering 

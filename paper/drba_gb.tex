@@ -13,7 +13,7 @@ In this section a brief explanation of polynomials is given.
 
 \begin{env_definition}[Monomial] 
 \cite{KHZ}
-A monomial is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ of the form $m= X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0} $
+A monomial is a product of variables over a finite field $\mathbb{K}$, denoted by $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ of the form $m= X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$, where $u_{i}, 1 < i < n $ and $u \in \mathbb{N}_{0}. $
 \end{env_definition}
 The total \textbf{degree} of a monomial is $deg(m) = \sum_{i=1}^n u_i $. 
 
@@ -65,7 +65,7 @@ if $m_{1} > m_{2}$ then $m \cdot m_{1} > m \cdot m_{2}~$ for any monomial m.
 \end{env_definition}
 
 
-Two commonly used term orders are the following.
+Two commonly used monomial orders are the following.
 Let $u$ and $v$ be elements of $\mathbb{N}^{n}_{0}$. 
 
 \textbf{Lexicographic Order} \cite{saleemi}
@@ -94,7 +94,7 @@ In order to compare monomials with a generic vector $c = \left({c}_{1},\dots ,{c
 
 \textbf{Leading term}
 
-Given a term order $>$, each non-zero polynomial $f \in \mathbb{K}\left[ x\right] $ has a unique leading term, denoted by $\textsc{LT}(f)$, given by the largest involved term with respect to the term order.\\
+Given a monomial order $>$, each non-zero polynomial $f \in \mathbb{K}\left[ x\right] $ has a unique leading term, denoted by $\textsc{LT}(f)$, given by the largest involved term with respect to the monomial order.\\
 If $\textsc{LT}(f) = cX^{u}$, where $c \in \mathbb{K}$, then c is the leading coefficient of $f$ and $X^{u}$ is the leading monomial (\textsc{LM}) or the initial monomial of $f$ \cite{KHZ}.\\
 
 \begin{env_example}\normalfont
@@ -258,7 +258,7 @@ Let the polynomials $f,g \in \mathbb{K}\left[X_{1}, \dots, X_{n}\right] $ and $\
 \newpage
 
 \begin{env_example}\normalfont
-Consider the polynomials the polynomial ring $\mathbb{K}\left[ x,y,z\right] $ with
+Consider the ideal in the polynomial ring $\mathbb{K}\left[ x,y,z\right] $ with
 the basis $\left\lbrace f,g\right\rbrace = \left\lbrace xy^{2}-xz+y,xy-z^{2} \right\rbrace $ with respect to the lexicographic order.\\
 Forming the S-Polynomial leads to:
 
@@ -315,7 +315,7 @@ Fortunately, each nonzero ideal in $\mathbb{K}\left[X_{1}, \dots, X_{n}\right]$ 
 \begin{env_definition}[Reduced Gröbner basis]
 \cite{KHZ}
 A Gröbner basis \\ $G= \left\lbrace  f_{1}, \dots , f_{m} \right\rbrace  $ in 
-$ \mathbb{K}\left[X_{1}, \dots, X_{n}\right] $ is reduced if the polynomials $f_{1},\dots , f_{m} $ are monic and no term $f_{i}$ is divisible by $ \textsc{LT}_{\leq }\left( f_{j}\right)$ for any pair $i\neq j$, where $\leq$ is monomial a order.
+$ \mathbb{K}\left[X_{1}, \dots, X_{n}\right] $ is reduced if the polynomials $f_{1},\dots , f_{m} $ are monic and no term $f_{i}$ is divisible by $ \textsc{LT}_{\leq }\left( f_{j}\right)$ for any pair $i\neq j$, where $\leq$ is a monomial order.
 \end{env_definition}
 
 
@@ -326,7 +326,7 @@ possible Gröbner bases of a fixed ideal can be collected together.\\
 Even though there are infinite monomial orders for an ideal, the amount of reduced Gröber bases are finite \cite{coxOshea}. 
  
 \begin{env_definition}[Gröbner fan]
-\cite{coxOshea} A Gröbner fan of an ideal $I$ consists of finitely many closed convex polyhedral cones with vertices at the origin, such that
+\cite{coxOshea} A Gröbner fan of an ideal $I$ consists of finitely many closed convex polyhedral cones with vertices at the origin, such that :
 
 \begin{itemize}
 \item
@@ -372,7 +372,7 @@ The leading terms are underlined. Let $\textbf{w} = \left( a,b,c\right) \in \mat
 \item
 $\left( 2,0,0\right) \cdot \left( a,b,c\right) \geq \left( 0,0,1\right) \cdot \left( a,b,c\right) $ or $2a\geq c$ 
 \item
-$\left( 0,1,0\right) \cdot \left( a,b,c\right) \geq \left( 0,0,1\right) \cdot \left( a,b,c\right) $ or $b\geq a$ 
+$\left( 1,0,0\right) \cdot \left( a,b,c\right) \geq \left( 0,1,0\right) \cdot \left( a,b,c\right) $ or $a\geq b$ 
 
 \end{itemize} 
 
@@ -400,7 +400,7 @@ This is the first cone of the Gröbner fan and can be drawn in the positive orth
 
 
 
-Figure \ref{fig:singlegroebner} shows that the Gröbner fan is not complete, since the cone does not cover the whole positive orthant. In this example, the other reduced Gröbner basis can be obtained by applying the Buchberger-Algorithm with common term orders to the ideal $I$.
+Figure \ref{fig:singlegroebner} shows that the Gröbner fan is not complete, since the cone does not cover the whole positive orthant. In this example, the other reduced Gröbner basis can be obtained by applying the Buchberger-Algorithm with common monomial orders to the ideal $I$.
 If the computed cones still do not cover the whole positive orthant, then further computations with weight vectors are necessary.
 \begin{flushright}
 $\lozenge$

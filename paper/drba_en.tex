@@ -89,7 +89,7 @@ $\lozenge$
 \newpage 
 Another way to find the facets without linear programming is possible with the property of the following leading ideals.
 
-Let $\mathcal{G}_{c} $ be a reduced Gröbner basis with respect to a generic weight vector $c$. Then $x^{a} - x^{b}$ is a facet binomial of $\mathcal{G}_{c}$ only if $lt_{c}(I_{a})$ (see definition \ref{def:initial}) is the initial ideal of \[W_{a - b} = \langle x^{a}-x^{b}\rangle~+~ \langle x^{c}~|~x^{c}~\textrm{is a minimal generator of~} lt_{c}(I_{a}), x^{c} \neq x^{a} \rangle \] \cite{tigers}.
+Let $\mathcal{G}_{c} $ be a reduced Gröbner basis with respect to a generic weight vector $c$. Then $x^{a} - x^{b}$ is a facet binomial of $\mathcal{G}_{c}$ only if $lt_{c}(I_{a})$ (see definition \ref{def:initial}) is the leading ideal of \[W_{a - b} = \langle x^{a}-x^{b}\rangle~+~ \langle x^{c}~|~x^{c}~\textrm{is a minimal generator of~} lt_{c}(I_{a}), x^{c} \neq x^{a} \rangle \] \cite{tigers}.
 With the help of this property it is possible to define an algorithm to find a superset of facet binomials of a reduced Gröbner basis.
 
 \begin{algorithm}
@@ -117,9 +117,9 @@ $~+~ \langle x^{c} \rangle$ \Comment{$x^{c}$ is defined as before}
 \end{algorithm}
  
 
-In the example \ref{ex:groebnerfan} the facet binomials of a Gröbner cone determine the border to an other Gröber cone.
+Example \ref{ex:groebnerfan} shows that the facet binomials of a Gröbner cone determine the borders to other Gröber cones.
 In order to traverse from a Gröber base $\mathcal{G}_c$ to a neighboured Gröbner base $\mathcal{G}_{c'}$ with the certain facet $x^{\upalpha}-x^{\upbeta} $, a procedure making a local change from $\mathcal{G}_c$ to $\mathcal{G}_{c'}$ is required.
-This procedure is called flip and is presented in algorithm \ref{alg:flip}. 
+This procedure is called \textit{flip} and is presented in algorithm \ref{alg:flip}. 
 \newpage
 
 
@@ -168,7 +168,7 @@ Applying the procedure flip$(x_{3}-x_{5}, \mathcal{G}$) leads to:
 Old := $\{x_{3}-x_{5},~x_{6}^{2},~x_{5}^{2},~x_{4}x_{5}x_{6} ,~x_{4}^{2},~x_{2}x_{6},~x_{2}x_{5},~x_{2}x_{4},~x_{2}^{2},~x_{1} \} $ \\
 Temp := $\{x_{5}-x_{3},~x_{6}^{2},~x_{5}^{2},~x_{4}x_{5}x_{6} ,~x_{4}^{2},~x_{2}x_{6},~x_{2}x_{5},~x_{2}x_{4},~x_{2}^{2},~x_{1} \} $
 
-Now the new Gröbner basis has to be calculated, but first it useful to know that all pairs of binomials which have the least common multiple 1 will be auto-reduced to zero. In other words, it is only necessary to form the S-Pairs of binomials that are not relatively prime.
+Now the new Gröbner basis has to be calculated (see line 3 at algorithm \ref{alg:flip}), but first it useful to know that all pairs of binomials which have the greatest common divisor of 1 will be auto-reduced to zero. In other words, it is only necessary to form the S-Polynomials of binomials that are not relatively prime.
 
 \begin{align*}
 	S(x_{5}-x_{3},x_{5}^{2}) &= x_{3}x_{5} \\
@@ -178,7 +178,7 @@ Now the new Gröbner basis has to be calculated, but first it useful to know tha
 \end{align*}
 
 Now the new Gröbner basis $\mathcal{G}'$ shall be filled with all monomials from $\mathcal{G}$.
-The underlined terms are the terms reduced with $\mathcal{G}~$ and will be the new non-leading terms.
+The underlined terms are the terms reduced by $\mathcal{G}~$ and will be the new non-leading terms.
 \begin{align*}
 	x_{3}x_{5} &= x_{5}(x_{3}-x_{5}) + 1(x_{5}^{2}-1) &+ \underline{1} \\
 	x_{3}x_{4}x_{6} &= x_{4}x_{6}(x_{3}-x_{5}) + 1(x_{4}x_{5}x_{6}-x_{2}) &+ \underline{x_{2}} \\
@@ -189,11 +189,11 @@ The underlined terms are the terms reduced with $\mathcal{G}~$ and will be the n
 	x_{2}x_{4} &= (x_{2}x_{4}-x_{5}x_{6})+ x_{6}(x_{5}-x_{3}) &+\underline{x_{3}x_{6}}
 \end{align*}
 
-The other monomials of $\mathcal{G}~$ are not notated here because they did not get a new non-leading term.
+The other monomials of $\mathcal{G}~$are not notated here because they did not get a new non-leading term.
 
 This results to the Gröbner base : \\
 $\mathcal{G}' = \{x_{5}-x_{3},~x_{6}^{2}-1,~x_{5}^{2}-1,~x_{4}x_{5}x_{6}-x_{2},~x_{4}^{2}-1,~ x_{2}x_{6}-x_{3}x_{4},~x_{2}x_{5}-x_{4}x_{6},~x_{2}x_{4}-x_{3}x_{6} ,~x_{2}^{2}-1,x_{1}-x_{3},~x_{3}x_{5}-1,~x_{3}x_{4}x_{6}-x_{2},~x_{2}x_{3}-x_{4}x_{6},~x_{3}^{2}-1 \}.$ \\
-This Gröbner base is not reduced yet. After cancelling all binomials whose terms are divisible by some other leading terms the new reduced Gröbner basis is 
+This Gröbner basis is not reduced yet. After canceling out all binomials whose terms are divisible by some other leading terms the new reduced Gröbner basis is 
 $\mathcal{G}_{new} = \{x_{5}-x_{3},~x_{6}^{2}-1,~x_{4}^{2}-1,~x_{2}x_{6}-x_{3}x_{4},~x_{2}x_{4}-x_{3}x_{6},~x_{2}^{2}-1,~x_{1}-x_{3},~x_{3}x_{4}x_{6}-x_{2},~x_{2}x_{3}-x_{4}x_{6},~x_{3}^{2}-1 \}.$
 
 \begin{flushright}
@@ -221,9 +221,10 @@ Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
 \State Remove $\mathcal{G} $ from Todo
 \State add $\mathcal{G}$ to Verts 
 \State determine list L of facet binomials of $\mathcal{G} $
-\Comment{With linear programming}
+\Comment{With algorithm \ref{alg:facetsLP} or \ref{alg:facetSS} }
  \For{\textbf{each} $x^{\upalpha}-x^{\upbeta} \in ~$ L  }
  \State $\mathcal{G}' =~$ flip($\mathcal{G},x^{\upalpha} - x^{\upbeta} $)
+ \Comment{Applying algorithm \ref{alg:flip} }
  \If{$\mathcal{G}' \notin \mathrm{Todo} \cup \mathrm{Verts}  $}
  \State add $\mathcal{G}'$ to Todo
  \EndIf
@@ -263,13 +264,13 @@ $\lozenge$
 The \textit{reverse search tree} $T_{\succ}(I_{A}) $ with a given monomal order $ > $ can be defined as follows:
 \begin{env_definition}[Reverse Search Tree]
 \label{def:reverse}
-\cite{tigers} For two reduced Gröbner bases $\mathcal{G}_{i}$ and $\mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$to $\mathcal{G}_{j}~$ is an edge of $~T_{\succ}(I_{A}) $ if $\mathcal{G}_{i}$ is obtained from $\mathcal{G}_{j}$ by  algorithm \ref{alg:flip}. The monomial $x^{\upalpha}$ is lexicographically maximal among all facet binomials of $\mathcal{G}_{i}$, that are mismarked with respect to $>$.
+\cite{tigers} For two reduced Gröbner bases $\mathcal{G}_{i}$ and $\mathcal{G}_{j}~$, $[\mathcal{G}_{i},\mathcal{G}_{j} ]~$ directed from $\mathcal{G}_{i}~$to $\mathcal{G}_{j}~$ is an edge of $~T_{\succ}(I_{A}) $ if $~\mathcal{G}_{i}$ is obtained from $\mathcal{G}_{j}$ by  algorithm \ref{alg:flip}. The monomial $x^{\upalpha}$ is lexicographically maximal among all facet binomials of $\mathcal{G}_{i}$, that are mismarked with respect to $>$.
 \end{env_definition}
 
 
 \newpage
 
-It can be shown that the reverse search tree is an acyclic graph with a unique sink and from any reduced Gröbner basis $\mathcal{G}_{c} $ of a toric ideal $I_{A}$, there is a unique path to the sink $\mathcal{G}_{>}$ \cite{tigers} .
+It can be shown that the reverse search tree is an acyclic graph with a unique sink and from any reduced Gröbner basis $\mathcal{G}_{c} $ of a toric ideal $I_{A}$, there is a unique path to the sink $\mathcal{G}_{>}$ \cite{tigers}.
 Unlike the Gröbner walk procedure, there are still no weight vectors involved, but in return every facet of the Gröbner cone must be computed, which can be computationally expensive for reduced Gröbner bases with many polynomials.
 
 \begin{algorithm}
@@ -279,14 +280,14 @@ Unlike the Gröbner walk procedure, there are still no weight vectors involved, 
 
 \Input
 Any reduced Gröbner basis $ \mathcal{R}_{>} $ of $I_A$ and its term order $>$
-\Output All reduced Gröbner bases of $I_A$, (all vertices of the edge graph)
+\Output All reduced Gröbner bases of $I_A$ (all vertices of the edge graph)
 \State $\mathcal{G} := \mathcal{R}_{>}$;$~j := 0$;$~L := $ list of facet binomials of $\mathcal{G}$ marked by $>$
 \State add $\mathcal{G}$ to output
 \Repeat
 \While{ $ j < \left|L\right| $ }
 
 \State j := j + 1
-\State $\mathcal{G}':= $ flip($\mathcal{G}$,$L[j]$);
+\State $\mathcal{G}':= $ flip($\mathcal{G}$,$L[j]$)
 
 \If{ $[\mathcal{G}',\mathcal{G}] \in T_{>}(I_{A}) $ }
 \Comment{ Check for adjacency }
@@ -380,7 +381,7 @@ degree compatible if and only if the corresponding Gröbner cone contains the al
 \end{env_definition}
 Equivalent to this, the leading term of every polynomial must have the highest degree.
 Since a Gröbner fan is homogeneous at $\mathbb{R}^{n}_{+}$, there will be at least one degree compatible Gröbner basis.
-That is a special case can be easily determined as follows.
+That is a special case which can be easily determined as follows.
 
 \begin{env_definition}[Only degree compatible Gröbner basis]
 \cite{dueckpaper}
@@ -415,7 +416,7 @@ as row vectors. The Code $\mathcal{C}~$can alternatively be described as a row s
 The matrix $G$ is also called \textit{generator matrix} for $\mathcal{C}$.
 \begin{env_definition}[Standard form]
 \cite{dueckjournal}
-A $[n,k]~$ code $\mathcal{C}~$is in standard form if it has a generator matrix like $G = (I_{k}| M)$, where $I_{k}$ is the $k \times k$ matrix.
+A $[n,k]~$code $\mathcal{C}~$is in standard form if it has a generator matrix like $G = (I_{k}| M)$, where $I_{k}$ is the $k \times k$ matrix.
 \end{env_definition}
 
 
@@ -461,7 +462,7 @@ This reduces the length of the code and rises the data rate for a transmission o
 \subsection{Code Ideals}
 \label{subsec:codeideals}
 In this section, the linear codes and the Gröbner bases come together.\\
-Each linear code $\mathcal{C}~$ can be associated to a binomial ideal \cite{dueckpaper}. Let $\mathcal{C}~$ be a $[n,k]$ code and let 
+Each linear code $\mathcal{C}~$can be associated to a binomial ideal \cite{dueckpaper}. Let $\mathcal{C}~$be a $[n,k]$ code and let 
 $\mathbb{K}[\textbf{x}]=\mathbb{K}[x_{1},\dots,x_{n}]$.
 Then the \textit{code ideal} can be defined as follows:
 
