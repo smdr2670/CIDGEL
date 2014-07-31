@@ -2,14 +2,14 @@
 \section{Software}
 \label{sec:software}
 This section is all about the practical part of this work. At first, an accurate description is presented of how the software can be compiled and used for own demands.
-Secondly, the software is tested on some randomly generated linear codes. The number of degree compatible and all Gröbner bases are presented and comparison of the operational time against Gfan \cite{gfan} is presented. \\
+Secondly, the software is tested on some randomly generated linear codes. The number of degree compatible and all Gröbner bases are presented and a comparison of the operational time against Gfan \cite{gfan} is presented. \\
 This software, called CIDGEL (Code Ideal degree compatible Gröbner bases enumerating from Linear Codes), is a re-implementation of TiGERS \cite{tigers}, that is why the software is written in C. All features that are needed for the code ideals were added, also the adapted algorithms for computing degree compatible Gröbner bases with reverse search and breath-first search were implemented.   
 Additional features are explained in Section \ref{subsec:manual}.
 
 
 \subsection{Data Structures}
 \label{subsec:datastructure}
-With the special attribute that code ideals only contain binomials and reduced Groebner bases have always the coefficient $1$, only the exponent vectors representing the monomials have to be stored.
+With the special attribute that code ideals only contain binomials and reduced Gröbner bases always have the coefficient $1$, only the exponent vectors representing the monomials have to be stored.
 
 \lstset{language=C, commentstyle=\color{green}, backgroundcolor=\color{white}, keywordstyle=\color{blue}, 
 basicstyle = \ttfamily \color{black} \footnotesize , 
@@ -29,7 +29,7 @@ struct bin_tag{
 \end{lstlisting}
 \newpage
 The pointer \emph{exps1} stores the exponent vector of the first monomial and \emph{exps2} does it with the second monomial.
-The integer \emph{ff} is a flag which shows if a binomial is a facet binomial or not and \emph{bf} tells if there is a monomial or binomial.
+The integer \emph{ff} is a flag that shows if a binomial is a facet binomial or not and \emph{bf} tells if there is a monomial or binomial.
 The pointer \emph{binomial next} indicates that binomials are linked together like a linear list, which is necessary to describe ideals and Gröbner bases. The pointer \emph{E} points to \emph{exps1} and \emph{exps2} and is used for allocating and deallocating space. \\
 
 The next code snippet shows the other important data structure. Again, it is a linked list like the binomials with the purpose to connect all reduced Gröbner together, which is needed for the breath-first search.\\
@@ -100,10 +100,10 @@ static char *helpmsg[] = {
 
 The listing above shows all options that are available. These flags can be passed in an arbitrary order to the program. It is necessary to write a matrix and storing it into a file to give the program an input.
 
-For example, the data has the name '\texttt{Example-input}', has the following content and is in the same folder as the compiled software.\\
+For example, the data has the name '\texttt{Example-input}', has the content of listing \ref{lst:exinput} and is in the same folder as the compiled software.\\
 Note that two inputs for a program call are possible in order to check if the two codes are equivalent. It is possible to compare the whole or the degree compatible Gröbner fan. It will be checked if the Gröbner fans have the same amount of polynomials, facets and degree for each Gröbner basis. This provides a necessary but not a sufficient condition for the Code Equivalence Problem. 
 \lstset{caption = {Example-input}}
-\begin{lstlisting}[basicstyle=\fontfamily{courier}\selectfont]
+\begin{lstlisting}[basicstyle=\fontfamily{courier}\selectfont,label=lst:exinput]
 M: { 6 10 2 :
 1 0 0 0 0 0 0 0 1 1 
 0 1 0 0 0 0 1 1 0 0 
@@ -218,7 +218,7 @@ Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Grö
 
  \begin{table}[htpb] 
  \centering 
- \caption{Computataional time in seconds}
+ \caption{Computational time in seconds}
  \begin{tabular}{c|l|l|l} % zentriert rest linksbündig
    $[n,k]$ Code & CIDGEL d.c. & CIDGEL & Gfan \\
  \cline{1-4} $[8,1]$  & 0.01  & 0.011  & 0.239 \\
@@ -238,11 +238,11 @@ Figure \ref{fig:numbergb} shows a remarkable difference between all reduced Grö
  
  \newpage
  
- Table \ref{tab:benchmark} shows that the software CIDGEL can be way faster than Gfan for computing all reduced Gröbner bases of a code ideal. The reason is the special binomial structure of the code ideals and the fast algorithms that can be linked with. Gfan is a software for Gröbner bases with more general structure.
+ Table \ref{tab:benchmark} shows that the software CIDGEL can be way faster than Gfan for computing all reduced Gröbner bases from a code ideal. The reason is the special binomial structure of the code ideals and the fast algorithms that can be linked with. Gfan is a software for Gröbner bases with more general structure.
  Even though the amount of all Gröbner bases are much more than the degree compatible Gröbner bases, the computational time does not hold proportionally to the amount.
- The computational time depends mostly on the computation of facets, see page \pageref{facets}. The degree compatible Gröbner bases mostly have more binomials than all other Gröbner bases, that is why the computational time for a code ideal with a few Gröbner bases will last longer than for a code ideal with many Gröbner bases with low cardinality. \\
+ The computational time depends mostly on the computation of facets, see page \pageref{facets}. The degree compatible Gröbner bases mostly have more binomials than all other Gröbner bases, that is why the computational time for a code ideal with a few Gröbner bases with high cardinality will last longer than for a code ideal with many Gröbner bases with low cardinality. \\
  
- For some linear codes with the length more than 9 the computation took more than 10 hours for the complete Gröbner fan. The reason is that the amount of reduced Gröbner bases and the cardinality of each basis will be greater if the codewords will be longer. Nevertheless, the computation of the degree compatible Gröbner fan is reasonable for a certain length.\newpage
+ For some linear codes with a length more than 9 the computation took more than 10 hours for the complete Gröbner fan. The reason is that the amount of reduced Gröbner bases and the cardinality of each basis will be greater if the codewords will be longer. Nevertheless, the computation of the degree compatible Gröbner fan is reasonable for a certain length.\newpage
  
  In some cases the amount of the degree compatible and all Gröbner bases can rise enormously. A randomly generated $[9,2]$ code had 8 degree compatible Gröbner bases and overall 295,863 Gröbner bases. 
  Computing the whole fan took 24,471.32 and the degree compatible fan only took 1.08 seconds. 

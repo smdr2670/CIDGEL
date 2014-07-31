@@ -2,7 +2,7 @@
 \section{Mathematical Background}
 \label{sec:background}
 
-In this chapter a mathematical basis is systematically approached to give the reader an understanding of Gröbner Bases and Gröbner fans.\\
+In this chapter a mathematical basis is systematically approached to give the reader an understanding of Gröbner bases and Gröbner fans.\\
 At first, monomials are revisited. The second section explains how monomials can be totally ordered.
 After that ideals are defined over polynomial rings and a summary on Gröbner bases and Gröbner fans for ideals is presented. Finally, the toric ideal is presented which gives the basis of the code ideals.  
 
@@ -188,7 +188,7 @@ $deg(g) \geq deg(a_{i}f_{i})$. Algorithm \ref{alg:division} shows how to divide 
 \While{$s \neq 0$}
 \State $ i \gets 1 $
 \State  division\textunderscore occured $ \gets $  false 
-\While{$i\leq m$  and division\_occured = false}
+\While{$i\leq m$  \textbf{and} division\_occured = false}
 \If{$LT\left( f\left[ i\right] \right)$ divides $LT\left( s\right)  $}
 
 \State $ s \gets s - ( LT \left( s\right)/ LT \left( f \left[ i\right] \right))  \cdot f_{i} $
@@ -215,7 +215,7 @@ $deg(g) \geq deg(a_{i}f_{i})$. Algorithm \ref{alg:division} shows how to divide 
 \begin{env_example}\normalfont
 \label{ex:division}
 Consider the ideal $I = \langle f_{1},f_{2} \rangle = \langle xy^{2}+z,y^{2}-1 \rangle~$and the polynomial $f = x^{3}y^{2}+x^{2}z~$.
-First, with respect to the lex-order, applying the division gives the expression : $f = x^{2}(xy^{2}+z) + 0(y^{2}-1) + 0$ \\
+First, with respect to the lex-order, applying algorithm \ref{alg:division} gives the expression : $f = x^{2}(xy^{2}+z) + 0(y^{2}-1) + 0.$ \\
 But the division with $f$ and $I = \langle f_{2},f_{1} \rangle$ gives the expression \\ $f = x^{3}(y^{2}-1) + x^{2}(xy^{2}+z) -x^{3}y^{2}+x^{3}~$.
 \begin{flushright}
 $\lozenge$
@@ -228,7 +228,7 @@ Example \ref{ex:division} shows that is still possible to obtain a non-zero rema
 \subsection{Gröbner basis}
 \label{subsec:Groebner}
 
-The solution of the Ideal Membership Problem needs a certain generating set for an ideal $I$. It would be helpful if the remainder $r$ on division is uniquely determined and the condition $ r = 0~$ is equivalent to the membership in the ideal.
+The solution of the Ideal Membership Problem needs a certain generating set for an ideal $I$. It would be helpful if the remainder $r$ on division is uniquely determined and the condition $ r = 0~$ is equivalent to the ideal membership.
 
 
 
@@ -239,7 +239,7 @@ Let $\leq$ be a monomial order on \\ $\mathbb{K}\left[X_{1}, \dots, X_{n}\right]
 \end{env_definition}
 
 A Gröbner basis has the beneficial property that the remainder $r$ of $f$ divided by the elements of a Gröbner basis $G$ are uniquely determined and independent of the order of the elements in $G$.
-Also every ideal in $\mathbb{K}\left[X_{1}, \dots, X_{n}\right]$ has a Gröbner basis with respect to any monomial order\cite{KHZ}.\\ 
+Also every ideal in $\mathbb{K}\left[X_{1}, \dots, X_{n}\right]$ has a Gröbner basis with respect to any monomial order \cite{KHZ}.\\ 
 
 
 In order to obtain a Gröbner basis of an arbitrary basis $\{f_{1}, \ldots , f_{n}\}$ with an arbitrary monomial order $>$ of an ideal $I$, an algorithm is needed. This algorithm is called Buchberger-Algorithm and is defined at algorithm \ref{alg:buchberger}. The idea is to build every possible S-Polynomial of $\left( f_{i},f_{j}\right) $ for every $ 1 \leq i \neq j \leq n $ and every nonzero result is added to the basis until every S-Polynomial of $\left( f_{i},f_{j}\right) $ vanishes.
@@ -292,7 +292,7 @@ $I = \langle f_{1}, \dots , f_{m} \rangle $ if and only $S\left( f_{i},f_{j}\rig
 \State $G \gets F$
 \Repeat
 \State $G'\gets G $
-\For{each pair $f_{i}$ and $f_{j}$ in $G$ , $i\neq j$ }
+\For{\textbf{each} pair $f_{i}$ and $f_{j}$ in $G$ , $i\neq j$ }
 \State $S \gets S\left( f_{i},f_{j} \right)^{G'}  $ \Comment{S-Polynomial with the basis of $G'$ }
 \If{$G\neq 0$ }
 \State $G \gets G \cup \left\lbrace S\right\rbrace $
@@ -360,7 +360,7 @@ $C_{G} = \left\lbrace \textbf{w} \in \left(\mathbb{R}^{n}\right)^{+} : \upalpha\
 \begin{env_example}\normalfont
 \label{ex:groebnerfan}
 Consider the ideal with $ I = \langle x^{2}-z,y-x \rangle \in \mathbb{Q}\left[ x,y,z\right] .$
-Note that the ring has 3 variables so that Gröbner fan can be plotted in the positive orthant $ \mathbb{R}^{3}_{+}$. \\
+Note that the ring has 3 variables so that the Gröbner fan can be plotted in the positive orthant $ \mathbb{R}^{3}_{+}$. \\
 The marked Gröbner basis with respect to the \textit{lex} order with $x>y>z$ is
 \begin{center}
 $G^{\left( 1\right) } = \left\lbrace \underline{y^{2}}-z,\underline{x} -y\right\rbrace .$
@@ -370,9 +370,9 @@ The leading terms are underlined. Let $\textbf{w} = \left( a,b,c\right) \in \mat
 \begin{itemize}
 
 \item
-$\left( 0,2,0\right) \cdot \left( a,b,c\right) \geq \left( 0,0,1\right) \cdot \left( a,b,c\right) $ or $2b\geq c$ 
+$\left( 0,2,0\right) \cdot \left( a,b,c\right) \geq \left( 0,0,1\right) \cdot \left( a,b,c\right) $ \textbf{or} $2b\geq c$ 
 \item
-$\left( 1,0,0\right) \cdot \left( a,b,c\right) \geq \left( 0,1,0\right) \cdot \left( a,b,c\right) $ or $a\geq b$ 
+$\left( 1,0,0\right) \cdot \left( a,b,c\right) \geq \left( 0,1,0\right) \cdot \left( a,b,c\right) $ \textbf{or} $a\geq b$ 
 
 \end{itemize} 
 
@@ -393,7 +393,7 @@ This is the first cone of the Gröbner fan and can be drawn in the positive orth
         \caption{Complete Gröbner fan}
         \label{fig:completegroebner}
     \end{subfigure}
-    \caption{Gröbner fans for the given example}
+    \caption{Gröbner fans for example \ref{ex:groebnerfan}}
     \label{fig:groebnerfans}
 \end{figure}
 
@@ -407,11 +407,11 @@ $\lozenge$
 \end{flushright} 
 \end{env_example}
 
-Example \ref{ex:groebnerfan} illustrates clearly that an arbitrary non-negative weight vector can be selected and if the vector lies in a certain cone, the corresponding Gröbner base will match with respect to this weight vector.  
+Example \ref{ex:groebnerfan} illustrates clearly that an arbitrary non-negative weight vector can be selected and if the vector lies in a certain cone, the corresponding Gröbner basis will match with respect to this weight vector.  
 
 
 This strategy is reasonable for small examples like above.
-In genearal, the whole Gröbner fan can be computed with the Gröbner walk \cite{coxOshea}.\\
+In general, the whole Gröbner fan can be computed with the Gröbner walk \cite{coxOshea}.\\
 An inexpensive way to obtain all reduced Gröbner bases of a special ideal, the code ideal, will be explained in section \ref{subsec:enumerate}.
 
 \newpage

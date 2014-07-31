@@ -1,4 +1,4 @@
 \select@language {english}
-\contentsline {figure}{\numberline {1}{\ignorespaces Gr\IeC {\"o}bner fans for the given example\relax }}{13}{figure.caption.6}
+\contentsline {figure}{\numberline {1}{\ignorespaces Gr\IeC {\"o}bner fans for example \ref {ex:groebnerfan}\relax }}{13}{figure.caption.6}
 \contentsline {figure}{\numberline {2}{\ignorespaces Comparison between the breath-first search and the reverse search\relax }}{23}{figure.caption.7}
 \contentsline {figure}{\numberline {3}{\ignorespaces Comparison between the numbers of degree compatible and all Gr\IeC {\"o}bner bases of binary linear codes with the length 8 \relax }}{34}{figure.caption.8}
