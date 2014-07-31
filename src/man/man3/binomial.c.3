@@ -1,0 +1,744 @@
+.TH "binomial.c" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+binomial.c \- 
+define binomal type and main operations on binomials  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'binomial\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBINOMIAL_H\fP   1"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcode_dim_set\fP (int n)"
+.br
+.ti -1c
+.RI "int \fBring_set\fP (int n)"
+.br
+.RI "\fISets the ring_N\&. \fP"
+.ti -1c
+.RI "int \fBring_read\fP (FILE *\fBinfile\fP)"
+.br
+.RI "\fIReads the number of variables out of a file and sets the ring dimension\&. \fP"
+.ti -1c
+.RI "int \fBring_getvar\fP (FILE *\fBinfile\fP)"
+.br
+.RI "\fIReads the variable of the inputfile\&. \fP"
+.ti -1c
+.RI "void \fBprint_monomial\fP (FILE *of, int *exps)"
+.br
+.RI "\fIPrints monomial in a file\&. \fP"
+.ti -1c
+.RI "void \fBget_monomial\fP (FILE *is, int *exps)"
+.br
+.RI "\fIReads ascii representation of monomial as power product onvert to exponent vector stored in *exps\&. \fP"
+.ti -1c
+.RI "int \fBmonomial_divides\fP (\fBmonomial\fP m1, \fBmonomial\fP m2)"
+.br
+.RI "\fIDetermines if m1 divides m2\&. \fP"
+.ti -1c
+.RI "int \fBmonomial_rel_prime\fP (\fBmonomial\fP m1, \fBmonomial\fP m2)"
+.br
+.RI "\fIDetermines if m1 is reletively prime to m2\&. \fP"
+.ti -1c
+.RI "int \fBmonomial_equal\fP (\fBmonomial\fP m1, \fBmonomial\fP m2)"
+.br
+.RI "\fIDetermines if monomials m1 and m2 have same exponents\&. \fP"
+.ti -1c
+.RI "void \fBmonomial_lcm\fP (\fBmonomial\fP m1, \fBmonomial\fP m2, \fBmonomial\fP m3)"
+.br
+.RI "\fImonomial_lcm copy least common multiple of m1 and m2 into m3\&. \fP"
+.ti -1c
+.RI "int \fBmonomial_stddegree\fP (\fBmonomial\fP m)"
+.br
+.RI "\fIDetermines the degree of a monomial\&. \fP"
+.ti -1c
+.RI "int \fBmonomial_lexcomp\fP (\fBmonomial\fP m1, \fBmonomial\fP m2)"
+.br
+.RI "\fIDetermines if m1 is lexicographically greater then m2\&. \fP"
+.ti -1c
+.RI "int \fBmonomial_rlexcomp\fP (\fBmonomial\fP m1, \fBmonomial\fP m2)"
+.br
+.RI "\fIDetermines if m1 is degree reverse lexicographically greater than m2 with variables taken in order a>b>\&.\&.\&., except that variable ring_lv is taken last (if it is >=0)\&. \fP"
+.ti -1c
+.RI "int \fBmonomial_grlexcomp\fP (\fBmonomial\fP m1, \fBmonomial\fP m2)"
+.br
+.RI "\fIDetermines if m1 is degree lexicographically greater than m2\&. \fP"
+.ti -1c
+.RI "\fBbinomial\fP \fBbinomial_new\fP ()"
+.br
+.RI "\fIAllocate space for a new binomial\&. Initializes flags and set exponents to zero\&. \fP"
+.ti -1c
+.RI "void \fBbinomial_free\fP (\fBbinomial\fP m)"
+.br
+.RI "\fIReclaims space allocated by \fBbinomial_new()\fP\&. \fP"
+.ti -1c
+.RI "void \fBbinomial_read\fP (FILE *is, \fBbinomial\fP b)"
+.br
+.RI "\fIReads file and stores a binomial\&. \fP"
+.ti -1c
+.RI "void \fBbinomial_print\fP (FILE *of, \fBbinomial\fP b)"
+.br
+.RI "\fIPrints the binomial\&. \fP"
+.ti -1c
+.RI "void \fBbinomial_copy\fP (\fBbinomial\fP src, \fBbinomial\fP dest)"
+.br
+.RI "\fICopies source binomials exponents and flags to those of the destination binomials\&. \fP"
+.ti -1c
+.RI "void \fBbinomial_flip\fP (\fBbinomial\fP b)"
+.br
+.RI "\fIInterchange leading and trailing terms of a binomial\&. \fP"
+.ti -1c
+.RI "\fBbinomial\fP \fBmonomial_spair\fP (\fBbinomial\fP b, \fBmonomial\fP m)"
+.br
+.RI "\fIForms S-Pair between marked binomial and marked monomial and reduce result by binomial as many times as possible\&. \fP"
+.ti -1c
+.RI "int \fBbinomial_spair\fP (\fBbinomial\fP b1, \fBbinomial\fP b2)"
+.br
+.RI "\fIReplaces b1, by spair of b1 and b2 -- the spair is taken with respect to the markings of b1 and b2, but it's marking is not meaningfull\&. \fP"
+.ti -1c
+.RI "void \fBbinomial_bumpto\fP (\fBbinomial\fP b1, \fBbinomial\fP b2)"
+.br
+.RI "\fIAssuming that the leading term of b1 divides that of b2 multiply both sides of b1 so that the leading terms of b1 and b2 are equal\&. \fP"
+.ti -1c
+.RI "void \fBreducetrail\fP (\fBbinomial\fP b1, \fBbinomial\fP b2)"
+.br
+.RI "\fIAssuming that lead(b2) divides trail(b1) change b1 into binomial resulting from bumping b2 so that lead(b2)=trail(b1) and adding result to b1\&. \fP"
+.ti -1c
+.RI "int \fBbinomial_compair\fP (\fBbinomial\fP b1, \fBbinomial\fP b2)"
+.br
+.RI "\fIDetermines if the lead term of b1 is lexicographically greater than that of b2 or if they tie return true if the trail term b1 is greater or equal to that of b2 otherwise return false\&. \fP"
+.ti -1c
+.RI "int \fBbinomial_first_term_degree\fP (\fBbinomial\fP b)"
+.br
+.RI "\fICalculates the degree of the first term\&. \fP"
+.ti -1c
+.RI "int \fBbinomial_variable_position\fP (\fBbinomial\fP b)"
+.br
+.RI "\fIReturns the position which will NOT belong to the non-prime ideal\&. Note that the function is only called when the leading term of the binomial has the degree 1\&. \fP"
+.ti -1c
+.RI "int \fBbinomial_degree_compatible\fP (\fBbinomial\fP b)"
+.br
+.RI "\fIReturns whether a binomial is degree compatible or not\&. \fP"
+.ti -1c
+.RI "void \fBbinomial_puncture\fP (\fBbinomial\fP b, int position)"
+.br
+.RI "\fIPunctures the binomial with cancelling a certain variable\&. \fP"
+.ti -1c
+.RI "int \fBbinomial_equal\fP (\fBbinomial\fP b1, \fBbinomial\fP b2)"
+.br
+.RI "\fIChecks if two binomials are identical\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "FILE * \fBinfile\fP"
+.br
+.ti -1c
+.RI "FILE * \fBoutfile\fP"
+.br
+.ti -1c
+.RI "int \fBring_N\fP =0"
+.br
+.ti -1c
+.RI "int \fBring_lv\fP =-1"
+.br
+.ti -1c
+.RI "int * \fBring_weight\fP =0"
+.br
+.ti -1c
+.RI "int \fBcode_dim\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+define binomal type and main operations on binomials 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+-------------ring defs-----------------------------------------------------
+.PP
+Monomials in the ambiant polynomial ring will be represented by their exponent vectors\&. Before any computations can be done using monomials the dimension of this ring (and the exponent vectors) must be set and stored in the global variable 'ring_N'\&. The mapping between indeces and variable names for i\&.o\&. purposes is currently done by just using the first ring_N letters of the alphabet\&.
+.PP
+Data: int ring_N: global variable holding dimension of ambiant ring int ring_lv: global variable used by deg-rev-lex term order, i\&.e\&. specify which variable to make cheepest(others ordered alphabetically)
+.PP
+Functions (or macros): int \fBring_set(int n)\fP: Set ring_N to n if ring_N has not yet been set\&. int ring_read(File *infile): Read in a description of the ring from infile and set ring values accordingly\&. \fBring_getvar(FILE *)\fP: convert next variable name on FILE to variable index \fBring_putvar(File *of,int v)\fP: convert index to variable name\&.
+.PP
+Note: for now a ring description is just given the number of variables\&. the names are just the first ring_N letters of the alphabet: i\&.e\&. ** name <====> index 'a' <====> 0 'b' <====> 1 eventually this scheme may be adjusted to allow names to be set at run time\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs 
+.RE
+.PP
+
+.PP
+Definition in file \fBbinomial\&.c\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BINOMIAL_H   1"
+
+.PP
+Definition at line 44 of file binomial\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "void binomial_bumpto (\fBbinomial\fPb1, \fBbinomial\fPb2)"
+
+.PP
+Assuming that the leading term of b1 divides that of b2 multiply both sides of b1 so that the leading terms of b1 and b2 are equal\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb1\fP The first binomial\&. 
+.br
+\fIb2\fP The second binomial\&. 
+.RE
+.PP
+
+.PP
+Definition at line 457 of file binomial\&.c\&.
+.SS "int binomial_compair (\fBbinomial\fPb1, \fBbinomial\fPb2)"
+
+.PP
+Determines if the lead term of b1 is lexicographically greater than that of b2 or if they tie return true if the trail term b1 is greater or equal to that of b2 otherwise return false\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb1\fP The first binomial\&. 
+.br
+\fIb2\fP The second binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) or FALSE (=1)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 477 of file binomial\&.c\&.
+.SS "void binomial_copy (\fBbinomial\fPsrc, \fBbinomial\fPdest)"
+
+.PP
+Copies source binomials exponents and flags to those of the destination binomials\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrc\fP Source binomial\&. 
+.br
+\fIdest\fP Destination binomial\&. 
+.RE
+.PP
+
+.PP
+Definition at line 384 of file binomial\&.c\&.
+.SS "int binomial_degree_compatible (\fBbinomial\fPb)"
+
+.PP
+Returns whether a binomial is degree compatible or not\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The given binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 if first term has a higher degree, 0 if degrees are equal, -1 if second term has a higher degree\&. 
+.RE
+.PP
+
+.PP
+Definition at line 520 of file binomial\&.c\&.
+.SS "int binomial_equal (\fBbinomial\fPb1, \fBbinomial\fPb2)"
+
+.PP
+Checks if two binomials are identical\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb1\fP First binomial\&. 
+.br
+\fIb2\fP Second binomial\&. 
+.RE
+.PP
+
+.PP
+Definition at line 544 of file binomial\&.c\&.
+.SS "int binomial_first_term_degree (\fBbinomial\fPb)"
+
+.PP
+Calculates the degree of the first term\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The given binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Degree of first term\&. 
+.RE
+.PP
+
+.PP
+Definition at line 491 of file binomial\&.c\&.
+.SS "void binomial_flip (\fBbinomial\fPb)"
+
+.PP
+Interchange leading and trailing terms of a binomial\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP Binomial which will be flipped\&. 
+.RE
+.PP
+
+.PP
+Definition at line 396 of file binomial\&.c\&.
+.SS "void binomial_free (\fBbinomial\fPm)"
+
+.PP
+Reclaims space allocated by \fBbinomial_new()\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP Binomial which shall be deleted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 315 of file binomial\&.c\&.
+.SS "\fBbinomial\fP binomial_new ()"
+
+.PP
+Allocate space for a new binomial\&. Initializes flags and set exponents to zero\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+New allocated binomial\&. 
+.RE
+.PP
+
+.PP
+Definition at line 290 of file binomial\&.c\&.
+.SS "void binomial_print (FILE *of, \fBbinomial\fPb)"
+
+.PP
+Prints the binomial\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIof\fP The output stream\&. 
+.br
+\fIb\fP Binomial which shall be printed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 364 of file binomial\&.c\&.
+.SS "void binomial_puncture (\fBbinomial\fPb, intposition)"
+
+.PP
+Punctures the binomial with cancelling a certain variable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The binomial to be punctured\&. 
+.br
+\fIposition\fP Position of the exp\&. vector which will be set to zero\&. 
+.RE
+.PP
+
+.PP
+Definition at line 537 of file binomial\&.c\&.
+.SS "void binomial_read (FILE *is, \fBbinomial\fPb)"
+
+.PP
+Reads file and stores a binomial\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP The input file stream\&. 
+.br
+\fIb\fP Read binomial will be stored in this parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line 323 of file binomial\&.c\&.
+.SS "int binomial_spair (\fBbinomial\fPb1, \fBbinomial\fPb2)"
+
+.PP
+Replaces b1, by spair of b1 and b2 -- the spair is taken with respect to the markings of b1 and b2, but it's marking is not meaningfull\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb1\fP The first binomial\&. 
+.br
+\fIb2\fP The second binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) if result is equivalent to zero monomial\&. 
+.RE
+.PP
+
+.PP
+Definition at line 432 of file binomial\&.c\&.
+.SS "int binomial_variable_position (\fBbinomial\fPb)"
+
+.PP
+Returns the position which will NOT belong to the non-prime ideal\&. Note that the function is only called when the leading term of the binomial has the degree 1\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The given binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Index i of exponent vector with i != 0\&. 
+.RE
+.PP
+
+.PP
+Definition at line 502 of file binomial\&.c\&.
+.SS "void code_dim_set (intn)"
+
+.PP
+Definition at line 62 of file binomial\&.c\&.
+.SS "void get_monomial (FILE *is, int *exps)"
+
+.PP
+Reads ascii representation of monomial as power product onvert to exponent vector stored in *exps\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP The input stream\&. 
+.br
+\fIexps\fP Store the exponent vector in exps\&.s 
+.RE
+.PP
+
+.PP
+Definition at line 136 of file binomial\&.c\&.
+.SS "int monomial_divides (\fBmonomial\fPm1, \fBmonomial\fPm2)"
+
+.PP
+Determines if m1 divides m2\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm1\fP First monomial\&. 
+.br
+\fIm2\fP Second monomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) or FALSE(=1)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file binomial\&.c\&.
+.SS "int monomial_equal (\fBmonomial\fPm1, \fBmonomial\fPm2)"
+
+.PP
+Determines if monomials m1 and m2 have same exponents\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm1\fP First monomial\&. 
+.br
+\fIm2\fP Second monomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) or FALSE(=1)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 183 of file binomial\&.c\&.
+.SS "int monomial_grlexcomp (\fBmonomial\fPm1, \fBmonomial\fPm2)"
+
+.PP
+Determines if m1 is degree lexicographically greater than m2\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm1\fP The first monomial\&. 
+.br
+\fIm2\fP The second monomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+>0 if m1 is degree lexicographically greater than m2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 254 of file binomial\&.c\&.
+.SS "void monomial_lcm (\fBmonomial\fPm1, \fBmonomial\fPm2, \fBmonomial\fPm3)"
+
+.PP
+monomial_lcm copy least common multiple of m1 and m2 into m3\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm1\fP first monomial 
+.br
+\fIm2\fP second monomial 
+.br
+\fIm3\fP lcm monomial 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 194 of file binomial\&.c\&.
+.SS "int monomial_lexcomp (\fBmonomial\fPm1, \fBmonomial\fPm2)"
+
+.PP
+Determines if m1 is lexicographically greater then m2\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm1\fP The first monomial\&. 
+.br
+\fIm2\fP The second monomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+>0 if m1 is lexicographically greater then m2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 217 of file binomial\&.c\&.
+.SS "int monomial_rel_prime (\fBmonomial\fPm1, \fBmonomial\fPm2)"
+
+.PP
+Determines if m1 is reletively prime to m2\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm1\fP First monomial\&. 
+.br
+\fIm2\fP Second monomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) or FALSE(=1)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 172 of file binomial\&.c\&.
+.SS "int monomial_rlexcomp (\fBmonomial\fPm1, \fBmonomial\fPm2)"
+
+.PP
+Determines if m1 is degree reverse lexicographically greater than m2 with variables taken in order a>b>\&.\&.\&., except that variable ring_lv is taken last (if it is >=0)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm1\fP The first monomial\&. 
+.br
+\fIm2\fP The second binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+>0 if m1 is degree reverse lexicographically greater than m2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 228 of file binomial\&.c\&.
+.SS "\fBbinomial\fP monomial_spair (\fBbinomial\fPb, \fBmonomial\fPm)"
+
+.PP
+Forms S-Pair between marked binomial and marked monomial and reduce result by binomial as many times as possible\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP First binomial\&. 
+.br
+\fIm\fP The Mononomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+S-Pair between the parameters\&. 
+.RE
+.PP
+
+.PP
+Definition at line 404 of file binomial\&.c\&.
+.SS "int monomial_stddegree (\fBmonomial\fPm)"
+
+.PP
+Determines the degree of a monomial\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP The monomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The degree as an integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 206 of file binomial\&.c\&.
+.SS "void print_monomial (FILE *of, int *exps)"
+
+.PP
+Prints monomial in a file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIof\fP Outputfile where monomial will be printed\&. 
+.br
+\fIexps\fP Vector which contains the exponents\&. 
+.RE
+.PP
+
+.PP
+Definition at line 116 of file binomial\&.c\&.
+.SS "void reducetrail (\fBbinomial\fPb1, \fBbinomial\fPb2)"
+
+.PP
+Assuming that lead(b2) divides trail(b1) change b1 into binomial resulting from bumping b2 so that lead(b2)=trail(b1) and adding result to b1\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb1\fP The first binomial\&. 
+.br
+\fIb2\fP The second binomial\&. 
+.RE
+.PP
+
+.PP
+Definition at line 467 of file binomial\&.c\&.
+.SS "int ring_getvar (FILE *infile)"
+
+.PP
+Reads the variable of the inputfile\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfile\fP File/Stream consisting the variables\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+ASCII code of the variable\&. 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file binomial\&.c\&.
+.SS "int ring_read (FILE *infile)"
+
+.PP
+Reads the number of variables out of a file and sets the ring dimension\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfile\fP File/Stream consisting the number of dimensions\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) if function was successfull\&. 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file binomial\&.c\&.
+.SS "int ring_set (intn)"
+
+.PP
+Sets the ring_N\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP Number of Dimensions\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) if function was successfull\&. 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file binomial\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int code_dim = 0"
+
+.PP
+Definition at line 60 of file binomial\&.c\&.
+.SS "FILE* infile"
+
+.PP
+Definition at line 50 of file binomial\&.c\&.
+.SS "FILE* outfile"
+
+.PP
+Definition at line 51 of file binomial\&.c\&.
+.SS "int ring_lv =-1"
+
+.PP
+Definition at line 58 of file binomial\&.c\&.
+.SS "int ring_N =0"
+
+.PP
+Definition at line 57 of file binomial\&.c\&.
+.SS "int* ring_weight =0"
+
+.PP
+Definition at line 59 of file binomial\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

@@ -1,0 +1,257 @@
+.TH "reverse.c" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+reverse.c \- 
+.PP
+Reverse search loop and main calling program for CIDGEL\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'gset\&.h'\fP
+.br
+\fC#include 'reverse\&.h'\fP
+.br
+\fC#include 'match\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBmax\fP(a, b)   (((a)>(b))?(a):(b))"
+.br
+.ti -1c
+.RI "#define \fBmin\fP(a, b)   (((a)<(b))?(a):(b))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBvertex_print\fP (\fBgset\fP g1, int no_print)"
+.br
+.RI "\fIPrints vertex with all its information\&. \fP"
+.ti -1c
+.RI "int \fBflip_condition_tig\fP (\fBbinomial\fP b)"
+.br
+.RI "\fIExtra condition for degree compatible groebner base for facet binomial to be flipped\&. \fP"
+.ti -1c
+.RI "int \fBrsearch\fP (\fBgset\fP g1, int number, int no_print)"
+.br
+.RI "\fIMain algorithm using the reverse search tree\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBrsearch_cache\fP =\fBTRUE\fP"
+.br
+.ti -1c
+.RI "int \fBdegree_comp\fP =\fBFALSE\fP"
+.br
+.ti -1c
+.RI "FILE * \fBoutfile\fP"
+.br
+.ti -1c
+.RI "int \fBprint_init\fP =\fBTRUE\fP"
+.br
+.ti -1c
+.RI "int \fBprint_tree\fP =\fBTRUE\fP"
+.br
+.ti -1c
+.RI "int \fBstats_minfacets\fP =-1"
+.br
+.ti -1c
+.RI "int \fBstats_minelts\fP =-1"
+.br
+.ti -1c
+.RI "int \fBstats_mindeg\fP =-1"
+.br
+.ti -1c
+.RI "int \fBstats_maxfacets\fP =0"
+.br
+.ti -1c
+.RI "int \fBstats_maxelts\fP =0"
+.br
+.ti -1c
+.RI "int \fBstats_maxdeg\fP =0"
+.br
+.ti -1c
+.RI "int \fBstats_tdepth\fP =0"
+.br
+.ti -1c
+.RI "int \fBstats_ecounter\fP =0"
+.br
+.ti -1c
+.RI "int \fBmatch_fan\fP = 0"
+.br
+.ti -1c
+.RI "struct \fBnode\fP * \fBlist\fP = NULL"
+.br
+.ti -1c
+.RI "struct \fBnode\fP * \fBlist2\fP = NULL"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Reverse search loop and main calling program for CIDGEL\&. 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBreverse\&.c\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define max(a, b)   (((a)>(b))?(a):(b))"
+
+.PP
+Definition at line 47 of file reverse\&.c\&.
+.SS "#define min(a, b)   (((a)<(b))?(a):(b))"
+
+.PP
+Definition at line 48 of file reverse\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "int flip_condition_tig (\fBbinomial\fPb)"
+
+.PP
+Extra condition for degree compatible groebner base for facet binomial to be flipped\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The given binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 for fullfilled condition, 0 for not fullfilled\&. 
+.RE
+.PP
+
+.PP
+Definition at line 103 of file reverse\&.c\&.
+.SS "int rsearch (\fBgset\fPg1, intnumber, intno_print)"
+
+.PP
+Main algorithm using the reverse search tree\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP Given Gröbner base to start of\&. 
+.br
+\fInumber\fP Important in order to match 2 groebner fans\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Nummber of counted Gröbner bases\&. 
+.RE
+.PP
+
+.PP
+Definition at line 113 of file reverse\&.c\&.
+.SS "void vertex_print (\fBgset\fPg1, intno_print)"
+
+.PP
+Prints vertex with all its information\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP The given groebner base\&. 
+.br
+\fIno_print\fP Flag for printing\&. 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file reverse\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int degree_comp =\fBFALSE\fP"
+
+.PP
+Definition at line 24 of file reverse\&.c\&.
+.SS "struct \fBnode\fP* list = NULL"
+
+.PP
+Definition at line 50 of file reverse\&.c\&.
+.SS "struct \fBnode\fP* list2 = NULL"
+
+.PP
+Definition at line 51 of file reverse\&.c\&.
+.SS "int match_fan = 0"
+
+.PP
+Definition at line 44 of file reverse\&.c\&.
+.SS "FILE* outfile"
+
+.PP
+Definition at line 31 of file reverse\&.c\&.
+.SS "int print_init =\fBTRUE\fP"
+
+.PP
+Definition at line 32 of file reverse\&.c\&.
+.SS "int print_tree =\fBTRUE\fP"
+
+.PP
+Definition at line 33 of file reverse\&.c\&.
+.SS "int rsearch_cache =\fBTRUE\fP"
+
+.PP
+Definition at line 23 of file reverse\&.c\&.
+.SS "int stats_ecounter =0"
+
+.PP
+Definition at line 42 of file reverse\&.c\&.
+.SS "int stats_maxdeg =0"
+
+.PP
+Definition at line 40 of file reverse\&.c\&.
+.SS "int stats_maxelts =0"
+
+.PP
+Definition at line 39 of file reverse\&.c\&.
+.SS "int stats_maxfacets =0"
+
+.PP
+Definition at line 38 of file reverse\&.c\&.
+.SS "int stats_mindeg =-1"
+
+.PP
+Definition at line 37 of file reverse\&.c\&.
+.SS "int stats_minelts =-1"
+
+.PP
+Definition at line 36 of file reverse\&.c\&.
+.SS "int stats_minfacets =-1"
+
+.PP
+Definition at line 35 of file reverse\&.c\&.
+.SS "int stats_tdepth =0"
+
+.PP
+Definition at line 41 of file reverse\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

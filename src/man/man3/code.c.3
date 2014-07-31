@@ -1,0 +1,103 @@
+.TH "code.c" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+code.c \- 
+.PP
+Support for computing first grobner bases of code ideals\&. of the TiGERS paper\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'gset\&.h'\fP
+.br
+\fC#include 'matrices\&.h'\fP
+.br
+\fC#include 'Rsimp\&.h'\fP
+.br
+\fC#include 'code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBmin\fP(m, n)   (((m)<(n))?(m):(n))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgset\fP \fBgset_code_ideal\fP (int **M, int m, int n)"
+.br
+.RI "\fIGiven an mxn integer matrix M, compute an rgb for the code ideal I_C\&. Expects generator matrix in standard form, reads off equations for a generating system, then uses Buchberger algorithm\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "FILE * \fBoutfile\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Support for computing first grobner bases of code ideals\&. of the TiGERS paper\&. 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBcode\&.c\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define min(m, n)   (((m)<(n))?(m):(n))"
+
+.PP
+Definition at line 28 of file code\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBgset\fP gset_code_ideal (int **M, intm, intn)"
+
+.PP
+Given an mxn integer matrix M, compute an rgb for the code ideal I_C\&. Expects generator matrix in standard form, reads off equations for a generating system, then uses Buchberger algorithm\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIM\fP input Matrix 
+.br
+\fIm\fP number of rows 
+.br
+\fIn\fP number of columns 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file code\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "FILE* outfile"
+
+.PP
+Definition at line 24 of file code\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

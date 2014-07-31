@@ -1,0 +1,84 @@
+.TH "utime.c" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+utime.c \- 
+.PP
+Function definitions for time measuring\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include 'utime\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBset_mark\fP ()"
+.br
+.RI "\fISets the mark for time measuring, like a tic-command\&. \fP"
+.ti -1c
+.RI "int \fBread_mark\fP (int timeset)"
+.br
+.RI "\fIGets the mark for time measuring, like a toc-command\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Function definitions for time measuring\&. 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fButime\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int read_mark (int)"
+
+.PP
+Gets the mark for time measuring, like a toc-command\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The absoulute time in seconds\&. 
+.RE
+.PP
+
+.PP
+Definition at line 27 of file utime\&.c\&.
+.SS "int set_mark (void)"
+
+.PP
+Sets the mark for time measuring, like a tic-command\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The time stamp\&. 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file utime\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

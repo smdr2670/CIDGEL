@@ -1,0 +1,109 @@
+\hypertarget{reverse_8h}{\section{reverse.\-h File Reference}
+\label{reverse_8h}\index{reverse.\-h@{reverse.\-h}}
+}
+
+
+Main algorithm using reverse search mentioned in algorithm 2.\-8 of the Ti\-G\-E\-R\-S paper.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{reverse_8h_a447ed6be98ea94dc2743d3b8e4343425}{vertex\-\_\-print} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, int no\-\_\-print)
+\begin{DoxyCompactList}\small\item\em Prints vertex with all its information. \end{DoxyCompactList}\item 
+int \hyperlink{reverse_8h_a744a1583ee4bb441d35a9a5a80e3aaa5}{flip\-\_\-condition\-\_\-tig} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Extra condition for degree compatible groebner base for facet binomial to be flipped. \end{DoxyCompactList}\item 
+int \hyperlink{reverse_8h_a25440f76d77279ee9ea5b3de2d27dbc9}{rsearch} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, int number, int no\-\_\-print)
+\begin{DoxyCompactList}\small\item\em Main algorithm using the reverse search tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main algorithm using reverse search mentioned in algorithm 2.\-8 of the Ti\-G\-E\-R\-S paper. This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000015}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{reverse_8h_source}{reverse.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{reverse_8h_a744a1583ee4bb441d35a9a5a80e3aaa5}{\index{reverse.\-h@{reverse.\-h}!flip\-\_\-condition\-\_\-tig@{flip\-\_\-condition\-\_\-tig}}
+\index{flip\-\_\-condition\-\_\-tig@{flip\-\_\-condition\-\_\-tig}!reverse.h@{reverse.\-h}}
+\subsubsection[{flip\-\_\-condition\-\_\-tig}]{\setlength{\rightskip}{0pt plus 5cm}int flip\-\_\-condition\-\_\-tig (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{reverse_8h_a744a1583ee4bb441d35a9a5a80e3aaa5}
+
+
+Extra condition for degree compatible groebner base for facet binomial to be flipped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The given binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 for fullfilled condition, 0 for not fullfilled. 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file reverse.\-c.
+
+\hypertarget{reverse_8h_a25440f76d77279ee9ea5b3de2d27dbc9}{\index{reverse.\-h@{reverse.\-h}!rsearch@{rsearch}}
+\index{rsearch@{rsearch}!reverse.h@{reverse.\-h}}
+\subsubsection[{rsearch}]{\setlength{\rightskip}{0pt plus 5cm}int rsearch (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{int}]{number, }
+\item[{int}]{no\-\_\-print}
+\end{DoxyParamCaption}
+)}}\label{reverse_8h_a25440f76d77279ee9ea5b3de2d27dbc9}
+
+
+Main algorithm using the reverse search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & Given Gröbner base to start of. \\
+\hline
+{\em number} & Important in order to match 2 groebner fans. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nummber of counted Gröbner bases. 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file reverse.\-c.
+
+\hypertarget{reverse_8h_a447ed6be98ea94dc2743d3b8e4343425}{\index{reverse.\-h@{reverse.\-h}!vertex\-\_\-print@{vertex\-\_\-print}}
+\index{vertex\-\_\-print@{vertex\-\_\-print}!reverse.h@{reverse.\-h}}
+\subsubsection[{vertex\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void vertex\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{int}]{no\-\_\-print}
+\end{DoxyParamCaption}
+)}}\label{reverse_8h_a447ed6be98ea94dc2743d3b8e4343425}
+
+
+Prints vertex with all its information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & The given groebner base. \\
+\hline
+{\em no\-\_\-print} & Flag for printing. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file reverse.\-c.
+

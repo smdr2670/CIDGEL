@@ -1,0 +1,150 @@
+.TH "exsearch.h" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+exsearch.h \- 
+.PP
+header file for the exhaustive search  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBflip_ex_condition\fP (\fBbinomial\fP b, int \fBdegree_comp\fP)"
+.br
+.RI "\fIAn extra condition for degree compatible Gröbner basis for facet binomial to be flipped\&. \fP"
+.ti -1c
+.RI "void \fBinsert\fP (\fBgset\fP g1, \fBgset\fP *L)"
+.br
+.RI "\fIinsert use next pointer in Gsets to implement a simple linked list\&. for now stored in no particular order\&. \fP"
+.ti -1c
+.RI "int \fBgset_equiv\fP (\fBgset\fP g1, \fBgset\fP g2)"
+.br
+.RI "\fIDetermines if two gsets contain equivalent marked binomials\&. \fP"
+.ti -1c
+.RI "\fBgset\fP \fBfind\fP (\fBgset\fP g1, \fBgset\fP L)"
+.br
+.RI "\fIChecks a gset against those on list until an equivalent one is found\&. \fP"
+.ti -1c
+.RI "int \fBexsearch\fP (\fBgset\fP g1, int \fBdegree_comp\fP, int no_print)"
+.br
+.RI "\fIBreadth first search to find all degree compatible groebner bases of a code ideal\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+header file for the exhaustive search 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBexsearch\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int exsearch (\fBgset\fPg1, intdegree_comp, intno_print)"
+
+.PP
+Breadth first search to find all degree compatible groebner bases of a code ideal\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP The starting Gröbner basis\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of groebner bases found\&. 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file exsearch\&.c\&.
+.SS "\fBgset\fP find (\fBgset\fPg1, \fBgset\fPL)"
+
+.PP
+Checks a gset against those on list until an equivalent one is found\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP Gset which shall be found in list L\&. 
+.br
+\fIL\fP List that will be searched after g1\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Equivalent gset in L 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file exsearch\&.c\&.
+.SS "int flip_ex_condition (\fBbinomial\fPb, intdegree_comp)"
+
+.PP
+An extra condition for degree compatible Gröbner basis for facet binomial to be flipped\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The given binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 for fullfilled condition, 0 for not fullfilled\&. 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file exsearch\&.c\&.
+.SS "int gset_equiv (\fBgset\fPg1, \fBgset\fPg2)"
+
+.PP
+Determines if two gsets contain equivalent marked binomials\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP First binomial\&. 
+.br
+\fIg2\fP Second binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) of FALSE(=1) 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file exsearch\&.c\&.
+.SS "void insert (\fBgset\fPg1, \fBgset\fP *L)"
+
+.PP
+insert use next pointer in Gsets to implement a simple linked list\&. for now stored in no particular order\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP The gset to be inserted\&. 
+.br
+\fIL\fP List of gsets\&. 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file exsearch\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

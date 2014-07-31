@@ -1,0 +1,54 @@
+\hypertarget{code_8h}{\section{code.\-h File Reference}
+\label{code_8h}\index{code.\-h@{code.\-h}}
+}
+
+
+Function prototype for computing code ideals.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} \hyperlink{code_8h_a4c4c434f17a252b4ff0d0e515078dc9a}{gset\-\_\-code\-\_\-ideal} (int $\ast$$\ast$M, int m, int n)
+\begin{DoxyCompactList}\small\item\em Given an mxn integer matrix M, compute an rgb for the code ideal I\-\_\-\-C. Expects generator matrix in standard form, reads off equations for a generating system, then uses Buchberger algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function prototype for computing code ideals. \begin{DoxyAuthor}{Author}
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000005}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{code_8h_source}{code.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{code_8h_a4c4c434f17a252b4ff0d0e515078dc9a}{\index{code.\-h@{code.\-h}!gset\-\_\-code\-\_\-ideal@{gset\-\_\-code\-\_\-ideal}}
+\index{gset\-\_\-code\-\_\-ideal@{gset\-\_\-code\-\_\-ideal}!code.h@{code.\-h}}
+\subsubsection[{gset\-\_\-code\-\_\-ideal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf gset} gset\-\_\-code\-\_\-ideal (
+\begin{DoxyParamCaption}
+\item[{int $\ast$$\ast$}]{M, }
+\item[{int}]{m, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{code_8h_a4c4c434f17a252b4ff0d0e515078dc9a}
+
+
+Given an mxn integer matrix M, compute an rgb for the code ideal I\-\_\-\-C. Expects generator matrix in standard form, reads off equations for a generating system, then uses Buchberger algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & input Matrix \\
+\hline
+{\em m} & number of rows \\
+\hline
+{\em n} & number of columns \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file code.\-c.
+

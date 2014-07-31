@@ -1,0 +1,299 @@
+\hypertarget{reverse_8c}{\section{reverse.\-c File Reference}
+\label{reverse_8c}\index{reverse.\-c@{reverse.\-c}}
+}
+
+
+Reverse search loop and main calling program for C\-I\-D\-G\-E\-L.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gset.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}reverse.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}match.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{reverse_8c_affe776513b24d84b39af8ab0930fef7f}{max}(a, b)~(((a)$>$(b))?(a)\-:(b))
+\item 
+\#define \hyperlink{reverse_8c_ac6afabdc09a49a433ee19d8a9486056d}{min}(a, b)~(((a)$<$(b))?(a)\-:(b))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{reverse_8c_a447ed6be98ea94dc2743d3b8e4343425}{vertex\-\_\-print} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, int no\-\_\-print)
+\begin{DoxyCompactList}\small\item\em Prints vertex with all its information. \end{DoxyCompactList}\item 
+int \hyperlink{reverse_8c_a744a1583ee4bb441d35a9a5a80e3aaa5}{flip\-\_\-condition\-\_\-tig} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Extra condition for degree compatible groebner base for facet binomial to be flipped. \end{DoxyCompactList}\item 
+int \hyperlink{reverse_8c_a25440f76d77279ee9ea5b3de2d27dbc9}{rsearch} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, int number, int no\-\_\-print)
+\begin{DoxyCompactList}\small\item\em Main algorithm using the reverse search tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{reverse_8c_a6fec9a76ac859618ae20b2f184eefdd2}{rsearch\-\_\-cache} =\hyperlink{utils_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{T\-R\-U\-E}
+\item 
+int \hyperlink{reverse_8c_a3474562ef40c62c4090d7b5d585aad8f}{degree\-\_\-comp} =\hyperlink{utils_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\-A\-L\-S\-E}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{reverse_8c_ae581849c67336453bd5b81e6518019a9}{outfile}
+\item 
+int \hyperlink{reverse_8c_aeeb57168ecd32039de3476af1db4ade9}{print\-\_\-init} =\hyperlink{utils_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{T\-R\-U\-E}
+\item 
+int \hyperlink{reverse_8c_a8d8346c613b7524c85c14ba77a81280c}{print\-\_\-tree} =\hyperlink{utils_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{T\-R\-U\-E}
+\item 
+int \hyperlink{reverse_8c_aad6a42a2813d71c1b885ded8a89b4e33}{stats\-\_\-minfacets} =-\/1
+\item 
+int \hyperlink{reverse_8c_af45c27a73b2c8a5fff9023c64b7ada6d}{stats\-\_\-minelts} =-\/1
+\item 
+int \hyperlink{reverse_8c_acf6a86a6782db47e13c65ce1da11e315}{stats\-\_\-mindeg} =-\/1
+\item 
+int \hyperlink{reverse_8c_a6e686689dcad6f85fa848f3bfef14bef}{stats\-\_\-maxfacets} =0
+\item 
+int \hyperlink{reverse_8c_a38531704a9cf54d13e143379cde75977}{stats\-\_\-maxelts} =0
+\item 
+int \hyperlink{reverse_8c_ab0a05767c7d988d5f1df967fc310c2cf}{stats\-\_\-maxdeg} =0
+\item 
+int \hyperlink{reverse_8c_a341412dba1e928bc72cfc045d2a4e1bd}{stats\-\_\-tdepth} =0
+\item 
+int \hyperlink{reverse_8c_ad38fa1c8b887e2bf3c1777aab28dd2d0}{stats\-\_\-ecounter} =0
+\item 
+int \hyperlink{reverse_8c_a741fc0d0674abe0198486168a89e45d6}{match\-\_\-fan} = 0
+\item 
+struct \hyperlink{structnode}{node} $\ast$ \hyperlink{reverse_8c_ad9a9597b9668d502c1fc9c4719496724}{list} = N\-U\-L\-L
+\item 
+struct \hyperlink{structnode}{node} $\ast$ \hyperlink{reverse_8c_a9c53e00d0c5f67f6acd9e9d57a7dd13a}{list2} = N\-U\-L\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Reverse search loop and main calling program for C\-I\-D\-G\-E\-L. This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000014}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{reverse_8c_source}{reverse.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{reverse_8c_affe776513b24d84b39af8ab0930fef7f}{\index{reverse.\-c@{reverse.\-c}!max@{max}}
+\index{max@{max}!reverse.c@{reverse.\-c}}
+\subsubsection[{max}]{\setlength{\rightskip}{0pt plus 5cm}\#define max(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~(((a)$>$(b))?(a)\-:(b))}}\label{reverse_8c_affe776513b24d84b39af8ab0930fef7f}
+
+
+Definition at line 47 of file reverse.\-c.
+
+\hypertarget{reverse_8c_ac6afabdc09a49a433ee19d8a9486056d}{\index{reverse.\-c@{reverse.\-c}!min@{min}}
+\index{min@{min}!reverse.c@{reverse.\-c}}
+\subsubsection[{min}]{\setlength{\rightskip}{0pt plus 5cm}\#define min(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~(((a)$<$(b))?(a)\-:(b))}}\label{reverse_8c_ac6afabdc09a49a433ee19d8a9486056d}
+
+
+Definition at line 48 of file reverse.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{reverse_8c_a744a1583ee4bb441d35a9a5a80e3aaa5}{\index{reverse.\-c@{reverse.\-c}!flip\-\_\-condition\-\_\-tig@{flip\-\_\-condition\-\_\-tig}}
+\index{flip\-\_\-condition\-\_\-tig@{flip\-\_\-condition\-\_\-tig}!reverse.c@{reverse.\-c}}
+\subsubsection[{flip\-\_\-condition\-\_\-tig}]{\setlength{\rightskip}{0pt plus 5cm}int flip\-\_\-condition\-\_\-tig (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{reverse_8c_a744a1583ee4bb441d35a9a5a80e3aaa5}
+
+
+Extra condition for degree compatible groebner base for facet binomial to be flipped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The given binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 for fullfilled condition, 0 for not fullfilled. 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a25440f76d77279ee9ea5b3de2d27dbc9}{\index{reverse.\-c@{reverse.\-c}!rsearch@{rsearch}}
+\index{rsearch@{rsearch}!reverse.c@{reverse.\-c}}
+\subsubsection[{rsearch}]{\setlength{\rightskip}{0pt plus 5cm}int rsearch (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{int}]{number, }
+\item[{int}]{no\-\_\-print}
+\end{DoxyParamCaption}
+)}}\label{reverse_8c_a25440f76d77279ee9ea5b3de2d27dbc9}
+
+
+Main algorithm using the reverse search tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & Given Gröbner base to start of. \\
+\hline
+{\em number} & Important in order to match 2 groebner fans. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nummber of counted Gröbner bases. 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a447ed6be98ea94dc2743d3b8e4343425}{\index{reverse.\-c@{reverse.\-c}!vertex\-\_\-print@{vertex\-\_\-print}}
+\index{vertex\-\_\-print@{vertex\-\_\-print}!reverse.c@{reverse.\-c}}
+\subsubsection[{vertex\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void vertex\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{int}]{no\-\_\-print}
+\end{DoxyParamCaption}
+)}}\label{reverse_8c_a447ed6be98ea94dc2743d3b8e4343425}
+
+
+Prints vertex with all its information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & The given groebner base. \\
+\hline
+{\em no\-\_\-print} & Flag for printing. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file reverse.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{reverse_8c_a3474562ef40c62c4090d7b5d585aad8f}{\index{reverse.\-c@{reverse.\-c}!degree\-\_\-comp@{degree\-\_\-comp}}
+\index{degree\-\_\-comp@{degree\-\_\-comp}!reverse.c@{reverse.\-c}}
+\subsubsection[{degree\-\_\-comp}]{\setlength{\rightskip}{0pt plus 5cm}int degree\-\_\-comp ={\bf F\-A\-L\-S\-E}}}\label{reverse_8c_a3474562ef40c62c4090d7b5d585aad8f}
+
+
+Definition at line 24 of file reverse.\-c.
+
+\hypertarget{reverse_8c_ad9a9597b9668d502c1fc9c4719496724}{\index{reverse.\-c@{reverse.\-c}!list@{list}}
+\index{list@{list}!reverse.c@{reverse.\-c}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf node}$\ast$ list = N\-U\-L\-L}}\label{reverse_8c_ad9a9597b9668d502c1fc9c4719496724}
+
+
+Definition at line 50 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a9c53e00d0c5f67f6acd9e9d57a7dd13a}{\index{reverse.\-c@{reverse.\-c}!list2@{list2}}
+\index{list2@{list2}!reverse.c@{reverse.\-c}}
+\subsubsection[{list2}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf node}$\ast$ list2 = N\-U\-L\-L}}\label{reverse_8c_a9c53e00d0c5f67f6acd9e9d57a7dd13a}
+
+
+Definition at line 51 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a741fc0d0674abe0198486168a89e45d6}{\index{reverse.\-c@{reverse.\-c}!match\-\_\-fan@{match\-\_\-fan}}
+\index{match\-\_\-fan@{match\-\_\-fan}!reverse.c@{reverse.\-c}}
+\subsubsection[{match\-\_\-fan}]{\setlength{\rightskip}{0pt plus 5cm}int match\-\_\-fan = 0}}\label{reverse_8c_a741fc0d0674abe0198486168a89e45d6}
+
+
+Definition at line 44 of file reverse.\-c.
+
+\hypertarget{reverse_8c_ae581849c67336453bd5b81e6518019a9}{\index{reverse.\-c@{reverse.\-c}!outfile@{outfile}}
+\index{outfile@{outfile}!reverse.c@{reverse.\-c}}
+\subsubsection[{outfile}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ outfile}}\label{reverse_8c_ae581849c67336453bd5b81e6518019a9}
+
+
+Definition at line 31 of file reverse.\-c.
+
+\hypertarget{reverse_8c_aeeb57168ecd32039de3476af1db4ade9}{\index{reverse.\-c@{reverse.\-c}!print\-\_\-init@{print\-\_\-init}}
+\index{print\-\_\-init@{print\-\_\-init}!reverse.c@{reverse.\-c}}
+\subsubsection[{print\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int print\-\_\-init ={\bf T\-R\-U\-E}}}\label{reverse_8c_aeeb57168ecd32039de3476af1db4ade9}
+
+
+Definition at line 32 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a8d8346c613b7524c85c14ba77a81280c}{\index{reverse.\-c@{reverse.\-c}!print\-\_\-tree@{print\-\_\-tree}}
+\index{print\-\_\-tree@{print\-\_\-tree}!reverse.c@{reverse.\-c}}
+\subsubsection[{print\-\_\-tree}]{\setlength{\rightskip}{0pt plus 5cm}int print\-\_\-tree ={\bf T\-R\-U\-E}}}\label{reverse_8c_a8d8346c613b7524c85c14ba77a81280c}
+
+
+Definition at line 33 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a6fec9a76ac859618ae20b2f184eefdd2}{\index{reverse.\-c@{reverse.\-c}!rsearch\-\_\-cache@{rsearch\-\_\-cache}}
+\index{rsearch\-\_\-cache@{rsearch\-\_\-cache}!reverse.c@{reverse.\-c}}
+\subsubsection[{rsearch\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}int rsearch\-\_\-cache ={\bf T\-R\-U\-E}}}\label{reverse_8c_a6fec9a76ac859618ae20b2f184eefdd2}
+
+
+Definition at line 23 of file reverse.\-c.
+
+\hypertarget{reverse_8c_ad38fa1c8b887e2bf3c1777aab28dd2d0}{\index{reverse.\-c@{reverse.\-c}!stats\-\_\-ecounter@{stats\-\_\-ecounter}}
+\index{stats\-\_\-ecounter@{stats\-\_\-ecounter}!reverse.c@{reverse.\-c}}
+\subsubsection[{stats\-\_\-ecounter}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-ecounter =0}}\label{reverse_8c_ad38fa1c8b887e2bf3c1777aab28dd2d0}
+
+
+Definition at line 42 of file reverse.\-c.
+
+\hypertarget{reverse_8c_ab0a05767c7d988d5f1df967fc310c2cf}{\index{reverse.\-c@{reverse.\-c}!stats\-\_\-maxdeg@{stats\-\_\-maxdeg}}
+\index{stats\-\_\-maxdeg@{stats\-\_\-maxdeg}!reverse.c@{reverse.\-c}}
+\subsubsection[{stats\-\_\-maxdeg}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-maxdeg =0}}\label{reverse_8c_ab0a05767c7d988d5f1df967fc310c2cf}
+
+
+Definition at line 40 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a38531704a9cf54d13e143379cde75977}{\index{reverse.\-c@{reverse.\-c}!stats\-\_\-maxelts@{stats\-\_\-maxelts}}
+\index{stats\-\_\-maxelts@{stats\-\_\-maxelts}!reverse.c@{reverse.\-c}}
+\subsubsection[{stats\-\_\-maxelts}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-maxelts =0}}\label{reverse_8c_a38531704a9cf54d13e143379cde75977}
+
+
+Definition at line 39 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a6e686689dcad6f85fa848f3bfef14bef}{\index{reverse.\-c@{reverse.\-c}!stats\-\_\-maxfacets@{stats\-\_\-maxfacets}}
+\index{stats\-\_\-maxfacets@{stats\-\_\-maxfacets}!reverse.c@{reverse.\-c}}
+\subsubsection[{stats\-\_\-maxfacets}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-maxfacets =0}}\label{reverse_8c_a6e686689dcad6f85fa848f3bfef14bef}
+
+
+Definition at line 38 of file reverse.\-c.
+
+\hypertarget{reverse_8c_acf6a86a6782db47e13c65ce1da11e315}{\index{reverse.\-c@{reverse.\-c}!stats\-\_\-mindeg@{stats\-\_\-mindeg}}
+\index{stats\-\_\-mindeg@{stats\-\_\-mindeg}!reverse.c@{reverse.\-c}}
+\subsubsection[{stats\-\_\-mindeg}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-mindeg =-\/1}}\label{reverse_8c_acf6a86a6782db47e13c65ce1da11e315}
+
+
+Definition at line 37 of file reverse.\-c.
+
+\hypertarget{reverse_8c_af45c27a73b2c8a5fff9023c64b7ada6d}{\index{reverse.\-c@{reverse.\-c}!stats\-\_\-minelts@{stats\-\_\-minelts}}
+\index{stats\-\_\-minelts@{stats\-\_\-minelts}!reverse.c@{reverse.\-c}}
+\subsubsection[{stats\-\_\-minelts}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-minelts =-\/1}}\label{reverse_8c_af45c27a73b2c8a5fff9023c64b7ada6d}
+
+
+Definition at line 36 of file reverse.\-c.
+
+\hypertarget{reverse_8c_aad6a42a2813d71c1b885ded8a89b4e33}{\index{reverse.\-c@{reverse.\-c}!stats\-\_\-minfacets@{stats\-\_\-minfacets}}
+\index{stats\-\_\-minfacets@{stats\-\_\-minfacets}!reverse.c@{reverse.\-c}}
+\subsubsection[{stats\-\_\-minfacets}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-minfacets =-\/1}}\label{reverse_8c_aad6a42a2813d71c1b885ded8a89b4e33}
+
+
+Definition at line 35 of file reverse.\-c.
+
+\hypertarget{reverse_8c_a341412dba1e928bc72cfc045d2a4e1bd}{\index{reverse.\-c@{reverse.\-c}!stats\-\_\-tdepth@{stats\-\_\-tdepth}}
+\index{stats\-\_\-tdepth@{stats\-\_\-tdepth}!reverse.c@{reverse.\-c}}
+\subsubsection[{stats\-\_\-tdepth}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-tdepth =0}}\label{reverse_8c_a341412dba1e928bc72cfc045d2a4e1bd}
+
+
+Definition at line 41 of file reverse.\-c.
+

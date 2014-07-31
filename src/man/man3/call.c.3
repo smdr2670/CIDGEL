@@ -1,0 +1,296 @@
+.TH "call.c" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+call.c \- 
+.PP
+main calling file for CIDGEL code  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'gset\&.h'\fP
+.br
+\fC#include 'matrices\&.h'\fP
+.br
+\fC#include 'reverse\&.h'\fP
+.br
+\fC#include 'exsearch\&.h'\fP
+.br
+\fC#include 'Rsimp\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_POSIX_C_SOURCE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMATFOUND\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGSETFOUND\fP   2"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBusage\fP (char *prog)"
+.br
+.ti -1c
+.RI "void \fBprintstats\fP ()"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.RI "\fICIDGEL entrypoint\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "FILE * \fBinfile\fP"
+.br
+.ti -1c
+.RI "FILE * \fBmatchfile\fP"
+.br
+.ti -1c
+.RI "FILE * \fBoutfile\fP"
+.br
+.ti -1c
+.RI "int \fBrsearch_cache\fP"
+.br
+.ti -1c
+.RI "int \fBprint_tree\fP"
+.br
+.ti -1c
+.RI "int \fBprint_init\fP"
+.br
+.ti -1c
+.RI "int \fBstats_minfacets\fP"
+.br
+.ti -1c
+.RI "int \fBstats_minelts\fP"
+.br
+.ti -1c
+.RI "int \fBstats_mindeg\fP"
+.br
+.ti -1c
+.RI "int \fBstats_maxfacets\fP"
+.br
+.ti -1c
+.RI "int \fBstats_maxelts\fP"
+.br
+.ti -1c
+.RI "int \fBstats_maxdeg\fP"
+.br
+.ti -1c
+.RI "int \fBstats_ecounter\fP"
+.br
+.ti -1c
+.RI "int \fBstats_tdepth\fP"
+.br
+.ti -1c
+.RI "int \fBlptest\fP"
+.br
+.ti -1c
+.RI "int \fBmatch_fan\fP"
+.br
+.ti -1c
+.RI "int \fBpunctured_code\fP"
+.br
+.ti -1c
+.RI "int \fBroot_only\fP =\fBFALSE\fP"
+.br
+.ti -1c
+.RI "int \fBcompGB\fP =\fBFALSE\fP"
+.br
+.ti -1c
+.RI "int \fBuse_exsearch\fP =\fBFALSE\fP"
+.br
+.ti -1c
+.RI "int \fBdegree_comp\fP"
+.br
+.ti -1c
+.RI "int \fBMf\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+main calling file for CIDGEL code 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBcall\&.c\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _POSIX_C_SOURCE   1"
+
+.PP
+Definition at line 28 of file call\&.c\&.
+.SS "#define GSETFOUND   2"
+
+.PP
+Definition at line 115 of file call\&.c\&.
+.SS "#define MATFOUND   1"
+
+.PP
+Definition at line 114 of file call\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (intargc, char **argv)"
+
+.PP
+CIDGEL entrypoint\&. 
+.PP
+.nf
+   This is the entrypoint for the complete software.  
+   It reads off the commandline command and calls the 
+   chosen funtions.
+
+.fi
+.PP
+ 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIargc\fP Arguments counted\&. 
+.br
+\fIargv\fP Argument string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Should not return\&. 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file call\&.c\&.
+.SS "void printstats ()"
+
+.PP
+Definition at line 557 of file call\&.c\&.
+.SS "usage (char *prog)"
+
+.PP
+Definition at line 35 of file call\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int compGB =\fBFALSE\fP"
+
+.PP
+Definition at line 108 of file call\&.c\&.
+.SS "int degree_comp"
+
+.PP
+Definition at line 24 of file reverse\&.c\&.
+.SS "FILE* infile"
+
+.PP
+Definition at line 86 of file call\&.c\&.
+.SS "int lptest"
+
+.PP
+Definition at line 534 of file gset\&.c\&.
+.SS "int match_fan"
+
+.PP
+Definition at line 44 of file reverse\&.c\&.
+.SS "FILE* matchfile"
+
+.PP
+Definition at line 87 of file call\&.c\&.
+.SS "int Mf"
+
+.PP
+Definition at line 112 of file call\&.c\&.
+.SS "FILE* outfile"
+
+.PP
+Definition at line 88 of file call\&.c\&.
+.SS "int print_init"
+
+.PP
+Definition at line 32 of file reverse\&.c\&.
+.SS "int print_tree"
+
+.PP
+Definition at line 33 of file reverse\&.c\&.
+.SS "int punctured_code"
+
+.PP
+Definition at line 105 of file call\&.c\&.
+.SS "int root_only =\fBFALSE\fP"
+
+.PP
+Definition at line 107 of file call\&.c\&.
+.SS "int rsearch_cache"
+
+.PP
+Definition at line 23 of file reverse\&.c\&.
+.SS "int stats_ecounter"
+
+.PP
+Definition at line 42 of file reverse\&.c\&.
+.SS "int stats_maxdeg"
+
+.PP
+Definition at line 40 of file reverse\&.c\&.
+.SS "int stats_maxelts"
+
+.PP
+Definition at line 39 of file reverse\&.c\&.
+.SS "int stats_maxfacets"
+
+.PP
+Definition at line 38 of file reverse\&.c\&.
+.SS "int stats_mindeg"
+
+.PP
+Definition at line 37 of file reverse\&.c\&.
+.SS "int stats_minelts"
+
+.PP
+Definition at line 36 of file reverse\&.c\&.
+.SS "int stats_minfacets"
+
+.PP
+Definition at line 35 of file reverse\&.c\&.
+.SS "int stats_tdepth"
+
+.PP
+Definition at line 41 of file reverse\&.c\&.
+.SS "int use_exsearch =\fBFALSE\fP"
+
+.PP
+Definition at line 109 of file call\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

@@ -1,0 +1,141 @@
+.TH "match.h" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+match.h \- 
+.PP
+Header files with function declarations for Gröbner fan matching\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBnode\fP"
+.br
+.RI "\fIStruct which contains all imporant informations of a Gröbner basis\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsortedInsert\fP (struct \fBnode\fP **head, struct \fBnode\fP *newnode)"
+.br
+.RI "\fIInserts a node in the correct position in the linked list\&. \fP"
+.ti -1c
+.RI "struct \fBnode\fP * \fBnewNode\fP (int id, int facet, int binomials, int degree)"
+.br
+.RI "\fICreates a new Node (Vertex without binomials)\&. \fP"
+.ti -1c
+.RI "int \fBListDelete\fP (struct \fBnode\fP **listP, int nfacet, int nbinomials, int degree)"
+.br
+.RI "\fISearches and deletes a certain element of the list listP\&. \fP"
+.ti -1c
+.RI "int \fBmatch\fP (struct \fBnode\fP **list1, struct \fBnode\fP **\fBlist2\fP)"
+.br
+.RI "\fIChecks if two Lists contains the same elements\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header files with function declarations for Gröbner fan matching\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBmatch\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int ListDelete (struct \fBnode\fP **listP, intnfacet, intnbinomials, intdegree)"
+
+.PP
+Searches and deletes a certain element of the list listP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlistP\fP Linked List\&. 
+.br
+\fInfacet\fP Number of facet\&. 
+.br
+\fInbinomials\fP Number of binomials\&. 
+.br
+\fIdegree\fP Highest degree\&. 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file match\&.c\&.
+.SS "int match (struct \fBnode\fP **list1, struct \fBnode\fP **list2)"
+
+.PP
+Checks if two Lists contains the same elements\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlist1\fP First list\&. 
+.br
+\fIlist2\fP Second list\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 if lists are equal, -1 if not\&. 
+.RE
+.PP
+
+.PP
+Definition at line 101 of file match\&.c\&.
+.SS "struct \fBnode\fP* newNode (intid, intfacet, intbinomials, intdegree)"
+
+.PP
+Creates a new Node (Vertex without binomials)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIid\fP ID of the Vertex\&. 
+.br
+\fIfacet\fP Number of facets of the Vertex\&. 
+.br
+\fIbinomials\fP Number of binomials of the Vertex\&. 
+.br
+\fIdegree\fP Highest degree of the binomials\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Newnode allocated space of a node\&. 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file match\&.c\&.
+.SS "void sortedInsert (struct \fBnode\fP **head, struct \fBnode\fP *newnode)"
+
+.PP
+Inserts a node in the correct position in the linked list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhead\fP Linked list\&. 
+.br
+\fInewnode\fP New node to be inserted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file match\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

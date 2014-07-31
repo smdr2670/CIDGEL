@@ -1,0 +1,545 @@
+\hypertarget{Rsimp_8c}{\section{Rsimp.\-c File Reference}
+\label{Rsimp_8c}\index{Rsimp.\-c@{Rsimp.\-c}}
+}
+
+
+definitions of linear programming data structure and basic implementation of revised simplex method.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}matrices.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Rsimp.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Rsimp_8c_a2ff73854fc730d592b77f58de77e100c}{R\-S\-I\-M\-P\-\_\-\-H}~1
+\item 
+\#define \hyperlink{Rsimp_8c_afe0534ca994b08a0ec5edf614aa48e9c}{verbose}~0
+\item 
+\#define \hyperlink{Rsimp_8c_abb8f59ae0cd4608bba867027fb1b2949}{zero\-\_\-tol}~\hyperlink{Rsimp_8c_a3e236edded3c7abb21ff479a39439f59}{R\-S\-\_\-zt}
+\item 
+\#define \hyperlink{Rsimp_8c_a5d59879e9b28d5fef6910054e4ec9e02}{basis0}(j)~(basis\mbox{[}j\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a1e4647de26dd546f69e533f83a9a278a}{nonbasis0}(j)~(nonbasis\mbox{[}j\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a095e3390fe83b25d8640697705ed6d8b}{A\-N0}(i, j)~(A\mbox{[}\hyperlink{Rsimp_8c_a1e4647de26dd546f69e533f83a9a278a}{nonbasis0}(j)\mbox{]}\mbox{[}i\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a63ac6c494e793d7b36209c592a5d5547}{A\-B0}(i, j)~(A\mbox{[}\hyperlink{Rsimp_8c_a5d59879e9b28d5fef6910054e4ec9e02}{basis0}(j)\mbox{]}\mbox{[}i\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a99debdea6b9423096be252e4776e96f5}{C\-B0}(i)~(c\mbox{[}\hyperlink{Rsimp_8c_a5d59879e9b28d5fef6910054e4ec9e02}{basis0}(i)\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a985ad8643600daf06d2e56f800709a66}{C\-N0}(i)~(c\mbox{[}\hyperlink{Rsimp_8c_a1e4647de26dd546f69e533f83a9a278a}{nonbasis0}(i)\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a3ef3b37fe14ac67d7052de5143026b33}{X\-B0}(i)~(x\mbox{[}\hyperlink{Rsimp_8c_a5d59879e9b28d5fef6910054e4ec9e02}{basis0}(i)\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a486b7762bb4fa191ae6cec61018b8c48}{X\-N0}(i)~(x\mbox{[}\hyperlink{Rsimp_8c_a1e4647de26dd546f69e533f83a9a278a}{nonbasis0}(i)\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a57f10ab2f109105ae6b6bb519f11a61d}{Y0}(i)~(t1\mbox{[}i\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_aaf777b3263afaf3902d46ab86087a31f}{W0}(i)~(t2\mbox{[}i\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_aa5a7f73ba92f032403698247a2e07f20}{D0}(i)~(t2\mbox{[}i\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a910622fa2b1a62dc0ba05adc52bdcec6}{R0}(i, j)~(R\mbox{[}j\mbox{]}\mbox{[}i\mbox{]})
+\item 
+\#define \hyperlink{Rsimp_8c_a632bdb3b2b2bb5c69e7fc3996f9337b5}{Q0}(i, j)~(Q\mbox{[}i\mbox{]}\mbox{[}j\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Rsimp_8c_abed68f30595fb64359177e777018be2a}{L\-P\-\_\-free\-\_\-space} ()
+\begin{DoxyCompactList}\small\item\em Deallocates space for L\-P data structures. Sets all L\-P globals to 0. \end{DoxyCompactList}\item 
+void \hyperlink{Rsimp_8c_aff72105eab393dc3a2363b1d7c073daa}{L\-P\-\_\-get\-\_\-space} (int M, int N)
+\begin{DoxyCompactList}\small\item\em Allocate space for L\-P data structures. \end{DoxyCompactList}\item 
+void \hyperlink{Rsimp_8c_a8aab3e2b990d72eceef25a779d1469f3}{Print\-\_\-\-L\-P} ()
+\begin{DoxyCompactList}\small\item\em print L\-P data structures to stdout. \end{DoxyCompactList}\item 
+int \hyperlink{Rsimp_8c_a005da9124766c92b50e02cde09807ee8}{Rsimp} (int m, int n, double $\ast$$\ast$A, double $\ast$b, double $\ast$c, double $\ast$x, int $\ast$basis, int $\ast$nonbasis, double $\ast$$\ast$R, double $\ast$$\ast$Q, double $\ast$t1, double $\ast$t2)
+\begin{DoxyCompactList}\small\item\em revised simplex method (Using Bland's rule) and a qr factorization to solve the linear equations \end{DoxyCompactList}\item 
+void \hyperlink{Rsimp_8c_a58982b1bc9f4c594fb9832bc8254d0e3}{G\-Q\-R} (int r, int c, double $\ast$$\ast$Q, double $\ast$$\ast$R)
+\begin{DoxyCompactList}\small\item\em Use givens rotations on R to bring it into triangular form. Store orthogonal matrix needed to bring R to triangular form in Q. Assume R is an rxc matrix and Q is rxr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{Rsimp_8c_ad4a051222720ff33c1fd69e3101d4b81}{L\-P\-\_\-\-M\-A\-X\-\_\-\-N} =0
+\item 
+int \hyperlink{Rsimp_8c_a630d37ef091243386c7a2443595336ac}{L\-P\-\_\-\-M\-A\-X\-\_\-\-M} =0
+\item 
+int \hyperlink{Rsimp_8c_ae249eb0f0eb294a27d7c05412b7dc07f}{L\-P\-\_\-\-N} =0
+\item 
+int \hyperlink{Rsimp_8c_a0ec323ad195cc78dba136c8709126a93}{L\-P\-\_\-\-M} =0
+\item 
+double $\ast$$\ast$ \hyperlink{Rsimp_8c_a2ac41e10f958ad34da382b523d9c9de4}{L\-P\-\_\-\-A} =0
+\item 
+double $\ast$ \hyperlink{Rsimp_8c_a599fd3283e0fc5b67f5bf99e0600c50a}{L\-P\-\_\-\-B} =0
+\item 
+double $\ast$ \hyperlink{Rsimp_8c_a3fbe55f52ab5bf49c6a2827a29cf96fe}{L\-P\-\_\-\-C} =0
+\item 
+double $\ast$ \hyperlink{Rsimp_8c_abcd216a45e0318966c0bccd926153695}{L\-P\-\_\-\-X} =0
+\item 
+int $\ast$ \hyperlink{Rsimp_8c_a04e3625c281f40bad17f0531f1cb42d9}{L\-P\-\_\-\-Basis} =0
+\item 
+int $\ast$ \hyperlink{Rsimp_8c_ad9a7b659d5b972d329bfe778fa0e99ea}{L\-P\-\_\-\-Non\-Basis} =0
+\item 
+double $\ast$$\ast$ \hyperlink{Rsimp_8c_add5c26b24c82c2cf8efedce88aa38527}{L\-P\-\_\-\-Q} =0
+\item 
+double $\ast$$\ast$ \hyperlink{Rsimp_8c_adc1f10f53180a494c4c5a58b32fc403c}{L\-P\-\_\-\-R} =0
+\item 
+double $\ast$ \hyperlink{Rsimp_8c_a17fab7f1d7c14cd31113883980e5f28e}{L\-P\-\_\-t1} =0
+\item 
+double $\ast$ \hyperlink{Rsimp_8c_adf9f1ab84ec8a0a46de82218597941d2}{L\-P\-\_\-t2} =0
+\item 
+double \hyperlink{Rsimp_8c_a3e236edded3c7abb21ff479a39439f59}{R\-S\-\_\-zt} =0.\-0000001
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+definitions of linear programming data structure and basic implementation of revised simplex method. This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000016}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{Rsimp_8c_source}{Rsimp.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{Rsimp_8c_a63ac6c494e793d7b36209c592a5d5547}{\index{Rsimp.\-c@{Rsimp.\-c}!A\-B0@{A\-B0}}
+\index{A\-B0@{A\-B0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{A\-B0}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-B0(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(A\mbox{[}{\bf basis0}(j)\mbox{]}\mbox{[}i\mbox{]})}}\label{Rsimp_8c_a63ac6c494e793d7b36209c592a5d5547}
+
+
+Definition at line 44 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a095e3390fe83b25d8640697705ed6d8b}{\index{Rsimp.\-c@{Rsimp.\-c}!A\-N0@{A\-N0}}
+\index{A\-N0@{A\-N0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{A\-N0}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N0(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(A\mbox{[}{\bf nonbasis0}(j)\mbox{]}\mbox{[}i\mbox{]})}}\label{Rsimp_8c_a095e3390fe83b25d8640697705ed6d8b}
+
+
+Definition at line 43 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a5d59879e9b28d5fef6910054e4ec9e02}{\index{Rsimp.\-c@{Rsimp.\-c}!basis0@{basis0}}
+\index{basis0@{basis0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{basis0}]{\setlength{\rightskip}{0pt plus 5cm}\#define basis0(
+\begin{DoxyParamCaption}
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(basis\mbox{[}j\mbox{]})}}\label{Rsimp_8c_a5d59879e9b28d5fef6910054e4ec9e02}
+
+
+Definition at line 41 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a99debdea6b9423096be252e4776e96f5}{\index{Rsimp.\-c@{Rsimp.\-c}!C\-B0@{C\-B0}}
+\index{C\-B0@{C\-B0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{C\-B0}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-B0(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~(c\mbox{[}{\bf basis0}(i)\mbox{]})}}\label{Rsimp_8c_a99debdea6b9423096be252e4776e96f5}
+
+
+Definition at line 45 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a985ad8643600daf06d2e56f800709a66}{\index{Rsimp.\-c@{Rsimp.\-c}!C\-N0@{C\-N0}}
+\index{C\-N0@{C\-N0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{C\-N0}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-N0(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~(c\mbox{[}{\bf nonbasis0}(i)\mbox{]})}}\label{Rsimp_8c_a985ad8643600daf06d2e56f800709a66}
+
+
+Definition at line 46 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_aa5a7f73ba92f032403698247a2e07f20}{\index{Rsimp.\-c@{Rsimp.\-c}!D0@{D0}}
+\index{D0@{D0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{D0}]{\setlength{\rightskip}{0pt plus 5cm}\#define D0(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~(t2\mbox{[}i\mbox{]})}}\label{Rsimp_8c_aa5a7f73ba92f032403698247a2e07f20}
+
+
+Definition at line 51 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a1e4647de26dd546f69e533f83a9a278a}{\index{Rsimp.\-c@{Rsimp.\-c}!nonbasis0@{nonbasis0}}
+\index{nonbasis0@{nonbasis0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{nonbasis0}]{\setlength{\rightskip}{0pt plus 5cm}\#define nonbasis0(
+\begin{DoxyParamCaption}
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(nonbasis\mbox{[}j\mbox{]})}}\label{Rsimp_8c_a1e4647de26dd546f69e533f83a9a278a}
+
+
+Definition at line 42 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a632bdb3b2b2bb5c69e7fc3996f9337b5}{\index{Rsimp.\-c@{Rsimp.\-c}!Q0@{Q0}}
+\index{Q0@{Q0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{Q0}]{\setlength{\rightskip}{0pt plus 5cm}\#define Q0(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(Q\mbox{[}i\mbox{]}\mbox{[}j\mbox{]})}}\label{Rsimp_8c_a632bdb3b2b2bb5c69e7fc3996f9337b5}
+
+
+Definition at line 53 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a910622fa2b1a62dc0ba05adc52bdcec6}{\index{Rsimp.\-c@{Rsimp.\-c}!R0@{R0}}
+\index{R0@{R0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{R0}]{\setlength{\rightskip}{0pt plus 5cm}\#define R0(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(R\mbox{[}j\mbox{]}\mbox{[}i\mbox{]})}}\label{Rsimp_8c_a910622fa2b1a62dc0ba05adc52bdcec6}
+
+
+Definition at line 52 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a2ff73854fc730d592b77f58de77e100c}{\index{Rsimp.\-c@{Rsimp.\-c}!R\-S\-I\-M\-P\-\_\-\-H@{R\-S\-I\-M\-P\-\_\-\-H}}
+\index{R\-S\-I\-M\-P\-\_\-\-H@{R\-S\-I\-M\-P\-\_\-\-H}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{R\-S\-I\-M\-P\-\_\-\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-S\-I\-M\-P\-\_\-\-H~1}}\label{Rsimp_8c_a2ff73854fc730d592b77f58de77e100c}
+
+
+Definition at line 20 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_afe0534ca994b08a0ec5edf614aa48e9c}{\index{Rsimp.\-c@{Rsimp.\-c}!verbose@{verbose}}
+\index{verbose@{verbose}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{verbose}]{\setlength{\rightskip}{0pt plus 5cm}\#define verbose~0}}\label{Rsimp_8c_afe0534ca994b08a0ec5edf614aa48e9c}
+
+
+Definition at line 21 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_aaf777b3263afaf3902d46ab86087a31f}{\index{Rsimp.\-c@{Rsimp.\-c}!W0@{W0}}
+\index{W0@{W0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{W0}]{\setlength{\rightskip}{0pt plus 5cm}\#define W0(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~(t2\mbox{[}i\mbox{]})}}\label{Rsimp_8c_aaf777b3263afaf3902d46ab86087a31f}
+
+
+Definition at line 50 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a3ef3b37fe14ac67d7052de5143026b33}{\index{Rsimp.\-c@{Rsimp.\-c}!X\-B0@{X\-B0}}
+\index{X\-B0@{X\-B0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{X\-B0}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-B0(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~(x\mbox{[}{\bf basis0}(i)\mbox{]})}}\label{Rsimp_8c_a3ef3b37fe14ac67d7052de5143026b33}
+
+
+Definition at line 47 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a486b7762bb4fa191ae6cec61018b8c48}{\index{Rsimp.\-c@{Rsimp.\-c}!X\-N0@{X\-N0}}
+\index{X\-N0@{X\-N0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{X\-N0}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-N0(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~(x\mbox{[}{\bf nonbasis0}(i)\mbox{]})}}\label{Rsimp_8c_a486b7762bb4fa191ae6cec61018b8c48}
+
+
+Definition at line 48 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a57f10ab2f109105ae6b6bb519f11a61d}{\index{Rsimp.\-c@{Rsimp.\-c}!Y0@{Y0}}
+\index{Y0@{Y0}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{Y0}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y0(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~(t1\mbox{[}i\mbox{]})}}\label{Rsimp_8c_a57f10ab2f109105ae6b6bb519f11a61d}
+
+
+Definition at line 49 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_abb8f59ae0cd4608bba867027fb1b2949}{\index{Rsimp.\-c@{Rsimp.\-c}!zero\-\_\-tol@{zero\-\_\-tol}}
+\index{zero\-\_\-tol@{zero\-\_\-tol}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{zero\-\_\-tol}]{\setlength{\rightskip}{0pt plus 5cm}\#define zero\-\_\-tol~{\bf R\-S\-\_\-zt}}}\label{Rsimp_8c_abb8f59ae0cd4608bba867027fb1b2949}
+
+
+Definition at line 22 of file Rsimp.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{Rsimp_8c_a58982b1bc9f4c594fb9832bc8254d0e3}{\index{Rsimp.\-c@{Rsimp.\-c}!G\-Q\-R@{G\-Q\-R}}
+\index{G\-Q\-R@{G\-Q\-R}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{G\-Q\-R}]{\setlength{\rightskip}{0pt plus 5cm}void G\-Q\-R (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{c, }
+\item[{double $\ast$$\ast$}]{Q, }
+\item[{double $\ast$$\ast$}]{R}
+\end{DoxyParamCaption}
+)}}\label{Rsimp_8c_a58982b1bc9f4c594fb9832bc8254d0e3}
+
+
+Use givens rotations on R to bring it into triangular form. Store orthogonal matrix needed to bring R to triangular form in Q. Assume R is an rxc matrix and Q is rxr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q} & Matrix Q for the Q\-R factorization. \\
+\hline
+{\em R} & Matrix R for the Q\-R factorization. \\
+\hline
+{\em r} & Dimension of the R matrix. \\
+\hline
+{\em c} & Additional Dimension for the Q matrix. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 239 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_abed68f30595fb64359177e777018be2a}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-free\-\_\-space@{L\-P\-\_\-free\-\_\-space}}
+\index{L\-P\-\_\-free\-\_\-space@{L\-P\-\_\-free\-\_\-space}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-free\-\_\-space}]{\setlength{\rightskip}{0pt plus 5cm}void L\-P\-\_\-free\-\_\-space (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Rsimp_8c_abed68f30595fb64359177e777018be2a}
+
+
+Deallocates space for L\-P data structures. Sets all L\-P globals to 0. 
+
+
+
+Definition at line 57 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_aff72105eab393dc3a2363b1d7c073daa}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-get\-\_\-space@{L\-P\-\_\-get\-\_\-space}}
+\index{L\-P\-\_\-get\-\_\-space@{L\-P\-\_\-get\-\_\-space}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-get\-\_\-space}]{\setlength{\rightskip}{0pt plus 5cm}void L\-P\-\_\-get\-\_\-space (
+\begin{DoxyParamCaption}
+\item[{int}]{M, }
+\item[{int}]{N}
+\end{DoxyParamCaption}
+)}}\label{Rsimp_8c_aff72105eab393dc3a2363b1d7c073daa}
+
+
+Allocate space for L\-P data structures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & Number of rows. \\
+\hline
+{\em N} & Number of columns. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a8aab3e2b990d72eceef25a779d1469f3}{\index{Rsimp.\-c@{Rsimp.\-c}!Print\-\_\-\-L\-P@{Print\-\_\-\-L\-P}}
+\index{Print\-\_\-\-L\-P@{Print\-\_\-\-L\-P}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{Print\-\_\-\-L\-P}]{\setlength{\rightskip}{0pt plus 5cm}void Print\-\_\-\-L\-P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Rsimp_8c_a8aab3e2b990d72eceef25a779d1469f3}
+
+
+print L\-P data structures to stdout. 
+
+
+
+Definition at line 101 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a005da9124766c92b50e02cde09807ee8}{\index{Rsimp.\-c@{Rsimp.\-c}!Rsimp@{Rsimp}}
+\index{Rsimp@{Rsimp}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{Rsimp}]{\setlength{\rightskip}{0pt plus 5cm}int Rsimp (
+\begin{DoxyParamCaption}
+\item[{int}]{m, }
+\item[{int}]{n, }
+\item[{double $\ast$$\ast$}]{A, }
+\item[{double $\ast$}]{b, }
+\item[{double $\ast$}]{c, }
+\item[{double $\ast$}]{x, }
+\item[{int $\ast$}]{basis, }
+\item[{int $\ast$}]{nonbasis, }
+\item[{double $\ast$$\ast$}]{R, }
+\item[{double $\ast$$\ast$}]{Q, }
+\item[{double $\ast$}]{t1, }
+\item[{double $\ast$}]{t2}
+\end{DoxyParamCaption}
+)}}\label{Rsimp_8c_a005da9124766c92b50e02cde09807ee8}
+
+
+revised simplex method (Using Bland's rule) and a qr factorization to solve the linear equations 
+
+\begin{DoxyVerb}Adapted from algorithms presented in 
+         Linear Approximations and Extensions                  
+         (theory and algorithms)
+         Fang & Puthenpura
+         Prentice Hall, Engelwood Cliffs NJ (1993)
+  and 
+        Linear Programming
+        Chvatal 
+        Freeman and Company, New York, 1983
+
+  (developed first in Octave, many thanks to the author)
+\end{DoxyVerb}
+
+
+Solve the problem minimize C'x, subject to A$\ast$x=b, x$>$=0 for x,c,b n-\/vectors, and A an m,n matrix with full row rank
+
+Assumptions\-: A mxn matrix with full row rank. b an m matrix. c an n-\/vector. x an n-\/vector holding a basic feasible solution, basis m-\/vector holding indices of the basic variables in x nonbasis n-\/m vector holding the indices not appearing in x.
+
+Returns\-: L\-P\-\_\-\-F\-A\-I\-L if algorithm doesn't terminate. L\-P\-\_\-\-U\-N\-B\-D if problem is unbounded L\-P\-\_\-\-O\-P\-T if optimum found efects\-: A,b,c unchanged. x basis, nonbasis, hold info describing last basic feasible solution. Q,R hold qrdecomp of last basis matrix. t1,t2 undefined.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Number of rows of A. \\
+\hline
+{\em n} & Nubmer of colums of A. \\
+\hline
+{\em A} & mxn matrix with full row rank. \\
+\hline
+{\em b} & m matrix. \\
+\hline
+{\em c} & an n-\/vector. \\
+\hline
+{\em x} & an n-\/vector holding a basic feasible solution, basis m-\/vector holding indices of the basic variables in x nonbasis n-\/m vector holding the indices not appearing in x. \\
+\hline
+{\em R} & Matrix for the Q\-R factorization. \\
+\hline
+{\em Q} & Matrix for the Q\-R factorization. \\
+\hline
+{\em t1} & Help-\/vector. \\
+\hline
+{\em t2} & Help-\/vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\-P\-\_\-\-F\-A\-I\-L if algorithm doesn't terminate. P\-\_\-\-U\-N\-B\-D if problem is unbounded L\-P\-\_\-\-O\-P\-T if optimum found 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file Rsimp.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{Rsimp_8c_a2ac41e10f958ad34da382b523d9c9de4}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-A@{L\-P\-\_\-\-A}}
+\index{L\-P\-\_\-\-A@{L\-P\-\_\-\-A}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-A}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$$\ast$ L\-P\-\_\-\-A =0}}\label{Rsimp_8c_a2ac41e10f958ad34da382b523d9c9de4}
+
+
+Definition at line 28 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a599fd3283e0fc5b67f5bf99e0600c50a}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-B@{L\-P\-\_\-\-B}}
+\index{L\-P\-\_\-\-B@{L\-P\-\_\-\-B}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ L\-P\-\_\-\-B =0}}\label{Rsimp_8c_a599fd3283e0fc5b67f5bf99e0600c50a}
+
+
+Definition at line 29 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a04e3625c281f40bad17f0531f1cb42d9}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-Basis@{L\-P\-\_\-\-Basis}}
+\index{L\-P\-\_\-\-Basis@{L\-P\-\_\-\-Basis}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-Basis}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ L\-P\-\_\-\-Basis =0}}\label{Rsimp_8c_a04e3625c281f40bad17f0531f1cb42d9}
+
+
+Definition at line 32 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a3fbe55f52ab5bf49c6a2827a29cf96fe}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-C@{L\-P\-\_\-\-C}}
+\index{L\-P\-\_\-\-C@{L\-P\-\_\-\-C}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-C}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ L\-P\-\_\-\-C =0}}\label{Rsimp_8c_a3fbe55f52ab5bf49c6a2827a29cf96fe}
+
+
+Definition at line 30 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a0ec323ad195cc78dba136c8709126a93}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-M@{L\-P\-\_\-\-M}}
+\index{L\-P\-\_\-\-M@{L\-P\-\_\-\-M}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-M}]{\setlength{\rightskip}{0pt plus 5cm}int L\-P\-\_\-\-M =0}}\label{Rsimp_8c_a0ec323ad195cc78dba136c8709126a93}
+
+
+Definition at line 27 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a630d37ef091243386c7a2443595336ac}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-M\-A\-X\-\_\-\-M@{L\-P\-\_\-\-M\-A\-X\-\_\-\-M}}
+\index{L\-P\-\_\-\-M\-A\-X\-\_\-\-M@{L\-P\-\_\-\-M\-A\-X\-\_\-\-M}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-M\-A\-X\-\_\-\-M}]{\setlength{\rightskip}{0pt plus 5cm}int L\-P\-\_\-\-M\-A\-X\-\_\-\-M =0}}\label{Rsimp_8c_a630d37ef091243386c7a2443595336ac}
+
+
+Definition at line 25 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_ad4a051222720ff33c1fd69e3101d4b81}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-M\-A\-X\-\_\-\-N@{L\-P\-\_\-\-M\-A\-X\-\_\-\-N}}
+\index{L\-P\-\_\-\-M\-A\-X\-\_\-\-N@{L\-P\-\_\-\-M\-A\-X\-\_\-\-N}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-M\-A\-X\-\_\-\-N}]{\setlength{\rightskip}{0pt plus 5cm}int L\-P\-\_\-\-M\-A\-X\-\_\-\-N =0}}\label{Rsimp_8c_ad4a051222720ff33c1fd69e3101d4b81}
+
+
+Definition at line 24 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_ae249eb0f0eb294a27d7c05412b7dc07f}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-N@{L\-P\-\_\-\-N}}
+\index{L\-P\-\_\-\-N@{L\-P\-\_\-\-N}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-N}]{\setlength{\rightskip}{0pt plus 5cm}int L\-P\-\_\-\-N =0}}\label{Rsimp_8c_ae249eb0f0eb294a27d7c05412b7dc07f}
+
+
+Definition at line 26 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_ad9a7b659d5b972d329bfe778fa0e99ea}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-Non\-Basis@{L\-P\-\_\-\-Non\-Basis}}
+\index{L\-P\-\_\-\-Non\-Basis@{L\-P\-\_\-\-Non\-Basis}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-Non\-Basis}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ L\-P\-\_\-\-Non\-Basis =0}}\label{Rsimp_8c_ad9a7b659d5b972d329bfe778fa0e99ea}
+
+
+Definition at line 33 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_add5c26b24c82c2cf8efedce88aa38527}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-Q@{L\-P\-\_\-\-Q}}
+\index{L\-P\-\_\-\-Q@{L\-P\-\_\-\-Q}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-Q}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$$\ast$ L\-P\-\_\-\-Q =0}}\label{Rsimp_8c_add5c26b24c82c2cf8efedce88aa38527}
+
+
+Definition at line 34 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_adc1f10f53180a494c4c5a58b32fc403c}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-R@{L\-P\-\_\-\-R}}
+\index{L\-P\-\_\-\-R@{L\-P\-\_\-\-R}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-R}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$$\ast$ L\-P\-\_\-\-R =0}}\label{Rsimp_8c_adc1f10f53180a494c4c5a58b32fc403c}
+
+
+Definition at line 35 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a17fab7f1d7c14cd31113883980e5f28e}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-t1@{L\-P\-\_\-t1}}
+\index{L\-P\-\_\-t1@{L\-P\-\_\-t1}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-t1}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ L\-P\-\_\-t1 =0}}\label{Rsimp_8c_a17fab7f1d7c14cd31113883980e5f28e}
+
+
+Definition at line 36 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_adf9f1ab84ec8a0a46de82218597941d2}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-t2@{L\-P\-\_\-t2}}
+\index{L\-P\-\_\-t2@{L\-P\-\_\-t2}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-t2}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ L\-P\-\_\-t2 =0}}\label{Rsimp_8c_adf9f1ab84ec8a0a46de82218597941d2}
+
+
+Definition at line 37 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_abcd216a45e0318966c0bccd926153695}{\index{Rsimp.\-c@{Rsimp.\-c}!L\-P\-\_\-\-X@{L\-P\-\_\-\-X}}
+\index{L\-P\-\_\-\-X@{L\-P\-\_\-\-X}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{L\-P\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ L\-P\-\_\-\-X =0}}\label{Rsimp_8c_abcd216a45e0318966c0bccd926153695}
+
+
+Definition at line 31 of file Rsimp.\-c.
+
+\hypertarget{Rsimp_8c_a3e236edded3c7abb21ff479a39439f59}{\index{Rsimp.\-c@{Rsimp.\-c}!R\-S\-\_\-zt@{R\-S\-\_\-zt}}
+\index{R\-S\-\_\-zt@{R\-S\-\_\-zt}!Rsimp.c@{Rsimp.\-c}}
+\subsubsection[{R\-S\-\_\-zt}]{\setlength{\rightskip}{0pt plus 5cm}double R\-S\-\_\-zt =0.\-0000001}}\label{Rsimp_8c_a3e236edded3c7abb21ff479a39439f59}
+
+
+Definition at line 38 of file Rsimp.\-c.
+

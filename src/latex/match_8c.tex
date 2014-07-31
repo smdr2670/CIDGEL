@@ -1,0 +1,160 @@
+\hypertarget{match_8c}{\section{match.\-c File Reference}
+\label{match_8c}\index{match.\-c@{match.\-c}}
+}
+
+
+Function definitions for Gröbner fan matching.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}match.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{match_8c_ab1b92f8e2abb4ea53ffd391dbb7f3a19}{sorted\-Insert} (struct \hyperlink{structnode}{node} $\ast$$\ast$head, struct \hyperlink{structnode}{node} $\ast$newnode)
+\begin{DoxyCompactList}\small\item\em Inserts a node in the correct position in the linked list. \end{DoxyCompactList}\item 
+struct \hyperlink{structnode}{node} $\ast$ \hyperlink{match_8c_a4964c01f4acc0f3ee155f71c8681d4f4}{new\-Node} (int id, int facet, int binomials, int degree)
+\begin{DoxyCompactList}\small\item\em Creates a new Node (Vertex without binomials). \end{DoxyCompactList}\item 
+void \hyperlink{match_8c_acced339d00e17375ff1cd4076078082c}{print\-List} (struct \hyperlink{structnode}{node} $\ast$head)
+\item 
+int \hyperlink{match_8c_ad46b93523b89317e62a6bc29d6543be0}{List\-Delete} (struct \hyperlink{structnode}{node} $\ast$$\ast$list\-P, int nfacet, int nbinomials, int degree)
+\begin{DoxyCompactList}\small\item\em Searches and deletes a certain element of the list list\-P. \end{DoxyCompactList}\item 
+int \hyperlink{match_8c_ad7d6029d5ceed56a9cf7658f1ab485c8}{match} (struct \hyperlink{structnode}{node} $\ast$$\ast$list1, struct \hyperlink{structnode}{node} $\ast$$\ast$\hyperlink{reverse_8c_a9c53e00d0c5f67f6acd9e9d57a7dd13a}{list2})
+\begin{DoxyCompactList}\small\item\em Checks if two Lists contains the same elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function definitions for Gröbner fan matching. \begin{DoxyAuthor}{Author}
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000010}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{match_8c_source}{match.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{match_8c_ad46b93523b89317e62a6bc29d6543be0}{\index{match.\-c@{match.\-c}!List\-Delete@{List\-Delete}}
+\index{List\-Delete@{List\-Delete}!match.c@{match.\-c}}
+\subsubsection[{List\-Delete}]{\setlength{\rightskip}{0pt plus 5cm}int List\-Delete (
+\begin{DoxyParamCaption}
+\item[{struct {\bf node} $\ast$$\ast$}]{list\-P, }
+\item[{int}]{nfacet, }
+\item[{int}]{nbinomials, }
+\item[{int}]{degree}
+\end{DoxyParamCaption}
+)}}\label{match_8c_ad46b93523b89317e62a6bc29d6543be0}
+
+
+Searches and deletes a certain element of the list list\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-P} & Linked List. \\
+\hline
+{\em nfacet} & Number of facet. \\
+\hline
+{\em nbinomials} & Number of binomials. \\
+\hline
+{\em degree} & Highest degree. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file match.\-c.
+
+\hypertarget{match_8c_ad7d6029d5ceed56a9cf7658f1ab485c8}{\index{match.\-c@{match.\-c}!match@{match}}
+\index{match@{match}!match.c@{match.\-c}}
+\subsubsection[{match}]{\setlength{\rightskip}{0pt plus 5cm}int match (
+\begin{DoxyParamCaption}
+\item[{struct {\bf node} $\ast$$\ast$}]{list1, }
+\item[{struct {\bf node} $\ast$$\ast$}]{list2}
+\end{DoxyParamCaption}
+)}}\label{match_8c_ad7d6029d5ceed56a9cf7658f1ab485c8}
+
+
+Checks if two Lists contains the same elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list1} & First list. \\
+\hline
+{\em list2} & Second list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if lists are equal, -\/1 if not. 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file match.\-c.
+
+\hypertarget{match_8c_a4964c01f4acc0f3ee155f71c8681d4f4}{\index{match.\-c@{match.\-c}!new\-Node@{new\-Node}}
+\index{new\-Node@{new\-Node}!match.c@{match.\-c}}
+\subsubsection[{new\-Node}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf node}$\ast$ new\-Node (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{facet, }
+\item[{int}]{binomials, }
+\item[{int}]{degree}
+\end{DoxyParamCaption}
+)}}\label{match_8c_a4964c01f4acc0f3ee155f71c8681d4f4}
+
+
+Creates a new Node (Vertex without binomials). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & I\-D of the Vertex. \\
+\hline
+{\em facet} & Number of facets of the Vertex. \\
+\hline
+{\em binomials} & Number of binomials of the Vertex. \\
+\hline
+{\em degree} & Highest degree of the binomials. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Newnode allocated space of a node. 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file match.\-c.
+
+\hypertarget{match_8c_acced339d00e17375ff1cd4076078082c}{\index{match.\-c@{match.\-c}!print\-List@{print\-List}}
+\index{print\-List@{print\-List}!match.c@{match.\-c}}
+\subsubsection[{print\-List}]{\setlength{\rightskip}{0pt plus 5cm}void print\-List (
+\begin{DoxyParamCaption}
+\item[{struct {\bf node} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{match_8c_acced339d00e17375ff1cd4076078082c}
+
+
+Definition at line 54 of file match.\-c.
+
+\hypertarget{match_8c_ab1b92f8e2abb4ea53ffd391dbb7f3a19}{\index{match.\-c@{match.\-c}!sorted\-Insert@{sorted\-Insert}}
+\index{sorted\-Insert@{sorted\-Insert}!match.c@{match.\-c}}
+\subsubsection[{sorted\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}void sorted\-Insert (
+\begin{DoxyParamCaption}
+\item[{struct {\bf node} $\ast$$\ast$}]{head, }
+\item[{struct {\bf node} $\ast$}]{newnode}
+\end{DoxyParamCaption}
+)}}\label{match_8c_ab1b92f8e2abb4ea53ffd391dbb7f3a19}
+
+
+Inserts a node in the correct position in the linked list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & Linked list. \\
+\hline
+{\em newnode} & New node to be inserted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file match.\-c.
+

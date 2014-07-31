@@ -1,0 +1,84 @@
+.TH "gset_tag" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gset_tag \- 
+.PP
+Linked List of \fBgset_tag\fP which contiains the binomial and the caching informations\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <gset\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "int \fBnfacets\fP"
+.br
+.ti -1c
+.RI "int \fBnelts\fP"
+.br
+.ti -1c
+.RI "int \fBdeg\fP"
+.br
+.ti -1c
+.RI "\fBbinomial\fP \fBbottom\fP"
+.br
+.ti -1c
+.RI "\fBbinomial\fP \fBcache_edge\fP"
+.br
+.ti -1c
+.RI "struct \fBgset_tag\fP * \fBcache_vtx\fP"
+.br
+.ti -1c
+.RI "struct \fBgset_tag\fP * \fBnext\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Linked List of \fBgset_tag\fP which contiains the binomial and the caching informations\&. 
+.PP
+Definition at line 22 of file gset\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBbinomial\fP gset_tag::bottom"
+Containing the binomial \fBbottom\fP\&. 
+.PP
+Definition at line 27 of file gset\&.h\&.
+.SS "\fBbinomial\fP gset_tag::cache_edge"
+Stores the binomial for caching \fBcache_edge\fP\&. 
+.PP
+Definition at line 28 of file gset\&.h\&.
+.SS "struct \fBgset_tag\fP* gset_tag::cache_vtx"
+Pointer to next gset for caching \fBcache_vtx\fP\&. 
+.PP
+Definition at line 29 of file gset\&.h\&.
+.SS "int gset_tag::deg"
+Highest degree \fBdeg\fP\&. 
+.PP
+Definition at line 26 of file gset\&.h\&.
+.SS "int gset_tag::id"
+Number of the vertex of the edge graph \fBid\fP\&. 
+.PP
+Definition at line 23 of file gset\&.h\&.
+.SS "int gset_tag::nelts"
+Number of binomials \fBnelts\fP\&. 
+.PP
+Definition at line 25 of file gset\&.h\&.
+.SS "struct \fBgset_tag\fP* gset_tag::next"
+Pointer to next gset \fBnext\fP\&. 
+.PP
+Definition at line 30 of file gset\&.h\&.
+.SS "int gset_tag::nfacets"
+The number of facet binomials, \fBnfacets\fP\&. 
+.PP
+Definition at line 24 of file gset\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

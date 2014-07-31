@@ -1,0 +1,335 @@
+\hypertarget{call_8c}{\section{call.\-c File Reference}
+\label{call_8c}\index{call.\-c@{call.\-c}}
+}
+
+
+main calling file for C\-I\-D\-G\-E\-L code  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gset.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}matrices.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}reverse.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}exsearch.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Rsimp.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{call_8c_a3024ccd4a9af5109d24e6c57565d74a1}{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-C\-\_\-\-S\-O\-U\-R\-C\-E}~1
+\item 
+\#define \hyperlink{call_8c_ae0682beadd673a7dae291dc6b4c73d20}{M\-A\-T\-F\-O\-U\-N\-D}~1
+\item 
+\#define \hyperlink{call_8c_a539f784444cfb6950dfad2afc05751e0}{G\-S\-E\-T\-F\-O\-U\-N\-D}~2
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{call_8c_a0098092a1ca75a032fa0aef64257d357}{usage} (char $\ast$prog)
+\item 
+void \hyperlink{call_8c_abbfa4e0285b123110438f3a3b3baa9ec}{printstats} ()
+\item 
+int \hyperlink{call_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em C\-I\-D\-G\-E\-L entrypoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{call_8c_af19157da745ecb3f2b088c8f3a10c0a7}{infile}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{call_8c_aa04d77baf41fa7359b780d627d60bd8a}{matchfile}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{call_8c_ae581849c67336453bd5b81e6518019a9}{outfile}
+\item 
+int \hyperlink{call_8c_a6fec9a76ac859618ae20b2f184eefdd2}{rsearch\-\_\-cache}
+\item 
+int \hyperlink{call_8c_a8d8346c613b7524c85c14ba77a81280c}{print\-\_\-tree}
+\item 
+int \hyperlink{call_8c_aeeb57168ecd32039de3476af1db4ade9}{print\-\_\-init}
+\item 
+int \hyperlink{call_8c_aad6a42a2813d71c1b885ded8a89b4e33}{stats\-\_\-minfacets}
+\item 
+int \hyperlink{call_8c_af45c27a73b2c8a5fff9023c64b7ada6d}{stats\-\_\-minelts}
+\item 
+int \hyperlink{call_8c_acf6a86a6782db47e13c65ce1da11e315}{stats\-\_\-mindeg}
+\item 
+int \hyperlink{call_8c_a6e686689dcad6f85fa848f3bfef14bef}{stats\-\_\-maxfacets}
+\item 
+int \hyperlink{call_8c_a38531704a9cf54d13e143379cde75977}{stats\-\_\-maxelts}
+\item 
+int \hyperlink{call_8c_ab0a05767c7d988d5f1df967fc310c2cf}{stats\-\_\-maxdeg}
+\item 
+int \hyperlink{call_8c_ad38fa1c8b887e2bf3c1777aab28dd2d0}{stats\-\_\-ecounter}
+\item 
+int \hyperlink{call_8c_a341412dba1e928bc72cfc045d2a4e1bd}{stats\-\_\-tdepth}
+\item 
+int \hyperlink{call_8c_ac9b315a99b47dac3a22679087bc2b935}{lptest}
+\item 
+int \hyperlink{call_8c_a741fc0d0674abe0198486168a89e45d6}{match\-\_\-fan}
+\item 
+int \hyperlink{call_8c_ae9705e9f66ce42be23dc908164f403f1}{punctured\-\_\-code}
+\item 
+int \hyperlink{call_8c_a116fbc9d8fe5fe22245c008a59089454}{root\-\_\-only} =\hyperlink{utils_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\-A\-L\-S\-E}
+\item 
+int \hyperlink{call_8c_a7b848f6c75cb3287ef9419bedbf28661}{comp\-G\-B} =\hyperlink{utils_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\-A\-L\-S\-E}
+\item 
+int \hyperlink{call_8c_a8fecb30298afe92f3a54d4d37298efd7}{use\-\_\-exsearch} =\hyperlink{utils_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\-A\-L\-S\-E}
+\item 
+int \hyperlink{call_8c_a3474562ef40c62c4090d7b5d585aad8f}{degree\-\_\-comp}
+\item 
+int \hyperlink{call_8c_a6f76540dc1423f2e119140b9d3d2eee7}{Mf}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+main calling file for C\-I\-D\-G\-E\-L code This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000003}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{call_8c_source}{call.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{call_8c_a3024ccd4a9af5109d24e6c57565d74a1}{\index{call.\-c@{call.\-c}!\-\_\-\-P\-O\-S\-I\-X\-\_\-\-C\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-C\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-C\-\_\-\-S\-O\-U\-R\-C\-E@{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-C\-\_\-\-S\-O\-U\-R\-C\-E}!call.c@{call.\-c}}
+\subsubsection[{\-\_\-\-P\-O\-S\-I\-X\-\_\-\-C\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-P\-O\-S\-I\-X\-\_\-\-C\-\_\-\-S\-O\-U\-R\-C\-E~1}}\label{call_8c_a3024ccd4a9af5109d24e6c57565d74a1}
+
+
+Definition at line 28 of file call.\-c.
+
+\hypertarget{call_8c_a539f784444cfb6950dfad2afc05751e0}{\index{call.\-c@{call.\-c}!G\-S\-E\-T\-F\-O\-U\-N\-D@{G\-S\-E\-T\-F\-O\-U\-N\-D}}
+\index{G\-S\-E\-T\-F\-O\-U\-N\-D@{G\-S\-E\-T\-F\-O\-U\-N\-D}!call.c@{call.\-c}}
+\subsubsection[{G\-S\-E\-T\-F\-O\-U\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-S\-E\-T\-F\-O\-U\-N\-D~2}}\label{call_8c_a539f784444cfb6950dfad2afc05751e0}
+
+
+Definition at line 115 of file call.\-c.
+
+\hypertarget{call_8c_ae0682beadd673a7dae291dc6b4c73d20}{\index{call.\-c@{call.\-c}!M\-A\-T\-F\-O\-U\-N\-D@{M\-A\-T\-F\-O\-U\-N\-D}}
+\index{M\-A\-T\-F\-O\-U\-N\-D@{M\-A\-T\-F\-O\-U\-N\-D}!call.c@{call.\-c}}
+\subsubsection[{M\-A\-T\-F\-O\-U\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-T\-F\-O\-U\-N\-D~1}}\label{call_8c_ae0682beadd673a7dae291dc6b4c73d20}
+
+
+Definition at line 114 of file call.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{call_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{call.\-c@{call.\-c}!main@{main}}
+\index{main@{main}!call.c@{call.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{call_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+C\-I\-D\-G\-E\-L entrypoint. 
+
+\begin{DoxyVerb}   This is the entrypoint for the complete software.  
+   It reads off the commandline command and calls the 
+   chosen funtions.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em argc} & Arguments counted. \\
+\hline
+{\em argv} & Argument string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Should not return. 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file call.\-c.
+
+\hypertarget{call_8c_abbfa4e0285b123110438f3a3b3baa9ec}{\index{call.\-c@{call.\-c}!printstats@{printstats}}
+\index{printstats@{printstats}!call.c@{call.\-c}}
+\subsubsection[{printstats}]{\setlength{\rightskip}{0pt plus 5cm}void printstats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{call_8c_abbfa4e0285b123110438f3a3b3baa9ec}
+
+
+Definition at line 557 of file call.\-c.
+
+\hypertarget{call_8c_a0098092a1ca75a032fa0aef64257d357}{\index{call.\-c@{call.\-c}!usage@{usage}}
+\index{usage@{usage}!call.c@{call.\-c}}
+\subsubsection[{usage}]{\setlength{\rightskip}{0pt plus 5cm}usage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{prog}
+\end{DoxyParamCaption}
+)}}\label{call_8c_a0098092a1ca75a032fa0aef64257d357}
+
+
+Definition at line 35 of file call.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{call_8c_a7b848f6c75cb3287ef9419bedbf28661}{\index{call.\-c@{call.\-c}!comp\-G\-B@{comp\-G\-B}}
+\index{comp\-G\-B@{comp\-G\-B}!call.c@{call.\-c}}
+\subsubsection[{comp\-G\-B}]{\setlength{\rightskip}{0pt plus 5cm}int comp\-G\-B ={\bf F\-A\-L\-S\-E}}}\label{call_8c_a7b848f6c75cb3287ef9419bedbf28661}
+
+
+Definition at line 108 of file call.\-c.
+
+\hypertarget{call_8c_a3474562ef40c62c4090d7b5d585aad8f}{\index{call.\-c@{call.\-c}!degree\-\_\-comp@{degree\-\_\-comp}}
+\index{degree\-\_\-comp@{degree\-\_\-comp}!call.c@{call.\-c}}
+\subsubsection[{degree\-\_\-comp}]{\setlength{\rightskip}{0pt plus 5cm}int degree\-\_\-comp}}\label{call_8c_a3474562ef40c62c4090d7b5d585aad8f}
+
+
+Definition at line 24 of file reverse.\-c.
+
+\hypertarget{call_8c_af19157da745ecb3f2b088c8f3a10c0a7}{\index{call.\-c@{call.\-c}!infile@{infile}}
+\index{infile@{infile}!call.c@{call.\-c}}
+\subsubsection[{infile}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ infile}}\label{call_8c_af19157da745ecb3f2b088c8f3a10c0a7}
+
+
+Definition at line 86 of file call.\-c.
+
+\hypertarget{call_8c_ac9b315a99b47dac3a22679087bc2b935}{\index{call.\-c@{call.\-c}!lptest@{lptest}}
+\index{lptest@{lptest}!call.c@{call.\-c}}
+\subsubsection[{lptest}]{\setlength{\rightskip}{0pt plus 5cm}int lptest}}\label{call_8c_ac9b315a99b47dac3a22679087bc2b935}
+
+
+Definition at line 534 of file gset.\-c.
+
+\hypertarget{call_8c_a741fc0d0674abe0198486168a89e45d6}{\index{call.\-c@{call.\-c}!match\-\_\-fan@{match\-\_\-fan}}
+\index{match\-\_\-fan@{match\-\_\-fan}!call.c@{call.\-c}}
+\subsubsection[{match\-\_\-fan}]{\setlength{\rightskip}{0pt plus 5cm}int match\-\_\-fan}}\label{call_8c_a741fc0d0674abe0198486168a89e45d6}
+
+
+Definition at line 44 of file reverse.\-c.
+
+\hypertarget{call_8c_aa04d77baf41fa7359b780d627d60bd8a}{\index{call.\-c@{call.\-c}!matchfile@{matchfile}}
+\index{matchfile@{matchfile}!call.c@{call.\-c}}
+\subsubsection[{matchfile}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ matchfile}}\label{call_8c_aa04d77baf41fa7359b780d627d60bd8a}
+
+
+Definition at line 87 of file call.\-c.
+
+\hypertarget{call_8c_a6f76540dc1423f2e119140b9d3d2eee7}{\index{call.\-c@{call.\-c}!Mf@{Mf}}
+\index{Mf@{Mf}!call.c@{call.\-c}}
+\subsubsection[{Mf}]{\setlength{\rightskip}{0pt plus 5cm}int Mf}}\label{call_8c_a6f76540dc1423f2e119140b9d3d2eee7}
+
+
+Definition at line 112 of file call.\-c.
+
+\hypertarget{call_8c_ae581849c67336453bd5b81e6518019a9}{\index{call.\-c@{call.\-c}!outfile@{outfile}}
+\index{outfile@{outfile}!call.c@{call.\-c}}
+\subsubsection[{outfile}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ outfile}}\label{call_8c_ae581849c67336453bd5b81e6518019a9}
+
+
+Definition at line 88 of file call.\-c.
+
+\hypertarget{call_8c_aeeb57168ecd32039de3476af1db4ade9}{\index{call.\-c@{call.\-c}!print\-\_\-init@{print\-\_\-init}}
+\index{print\-\_\-init@{print\-\_\-init}!call.c@{call.\-c}}
+\subsubsection[{print\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int print\-\_\-init}}\label{call_8c_aeeb57168ecd32039de3476af1db4ade9}
+
+
+Definition at line 32 of file reverse.\-c.
+
+\hypertarget{call_8c_a8d8346c613b7524c85c14ba77a81280c}{\index{call.\-c@{call.\-c}!print\-\_\-tree@{print\-\_\-tree}}
+\index{print\-\_\-tree@{print\-\_\-tree}!call.c@{call.\-c}}
+\subsubsection[{print\-\_\-tree}]{\setlength{\rightskip}{0pt plus 5cm}int print\-\_\-tree}}\label{call_8c_a8d8346c613b7524c85c14ba77a81280c}
+
+
+Definition at line 33 of file reverse.\-c.
+
+\hypertarget{call_8c_ae9705e9f66ce42be23dc908164f403f1}{\index{call.\-c@{call.\-c}!punctured\-\_\-code@{punctured\-\_\-code}}
+\index{punctured\-\_\-code@{punctured\-\_\-code}!call.c@{call.\-c}}
+\subsubsection[{punctured\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}int punctured\-\_\-code}}\label{call_8c_ae9705e9f66ce42be23dc908164f403f1}
+
+
+Definition at line 105 of file call.\-c.
+
+\hypertarget{call_8c_a116fbc9d8fe5fe22245c008a59089454}{\index{call.\-c@{call.\-c}!root\-\_\-only@{root\-\_\-only}}
+\index{root\-\_\-only@{root\-\_\-only}!call.c@{call.\-c}}
+\subsubsection[{root\-\_\-only}]{\setlength{\rightskip}{0pt plus 5cm}int root\-\_\-only ={\bf F\-A\-L\-S\-E}}}\label{call_8c_a116fbc9d8fe5fe22245c008a59089454}
+
+
+Definition at line 107 of file call.\-c.
+
+\hypertarget{call_8c_a6fec9a76ac859618ae20b2f184eefdd2}{\index{call.\-c@{call.\-c}!rsearch\-\_\-cache@{rsearch\-\_\-cache}}
+\index{rsearch\-\_\-cache@{rsearch\-\_\-cache}!call.c@{call.\-c}}
+\subsubsection[{rsearch\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}int rsearch\-\_\-cache}}\label{call_8c_a6fec9a76ac859618ae20b2f184eefdd2}
+
+
+Definition at line 23 of file reverse.\-c.
+
+\hypertarget{call_8c_ad38fa1c8b887e2bf3c1777aab28dd2d0}{\index{call.\-c@{call.\-c}!stats\-\_\-ecounter@{stats\-\_\-ecounter}}
+\index{stats\-\_\-ecounter@{stats\-\_\-ecounter}!call.c@{call.\-c}}
+\subsubsection[{stats\-\_\-ecounter}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-ecounter}}\label{call_8c_ad38fa1c8b887e2bf3c1777aab28dd2d0}
+
+
+Definition at line 42 of file reverse.\-c.
+
+\hypertarget{call_8c_ab0a05767c7d988d5f1df967fc310c2cf}{\index{call.\-c@{call.\-c}!stats\-\_\-maxdeg@{stats\-\_\-maxdeg}}
+\index{stats\-\_\-maxdeg@{stats\-\_\-maxdeg}!call.c@{call.\-c}}
+\subsubsection[{stats\-\_\-maxdeg}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-maxdeg}}\label{call_8c_ab0a05767c7d988d5f1df967fc310c2cf}
+
+
+Definition at line 40 of file reverse.\-c.
+
+\hypertarget{call_8c_a38531704a9cf54d13e143379cde75977}{\index{call.\-c@{call.\-c}!stats\-\_\-maxelts@{stats\-\_\-maxelts}}
+\index{stats\-\_\-maxelts@{stats\-\_\-maxelts}!call.c@{call.\-c}}
+\subsubsection[{stats\-\_\-maxelts}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-maxelts}}\label{call_8c_a38531704a9cf54d13e143379cde75977}
+
+
+Definition at line 39 of file reverse.\-c.
+
+\hypertarget{call_8c_a6e686689dcad6f85fa848f3bfef14bef}{\index{call.\-c@{call.\-c}!stats\-\_\-maxfacets@{stats\-\_\-maxfacets}}
+\index{stats\-\_\-maxfacets@{stats\-\_\-maxfacets}!call.c@{call.\-c}}
+\subsubsection[{stats\-\_\-maxfacets}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-maxfacets}}\label{call_8c_a6e686689dcad6f85fa848f3bfef14bef}
+
+
+Definition at line 38 of file reverse.\-c.
+
+\hypertarget{call_8c_acf6a86a6782db47e13c65ce1da11e315}{\index{call.\-c@{call.\-c}!stats\-\_\-mindeg@{stats\-\_\-mindeg}}
+\index{stats\-\_\-mindeg@{stats\-\_\-mindeg}!call.c@{call.\-c}}
+\subsubsection[{stats\-\_\-mindeg}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-mindeg}}\label{call_8c_acf6a86a6782db47e13c65ce1da11e315}
+
+
+Definition at line 37 of file reverse.\-c.
+
+\hypertarget{call_8c_af45c27a73b2c8a5fff9023c64b7ada6d}{\index{call.\-c@{call.\-c}!stats\-\_\-minelts@{stats\-\_\-minelts}}
+\index{stats\-\_\-minelts@{stats\-\_\-minelts}!call.c@{call.\-c}}
+\subsubsection[{stats\-\_\-minelts}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-minelts}}\label{call_8c_af45c27a73b2c8a5fff9023c64b7ada6d}
+
+
+Definition at line 36 of file reverse.\-c.
+
+\hypertarget{call_8c_aad6a42a2813d71c1b885ded8a89b4e33}{\index{call.\-c@{call.\-c}!stats\-\_\-minfacets@{stats\-\_\-minfacets}}
+\index{stats\-\_\-minfacets@{stats\-\_\-minfacets}!call.c@{call.\-c}}
+\subsubsection[{stats\-\_\-minfacets}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-minfacets}}\label{call_8c_aad6a42a2813d71c1b885ded8a89b4e33}
+
+
+Definition at line 35 of file reverse.\-c.
+
+\hypertarget{call_8c_a341412dba1e928bc72cfc045d2a4e1bd}{\index{call.\-c@{call.\-c}!stats\-\_\-tdepth@{stats\-\_\-tdepth}}
+\index{stats\-\_\-tdepth@{stats\-\_\-tdepth}!call.c@{call.\-c}}
+\subsubsection[{stats\-\_\-tdepth}]{\setlength{\rightskip}{0pt plus 5cm}int stats\-\_\-tdepth}}\label{call_8c_a341412dba1e928bc72cfc045d2a4e1bd}
+
+
+Definition at line 41 of file reverse.\-c.
+
+\hypertarget{call_8c_a8fecb30298afe92f3a54d4d37298efd7}{\index{call.\-c@{call.\-c}!use\-\_\-exsearch@{use\-\_\-exsearch}}
+\index{use\-\_\-exsearch@{use\-\_\-exsearch}!call.c@{call.\-c}}
+\subsubsection[{use\-\_\-exsearch}]{\setlength{\rightskip}{0pt plus 5cm}int use\-\_\-exsearch ={\bf F\-A\-L\-S\-E}}}\label{call_8c_a8fecb30298afe92f3a54d4d37298efd7}
+
+
+Definition at line 109 of file call.\-c.
+

@@ -1,0 +1,403 @@
+.TH "Rsimp.c" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Rsimp.c \- 
+.PP
+definitions of linear programming data structure and basic implementation of revised simplex method\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'matrices\&.h'\fP
+.br
+\fC#include 'Rsimp\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRSIMP_H\fP   1"
+.br
+.ti -1c
+.RI "#define \fBverbose\fP   0"
+.br
+.ti -1c
+.RI "#define \fBzero_tol\fP   \fBRS_zt\fP"
+.br
+.ti -1c
+.RI "#define \fBbasis0\fP(j)   (basis[j])"
+.br
+.ti -1c
+.RI "#define \fBnonbasis0\fP(j)   (nonbasis[j])"
+.br
+.ti -1c
+.RI "#define \fBAN0\fP(i, j)   (A[\fBnonbasis0\fP(j)][i])"
+.br
+.ti -1c
+.RI "#define \fBAB0\fP(i, j)   (A[\fBbasis0\fP(j)][i])"
+.br
+.ti -1c
+.RI "#define \fBCB0\fP(i)   (c[\fBbasis0\fP(i)])"
+.br
+.ti -1c
+.RI "#define \fBCN0\fP(i)   (c[\fBnonbasis0\fP(i)])"
+.br
+.ti -1c
+.RI "#define \fBXB0\fP(i)   (x[\fBbasis0\fP(i)])"
+.br
+.ti -1c
+.RI "#define \fBXN0\fP(i)   (x[\fBnonbasis0\fP(i)])"
+.br
+.ti -1c
+.RI "#define \fBY0\fP(i)   (t1[i])"
+.br
+.ti -1c
+.RI "#define \fBW0\fP(i)   (t2[i])"
+.br
+.ti -1c
+.RI "#define \fBD0\fP(i)   (t2[i])"
+.br
+.ti -1c
+.RI "#define \fBR0\fP(i, j)   (R[j][i])"
+.br
+.ti -1c
+.RI "#define \fBQ0\fP(i, j)   (Q[i][j])"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBLP_free_space\fP ()"
+.br
+.RI "\fIDeallocates space for LP data structures\&. Sets all LP globals to 0\&. \fP"
+.ti -1c
+.RI "void \fBLP_get_space\fP (int M, int N)"
+.br
+.RI "\fIAllocate space for LP data structures\&. \fP"
+.ti -1c
+.RI "void \fBPrint_LP\fP ()"
+.br
+.RI "\fIprint LP data structures to stdout\&. \fP"
+.ti -1c
+.RI "int \fBRsimp\fP (int m, int n, double **A, double *b, double *c, double *x, int *basis, int *nonbasis, double **R, double **Q, double *t1, double *t2)"
+.br
+.RI "\fIrevised simplex method (Using Bland's rule) and a qr factorization to solve the linear equations \fP"
+.ti -1c
+.RI "void \fBGQR\fP (int r, int c, double **Q, double **R)"
+.br
+.RI "\fIUse givens rotations on R to bring it into triangular form\&. Store orthogonal matrix needed to bring R to triangular form in Q\&. Assume R is an rxc matrix and Q is rxr\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBLP_MAX_N\fP =0"
+.br
+.ti -1c
+.RI "int \fBLP_MAX_M\fP =0"
+.br
+.ti -1c
+.RI "int \fBLP_N\fP =0"
+.br
+.ti -1c
+.RI "int \fBLP_M\fP =0"
+.br
+.ti -1c
+.RI "double ** \fBLP_A\fP =0"
+.br
+.ti -1c
+.RI "double * \fBLP_B\fP =0"
+.br
+.ti -1c
+.RI "double * \fBLP_C\fP =0"
+.br
+.ti -1c
+.RI "double * \fBLP_X\fP =0"
+.br
+.ti -1c
+.RI "int * \fBLP_Basis\fP =0"
+.br
+.ti -1c
+.RI "int * \fBLP_NonBasis\fP =0"
+.br
+.ti -1c
+.RI "double ** \fBLP_Q\fP =0"
+.br
+.ti -1c
+.RI "double ** \fBLP_R\fP =0"
+.br
+.ti -1c
+.RI "double * \fBLP_t1\fP =0"
+.br
+.ti -1c
+.RI "double * \fBLP_t2\fP =0"
+.br
+.ti -1c
+.RI "double \fBRS_zt\fP =0\&.0000001"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+definitions of linear programming data structure and basic implementation of revised simplex method\&. 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBRsimp\&.c\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define AB0(i, j)   (A[\fBbasis0\fP(j)][i])"
+
+.PP
+Definition at line 44 of file Rsimp\&.c\&.
+.SS "#define AN0(i, j)   (A[\fBnonbasis0\fP(j)][i])"
+
+.PP
+Definition at line 43 of file Rsimp\&.c\&.
+.SS "#define basis0(j)   (basis[j])"
+
+.PP
+Definition at line 41 of file Rsimp\&.c\&.
+.SS "#define CB0(i)   (c[\fBbasis0\fP(i)])"
+
+.PP
+Definition at line 45 of file Rsimp\&.c\&.
+.SS "#define CN0(i)   (c[\fBnonbasis0\fP(i)])"
+
+.PP
+Definition at line 46 of file Rsimp\&.c\&.
+.SS "#define D0(i)   (t2[i])"
+
+.PP
+Definition at line 51 of file Rsimp\&.c\&.
+.SS "#define nonbasis0(j)   (nonbasis[j])"
+
+.PP
+Definition at line 42 of file Rsimp\&.c\&.
+.SS "#define Q0(i, j)   (Q[i][j])"
+
+.PP
+Definition at line 53 of file Rsimp\&.c\&.
+.SS "#define R0(i, j)   (R[j][i])"
+
+.PP
+Definition at line 52 of file Rsimp\&.c\&.
+.SS "#define RSIMP_H   1"
+
+.PP
+Definition at line 20 of file Rsimp\&.c\&.
+.SS "#define verbose   0"
+
+.PP
+Definition at line 21 of file Rsimp\&.c\&.
+.SS "#define W0(i)   (t2[i])"
+
+.PP
+Definition at line 50 of file Rsimp\&.c\&.
+.SS "#define XB0(i)   (x[\fBbasis0\fP(i)])"
+
+.PP
+Definition at line 47 of file Rsimp\&.c\&.
+.SS "#define XN0(i)   (x[\fBnonbasis0\fP(i)])"
+
+.PP
+Definition at line 48 of file Rsimp\&.c\&.
+.SS "#define Y0(i)   (t1[i])"
+
+.PP
+Definition at line 49 of file Rsimp\&.c\&.
+.SS "#define zero_tol   \fBRS_zt\fP"
+
+.PP
+Definition at line 22 of file Rsimp\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "void GQR (intr, intc, double **Q, double **R)"
+
+.PP
+Use givens rotations on R to bring it into triangular form\&. Store orthogonal matrix needed to bring R to triangular form in Q\&. Assume R is an rxc matrix and Q is rxr\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIQ\fP Matrix Q for the QR factorization\&. 
+.br
+\fIR\fP Matrix R for the QR factorization\&. 
+.br
+\fIr\fP Dimension of the R matrix\&. 
+.br
+\fIc\fP Additional Dimension for the Q matrix\&. 
+.RE
+.PP
+
+.PP
+Definition at line 239 of file Rsimp\&.c\&.
+.SS "void LP_free_space ()"
+
+.PP
+Deallocates space for LP data structures\&. Sets all LP globals to 0\&. 
+.PP
+Definition at line 57 of file Rsimp\&.c\&.
+.SS "void LP_get_space (intM, intN)"
+
+.PP
+Allocate space for LP data structures\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIM\fP Number of rows\&. 
+.br
+\fIN\fP Number of columns\&. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file Rsimp\&.c\&.
+.SS "void Print_LP ()"
+
+.PP
+print LP data structures to stdout\&. 
+.PP
+Definition at line 101 of file Rsimp\&.c\&.
+.SS "int Rsimp (intm, intn, double **A, double *b, double *c, double *x, int *basis, int *nonbasis, double **R, double **Q, double *t1, double *t2)"
+
+.PP
+revised simplex method (Using Bland's rule) and a qr factorization to solve the linear equations 
+.PP
+.nf
+Adapted from algorithms presented in 
+         Linear Approximations and Extensions                  
+         (theory and algorithms)
+         Fang & Puthenpura
+         Prentice Hall, Engelwood Cliffs NJ (1993)
+  and 
+        Linear Programming
+        Chvatal 
+        Freeman and Company, New York, 1983
+
+  (developed first in Octave, many thanks to the author)
+
+.fi
+.PP
+.PP
+Solve the problem minimize C'x, subject to A*x=b, x>=0 for x,c,b n-vectors, and A an m,n matrix with full row rank
+.PP
+Assumptions: A mxn matrix with full row rank\&. b an m matrix\&. c an n-vector\&. x an n-vector holding a basic feasible solution, basis m-vector holding indices of the basic variables in x nonbasis n-m vector holding the indices not appearing in x\&.
+.PP
+Returns: LP_FAIL if algorithm doesn't terminate\&. LP_UNBD if problem is unbounded LP_OPT if optimum found efects: A,b,c unchanged\&. x basis, nonbasis, hold info describing last basic feasible solution\&. Q,R hold qrdecomp of last basis matrix\&. t1,t2 undefined\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP Number of rows of A\&. 
+.br
+\fIn\fP Nubmer of colums of A\&. 
+.br
+\fIA\fP mxn matrix with full row rank\&. 
+.br
+\fIb\fP m matrix\&. 
+.br
+\fIc\fP an n-vector\&. 
+.br
+\fIx\fP an n-vector holding a basic feasible solution, basis m-vector holding indices of the basic variables in x nonbasis n-m vector holding the indices not appearing in x\&. 
+.br
+\fIR\fP Matrix for the QR factorization\&. 
+.br
+\fIQ\fP Matrix for the QR factorization\&. 
+.br
+\fIt1\fP Help-vector\&. 
+.br
+\fIt2\fP Help-vector\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+LP_FAIL if algorithm doesn't terminate\&. P_UNBD if problem is unbounded LP_OPT if optimum found 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file Rsimp\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "double** LP_A =0"
+
+.PP
+Definition at line 28 of file Rsimp\&.c\&.
+.SS "double* LP_B =0"
+
+.PP
+Definition at line 29 of file Rsimp\&.c\&.
+.SS "int* LP_Basis =0"
+
+.PP
+Definition at line 32 of file Rsimp\&.c\&.
+.SS "double* LP_C =0"
+
+.PP
+Definition at line 30 of file Rsimp\&.c\&.
+.SS "int LP_M =0"
+
+.PP
+Definition at line 27 of file Rsimp\&.c\&.
+.SS "int LP_MAX_M =0"
+
+.PP
+Definition at line 25 of file Rsimp\&.c\&.
+.SS "int LP_MAX_N =0"
+
+.PP
+Definition at line 24 of file Rsimp\&.c\&.
+.SS "int LP_N =0"
+
+.PP
+Definition at line 26 of file Rsimp\&.c\&.
+.SS "int* LP_NonBasis =0"
+
+.PP
+Definition at line 33 of file Rsimp\&.c\&.
+.SS "double** LP_Q =0"
+
+.PP
+Definition at line 34 of file Rsimp\&.c\&.
+.SS "double** LP_R =0"
+
+.PP
+Definition at line 35 of file Rsimp\&.c\&.
+.SS "double* LP_t1 =0"
+
+.PP
+Definition at line 36 of file Rsimp\&.c\&.
+.SS "double* LP_t2 =0"
+
+.PP
+Definition at line 37 of file Rsimp\&.c\&.
+.SS "double* LP_X =0"
+
+.PP
+Definition at line 31 of file Rsimp\&.c\&.
+.SS "double RS_zt =0\&.0000001"
+
+.PP
+Definition at line 38 of file Rsimp\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

@@ -1,0 +1,252 @@
+.TH "matrices.h" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+matrices.h \- 
+.PP
+Header file for \fBRsimp\&.c\fP Declaration of integer and double matrices and vectors\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBIMref\fP(M, i, j)   ((M)[i][j])"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int ** \fBimatrix_read\fP (FILE *is, int *m, int *n, int *f)"
+.br
+.RI "\fIread in description of imatrix from is, create matrix and fill it\&. -- format: { m n : entry_1 \&.\&.\&.\&. entry_mn } where m=number of rows n=number of columns e\&.g\&. { 2 4 10 : 1 0 3 5 0 1 8 9 } describes the matrix [ 1, 0, 3, 5] [ 0, 1, 8, 9] in F_10 \fP"
+.ti -1c
+.RI "void \fBprint_imatrix\fP (FILE *of, char *prefix, int **M, int m, int n)"
+.br
+.RI "\fIcopy prefex string to output file of, then write ascii representation of matrix with m-rows, n-cols and entrees in M to of\&. \fP"
+.ti -1c
+.RI "int ** \fBnew_imatrix\fP (int r, int c)"
+.br
+.RI "\fIAllocates space for a integer matrix\&. \fP"
+.ti -1c
+.RI "void \fBfree_imatrix\fP (int **M)"
+.br
+.RI "\fIDeallocates the space of a matrix\&. \fP"
+.ti -1c
+.RI "int * \fBnew_ivector\fP (int c)"
+.br
+.RI "\fIAllocates space for a new integer vector\&. \fP"
+.ti -1c
+.RI "void \fBfree_ivector\fP (int *M)"
+.br
+.RI "\fIDeletes a vector\&. \fP"
+.ti -1c
+.RI "double ** \fBnew_matrix\fP (int r, int c)"
+.br
+.RI "\fIAllocates space for a double matrix\&. \fP"
+.ti -1c
+.RI "void \fBfree_matrix\fP (double **M)"
+.br
+.RI "\fIDeallocates the space of a matrix\&. \fP"
+.ti -1c
+.RI "double * \fBnew_vector\fP (int c)"
+.br
+.RI "\fIAllocates space for a new double vector\&. \fP"
+.ti -1c
+.RI "void \fBfree_vector\fP (double *V)"
+.br
+.RI "\fIDeletes a vector\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header file for \fBRsimp\&.c\fP Declaration of integer and double matrices and vectors\&. 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBmatrices\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define IMref(M, i, j)   ((M)[i][j])"
+
+.PP
+Definition at line 15 of file matrices\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void free_imatrix (int **M)"
+
+.PP
+Deallocates the space of a matrix\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIM\fP Matrix to be deleted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file matrices\&.c\&.
+.SS "void free_ivector (int *M)"
+
+.PP
+Deletes a vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIM\fP The chosen vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 132 of file matrices\&.c\&.
+.SS "void free_matrix (double **M)"
+
+.PP
+Deallocates the space of a matrix\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIM\fP Matrix to be deleted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file matrices\&.c\&.
+.SS "void free_vector (double *V)"
+
+.PP
+Deletes a vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIM\fP The chosen vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 182 of file matrices\&.c\&.
+.SS "int** imatrix_read (FILE *is, int *m, int *n, int *f)"
+
+.PP
+read in description of imatrix from is, create matrix and fill it\&. -- format: { m n : entry_1 \&.\&.\&.\&. entry_mn } where m=number of rows n=number of columns e\&.g\&. { 2 4 10 : 1 0 3 5 0 1 8 9 } describes the matrix [ 1, 0, 3, 5] [ 0, 1, 8, 9] in F_10 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP Input stream\&. 
+.br
+\fIm\fP Code dimension\&. 
+.br
+\fIn\fP Code length\&. 
+.br
+\fIf\fP Dimension of the ring\&. 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file matrices\&.c\&.
+.SS "int** new_imatrix (intr, intc)"
+
+.PP
+Allocates space for a integer matrix\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIr\fP Number of rows\&. 
+.br
+\fIc\fP Number of colums 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pointer to the matrix\&. 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file matrices\&.c\&.
+.SS "int* new_ivector (intc)"
+
+.PP
+Allocates space for a new integer vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP Length of the new vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file matrices\&.c\&.
+.SS "double** new_matrix (intr, intc)"
+
+.PP
+Allocates space for a double matrix\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIr\fP Number of rows\&. 
+.br
+\fIc\fP Number of colums 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pointer to the matrix\&. 
+.RE
+.PP
+
+.PP
+Definition at line 144 of file matrices\&.c\&.
+.SS "double* new_vector (intc)"
+
+.PP
+Allocates space for a new double vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP Length of the new vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 173 of file matrices\&.c\&.
+.SS "void print_imatrix (FILE *of, char *prefix, int **M, intm, intn)"
+
+.PP
+copy prefex string to output file of, then write ascii representation of matrix with m-rows, n-cols and entrees in M to of\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIInput\fP stream\&. 
+.br
+\fICharacter\fP prefix\&. 
+.br
+\fIM\fP Matrix M\&. 
+.br
+\fIm\fP Number of rows\&. 
+.br
+\fIn\fP Number of columns\&. 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file matrices\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

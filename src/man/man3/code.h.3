@@ -1,0 +1,60 @@
+.TH "code.h" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+code.h \- 
+.PP
+Function prototype for computing code ideals\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgset\fP \fBgset_code_ideal\fP (int **M, int m, int n)"
+.br
+.RI "\fIGiven an mxn integer matrix M, compute an rgb for the code ideal I_C\&. Expects generator matrix in standard form, reads off equations for a generating system, then uses Buchberger algorithm\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Function prototype for computing code ideals\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBcode\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBgset\fP gset_code_ideal (int **M, intm, intn)"
+
+.PP
+Given an mxn integer matrix M, compute an rgb for the code ideal I_C\&. Expects generator matrix in standard form, reads off equations for a generating system, then uses Buchberger algorithm\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIM\fP input Matrix 
+.br
+\fIm\fP number of rows 
+.br
+\fIn\fP number of columns 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file code\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

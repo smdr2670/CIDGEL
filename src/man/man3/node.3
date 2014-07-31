@@ -1,0 +1,63 @@
+.TH "node" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+node \- 
+.PP
+Struct which contains all imporant informations of a Gröbner basis\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <match\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "int \fBnfacet\fP"
+.br
+.ti -1c
+.RI "int \fBnbinomials\fP"
+.br
+.ti -1c
+.RI "int \fBdegree\fP"
+.br
+.ti -1c
+.RI "struct \fBnode\fP * \fBnext\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Struct which contains all imporant informations of a Gröbner basis\&. 
+.PP
+Definition at line 15 of file match\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int node::degree"
+Highest degree #deg\&. 
+.PP
+Definition at line 19 of file match\&.h\&.
+.SS "int node::id"
+Number of the vertex of the edge graph \fBid\fP\&. 
+.PP
+Definition at line 16 of file match\&.h\&.
+.SS "int node::nbinomials"
+Number of binomials #nelts\&. 
+.PP
+Definition at line 18 of file match\&.h\&.
+.SS "struct \fBnode\fP* node::next"
+Pointer to next node \fBnext\fP\&. 
+.PP
+Definition at line 20 of file match\&.h\&.
+.SS "int node::nfacet"
+The number of facet binomials, #nfacets\&. 
+.PP
+Definition at line 17 of file match\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

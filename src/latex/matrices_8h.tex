@@ -1,0 +1,304 @@
+\hypertarget{matrices_8h}{\section{matrices.\-h File Reference}
+\label{matrices_8h}\index{matrices.\-h@{matrices.\-h}}
+}
+
+
+Header file for \hyperlink{Rsimp_8c}{Rsimp.\-c} Declaration of integer and double matrices and vectors.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{matrices_8h_a2d44b149d273615a232c731fb3a8db01}{I\-Mref}(M, i, j)~((M)\mbox{[}i\mbox{]}\mbox{[}j\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \hyperlink{matrices_8h_ac8e0875c37d7dfd18e052658384550ba}{imatrix\-\_\-read} (F\-I\-L\-E $\ast$is, int $\ast$m, int $\ast$n, int $\ast$f)
+\begin{DoxyCompactList}\small\item\em read in description of imatrix from is, create matrix and fill it. -- format\-: \{ m n \-: entry\-\_\-1 .... entry\-\_\-mn \} where m=number of rows n=number of columns e.\-g. \{ 2 4 10 \-: 1 0 3 5 0 1 8 9 \} describes the matrix \mbox{[} 1, 0, 3, 5\mbox{]} \mbox{[} 0, 1, 8, 9\mbox{]} in F\-\_\-10 \end{DoxyCompactList}\item 
+void \hyperlink{matrices_8h_aa5d1943e1c2c0b12a181f3a72081b6bf}{print\-\_\-imatrix} (F\-I\-L\-E $\ast$of, char $\ast$prefix, int $\ast$$\ast$M, int m, int n)
+\begin{DoxyCompactList}\small\item\em copy prefex string to output file of, then write ascii representation of matrix with m-\/rows, n-\/cols and entrees in M to of. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \hyperlink{matrices_8h_a9e33b53ab5273e344330b74126b7021b}{new\-\_\-imatrix} (int r, int c)
+\begin{DoxyCompactList}\small\item\em Allocates space for a integer matrix. \end{DoxyCompactList}\item 
+void \hyperlink{matrices_8h_ade8c956c15f00aa8bb2cacaef33872cc}{free\-\_\-imatrix} (int $\ast$$\ast$M)
+\begin{DoxyCompactList}\small\item\em Deallocates the space of a matrix. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{matrices_8h_a77c4472dd0987f37285f34b1f522414e}{new\-\_\-ivector} (int c)
+\begin{DoxyCompactList}\small\item\em Allocates space for a new integer vector. \end{DoxyCompactList}\item 
+void \hyperlink{matrices_8h_a4dac8081380ec28ce45e61305a34115e}{free\-\_\-ivector} (int $\ast$M)
+\begin{DoxyCompactList}\small\item\em Deletes a vector. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{matrices_8h_afd5aa5de466998b1e6062bd60b08ef12}{new\-\_\-matrix} (int r, int c)
+\begin{DoxyCompactList}\small\item\em Allocates space for a double matrix. \end{DoxyCompactList}\item 
+void \hyperlink{matrices_8h_a48590a454b2fcb55724be827fb539afa}{free\-\_\-matrix} (double $\ast$$\ast$M)
+\begin{DoxyCompactList}\small\item\em Deallocates the space of a matrix. \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{matrices_8h_aa763fabc3ff2559f1fb0c337eb022e15}{new\-\_\-vector} (int c)
+\begin{DoxyCompactList}\small\item\em Allocates space for a new double vector. \end{DoxyCompactList}\item 
+void \hyperlink{matrices_8h_a6f08392a01e8caad4f5f83f3be69c56c}{free\-\_\-vector} (double $\ast$V)
+\begin{DoxyCompactList}\small\item\em Deletes a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for \hyperlink{Rsimp_8c}{Rsimp.\-c} Declaration of integer and double matrices and vectors. This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000013}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{matrices_8h_source}{matrices.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{matrices_8h_a2d44b149d273615a232c731fb3a8db01}{\index{matrices.\-h@{matrices.\-h}!I\-Mref@{I\-Mref}}
+\index{I\-Mref@{I\-Mref}!matrices.h@{matrices.\-h}}
+\subsubsection[{I\-Mref}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-Mref(
+\begin{DoxyParamCaption}
+\item[{}]{M, }
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~((M)\mbox{[}i\mbox{]}\mbox{[}j\mbox{]})}}\label{matrices_8h_a2d44b149d273615a232c731fb3a8db01}
+
+
+Definition at line 15 of file matrices.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{matrices_8h_ade8c956c15f00aa8bb2cacaef33872cc}{\index{matrices.\-h@{matrices.\-h}!free\-\_\-imatrix@{free\-\_\-imatrix}}
+\index{free\-\_\-imatrix@{free\-\_\-imatrix}!matrices.h@{matrices.\-h}}
+\subsubsection[{free\-\_\-imatrix}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-imatrix (
+\begin{DoxyParamCaption}
+\item[{int $\ast$$\ast$}]{M}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_ade8c956c15f00aa8bb2cacaef33872cc}
+
+
+Deallocates the space of a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & Matrix to be deleted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file matrices.\-c.
+
+\hypertarget{matrices_8h_a4dac8081380ec28ce45e61305a34115e}{\index{matrices.\-h@{matrices.\-h}!free\-\_\-ivector@{free\-\_\-ivector}}
+\index{free\-\_\-ivector@{free\-\_\-ivector}!matrices.h@{matrices.\-h}}
+\subsubsection[{free\-\_\-ivector}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-ivector (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{M}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_a4dac8081380ec28ce45e61305a34115e}
+
+
+Deletes a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & The chosen vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file matrices.\-c.
+
+\hypertarget{matrices_8h_a48590a454b2fcb55724be827fb539afa}{\index{matrices.\-h@{matrices.\-h}!free\-\_\-matrix@{free\-\_\-matrix}}
+\index{free\-\_\-matrix@{free\-\_\-matrix}!matrices.h@{matrices.\-h}}
+\subsubsection[{free\-\_\-matrix}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-matrix (
+\begin{DoxyParamCaption}
+\item[{double $\ast$$\ast$}]{M}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_a48590a454b2fcb55724be827fb539afa}
+
+
+Deallocates the space of a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & Matrix to be deleted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file matrices.\-c.
+
+\hypertarget{matrices_8h_a6f08392a01e8caad4f5f83f3be69c56c}{\index{matrices.\-h@{matrices.\-h}!free\-\_\-vector@{free\-\_\-vector}}
+\index{free\-\_\-vector@{free\-\_\-vector}!matrices.h@{matrices.\-h}}
+\subsubsection[{free\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}void free\-\_\-vector (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{V}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_a6f08392a01e8caad4f5f83f3be69c56c}
+
+
+Deletes a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & The chosen vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file matrices.\-c.
+
+\hypertarget{matrices_8h_ac8e0875c37d7dfd18e052658384550ba}{\index{matrices.\-h@{matrices.\-h}!imatrix\-\_\-read@{imatrix\-\_\-read}}
+\index{imatrix\-\_\-read@{imatrix\-\_\-read}!matrices.h@{matrices.\-h}}
+\subsubsection[{imatrix\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$$\ast$ imatrix\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{is, }
+\item[{int $\ast$}]{m, }
+\item[{int $\ast$}]{n, }
+\item[{int $\ast$}]{f}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_ac8e0875c37d7dfd18e052658384550ba}
+
+
+read in description of imatrix from is, create matrix and fill it. -- format\-: \{ m n \-: entry\-\_\-1 .... entry\-\_\-mn \} where m=number of rows n=number of columns e.\-g. \{ 2 4 10 \-: 1 0 3 5 0 1 8 9 \} describes the matrix \mbox{[} 1, 0, 3, 5\mbox{]} \mbox{[} 0, 1, 8, 9\mbox{]} in F\-\_\-10 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream. \\
+\hline
+{\em m} & Code dimension. \\
+\hline
+{\em n} & Code length. \\
+\hline
+{\em f} & Dimension of the ring. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file matrices.\-c.
+
+\hypertarget{matrices_8h_a9e33b53ab5273e344330b74126b7021b}{\index{matrices.\-h@{matrices.\-h}!new\-\_\-imatrix@{new\-\_\-imatrix}}
+\index{new\-\_\-imatrix@{new\-\_\-imatrix}!matrices.h@{matrices.\-h}}
+\subsubsection[{new\-\_\-imatrix}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$$\ast$ new\-\_\-imatrix (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_a9e33b53ab5273e344330b74126b7021b}
+
+
+Allocates space for a integer matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Number of rows. \\
+\hline
+{\em c} & Number of colums \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the matrix. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file matrices.\-c.
+
+\hypertarget{matrices_8h_a77c4472dd0987f37285f34b1f522414e}{\index{matrices.\-h@{matrices.\-h}!new\-\_\-ivector@{new\-\_\-ivector}}
+\index{new\-\_\-ivector@{new\-\_\-ivector}!matrices.h@{matrices.\-h}}
+\subsubsection[{new\-\_\-ivector}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ new\-\_\-ivector (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_a77c4472dd0987f37285f34b1f522414e}
+
+
+Allocates space for a new integer vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Length of the new vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file matrices.\-c.
+
+\hypertarget{matrices_8h_afd5aa5de466998b1e6062bd60b08ef12}{\index{matrices.\-h@{matrices.\-h}!new\-\_\-matrix@{new\-\_\-matrix}}
+\index{new\-\_\-matrix@{new\-\_\-matrix}!matrices.h@{matrices.\-h}}
+\subsubsection[{new\-\_\-matrix}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$$\ast$ new\-\_\-matrix (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_afd5aa5de466998b1e6062bd60b08ef12}
+
+
+Allocates space for a double matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Number of rows. \\
+\hline
+{\em c} & Number of colums \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the matrix. 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file matrices.\-c.
+
+\hypertarget{matrices_8h_aa763fabc3ff2559f1fb0c337eb022e15}{\index{matrices.\-h@{matrices.\-h}!new\-\_\-vector@{new\-\_\-vector}}
+\index{new\-\_\-vector@{new\-\_\-vector}!matrices.h@{matrices.\-h}}
+\subsubsection[{new\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ new\-\_\-vector (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_aa763fabc3ff2559f1fb0c337eb022e15}
+
+
+Allocates space for a new double vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Length of the new vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 173 of file matrices.\-c.
+
+\hypertarget{matrices_8h_aa5d1943e1c2c0b12a181f3a72081b6bf}{\index{matrices.\-h@{matrices.\-h}!print\-\_\-imatrix@{print\-\_\-imatrix}}
+\index{print\-\_\-imatrix@{print\-\_\-imatrix}!matrices.h@{matrices.\-h}}
+\subsubsection[{print\-\_\-imatrix}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-imatrix (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{of, }
+\item[{char $\ast$}]{prefix, }
+\item[{int $\ast$$\ast$}]{M, }
+\item[{int}]{m, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{matrices_8h_aa5d1943e1c2c0b12a181f3a72081b6bf}
+
+
+copy prefex string to output file of, then write ascii representation of matrix with m-\/rows, n-\/cols and entrees in M to of. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & stream. \\
+\hline
+{\em Character} & prefix. \\
+\hline
+{\em M} & Matrix M. \\
+\hline
+{\em m} & Number of rows. \\
+\hline
+{\em n} & Number of columns. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file matrices.\-c.
+

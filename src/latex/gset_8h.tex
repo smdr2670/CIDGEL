@@ -1,0 +1,893 @@
+\hypertarget{gset_8h}{\section{gset.\-h File Reference}
+\label{gset_8h}\index{gset.\-h@{gset.\-h}}
+}
+
+
+header file with definitions and basic operations on generating sets  
+
+
+{\ttfamily \#include \char`\"{}binomial.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgset__tag}{gset\-\_\-tag}
+\begin{DoxyCompactList}\small\item\em Linked List of \hyperlink{structgset__tag}{gset\-\_\-tag} which contiains the binomial and the caching informations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gset_8h_ad72dbcf6d0153db1b8d8a58001feed83}{D\-E\-B\-U\-G}~0
+\item 
+\#define \hyperlink{gset_8h_ac880dcc7f61ac12a3acf9ac669b9c164}{gset\-\_\-first}(g)~(g-\/$>$bottom)
+\item 
+\#define \hyperlink{gset_8h_aac8be82de24d3d8b51eac20432b59710}{gset\-\_\-cache\-\_\-vtx}(g)~(g-\/$>$cache\-\_\-vtx)
+\item 
+\#define \hyperlink{gset_8h_a37f581f4f44a65a2669556459ee1b175}{gset\-\_\-cache\-\_\-edge}(g)~(g-\/$>$cache\-\_\-edge)
+\item 
+\#define \hyperlink{gset_8h_af016686d2ca7c7e72dda39d1a1e1320b}{gset\-\_\-nelts}(g)~(g-\/$>$nelts)
+\item 
+\#define \hyperlink{gset_8h_af1885bd68a755bf09c7ba40122cee6b5}{gset\-\_\-nfacets}(g)~(g-\/$>$nfacets)
+\item 
+\#define \hyperlink{gset_8h_ac2195acc786469b47704a2171d7b398a}{gset\-\_\-id}(g)~(g-\/$>$id)
+\item 
+\#define \hyperlink{gset_8h_ac5c3eeebbf584b02e31382b6219c3c4b}{gset\-\_\-deg}(g)~(g-\/$>$deg)
+\item 
+\#define \hyperlink{gset_8h_a4b31dcd8bcd038c15f15904d40cb4f1a}{gset\-\_\-next}(g)~(g-\/$>$next)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structgset__tag}{gset\-\_\-tag} $\ast$ \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} \hyperlink{gset_8h_ae4d32e90e40c8ad9f82e684d09d973e7}{gset\-\_\-new} ()
+\begin{DoxyCompactList}\small\item\em Creates an empty gset, initializes all its pointers to null. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a7da79a10a99103fbe2847703b5a45467}{gset\-\_\-free} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Deletes a gset and all binomials in it. \end{DoxyCompactList}\item 
+int \hyperlink{gset_8h_abbaa63cc0697f1f817babb26693b97e1}{gset\-\_\-read} (F\-I\-L\-E $\ast$is, \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Reads a gset from an input stream. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a425ed208a40c85e6393b54019136c07e}{gset\-\_\-print} (F\-I\-L\-E $\ast$of, \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Prints a gset. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a3c241ae5cb2378de81cf2bc5d9d63ec3}{gset\-\_\-init\-\_\-print} (F\-I\-L\-E $\ast$of, \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Displays the initial/leading ideal of Gset. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a047e01fbf2b35ae5d5f0c3b98f139e55}{gset\-\_\-insert} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Places binomials in gset in decreasing lexicographic order. (using binomial\-\_\-compair(,) to determine relative order or binomials) \end{DoxyCompactList}\item 
+\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} \hyperlink{gset_8h_a27e3ac186f398e73d2478fc8f394dc3b}{gset\-\_\-downedge\-\_\-lex} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Returns the first facet binomial which is mis-\/marked with respect to the lexicographic order. A mis-\/marked binomial is a binomial that does not suit with the term order, but it is a facet binomial. \end{DoxyCompactList}\item 
+\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} \hyperlink{gset_8h_aae28197946d5fa4a5b0e29d42883a265}{gset\-\_\-downedge\-\_\-grlex} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Returns the first facet binomial which is mis-\/marked with respect to the graded-\/lexicographic order. \end{DoxyCompactList}\item 
+\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} \hyperlink{gset_8h_a5337a1c641783dae2afbb66612bcb8a4}{bmleadreduce} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} m1, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} B, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} mlist)
+\begin{DoxyCompactList}\small\item\em bmleadreduce \char`\"{}lift\char`\"{} monomial m1 to a binomial using bmlist B,mlist. This function represents line 6 and 7 from algorithm 5 of this thesis. \end{DoxyCompactList}\item 
+\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} \hyperlink{gset_8h_ad882c47713edd3cf07e298e9fde162e8}{find\-\_\-divisor} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} S, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} L)
+\begin{DoxyCompactList}\small\item\em Checks if a binomial is divisible by a list on binomials. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a40ce4ee400e711734c0c74bd4ce0b59a}{remove\-\_\-multiples} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} S, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} $\ast$L)
+\begin{DoxyCompactList}\small\item\em Passes through a list L, removing all multiples of S encountered (except S if it is on the list). \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_ae99d2dbc4d03765932b120c9e7e881a6}{bmrgb} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} B, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} $\ast$ms)
+\begin{DoxyCompactList}\small\item\em Transforms a marked binomial and a list of monomials into the reduced grobner basis for the ideal to generate. \end{DoxyCompactList}\item 
+\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} \hyperlink{gset_8h_a4e3a0bfd3f9736552813e0d8e09b3f79}{gset\-\_\-flip} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Take a gset and one of its facet binomials and produce the new gset corresponding to the grobner cone which shares the given facet binomial. This function represents algorithm 5 in this thesis. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a13f72488d201489062046a4da76f4726}{gset\-\_\-autoreduce} ()
+\begin{DoxyCompactList}\small\item\em Autoreduces a Gröbner basis with respect to its marking. \end{DoxyCompactList}\item 
+int \hyperlink{gset_8h_a38b7587612fa6ece0ecb19f7084a56fa}{gset\-\_\-isfacet} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Checks whether b is known to be a facet or not. if not call \hyperlink{gset_8c_ae49d7d71e6803a96badbf7550ccafb8c}{lp\-\_\-isfacet()} to use a linear program to set b's facet flag. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_ab7ea4125d47e158a5bc021020273cd50}{gset\-\_\-setfacets} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Uses repeated calls to gset\-\_\-isfacet to ensure that all facet flags are set. Also sets the flags nfacets, nelts and deg counters. These contain garbage except right after a call to set facets. \end{DoxyCompactList}\item 
+int \hyperlink{gset_8h_ac05eab4e46cf40fe9d54785ed459c5cd}{gset\-\_\-isflippable} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Checks if a binomial is flippable without linear programming. \end{DoxyCompactList}\item 
+\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} \hyperlink{gset_8h_a506b7c8268a5a4faa4fda1b8de57a264}{gset\-\_\-toric\-\_\-ideal} (int $\ast$$\ast$, int, int)
+\item 
+void \hyperlink{gset_8h_a0051dd3a19f3575991e1a411fab3f0e7}{gset\-\_\-rgb} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g, int($\ast$comp)(\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial}, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial}))
+\begin{DoxyCompactList}\small\item\em Use buchberger's algorithm to transform g into groebner basis wrt the term order implemented by comp. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a6e979fe9bfb3254f709fec421fe06c0a}{gset\-\_\-facet\-\_\-print} (F\-I\-L\-E $\ast$of, \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Displays facet binomials. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a0a4db0b645c3f74c37fdcd17eef5886b}{process\-\_\-pair} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b1, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b2, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} D\-L, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} S\-L, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} $\ast$N\-L, int($\ast$comp)(\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial}, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial}))
+\begin{DoxyCompactList}\small\item\em Processes S-\/\-Pair defined by binomials b1 and b2. Taking S-\/\-Pair with respect to union of D\-L S\-L and $\ast$\-N\-L lists. If result is non-\/zero add result to N\-L list. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a41cd0c66a30d916145ae509d6d00f257}{gset\-\_\-add\-\_\-nonprime} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Adds the nonprime Terms to a generating set in order to get a Code\-Ideal, check all first terms of all binomials. If the exponent vector has the degree of 1, then it does not appear in the non-\/prime set. example\-: if no leading term divides x1$^\wedge$2, add x1$^\wedge$2-\/1 to the set. \end{DoxyCompactList}\item 
+int \hyperlink{gset_8h_ae47a538e3f593f9197053fa6c8c948e0}{gset\-\_\-only\-\_\-degreecompatible} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em gset\-\_\-only\-\_\-degreecompatible Determines whether a Groebner Basis is the only degree compatible Groebner Basis or not. Example\-: In the 3 dimensional vector space, the facet of the Groebner Fan is the only one which contains the all-\/one vector. \end{DoxyCompactList}\item 
+int \hyperlink{gset_8h_a1306a9485d1f22c87ea3678705a2ea33}{count\-D\-C} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1)
+\begin{DoxyCompactList}\small\item\em Counts the degree compatible binomials in a Gröbner basis. \end{DoxyCompactList}\item 
+int \hyperlink{gset_8h_ae49d7d71e6803a96badbf7550ccafb8c}{lp\-\_\-isfacet} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Sets up the linear program to check if a binomial is a facet. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a5eb583aa20c6eb908b361afa9e998dc5}{gset\-\_\-copy} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} G1, \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} G2)
+\begin{DoxyCompactList}\small\item\em Copies a Gröbner basis. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a4b27e70be3474295ad519ce0083d2ddd}{gset\-\_\-puncture} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} G1, int pos)
+\begin{DoxyCompactList}\small\item\em Punctures a linear code. Simply sets the all exponent-\/vectors from the gset to 0 at the certain position. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_a994f4bb542451ef72743d85f78e6f113}{gset\-\_\-delete\-\_\-binomial} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Deletes a binimoal from a gset. \end{DoxyCompactList}\item 
+void \hyperlink{gset_8h_afca4227ce9d90b2529bfc77d5f8de989}{gset\-\_\-eliminatezero} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g)
+\begin{DoxyCompactList}\small\item\em Eliminates '1-\/1' terms in a gset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+header file with definitions and basic operations on generating sets This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000009}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{gset_8h_source}{gset.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{gset_8h_ad72dbcf6d0153db1b8d8a58001feed83}{\index{gset.\-h@{gset.\-h}!D\-E\-B\-U\-G@{D\-E\-B\-U\-G}}
+\index{D\-E\-B\-U\-G@{D\-E\-B\-U\-G}!gset.h@{gset.\-h}}
+\subsubsection[{D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G~0}}\label{gset_8h_ad72dbcf6d0153db1b8d8a58001feed83}
+
+
+Definition at line 15 of file gset.\-h.
+
+\hypertarget{gset_8h_a37f581f4f44a65a2669556459ee1b175}{\index{gset.\-h@{gset.\-h}!gset\-\_\-cache\-\_\-edge@{gset\-\_\-cache\-\_\-edge}}
+\index{gset\-\_\-cache\-\_\-edge@{gset\-\_\-cache\-\_\-edge}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-cache\-\_\-edge}]{\setlength{\rightskip}{0pt plus 5cm}\#define gset\-\_\-cache\-\_\-edge(
+\begin{DoxyParamCaption}
+\item[{}]{g}
+\end{DoxyParamCaption}
+)~(g-\/$>$cache\-\_\-edge)}}\label{gset_8h_a37f581f4f44a65a2669556459ee1b175}
+
+
+Definition at line 35 of file gset.\-h.
+
+\hypertarget{gset_8h_aac8be82de24d3d8b51eac20432b59710}{\index{gset.\-h@{gset.\-h}!gset\-\_\-cache\-\_\-vtx@{gset\-\_\-cache\-\_\-vtx}}
+\index{gset\-\_\-cache\-\_\-vtx@{gset\-\_\-cache\-\_\-vtx}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-cache\-\_\-vtx}]{\setlength{\rightskip}{0pt plus 5cm}\#define gset\-\_\-cache\-\_\-vtx(
+\begin{DoxyParamCaption}
+\item[{}]{g}
+\end{DoxyParamCaption}
+)~(g-\/$>$cache\-\_\-vtx)}}\label{gset_8h_aac8be82de24d3d8b51eac20432b59710}
+
+
+Definition at line 34 of file gset.\-h.
+
+\hypertarget{gset_8h_ac5c3eeebbf584b02e31382b6219c3c4b}{\index{gset.\-h@{gset.\-h}!gset\-\_\-deg@{gset\-\_\-deg}}
+\index{gset\-\_\-deg@{gset\-\_\-deg}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-deg}]{\setlength{\rightskip}{0pt plus 5cm}\#define gset\-\_\-deg(
+\begin{DoxyParamCaption}
+\item[{}]{g}
+\end{DoxyParamCaption}
+)~(g-\/$>$deg)}}\label{gset_8h_ac5c3eeebbf584b02e31382b6219c3c4b}
+
+
+Definition at line 39 of file gset.\-h.
+
+\hypertarget{gset_8h_ac880dcc7f61ac12a3acf9ac669b9c164}{\index{gset.\-h@{gset.\-h}!gset\-\_\-first@{gset\-\_\-first}}
+\index{gset\-\_\-first@{gset\-\_\-first}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}\#define gset\-\_\-first(
+\begin{DoxyParamCaption}
+\item[{}]{g}
+\end{DoxyParamCaption}
+)~(g-\/$>$bottom)}}\label{gset_8h_ac880dcc7f61ac12a3acf9ac669b9c164}
+
+
+Definition at line 33 of file gset.\-h.
+
+\hypertarget{gset_8h_ac2195acc786469b47704a2171d7b398a}{\index{gset.\-h@{gset.\-h}!gset\-\_\-id@{gset\-\_\-id}}
+\index{gset\-\_\-id@{gset\-\_\-id}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}\#define gset\-\_\-id(
+\begin{DoxyParamCaption}
+\item[{}]{g}
+\end{DoxyParamCaption}
+)~(g-\/$>$id)}}\label{gset_8h_ac2195acc786469b47704a2171d7b398a}
+
+
+Definition at line 38 of file gset.\-h.
+
+\hypertarget{gset_8h_af016686d2ca7c7e72dda39d1a1e1320b}{\index{gset.\-h@{gset.\-h}!gset\-\_\-nelts@{gset\-\_\-nelts}}
+\index{gset\-\_\-nelts@{gset\-\_\-nelts}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-nelts}]{\setlength{\rightskip}{0pt plus 5cm}\#define gset\-\_\-nelts(
+\begin{DoxyParamCaption}
+\item[{}]{g}
+\end{DoxyParamCaption}
+)~(g-\/$>$nelts)}}\label{gset_8h_af016686d2ca7c7e72dda39d1a1e1320b}
+
+
+Definition at line 36 of file gset.\-h.
+
+\hypertarget{gset_8h_a4b31dcd8bcd038c15f15904d40cb4f1a}{\index{gset.\-h@{gset.\-h}!gset\-\_\-next@{gset\-\_\-next}}
+\index{gset\-\_\-next@{gset\-\_\-next}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}\#define gset\-\_\-next(
+\begin{DoxyParamCaption}
+\item[{}]{g}
+\end{DoxyParamCaption}
+)~(g-\/$>$next)}}\label{gset_8h_a4b31dcd8bcd038c15f15904d40cb4f1a}
+
+
+Definition at line 40 of file gset.\-h.
+
+\hypertarget{gset_8h_af1885bd68a755bf09c7ba40122cee6b5}{\index{gset.\-h@{gset.\-h}!gset\-\_\-nfacets@{gset\-\_\-nfacets}}
+\index{gset\-\_\-nfacets@{gset\-\_\-nfacets}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-nfacets}]{\setlength{\rightskip}{0pt plus 5cm}\#define gset\-\_\-nfacets(
+\begin{DoxyParamCaption}
+\item[{}]{g}
+\end{DoxyParamCaption}
+)~(g-\/$>$nfacets)}}\label{gset_8h_af1885bd68a755bf09c7ba40122cee6b5}
+
+
+Definition at line 37 of file gset.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{gset_8h_a132b5316e4fbcae39120eefad337ea56}{\index{gset.\-h@{gset.\-h}!gset@{gset}}
+\index{gset@{gset}!gset.h@{gset.\-h}}
+\subsubsection[{gset}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf gset\-\_\-tag}$\ast$ {\bf gset}}}\label{gset_8h_a132b5316e4fbcae39120eefad337ea56}
+
+
+Definition at line 17 of file gset.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{gset_8h_a5337a1c641783dae2afbb66612bcb8a4}{\index{gset.\-h@{gset.\-h}!bmleadreduce@{bmleadreduce}}
+\index{bmleadreduce@{bmleadreduce}!gset.h@{gset.\-h}}
+\subsubsection[{bmleadreduce}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binomial} bmleadreduce (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{m1, }
+\item[{{\bf binomial}}]{B, }
+\item[{{\bf binomial}}]{mlist}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a5337a1c641783dae2afbb66612bcb8a4}
+
+
+bmleadreduce \char`\"{}lift\char`\"{} monomial m1 to a binomial using bmlist B,mlist. This function represents line 6 and 7 from algorithm 5 of this thesis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The binomial to be lifted. \\
+\hline
+{\em B} & The binomial which may divide m1. \\
+\hline
+{\em mlist} & The list of monomials to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new generated binomial. 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file gset.\-c.
+
+\hypertarget{gset_8h_ae99d2dbc4d03765932b120c9e7e881a6}{\index{gset.\-h@{gset.\-h}!bmrgb@{bmrgb}}
+\index{bmrgb@{bmrgb}!gset.h@{gset.\-h}}
+\subsubsection[{bmrgb}]{\setlength{\rightskip}{0pt plus 5cm}void bmrgb (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{B, }
+\item[{{\bf binomial} $\ast$}]{ms}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_ae99d2dbc4d03765932b120c9e7e881a6}
+
+
+Transforms a marked binomial and a list of monomials into the reduced grobner basis for the ideal to generate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B} & The marked binomial \\
+\hline
+{\em ms} & List of binomials. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 261 of file gset.\-c.
+
+\hypertarget{gset_8h_a1306a9485d1f22c87ea3678705a2ea33}{\index{gset.\-h@{gset.\-h}!count\-D\-C@{count\-D\-C}}
+\index{count\-D\-C@{count\-D\-C}!gset.h@{gset.\-h}}
+\subsubsection[{count\-D\-C}]{\setlength{\rightskip}{0pt plus 5cm}int count\-D\-C (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a1306a9485d1f22c87ea3678705a2ea33}
+
+
+Counts the degree compatible binomials in a Gröbner basis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & Gröbner basis to be researched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of d.\-c. binomials 
+\end{DoxyReturn}
+
+
+Definition at line 722 of file gset.\-c.
+
+\hypertarget{gset_8h_ad882c47713edd3cf07e298e9fde162e8}{\index{gset.\-h@{gset.\-h}!find\-\_\-divisor@{find\-\_\-divisor}}
+\index{find\-\_\-divisor@{find\-\_\-divisor}!gset.h@{gset.\-h}}
+\subsubsection[{find\-\_\-divisor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binomial} find\-\_\-divisor (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{S, }
+\item[{{\bf binomial}}]{L}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_ad882c47713edd3cf07e298e9fde162e8}
+
+
+Checks if a binomial is divisible by a list on binomials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & The binomial which is the divident. \\
+\hline
+{\em L} & List of binimials which may divide S. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The binomial which divides S. 
+\end{DoxyReturn}
+
+
+Definition at line 234 of file gset.\-c.
+
+\hypertarget{gset_8h_a41cd0c66a30d916145ae509d6d00f257}{\index{gset.\-h@{gset.\-h}!gset\-\_\-add\-\_\-nonprime@{gset\-\_\-add\-\_\-nonprime}}
+\index{gset\-\_\-add\-\_\-nonprime@{gset\-\_\-add\-\_\-nonprime}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-add\-\_\-nonprime}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-add\-\_\-nonprime (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a41cd0c66a30d916145ae509d6d00f257}
+
+
+Adds the nonprime Terms to a generating set in order to get a Code\-Ideal, check all first terms of all binomials. If the exponent vector has the degree of 1, then it does not appear in the non-\/prime set. example\-: if no leading term divides x1$^\wedge$2, add x1$^\wedge$2-\/1 to the set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & gset which gets the nonprime binomials \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 682 of file gset.\-c.
+
+\hypertarget{gset_8h_a13f72488d201489062046a4da76f4726}{\index{gset.\-h@{gset.\-h}!gset\-\_\-autoreduce@{gset\-\_\-autoreduce}}
+\index{gset\-\_\-autoreduce@{gset\-\_\-autoreduce}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-autoreduce}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-autoreduce (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a13f72488d201489062046a4da76f4726}
+
+
+Autoreduces a Gröbner basis with respect to its marking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Given Gröbner basis. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gset_8h_a5eb583aa20c6eb908b361afa9e998dc5}{\index{gset.\-h@{gset.\-h}!gset\-\_\-copy@{gset\-\_\-copy}}
+\index{gset\-\_\-copy@{gset\-\_\-copy}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{G1, }
+\item[{{\bf gset}}]{G2}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a5eb583aa20c6eb908b361afa9e998dc5}
+
+
+Copies a Gröbner basis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source Gröbner basis \\
+\hline
+{\em dest} & Destination Gröbner basis \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 735 of file gset.\-c.
+
+\hypertarget{gset_8h_a994f4bb542451ef72743d85f78e6f113}{\index{gset.\-h@{gset.\-h}!gset\-\_\-delete\-\_\-binomial@{gset\-\_\-delete\-\_\-binomial}}
+\index{gset\-\_\-delete\-\_\-binomial@{gset\-\_\-delete\-\_\-binomial}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-delete\-\_\-binomial}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-delete\-\_\-binomial (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g, }
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a994f4bb542451ef72743d85f78e6f113}
+
+
+Deletes a binimoal from a gset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The gset to be researched. \\
+\hline
+{\em b} & The binomial which shall be resarched. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file gset.\-c.
+
+\hypertarget{gset_8h_aae28197946d5fa4a5b0e29d42883a265}{\index{gset.\-h@{gset.\-h}!gset\-\_\-downedge\-\_\-grlex@{gset\-\_\-downedge\-\_\-grlex}}
+\index{gset\-\_\-downedge\-\_\-grlex@{gset\-\_\-downedge\-\_\-grlex}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-downedge\-\_\-grlex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binomial} gset\-\_\-downedge\-\_\-grlex (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_aae28197946d5fa4a5b0e29d42883a265}
+
+
+Returns the first facet binomial which is mis-\/marked with respect to the graded-\/lexicographic order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The gset g to be examined. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first facet binomial which is mis-\/marked. 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file gset.\-c.
+
+\hypertarget{gset_8h_a27e3ac186f398e73d2478fc8f394dc3b}{\index{gset.\-h@{gset.\-h}!gset\-\_\-downedge\-\_\-lex@{gset\-\_\-downedge\-\_\-lex}}
+\index{gset\-\_\-downedge\-\_\-lex@{gset\-\_\-downedge\-\_\-lex}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-downedge\-\_\-lex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binomial} gset\-\_\-downedge\-\_\-lex (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a27e3ac186f398e73d2478fc8f394dc3b}
+
+
+Returns the first facet binomial which is mis-\/marked with respect to the lexicographic order. A mis-\/marked binomial is a binomial that does not suit with the term order, but it is a facet binomial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The gset g to be examined. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first facet binomial which is mis-\/marked. 
+\end{DoxyReturn}
+
+
+Definition at line 174 of file gset.\-c.
+
+\hypertarget{gset_8h_afca4227ce9d90b2529bfc77d5f8de989}{\index{gset.\-h@{gset.\-h}!gset\-\_\-eliminatezero@{gset\-\_\-eliminatezero}}
+\index{gset\-\_\-eliminatezero@{gset\-\_\-eliminatezero}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-eliminatezero}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-eliminatezero (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_afca4227ce9d90b2529bfc77d5f8de989}
+
+
+Eliminates '1-\/1' terms in a gset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The gset to be researched. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file gset.\-c.
+
+\hypertarget{gset_8h_a6e979fe9bfb3254f709fec421fe06c0a}{\index{gset.\-h@{gset.\-h}!gset\-\_\-facet\-\_\-print@{gset\-\_\-facet\-\_\-print}}
+\index{gset\-\_\-facet\-\_\-print@{gset\-\_\-facet\-\_\-print}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-facet\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-facet\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{of, }
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a6e979fe9bfb3254f709fec421fe06c0a}
+
+
+Displays facet binomials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em of} & The output stream. \\
+\hline
+{\em g} & The given gset. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file gset.\-c.
+
+\hypertarget{gset_8h_a4e3a0bfd3f9736552813e0d8e09b3f79}{\index{gset.\-h@{gset.\-h}!gset\-\_\-flip@{gset\-\_\-flip}}
+\index{gset\-\_\-flip@{gset\-\_\-flip}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-flip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf gset} gset\-\_\-flip (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a4e3a0bfd3f9736552813e0d8e09b3f79}
+
+
+Take a gset and one of its facet binomials and produce the new gset corresponding to the grobner cone which shares the given facet binomial. This function represents algorithm 5 in this thesis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & A reduced Gröbner basis. \\
+\hline
+{\em b} & A prescribed facet binomial. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 301 of file gset.\-c.
+
+\hypertarget{gset_8h_a7da79a10a99103fbe2847703b5a45467}{\index{gset.\-h@{gset.\-h}!gset\-\_\-free@{gset\-\_\-free}}
+\index{gset\-\_\-free@{gset\-\_\-free}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a7da79a10a99103fbe2847703b5a45467}
+
+
+Deletes a gset and all binomials in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The gset to be deleted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file gset.\-c.
+
+\hypertarget{gset_8h_a3c241ae5cb2378de81cf2bc5d9d63ec3}{\index{gset.\-h@{gset.\-h}!gset\-\_\-init\-\_\-print@{gset\-\_\-init\-\_\-print}}
+\index{gset\-\_\-init\-\_\-print@{gset\-\_\-init\-\_\-print}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-init\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-init\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{of, }
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a3c241ae5cb2378de81cf2bc5d9d63ec3}
+
+
+Displays the initial/leading ideal of Gset. 
+
+\begin{DoxyVerb}     See definition 2.5 of the thesis for defintion
+     of a leading/initial ideal. 
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em of} & The output stream. \\
+\hline
+{\em g} & The initial/leading ideal of the gset g to be printed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file gset.\-c.
+
+\hypertarget{gset_8h_a047e01fbf2b35ae5d5f0c3b98f139e55}{\index{gset.\-h@{gset.\-h}!gset\-\_\-insert@{gset\-\_\-insert}}
+\index{gset\-\_\-insert@{gset\-\_\-insert}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-insert}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-insert (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g, }
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a047e01fbf2b35ae5d5f0c3b98f139e55}
+
+
+Places binomials in gset in decreasing lexicographic order. (using binomial\-\_\-compair(,) to determine relative order or binomials) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The gset which gets the new binomial. \\
+\hline
+{\em b} & The binomial to be inserted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file gset.\-c.
+
+\hypertarget{gset_8h_a38b7587612fa6ece0ecb19f7084a56fa}{\index{gset.\-h@{gset.\-h}!gset\-\_\-isfacet@{gset\-\_\-isfacet}}
+\index{gset\-\_\-isfacet@{gset\-\_\-isfacet}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-isfacet}]{\setlength{\rightskip}{0pt plus 5cm}int gset\-\_\-isfacet (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g, }
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a38b7587612fa6ece0ecb19f7084a56fa}
+
+
+Checks whether b is known to be a facet or not. if not call \hyperlink{gset_8c_ae49d7d71e6803a96badbf7550ccafb8c}{lp\-\_\-isfacet()} to use a linear program to set b's facet flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Gröbner basis to be researched. \\
+\hline
+{\em b} & Binomial to be checked if it is a facet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interger-\/flag for facets. 
+\end{DoxyReturn}
+
+
+Definition at line 537 of file gset.\-c.
+
+\hypertarget{gset_8h_ac05eab4e46cf40fe9d54785ed459c5cd}{\index{gset.\-h@{gset.\-h}!gset\-\_\-isflippable@{gset\-\_\-isflippable}}
+\index{gset\-\_\-isflippable@{gset\-\_\-isflippable}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-isflippable}]{\setlength{\rightskip}{0pt plus 5cm}int gset\-\_\-isflippable (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g, }
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_ac05eab4e46cf40fe9d54785ed459c5cd}
+
+
+Checks if a binomial is flippable without linear programming. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Gröbner basis to be researched. \\
+\hline
+{\em b} & Binomial to be checked if it is a facet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interger-\/flag for facets. 
+\end{DoxyReturn}
+
+
+Definition at line 577 of file gset.\-c.
+
+\hypertarget{gset_8h_ae4d32e90e40c8ad9f82e684d09d973e7}{\index{gset.\-h@{gset.\-h}!gset\-\_\-new@{gset\-\_\-new}}
+\index{gset\-\_\-new@{gset\-\_\-new}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf gset} gset\-\_\-new (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_ae4d32e90e40c8ad9f82e684d09d973e7}
+
+
+Creates an empty gset, initializes all its pointers to null. 
+
+\begin{DoxyReturn}{Returns}
+The new gset. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file gset.\-c.
+
+\hypertarget{gset_8h_ae47a538e3f593f9197053fa6c8c948e0}{\index{gset.\-h@{gset.\-h}!gset\-\_\-only\-\_\-degreecompatible@{gset\-\_\-only\-\_\-degreecompatible}}
+\index{gset\-\_\-only\-\_\-degreecompatible@{gset\-\_\-only\-\_\-degreecompatible}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-only\-\_\-degreecompatible}]{\setlength{\rightskip}{0pt plus 5cm}int gset\-\_\-only\-\_\-degreecompatible (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_ae47a538e3f593f9197053fa6c8c948e0}
+
+
+gset\-\_\-only\-\_\-degreecompatible Determines whether a Groebner Basis is the only degree compatible Groebner Basis or not. Example\-: In the 3 dimensional vector space, the facet of the Groebner Fan is the only one which contains the all-\/one vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Gröbner basis to be researched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it is the only degree compatible Gröbner basis and 0 if not. 
+\end{DoxyReturn}
+
+
+Definition at line 709 of file gset.\-c.
+
+\hypertarget{gset_8h_a425ed208a40c85e6393b54019136c07e}{\index{gset.\-h@{gset.\-h}!gset\-\_\-print@{gset\-\_\-print}}
+\index{gset\-\_\-print@{gset\-\_\-print}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{of, }
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a425ed208a40c85e6393b54019136c07e}
+
+
+Prints a gset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em of} & The output stream. \\
+\hline
+{\em g} & The gset to be printed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file gset.\-c.
+
+\hypertarget{gset_8h_a4b27e70be3474295ad519ce0083d2ddd}{\index{gset.\-h@{gset.\-h}!gset\-\_\-puncture@{gset\-\_\-puncture}}
+\index{gset\-\_\-puncture@{gset\-\_\-puncture}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-puncture}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-puncture (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{G1, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a4b27e70be3474295ad519ce0083d2ddd}
+
+
+Punctures a linear code. Simply sets the all exponent-\/vectors from the gset to 0 at the certain position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em G1} & Gröbner basis to be punctured. \\
+\hline
+{\em pos} & Variable that will be punctured. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 748 of file gset.\-c.
+
+\hypertarget{gset_8h_abbaa63cc0697f1f817babb26693b97e1}{\index{gset.\-h@{gset.\-h}!gset\-\_\-read@{gset\-\_\-read}}
+\index{gset\-\_\-read@{gset\-\_\-read}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}int gset\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{is, }
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_abbaa63cc0697f1f817babb26693b97e1}
+
+
+Reads a gset from an input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & The input stream. \\
+\hline
+{\em g} & All informaion stored in gset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) if gset is read in successfully. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file gset.\-c.
+
+\hypertarget{gset_8h_a0051dd3a19f3575991e1a411fab3f0e7}{\index{gset.\-h@{gset.\-h}!gset\-\_\-rgb@{gset\-\_\-rgb}}
+\index{gset\-\_\-rgb@{gset\-\_\-rgb}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-rgb}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-rgb (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g, }
+\item[{int($\ast$)({\bf monomial}, {\bf monomial})}]{comp}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a0051dd3a19f3575991e1a411fab3f0e7}
+
+
+Use buchberger's algorithm to transform g into groebner basis wrt the term order implemented by comp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The given ideal. \\
+\hline
+{\em comp} & Function pointer with standard monomial orders. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 425 of file gset.\-c.
+
+\hypertarget{gset_8h_ab7ea4125d47e158a5bc021020273cd50}{\index{gset.\-h@{gset.\-h}!gset\-\_\-setfacets@{gset\-\_\-setfacets}}
+\index{gset\-\_\-setfacets@{gset\-\_\-setfacets}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-setfacets}]{\setlength{\rightskip}{0pt plus 5cm}void gset\-\_\-setfacets (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_ab7ea4125d47e158a5bc021020273cd50}
+
+
+Uses repeated calls to gset\-\_\-isfacet to ensure that all facet flags are set. Also sets the flags nfacets, nelts and deg counters. These contain garbage except right after a call to set facets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Gröbner basis to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 509 of file gset.\-c.
+
+\hypertarget{gset_8h_a506b7c8268a5a4faa4fda1b8de57a264}{\index{gset.\-h@{gset.\-h}!gset\-\_\-toric\-\_\-ideal@{gset\-\_\-toric\-\_\-ideal}}
+\index{gset\-\_\-toric\-\_\-ideal@{gset\-\_\-toric\-\_\-ideal}!gset.h@{gset.\-h}}
+\subsubsection[{gset\-\_\-toric\-\_\-ideal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf gset} gset\-\_\-toric\-\_\-ideal (
+\begin{DoxyParamCaption}
+\item[{int $\ast$$\ast$}]{, }
+\item[{int}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a506b7c8268a5a4faa4fda1b8de57a264}
+\hypertarget{gset_8h_ae49d7d71e6803a96badbf7550ccafb8c}{\index{gset.\-h@{gset.\-h}!lp\-\_\-isfacet@{lp\-\_\-isfacet}}
+\index{lp\-\_\-isfacet@{lp\-\_\-isfacet}!gset.h@{gset.\-h}}
+\subsubsection[{lp\-\_\-isfacet}]{\setlength{\rightskip}{0pt plus 5cm}int lp\-\_\-isfacet (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g, }
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_ae49d7d71e6803a96badbf7550ccafb8c}
+
+
+Sets up the linear program to check if a binomial is a facet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Gröbner basis consisting the binomial. \\
+\hline
+{\em b} & Binomial to be researched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interger-\/flag for facets. 
+\end{DoxyReturn}
+
+
+Definition at line 623 of file gset.\-c.
+
+\hypertarget{gset_8h_a0a4db0b645c3f74c37fdcd17eef5886b}{\index{gset.\-h@{gset.\-h}!process\-\_\-pair@{process\-\_\-pair}}
+\index{process\-\_\-pair@{process\-\_\-pair}!gset.h@{gset.\-h}}
+\subsubsection[{process\-\_\-pair}]{\setlength{\rightskip}{0pt plus 5cm}void process\-\_\-pair (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b1, }
+\item[{{\bf binomial}}]{b2, }
+\item[{{\bf binomial}}]{D\-L, }
+\item[{{\bf binomial}}]{S\-L, }
+\item[{{\bf binomial} $\ast$}]{N\-L, }
+\item[{int($\ast$)({\bf monomial}, {\bf monomial})}]{comp}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a0a4db0b645c3f74c37fdcd17eef5886b}
+
+
+Processes S-\/\-Pair defined by binomials b1 and b2. Taking S-\/\-Pair with respect to union of D\-L S\-L and $\ast$\-N\-L lists. If result is non-\/zero add result to N\-L list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & Binomial. \\
+\hline
+{\em b2} & Binomial. \\
+\hline
+{\em D\-L} & Binomial. \\
+\hline
+{\em S\-L} & Binomial. \\
+\hline
+{\em N\-L} & List of binomials. \\
+\hline
+{\em comp} & Function pointer with standard monomial orders. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 476 of file gset.\-c.
+
+\hypertarget{gset_8h_a40ce4ee400e711734c0c74bd4ce0b59a}{\index{gset.\-h@{gset.\-h}!remove\-\_\-multiples@{remove\-\_\-multiples}}
+\index{remove\-\_\-multiples@{remove\-\_\-multiples}!gset.h@{gset.\-h}}
+\subsubsection[{remove\-\_\-multiples}]{\setlength{\rightskip}{0pt plus 5cm}void remove\-\_\-multiples (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{S, }
+\item[{{\bf binomial} $\ast$}]{L}
+\end{DoxyParamCaption}
+)}}\label{gset_8h_a40ce4ee400e711734c0c74bd4ce0b59a}
+
+
+Passes through a list L, removing all multiples of S encountered (except S if it is on the list). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & Binomial with multiples to be removed. \\
+\hline
+{\em L} & List of binomials. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 246 of file gset.\-c.
+

@@ -1,0 +1,106 @@
+.TH "reverse.h" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+reverse.h \- 
+.PP
+Main algorithm using reverse search mentioned in algorithm 2\&.8 of the TiGERS paper\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBvertex_print\fP (\fBgset\fP g1, int no_print)"
+.br
+.RI "\fIPrints vertex with all its information\&. \fP"
+.ti -1c
+.RI "int \fBflip_condition_tig\fP (\fBbinomial\fP b)"
+.br
+.RI "\fIExtra condition for degree compatible groebner base for facet binomial to be flipped\&. \fP"
+.ti -1c
+.RI "int \fBrsearch\fP (\fBgset\fP g1, int number, int no_print)"
+.br
+.RI "\fIMain algorithm using the reverse search tree\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Main algorithm using reverse search mentioned in algorithm 2\&.8 of the TiGERS paper\&. 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBreverse\&.h\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int flip_condition_tig (\fBbinomial\fPb)"
+
+.PP
+Extra condition for degree compatible groebner base for facet binomial to be flipped\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb\fP The given binomial\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 for fullfilled condition, 0 for not fullfilled\&. 
+.RE
+.PP
+
+.PP
+Definition at line 103 of file reverse\&.c\&.
+.SS "int rsearch (\fBgset\fPg1, intnumber, intno_print)"
+
+.PP
+Main algorithm using the reverse search tree\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP Given Gröbner base to start of\&. 
+.br
+\fInumber\fP Important in order to match 2 groebner fans\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Nummber of counted Gröbner bases\&. 
+.RE
+.PP
+
+.PP
+Definition at line 113 of file reverse\&.c\&.
+.SS "void vertex_print (\fBgset\fPg1, intno_print)"
+
+.PP
+Prints vertex with all its information\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP The given groebner base\&. 
+.br
+\fIno_print\fP Flag for printing\&. 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file reverse\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

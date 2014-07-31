@@ -1,0 +1,74 @@
+\hypertarget{utime_8c}{\section{utime.\-c File Reference}
+\label{utime_8c}\index{utime.\-c@{utime.\-c}}
+}
+
+
+Function definitions for time measuring.  
+
+
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utime.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{utime_8c_ad52b503707921e493a22acfd5b9dbd29}{set\-\_\-mark} ()
+\begin{DoxyCompactList}\small\item\em Sets the mark for time measuring, like a tic-\/command. \end{DoxyCompactList}\item 
+int \hyperlink{utime_8c_ab318258f776ecbd0a39b16e5c804f4c5}{read\-\_\-mark} (int timeset)
+\begin{DoxyCompactList}\small\item\em Gets the mark for time measuring, like a toc-\/command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function definitions for time measuring. This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000020}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{utime_8c_source}{utime.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{utime_8c_ab318258f776ecbd0a39b16e5c804f4c5}{\index{utime.\-c@{utime.\-c}!read\-\_\-mark@{read\-\_\-mark}}
+\index{read\-\_\-mark@{read\-\_\-mark}!utime.c@{utime.\-c}}
+\subsubsection[{read\-\_\-mark}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-mark (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{utime_8c_ab318258f776ecbd0a39b16e5c804f4c5}
+
+
+Gets the mark for time measuring, like a toc-\/command. 
+
+\begin{DoxyReturn}{Returns}
+The absoulute time in seconds. 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file utime.\-c.
+
+\hypertarget{utime_8c_ad52b503707921e493a22acfd5b9dbd29}{\index{utime.\-c@{utime.\-c}!set\-\_\-mark@{set\-\_\-mark}}
+\index{set\-\_\-mark@{set\-\_\-mark}!utime.c@{utime.\-c}}
+\subsubsection[{set\-\_\-mark}]{\setlength{\rightskip}{0pt plus 5cm}int set\-\_\-mark (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{utime_8c_ad52b503707921e493a22acfd5b9dbd29}
+
+
+Sets the mark for time measuring, like a tic-\/command. 
+
+\begin{DoxyReturn}{Returns}
+The time stamp. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file utime.\-c.
+

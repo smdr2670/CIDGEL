@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['read_5fmark',['read_mark',['../utime_8c.html#ab318258f776ecbd0a39b16e5c804f4c5',1,'read_mark(int timeset):&#160;utime.c'],['../utime_8h.html#a42689f73ad13db1bb7bb21b5c037935b',1,'read_mark(int):&#160;utime.c']]],
+  ['reducetrail',['reducetrail',['../binomial_8c.html#a16c21252ff13d807e0e6af3c3a6a7896',1,'reducetrail(binomial b1, binomial b2):&#160;binomial.c'],['../binomial_8h.html#a16c21252ff13d807e0e6af3c3a6a7896',1,'reducetrail(binomial b1, binomial b2):&#160;binomial.c']]],
+  ['remove_5fmultiples',['remove_multiples',['../gset_8c.html#a40ce4ee400e711734c0c74bd4ce0b59a',1,'remove_multiples(binomial S, binomial *L):&#160;gset.c'],['../gset_8h.html#a40ce4ee400e711734c0c74bd4ce0b59a',1,'remove_multiples(binomial S, binomial *L):&#160;gset.c']]],
+  ['ring_5fgetvar',['ring_getvar',['../binomial_8c.html#a384951ec65d173cb745b02665646e93d',1,'ring_getvar(FILE *infile):&#160;binomial.c'],['../binomial_8h.html#a384951ec65d173cb745b02665646e93d',1,'ring_getvar(FILE *infile):&#160;binomial.c']]],
+  ['ring_5fread',['ring_read',['../binomial_8c.html#a198625bd3108f0a1a61d9c2e482d7844',1,'ring_read(FILE *infile):&#160;binomial.c'],['../binomial_8h.html#a198625bd3108f0a1a61d9c2e482d7844',1,'ring_read(FILE *infile):&#160;binomial.c']]],
+  ['ring_5fset',['ring_set',['../binomial_8c.html#a65b095810cffdd2ba038fc6281ed7dff',1,'ring_set(int n):&#160;binomial.c'],['../binomial_8h.html#a65b095810cffdd2ba038fc6281ed7dff',1,'ring_set(int n):&#160;binomial.c']]],
+  ['rsearch',['rsearch',['../reverse_8c.html#a25440f76d77279ee9ea5b3de2d27dbc9',1,'rsearch(gset g1, int number, int no_print):&#160;reverse.c'],['../reverse_8h.html#a25440f76d77279ee9ea5b3de2d27dbc9',1,'rsearch(gset g1, int number, int no_print):&#160;reverse.c']]],
+  ['rsimp',['Rsimp',['../Rsimp_8c.html#a005da9124766c92b50e02cde09807ee8',1,'Rsimp(int m, int n, double **A, double *b, double *c, double *x, int *basis, int *nonbasis, double **R, double **Q, double *t1, double *t2):&#160;Rsimp.c'],['../Rsimp_8h.html#a005da9124766c92b50e02cde09807ee8',1,'Rsimp(int m, int n, double **A, double *b, double *c, double *x, int *basis, int *nonbasis, double **R, double **Q, double *t1, double *t2):&#160;Rsimp.c']]]
+];

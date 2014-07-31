@@ -1,0 +1,160 @@
+\hypertarget{exsearch_8h}{\section{exsearch.\-h File Reference}
+\label{exsearch_8h}\index{exsearch.\-h@{exsearch.\-h}}
+}
+
+
+header file for the exhaustive search  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{exsearch_8h_a25ef4124de7fbb93eea8c176f3d9fca0}{flip\-\_\-ex\-\_\-condition} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b, int \hyperlink{reverse_8c_a3474562ef40c62c4090d7b5d585aad8f}{degree\-\_\-comp})
+\begin{DoxyCompactList}\small\item\em An extra condition for degree compatible Gröbner basis for facet binomial to be flipped. \end{DoxyCompactList}\item 
+void \hyperlink{exsearch_8h_a52dc3e94874f61c9cc22c1df802c51f4}{insert} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} $\ast$L)
+\begin{DoxyCompactList}\small\item\em insert use next pointer in Gsets to implement a simple linked list. for now stored in no particular order. \end{DoxyCompactList}\item 
+int \hyperlink{exsearch_8h_a2fcc24fe080bf577e67463627b463efe}{gset\-\_\-equiv} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g2)
+\begin{DoxyCompactList}\small\item\em Determines if two gsets contain equivalent marked binomials. \end{DoxyCompactList}\item 
+\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} \hyperlink{exsearch_8h_af6bdc1edd8bbd231ba5a409fec173e4b}{find} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, \hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} L)
+\begin{DoxyCompactList}\small\item\em Checks a gset against those on list until an equivalent one is found. \end{DoxyCompactList}\item 
+int \hyperlink{exsearch_8h_a57461869d14016af6d67104a8f87d273}{exsearch} (\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} g1, int \hyperlink{reverse_8c_a3474562ef40c62c4090d7b5d585aad8f}{degree\-\_\-comp}, int no\-\_\-print)
+\begin{DoxyCompactList}\small\item\em Breadth first search to find all degree compatible groebner bases of a code ideal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+header file for the exhaustive search \begin{DoxyAuthor}{Author}
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000007}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{exsearch_8h_source}{exsearch.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{exsearch_8h_a57461869d14016af6d67104a8f87d273}{\index{exsearch.\-h@{exsearch.\-h}!exsearch@{exsearch}}
+\index{exsearch@{exsearch}!exsearch.h@{exsearch.\-h}}
+\subsubsection[{exsearch}]{\setlength{\rightskip}{0pt plus 5cm}int exsearch (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{int}]{degree\-\_\-comp, }
+\item[{int}]{no\-\_\-print}
+\end{DoxyParamCaption}
+)}}\label{exsearch_8h_a57461869d14016af6d67104a8f87d273}
+
+
+Breadth first search to find all degree compatible groebner bases of a code ideal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & The starting Gröbner basis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of groebner bases found. 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file exsearch.\-c.
+
+\hypertarget{exsearch_8h_af6bdc1edd8bbd231ba5a409fec173e4b}{\index{exsearch.\-h@{exsearch.\-h}!find@{find}}
+\index{find@{find}!exsearch.h@{exsearch.\-h}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf gset} find (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{{\bf gset}}]{L}
+\end{DoxyParamCaption}
+)}}\label{exsearch_8h_af6bdc1edd8bbd231ba5a409fec173e4b}
+
+
+Checks a gset against those on list until an equivalent one is found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & Gset which shall be found in list L. \\
+\hline
+{\em L} & List that will be searched after g1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Equivalent gset in L 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file exsearch.\-c.
+
+\hypertarget{exsearch_8h_a25ef4124de7fbb93eea8c176f3d9fca0}{\index{exsearch.\-h@{exsearch.\-h}!flip\-\_\-ex\-\_\-condition@{flip\-\_\-ex\-\_\-condition}}
+\index{flip\-\_\-ex\-\_\-condition@{flip\-\_\-ex\-\_\-condition}!exsearch.h@{exsearch.\-h}}
+\subsubsection[{flip\-\_\-ex\-\_\-condition}]{\setlength{\rightskip}{0pt plus 5cm}int flip\-\_\-ex\-\_\-condition (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b, }
+\item[{int}]{degree\-\_\-comp}
+\end{DoxyParamCaption}
+)}}\label{exsearch_8h_a25ef4124de7fbb93eea8c176f3d9fca0}
+
+
+An extra condition for degree compatible Gröbner basis for facet binomial to be flipped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The given binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 for fullfilled condition, 0 for not fullfilled. 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file exsearch.\-c.
+
+\hypertarget{exsearch_8h_a2fcc24fe080bf577e67463627b463efe}{\index{exsearch.\-h@{exsearch.\-h}!gset\-\_\-equiv@{gset\-\_\-equiv}}
+\index{gset\-\_\-equiv@{gset\-\_\-equiv}!exsearch.h@{exsearch.\-h}}
+\subsubsection[{gset\-\_\-equiv}]{\setlength{\rightskip}{0pt plus 5cm}int gset\-\_\-equiv (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{{\bf gset}}]{g2}
+\end{DoxyParamCaption}
+)}}\label{exsearch_8h_a2fcc24fe080bf577e67463627b463efe}
+
+
+Determines if two gsets contain equivalent marked binomials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & First binomial. \\
+\hline
+{\em g2} & Second binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) of F\-A\-L\-S\-E(=1) 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file exsearch.\-c.
+
+\hypertarget{exsearch_8h_a52dc3e94874f61c9cc22c1df802c51f4}{\index{exsearch.\-h@{exsearch.\-h}!insert@{insert}}
+\index{insert@{insert}!exsearch.h@{exsearch.\-h}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void insert (
+\begin{DoxyParamCaption}
+\item[{{\bf gset}}]{g1, }
+\item[{{\bf gset} $\ast$}]{L}
+\end{DoxyParamCaption}
+)}}\label{exsearch_8h_a52dc3e94874f61c9cc22c1df802c51f4}
+
+
+insert use next pointer in Gsets to implement a simple linked list. for now stored in no particular order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g1} & The gset to be inserted. \\
+\hline
+{\em L} & List of gsets. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file exsearch.\-c.
+

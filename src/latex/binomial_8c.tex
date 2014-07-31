@@ -1,0 +1,879 @@
+\hypertarget{binomial_8c}{\section{binomial.\-c File Reference}
+\label{binomial_8c}\index{binomial.\-c@{binomial.\-c}}
+}
+
+
+define binomal type and main operations on binomials  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}binomial.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{binomial_8c_aa1bd20118b869e69f8b1622ffb2265a9}{B\-I\-N\-O\-M\-I\-A\-L\-\_\-\-H}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{binomial_8c_a3a4829ad993fe4e48d020c313f3a8e43}{code\-\_\-dim\-\_\-set} (int n)
+\item 
+int \hyperlink{binomial_8c_a65b095810cffdd2ba038fc6281ed7dff}{ring\-\_\-set} (int n)
+\begin{DoxyCompactList}\small\item\em Sets the ring\-\_\-\-N. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a198625bd3108f0a1a61d9c2e482d7844}{ring\-\_\-read} (F\-I\-L\-E $\ast$\hyperlink{call_8c_af19157da745ecb3f2b088c8f3a10c0a7}{infile})
+\begin{DoxyCompactList}\small\item\em Reads the number of variables out of a file and sets the ring dimension. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a384951ec65d173cb745b02665646e93d}{ring\-\_\-getvar} (F\-I\-L\-E $\ast$\hyperlink{call_8c_af19157da745ecb3f2b088c8f3a10c0a7}{infile})
+\begin{DoxyCompactList}\small\item\em Reads the variable of the inputfile. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_ae6177b44a098dc218df4b3edf98fcbbb}{print\-\_\-monomial} (F\-I\-L\-E $\ast$of, int $\ast$exps)
+\begin{DoxyCompactList}\small\item\em Prints monomial in a file. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_af473f55e4c73e4549881ebc0c0d6a67c}{get\-\_\-monomial} (F\-I\-L\-E $\ast$is, int $\ast$exps)
+\begin{DoxyCompactList}\small\item\em Reads ascii representation of monomial as power product onvert to exponent vector stored in $\ast$exps. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a44dc676be91f355e20c5ac7b51ddfde7}{monomial\-\_\-divides} (\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m1, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m2)
+\begin{DoxyCompactList}\small\item\em Determines if m1 divides m2. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_ac634560c476767260f757ff676a1b084}{monomial\-\_\-rel\-\_\-prime} (\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m1, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m2)
+\begin{DoxyCompactList}\small\item\em Determines if m1 is reletively prime to m2. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_af8aba33155fceb90e7269b09450653db}{monomial\-\_\-equal} (\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m1, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m2)
+\begin{DoxyCompactList}\small\item\em Determines if monomials m1 and m2 have same exponents. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_a2b9ff28d9e1f43e70cb5ef208b9b7129}{monomial\-\_\-lcm} (\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m1, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m2, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m3)
+\begin{DoxyCompactList}\small\item\em monomial\-\_\-lcm copy least common multiple of m1 and m2 into m3. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a33b12991a864f209e809c5eee43a053c}{monomial\-\_\-stddegree} (\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m)
+\begin{DoxyCompactList}\small\item\em Determines the degree of a monomial. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a1a79eb3022f90f193ea50c32bb4ea012}{monomial\-\_\-lexcomp} (\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m1, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m2)
+\begin{DoxyCompactList}\small\item\em Determines if m1 is lexicographically greater then m2. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_abf9e18e05dd027056e9327f2931db510}{monomial\-\_\-rlexcomp} (\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m1, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m2)
+\begin{DoxyCompactList}\small\item\em Determines if m1 is degree reverse lexicographically greater than m2 with variables taken in order a$>$b$>$..., except that variable ring\-\_\-lv is taken last (if it is $>$=0). \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a3fcb588b110b9a5820de5dd8dbdb3a0d}{monomial\-\_\-grlexcomp} (\hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m1, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m2)
+\begin{DoxyCompactList}\small\item\em Determines if m1 is degree lexicographically greater than m2. \end{DoxyCompactList}\item 
+\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} \hyperlink{binomial_8c_af750eda859c6b329d622c6e0f55aa673}{binomial\-\_\-new} ()
+\begin{DoxyCompactList}\small\item\em Allocate space for a new binomial. Initializes flags and set exponents to zero. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_ab334a1c99c8ee886f485ed21b04f6f16}{binomial\-\_\-free} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} m)
+\begin{DoxyCompactList}\small\item\em Reclaims space allocated by \hyperlink{binomial_8c_af750eda859c6b329d622c6e0f55aa673}{binomial\-\_\-new()}. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_a9a4c52ac1688895e124bad38a61ebc44}{binomial\-\_\-read} (F\-I\-L\-E $\ast$is, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Reads file and stores a binomial. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_acffad84e4851412d05539bc8b3509aa4}{binomial\-\_\-print} (F\-I\-L\-E $\ast$of, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Prints the binomial. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_ae241f91f8afaaae055c05ff8f4b9b08f}{binomial\-\_\-copy} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} src, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} dest)
+\begin{DoxyCompactList}\small\item\em Copies source binomials exponents and flags to those of the destination binomials. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_a02eb2ae030a93d625de73894bfe2fa26}{binomial\-\_\-flip} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Interchange leading and trailing terms of a binomial. \end{DoxyCompactList}\item 
+\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} \hyperlink{binomial_8c_aae53ae7ccfe3de4720c35e9b1e7b9d35}{monomial\-\_\-spair} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b, \hyperlink{binomial_8h_a4b3f8e88af1cc26075f7af0f961adb96}{monomial} m)
+\begin{DoxyCompactList}\small\item\em Forms S-\/\-Pair between marked binomial and marked monomial and reduce result by binomial as many times as possible. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_ab485318a13acbc72646c08453d20e528}{binomial\-\_\-spair} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b1, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b2)
+\begin{DoxyCompactList}\small\item\em Replaces b1, by spair of b1 and b2 -- the spair is taken with respect to the markings of b1 and b2, but it's marking is not meaningfull. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_a0c2fa67b0c8a443b9e9a51ce76d63559}{binomial\-\_\-bumpto} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b1, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b2)
+\begin{DoxyCompactList}\small\item\em Assuming that the leading term of b1 divides that of b2 multiply both sides of b1 so that the leading terms of b1 and b2 are equal. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_a16c21252ff13d807e0e6af3c3a6a7896}{reducetrail} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b1, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b2)
+\begin{DoxyCompactList}\small\item\em Assuming that lead(b2) divides trail(b1) change b1 into binomial resulting from bumping b2 so that lead(b2)=trail(b1) and adding result to b1. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a49f2d9bf1c22ce935e31a8cf1a8cdda3}{binomial\-\_\-compair} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b1, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b2)
+\begin{DoxyCompactList}\small\item\em Determines if the lead term of b1 is lexicographically greater than that of b2 or if they tie return true if the trail term b1 is greater or equal to that of b2 otherwise return false. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_afc8f36ab0158d80e4cf476ae102cb618}{binomial\-\_\-first\-\_\-term\-\_\-degree} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Calculates the degree of the first term. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_af77678d0a186b44e29a955ba2ce5ff7c}{binomial\-\_\-variable\-\_\-position} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Returns the position which will N\-O\-T belong to the non-\/prime ideal. Note that the function is only called when the leading term of the binomial has the degree 1. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a188495043d49d5e06f0f89781503ba3e}{binomial\-\_\-degree\-\_\-compatible} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b)
+\begin{DoxyCompactList}\small\item\em Returns whether a binomial is degree compatible or not. \end{DoxyCompactList}\item 
+void \hyperlink{binomial_8c_aa53a235f312f73e3f97a26ca11a7c628}{binomial\-\_\-puncture} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b, int position)
+\begin{DoxyCompactList}\small\item\em Punctures the binomial with cancelling a certain variable. \end{DoxyCompactList}\item 
+int \hyperlink{binomial_8c_a2230384118700cc39857fea46a1300dc}{binomial\-\_\-equal} (\hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b1, \hyperlink{binomial_8h_a805580ea35b5ac9d25526fb2d3131738}{binomial} b2)
+\begin{DoxyCompactList}\small\item\em Checks if two binomials are identical. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{binomial_8c_af19157da745ecb3f2b088c8f3a10c0a7}{infile}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{binomial_8c_ae581849c67336453bd5b81e6518019a9}{outfile}
+\item 
+int \hyperlink{binomial_8c_ae4e443a219c30e22d198ee0c7596e5de}{ring\-\_\-\-N} =0
+\item 
+int \hyperlink{binomial_8c_aa2a4e73665a824e1cea2bb4d9dc3cce2}{ring\-\_\-lv} =-\/1
+\item 
+int $\ast$ \hyperlink{binomial_8c_a0067d9e7a64395a4f9c94afb7dec8ed0}{ring\-\_\-weight} =0
+\item 
+int \hyperlink{binomial_8c_aa2a005acbe55108f776b47f6f807213e}{code\-\_\-dim} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+define binomal type and main operations on binomials This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---ring defs-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+Monomials in the ambiant polynomial ring will be represented by their exponent vectors. Before any computations can be done using monomials the dimension of this ring (and the exponent vectors) must be set and stored in the global variable \char`\"{}ring\-\_\-\-N\char`\"{}. The mapping between indeces and variable names for i.\-o. purposes is currently done by just using the first ring\-\_\-\-N letters of the alphabet.
+
+Data\-: int ring\-\_\-\-N\-: global variable holding dimension of ambiant ring int ring\-\_\-lv\-: global variable used by deg-\/rev-\/lex term order, i.\-e. specify which variable to make cheepest(others ordered alphabetically)
+
+Functions (or macros)\-: int \hyperlink{binomial_8h_a65b095810cffdd2ba038fc6281ed7dff}{ring\-\_\-set(int n)}\-: Set ring\-\_\-\-N to n if ring\-\_\-\-N has not yet been set. int ring\-\_\-read(\-File $\ast$infile)\-: Read in a description of the ring from infile and set ring values accordingly. \hyperlink{binomial_8h_a384951ec65d173cb745b02665646e93d}{ring\-\_\-getvar(\-F\-I\-L\-E $\ast$)}\-: convert next variable name on F\-I\-L\-E to variable index \hyperlink{binomial_8h_a1c882280fe7129e7e2237f772064f20a}{ring\-\_\-putvar(\-File $\ast$of,int v)}\-: convert index to variable name.
+
+Note\-: for now a ring description is just given the number of variables. the names are just the first ring\-\_\-\-N letters of the alphabet\-: i.\-e. $\ast$$\ast$ name $<$====$>$ index 'a' $<$====$>$ 0 'b' $<$====$>$ 1 eventually this scheme may be adjusted to allow names to be set at run time.
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]No known bugs \end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{binomial_8c_source}{binomial.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{binomial_8c_aa1bd20118b869e69f8b1622ffb2265a9}{\index{binomial.\-c@{binomial.\-c}!B\-I\-N\-O\-M\-I\-A\-L\-\_\-\-H@{B\-I\-N\-O\-M\-I\-A\-L\-\_\-\-H}}
+\index{B\-I\-N\-O\-M\-I\-A\-L\-\_\-\-H@{B\-I\-N\-O\-M\-I\-A\-L\-\_\-\-H}!binomial.c@{binomial.\-c}}
+\subsubsection[{B\-I\-N\-O\-M\-I\-A\-L\-\_\-\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-N\-O\-M\-I\-A\-L\-\_\-\-H~1}}\label{binomial_8c_aa1bd20118b869e69f8b1622ffb2265a9}
+
+
+Definition at line 44 of file binomial.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{binomial_8c_a0c2fa67b0c8a443b9e9a51ce76d63559}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-bumpto@{binomial\-\_\-bumpto}}
+\index{binomial\-\_\-bumpto@{binomial\-\_\-bumpto}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-bumpto}]{\setlength{\rightskip}{0pt plus 5cm}void binomial\-\_\-bumpto (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b1, }
+\item[{{\bf binomial}}]{b2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a0c2fa67b0c8a443b9e9a51ce76d63559}
+
+
+Assuming that the leading term of b1 divides that of b2 multiply both sides of b1 so that the leading terms of b1 and b2 are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & The first binomial. \\
+\hline
+{\em b2} & The second binomial. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 457 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a49f2d9bf1c22ce935e31a8cf1a8cdda3}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-compair@{binomial\-\_\-compair}}
+\index{binomial\-\_\-compair@{binomial\-\_\-compair}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-compair}]{\setlength{\rightskip}{0pt plus 5cm}int binomial\-\_\-compair (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b1, }
+\item[{{\bf binomial}}]{b2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a49f2d9bf1c22ce935e31a8cf1a8cdda3}
+
+
+Determines if the lead term of b1 is lexicographically greater than that of b2 or if they tie return true if the trail term b1 is greater or equal to that of b2 otherwise return false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & The first binomial. \\
+\hline
+{\em b2} & The second binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) or F\-A\-L\-S\-E (=1). 
+\end{DoxyReturn}
+
+
+Definition at line 477 of file binomial.\-c.
+
+\hypertarget{binomial_8c_ae241f91f8afaaae055c05ff8f4b9b08f}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-copy@{binomial\-\_\-copy}}
+\index{binomial\-\_\-copy@{binomial\-\_\-copy}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}void binomial\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{src, }
+\item[{{\bf binomial}}]{dest}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_ae241f91f8afaaae055c05ff8f4b9b08f}
+
+
+Copies source binomials exponents and flags to those of the destination binomials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source binomial. \\
+\hline
+{\em dest} & Destination binomial. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 384 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a188495043d49d5e06f0f89781503ba3e}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-degree\-\_\-compatible@{binomial\-\_\-degree\-\_\-compatible}}
+\index{binomial\-\_\-degree\-\_\-compatible@{binomial\-\_\-degree\-\_\-compatible}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-degree\-\_\-compatible}]{\setlength{\rightskip}{0pt plus 5cm}int binomial\-\_\-degree\-\_\-compatible (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a188495043d49d5e06f0f89781503ba3e}
+
+
+Returns whether a binomial is degree compatible or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The given binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if first term has a higher degree, 0 if degrees are equal, -\/1 if second term has a higher degree. 
+\end{DoxyReturn}
+
+
+Definition at line 520 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a2230384118700cc39857fea46a1300dc}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-equal@{binomial\-\_\-equal}}
+\index{binomial\-\_\-equal@{binomial\-\_\-equal}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}int binomial\-\_\-equal (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b1, }
+\item[{{\bf binomial}}]{b2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a2230384118700cc39857fea46a1300dc}
+
+
+Checks if two binomials are identical. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & First binomial. \\
+\hline
+{\em b2} & Second binomial. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 544 of file binomial.\-c.
+
+\hypertarget{binomial_8c_afc8f36ab0158d80e4cf476ae102cb618}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-first\-\_\-term\-\_\-degree@{binomial\-\_\-first\-\_\-term\-\_\-degree}}
+\index{binomial\-\_\-first\-\_\-term\-\_\-degree@{binomial\-\_\-first\-\_\-term\-\_\-degree}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-first\-\_\-term\-\_\-degree}]{\setlength{\rightskip}{0pt plus 5cm}int binomial\-\_\-first\-\_\-term\-\_\-degree (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_afc8f36ab0158d80e4cf476ae102cb618}
+
+
+Calculates the degree of the first term. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The given binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Degree of first term. 
+\end{DoxyReturn}
+
+
+Definition at line 491 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a02eb2ae030a93d625de73894bfe2fa26}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-flip@{binomial\-\_\-flip}}
+\index{binomial\-\_\-flip@{binomial\-\_\-flip}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-flip}]{\setlength{\rightskip}{0pt plus 5cm}void binomial\-\_\-flip (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a02eb2ae030a93d625de73894bfe2fa26}
+
+
+Interchange leading and trailing terms of a binomial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Binomial which will be flipped. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 396 of file binomial.\-c.
+
+\hypertarget{binomial_8c_ab334a1c99c8ee886f485ed21b04f6f16}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-free@{binomial\-\_\-free}}
+\index{binomial\-\_\-free@{binomial\-\_\-free}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void binomial\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{m}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_ab334a1c99c8ee886f485ed21b04f6f16}
+
+
+Reclaims space allocated by \hyperlink{binomial_8c_af750eda859c6b329d622c6e0f55aa673}{binomial\-\_\-new()}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Binomial which shall be deleted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 315 of file binomial.\-c.
+
+\hypertarget{binomial_8c_af750eda859c6b329d622c6e0f55aa673}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-new@{binomial\-\_\-new}}
+\index{binomial\-\_\-new@{binomial\-\_\-new}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binomial} binomial\-\_\-new (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_af750eda859c6b329d622c6e0f55aa673}
+
+
+Allocate space for a new binomial. Initializes flags and set exponents to zero. 
+
+\begin{DoxyReturn}{Returns}
+New allocated binomial. 
+\end{DoxyReturn}
+
+
+Definition at line 290 of file binomial.\-c.
+
+\hypertarget{binomial_8c_acffad84e4851412d05539bc8b3509aa4}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-print@{binomial\-\_\-print}}
+\index{binomial\-\_\-print@{binomial\-\_\-print}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void binomial\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{of, }
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_acffad84e4851412d05539bc8b3509aa4}
+
+
+Prints the binomial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em of} & The output stream. \\
+\hline
+{\em b} & Binomial which shall be printed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 364 of file binomial.\-c.
+
+\hypertarget{binomial_8c_aa53a235f312f73e3f97a26ca11a7c628}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-puncture@{binomial\-\_\-puncture}}
+\index{binomial\-\_\-puncture@{binomial\-\_\-puncture}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-puncture}]{\setlength{\rightskip}{0pt plus 5cm}void binomial\-\_\-puncture (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b, }
+\item[{int}]{position}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_aa53a235f312f73e3f97a26ca11a7c628}
+
+
+Punctures the binomial with cancelling a certain variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The binomial to be punctured. \\
+\hline
+{\em position} & Position of the exp. vector which will be set to zero. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 537 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a9a4c52ac1688895e124bad38a61ebc44}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-read@{binomial\-\_\-read}}
+\index{binomial\-\_\-read@{binomial\-\_\-read}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void binomial\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{is, }
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a9a4c52ac1688895e124bad38a61ebc44}
+
+
+Reads file and stores a binomial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & The input file stream. \\
+\hline
+{\em b} & Read binomial will be stored in this parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 323 of file binomial.\-c.
+
+\hypertarget{binomial_8c_ab485318a13acbc72646c08453d20e528}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-spair@{binomial\-\_\-spair}}
+\index{binomial\-\_\-spair@{binomial\-\_\-spair}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-spair}]{\setlength{\rightskip}{0pt plus 5cm}int binomial\-\_\-spair (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b1, }
+\item[{{\bf binomial}}]{b2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_ab485318a13acbc72646c08453d20e528}
+
+
+Replaces b1, by spair of b1 and b2 -- the spair is taken with respect to the markings of b1 and b2, but it's marking is not meaningfull. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & The first binomial. \\
+\hline
+{\em b2} & The second binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) if result is equivalent to zero monomial. 
+\end{DoxyReturn}
+
+
+Definition at line 432 of file binomial.\-c.
+
+\hypertarget{binomial_8c_af77678d0a186b44e29a955ba2ce5ff7c}{\index{binomial.\-c@{binomial.\-c}!binomial\-\_\-variable\-\_\-position@{binomial\-\_\-variable\-\_\-position}}
+\index{binomial\-\_\-variable\-\_\-position@{binomial\-\_\-variable\-\_\-position}!binomial.c@{binomial.\-c}}
+\subsubsection[{binomial\-\_\-variable\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}int binomial\-\_\-variable\-\_\-position (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_af77678d0a186b44e29a955ba2ce5ff7c}
+
+
+Returns the position which will N\-O\-T belong to the non-\/prime ideal. Note that the function is only called when the leading term of the binomial has the degree 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The given binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index i of exponent vector with i != 0. 
+\end{DoxyReturn}
+
+
+Definition at line 502 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a3a4829ad993fe4e48d020c313f3a8e43}{\index{binomial.\-c@{binomial.\-c}!code\-\_\-dim\-\_\-set@{code\-\_\-dim\-\_\-set}}
+\index{code\-\_\-dim\-\_\-set@{code\-\_\-dim\-\_\-set}!binomial.c@{binomial.\-c}}
+\subsubsection[{code\-\_\-dim\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}void code\-\_\-dim\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a3a4829ad993fe4e48d020c313f3a8e43}
+
+
+Definition at line 62 of file binomial.\-c.
+
+\hypertarget{binomial_8c_af473f55e4c73e4549881ebc0c0d6a67c}{\index{binomial.\-c@{binomial.\-c}!get\-\_\-monomial@{get\-\_\-monomial}}
+\index{get\-\_\-monomial@{get\-\_\-monomial}!binomial.c@{binomial.\-c}}
+\subsubsection[{get\-\_\-monomial}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-monomial (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{is, }
+\item[{int $\ast$}]{exps}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_af473f55e4c73e4549881ebc0c0d6a67c}
+
+
+Reads ascii representation of monomial as power product onvert to exponent vector stored in $\ast$exps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & The input stream. \\
+\hline
+{\em exps} & Store the exponent vector in exps.\-s \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 136 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a44dc676be91f355e20c5ac7b51ddfde7}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-divides@{monomial\-\_\-divides}}
+\index{monomial\-\_\-divides@{monomial\-\_\-divides}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-divides}]{\setlength{\rightskip}{0pt plus 5cm}int monomial\-\_\-divides (
+\begin{DoxyParamCaption}
+\item[{{\bf monomial}}]{m1, }
+\item[{{\bf monomial}}]{m2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a44dc676be91f355e20c5ac7b51ddfde7}
+
+
+Determines if m1 divides m2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & First monomial. \\
+\hline
+{\em m2} & Second monomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) or F\-A\-L\-S\-E(=1). 
+\end{DoxyReturn}
+
+
+Definition at line 160 of file binomial.\-c.
+
+\hypertarget{binomial_8c_af8aba33155fceb90e7269b09450653db}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-equal@{monomial\-\_\-equal}}
+\index{monomial\-\_\-equal@{monomial\-\_\-equal}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}int monomial\-\_\-equal (
+\begin{DoxyParamCaption}
+\item[{{\bf monomial}}]{m1, }
+\item[{{\bf monomial}}]{m2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_af8aba33155fceb90e7269b09450653db}
+
+
+Determines if monomials m1 and m2 have same exponents. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & First monomial. \\
+\hline
+{\em m2} & Second monomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) or F\-A\-L\-S\-E(=1). 
+\end{DoxyReturn}
+
+
+Definition at line 183 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a3fcb588b110b9a5820de5dd8dbdb3a0d}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-grlexcomp@{monomial\-\_\-grlexcomp}}
+\index{monomial\-\_\-grlexcomp@{monomial\-\_\-grlexcomp}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-grlexcomp}]{\setlength{\rightskip}{0pt plus 5cm}int monomial\-\_\-grlexcomp (
+\begin{DoxyParamCaption}
+\item[{{\bf monomial}}]{m1, }
+\item[{{\bf monomial}}]{m2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a3fcb588b110b9a5820de5dd8dbdb3a0d}
+
+
+Determines if m1 is degree lexicographically greater than m2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first monomial. \\
+\hline
+{\em m2} & The second monomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$0 if m1 is degree lexicographically greater than m2. 
+\end{DoxyReturn}
+
+
+Definition at line 254 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a2b9ff28d9e1f43e70cb5ef208b9b7129}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-lcm@{monomial\-\_\-lcm}}
+\index{monomial\-\_\-lcm@{monomial\-\_\-lcm}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-lcm}]{\setlength{\rightskip}{0pt plus 5cm}void monomial\-\_\-lcm (
+\begin{DoxyParamCaption}
+\item[{{\bf monomial}}]{m1, }
+\item[{{\bf monomial}}]{m2, }
+\item[{{\bf monomial}}]{m3}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a2b9ff28d9e1f43e70cb5ef208b9b7129}
+
+
+monomial\-\_\-lcm copy least common multiple of m1 and m2 into m3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & first monomial \\
+\hline
+{\em m2} & second monomial \\
+\hline
+{\em m3} & lcm monomial \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 194 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a1a79eb3022f90f193ea50c32bb4ea012}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-lexcomp@{monomial\-\_\-lexcomp}}
+\index{monomial\-\_\-lexcomp@{monomial\-\_\-lexcomp}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-lexcomp}]{\setlength{\rightskip}{0pt plus 5cm}int monomial\-\_\-lexcomp (
+\begin{DoxyParamCaption}
+\item[{{\bf monomial}}]{m1, }
+\item[{{\bf monomial}}]{m2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a1a79eb3022f90f193ea50c32bb4ea012}
+
+
+Determines if m1 is lexicographically greater then m2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first monomial. \\
+\hline
+{\em m2} & The second monomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$0 if m1 is lexicographically greater then m2. 
+\end{DoxyReturn}
+
+
+Definition at line 217 of file binomial.\-c.
+
+\hypertarget{binomial_8c_ac634560c476767260f757ff676a1b084}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-rel\-\_\-prime@{monomial\-\_\-rel\-\_\-prime}}
+\index{monomial\-\_\-rel\-\_\-prime@{monomial\-\_\-rel\-\_\-prime}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-rel\-\_\-prime}]{\setlength{\rightskip}{0pt plus 5cm}int monomial\-\_\-rel\-\_\-prime (
+\begin{DoxyParamCaption}
+\item[{{\bf monomial}}]{m1, }
+\item[{{\bf monomial}}]{m2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_ac634560c476767260f757ff676a1b084}
+
+
+Determines if m1 is reletively prime to m2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & First monomial. \\
+\hline
+{\em m2} & Second monomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) or F\-A\-L\-S\-E(=1). 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file binomial.\-c.
+
+\hypertarget{binomial_8c_abf9e18e05dd027056e9327f2931db510}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-rlexcomp@{monomial\-\_\-rlexcomp}}
+\index{monomial\-\_\-rlexcomp@{monomial\-\_\-rlexcomp}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-rlexcomp}]{\setlength{\rightskip}{0pt plus 5cm}int monomial\-\_\-rlexcomp (
+\begin{DoxyParamCaption}
+\item[{{\bf monomial}}]{m1, }
+\item[{{\bf monomial}}]{m2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_abf9e18e05dd027056e9327f2931db510}
+
+
+Determines if m1 is degree reverse lexicographically greater than m2 with variables taken in order a$>$b$>$..., except that variable ring\-\_\-lv is taken last (if it is $>$=0). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & The first monomial. \\
+\hline
+{\em m2} & The second binomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$0 if m1 is degree reverse lexicographically greater than m2. 
+\end{DoxyReturn}
+
+
+Definition at line 228 of file binomial.\-c.
+
+\hypertarget{binomial_8c_aae53ae7ccfe3de4720c35e9b1e7b9d35}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-spair@{monomial\-\_\-spair}}
+\index{monomial\-\_\-spair@{monomial\-\_\-spair}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-spair}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binomial} monomial\-\_\-spair (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b, }
+\item[{{\bf monomial}}]{m}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_aae53ae7ccfe3de4720c35e9b1e7b9d35}
+
+
+Forms S-\/\-Pair between marked binomial and marked monomial and reduce result by binomial as many times as possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & First binomial. \\
+\hline
+{\em m} & The Mononomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S-\/\-Pair between the parameters. 
+\end{DoxyReturn}
+
+
+Definition at line 404 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a33b12991a864f209e809c5eee43a053c}{\index{binomial.\-c@{binomial.\-c}!monomial\-\_\-stddegree@{monomial\-\_\-stddegree}}
+\index{monomial\-\_\-stddegree@{monomial\-\_\-stddegree}!binomial.c@{binomial.\-c}}
+\subsubsection[{monomial\-\_\-stddegree}]{\setlength{\rightskip}{0pt plus 5cm}int monomial\-\_\-stddegree (
+\begin{DoxyParamCaption}
+\item[{{\bf monomial}}]{m}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a33b12991a864f209e809c5eee43a053c}
+
+
+Determines the degree of a monomial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The monomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The degree as an integer. 
+\end{DoxyReturn}
+
+
+Definition at line 206 of file binomial.\-c.
+
+\hypertarget{binomial_8c_ae6177b44a098dc218df4b3edf98fcbbb}{\index{binomial.\-c@{binomial.\-c}!print\-\_\-monomial@{print\-\_\-monomial}}
+\index{print\-\_\-monomial@{print\-\_\-monomial}!binomial.c@{binomial.\-c}}
+\subsubsection[{print\-\_\-monomial}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-monomial (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{of, }
+\item[{int $\ast$}]{exps}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_ae6177b44a098dc218df4b3edf98fcbbb}
+
+
+Prints monomial in a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em of} & Outputfile where monomial will be printed. \\
+\hline
+{\em exps} & Vector which contains the exponents. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a16c21252ff13d807e0e6af3c3a6a7896}{\index{binomial.\-c@{binomial.\-c}!reducetrail@{reducetrail}}
+\index{reducetrail@{reducetrail}!binomial.c@{binomial.\-c}}
+\subsubsection[{reducetrail}]{\setlength{\rightskip}{0pt plus 5cm}void reducetrail (
+\begin{DoxyParamCaption}
+\item[{{\bf binomial}}]{b1, }
+\item[{{\bf binomial}}]{b2}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a16c21252ff13d807e0e6af3c3a6a7896}
+
+
+Assuming that lead(b2) divides trail(b1) change b1 into binomial resulting from bumping b2 so that lead(b2)=trail(b1) and adding result to b1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b1} & The first binomial. \\
+\hline
+{\em b2} & The second binomial. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 467 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a384951ec65d173cb745b02665646e93d}{\index{binomial.\-c@{binomial.\-c}!ring\-\_\-getvar@{ring\-\_\-getvar}}
+\index{ring\-\_\-getvar@{ring\-\_\-getvar}!binomial.c@{binomial.\-c}}
+\subsubsection[{ring\-\_\-getvar}]{\setlength{\rightskip}{0pt plus 5cm}int ring\-\_\-getvar (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{infile}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a384951ec65d173cb745b02665646e93d}
+
+
+Reads the variable of the inputfile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em infile} & File/\-Stream consisting the variables. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\-S\-C\-I\-I code of the variable. 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a198625bd3108f0a1a61d9c2e482d7844}{\index{binomial.\-c@{binomial.\-c}!ring\-\_\-read@{ring\-\_\-read}}
+\index{ring\-\_\-read@{ring\-\_\-read}!binomial.c@{binomial.\-c}}
+\subsubsection[{ring\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}int ring\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{infile}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a198625bd3108f0a1a61d9c2e482d7844}
+
+
+Reads the number of variables out of a file and sets the ring dimension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em infile} & File/\-Stream consisting the number of dimensions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) if function was successfull. 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a65b095810cffdd2ba038fc6281ed7dff}{\index{binomial.\-c@{binomial.\-c}!ring\-\_\-set@{ring\-\_\-set}}
+\index{ring\-\_\-set@{ring\-\_\-set}!binomial.c@{binomial.\-c}}
+\subsubsection[{ring\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}int ring\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{binomial_8c_a65b095810cffdd2ba038fc6281ed7dff}
+
+
+Sets the ring\-\_\-\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number of Dimensions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E(=0) if function was successfull. 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file binomial.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{binomial_8c_aa2a005acbe55108f776b47f6f807213e}{\index{binomial.\-c@{binomial.\-c}!code\-\_\-dim@{code\-\_\-dim}}
+\index{code\-\_\-dim@{code\-\_\-dim}!binomial.c@{binomial.\-c}}
+\subsubsection[{code\-\_\-dim}]{\setlength{\rightskip}{0pt plus 5cm}int code\-\_\-dim = 0}}\label{binomial_8c_aa2a005acbe55108f776b47f6f807213e}
+
+
+Definition at line 60 of file binomial.\-c.
+
+\hypertarget{binomial_8c_af19157da745ecb3f2b088c8f3a10c0a7}{\index{binomial.\-c@{binomial.\-c}!infile@{infile}}
+\index{infile@{infile}!binomial.c@{binomial.\-c}}
+\subsubsection[{infile}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ infile}}\label{binomial_8c_af19157da745ecb3f2b088c8f3a10c0a7}
+
+
+Definition at line 50 of file binomial.\-c.
+
+\hypertarget{binomial_8c_ae581849c67336453bd5b81e6518019a9}{\index{binomial.\-c@{binomial.\-c}!outfile@{outfile}}
+\index{outfile@{outfile}!binomial.c@{binomial.\-c}}
+\subsubsection[{outfile}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ outfile}}\label{binomial_8c_ae581849c67336453bd5b81e6518019a9}
+
+
+Definition at line 51 of file binomial.\-c.
+
+\hypertarget{binomial_8c_aa2a4e73665a824e1cea2bb4d9dc3cce2}{\index{binomial.\-c@{binomial.\-c}!ring\-\_\-lv@{ring\-\_\-lv}}
+\index{ring\-\_\-lv@{ring\-\_\-lv}!binomial.c@{binomial.\-c}}
+\subsubsection[{ring\-\_\-lv}]{\setlength{\rightskip}{0pt plus 5cm}int ring\-\_\-lv =-\/1}}\label{binomial_8c_aa2a4e73665a824e1cea2bb4d9dc3cce2}
+
+
+Definition at line 58 of file binomial.\-c.
+
+\hypertarget{binomial_8c_ae4e443a219c30e22d198ee0c7596e5de}{\index{binomial.\-c@{binomial.\-c}!ring\-\_\-\-N@{ring\-\_\-\-N}}
+\index{ring\-\_\-\-N@{ring\-\_\-\-N}!binomial.c@{binomial.\-c}}
+\subsubsection[{ring\-\_\-\-N}]{\setlength{\rightskip}{0pt plus 5cm}int ring\-\_\-\-N =0}}\label{binomial_8c_ae4e443a219c30e22d198ee0c7596e5de}
+
+
+Definition at line 57 of file binomial.\-c.
+
+\hypertarget{binomial_8c_a0067d9e7a64395a4f9c94afb7dec8ed0}{\index{binomial.\-c@{binomial.\-c}!ring\-\_\-weight@{ring\-\_\-weight}}
+\index{ring\-\_\-weight@{ring\-\_\-weight}!binomial.c@{binomial.\-c}}
+\subsubsection[{ring\-\_\-weight}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ ring\-\_\-weight =0}}\label{binomial_8c_a0067d9e7a64395a4f9c94afb7dec8ed0}
+
+
+Definition at line 59 of file binomial.\-c.
+

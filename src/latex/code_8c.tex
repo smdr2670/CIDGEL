@@ -1,0 +1,100 @@
+\hypertarget{code_8c}{\section{code.\-c File Reference}
+\label{code_8c}\index{code.\-c@{code.\-c}}
+}
+
+
+Support for computing first grobner bases of code ideals. of the Ti\-G\-E\-R\-S paper.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gset.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}matrices.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Rsimp.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}code.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{code_8c_a69db94a857e4ed0645c48085b2e3bd0a}{min}(m, n)~(((m)$<$(n))?(m)\-:(n))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gset_8h_a132b5316e4fbcae39120eefad337ea56}{gset} \hyperlink{code_8c_a4c4c434f17a252b4ff0d0e515078dc9a}{gset\-\_\-code\-\_\-ideal} (int $\ast$$\ast$M, int m, int n)
+\begin{DoxyCompactList}\small\item\em Given an mxn integer matrix M, compute an rgb for the code ideal I\-\_\-\-C. Expects generator matrix in standard form, reads off equations for a generating system, then uses Buchberger algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{code_8c_ae581849c67336453bd5b81e6518019a9}{outfile}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Support for computing first grobner bases of code ideals. of the Ti\-G\-E\-R\-S paper. This file is reused from Ti\-G\-E\-R\-S, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+
+\begin{DoxyAuthor}{Author}
+Birk Huber, 4/99 
+
+Daniel Rembold 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000004}{Bug}]No known bugs\end{DoxyRefDesc}
+
+
+Definition in file \hyperlink{code_8c_source}{code.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{code_8c_a69db94a857e4ed0645c48085b2e3bd0a}{\index{code.\-c@{code.\-c}!min@{min}}
+\index{min@{min}!code.c@{code.\-c}}
+\subsubsection[{min}]{\setlength{\rightskip}{0pt plus 5cm}\#define min(
+\begin{DoxyParamCaption}
+\item[{}]{m, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(((m)$<$(n))?(m)\-:(n))}}\label{code_8c_a69db94a857e4ed0645c48085b2e3bd0a}
+
+
+Definition at line 28 of file code.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{code_8c_a4c4c434f17a252b4ff0d0e515078dc9a}{\index{code.\-c@{code.\-c}!gset\-\_\-code\-\_\-ideal@{gset\-\_\-code\-\_\-ideal}}
+\index{gset\-\_\-code\-\_\-ideal@{gset\-\_\-code\-\_\-ideal}!code.c@{code.\-c}}
+\subsubsection[{gset\-\_\-code\-\_\-ideal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf gset} gset\-\_\-code\-\_\-ideal (
+\begin{DoxyParamCaption}
+\item[{int $\ast$$\ast$}]{M, }
+\item[{int}]{m, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{code_8c_a4c4c434f17a252b4ff0d0e515078dc9a}
+
+
+Given an mxn integer matrix M, compute an rgb for the code ideal I\-\_\-\-C. Expects generator matrix in standard form, reads off equations for a generating system, then uses Buchberger algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & input Matrix \\
+\hline
+{\em m} & number of rows \\
+\hline
+{\em n} & number of columns \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file code.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{code_8c_ae581849c67336453bd5b81e6518019a9}{\index{code.\-c@{code.\-c}!outfile@{outfile}}
+\index{outfile@{outfile}!code.c@{code.\-c}}
+\subsubsection[{outfile}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ outfile}}\label{code_8c_ae581849c67336453bd5b81e6518019a9}
+
+
+Definition at line 24 of file code.\-c.
+

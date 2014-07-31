@@ -1,0 +1,664 @@
+.TH "gset.c" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gset.c \- 
+.PP
+definitions and basic operations on gsets  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'gset\&.h'\fP
+.br
+\fC#include 'matrices\&.h'\fP
+.br
+\fC#include 'Rsimp\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBordered\fP(b)   ((comp(\fBbinomial_lead\fP(b),\fBbinomial_trail\fP(b))>=0)?TRUE:FALSE)"
+.br
+.ti -1c
+.RI "#define \fBmax\fP(a, b)   (((a)>(b))?(a):(b))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgset\fP \fBgset_new\fP ()"
+.br
+.RI "\fICreates an empty gset, initializes all its pointers to null\&. \fP"
+.ti -1c
+.RI "void \fBgset_free\fP (\fBgset\fP g)"
+.br
+.RI "\fIDeletes a gset and all binomials in it\&. \fP"
+.ti -1c
+.RI "void \fBgset_eliminatezero\fP (\fBgset\fP g)"
+.br
+.RI "\fIEliminates '1-1' terms in a gset\&. \fP"
+.ti -1c
+.RI "void \fBgset_delete_binomial\fP (\fBgset\fP g, \fBbinomial\fP b)"
+.br
+.RI "\fIDeletes a binimoal from a gset\&. \fP"
+.ti -1c
+.RI "int \fBgset_read\fP (FILE *is, \fBgset\fP g)"
+.br
+.RI "\fIReads a gset from an input stream\&. \fP"
+.ti -1c
+.RI "void \fBgset_print\fP (FILE *of, \fBgset\fP g)"
+.br
+.RI "\fIPrints a gset\&. \fP"
+.ti -1c
+.RI "void \fBgset_init_print\fP (FILE *of, \fBgset\fP g)"
+.br
+.RI "\fIDisplays the initial/leading ideal of Gset\&. \fP"
+.ti -1c
+.RI "void \fBgset_facet_print\fP (FILE *of, \fBgset\fP g)"
+.br
+.RI "\fIDisplays facet binomials\&. \fP"
+.ti -1c
+.RI "void \fBgset_insert\fP (\fBgset\fP g, \fBbinomial\fP b)"
+.br
+.RI "\fIPlaces binomials in gset in decreasing lexicographic order\&. (using binomial_compair(,) to determine relative order or binomials) \fP"
+.ti -1c
+.RI "\fBbinomial\fP \fBgset_downedge_lex\fP (\fBgset\fP g)"
+.br
+.RI "\fIReturns the first facet binomial which is mis-marked with respect to the lexicographic order\&. A mis-marked binomial is a binomial that does not suit with the term order, but it is a facet binomial\&. \fP"
+.ti -1c
+.RI "\fBbinomial\fP \fBgset_downedge_grlex\fP (\fBgset\fP g)"
+.br
+.RI "\fIReturns the first facet binomial which is mis-marked with respect to the graded-lexicographic order\&. \fP"
+.ti -1c
+.RI "\fBbinomial\fP \fBbmleadreduce\fP (\fBbinomial\fP m1, \fBbinomial\fP B, \fBbinomial\fP mlist)"
+.br
+.RI "\fIbmleadreduce 'lift' monomial m1 to a binomial using bmlist B,mlist\&. This function represents line 6 and 7 from algorithm 5 of this thesis\&. \fP"
+.ti -1c
+.RI "\fBbinomial\fP \fBfind_divisor\fP (\fBbinomial\fP S, \fBbinomial\fP L)"
+.br
+.RI "\fIChecks if a binomial is divisible by a list on binomials\&. \fP"
+.ti -1c
+.RI "void \fBremove_multiples\fP (\fBbinomial\fP S, \fBbinomial\fP *L)"
+.br
+.RI "\fIPasses through a list L, removing all multiples of S encountered (except S if it is on the list)\&. \fP"
+.ti -1c
+.RI "void \fBbmrgb\fP (\fBbinomial\fP B, \fBbinomial\fP *ms)"
+.br
+.RI "\fITransforms a marked binomial and a list of monomials into the reduced grobner basis for the ideal to generate\&. \fP"
+.ti -1c
+.RI "\fBgset\fP \fBgset_flip\fP (\fBgset\fP g1, \fBbinomial\fP b)"
+.br
+.RI "\fITake a gset and one of its facet binomials and produce the new gset corresponding to the grobner cone which shares the given facet binomial\&. This function represents algorithm 5 in this thesis\&. \fP"
+.ti -1c
+.RI "void \fBgset_autoreduce\fP (\fBgset\fP g)"
+.br
+.ti -1c
+.RI "void \fBgset_rgb\fP (\fBgset\fP g, int(*comp)(\fBmonomial\fP, \fBmonomial\fP))"
+.br
+.RI "\fIUse buchberger's algorithm to transform g into groebner basis wrt the term order implemented by comp\&. \fP"
+.ti -1c
+.RI "void \fBprocess_pair\fP (\fBbinomial\fP b1, \fBbinomial\fP b2, \fBbinomial\fP DL, \fBbinomial\fP SL, \fBbinomial\fP *NL, int(*comp)(\fBmonomial\fP, \fBmonomial\fP))"
+.br
+.RI "\fIProcesses S-Pair defined by binomials b1 and b2\&. Taking S-Pair with respect to union of DL SL and *NL lists\&. If result is non-zero add result to NL list\&. \fP"
+.ti -1c
+.RI "void \fBgset_setfacets\fP (\fBgset\fP g)"
+.br
+.RI "\fIUses repeated calls to gset_isfacet to ensure that all facet flags are set\&. Also sets the flags nfacets, nelts and deg counters\&. These contain garbage except right after a call to set facets\&. \fP"
+.ti -1c
+.RI "int \fBgset_isflippable\fP (\fBgset\fP g, \fBbinomial\fP b)"
+.br
+.RI "\fIChecks if a binomial is flippable without linear programming\&. \fP"
+.ti -1c
+.RI "int \fBgset_isfacet\fP (\fBgset\fP g, \fBbinomial\fP b)"
+.br
+.RI "\fIChecks whether b is known to be a facet or not\&. if not call \fBlp_isfacet()\fP to use a linear program to set b's facet flag\&. \fP"
+.ti -1c
+.RI "int \fBlp_isfacet\fP (\fBgset\fP g, \fBbinomial\fP b)"
+.br
+.RI "\fISets up the linear program to check if a binomial is a facet\&. \fP"
+.ti -1c
+.RI "void \fBgset_add_nonprime\fP (\fBgset\fP g)"
+.br
+.RI "\fIAdds the nonprime Terms to a generating set in order to get a CodeIdeal, check all first terms of all binomials\&. If the exponent vector has the degree of 1, then it does not appear in the non-prime set\&. example: if no leading term divides x1^2, add x1^2-1 to the set\&. \fP"
+.ti -1c
+.RI "int \fBgset_only_degreecompatible\fP (\fBgset\fP g)"
+.br
+.RI "\fIgset_only_degreecompatible Determines whether a Groebner Basis is the only degree compatible Groebner Basis or not\&. Example: In the 3 dimensional vector space, the facet of the Groebner Fan is the only one which contains the all-one vector\&. \fP"
+.ti -1c
+.RI "int \fBcountDC\fP (\fBgset\fP g1)"
+.br
+.RI "\fICounts the degree compatible binomials in a Gröbner basis\&. \fP"
+.ti -1c
+.RI "void \fBgset_copy\fP (\fBgset\fP src, \fBgset\fP dest)"
+.br
+.RI "\fICopies a Gröbner basis\&. \fP"
+.ti -1c
+.RI "void \fBgset_puncture\fP (\fBgset\fP G1, int pos)"
+.br
+.RI "\fIPunctures a linear code\&. Simply sets the all exponent-vectors from the gset to 0 at the certain position\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBchanged\fP"
+.br
+.ti -1c
+.RI "int \fBlptest\fP =1"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+definitions and basic operations on gsets 
+
+This file is reused from TiGERS, Toric Groebner Basis Enumeration by Reverse Search copyright (c) 1999 Birk Huber
+.PP
+\fBAuthor:\fP
+.RS 4
+Birk Huber, 4/99 
+.PP
+Daniel Rembold 
+.RE
+.PP
+\fBBug\fP
+.RS 4
+No known bugs
+.RE
+.PP
+
+.PP
+Definition in file \fBgset\&.c\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define max(a, b)   (((a)>(b))?(a):(b))"
+
+.PP
+Definition at line 506 of file gset\&.c\&.
+.SS "#define ordered(b)   ((comp(\fBbinomial_lead\fP(b),\fBbinomial_trail\fP(b))>=0)?TRUE:FALSE)"
+
+.PP
+Definition at line 422 of file gset\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBbinomial\fP bmleadreduce (\fBbinomial\fPm1, \fBbinomial\fPB, \fBbinomial\fPmlist)"
+
+.PP
+bmleadreduce 'lift' monomial m1 to a binomial using bmlist B,mlist\&. This function represents line 6 and 7 from algorithm 5 of this thesis\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm1\fP The binomial to be lifted\&. 
+.br
+\fIB\fP The binomial which may divide m1\&. 
+.br
+\fImlist\fP The list of monomials to compare with\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The new generated binomial\&. 
+.RE
+.PP
+
+.PP
+Definition at line 196 of file gset\&.c\&.
+.SS "void bmrgb (\fBbinomial\fPB, \fBbinomial\fP *ms)"
+
+.PP
+Transforms a marked binomial and a list of monomials into the reduced grobner basis for the ideal to generate\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIB\fP The marked binomial 
+.br
+\fIms\fP List of binomials\&. 
+.RE
+.PP
+
+.PP
+Definition at line 261 of file gset\&.c\&.
+.SS "int countDC (\fBgset\fPg1)"
+
+.PP
+Counts the degree compatible binomials in a Gröbner basis\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP Gröbner basis to be researched\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of d\&.c\&. binomials 
+.RE
+.PP
+
+.PP
+Definition at line 722 of file gset\&.c\&.
+.SS "\fBbinomial\fP find_divisor (\fBbinomial\fPS, \fBbinomial\fPL)"
+
+.PP
+Checks if a binomial is divisible by a list on binomials\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIS\fP The binomial which is the divident\&. 
+.br
+\fIL\fP List of binimials which may divide S\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The binomial which divides S\&. 
+.RE
+.PP
+
+.PP
+Definition at line 234 of file gset\&.c\&.
+.SS "void gset_add_nonprime (\fBgset\fPg)"
+
+.PP
+Adds the nonprime Terms to a generating set in order to get a CodeIdeal, check all first terms of all binomials\&. If the exponent vector has the degree of 1, then it does not appear in the non-prime set\&. example: if no leading term divides x1^2, add x1^2-1 to the set\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP gset which gets the nonprime binomials 
+.RE
+.PP
+
+.PP
+Definition at line 682 of file gset\&.c\&.
+.SS "void gset_autoreduce (\fBgset\fPg)"
+
+.PP
+Definition at line 371 of file gset\&.c\&.
+.SS "void gset_copy (\fBgset\fPG1, \fBgset\fPG2)"
+
+.PP
+Copies a Gröbner basis\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrc\fP Source Gröbner basis 
+.br
+\fIdest\fP Destination Gröbner basis 
+.RE
+.PP
+
+.PP
+Definition at line 735 of file gset\&.c\&.
+.SS "void gset_delete_binomial (\fBgset\fPg, \fBbinomial\fPb)"
+
+.PP
+Deletes a binimoal from a gset\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP The gset to be researched\&. 
+.br
+\fIb\fP The binomial which shall be resarched\&. 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file gset\&.c\&.
+.SS "\fBbinomial\fP gset_downedge_grlex (\fBgset\fPg)"
+
+.PP
+Returns the first facet binomial which is mis-marked with respect to the graded-lexicographic order\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP The gset g to be examined\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The first facet binomial which is mis-marked\&. 
+.RE
+.PP
+
+.PP
+Definition at line 184 of file gset\&.c\&.
+.SS "\fBbinomial\fP gset_downedge_lex (\fBgset\fPg)"
+
+.PP
+Returns the first facet binomial which is mis-marked with respect to the lexicographic order\&. A mis-marked binomial is a binomial that does not suit with the term order, but it is a facet binomial\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP The gset g to be examined\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The first facet binomial which is mis-marked\&. 
+.RE
+.PP
+
+.PP
+Definition at line 174 of file gset\&.c\&.
+.SS "void gset_eliminatezero (\fBgset\fPg)"
+
+.PP
+Eliminates '1-1' terms in a gset\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP The gset to be researched\&. 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file gset\&.c\&.
+.SS "void gset_facet_print (FILE *of, \fBgset\fPg)"
+
+.PP
+Displays facet binomials\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIof\fP The output stream\&. 
+.br
+\fIg\fP The given gset\&. 
+.RE
+.PP
+
+.PP
+Definition at line 133 of file gset\&.c\&.
+.SS "\fBgset\fP gset_flip (\fBgset\fPg1, \fBbinomial\fPb)"
+
+.PP
+Take a gset and one of its facet binomials and produce the new gset corresponding to the grobner cone which shares the given facet binomial\&. This function represents algorithm 5 in this thesis\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg1\fP A reduced Gröbner basis\&. 
+.br
+\fIb\fP A prescribed facet binomial\&. 
+.RE
+.PP
+
+.PP
+Definition at line 301 of file gset\&.c\&.
+.SS "void gset_free (\fBgset\fPg)"
+
+.PP
+Deletes a gset and all binomials in it\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP The gset to be deleted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file gset\&.c\&.
+.SS "void gset_init_print (FILE *of, \fBgset\fPg)"
+
+.PP
+Displays the initial/leading ideal of Gset\&. 
+.PP
+.nf
+     See definition 2.5 of the thesis for defintion
+     of a leading/initial ideal. 
+
+.fi
+.PP
+ 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIof\fP The output stream\&. 
+.br
+\fIg\fP The initial/leading ideal of the gset g to be printed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file gset\&.c\&.
+.SS "void gset_insert (\fBgset\fPg, \fBbinomial\fPb)"
+
+.PP
+Places binomials in gset in decreasing lexicographic order\&. (using binomial_compair(,) to determine relative order or binomials) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP The gset which gets the new binomial\&. 
+.br
+\fIb\fP The binomial to be inserted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 152 of file gset\&.c\&.
+.SS "int gset_isfacet (\fBgset\fPg, \fBbinomial\fPb)"
+
+.PP
+Checks whether b is known to be a facet or not\&. if not call \fBlp_isfacet()\fP to use a linear program to set b's facet flag\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP Gröbner basis to be researched\&. 
+.br
+\fIb\fP Binomial to be checked if it is a facet\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Interger-flag for facets\&. 
+.RE
+.PP
+
+.PP
+Definition at line 537 of file gset\&.c\&.
+.SS "int gset_isflippable (\fBgset\fPg, \fBbinomial\fPb)"
+
+.PP
+Checks if a binomial is flippable without linear programming\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP Gröbner basis to be researched\&. 
+.br
+\fIb\fP Binomial to be checked if it is a facet\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Interger-flag for facets\&. 
+.RE
+.PP
+
+.PP
+Definition at line 577 of file gset\&.c\&.
+.SS "\fBgset\fP gset_new ()"
+
+.PP
+Creates an empty gset, initializes all its pointers to null\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The new gset\&. 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file gset\&.c\&.
+.SS "int gset_only_degreecompatible (\fBgset\fPg)"
+
+.PP
+gset_only_degreecompatible Determines whether a Groebner Basis is the only degree compatible Groebner Basis or not\&. Example: In the 3 dimensional vector space, the facet of the Groebner Fan is the only one which contains the all-one vector\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP Gröbner basis to be researched\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 if it is the only degree compatible Gröbner basis and 0 if not\&. 
+.RE
+.PP
+
+.PP
+Definition at line 709 of file gset\&.c\&.
+.SS "void gset_print (FILE *of, \fBgset\fPg)"
+
+.PP
+Prints a gset\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIof\fP The output stream\&. 
+.br
+\fIg\fP The gset to be printed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file gset\&.c\&.
+.SS "void gset_puncture (\fBgset\fPG1, intpos)"
+
+.PP
+Punctures a linear code\&. Simply sets the all exponent-vectors from the gset to 0 at the certain position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIG1\fP Gröbner basis to be punctured\&. 
+.br
+\fIpos\fP Variable that will be punctured\&. 
+.RE
+.PP
+
+.PP
+Definition at line 748 of file gset\&.c\&.
+.SS "int gset_read (FILE *is, \fBgset\fPg)"
+
+.PP
+Reads a gset from an input stream\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP The input stream\&. 
+.br
+\fIg\fP All informaion stored in gset\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+TRUE(=0) if gset is read in successfully\&. 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file gset\&.c\&.
+.SS "void gset_rgb (\fBgset\fPg, int(*)(\fBmonomial\fP, \fBmonomial\fP)comp)"
+
+.PP
+Use buchberger's algorithm to transform g into groebner basis wrt the term order implemented by comp\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP The given ideal\&. 
+.br
+\fIcomp\fP Function pointer with standard monomial orders\&. 
+.RE
+.PP
+
+.PP
+Definition at line 425 of file gset\&.c\&.
+.SS "void gset_setfacets (\fBgset\fPg)"
+
+.PP
+Uses repeated calls to gset_isfacet to ensure that all facet flags are set\&. Also sets the flags nfacets, nelts and deg counters\&. These contain garbage except right after a call to set facets\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP Gröbner basis to be set\&. 
+.RE
+.PP
+
+.PP
+Definition at line 509 of file gset\&.c\&.
+.SS "int lp_isfacet (\fBgset\fPg, \fBbinomial\fPb)"
+
+.PP
+Sets up the linear program to check if a binomial is a facet\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg\fP Gröbner basis consisting the binomial\&. 
+.br
+\fIb\fP Binomial to be researched\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Interger-flag for facets\&. 
+.RE
+.PP
+
+.PP
+Definition at line 623 of file gset\&.c\&.
+.SS "void process_pair (\fBbinomial\fPb1, \fBbinomial\fPb2, \fBbinomial\fPDL, \fBbinomial\fPSL, \fBbinomial\fP *NL, int(*)(\fBmonomial\fP, \fBmonomial\fP)comp)"
+
+.PP
+Processes S-Pair defined by binomials b1 and b2\&. Taking S-Pair with respect to union of DL SL and *NL lists\&. If result is non-zero add result to NL list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIb1\fP Binomial\&. 
+.br
+\fIb2\fP Binomial\&. 
+.br
+\fIDL\fP Binomial\&. 
+.br
+\fISL\fP Binomial\&. 
+.br
+\fINL\fP List of binomials\&. 
+.br
+\fIcomp\fP Function pointer with standard monomial orders\&. 
+.RE
+.PP
+
+.PP
+Definition at line 476 of file gset\&.c\&.
+.SS "void remove_multiples (\fBbinomial\fPS, \fBbinomial\fP *L)"
+
+.PP
+Passes through a list L, removing all multiples of S encountered (except S if it is on the list)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIS\fP Binomial with multiples to be removed\&. 
+.br
+\fIL\fP List of binomials\&. 
+.RE
+.PP
+
+.PP
+Definition at line 246 of file gset\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int changed"
+
+.PP
+Definition at line 423 of file gset\&.c\&.
+.SS "int lptest =1"
+
+.PP
+Definition at line 534 of file gset\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.

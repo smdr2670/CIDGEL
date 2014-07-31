@@ -1,0 +1,70 @@
+.TH "bin_tag" 3 "Thu Jul 31 2014" "Version 1.0" "CIDGEL" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bin_tag \- 
+.PP
+A structure to represent binomials\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <binomial\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int * \fBexps1\fP"
+.br
+.ti -1c
+.RI "int * \fBexps2\fP"
+.br
+.ti -1c
+.RI "int * \fBE\fP"
+.br
+.ti -1c
+.RI "int \fBff\fP"
+.br
+.ti -1c
+.RI "int \fBbf\fP"
+.br
+.ti -1c
+.RI "\fBbinomial\fP \fBnext\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A structure to represent binomials\&. 
+.PP
+Definition at line 129 of file binomial\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int bin_tag::bf"
+Tells if there is a monomial or binomial \fBbf\fP\&. 
+.PP
+Definition at line 134 of file binomial\&.h\&.
+.SS "int* bin_tag::E"
+Points to exps1 and exps2 and is used for allocating and deallocating \fBE\fP\&. 
+.PP
+Definition at line 132 of file binomial\&.h\&.
+.SS "int* bin_tag::exps1"
+Stores the exponent vector of the first monomial \fBexps1\fP\&. 
+.PP
+Definition at line 130 of file binomial\&.h\&.
+.SS "int* bin_tag::exps2"
+Stores the exponent vector of the second monomial \fBexps2\fP\&. 
+.PP
+Definition at line 131 of file binomial\&.h\&.
+.SS "int bin_tag::ff"
+Flag which shows if a binomial is a facet binomial or not \fBff\fP\&. 
+.PP
+Definition at line 133 of file binomial\&.h\&.
+.SS "\fBbinomial\fP bin_tag::next"
+Pointer to next binomial \fBnext\fP\&. 
+.PP
+Definition at line 135 of file binomial\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CIDGEL from the source code\&.
