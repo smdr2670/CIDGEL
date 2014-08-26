@@ -1,0 +1,370 @@
+\documentclass{beamer}
+\usepackage{beamerthemelined} 
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+
+\usepackage{amsmath,amsfonts,amssymb}
+
+\usepackage[ngerman]{babel}
+
+%\usepackage[UTF8]{inputenc}
+
+\setbeamertemplate{footline}[frame number]
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C++,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+  tabsize=2,
+}
+
+%\usepackage{ stmaryrd }
+
+%\usetheme{Boadilla} % Pretty neat, soft color.
+%\usetheme{default}
+%\usetheme{Warsaw}
+%\usetheme{Bergen} % This template has nagivation on the left
+%\usetheme{Frankfurt} % Similar to the default 
+%with an extra region at the top.
+%\usecolortheme{seahorse} % Simple and clean template
+%\usetheme{Darmstadt} % not so good
+% Uncomment the following line if you want %
+% page numbers and using Warsaw theme%
+ %\setbeamertemplate{footline}[page number]
+%\setbeamercovered{transparent}
+\setbeamercovered{invisible}
+% To remove the navigation symbols from 
+% the bottom of slides%
+\setbeamertemplate{navigation symbols}{} 
+%
+
+\usepackage{graphicx}
+%\usepackage{bm}         % For typesetting bold path (not \mathbold)
+%\logo{\includegraphics[height=0.6cm]{yourlogo.eps}}
+%
+\title[Gröbner-Fächer für lineare Codes]{Gröbner-Fächer für lineare Codes}
+\author{Daniel Rembold}
+\institute[TUHH]
+{
+Technische Universit{\"a}t Hamburg Harburg \\
+\medskip
+{\emph{daniel.rembold@tuhh.de}}
+}
+\date{\today}
+% \today will show current date. 
+% Alternatively, you can specify a date.
+%
+
+
+\graphicspath{%
+    {converted_graphics/}% inserted by PCTeX
+    {/}% inserted by PCTeX
+}
+\begin{document}
+% \renewcommand{\name}{Abbildung}
+%
+\begin{frame}
+\titlepage
+\end{frame}
+%
+
+\begin{frame}
+\frametitle{Inhaltsverzeichnis}
+
+\begin{enumerate}
+			\item Einleitung \\
+
+	      	\item Mathematische Grundlagen \\
+	      	
+	      	\item Aufzählen von Gröbner-Fächern  \\ 
+	      		
+	      	\item Ergebnisse  \\ 
+	  
+	      	\item Fazit \\
+
+		    \item Vorführung
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Einleitung}
+
+\begin{frame}
+\frametitle{Motivation}
+
+\begin{itemize}
+\item
+Gröbnerbasen 
+
+\item
+
+
+
+\end{itemize}
+
+
+
+
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Mathematische Grundlagen}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Monome }
+
+\begin{block}{Monom}
+\begin{itemize}
+\item Produkt von Variablen über ein endliches Feld $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ 
+\item Schreibweise $m= X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$ und $u_i \in \mathbb{N}_{0}  $
+\end{itemize}
+
+\end{block}
+
+Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $. 
+
+
+
+
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{frame}[fragile]
+\frametitle{Termordnung}
+% --  Kommentar 
+% --  Zu erst wird die Definition von Termordnung erklärt , dann werden die verschieden arten
+\begin{block}{Termordnung $>$}
+\begin{itemize}
+\item Relation $>$ zu der Menge von allen Monomen in $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ 
+\end{itemize}
+
+
+
+\end{block}
+
+\begin{block}{Termordnung }
+\begin{itemize}
+\item Lexikographische Ordnung $>_{lex}$
+\item grad $>_{grlex}$
+\item Ordnung mit Gewichtsvektor $c = (c_1, \ldots , c_n ) \in \mathbb{R}^{n}$
+\end{itemize}
+
+
+
+\end{block}
+
+
+\end{frame}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\begin{frame}[fragile]
+\frametitle{Leitterm}
+
+\begin{block}{Leitterm \textsc{LT}$(f)$ }
+\begin{itemize}
+\item Polynom $p \in  \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right] $  besitzt Term höchster Ordnung in Bezug auf $>$
+\end{itemize}
+
+\end{block}
+
+
+\begin{block}{Beispiel}
+Sei $f = x^{2}+3xyz+y^{3} $
+\begin{itemize}
+
+\item lex-Order : $f = \underline{x^{2}} + 3xyz + y^{3}  $
+\item grlex-Order :  $f = \underline{3xyz} + y^{3} + x^{2}  $
+\item $\left(1,2,1\right)$ :  $f = \underline{y^{3}} + 3xyz + x^{2}  $
+\end{itemize}
+
+\end{block}
+
+
+\end{frame}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{frame}[fragile]
+\frametitle{Ideale}
+
+\begin{block}{Ideal }
+\begin{itemize}
+\item Kollektion von Polynomen $f_{1}, \dots , f_{s}$ : \\
+\[ \langle f_{1}, \dots , f_{s} \rangle = \left\lbrace  \sum_{i=1}^s h_{i}f_{i} \mid h_{1}, \dots , h_{s} \in \mathbb{K}\left[X_{1}, \dots, X_{n}\right] \right\rbrace. \] 
+ 
+\end{itemize}
+
+\end{block}
+
+\begin{block}{Beispiel}
+Sei $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ und $f=x^{2}y+x^{2}+y^{2}+xy+x$ \\
+Dann gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
+
+\end{block}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Divisionsalgorithmus}
+
+
+
+
+	
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]
+\frametitle{NVIDIA-Template}
+
+\begin{itemize}
+\item
+Zerlegung der Matrix in Bl\"ocken
+\item
+Verwendung von lokalem Speicher 
+\end{itemize}
+
+
+
+
+
+\end{frame}
+
+%  % %  % % % % % % % % % %  % % %
+
+\begin{frame}[fragile]
+\frametitle{Gröbner Basis}
+
+
+\end{frame}
+
+
+
+% % % % % % % % % % % % % % % % % % % % %
+\begin{frame}[fragile]
+\frametitle{Gröbner Fächer}
+
+
+
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Torische Ideale}
+
+
+
+\end{frame}
+% -------------------------------------------------------- % % %
+\section{Aufzählen von Gröbner-Fächern}
+
+
+\begin{frame}
+\frametitle{BLABLA}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Performancemessung auf ATI und NVIDIA}
+
+
+\end{frame}
+
+
+\section{Fazit}
+
+\begin{frame}
+\frametitle{Vergleich}
+
+
+	
+\end{frame}
+
+
+\begin{frame}
+\frametitle{M\"ogliche Verbesserungen}
+
+
+ 
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Quellen}
+
+
+\footnotesize{
+\begin{thebibliography}{99}
+ \bibitem[Label1, 2010]{key1} University of Bristol
+ \newblock Optimizing OpenCL performance
+ \newblock \url{http://www.cs.bris.ac.uk/home/simonm/workshops/OpenCL_lecture3.pdf} 
+\end{thebibliography}
+}
+
+
+
+\footnotesize{
+\begin{thebibliography}{99}
+ \bibitem[Label1, 2010]{key1}NVIDIA 
+ \newblock OpenCL SDK Code Samples
+ \newblock \url{https://developer.nvidia.com/opencl} 
+\end{thebibliography}
+}
+
+
+\footnotesize{
+\begin{thebibliography}{99}
+ \bibitem[Label1, 2010]{key1} Vasily Volkov
+(UC Berkeley , September 22, 2010)
+ \newblock Better Performance at Lower Occupancy 
+ \newblock \url{http://www.cs.berkeley.edu/~volkov/volkov10-GTC.pdf} 
+\end{thebibliography}
+}
+
+
+
+
+
+\end{frame}
+ 
+ 
+ 
+\begin{frame}
+\centerline{Vielen Dank f{\"u}r eure Aufmerksamkeit!}
+\end{frame}
+% End of slides
+\end{document}
