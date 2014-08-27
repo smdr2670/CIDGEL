@@ -1,4 +1,16 @@
 \frametitle{Torische Ideale}
 
+\begin{itemize}
+\item Obermenge von Code-Idealen
+\item Besteht nur aus Binomen
+\end{itemize}
+
+\begin{block}{Torisches Ideal}
+Gegeben seien $A =\left[a_{1},\dots, a_{n}  \right] \in \mathbb{Z}^{d \times n } $ und $u \in \mathbb{Z}^{n}$ zerlegbar in $u^{+}$ und $u^{-}$, dann ist das torische Ideal $I_{A}$ definiert durch \\
+~\\
+\centering
+$ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ker \left(  A \right) \rangle . $
+
+\end{block}
 
 

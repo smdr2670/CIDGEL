@@ -1,19 +1,46 @@
 \documentclass{beamer}
+\usepackage[UTF8]{inputenc}
+
 \usepackage{beamerthemelined} 
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{epstopdf}
-
 \usepackage{amsmath,amsfonts,amssymb}
 
-\usepackage[ngerman]{babel}
 
-%\usepackage[UTF8]{inputenc}
+
+
+\usepackage{algorithm}% http://ctan.org/pkg/algorithms
+\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+
+\newcommand{\Input}{\item[\algorithmicinput]}
+\newcommand{\algorithmicinput}{\textbf{Input:}}
+
+\newcommand{\Output}{\item[\algorithmicoutput]}
+\newcommand{\algorithmicoutput}{\textbf{Output:}}
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+% \usepackage{courier}
+% \usepackage[default,osfigures,scale=0.95]{opensans}
+
+\usepackage{subcaption}
+\usepackage{caption}
+\usetikzlibrary{backgrounds}
+
+%\usepackage[ngerman]{babel}
+
+%% Für PC Windows
+%\usepackage[ansinew]{inputenc}
+
 
 \setbeamertemplate{footline}[frame number]
 
+% Syntax für C
 \lstdefinestyle{customc}{
   belowcaptionskip=1\baselineskip,
   breaklines=true,
@@ -31,6 +58,7 @@
 
 %\usepackage{ stmaryrd }
 
+\usetheme{Madrid}
 %\usetheme{Boadilla} % Pretty neat, soft color.
 %\usetheme{default}
 %\usetheme{Warsaw}
@@ -164,7 +192,7 @@ Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $.
 \begin{itemize}
 \item Lexikographische Ordnung $>_{lex}$
 \item grad $>_{grlex}$
-\item Ordnung mit Gewichtsvektor $c = (c_1, \ldots , c_n ) \in \mathbb{R}^{n}$
+\item Ordnung mit Gewichtsvektor $c = (c_1, \ldots , c_n ) \in \mathbb{R}^{n}_{+}$
 \end{itemize}
 
 
@@ -221,8 +249,30 @@ Dann gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
 \end{frame}
 
 \begin{frame}
-\frametitle{Divisionsalgorithmus}
+\frametitle{Divisionsalgorithmus (1)}
 
+
+
+\begin{itemize}
+\item Notwendig zum Lösen des Idealzugehörigkeitsproblems
+
+
+\end{itemize}
+
+\begin{block}{Ziel des Algorithmus}
+Polynom g durch Ideal $ I = \langle f_{1}, \dots , f_{s} \rangle  $ teilen, so dass 
+$ g = a_{1}f_{1} + \ldots + a_{s}f_{s} + r ,~~~ a_{i},g,I,r \in \mathbb{K}\left[X_{1}, \dots, X_{n}\right]  $
+\end{block}
+
+~\\
+
+Sei Polynom $p$ und Ideal $I$  
+
+\begin{itemize}
+\item Wenn p \% I = 0, dann gilt $ p \in I$
+
+
+\end{itemize}
 
 
 
@@ -232,25 +282,56 @@ Dann gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
 
 
 \begin{frame}[fragile]
-\frametitle{NVIDIA-Template}
+\frametitle{Divisionsalgorithmus (2)}
 
+
+
+
+\begin{algorithm}[H]
+\caption{Divisionsalgorithmus (Header) }
+
+\begin{algorithmic}[1]
+
+\Require Basis $I = \langle f_{1}, \dots, f_{m}\rangle$ of nonzero polynomials \textbf{and} ~~~~~~~~~~~~~~~~~~~~ a fixed termorder \textsc{LT}  
+\Ensure $r=0$ \textbf{or} none of the terms in $r$ are divisible by $ LT_{\leq}\left( f_{1}\right) , \dots , LT_{\leq} \left( f_{m}\right) $
+
+%\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+% Hier Beispiel mit verdrehten Idealen zeigen
 \begin{itemize}
-\item
-Zerlegung der Matrix in Bl\"ocken
-\item
-Verwendung von lokalem Speicher 
+\item Reihenfolge der Polynome in $I$ beeinflusst Ergebnis
+\item $r \neq 0$ möglich, obwohl $p \in I$ 
 \end{itemize}
-
-
-
 
 
 \end{frame}
 
+
+
 %  % %  % % % % % % % % % %  % % %
 
 \begin{frame}[fragile]
-\frametitle{Gröbner Basis}
+\frametitle{Gröbnerbasis (1)}
+%Kommentar : B
+
+
+\begin{block}{Gröbnerbasis  }
+Sei Termordnung $>$ und Ideal $I$, dann hat Gröbnerbasis $G = \{f_{1}, \ldots, f_{m} \}$ (in Bezug auf $>$) von $I$ die Eigenschaft: 
+\begin{itemize}
+\item Von jedem Polynom $p \in I$ ist $\textsc{LT}_{>}(p)$ teilbar durch $\textsc{LT}_{>}(f_{i})$  
+\end{itemize} 
+\end{block}
+
+~\\
+\begin{itemize}
+\item Divisionsrest eindeutig bestimmt und unabhängig von Reihenfolge
+~\\
+\item Gröberbasis aus jedem Ideal mit Hilfe des Buchberger-Algorithmus und einer festen Termordnung 
+\end{itemize}
+
 
 
 \end{frame}
@@ -258,9 +339,20 @@ Verwendung von lokalem Speicher
 
 
 % % % % % % % % % % % % % % % % % % % % %
-\begin{frame}[fragile]
-\frametitle{Gröbner Fächer}
 
+\begin{frame}[fragile]
+\frametitle{Gröbnerbasis (2)}
+%Kommentar 
+
+\begin{itemize}
+\item Gröbernbasen sind nicht eindeutig
+
+\item Reduzierte Gröbnerbasen jedoch eindeutig für Ideale
+\end{itemize}
+
+\begin{block}{Reduzierte Gröbnerbasis}
+Alle Leitterme von Gröbnerbasis G in Bezug auf Termordnung $>$ monisch und relativ prim zueinander 
+\end{block}
 
 
 
@@ -268,9 +360,182 @@ Verwendung von lokalem Speicher
 \end{frame}
 
 
+
+
+
+
+
+
+
+
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{frame}[fragile]
+\frametitle{Gröbner-Fächer}
+%Kommentar: Text der Bachelorarbeit
+\begin{itemize}
+\item Unendlich viele Termordnungen, endlich viele reduzierte Gröbnerbasen
+
+\end{itemize}
+
+\begin{block}{Gröbner-Fächer}
+\begin{itemize}
+\item Vielflächiges Komplex welches Kegel im $\mathbb{R}^{n}_{+}$ enthält
+\item Flächen werden durch Ebenenungleichungen der Polynome bestimmt 
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+% % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\begin{frame}[fragile]
+\frametitle{Beispiel Gröbner-Fächer (1)}
+ Sei 
+ \begin{enumerate}
+ \item $I = \langle x^{2}-z,~y-x  \rangle \in \mathbb{K}\left[x,y,z\right]  $
+ \item $G_{>_{lex}} = \{ \underline{y^{2}}-z,~\underline{x}-y  \} $ 
+ \item $\textbf{w}= (a,b,c) \in \mathbb{R}^{3}_{+} $
+\end{enumerate}
+ 
+~\\
+\begin{itemize}
+\item $w \in G_{>_{lex}}$ genau dann, wenn 
+~\\
+~\\
+\begin{enumerate}
+\item $\left(0,2,0\right) \cdot \left(a,b,c\right) \geq \left(0,0,1\right) \cdot \left(a,b,c\right) \vee 2b \geq c  $
+~\\
+~\\
+\item $\left(1,0,0\right) \cdot \left(a,b,c\right) \geq \left(0,1,0\right) \cdot \left(a,b,c\right) \vee a \geq b $ 
+\end{enumerate}
+\end{itemize}
+
+\end{frame}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{frame}[fragile]
+\frametitle{Beispiel Gröbner-Fächer (2)}
+
+\begin{center}
+
+
+\begin{figure}
+\caption{Gröbner-Kegel für $G_{>_{lex}}$}
+
+\begin{tikzpicture}[join=round,scale=0.8]
+    \tikzstyle{conefill} = [fill=blue!20,fill opacity=0.8]
+    \tikzstyle{ann} = [fill=white,font=\footnotesize,inner sep=1pt]
+    \tikzstyle{ghostfill} = [fill=white]
+    \tikzstyle{ghostdraw} = [draw=black!50]
+    
+    \draw[arrows=->,line width=.4pt](0,0,0)--(0,0,5); %Z_achse
+    \draw[arrows=->,line width=.4pt](0,0,0)--(0,5,0); %Y-ACHSE
+    \draw[arrows=->,line width=.4pt](0,0,0)--(5,0,0); %X-ACHSE
+    %\draw[arrows=<-,line width=.4pt](.42,-.767)--(4,-2);
+    
+    \path (5,0,0) node[below] {$b$} (0,0,5) node[above] {$a$} (0,5,0) node[left] {$c$};
+    
+% letzte Koordinate ist A!!!
+% zweite Koordinate ist C!!!
+% dritte Koordinate ist B!!!
+  
+\filldraw[conefill](0,0,0)--(0,0,4)--(1,2,1)--cycle;
+\filldraw[conefill](1,2,1)--(0,0,4)--(2,0,2)--cycle;
+%\filldraw[conefill](1,2,1)--(0,0,0)--(2,0,2)--cycle;
+
+\draw [opacity=0.2] (0,0,0) -- (2,0,2) ;
+ 
+   
+\end{tikzpicture}
+
+\end{figure}
+
+\end{center}
+
+
+
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % 
+\begin{frame}[fragile]
+\frametitle{Beispiel Gröbner-Fächer (3)}
+
+\begin{center}
+
+
+\begin{figure}
+\caption{Kompletter Gröbner-Fächer}
+
+\begin{tikzpicture}[join=round,scale=0.8]
+    \tikzstyle{conefill} = [fill=blue!20,fill opacity=0.8]
+    \tikzstyle{ann} = [fill=white,font=\footnotesize,inner sep=1pt]
+    \tikzstyle{ghostfill} = [fill=white]
+    \tikzstyle{ghostdraw} = [draw=black!50]
+    
+    \draw[arrows=->,line width=.4pt](0,0,0)--(0,0,5); %Z_achse
+    \draw[arrows=->,line width=.4pt](0,0,0)--(0,5,0); %Y-ACHSE
+    \draw[arrows=->,line width=.4pt](0,0,0)--(5,0,0); %X-ACHSE
+    %\draw[arrows=<-,line width=.4pt](.42,-.767)--(4,-2);
+    
+    \path (5,0,0) node[below] {$b$} (0,0,5) node[above] {$a$} (0,5,0) node[left] {$c$};
+   
+% erste Koordinate ist B!!! 
+% zweite Koordinate ist C!!!   
+% dritte Koordinate ist A!!!
+
+
+% äußere Flächen!
+
+\filldraw[conefill](0,0,0)--(0,4,0)--(0,0,4)--cycle;
+\filldraw[conefill](0,0,0)--(4,0,0)--(0,0,4)--cycle;
+\filldraw[conefill](0,0,0)--(4,0,0)--(0,4,0)--cycle;
+
+% untenfläche
+\filldraw[conefill](0,0,0)--(0,0,4)--(2,0,2)--cycle;
+\filldraw[conefill](0,0,0)--(4,0,0)--(2,0,2)--cycle;
+
+%
+\filldraw[conefill](0,0,4)--(2,0,2)--(1,2,1)--cycle;
+\filldraw[conefill](4,0,0)--(2,0,2)--(1,2,1)--cycle;
+
+\filldraw[conefill](4,0,0)--(1,2,1)--(0,4,0)--cycle;
+\filldraw[conefill](0,0,4)--(1,2,1)--(0,4,0)--cycle;
+
+% zur Übersichtlichkeit die gerade im "inneren" des Cones
+\draw [opacity=0.2] (0,0,0) -- (1,2,1) ;
+\end{tikzpicture}
+
+
+\end{figure}
+
+\end{center}
+
+
+\end{frame}
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % %
+
 \begin{frame}[fragile]
 \frametitle{Torische Ideale}
 
+\begin{itemize}
+\item Obermenge von Code-Idealen
+\item Besteht nur aus Binomen
+\end{itemize}
+
+\begin{block}{Torisches Ideal}
+Gegeben seien $A =\left[a_{1},\dots, a_{n}  \right] \in \mathbb{Z}^{d \times n } $ und $u \in \mathbb{Z}^{n}$ zerlegbar in $u^{+}$ und $u^{-}$, dann ist das torische Ideal $I_{A}$ definiert durch \\
+~\\
+\centering
+$ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ker \left(  A \right) \rangle . $ 
+
+\end{block}
 
 
 \end{frame}
