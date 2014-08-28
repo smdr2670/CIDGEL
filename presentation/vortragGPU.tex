@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{amsmath,amsfonts,amssymb}
+\usepackage{upgreek}
 
 
 
@@ -542,33 +543,132 @@ $ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ke
 % -------------------------------------------------------- % % %
 \section{Aufzählen von Gröbner-Fächern}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \begin{frame}
-\frametitle{BLABLA}
+\frametitle{Facet Binomials }
+
+\begin{itemize}
+\item Gröbner-Fächer als Graph
+~\\
+\begin{itemize}
+\item Gröbnerbasen als Knoten
+\item Gröbnerbasen adjazent wenn im Gröbner-Fächer benachbart
+\end{itemize}
+\end{itemize}
+
+\begin{block}{Facet Binomials}
+Bestimmen Grenzen zu anderen Gröbnerbasen \\
+Sei $x^{\upalpha_{k}}-x^{\upbeta_k} \in \mathcal{G}_c~$, $\mathcal{G}_c$ Gröbnerbasis mit Gewichtsvektor $c$\\
+$x^{\upalpha_{k}}-x^{\upbeta_k}$ ist Facet binomial wenn ein Vektor $u \in \mathbb{R}$ folgendes erfüllt : \\
+
+\begin{itemize}
+\item
+$ \lbrace \upalpha_{i} \cdot u > \upbeta_{i} \cdot u : i = 1, \dots , t, i \neq k \rbrace  
+$
+\item
+$ \lbrace \upbeta_{k} \cdot u > \upalpha_{k} \cdot u \rbrace .$
+\end{itemize}
+
+\end{block}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Performancemessung auf ATI und NVIDIA}
+\frametitle{Beispiel Facet Binomials }
+
+\begin{itemize}
+\item Sei $\mathcal{G} = \{x_1 - x_5,~x_{2}^{2}-1,~x_{2}x_{4}-x_{5}x_{6},~x_{2}x_{6}-x_{4}x_{5},~x_{3}-x_{5},~x_{4}^{2}-1,~x_{4}x_{5}x_{6}-x_{2},~x_{5}^{2}-1,~x_{6}^{2}-1  \}~$
+\item Prüfe ob $x_{2}x_{4}-x_{5}x_{6}~$ ein facet binomial ist mit linearer Programmierung
+\end{itemize}
+
+ \[
+ 	\begin{array}{lrcl}
+ 	\textrm{ }   & Ax    & =    & b   \\
+ 	\textrm{subject to}  & x     & \geq & 0
+ 			    
+ 	\end{array}
+ \]
+ 
+\begin{enumerate}
+\item  $b = {\left(0,1,0,1,-1,-1\right)}^{T}$
+\item  \[
+ A =
+ \begin{pmatrix}
+ 1  & 0 & 0  & 0 & 0 & 0  & 0 & 0\\ 
+ 0  & 2 & 1  & 0 & 0 & -1 & 0 & 0\\  
+ 0  & 0 & 0  & 1 & 0 & 0  & 0 & 0\\ 
+ 0  & 0 & -1 & 0 & 2 & 1  & 0 & 0\\
+ -1 & 0 & -1 & 1 & 0 & 1  & 2 & 0\\
+ 0  & 0 & 1  & 0 & 0 & 1  & 0 & 2
+ \end{pmatrix} 
+ \] 
+\end{enumerate}
 
 
 \end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
 \section{Fazit}
 
 \begin{frame}
-\frametitle{Vergleich}
+\frametitle{Traversieren von Gröbnerbasen}
+\begin{itemize}
+\item Gröberbasis erhalten durch andere Gröbnerbasis
+\item Facet Binomial "umdrehen" (flip)
+\end{itemize}
 
+
+\begin{algorithm}[H]
+\caption{Local change of reduced Gröbner bases in $I_A$ }
+\label{alg:flip}
+\begin{algorithmic}[1]
+
+\Input
+Reduced Gröbner basis $ \mathcal{G} $ of $I_A$ \textbf{and}
+
+    A prescribed facet binomial $ \underline{x}^{a}_{i} - x^{b}_{i} \in \mathcal{G} $
+%\Comment {The weight vector inducing $\mathcal{G}$ is generic and the leading terms are underlined}
+\Output The reduced Gröbner basis adjacent to $\mathcal{G}$ in which $ \underline{x}^{b}_{i} - x^{a}_{i} $ is a facet binomial.
+
+
+%\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{itemize}
+\item Keine expliziten Termordnung nötig
+
+\end{itemize}
 
 	
 \end{frame}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\begin{frame}
-\frametitle{M\"ogliche Verbesserungen}
+\begin{frame}[fragile]
+\frametitle{Breitensuche}
 
 
+\begin{algorithm}[H]
+\caption{Enumerating the edge graph of the Gröbner fan via breath-first search}
+\label{alg:breath}
+\begin{algorithmic}[1]
+
+\Input
+Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
+\Output All reduced Gröbner bases of $I_A$, (all vertices of the edge graph)
+
+%\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{itemize}
+\item Einfacher und intuitiver Algorithmus
+\item Alle Gröbnerbasen müssen für den Vergleich gespeichert werden
+\end{itemize}
  
 \end{frame}
 
@@ -576,12 +676,28 @@ $ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ke
 
 
 
+% % % % % % % % % % % % % % % % % % % % % % % % %
+
+\begin{frame}[fragile]
+\frametitle{Tiefensuche}
+
+\begin{itemize}
+\item Gröbner-Fächer mit umgekehrter Tiefensuche nummerieren
+\item Ergebnis ist ein gerichter Subgraph $\longrightarrow$ Umgekehrter Suchbaum 
+\item Nachteil von Breitensuche kompensiert
+
+\end{itemize}
+
+\begin{block}{Umgekehrter Suchbaum}
+Azyklischer Graph mit einer eindeutigen Senke (bzgl. einer festen Termordnung)
+\end{block}
+ 
+\end{frame}
 
 
 
 
-
-
+% % % % % % % % % % % % % % % % % % % % % % % % %
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  27 AUG 2014 17:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  28 AUG 2014 13:13
 entering extended mode
 **vortragGPU.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragGPU.tex
@@ -1046,6 +1046,13 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 ))
+(C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\was\upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
@@ -1240,20 +1247,20 @@ beamerouterthemeinfolines.sty
 Package: beamerouterthemeinfolines 2012/10/16  (rcs-revision 51a8c72084af)
 ))
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragGPU.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1304,7 +1311,7 @@ LaTeX Font Info:    ... okay on input line 102.
 \everyMPtoPDFconversion=\toks52
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 102.
+Package hyperref Info: Link coloring OFF on input line 103.
 
 (E:\Programme\MikTex\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1314,65 +1321,65 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count193
 )
-LaTeX Info: Redefining \ref on input line 102.
-LaTeX Info: Redefining \pageref on input line 102.
-LaTeX Info: Redefining \nameref on input line 102.
+LaTeX Info: Redefining \ref on input line 103.
+LaTeX Info: Redefining \pageref on input line 103.
+LaTeX Info: Redefining \nameref on input line 103.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragGPU.out)
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragGPU.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 102.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 103.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 102.
-\symnumbers=\mathgroup6
-\sympureletters=\mathgroup7
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 103.
+\symnumbers=\mathgroup7
+\sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 102.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 102.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 102.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 102.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 102.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 103.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 102.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 102.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 102.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 103.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 102.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 102.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 102.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 103.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 102.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 102.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 103.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 102.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 103.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 102.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 102.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 102.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 102.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 102.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 102.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 102.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 103.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 103.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
-02.
+03.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-102.
+103.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 102.
+ut line 103.
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\di
 cts\translator-basic-dictionary\translator-basic-dictionary-English.dict
@@ -1400,7 +1407,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 cts\translator-theorem-dictionary\translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 102.
+LaTeX Info: Redefining \includegraphics on input line 103.
 \c@lstlisting=\count194
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -1408,7 +1415,7 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragGPU.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 107.
+(Font)              size <5> substituted on input line 108.
 
 [1
 
@@ -1494,23 +1501,28 @@ OT1/cmss/m/n/10.95 are di-vis-i-ble by
 
 ] [19
 
-] [20
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragGPU.vrb) [20
 
-] [21
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragGPU.vrb) [21
+
+]
+[22
 
  <C:/Users/Daniel/AppData/Roaming/MiKTeX/2.9/tex/latex/beamer/base/art/beameric
-onarticle.pdf>] [22
+onarticle.pdf>] [23
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 635.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 635.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 748.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 748.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragGPU.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 635.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 635.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 748.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 748.
 Package rerunfilecheck Info: File `vortragGPU.out' has not changed.
 (rerunfilecheck)             Checksum: 73D1F32BB8322FB5A3ED332A6A937DA7;221.
 
@@ -1518,14 +1530,14 @@ Package rerunfilecheck Info: File `vortragGPU.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 635.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 748.
  ) 
 Here is how much of TeX's memory you used:
- 24053 strings out of 493921
- 473880 string characters out of 3150487
- 529554 words of memory out of 3000000
- 26724 multiletter control sequences out of 15000+200000
- 20398 words of font info for 74 fonts, out of 3000000 for 9000
+ 24151 strings out of 493921
+ 475453 string characters out of 3150487
+ 530785 words of memory out of 3000000
+ 26805 multiletter control sequences out of 15000+200000
+ 23262 words of font info for 84 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  56i,16n,65p,418b,758s stack positions out of 5000i,500n,10000p,200000b,50000s
 <E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><E:/Programme
@@ -1533,20 +1545,21 @@ Here is how much of TeX's memory you used:
 pe1/public/amsfonts/cm/cmmi10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfo
 nts/cm/cmmi12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 ><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/Programme/Mi
-kTex/fonts/type1/public/amsfonts/cm/cmss10.pfb><E:/Programme/MikTex/fonts/type1
-/public/amsfonts/cm/cmss12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts
-/cm/cmss8.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmss9.pfb><E:
-/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><E:/Programme/Mik
-Tex/fonts/type1/public/amsfonts/cm/cmssi10.pfb><E:/Programme/MikTex/fonts/type1
-/public/amsfonts/cm/cmssi12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfont
-s/cm/cmssi8.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-<E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmsy6.pfb><E:/Programme/Mik
-Tex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Programme/MikTex/fonts/type1/p
-ublic/amsfonts/cm/cmtt9.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb>
-Output written on vortragGPU.pdf (22 pages, 238926 bytes).
+kTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Programme/MikTex/fonts/type1/
+public/amsfonts/cm/cmss10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/
+cm/cmss12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmss8.pfb><E:
+/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmss9.pfb><E:/Programme/MikTex
+/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><E:/Programme/MikTex/fonts/type1/p
+ublic/amsfonts/cm/cmssi10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/
+cm/cmssi12.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmssi8.pfb><
+E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/Programme/Mik
+Tex/fonts/type1/public/amsfonts/cm/cmsy6.pfb><E:/Programme/MikTex/fonts/type1/p
+ublic/amsfonts/cm/cmsy8.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm
+/cmtt9.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/euler/eurm10.pfb><E
+:/Programme/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on vortragGPU.pdf (23 pages, 261789 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
