@@ -1,4 +1,5 @@
 \documentclass{beamer}
+\usepackage{etex}
 \usepackage[UTF8]{inputenc}
 
 \usepackage{beamerthemelined} 
@@ -9,6 +10,7 @@
 \usepackage{epstopdf}
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{upgreek}
+
 
 
 
@@ -24,7 +26,7 @@
 
 
 
-\usepackage{tikz}
+\usepackage{tikz,pgfplots}
 \usetikzlibrary{decorations.markings}
 % \usepackage{courier}
 % \usepackage[default,osfigures,scale=0.95]{opensans}
@@ -33,10 +35,9 @@
 \usepackage{caption}
 \usetikzlibrary{backgrounds}
 
-%\usepackage[ngerman]{babel}
-
-%% Für PC Windows
-%\usepackage[ansinew]{inputenc}
+\usepackage{subcaption}
+\usepackage{caption}
+\usetikzlibrary{backgrounds}
 
 
 \setbeamertemplate{footline}[frame number]
@@ -120,7 +121,7 @@ Technische Universit{\"a}t Hamburg Harburg \\
 	      		
 	      	\item Ergebnisse  \\ 
 	  
-	      	\item Fazit \\
+	      	\item Mögliche Verbesserungen \& Fazit \\
 
 		    \item Vorführung
 \end{enumerate}
@@ -130,15 +131,22 @@ Technische Universit{\"a}t Hamburg Harburg \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Einleitung}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
 \begin{frame}
 \frametitle{Motivation}
 
 \begin{itemize}
 \item
-Gröbnerbasen 
+Viele Anwendungen der Gröberbasen basieren auf Gröbner-Fächer
 
 \item
+Nützlich für Idealzugehörigkeitsproblem und polynomiale Gleichungssysteme
 
+\item 
+Kompletter Gröbner-Fächer nicht immer nötig
 
 
 \end{itemize}
@@ -157,6 +165,8 @@ Gröbnerbasen
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Monome}
+
 \begin{frame}[fragile]
 \frametitle{Monome }
 
@@ -167,7 +177,8 @@ Gröbnerbasen
 \end{itemize}
 
 \end{block}
-
+~\\
+~\\
 Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $. 
 
 
@@ -176,8 +187,10 @@ Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $.
 \end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Termordnung}
+
 \begin{frame}[fragile]
-\frametitle{Termordnung}
+\frametitle{Termordnung (1)}
 % --  Kommentar 
 % --  Zu erst wird die Definition von Termordnung erklärt , dann werden die verschieden arten
 \begin{block}{Termordnung $>$}
@@ -189,7 +202,7 @@ Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $.
 
 \end{block}
 
-\begin{block}{Termordnung }
+\begin{block}{Termordnung (2) }
 \begin{itemize}
 \item Lexikographische Ordnung $>_{lex}$
 \item grad $>_{grlex}$
@@ -203,6 +216,9 @@ Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $.
 
 \end{frame}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\subsection{Leitterm}
+
+
 \begin{frame}[fragile]
 \frametitle{Leitterm}
 
@@ -228,6 +244,8 @@ Sei $f = x^{2}+3xyz+y^{3} $
 
 \end{frame}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Ideale}
+
 \begin{frame}[fragile]
 \frametitle{Ideale}
 
@@ -248,7 +266,8 @@ Dann gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
 
 
 \end{frame}
-
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\subsection{Divisionsalgorithmus}
 \begin{frame}
 \frametitle{Divisionsalgorithmus (1)}
 
@@ -313,6 +332,8 @@ Sei Polynom $p$ und Ideal $I$
 
 
 %  % %  % % % % % % % % % %  % % %
+\subsection{Gröbnerbasis}
+
 
 \begin{frame}[fragile]
 \frametitle{Gröbnerbasis (1)}
@@ -340,6 +361,8 @@ Sei Termordnung $>$ und Ideal $I$, dann hat Gröbnerbasis $G = \{f_{1}, \ldots, 
 
 
 % % % % % % % % % % % % % % % % % % % % %
+\subsection{Gröbnerbasis}
+
 
 \begin{frame}[fragile]
 \frametitle{Gröbnerbasis (2)}
@@ -366,13 +389,10 @@ Alle Leitterme von Gröbnerbasis G in Bezug auf Termordnung $>$ monisch und rela
 
 
 
-
-
-
-
-
-
 % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Gröbner-Fächer}
+
+
 \begin{frame}[fragile]
 \frametitle{Gröbner-Fächer}
 %Kommentar: Text der Bachelorarbeit
@@ -521,6 +541,7 @@ Alle Leitterme von Gröbnerbasis G in Bezug auf Termordnung $>$ monisch und rela
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Torische Ideale}
 
 \begin{frame}[fragile]
 \frametitle{Torische Ideale}
@@ -544,7 +565,7 @@ $ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ke
 \section{Aufzählen von Gröbner-Fächern}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-
+\subsection{Facet Binomials}
 \begin{frame}
 \frametitle{Facet Binomials }
 
@@ -609,9 +630,9 @@ $ \lbrace \upbeta_{k} \cdot u > \upalpha_{k} \cdot u \rbrace .$
 \end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Traversieren von Gröbnerbasen}
 
 
-\section{Fazit}
 
 \begin{frame}
 \frametitle{Traversieren von Gröbnerbasen}
@@ -679,7 +700,7 @@ Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
 % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \begin{frame}[fragile]
-\frametitle{Tiefensuche}
+\frametitle{Tiefensuche(1)}
 
 \begin{itemize}
 \item Gröbner-Fächer mit umgekehrter Tiefensuche nummerieren
@@ -688,60 +709,351 @@ Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
 
 \end{itemize}
 
-\begin{block}{Umgekehrter Suchbaum}
-Azyklischer Graph mit einer eindeutigen Senke (bzgl. einer festen Termordnung)
+\begin{block}{Umgekehrter Suchbaum $T_{>}(I_{A})$}
+\begin{itemize}
+\item Azyklischer Graph mit einer eindeutigen Senke (bzgl. einer festen Termordnung)
+\item Einzigartige Pfade von Gröbnerbasis zur Senke
+\end{itemize}
+
 \end{block}
  
 \end{frame}
 
-
-
-
 % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+\frametitle{Tiefensuche(2)}
+
+
+\begin{algorithm}[H]
+\caption{Enumerating the edge graph of the Gröbner fan via reverse search}
+%Kommentar erklären
+% Anhand der facet-binomials und der Termordnung werden die facets markiert die geflippt werden sollen
+% Anschließend geflippt bis alle kein facet mehr übrig ist
+% dann wird der Baum zuwückverfolgt und falls man bis zur Senke zurückgehen musste UND keine facets mehr übrig sind zum flippen, dann terminiert algorithmus
+
+\begin{algorithmic}[1]
+
+\Input
+Any reduced Gröbner basis $ \mathcal{R}_{>} $ of $I_A$ and its term order $>$
+\Output All reduced Gröbner bases of $I_A$ (all vertices of the edge graph)
+
+
+%\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{itemize}
+\item Termordnung notwendig für Tiefensuche
+\item Binome die Termordung einhalten werden "umgedreht"
+\end{itemize}
+
+ 
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % % % %
 
 \begin{frame}
-\frametitle{Quellen}
+\frametitle{Vergleich: Breitensuche \& umgekehrte Tiefensuche}
+
+Sei $ \mathcal{G} = \{x_{1} - x_{2}, x_{3} - x_{4}, x_{5}-x_{6} , x_{2}^{2} -1 , x_{4}^{2} - 1, x_{6}^{2} - 1 \} $ mit lexikographischer Ordnung $>$ : $x_{1} > \ldots > x_{6} $
 
 
-\footnotesize{
-\begin{thebibliography}{99}
- \bibitem[Label1, 2010]{key1} University of Bristol
- \newblock Optimizing OpenCL performance
- \newblock \url{http://www.cs.bris.ac.uk/home/simonm/workshops/OpenCL_lecture3.pdf} 
-\end{thebibliography}
-}
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
+        \centering
+        \input{breite}
+        \caption{Ergebnis der Breitensuche}
+        \label{fig:breadth}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\linewidth}        %% or \columnwidth
+        \centering
+        \input{reverse}
+        \caption{Umgekehrter Suchbaum}
+        \label{fig:reverse}
+    \end{subfigure}
+    %\caption{Vergleich zwischen the breath-first search and the reverse search}
+    \label{fig:graph}
+\end{figure}
 
+\end{frame}
 
+% % % % % % % % % % % % % % % % % % % % % % % % %
+\subsection{Gradkompatible Gröbnerbasis}
+\begin{frame}
+\frametitle{Gradkompatible Gröbnerbasis (1)}
 
-\footnotesize{
-\begin{thebibliography}{99}
- \bibitem[Label1, 2010]{key1}NVIDIA 
- \newblock OpenCL SDK Code Samples
- \newblock \url{https://developer.nvidia.com/opencl} 
-\end{thebibliography}
-}
+\begin{block}{Gradkompatible Gröbnerbasis}
+Eine reduzierte Gröbnerbasis (bzgl. zur Termordnung $>$) für ein Ideal ist gradkompatibel wenn der Vektor \textbf{1} im Gröbner-Kegel liegt.
 
+\end{block}
 
-\footnotesize{
-\begin{thebibliography}{99}
- \bibitem[Label1, 2010]{key1} Vasily Volkov
-(UC Berkeley , September 22, 2010)
- \newblock Better Performance at Lower Occupancy 
- \newblock \url{http://www.cs.berkeley.edu/~volkov/volkov10-GTC.pdf} 
-\end{thebibliography}
-}
-
+\begin{itemize}
+\item Leitterm muss höchsten Grad haben
+\item Jedes Ideal hat mindestens eine gradkompatible Gröbnerbasis
+\end{itemize}
 
 
 
 
 \end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % % % %
+
+\begin{frame}
+\frametitle{Gradkompatible Gröbnerbasis (2)}
+
+
+\begin{block}{Einzige gradkompatible Gröbnerbasis}
+Eine reduzierte Gröbnerbasis (bzgl. einer Termordnung $>$) ist die einzige gradkompatible Gröbnerbasis wenn 
+\[ deg(x^{a}) > deg(x^{b})~ \forall~ x^{a}-x^{b}\in \mathcal{G} \] 
+
+\end{block}
+~\\
+\begin{itemize}
+\item Breitensuche und umgekehrte Tiefensuche adaptierbar auf gradkompatible Gröbnerbasen
+\end{itemize}
+
+\end{frame}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % 
+\subsection{Lineare Codes}
+
+\begin{frame}
+\frametitle{Lineare Codes}
+
+
+\begin{block}{Linearer Code}
+Ein linearer Code der Länge n und Dimension k über $\mathbb{F}$ ist das Bild $\mathcal{C}$ einer linearen Abbildung  $\phi~:~\mathbb{F}^{k} \rightarrow \mathbb{F}^{n}$.
+\end{block}
+
+\begin{itemize}
+\item Als [$n,k$] Code bezeichnet
+\item Alternativ als Generatormatrix $G \in \mathbb{F}^{k \times n}$ beschrieben 
+~\\
+\item Standardform : $G = (I_{k}| M)$ % I_k kxk Einheitsmatrix
+\item Codewort $c~$vom Wort $x~$erhält man durch 
+\[
+     xG = c 
+ \]
+\end{itemize}
+
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % 
+\begin{frame}[fragile]
+\frametitle{Beispiel lineare Codes}
+
+\begin{itemize}
+\item   Sei $x = \left(1,0,1,0\right)$ und $
+ G =
+ \begin{pmatrix}
+ 1 & 0 & 0 & 0 & 1 & 1 & 0 \\ 
+ 0 & 1 & 0 & 0 & 1 & 0 & 1 \\  
+ 0 & 0 & 1 & 0 & 1 & 1 & 1 \\ 
+ 0 & 0 & 0 & 1 & 0 & 1 & 1
+ \end{pmatrix} 
+ $
+\end{itemize}
+
+ ~\\
+ ~\\
+ \[
+      \left(1,0,1,0\right) \cdot \begin{pmatrix}
+      1 & 0 & 0 & 0 & 1 & 1 & 0 \\ 
+      0 & 1 & 0 & 0 & 1 & 0 & 1 \\  
+      0 & 0 & 1 & 0 & 1 & 1 & 1 \\ 
+      0 & 0 & 0 & 1 & 0 & 1 & 1
+      \end{pmatrix}   = \left(1,0,1,0,0,0,1\right) 
+  \]
+
+
+
+
+\end{frame}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % %
+\frametitle{Code Ideal}
+\begin{frame}
+\frametitle{Code Ideal}
+
+\begin{block}{Code Ideal}
+Sei $\mathcal{C}$ ein $[n,k]$ Code. Das Code Ideal $I(\mathcal{C})$ die Vereinigung zwischen
+
+\begin{align*}
+ I_{\mathcal{C}} & = \langle \textbf{x}^{c} - \textbf{x}^{c'} | c - c' \in \mathcal{C}  \rangle + I_{p},\\
+\textrm{so dass} ~ I_{p} & = \langle x_{i}^{p} - 1 | 1 \leq i \leq n \rangle .
+\end{align*}
+
+
+\end{block}
+
+
+
+\end{frame}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % %
+
+\begin{frame}
+\frametitle{Beispiel Code Ideal}
+\begin{itemize}
+\item 
+Sei $\mathcal{C}_{1}$ ein binärer $[6,3]$ code mit der Generatormatrix
+\[
+G_{1} =
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 1 & 0 \\ 
+0 & 1 & 0 & 1 & 1 & 1 \\  
+0 & 0 & 1 & 0 & 1 & 0  
+\end{pmatrix} 
+\]
+
+\item Code Ideal $I(\mathcal{C})$ ergibt sich zu: 
+\begin{align*}
+I(\mathcal{C}) = &~\{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} ~\cup \\ &~\{x_{1}^{2}-1,~x_{2}^{2}-1,~x_{3}^{2}-1,~x_{4}^{2}-1,~x_{5}^{2}-1,~x_{6}^{2}-1\}
+\end{align*}
+\item Reduzierte Gröbnerbasis mit lexikographischer Ordnung $>$ :
+\begin{center}
+$ \mathcal{G}_{>} = \{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} \cup \{x_{4}^{2}-1,~x_{5}^{2}-1,~x_{6}^{2}-1  \}  $
+\end{center} 
+
+\end{itemize}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Ergebnisse}
+
+\begin{frame}[fragile]
+\frametitle{Vergleich zw. gradkompatible \& kompletter Gröbner-Fächer}
+
+\begin{figure}[h]
+\begin{tikzpicture}[scale = 0.7]
+  \centering
+  \begin{axis}[
+  		ybar, axis on top,
+       % title={Example Text},
+        height=8cm, width=13.5cm,
+        bar width=0.4cm,
+        ymajorgrids, tick align=inside,
+        major grid style={dashed,gray},
+        enlarge y limits={value=.1,upper},
+        ymin=0, ymax=2300,
+        axis x line*=bottom,
+        axis y line*=right,
+        y axis line style={opacity=1},
+        tickwidth=0pt,
+        enlarge x limits=true,
+        legend style={
+            at={(0.5,-0.2)},
+            anchor=north,
+            legend columns=-1,
+            /tikz/every even column/.append style={column sep=0.5cm}
+        },
+        xlabel={Dimension $k$ of the linear code},
+        ylabel={Number of reduced Gröbner bases},
+        symbolic x coords={ 1,2,3,4,5,6,7},
+       xtick=data,
+       nodes near coords={
+        \pgfmathprintnumber[precision=0]{\pgfplotspointmeta}
+       }
+    ]
+    \addplot [draw=none, fill=blue!30] coordinates {
+      (1,8)
+      (2,8) 
+      (3,16)
+      (4,162) 
+      (5,12) 
+      (6,18)
+      (7,8)};
+      
+   \addplot [draw=none,fill=red!30] coordinates {
+      (1,12)
+      (2,1708) 
+      (3,328)
+      (4,2257) 
+      (5,224) 
+      (6,39)
+      (7,8)};
+      
+
+    \legend{Degree compatible,All Gröbner bases}
+  \end{axis}
+  \end{tikzpicture}
+ % \caption{Comparison between the numbers of degree compatible and all Gröbner bases of binary linear codes with the length 8 }
+  \label{fig:numbergb}
+  \end{figure}
+
+
+
+\end{frame}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{frame}
+\frametitle{Zeitvergleich zwischen Gfan \& Software }
+
+ \begin{table}[htpb] 
+ \centering 
+ \caption{Berechnungszeit in Sekunden}
+ \begin{tabular}{c|l|l|l} % zentriert rest linksbündig
+   $[n,k]$ Code & CIDGEL d.c. & CIDGEL & Gfan \\
+ \cline{1-4} 
+ 			 $[8,2]$  & 0.206 & 10.198 & 38.127 \\
+  			 $[8,4]$  & 7.743 & 25.86  & 47.748 \\
+ 			 $[9,4]$  & 9.27  & 727.91 & 982.56 \\
+  			 $[9,5]$  & 4.72  & 18.89  & 59.65 \\
+  			 $[10,6]$ & 87.92 & 277.81 & 380.04 \\
+ \end{tabular}
+ \label{tab:benchmark}
+ \end{table}  
+
+
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % % % %
+\section{Vorführung}
+\begin{frame}
+
+\centerline{Vorführung der Software}
+
+
+\end{frame}
+% % % % % % % % % % % % % % % % % % % % % % % % %
+
+\section{Mögliche Verbesserungen \& Fazit}
  
+\begin{frame}
+\frametitle{Mögliche Verbesserungen}
+
+
+\begin{enumerate}
+\item Verwenden von externen LP-Solver %Hinweis darauf das facetberechnung  sehr teuer sind
+~\\ ~\\
+\item Parallelität
+\end{enumerate}
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Fazit}
+\begin{enumerate}
+\item Keine (bekannte) Software berechnet gradkompatiblen Gröbnerfächer %Hinweis darauf das facetberechnung  sehr teuer sind
+~\\ ~\\
+\item Schnellere Berechnung als andere Software
+\end{enumerate}
+
+
+\end{frame} 
+ 
+ 
+% % % % % % % % % % % % % % % % % % % % % % % % %
  
  
 \begin{frame}

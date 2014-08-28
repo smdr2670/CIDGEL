@@ -1,5 +1,0 @@
-\beamer@endinputifotherversion {3.33pt}
-\beamer@sectionintoc {1}{Einleitung}{3}{0}{1}
-\beamer@sectionintoc {2}{Mathematische Grundlagen}{4}{0}{2}
-\beamer@sectionintoc {3}{Aufz\IeC {\"a}hlen von Gr\IeC {\"o}bner-F\IeC {\"a}chern}{17}{0}{3}
-\beamer@sectionintoc {4}{Fazit}{19}{0}{4}

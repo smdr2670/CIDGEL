@@ -1,0 +1,61 @@
+\frametitle{Vergleich zw. gradkompatible \& kompletter Gröbner-Fächer}
+
+\begin{figure}[h]
+\begin{tikzpicture}[scale = 0.7]
+  \centering
+  \begin{axis}[
+   ybar, axis on top,
+       % title={Example Text},
+        height=8cm, width=13.5cm,
+        bar width=0.4cm,
+        ymajorgrids, tick align=inside,
+        major grid style={dashed,gray},
+        enlarge y limits={value=.1,upper},
+        ymin=0, ymax=2300,
+        axis x line*=bottom,
+        axis y line*=right,
+        y axis line style={opacity=1},
+        tickwidth=0pt,
+        enlarge x limits=true,
+        legend style={
+            at={(0.5,-0.2)},
+            anchor=north,
+            legend columns=-1,
+            /tikz/every even column/.append style={column sep=0.5cm}
+        },
+        xlabel={Dimension $k$ of the linear code},
+        ylabel={Number of reduced Gröbner bases},
+        symbolic x coords={ 1,2,3,4,5,6,7},
+       xtick=data,
+       nodes near coords={
+        \pgfmathprintnumber[precision=0]{\pgfplotspointmeta}
+       }
+    ]
+    \addplot [draw=none, fill=blue!30] coordinates {
+      (1,8)
+      (2,8)
+      (3,16)
+      (4,162)
+      (5,12)
+      (6,18)
+      (7,8)};
+
+   \addplot [draw=none,fill=red!30] coordinates {
+      (1,12)
+      (2,1708)
+      (3,328)
+      (4,2257)
+      (5,224)
+      (6,39)
+      (7,8)};
+
+
+    \legend{Degree compatible,All Gröbner bases}
+  \end{axis}
+  \end{tikzpicture}
+ % \caption{Comparison between the numbers of degree compatible and all Gröbner bases of binary linear codes with the length 8 }
+  \label{fig:numbergb}
+  \end{figure}
+
+
+

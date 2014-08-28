@@ -1,0 +1,20 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Einleitung}{3}{0}{1}
+\beamer@sectionintoc {2}{Mathematische Grundlagen}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Monome}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Termordnung}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Leitterm}{6}{0}{2}
+\beamer@subsectionintoc {2}{4}{Ideale}{7}{0}{2}
+\beamer@subsectionintoc {2}{5}{Divisionsalgorithmus}{8}{0}{2}
+\beamer@subsectionintoc {2}{6}{Gr\IeC {\"o}bnerbasis}{10}{0}{2}
+\beamer@subsectionintoc {2}{7}{Gr\IeC {\"o}bnerbasis}{11}{0}{2}
+\beamer@subsectionintoc {2}{8}{Gr\IeC {\"o}bner-F\IeC {\"a}cher}{12}{0}{2}
+\beamer@subsectionintoc {2}{9}{Torische Ideale}{16}{0}{2}
+\beamer@sectionintoc {3}{Aufz\IeC {\"a}hlen von Gr\IeC {\"o}bner-F\IeC {\"a}chern}{17}{0}{3}
+\beamer@subsectionintoc {3}{1}{Facet Binomials}{17}{0}{3}
+\beamer@subsectionintoc {3}{2}{Traversieren von Gr\IeC {\"o}bnerbasen}{19}{0}{3}
+\beamer@subsectionintoc {3}{3}{Gradkompatible Gr\IeC {\"o}bnerbasis}{24}{0}{3}
+\beamer@subsectionintoc {3}{4}{Lineare Codes}{26}{0}{3}
+\beamer@sectionintoc {4}{Ergebnisse}{30}{0}{4}
+\beamer@sectionintoc {5}{Vorf\IeC {\"u}hrung}{32}{0}{5}
+\beamer@sectionintoc {6}{M\IeC {\"o}gliche Verbesserungen \& Fazit}{33}{0}{6}
