@@ -140,7 +140,7 @@ Technische Universit{\"a}t Hamburg Harburg \\
 
 \begin{itemize}
 \item
-Viele Anwendungen der Gröberbasen basieren auf Gröbner-Fächer
+Viele Anwendungen der Gröbnerbasen basieren auf Gröbner-Fächer
 
 \item
 Nützlich für Idealzugehörigkeitsproblem und polynomiale Gleichungssysteme
@@ -172,7 +172,7 @@ Kompletter Gröbner-Fächer nicht immer nötig
 
 \begin{block}{Monom}
 \begin{itemize}
-\item Produkt von Variablen über ein endliches Feld $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ 
+\item Produkt von Variablen über einen endlichen Körper $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ 
 \item Schreibweise $m= X_{1}^{u_{1}}X_{2}^{u_{2}}\cdots X_{n}^{u_{n}}$ und $u_i \in \mathbb{N}_{0}  $
 \end{itemize}
 
@@ -195,14 +195,14 @@ Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $.
 % --  Zu erst wird die Definition von Termordnung erklärt , dann werden die verschieden arten
 \begin{block}{Termordnung $>$}
 \begin{itemize}
-\item Relation $>$ zu der Menge von allen Monomen in $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ 
+\item Relation $>$ auf der Menge von allen Monomen in $ \mathbb{K} \left[X_{1},X_{2},\dots, X_{n}\right]  $ 
 \end{itemize}
-
-
 
 \end{block}
 
-\begin{block}{Termordnung (2) }
+~\\
+
+\begin{block}{Termordnung Beispiele }
 \begin{itemize}
 \item Lexikographische Ordnung $>_{lex}$
 \item grad $>_{grlex}$
@@ -260,7 +260,7 @@ Sei $f = x^{2}+3xyz+y^{3} $
 
 \begin{block}{Beispiel}
 Sei $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ und $f=x^{2}y+x^{2}+y^{2}+xy+x$ \\
-Dann gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
+Es gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
 
 \end{block}
 
@@ -281,7 +281,7 @@ Dann gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
 
 \begin{block}{Ziel des Algorithmus}
 Polynom g durch Ideal $ I = \langle f_{1}, \dots , f_{s} \rangle  $ teilen, so dass 
-$ g = a_{1}f_{1} + \ldots + a_{s}f_{s} + r ,~~~ a_{i},g,I,r \in \mathbb{K}\left[X_{1}, \dots, X_{n}\right]  $
+\[ g = a_{1}f_{1} + \ldots + a_{s}f_{s} + r ,~~~ a_{i},g,I,r \in \mathbb{K}\left[X_{1}, \dots, X_{n}\right]  \]
 \end{block}
 
 ~\\
@@ -308,11 +308,11 @@ Sei Polynom $p$ und Ideal $I$
 
 
 \begin{algorithm}[H]
-\caption{Divisionsalgorithmus (Header) }
+\caption{Divisionsalgorithmus  }
 
 \begin{algorithmic}[1]
 
-\Require Basis $I = \langle f_{1}, \dots, f_{m}\rangle$ of nonzero polynomials \textbf{and} ~~~~~~~~~~~~~~~~~~~~ a fixed termorder \textsc{LT}  
+\Require Basis $I = \langle f_{1}, \dots, f_{m}\rangle$ von Polynomen $\neq$ 0 \textbf{und} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ eine feste Termordnung \textsc{LT}  
 \Ensure $r=0$ \textbf{or} none of the terms in $r$ are divisible by $ LT_{\leq}\left( f_{1}\right) , \dots , LT_{\leq} \left( f_{m}\right) $
 
 %\EndProcedure
@@ -351,7 +351,7 @@ Sei Termordnung $>$ und Ideal $I$, dann hat Gröbnerbasis $G = \{f_{1}, \ldots, 
 \begin{itemize}
 \item Divisionsrest eindeutig bestimmt und unabhängig von Reihenfolge
 ~\\
-\item Gröberbasis aus jedem Ideal mit Hilfe des Buchberger-Algorithmus und einer festen Termordnung 
+\item Gröbnerbasis aus jedem Ideal mit Hilfe des Buchberger-Algorithmus und einer festen Termordnung 
 \end{itemize}
 
 
@@ -369,7 +369,7 @@ Sei Termordnung $>$ und Ideal $I$, dann hat Gröbnerbasis $G = \{f_{1}, \ldots, 
 %Kommentar 
 
 \begin{itemize}
-\item Gröbernbasen sind nicht eindeutig
+\item Gröbnerbasen sind nicht eindeutig
 
 \item Reduzierte Gröbnerbasen jedoch eindeutig für Ideale
 \end{itemize}
@@ -404,7 +404,7 @@ Alle Leitterme von Gröbnerbasis G in Bezug auf Termordnung $>$ monisch und rela
 \begin{block}{Gröbner-Fächer}
 \begin{itemize}
 \item Vielflächiges Komplex welches Kegel im $\mathbb{R}^{n}_{+}$ enthält
-\item Flächen werden durch Ebenenungleichungen der Polynome bestimmt 
+\item Kegel werden durch lineare Ungleichungen der Polynome bestimmt 
 \end{itemize}
 
 \end{block}
@@ -426,12 +426,13 @@ Alle Leitterme von Gröbnerbasis G in Bezug auf Termordnung $>$ monisch und rela
 \item $w \in G_{>_{lex}}$ genau dann, wenn 
 ~\\
 ~\\
-\begin{enumerate}
-\item $\left(0,2,0\right) \cdot \left(a,b,c\right) \geq \left(0,0,1\right) \cdot \left(a,b,c\right) \vee 2b \geq c  $
+\begin{itemize}
+\item $ \left(0,2,0\right) \cdot \left(a,b,c\right) \geq \left(0,0,1\right) \cdot  \left(a,b,c\right) ~ \vee ~ 2b \geq c  $
 ~\\
 ~\\
-\item $\left(1,0,0\right) \cdot \left(a,b,c\right) \geq \left(0,1,0\right) \cdot \left(a,b,c\right) \vee a \geq b $ 
-\end{enumerate}
+\item
+$ \left(1,0,0\right) \cdot \left(a,b,c\right) \geq \left(0,1,0\right) \cdot  \left(a,b,c\right) ~ \vee ~ a \geq b  $
+\end{itemize}
 \end{itemize}
 
 \end{frame}
@@ -547,10 +548,9 @@ Alle Leitterme von Gröbnerbasis G in Bezug auf Termordnung $>$ monisch und rela
 \frametitle{Torische Ideale}
 
 \begin{itemize}
-\item Obermenge von Code-Idealen
-\item Besteht nur aus Binomen
+\item Binomiales Ideal
 \end{itemize}
-
+~\\
 \begin{block}{Torisches Ideal}
 Gegeben seien $A =\left[a_{1},\dots, a_{n}  \right] \in \mathbb{Z}^{d \times n } $ und $u \in \mathbb{Z}^{n}$ zerlegbar in $u^{+}$ und $u^{-}$, dann ist das torische Ideal $I_{A}$ definiert durch \\
 ~\\
@@ -579,17 +579,14 @@ $ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ke
 \end{itemize}
 
 \begin{block}{Facet Binomials}
-Bestimmen Grenzen zu anderen Gröbnerbasen \\
 Sei $x^{\upalpha_{k}}-x^{\upbeta_k} \in \mathcal{G}_c~$, $\mathcal{G}_c$ Gröbnerbasis mit Gewichtsvektor $c$\\
-$x^{\upalpha_{k}}-x^{\upbeta_k}$ ist Facet binomial wenn ein Vektor $u \in \mathbb{R}$ folgendes erfüllt : \\
+$x^{\upalpha_{k}}-x^{\upbeta_k}$ ist Facet binomial wenn ein Vektor $u \in \mathbb{R}^{n}$ folgendes erfüllt : \\
 
-\begin{itemize}
-\item
-$ \lbrace \upalpha_{i} \cdot u > \upbeta_{i} \cdot u : i = 1, \dots , t, i \neq k \rbrace  
-$
-\item
-$ \lbrace \upbeta_{k} \cdot u > \upalpha_{k} \cdot u \rbrace .$
-\end{itemize}
+\begin{align*}
+   \upalpha_{i} \cdot u & \geq \upbeta_{i}  \cdot u : i = 1, \dots , t, i \neq k \\
+   \upbeta_{k}  \cdot u & \geq \upalpha_{k}  \cdot u
+\end{align*}
+
 
 \end{block}
 
@@ -600,13 +597,13 @@ $ \lbrace \upbeta_{k} \cdot u > \upalpha_{k} \cdot u \rbrace .$
 
 \begin{itemize}
 \item Sei $\mathcal{G} = \{x_1 - x_5,~x_{2}^{2}-1,~x_{2}x_{4}-x_{5}x_{6},~x_{2}x_{6}-x_{4}x_{5},~x_{3}-x_{5},~x_{4}^{2}-1,~x_{4}x_{5}x_{6}-x_{2},~x_{5}^{2}-1,~x_{6}^{2}-1  \}~$
-\item Prüfe ob $x_{2}x_{4}-x_{5}x_{6}~$ ein facet binomial ist mit linearer Programmierung
+\item Prüfe ob $x_{2}x_{4}-x_{5}x_{6}~$ ein facet binomial ist mit LP
 \end{itemize}
 
  \[
  	\begin{array}{lrcl}
  	\textrm{ }   & Ax    & =    & b   \\
- 	\textrm{subject to}  & x     & \geq & 0
+ 	\textrm{so dass}  & x     & \geq & 0
  			    
  	\end{array}
  \]
@@ -712,7 +709,7 @@ Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
 \begin{block}{Umgekehrter Suchbaum $T_{>}(I_{A})$}
 \begin{itemize}
 \item Azyklischer Graph mit einer eindeutigen Senke (bzgl. einer festen Termordnung)
-\item Einzigartige Pfade von Gröbnerbasis zur Senke
+\item Eindeutige Pfade von Gröbnerbasis zur Senke
 \end{itemize}
 
 \end{block}
@@ -827,7 +824,7 @@ Eine reduzierte Gröbnerbasis (bzgl. einer Termordnung $>$) ist die einzige grad
 
 
 \begin{block}{Linearer Code}
-Ein linearer Code der Länge n und Dimension k über $\mathbb{F}$ ist das Bild $\mathcal{C}$ einer linearen Abbildung  $\phi~:~\mathbb{F}^{k} \rightarrow \mathbb{F}^{n}$.
+Ein linearer Code $\mathcal{C}$  der Länge n und Dimension k über $\mathbb{F}$ ist eine injektive lineare Abbildung  $\phi~:~\mathbb{F}^{k} \rightarrow \mathbb{F}^{n},~n\geq k $.
 \end{block}
 
 \begin{itemize}
@@ -886,7 +883,7 @@ Sei $\mathcal{C}$ ein $[n,k]$ Code. Das Code Ideal $I(\mathcal{C})$ die Vereinig
 
 \begin{align*}
  I_{\mathcal{C}} & = \langle \textbf{x}^{c} - \textbf{x}^{c'} | c - c' \in \mathcal{C}  \rangle + I_{p},\\
-\textrm{so dass} ~ I_{p} & = \langle x_{i}^{p} - 1 | 1 \leq i \leq n \rangle .
+\textrm{wobei} ~ I_{p} & = \langle x_{i}^{p} - 1 | 1 \leq i \leq n \rangle .
 \end{align*}
 
 
@@ -903,7 +900,7 @@ Sei $\mathcal{C}$ ein $[n,k]$ Code. Das Code Ideal $I(\mathcal{C})$ die Vereinig
 \frametitle{Beispiel Code Ideal}
 \begin{itemize}
 \item 
-Sei $\mathcal{C}_{1}$ ein binärer $[6,3]$ code mit der Generatormatrix
+Sei $\mathcal{C}$ ein binärer $[6,3]$ code mit der Generatormatrix
 \[
 G_{1} =
 \begin{pmatrix}
