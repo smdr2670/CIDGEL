@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  31 AUG 2014 16:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  31 AUG 2014 16:53
 entering extended mode
 **vortragBA.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.tex
@@ -977,6 +977,27 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+(E:\Programme\MikTex\tex\generic\babel\babel.sty
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(E:\Programme\MikTex\tex\latex\00miktex\bblopts.cfg
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+(E:\Programme\MikTex\tex\generic\babel\ngermanb.ldf
+Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
+
+(E:\Programme\MikTex\tex\generic\babel\babel.def
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+LaTeX Info: Redefining \textlatin on input line 82.
+\babel@savecnt=\count154
+\U@D=\dimen188
+)
+\l@naustrian = a dialect from \language\l@ngerman 
+Package babel Info: Making " an active character on input line 92.
+))
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\themes\theme\
 compatibility\beamerthemelined.sty
 Package: beamerthemelined 2010/06/17  (rcs-revision d02a7cf4d8ae)
@@ -986,15 +1007,15 @@ Package: mathtools 2014/05/21 v1.14 mathematical typesetting tools
 
 (E:\Programme\MikTex\tex\latex\tools\calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count154
-\calc@Bcount=\count155
-\calc@Adimen=\dimen188
-\calc@Bdimen=\dimen189
+\calc@Acount=\count155
+\calc@Bcount=\count156
+\calc@Adimen=\dimen189
+\calc@Bdimen=\dimen190
 \calc@Askip=\skip57
 \calc@Bskip=\skip58
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count156
+\calc@Ccount=\count157
 \calc@Cskip=\skip59
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\mh\mhsetup.sty
@@ -1002,34 +1023,34 @@ Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count157
-\l_MT_multwidth_dim=\dimen190
+\g_MT_multlinerow_int=\count158
+\l_MT_multwidth_dim=\dimen191
 \origjot=\skip60
-\l_MT_shortvdotswithinadjustabove_dim=\dimen191
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen192
-\l_MT_above_intertext_sep=\dimen193
-\l_MT_below_intertext_sep=\dimen194
-\l_MT_above_shortintertext_sep=\dimen195
-\l_MT_below_shortintertext_sep=\dimen196
+\l_MT_shortvdotswithinadjustabove_dim=\dimen192
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen193
+\l_MT_above_intertext_sep=\dimen194
+\l_MT_below_intertext_sep=\dimen195
+\l_MT_above_shortintertext_sep=\dimen196
+\l_MT_below_shortintertext_sep=\dimen197
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
-\lst@mode=\count158
+\lst@mode=\count159
 \lst@gtempboxa=\box53
 \lst@token=\toks45
-\lst@length=\count159
-\lst@currlwidth=\dimen197
-\lst@column=\count160
-\lst@pos=\count161
-\lst@lostspace=\dimen198
-\lst@width=\dimen199
-\lst@newlines=\count162
-\lst@lineno=\count163
-\lst@maxwidth=\dimen200
+\lst@length=\count160
+\lst@currlwidth=\dimen198
+\lst@column=\count161
+\lst@pos=\count162
+\lst@lostspace=\dimen199
+\lst@width=\dimen200
+\lst@newlines=\count163
+\lst@lineno=\count164
+\lst@maxwidth=\dimen201
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
-\c@lstnumber=\count164
-\lst@skipnumbers=\count165
+\c@lstnumber=\count165
+\lst@skipnumbers=\count166
 \lst@framebox=\box54
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
@@ -1064,7 +1085,7 @@ nment
 
 (E:\Programme\MikTex\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count166
+\c@float@type=\count167
 \float@exts=\toks46
 \float@box=\box55
 \@float@everytoks=\toks47
@@ -1074,7 +1095,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks48
-\c@algorithm=\count167
+\c@algorithm=\count168
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithmicx\algpseudocod
 e.sty
@@ -1085,15 +1106,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count168
-\c@ALG@rem=\count169
-\c@ALG@nested=\count170
+\c@ALG@line=\count169
+\c@ALG@rem=\count170
+\c@ALG@nested=\count171
 \ALG@tlm=\skip61
 \ALG@thistlm=\skip62
-\c@ALG@Lnr=\count171
-\c@ALG@blocknr=\count172
-\c@ALG@storecount=\count173
-\c@ALG@tmpcounter=\count174
+\c@ALG@Lnr=\count172
+\c@ALG@blocknr=\count173
+\c@ALG@storecount=\count174
+\c@ALG@tmpcounter=\count175
 \ALG@tmplength=\skip63
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -1114,8 +1135,8 @@ File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp
 -version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen201
-\pgf@nodesepend=\dimen202
+\pgf@nodesepstart=\dimen202
+\pgf@nodesepend=\dimen203
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp
 -version-1-18.sty
@@ -1135,8 +1156,8 @@ Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.t
 ex)
-\pgffor@iter=\dimen203
-\pgffor@skip=\dimen204
+\pgffor@iter=\dimen204
+\pgffor@skip=\dimen205
 \pgffor@stack=\toks49
 \pgffor@toks=\toks50
 ))
@@ -1147,32 +1168,32 @@ Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrar
 yplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
-\pgf@plot@mark@count=\count175
-\pgfplotmarksize=\dimen205
+\pgf@plot@mark@count=\count176
+\pgfplotmarksize=\dimen206
 )
-\tikz@lastx=\dimen206
-\tikz@lasty=\dimen207
-\tikz@lastxsaved=\dimen208
-\tikz@lastysaved=\dimen209
-\tikzleveldistance=\dimen210
-\tikzsiblingdistance=\dimen211
+\tikz@lastx=\dimen207
+\tikz@lasty=\dimen208
+\tikz@lastxsaved=\dimen209
+\tikz@lastysaved=\dimen210
+\tikzleveldistance=\dimen211
+\tikzsiblingdistance=\dimen212
 \tikz@figbox=\box58
 \tikz@figbox@bg=\box59
 \tikz@tempbox=\box60
 \tikz@tempbox@bg=\box61
-\tikztreelevel=\count176
-\tikznumberofchildren=\count177
-\tikznumberofcurrentchild=\count178
-\tikz@fig@count=\count179
+\tikztreelevel=\count177
+\tikznumberofchildren=\count178
+\tikznumberofcurrentchild=\count179
+\tikz@fig@count=\count180
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulema
 trix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count180
-\pgfmatrixcurrentcolumn=\count181
-\pgf@matrix@numberofcolumns=\count182
+\pgfmatrixcurrentrow=\count181
+\pgfmatrixcurrentcolumn=\count182
+\pgf@matrix@numberofcolumns=\count183
 )
-\tikz@expandcount=\count183
+\tikz@expandcount=\count184
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 libraries\tikzlibrarytopaths.code.tex
@@ -1190,9 +1211,9 @@ ode.tex
 \t@pgfplots@toka=\toks51
 \t@pgfplots@tokb=\toks52
 \t@pgfplots@tokc=\toks53
-\pgfplots@tmpa=\dimen212
-\c@pgfplots@coordindex=\count184
-\c@pgfplots@scanlineindex=\count185
+\pgfplots@tmpa=\dimen213
+\c@pgfplots@coordindex=\count185
+\c@pgfplots@scanlineindex=\count186
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgfplotssy
 sgeneric.code.tex))
@@ -1210,13 +1231,13 @@ pgfplotsliststructure.code.tex)
 pgfplotsliststructureext.code.tex)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\
 pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count186
+\c@pgfplotsarray@tmp=\count187
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\
 pgfplotsmatrix.code.tex)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\numtable\pgfpl
 otstableshared.code.tex
-\c@pgfplotstable@counta=\count187
+\c@pgfplotstable@counta=\count188
 \t@pgfplotstable@a=\toks54
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\
@@ -1229,7 +1250,7 @@ inary.data.code.tex))
 til.verb.code.tex)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pgflibrar
 ypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count188
+\c@pgfplotslibrarysurf@no=\count189
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgflibrary
 pgfplots.surfshading.pgfsys-pdftex.def)))
@@ -1259,14 +1280,14 @@ code.tex)
 libraries\tikzlibrarydecorations.code.tex
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulede
 corations.code.tex
-\pgfdecoratedcompleteddistance=\dimen213
-\pgfdecoratedremainingdistance=\dimen214
-\pgfdecoratedinputsegmentcompleteddistance=\dimen215
-\pgfdecoratedinputsegmentremainingdistance=\dimen216
-\pgf@decorate@distancetomove=\dimen217
-\pgf@decorate@repeatstate=\count189
-\pgfdecorationsegmentamplitude=\dimen218
-\pgfdecorationsegmentlength=\dimen219
+\pgfdecoratedcompleteddistance=\dimen214
+\pgfdecoratedremainingdistance=\dimen215
+\pgfdecoratedinputsegmentcompleteddistance=\dimen216
+\pgfdecoratedinputsegmentremainingdistance=\dimen217
+\pgf@decorate@distancetomove=\dimen218
+\pgf@decorate@repeatstate=\count190
+\pgfdecorationsegmentamplitude=\dimen219
+\pgfdecorationsegmentlength=\dimen220
 )
 \tikz@lib@dec@box=\box62
 )
@@ -1278,13 +1299,13 @@ ns\pgflibrarydecorations.pathmorphing.code.tex))
 libraries\tikzlibrarydecorations.pathreplacing.code.tex
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decoratio
 ns\pgflibrarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count190
-\pgfplots@xmin@reg=\dimen220
-\pgfplots@xmax@reg=\dimen221
-\pgfplots@ymin@reg=\dimen222
-\pgfplots@ymax@reg=\dimen223
-\pgfplots@zmin@reg=\dimen224
-\pgfplots@zmax@reg=\dimen225
+\pgfplots@numplots=\count191
+\pgfplots@xmin@reg=\dimen221
+\pgfplots@xmax@reg=\dimen222
+\pgfplots@ymin@reg=\dimen223
+\pgfplots@ymax@reg=\dimen224
+\pgfplots@zmin@reg=\dimen225
+\pgfplots@zmax@reg=\dimen226
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 libraries\tikzlibraryplotmarks.code.tex
@@ -1307,15 +1328,15 @@ Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen226
-\captionmargin@=\dimen227
-\captionwidth=\dimen228
-\caption@tempdima=\dimen229
-\caption@indent=\dimen230
-\caption@parindent=\dimen231
-\caption@hangindent=\dimen232
+\captionmargin=\dimen227
+\captionmargin@=\dimen228
+\captionwidth=\dimen229
+\caption@tempdima=\dimen230
+\caption@indent=\dimen231
+\caption@parindent=\dimen232
+\caption@hangindent=\dimen233
 )
-\c@ContinuedFloat=\count191
+\c@ContinuedFloat=\count192
 Package caption Info: beamer document class.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1323,8 +1344,8 @@ Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 Package caption Info: listings package is loaded.
 )
-\c@subfigure=\count192
-\c@subtable=\count193
+\c@subfigure=\count193
+\c@subtable=\count194
 )
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\
 libraries\tikzlibrarybackgrounds.code.tex
@@ -1353,20 +1374,20 @@ beamerouterthemeinfolines.sty
 Package: beamerouterthemeinfolines 2012/10/16  (rcs-revision 51a8c72084af)
 ))
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1404,21 +1425,21 @@ LaTeX Font Info:    ... okay on input line 104.
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count194
-\scratchdimen=\dimen233
-\scratchbox=\box65
-\nofMPsegments=\count195
-\nofMParguments=\count196
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count197
+\scratchcounter=\count195
 Normal \dimen register pool exhausted, switching to extended pool.
-\MPscratchDim=\dimen256
-\MPnumerator=\count198
-\makeMPintoPDFobject=\count199
+\scratchdimen=\dimen256
+\scratchbox=\box65
+\nofMPsegments=\count196
+\nofMParguments=\count197
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count198
+\MPscratchDim=\dimen257
+\MPnumerator=\count199
+\makeMPintoPDFobject=\count200
 \everyMPtoPDFconversion=\toks56
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 104.
+Package hyperref Info: Link coloring OFF on input line 105.
 
 (E:\Programme\MikTex\tex\latex\hyperref\nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1426,67 +1447,67 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (E:\Programme\MikTex\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count200
+\c@section@level=\count201
 )
-LaTeX Info: Redefining \ref on input line 104.
-LaTeX Info: Redefining \pageref on input line 104.
-LaTeX Info: Redefining \nameref on input line 104.
+LaTeX Info: Redefining \ref on input line 105.
+LaTeX Info: Redefining \pageref on input line 105.
+LaTeX Info: Redefining \nameref on input line 105.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.out)
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 104.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 105.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 104.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 105.
 \symnumbers=\mathgroup7
 \sympureletters=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 104.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 104.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 104.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 104.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 105.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 104.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 104.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 104.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 105.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 104.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 104.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 104.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 105.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 104.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 104.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 105.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 104.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 105.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 104.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 104.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 104.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 104.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 104.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 104.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 104.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 105.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 105.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
-04.
+05.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-104.
+105.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 104.
+ut line 105.
 
 (C:\Users\Daniel\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\di
 cts\translator-basic-dictionary\translator-basic-dictionary-English.dict
@@ -1514,21 +1535,21 @@ Dictionary: translator-numbers-dictionary, Language: English
 cts\translator-theorem-dictionary\translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 104.
-\c@lstlisting=\count201
+LaTeX Info: Redefining \includegraphics on input line 105.
+\c@lstlisting=\count202
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.10} into 
 your preamble.
- on input line 104.
+ on input line 105.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 109.
+(Font)              size <5> substituted on input line 110.
 
 [1
 
@@ -1638,8 +1659,8 @@ Underfull \hbox (badness 4531) in paragraph at lines 11--12
 []\OT1/cmss/m/n/10.95 Basis $\OT1/mathkerncmss/m/sl/10.95 I \OT1/cmss/m/n/10.95
  = \OMS/cmsy/m/n/10.95 h\OT1/mathkerncmss/m/sl/10.95 f[]\OML/cmm/m/it/10.95 ; [
 ] ; \OT1/mathkerncmss/m/sl/10.95 f[]\OMS/cmsy/m/n/10.95 i$ \OT1/cmss/m/n/10.95 
-mit Poly-nomen $\OT1/mathkerncmss/m/sl/10.95 f[] \OMS/cmsy/m/n/10.95 6\OT1/cmss
-/m/n/10.95 =$ 0 \OT1/cmss/bx/n/10.95 und
+mit Po-ly-no-men $\OT1/mathkerncmss/m/sl/10.95 f[] \OMS/cmsy/m/n/10.95 6\OT1/cm
+ss/m/n/10.95 =$ 0 \OT1/cmss/bx/n/10.95 und
  []
 
 ) [30
@@ -1814,12 +1835,12 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1078.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1078.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1079.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1079.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1078.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1078.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1079.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1079.
 
 Package rerunfilecheck Info: File `vortragBA.out' has not changed.
 (rerunfilecheck)             Checksum: FDB659F3CB8C84C0A196819331075F20;1226.
@@ -1828,13 +1849,13 @@ Package rerunfilecheck Info: File `vortragBA.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1078.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1079.
  ) 
 Here is how much of TeX's memory you used:
- 33211 strings out of 493921
- 770352 string characters out of 3150487
- 914886 words of memory out of 3000000
- 35504 multiletter control sequences out of 15000+200000
+ 33474 strings out of 493921
+ 773728 string characters out of 3150487
+ 921977 words of memory out of 3000000
+ 35754 multiletter control sequences out of 15000+200000
  20859 words of font info for 75 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  60i,18n,84p,743b,2324s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1854,7 +1875,7 @@ s/cm/cmssi8.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 Tex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Programme/MikTex/fonts/type1/p
 ublic/amsfonts/euler/eurm10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb>
-Output written on vortragBA.pdf (93 pages, 430510 bytes).
+Output written on vortragBA.pdf (93 pages, 434601 bytes).
 PDF statistics:
  832 PDF objects out of 1000 (max. 8388607)
  215 named destinations out of 1000 (max. 500000)
