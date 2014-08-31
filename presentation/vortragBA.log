@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  30 AUG 2014 19:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.6.25)  31 AUG 2014 16:29
 entering extended mode
 **vortragBA.tex
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.tex
@@ -1541,8 +1541,12 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 
 ] [5
 
-] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb
+] [6
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb
 LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+
 (E:\Programme\MikTex\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -1558,10 +1562,7 @@ line 5.
 ncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-)) [6
-
-]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [7
+)) [7
 
 ]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [8
@@ -1585,40 +1586,21 @@ thkerncmss.
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [14
 
 ]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [15
+
+]
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
 (Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 3.
 
-) [15
+) [16
 
 ] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
-[16
+[17
 
-] [17
-
-] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 11.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-[]\OT1/cmss/m/n/10.95 Basis $\OT1/mathkerncmss/m/sl/10.95 I \OT1/cmss/m/n/10.95
- = \OMS/cmsy/m/n/10.95 h\OT1/mathkerncmss/m/sl/10.95 f[]\OML/cmm/m/it/10.95 ; [
-] ; \OT1/mathkerncmss/m/sl/10.95 f[]\OMS/cmsy/m/n/10.95 i$ \OT1/cmss/m/n/10.95 
-von Poly-nomen $\OMS/cmsy/m/n/10.95 6\OT1/cmss/m/n/10.95 =$ 0 \OT1/cmss/bx/n/10
-.95 und
- []
-
-
-Underfull \hbox (badness 4242) in paragraph at lines 12--13
-[]$\OT1/mathkerncmss/m/sl/10.95 r \OT1/cmss/m/n/10.95 = 0$ \OT1/cmss/bx/n/10.95
- or \OT1/cmss/m/n/10.95 none of the terms in $\OT1/mathkerncmss/m/sl/10.95 r$ \
-OT1/cmss/m/n/10.95 are di-vis-i-ble by
- []
-
-) [18
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[18
 
 ] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
 [19
@@ -1641,78 +1623,218 @@ OT1/cmss/m/n/10.95 are di-vis-i-ble by
 ] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
 [25
 
-] [26
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[26
 
 ] [27
 
 ] [28
 
-]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [29
+] [29
 
 ]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [30
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb
+Underfull \hbox (badness 4531) in paragraph at lines 11--12
+[]\OT1/cmss/m/n/10.95 Basis $\OT1/mathkerncmss/m/sl/10.95 I \OT1/cmss/m/n/10.95
+ = \OMS/cmsy/m/n/10.95 h\OT1/mathkerncmss/m/sl/10.95 f[]\OML/cmm/m/it/10.95 ; [
+] ; \OT1/mathkerncmss/m/sl/10.95 f[]\OMS/cmsy/m/n/10.95 i$ \OT1/cmss/m/n/10.95 
+mit Poly-nomen $\OT1/mathkerncmss/m/sl/10.95 f[] \OMS/cmsy/m/n/10.95 6\OT1/cmss
+/m/n/10.95 =$ 0 \OT1/cmss/bx/n/10.95 und
+ []
 
-]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [31
+) [30
 
-]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\breite.tex)
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\reverse.tex) [32
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb
 
-]
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 8.
+
+) [31
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[32
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
 [33
 
-] [34
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[34
 
-] [35
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[35
 
-]
-(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [36
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[36
 
-]
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
 [37
 
-] [38
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[38
 
 ] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
 [39
 
-] [40
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[40
 
-] [41
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[41
 
-] [42
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[42
 
-] [43
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[43
 
-] [44
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[44
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[45
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[46
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[47
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[48
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[49
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[50
+
+] (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb)
+[51
+
+] [52
+
+] [53
+
+] [54
+
+] [55
+
+] [56
+
+] [57
+
+] [58
+
+] [59
+
+] [60
+
+] [61
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [62
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [63
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [64
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [65
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [66
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [67
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [68
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [69
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\breite.tex)
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\reverse.tex) [70
+
+]
+[71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
+
+] [78
+
+] [79
+
+] [80
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [81
+
+]
+[82
+
+] [83
+
+] [84
+
+] [85
+
+]
+(C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.vrb) [86
+
+]
+[87
+
+] [88
+
+] [89
+
+] [90
+
+] [91
+
+] [92
+
+] [93
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1060.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1060.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1078.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1078.
 
 (C:\Users\Daniel\Documents\GitHub\CIDGEL\presentation\vortragBA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1060.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1060.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1078.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1078.
 
 Package rerunfilecheck Info: File `vortragBA.out' has not changed.
-(rerunfilecheck)             Checksum: 2CEAC39CE50358A7992488827931D064;1225.
+(rerunfilecheck)             Checksum: FDB659F3CB8C84C0A196819331075F20;1226.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1060.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1078.
  ) 
 Here is how much of TeX's memory you used:
- 33022 strings out of 493921
- 764574 string characters out of 3150487
+ 33211 strings out of 493921
+ 770352 string characters out of 3150487
  914886 words of memory out of 3000000
- 35469 multiletter control sequences out of 15000+200000
+ 35504 multiletter control sequences out of 15000+200000
  20859 words of font info for 75 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  60i,18n,84p,743b,2324s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1732,9 +1854,9 @@ s/cm/cmssi8.pfb><E:/Programme/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 Tex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Programme/MikTex/fonts/type1/p
 ublic/amsfonts/euler/eurm10.pfb><E:/Programme/MikTex/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb>
-Output written on vortragBA.pdf (44 pages, 295840 bytes).
+Output written on vortragBA.pdf (93 pages, 430510 bytes).
 PDF statistics:
- 493 PDF objects out of 1000 (max. 8388607)
- 117 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 832 PDF objects out of 1000 (max. 8388607)
+ 215 named destinations out of 1000 (max. 500000)
+ 291 words of extra memory for PDF output out of 10000 (max. 10000000)
 

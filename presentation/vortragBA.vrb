@@ -1,4 +1,4 @@
-\frametitle{Vergleich zw. gradkompatible \& kompletter Gröbner-Fächer}
+\frametitle{Vergleich zw. gradkompatiblen \& kompletten Gröbner-Fächern}
 
 \begin{figure}[h]
 \begin{tikzpicture}[scale = 0.7]
@@ -23,8 +23,8 @@
             legend columns=-1,
             /tikz/every even column/.append style={column sep=0.5cm}
         },
-        xlabel={Dimension $k$ of the linear code},
-        ylabel={Number of reduced Gröbner bases},
+        xlabel={Dimension $k$ des linearen Codes},
+        ylabel={Anzahl der reduzierten Gröbnerbasen},
         symbolic x coords={ 1,2,3,4,5,6,7},
        xtick=data,
        nodes near coords={
@@ -50,7 +50,7 @@
       (7,8)};
 
 
-    \legend{Degree compatible,All Gröbner bases}
+    \legend{Gradkompatibel,Alle Gröbnerbasen}
   \end{axis}
   \end{tikzpicture}
  % \caption{Comparison between the numbers of degree compatible and all Gröbner bases of binary linear codes with the length 8 }

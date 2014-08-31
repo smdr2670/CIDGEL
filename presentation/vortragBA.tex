@@ -72,8 +72,8 @@
 % Uncomment the following line if you want %
 % page numbers and using Warsaw theme%
  %\setbeamertemplate{footline}[page number]
-%\setbeamercovered{transparent}
-\setbeamercovered{invisible}
+\setbeamercovered{transparent}
+%\setbeamercovered{invisible}
 % To remove the navigation symbols from 
 % the bottom of slides%
 \setbeamertemplate{navigation symbols}{} 
@@ -120,10 +120,12 @@ Technische Universit{\"a}t Hamburg Harburg \\
 	      	\item Aufzählen von Gröbner-Fächern  \\ 
 	      		
 	      	\item Ergebnisse  \\ 
+	      	
+	      	\item Vorführung  \\
 	  
-	      	\item Mögliche Verbesserungen \& Fazit \\
+	      	\item Mögliche Verbesserungen \& Fazit 
 
-		    \item Vorführung
+		    
 \end{enumerate}
 
 \end{frame}
@@ -162,12 +164,14 @@ Kompletter Gröbner-Fächer nicht immer nötig
 
 \section{Mathematische Grundlagen}
 
-
+\begin{frame}
+\centerline{Mathematische Grundlagen}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Monome}
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Monome }
 
 \begin{block}{Monom}
@@ -190,7 +194,7 @@ Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $.
 \subsection{Termordnung}
 
 \begin{frame}[<+->][fragile]
-\frametitle{Termordnung (1)}
+\frametitle{Termordnung}
 % --  Kommentar 
 % --  Zu erst wird die Definition von Termordnung erklärt , dann werden die verschieden arten
 \begin{block}{Termordnung $>$}
@@ -205,7 +209,7 @@ Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $.
 \begin{block}{Termordnung Beispiele }
 \begin{itemize}
 \item Lexikographische Ordnung $>_{lex}$
-\item grad $>_{grlex}$
+\item Graduiert-lexikographische Ordnung $>_{grlex}$
 \item Ordnung mit Gewichtsvektor $c = (c_1, \ldots , c_n ) \in \mathbb{R}^{n}_{+}$
 \end{itemize}
 
@@ -219,7 +223,7 @@ Grad eines Monoms:  $deg(m) = \sum_{i=1}^n u_i $.
 \subsection{Leitterm}
 
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Leitterm}
 
 \begin{block}{Leitterm \textsc{LT}$(f)$ }
@@ -236,7 +240,7 @@ Sei $f = x^{2}+3xyz+y^{3} $
 
 \item lex-Order : $f = \underline{x^{2}} + 3xyz + y^{3}  $
 \item grlex-Order :  $f = \underline{3xyz} + y^{3} + x^{2}  $
-\item $\left(1,2,1\right)$ :  $f = \underline{y^{3}} + 3xyz + x^{2}  $
+\item $c = \left(1,2,1\right)$ :  $f = \underline{y^{3}} + 3xyz + x^{2}  $
 \end{itemize}
 
 \end{block}
@@ -246,21 +250,27 @@ Sei $f = x^{2}+3xyz+y^{3} $
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Ideale}
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Ideale}
 
 \begin{block}{Ideal }
 \begin{itemize}
 \item Kollektion von Polynomen $f_{1}, \dots , f_{s}$ : \\
-\[ \langle f_{1}, \dots , f_{s} \rangle = \left\lbrace  \sum_{i=1}^s h_{i}f_{i} \mid h_{1}, \dots , h_{s} \in \mathbb{K}\left[X_{1}, \dots, X_{n}\right] \right\rbrace. \] 
+\[ \langle f_{1}, \dots , f_{s} \rangle = \left\lbrace  \sum_{i=1}^s h_{i}f_{i} \mid h_{1}, \dots , h_{s} \in \mathbb{K}\left[X_{1}, \dots, X_{n}\right] \right\rbrace \] 
  
 \end{itemize}
 
 \end{block}
 
 \begin{block}{Beispiel}
-Sei $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ und $f=x^{2}y+x^{2}+y^{2}+xy+x$ \\
-Es gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
+\begin{itemize}
+\item
+Sei $ I= \langle f_{1},f_{2} \rangle = \langle x^{2}+y, x+y+1 \rangle $ und $f=x^{2}y+x^{2}+y^{2}+xy+x$ 
+
+\item 
+Es gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$
+\end{itemize}
+
 
 \end{block}
 
@@ -268,7 +278,7 @@ Es gilt $f= y \cdot f_{1} + x \cdot f_{2},~f\in I$.
 \end{frame}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \subsection{Divisionsalgorithmus}
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Divisionsalgorithmus (1)}
 
 
@@ -312,8 +322,8 @@ Sei Polynom $p$ und Ideal $I$
 
 \begin{algorithmic}[1]
 
-\Require Basis $I = \langle f_{1}, \dots, f_{m}\rangle$ von Polynomen $\neq$ 0 \textbf{und} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ eine feste Termordnung \textsc{LT}  
-\Ensure $r=0$ \textbf{or} none of the terms in $r$ are divisible by $ LT_{\leq}\left( f_{1}\right) , \dots , LT_{\leq} \left( f_{m}\right) $
+\Require Basis $I = \langle f_{1}, \dots, f_{m}\rangle$ mit  Polynomen $f_{i} \neq$ 0 \textbf{und} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ eine feste Termordnung $>$  
+\Ensure $r=0$ \textbf{oder} kein Term in $r$ ist teilbar durch $ LT_{>}\left( f_{1}\right) , \dots , LT_{>} \left( f_{m}\right) $
 
 %\EndProcedure
 \end{algorithmic}
@@ -335,7 +345,7 @@ Sei Polynom $p$ und Ideal $I$
 \subsection{Gröbnerbasis}
 
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Gröbnerbasis (1)}
 %Kommentar : B
 
@@ -364,7 +374,7 @@ Sei Termordnung $>$ und Ideal $I$, dann hat Gröbnerbasis $G = \{f_{1}, \ldots, 
 \subsection{Gröbnerbasis}
 
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Gröbnerbasis (2)}
 %Kommentar 
 
@@ -393,7 +403,7 @@ Alle Leitterme von Gröbnerbasis G in Bezug auf Termordnung $>$ monisch und rela
 \subsection{Gröbner-Fächer}
 
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Gröbner-Fächer}
 %Kommentar: Text der Bachelorarbeit
 \begin{itemize}
@@ -412,7 +422,7 @@ Alle Leitterme von Gröbnerbasis G in Bezug auf Termordnung $>$ monisch und rela
 \end{frame}
 % % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Beispiel Gröbner-Fächer (1)}
  Sei 
  \begin{enumerate}
@@ -544,7 +554,7 @@ $ \left(1,0,0\right) \cdot \left(a,b,c\right) \geq \left(0,1,0\right) \cdot  \le
 % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Torische Ideale}
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Torische Ideale}
 
 \begin{itemize}
@@ -562,11 +572,17 @@ $ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ke
 
 \end{frame}
 % -------------------------------------------------------- % % %
+\begin{frame}
+\centerline{Aufzählen von Gröbner-Fächern}
+\end{frame}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \section{Aufzählen von Gröbner-Fächern}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Facet Binomials}
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Facet Binomials }
 
 \begin{itemize}
@@ -580,7 +596,7 @@ $ \textbf{I}_{A} = \langle \textbf{x}^{u^{+}} - \textbf{x}^{u^{-}} \mid u \in ke
 
 \begin{block}{Facet Binomials}
 Sei $x^{\upalpha_{k}}-x^{\upbeta_k} \in \mathcal{G}_c~$, $\mathcal{G}_c$ Gröbnerbasis mit Gewichtsvektor $c$\\
-$x^{\upalpha_{k}}-x^{\upbeta_k}$ ist Facet binomial wenn ein Vektor $u \in \mathbb{R}^{n}$ folgendes erfüllt : \\
+$x^{\upalpha_{k}}-x^{\upbeta_k}$ ist facet binomial wenn ein Vektor $u \in \mathbb{R}^{n}$ folgendes erfüllt : \\
 
 \begin{align*}
    \upalpha_{i} \cdot u & \geq \upbeta_{i}  \cdot u : i = 1, \dots , t, i \neq k \\
@@ -592,7 +608,7 @@ $x^{\upalpha_{k}}-x^{\upbeta_k}$ ist Facet binomial wenn ein Vektor $u \in \math
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Beispiel Facet Binomials }
 
 \begin{itemize}
@@ -640,17 +656,16 @@ $x^{\upalpha_{k}}-x^{\upbeta_k}$ ist Facet binomial wenn ein Vektor $u \in \math
 
 
 \begin{algorithm}[H]
-\caption{Local change of reduced Gröbner bases in $I_A$ }
+\caption{Lokale Veränderung von reduzierten Gröbnerbasen in $I_A$ (Flip-Algorithmus) }
 \label{alg:flip}
 \begin{algorithmic}[1]
 
 \Input
-Reduced Gröbner basis $ \mathcal{G} $ of $I_A$ \textbf{and}
+Reduzierte Gröbnerbasis $ \mathcal{G} $ von $I_A$ \textbf{und}
 
-    A prescribed facet binomial $ \underline{x}^{a}_{i} - x^{b}_{i} \in \mathcal{G} $
+ein vorgeschriebenes facet binomial    $ \underline{x}^{a}_{i} - x^{b}_{i} \in \mathcal{G} $  
 %\Comment {The weight vector inducing $\mathcal{G}$ is generic and the leading terms are underlined}
-\Output The reduced Gröbner basis adjacent to $\mathcal{G}$ in which $ \underline{x}^{b}_{i} - x^{a}_{i} $ is a facet binomial.
-
+\Output Die reduzierte Gröbnerbasis adjazent zu $\mathcal{G}$ wobei $ \underline{x}^{b}_{i} - x^{a}_{i} $ ein facet binomial ist.
 
 %\EndProcedure
 \end{algorithmic}
@@ -671,13 +686,14 @@ Reduced Gröbner basis $ \mathcal{G} $ of $I_A$ \textbf{and}
 
 
 \begin{algorithm}[H]
-\caption{Enumerating the edge graph of the Gröbner fan via breath-first search}
+\caption{Aufzählen des Gröbner-Fächers mit Breitensuche}
 \label{alg:breath}
 \begin{algorithmic}[1]
 
 \Input
-Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
-\Output All reduced Gröbner bases of $I_A$, (all vertices of the edge graph)
+Beliebige reduzierte Gröbnerbasis $ \mathcal{G}_0 $ von $I_A$
+\Output
+Alle reduzierte Gröbnerbasen von $I_A$ (alle Kanten)
 
 %\EndProcedure
 \end{algorithmic}
@@ -696,7 +712,7 @@ Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
 
 % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Tiefensuche(1)}
 
 \begin{itemize}
@@ -724,7 +740,7 @@ Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
 
 
 \begin{algorithm}[H]
-\caption{Enumerating the edge graph of the Gröbner fan via reverse search}
+\caption{Aufzählen des Gröbner-Fächers mit umgekehrter Tiefensuche}
 %Kommentar erklären
 % Anhand der facet-binomials und der Termordnung werden die facets markiert die geflippt werden sollen
 % Anschließend geflippt bis alle kein facet mehr übrig ist
@@ -733,8 +749,10 @@ Any reduced Gröbner basis $ \mathcal{G}_0 $ of $I_A$
 \begin{algorithmic}[1]
 
 \Input
-Any reduced Gröbner basis $ \mathcal{R}_{>} $ of $I_A$ and its term order $>$
-\Output All reduced Gröbner bases of $I_A$ (all vertices of the edge graph)
+Beliebige reduzierte Gröbnerbasis  $ \mathcal{R}_{>} $ von $I_A$ und Termordnung $>$
+
+\Output
+Alle reduzierten Gröbnerbasen von $I_A$ (alle Kanten) 
 
 
 %\EndProcedure
@@ -751,7 +769,7 @@ Any reduced Gröbner basis $ \mathcal{R}_{>} $ of $I_A$ and its term order $>$
 
 % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Vergleich: Breitensuche \& umgekehrte Tiefensuche}
 
 Sei $ \mathcal{G} = \{x_{1} - x_{2}, x_{3} - x_{4}, x_{5}-x_{6} , x_{2}^{2} -1 , x_{4}^{2} - 1, x_{6}^{2} - 1 \} $ mit lexikographischer Ordnung $>$ : $x_{1} > \ldots > x_{6} $
@@ -779,7 +797,7 @@ Sei $ \mathcal{G} = \{x_{1} - x_{2}, x_{3} - x_{4}, x_{5}-x_{6} , x_{2}^{2} -1 ,
 
 % % % % % % % % % % % % % % % % % % % % % % % % %
 \subsection{Gradkompatible Gröbnerbasis}
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Gradkompatible Gröbnerbasis (1)}
 
 \begin{block}{Gradkompatible Gröbnerbasis}
@@ -799,7 +817,7 @@ Eine reduzierte Gröbnerbasis (bzgl. zur Termordnung $>$) für ein Ideal ist gra
 
 % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Gradkompatible Gröbnerbasis (2)}
 
 
@@ -819,7 +837,7 @@ Eine reduzierte Gröbnerbasis (bzgl. einer Termordnung $>$) ist die einzige grad
 % % % % % % % % % % % % % % % % % % % % % % % % % 
 \subsection{Lineare Codes}
 
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Lineare Codes}
 
 
@@ -841,7 +859,7 @@ Ein linearer Code $\mathcal{C}$  der Länge n und Dimension k über $\mathbb{F}$
 \end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % 
-\begin{frame}[fragile]
+\begin{frame}[<+->][fragile]
 \frametitle{Beispiel lineare Codes}
 
 \begin{itemize}
@@ -875,7 +893,7 @@ Ein linearer Code $\mathcal{C}$  der Länge n und Dimension k über $\mathbb{F}$
 
 % % % % % % % % % % % % % % % % % % % % % % % % %
 \frametitle{Code Ideal}
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Code Ideal}
 
 \begin{block}{Code Ideal}
@@ -896,13 +914,13 @@ Sei $\mathcal{C}$ ein $[n,k]$ Code. Das Code Ideal $I(\mathcal{C})$ die Vereinig
 
 % % % % % % % % % % % % % % % % % % % % % % % % %
 
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Beispiel Code Ideal}
 \begin{itemize}
 \item 
 Sei $\mathcal{C}$ ein binärer $[6,3]$ code mit der Generatormatrix
 \[
-G_{1} =
+G =
 \begin{pmatrix}
 1 & 0 & 0 & 0 & 1 & 0 \\ 
 0 & 1 & 0 & 1 & 1 & 1 \\  
@@ -926,7 +944,7 @@ $ \mathcal{G}_{>} = \{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} \cup \
 \section{Ergebnisse}
 
 \begin{frame}[fragile]
-\frametitle{Vergleich zw. gradkompatible \& kompletter Gröbner-Fächer}
+\frametitle{Vergleich zw. gradkompatiblen \& kompletten Gröbner-Fächern}
 
 \begin{figure}[h]
 \begin{tikzpicture}[scale = 0.7]
@@ -951,8 +969,8 @@ $ \mathcal{G}_{>} = \{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} \cup \
             legend columns=-1,
             /tikz/every even column/.append style={column sep=0.5cm}
         },
-        xlabel={Dimension $k$ of the linear code},
-        ylabel={Number of reduced Gröbner bases},
+        xlabel={Dimension $k$ des linearen Codes},
+        ylabel={Anzahl der reduzierten Gröbnerbasen},
         symbolic x coords={ 1,2,3,4,5,6,7},
        xtick=data,
        nodes near coords={
@@ -978,7 +996,7 @@ $ \mathcal{G}_{>} = \{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} \cup \
       (7,8)};
       
 
-    \legend{Degree compatible,All Gröbner bases}
+    \legend{Gradkompatibel,Alle Gröbnerbasen}
   \end{axis}
   \end{tikzpicture}
  % \caption{Comparison between the numbers of degree compatible and all Gröbner bases of binary linear codes with the length 8 }
@@ -1024,7 +1042,7 @@ $ \mathcal{G}_{>} = \{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} \cup \
 
 \section{Mögliche Verbesserungen \& Fazit}
  
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Mögliche Verbesserungen}
 
 
@@ -1038,7 +1056,7 @@ $ \mathcal{G}_{>} = \{x_{1}-x_{5},~x_{2}-x_{4}x_{5}x_{6},~x_{3}-x_{5}  \} \cup \
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[<+->]
 \frametitle{Fazit}
 \begin{enumerate}
 \item Keine (bekannte) Software berechnet gradkompatiblen Gröbnerfächer %Hinweis darauf das facetberechnung  sehr teuer sind
