@@ -17,5 +17,5 @@
 \beamer@subsectionintoc {3}{3}{Gradkompatible Gr\IeC {\"o}bnerbasis}{71}{0}{3}
 \beamer@subsectionintoc {3}{4}{Lineare Codes}{76}{0}{3}
 \beamer@sectionintoc {4}{Ergebnisse}{86}{0}{4}
-\beamer@sectionintoc {5}{Vorf\IeC {\"u}hrung}{88}{0}{5}
-\beamer@sectionintoc {6}{M\IeC {\"o}gliche Verbesserungen \& Fazit}{89}{0}{6}
+\beamer@sectionintoc {5}{Vorf\IeC {\"u}hrung}{89}{0}{5}
+\beamer@sectionintoc {6}{M\IeC {\"o}gliche Verbesserungen \& Fazit}{90}{0}{6}
